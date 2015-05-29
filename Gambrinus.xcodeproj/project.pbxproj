@@ -39,6 +39,7 @@
 		EA43D7C9198B6A08000B5AF5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA43D7C4198B6A08000B5AF5 /* Localizable.strings */; };
 		EA666BCA19822C4E00F72C0F /* PostImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA666BC819822C4E00F72C0F /* PostImageController.m */; };
 		EA666BCB19822C4E00F72C0F /* PostImageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA666BC919822C4E00F72C0F /* PostImageController.xib */; };
+		EA6FD0E51B18D74B000DB461 /* LaunchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA6FD0E41B18D74B000DB461 /* LaunchView.xib */; };
 		EA925DF419502952001E0AC9 /* PostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA925DF219502952001E0AC9 /* PostsViewController.m */; };
 		EA925DF519502952001E0AC9 /* PostsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA925DF319502952001E0AC9 /* PostsViewController.xib */; };
 		EA925E2619517062001E0AC9 /* StandardPostsListController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA925E2519517062001E0AC9 /* StandardPostsListController.m */; };
@@ -134,6 +135,7 @@
 		EA666BC719822C4E00F72C0F /* PostImageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostImageController.h; sourceTree = "<group>"; };
 		EA666BC819822C4E00F72C0F /* PostImageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostImageController.m; sourceTree = "<group>"; };
 		EA666BC919822C4E00F72C0F /* PostImageController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostImageController.xib; sourceTree = "<group>"; };
+		EA6FD0E41B18D74B000DB461 /* LaunchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchView.xib; sourceTree = "<group>"; };
 		EA925DF119502952001E0AC9 /* PostsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostsViewController.h; sourceTree = "<group>"; };
 		EA925DF219502952001E0AC9 /* PostsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostsViewController.m; sourceTree = "<group>"; };
 		EA925DF319502952001E0AC9 /* PostsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostsViewController.xib; sourceTree = "<group>"; };
@@ -444,6 +446,7 @@
 				EA011B22193B467300232E92 /* BlogPostView.h */,
 				EA011B23193B467300232E92 /* BlogPostView.m */,
 				EA011B25193B468400232E92 /* BlogPostView.xib */,
+				EA6FD0E41B18D74B000DB461 /* LaunchView.xib */,
 				EAC877B5192DDC6C00309A23 /* PostsSearchInputView.h */,
 				EAC877B6192DDC6C00309A23 /* PostsSearchInputView.m */,
 				EAC877B8192DDD1600309A23 /* PostsSearchInputView.xib */,
@@ -581,6 +584,7 @@
 				EA0668D6192A45C4009C83F1 /* Images.xcassets in Resources */,
 				EADF7E7C192BDC7F00EC13AB /* PostViewController.xib in Resources */,
 				EAC877B9192DDD1600309A23 /* PostsSearchInputView.xib in Resources */,
+				EA6FD0E51B18D74B000DB461 /* LaunchView.xib in Resources */,
 				EA43D7C9198B6A08000B5AF5 /* Localizable.strings in Resources */,
 				EA011B26193B468400232E92 /* BlogPostView.xib in Resources */,
 			);
