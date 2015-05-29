@@ -1,0 +1,993 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		50F2507DFDD64163B684B6FE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 268DF4099A4B434EAB40A71F /* libPods.a */; };
+		EA0119E11931D2D400232E92 /* _Blog.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0119E01931D2D400232E92 /* _Blog.m */; };
+		EA0119E41931D2DD00232E92 /* Blog.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0119E31931D2DD00232E92 /* Blog.m */; };
+		EA0119E71931D45400232E92 /* ObjectModel+Blogs.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0119E61931D45400232E92 /* ObjectModel+Blogs.m */; };
+		EA0119EA1931E04F00232E92 /* NSDate+BloggerDate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0119E91931E04F00232E92 /* NSDate+BloggerDate.m */; };
+		EA011A3D1936194E00232E92 /* BlogImagesRetrieve.m in Sources */ = {isa = PBXBuildFile; fileRef = EA011A3C1936194E00232E92 /* BlogImagesRetrieve.m */; };
+		EA011A401936195F00232E92 /* BlogImageAsk.m in Sources */ = {isa = PBXBuildFile; fileRef = EA011A3F1936195F00232E92 /* BlogImageAsk.m */; };
+		EA011AD81937B9A600232E92 /* Gambrinus.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = EA011AD71937B9A600232E92 /* Gambrinus.sqlite */; };
+		EA011B24193B467300232E92 /* BlogPostView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA011B23193B467300232E92 /* BlogPostView.m */; };
+		EA011B26193B468400232E92 /* BlogPostView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA011B25193B468400232E92 /* BlogPostView.xib */; };
+		EA0668C4192A45C4009C83F1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA0668C3192A45C4009C83F1 /* Foundation.framework */; };
+		EA0668C6192A45C4009C83F1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA0668C5192A45C4009C83F1 /* CoreGraphics.framework */; };
+		EA0668C8192A45C4009C83F1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA0668C7192A45C4009C83F1 /* UIKit.framework */; };
+		EA0668CE192A45C4009C83F1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA0668CC192A45C4009C83F1 /* InfoPlist.strings */; };
+		EA0668D0192A45C4009C83F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0668CF192A45C4009C83F1 /* main.m */; };
+		EA0668D4192A45C4009C83F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0668D3192A45C4009C83F1 /* AppDelegate.m */; };
+		EA0668D6192A45C4009C83F1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA0668D5192A45C4009C83F1 /* Images.xcassets */; };
+		EA0668DD192A45C4009C83F1 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA0668DC192A45C4009C83F1 /* XCTest.framework */; };
+		EA0668DE192A45C4009C83F1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA0668C3192A45C4009C83F1 /* Foundation.framework */; };
+		EA0668DF192A45C5009C83F1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA0668C7192A45C4009C83F1 /* UIKit.framework */; };
+		EA0668E7192A45C5009C83F1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA0668E5192A45C5009C83F1 /* InfoPlist.strings */; };
+		EA0668E9192A45C5009C83F1 /* GambrinusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0668E8192A45C5009C83F1 /* GambrinusTests.m */; };
+		EA15CB0C194EDCEB00A140B5 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA15CB0B194EDCEB00A140B5 /* MainViewController.m */; };
+		EA15CB10194EDE4900A140B5 /* BlogPostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA15CB0E194EDE4900A140B5 /* BlogPostsViewController.m */; };
+		EA15CB15194EDE8800A140B5 /* MarkedPostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA15CB13194EDE8800A140B5 /* MarkedPostsViewController.m */; };
+		EA3FDE811B18CB0700C93B7D /* Secrets.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3FDE801B18CB0700C93B7D /* Secrets.m */; };
+		EA43D7C6198B6A08000B5AF5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA43D7BD198B6A08000B5AF5 /* InfoPlist.strings */; };
+		EA43D7C7198B6A08000B5AF5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA43D7BF198B6A08000B5AF5 /* Localizable.strings */; };
+		EA43D7C8198B6A08000B5AF5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA43D7C2198B6A08000B5AF5 /* InfoPlist.strings */; };
+		EA43D7C9198B6A08000B5AF5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA43D7C4198B6A08000B5AF5 /* Localizable.strings */; };
+		EA666BCA19822C4E00F72C0F /* PostImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA666BC819822C4E00F72C0F /* PostImageController.m */; };
+		EA666BCB19822C4E00F72C0F /* PostImageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA666BC919822C4E00F72C0F /* PostImageController.xib */; };
+		EA925DF419502952001E0AC9 /* PostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA925DF219502952001E0AC9 /* PostsViewController.m */; };
+		EA925DF519502952001E0AC9 /* PostsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA925DF319502952001E0AC9 /* PostsViewController.xib */; };
+		EA925E2619517062001E0AC9 /* StandardPostsListController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA925E2519517062001E0AC9 /* StandardPostsListController.m */; };
+		EAA3E6EA1930BBB500812B6F /* PoweredByViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA3E6E81930BBB500812B6F /* PoweredByViewController.m */; };
+		EAA3E6EB1930BBB500812B6F /* PoweredByViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAA3E6E91930BBB500812B6F /* PoweredByViewController.xib */; };
+		EAA3E6EE1930CC5C00812B6F /* BloggerAPIConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA3E6ED1930CC5C00812B6F /* BloggerAPIConnection.m */; };
+		EAC877AE192DD50700309A23 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC877AD192DD50700309A23 /* Constants.m */; };
+		EAC877B7192DDC6C00309A23 /* PostsSearchInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC877B6192DDC6C00309A23 /* PostsSearchInputView.m */; };
+		EAC877B9192DDD1600309A23 /* PostsSearchInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAC877B8192DDD1600309A23 /* PostsSearchInputView.xib */; };
+		EAC877BF192E224600309A23 /* NSDate+Calculations.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC877BE192E224600309A23 /* NSDate+Calculations.m */; };
+		EAC877C2192E26BE00309A23 /* _Setting.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC877C1192E26BE00309A23 /* _Setting.m */; };
+		EAC877C5192E26C800309A23 /* Setting.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC877C4192E26C800309A23 /* Setting.m */; };
+		EAC877C8192E26D200309A23 /* ObjectModel+Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC877C7192E26D200309A23 /* ObjectModel+Settings.m */; };
+		EAC9A7CF19446A03006AC834 /* _Image.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC9A7CE19446A03006AC834 /* _Image.m */; };
+		EAC9A7D219446A10006AC834 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC9A7D119446A10006AC834 /* Image.m */; };
+		EAC9A7D519446A91006AC834 /* ObjectModel+Images.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC9A7D419446A91006AC834 /* ObjectModel+Images.m */; };
+		EAC9A7DE194476CC006AC834 /* _PullStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC9A7DD194476CC006AC834 /* _PullStatus.m */; };
+		EAC9A7E1194476DA006AC834 /* PullStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC9A7E0194476DA006AC834 /* PullStatus.m */; };
+		EADDA404192A51E5000CCEA9 /* KioskPostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EADDA402192A51E5000CCEA9 /* KioskPostsViewController.m */; };
+		EADDA409192A52F9000CCEA9 /* BlogPostsRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = EADDA408192A52F9000CCEA9 /* BlogPostsRefresh.m */; };
+		EADDA413192B88B1000CCEA9 /* ObjectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EADDA412192B88B1000CCEA9 /* ObjectModel.m */; };
+		EADDA416192B88C6000CCEA9 /* Gambrinus.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EADDA414192B88C6000CCEA9 /* Gambrinus.xcdatamodeld */; };
+		EADDA41B192B8AC8000CCEA9 /* _Post.m in Sources */ = {isa = PBXBuildFile; fileRef = EADDA41A192B8AC8000CCEA9 /* _Post.m */; };
+		EADDA41E192B8ACE000CCEA9 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = EADDA41D192B8ACE000CCEA9 /* Post.m */; };
+		EADDA421192B8ADF000CCEA9 /* ObjectModel+Posts.m in Sources */ = {isa = PBXBuildFile; fileRef = EADDA420192B8ADF000CCEA9 /* ObjectModel+Posts.m */; };
+		EADF7E66192B8E0D00EC13AB /* ProgressOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = EADF7E65192B8E0D00EC13AB /* ProgressOverlayView.m */; };
+		EADF7E6B192BC5DC00EC13AB /* NSString+Cleanup.m in Sources */ = {isa = PBXBuildFile; fileRef = EADF7E6A192BC5DC00EC13AB /* NSString+Cleanup.m */; };
+		EADF7E6F192BCB9100EC13AB /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EADF7E6E192BCB9100EC13AB /* PostCell.m */; };
+		EADF7E71192BCBB500EC13AB /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EADF7E70192BCBB500EC13AB /* PostCell.xib */; };
+		EADF7E77192BD2DA00EC13AB /* UIColor+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = EADF7E76192BD2DA00EC13AB /* UIColor+Theme.m */; };
+		EADF7E7B192BDC7F00EC13AB /* PostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EADF7E79192BDC7F00EC13AB /* PostViewController.m */; };
+		EADF7E7C192BDC7F00EC13AB /* PostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EADF7E7A192BDC7F00EC13AB /* PostViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EA0668E0192A45C5009C83F1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA0668B8192A45C4009C83F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EA0668BF192A45C4009C83F1;
+			remoteInfo = Gambrinus;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		268DF4099A4B434EAB40A71F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		387B404AB725C6918C894AC8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		D55ECE79FD59409FD051754A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		EA0119DF1931D2D400232E92 /* _Blog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Blog.h; sourceTree = "<group>"; };
+		EA0119E01931D2D400232E92 /* _Blog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Blog.m; sourceTree = "<group>"; };
+		EA0119E21931D2DD00232E92 /* Blog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Blog.h; sourceTree = "<group>"; };
+		EA0119E31931D2DD00232E92 /* Blog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Blog.m; sourceTree = "<group>"; };
+		EA0119E51931D45400232E92 /* ObjectModel+Blogs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ObjectModel+Blogs.h"; sourceTree = "<group>"; };
+		EA0119E61931D45400232E92 /* ObjectModel+Blogs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ObjectModel+Blogs.m"; sourceTree = "<group>"; };
+		EA0119E81931E04F00232E92 /* NSDate+BloggerDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+BloggerDate.h"; sourceTree = "<group>"; };
+		EA0119E91931E04F00232E92 /* NSDate+BloggerDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+BloggerDate.m"; sourceTree = "<group>"; };
+		EA011A3B1936194E00232E92 /* BlogImagesRetrieve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogImagesRetrieve.h; sourceTree = "<group>"; };
+		EA011A3C1936194E00232E92 /* BlogImagesRetrieve.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogImagesRetrieve.m; sourceTree = "<group>"; };
+		EA011A3E1936195F00232E92 /* BlogImageAsk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogImageAsk.h; sourceTree = "<group>"; };
+		EA011A3F1936195F00232E92 /* BlogImageAsk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogImageAsk.m; sourceTree = "<group>"; };
+		EA011AD71937B9A600232E92 /* Gambrinus.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Gambrinus.sqlite; sourceTree = "<group>"; };
+		EA011B22193B467300232E92 /* BlogPostView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogPostView.h; sourceTree = "<group>"; };
+		EA011B23193B467300232E92 /* BlogPostView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogPostView.m; sourceTree = "<group>"; };
+		EA011B25193B468400232E92 /* BlogPostView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlogPostView.xib; sourceTree = "<group>"; };
+		EA0668C0192A45C4009C83F1 /* Gambrinus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gambrinus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA0668C3192A45C4009C83F1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EA0668C5192A45C4009C83F1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		EA0668C7192A45C4009C83F1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		EA0668CB192A45C4009C83F1 /* Gambrinus-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Gambrinus-Info.plist"; sourceTree = "<group>"; };
+		EA0668CD192A45C4009C83F1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EA0668CF192A45C4009C83F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EA0668D1192A45C4009C83F1 /* Gambrinus-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gambrinus-Prefix.pch"; sourceTree = "<group>"; };
+		EA0668D2192A45C4009C83F1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		EA0668D3192A45C4009C83F1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EA0668D5192A45C4009C83F1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		EA0668DB192A45C4009C83F1 /* GambrinusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GambrinusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA0668DC192A45C4009C83F1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		EA0668E4192A45C5009C83F1 /* GambrinusTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GambrinusTests-Info.plist"; sourceTree = "<group>"; };
+		EA0668E6192A45C5009C83F1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EA0668E8192A45C5009C83F1 /* GambrinusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GambrinusTests.m; sourceTree = "<group>"; };
+		EA15CB0A194EDCEB00A140B5 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		EA15CB0B194EDCEB00A140B5 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		EA15CB0D194EDE4900A140B5 /* BlogPostsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogPostsViewController.h; sourceTree = "<group>"; };
+		EA15CB0E194EDE4900A140B5 /* BlogPostsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogPostsViewController.m; sourceTree = "<group>"; };
+		EA15CB12194EDE8800A140B5 /* MarkedPostsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarkedPostsViewController.h; sourceTree = "<group>"; };
+		EA15CB13194EDE8800A140B5 /* MarkedPostsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarkedPostsViewController.m; sourceTree = "<group>"; };
+		EA3FDE7F1B18CB0700C93B7D /* Secrets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Secrets.h; sourceTree = "<group>"; };
+		EA3FDE801B18CB0700C93B7D /* Secrets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Secrets.m; sourceTree = "<group>"; };
+		EA43D7BE198B6A08000B5AF5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
+		EA43D7C0198B6A08000B5AF5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
+		EA43D7C3198B6A08000B5AF5 /* et */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = et; path = InfoPlist.strings; sourceTree = "<group>"; };
+		EA43D7C5198B6A08000B5AF5 /* et */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = et; path = Localizable.strings; sourceTree = "<group>"; };
+		EA666BC719822C4E00F72C0F /* PostImageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostImageController.h; sourceTree = "<group>"; };
+		EA666BC819822C4E00F72C0F /* PostImageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostImageController.m; sourceTree = "<group>"; };
+		EA666BC919822C4E00F72C0F /* PostImageController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostImageController.xib; sourceTree = "<group>"; };
+		EA925DF119502952001E0AC9 /* PostsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostsViewController.h; sourceTree = "<group>"; };
+		EA925DF219502952001E0AC9 /* PostsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostsViewController.m; sourceTree = "<group>"; };
+		EA925DF319502952001E0AC9 /* PostsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostsViewController.xib; sourceTree = "<group>"; };
+		EA925E2419517062001E0AC9 /* StandardPostsListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandardPostsListController.h; sourceTree = "<group>"; };
+		EA925E2519517062001E0AC9 /* StandardPostsListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StandardPostsListController.m; sourceTree = "<group>"; };
+		EAA3E6E71930BBB500812B6F /* PoweredByViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoweredByViewController.h; sourceTree = "<group>"; };
+		EAA3E6E81930BBB500812B6F /* PoweredByViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PoweredByViewController.m; sourceTree = "<group>"; };
+		EAA3E6E91930BBB500812B6F /* PoweredByViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PoweredByViewController.xib; sourceTree = "<group>"; };
+		EAA3E6EC1930CC5C00812B6F /* BloggerAPIConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BloggerAPIConnection.h; sourceTree = "<group>"; };
+		EAA3E6ED1930CC5C00812B6F /* BloggerAPIConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BloggerAPIConnection.m; sourceTree = "<group>"; };
+		EAC877AC192DD50700309A23 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		EAC877AD192DD50700309A23 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		EAC877B5192DDC6C00309A23 /* PostsSearchInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostsSearchInputView.h; sourceTree = "<group>"; };
+		EAC877B6192DDC6C00309A23 /* PostsSearchInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostsSearchInputView.m; sourceTree = "<group>"; };
+		EAC877B8192DDD1600309A23 /* PostsSearchInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostsSearchInputView.xib; sourceTree = "<group>"; };
+		EAC877BD192E224600309A23 /* NSDate+Calculations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Calculations.h"; sourceTree = "<group>"; };
+		EAC877BE192E224600309A23 /* NSDate+Calculations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Calculations.m"; sourceTree = "<group>"; };
+		EAC877C0192E26BE00309A23 /* _Setting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Setting.h; sourceTree = "<group>"; };
+		EAC877C1192E26BE00309A23 /* _Setting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Setting.m; sourceTree = "<group>"; };
+		EAC877C3192E26C800309A23 /* Setting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Setting.h; sourceTree = "<group>"; };
+		EAC877C4192E26C800309A23 /* Setting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Setting.m; sourceTree = "<group>"; };
+		EAC877C6192E26D200309A23 /* ObjectModel+Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ObjectModel+Settings.h"; sourceTree = "<group>"; };
+		EAC877C7192E26D200309A23 /* ObjectModel+Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ObjectModel+Settings.m"; sourceTree = "<group>"; };
+		EAC9A7CD19446A03006AC834 /* _Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Image.h; sourceTree = "<group>"; };
+		EAC9A7CE19446A03006AC834 /* _Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Image.m; sourceTree = "<group>"; };
+		EAC9A7D019446A10006AC834 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
+		EAC9A7D119446A10006AC834 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
+		EAC9A7D319446A91006AC834 /* ObjectModel+Images.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ObjectModel+Images.h"; sourceTree = "<group>"; };
+		EAC9A7D419446A91006AC834 /* ObjectModel+Images.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ObjectModel+Images.m"; sourceTree = "<group>"; };
+		EAC9A7DC194476CC006AC834 /* _PullStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _PullStatus.h; sourceTree = "<group>"; };
+		EAC9A7DD194476CC006AC834 /* _PullStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _PullStatus.m; sourceTree = "<group>"; };
+		EAC9A7DF194476DA006AC834 /* PullStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullStatus.h; sourceTree = "<group>"; };
+		EAC9A7E0194476DA006AC834 /* PullStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullStatus.m; sourceTree = "<group>"; };
+		EADDA401192A51E5000CCEA9 /* KioskPostsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KioskPostsViewController.h; sourceTree = "<group>"; };
+		EADDA402192A51E5000CCEA9 /* KioskPostsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KioskPostsViewController.m; sourceTree = "<group>"; };
+		EADDA407192A52F9000CCEA9 /* BlogPostsRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogPostsRefresh.h; sourceTree = "<group>"; };
+		EADDA408192A52F9000CCEA9 /* BlogPostsRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogPostsRefresh.m; sourceTree = "<group>"; };
+		EADDA411192B88B1000CCEA9 /* ObjectModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectModel.h; sourceTree = "<group>"; };
+		EADDA412192B88B1000CCEA9 /* ObjectModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectModel.m; sourceTree = "<group>"; };
+		EADDA415192B88C6000CCEA9 /* Gambrinus.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Gambrinus.xcdatamodel; sourceTree = "<group>"; };
+		EADDA419192B8AC8000CCEA9 /* _Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Post.h; sourceTree = "<group>"; };
+		EADDA41A192B8AC8000CCEA9 /* _Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Post.m; sourceTree = "<group>"; };
+		EADDA41C192B8ACE000CCEA9 /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		EADDA41D192B8ACE000CCEA9 /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		EADDA41F192B8ADF000CCEA9 /* ObjectModel+Posts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ObjectModel+Posts.h"; sourceTree = "<group>"; };
+		EADDA420192B8ADF000CCEA9 /* ObjectModel+Posts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ObjectModel+Posts.m"; sourceTree = "<group>"; };
+		EADF7E64192B8E0D00EC13AB /* ProgressOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressOverlayView.h; sourceTree = "<group>"; };
+		EADF7E65192B8E0D00EC13AB /* ProgressOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressOverlayView.m; sourceTree = "<group>"; };
+		EADF7E69192BC5DC00EC13AB /* NSString+Cleanup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Cleanup.h"; sourceTree = "<group>"; };
+		EADF7E6A192BC5DC00EC13AB /* NSString+Cleanup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Cleanup.m"; sourceTree = "<group>"; };
+		EADF7E6D192BCB9100EC13AB /* PostCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostCell.h; sourceTree = "<group>"; };
+		EADF7E6E192BCB9100EC13AB /* PostCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostCell.m; sourceTree = "<group>"; };
+		EADF7E70192BCBB500EC13AB /* PostCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
+		EADF7E75192BD2DA00EC13AB /* UIColor+Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Theme.h"; sourceTree = "<group>"; };
+		EADF7E76192BD2DA00EC13AB /* UIColor+Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Theme.m"; sourceTree = "<group>"; };
+		EADF7E78192BDC7F00EC13AB /* PostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostViewController.h; sourceTree = "<group>"; };
+		EADF7E79192BDC7F00EC13AB /* PostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostViewController.m; sourceTree = "<group>"; };
+		EADF7E7A192BDC7F00EC13AB /* PostViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EA0668BD192A45C4009C83F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA0668C6192A45C4009C83F1 /* CoreGraphics.framework in Frameworks */,
+				EA0668C8192A45C4009C83F1 /* UIKit.framework in Frameworks */,
+				EA0668C4192A45C4009C83F1 /* Foundation.framework in Frameworks */,
+				50F2507DFDD64163B684B6FE /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA0668D8192A45C4009C83F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA0668DD192A45C4009C83F1 /* XCTest.framework in Frameworks */,
+				EA0668DF192A45C5009C83F1 /* UIKit.framework in Frameworks */,
+				EA0668DE192A45C4009C83F1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		722480EDFA73F3857AFE6ACE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				387B404AB725C6918C894AC8 /* Pods.debug.xcconfig */,
+				D55ECE79FD59409FD051754A /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EA0668B7192A45C4009C83F1 = {
+			isa = PBXGroup;
+			children = (
+				EA0668C9192A45C4009C83F1 /* Gambrinus */,
+				EA0668E2192A45C5009C83F1 /* GambrinusTests */,
+				EA0668C2192A45C4009C83F1 /* Frameworks */,
+				EA0668C1192A45C4009C83F1 /* Products */,
+				722480EDFA73F3857AFE6ACE /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		EA0668C1192A45C4009C83F1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EA0668C0192A45C4009C83F1 /* Gambrinus.app */,
+				EA0668DB192A45C4009C83F1 /* GambrinusTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EA0668C2192A45C4009C83F1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EA0668C3192A45C4009C83F1 /* Foundation.framework */,
+				EA0668C5192A45C4009C83F1 /* CoreGraphics.framework */,
+				EA0668C7192A45C4009C83F1 /* UIKit.framework */,
+				EA0668DC192A45C4009C83F1 /* XCTest.framework */,
+				268DF4099A4B434EAB40A71F /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EA0668C9192A45C4009C83F1 /* Gambrinus */ = {
+			isa = PBXGroup;
+			children = (
+				EADF7E68192BC5CE00EC13AB /* Categories */,
+				EADF7E6C192BCB2400EC13AB /* Cells */,
+				EADDA400192A51BD000CCEA9 /* Controllers */,
+				EAC877C9192E33C400309A23 /* Data */,
+				EAC877CC192E405700309A23 /* Images */,
+				EADDA406192A527F000CCEA9 /* Network */,
+				EADDA410192B88A1000CCEA9 /* ObjectModel */,
+				EA0668CA192A45C4009C83F1 /* Supporting Files */,
+				EADF7E74192BD2C000EC13AB /* Theme */,
+				EADF7E63192B8DE500EC13AB /* Views */,
+				EA0668D2192A45C4009C83F1 /* AppDelegate.h */,
+				EA0668D3192A45C4009C83F1 /* AppDelegate.m */,
+				EAC877AC192DD50700309A23 /* Constants.h */,
+				EAC877AD192DD50700309A23 /* Constants.m */,
+				EA0668D5192A45C4009C83F1 /* Images.xcassets */,
+				EA3FDE7F1B18CB0700C93B7D /* Secrets.h */,
+				EA3FDE801B18CB0700C93B7D /* Secrets.m */,
+			);
+			path = Gambrinus;
+			sourceTree = "<group>";
+		};
+		EA0668CA192A45C4009C83F1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EA43D7BC198B6A08000B5AF5 /* en.lproj */,
+				EA43D7C1198B6A08000B5AF5 /* et.lproj */,
+				EA0668CB192A45C4009C83F1 /* Gambrinus-Info.plist */,
+				EA0668CC192A45C4009C83F1 /* InfoPlist.strings */,
+				EA0668CF192A45C4009C83F1 /* main.m */,
+				EA0668D1192A45C4009C83F1 /* Gambrinus-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EA0668E2192A45C5009C83F1 /* GambrinusTests */ = {
+			isa = PBXGroup;
+			children = (
+				EA0668E8192A45C5009C83F1 /* GambrinusTests.m */,
+				EA0668E3192A45C5009C83F1 /* Supporting Files */,
+			);
+			path = GambrinusTests;
+			sourceTree = "<group>";
+		};
+		EA0668E3192A45C5009C83F1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EA0668E4192A45C5009C83F1 /* GambrinusTests-Info.plist */,
+				EA0668E5192A45C5009C83F1 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EA43D7BC198B6A08000B5AF5 /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				EA43D7BD198B6A08000B5AF5 /* InfoPlist.strings */,
+				EA43D7BF198B6A08000B5AF5 /* Localizable.strings */,
+			);
+			path = en.lproj;
+			sourceTree = "<group>";
+		};
+		EA43D7C1198B6A08000B5AF5 /* et.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				EA43D7C2198B6A08000B5AF5 /* InfoPlist.strings */,
+				EA43D7C4198B6A08000B5AF5 /* Localizable.strings */,
+			);
+			path = et.lproj;
+			sourceTree = "<group>";
+		};
+		EAC877C9192E33C400309A23 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				EA011AD71937B9A600232E92 /* Gambrinus.sqlite */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		EAC877CC192E405700309A23 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				EA011A3E1936195F00232E92 /* BlogImageAsk.h */,
+				EA011A3F1936195F00232E92 /* BlogImageAsk.m */,
+				EA011A3B1936194E00232E92 /* BlogImagesRetrieve.h */,
+				EA011A3C1936194E00232E92 /* BlogImagesRetrieve.m */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		EADDA400192A51BD000CCEA9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EA15CB0D194EDE4900A140B5 /* BlogPostsViewController.h */,
+				EA15CB0E194EDE4900A140B5 /* BlogPostsViewController.m */,
+				EADDA401192A51E5000CCEA9 /* KioskPostsViewController.h */,
+				EADDA402192A51E5000CCEA9 /* KioskPostsViewController.m */,
+				EA15CB0A194EDCEB00A140B5 /* MainViewController.h */,
+				EA15CB0B194EDCEB00A140B5 /* MainViewController.m */,
+				EA15CB12194EDE8800A140B5 /* MarkedPostsViewController.h */,
+				EA15CB13194EDE8800A140B5 /* MarkedPostsViewController.m */,
+				EA666BC719822C4E00F72C0F /* PostImageController.h */,
+				EA666BC819822C4E00F72C0F /* PostImageController.m */,
+				EA666BC919822C4E00F72C0F /* PostImageController.xib */,
+				EA925DF119502952001E0AC9 /* PostsViewController.h */,
+				EA925DF219502952001E0AC9 /* PostsViewController.m */,
+				EA925DF319502952001E0AC9 /* PostsViewController.xib */,
+				EADF7E78192BDC7F00EC13AB /* PostViewController.h */,
+				EADF7E79192BDC7F00EC13AB /* PostViewController.m */,
+				EADF7E7A192BDC7F00EC13AB /* PostViewController.xib */,
+				EAA3E6E71930BBB500812B6F /* PoweredByViewController.h */,
+				EAA3E6E81930BBB500812B6F /* PoweredByViewController.m */,
+				EAA3E6E91930BBB500812B6F /* PoweredByViewController.xib */,
+				EA925E2419517062001E0AC9 /* StandardPostsListController.h */,
+				EA925E2519517062001E0AC9 /* StandardPostsListController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		EADDA406192A527F000CCEA9 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				EAA3E6EC1930CC5C00812B6F /* BloggerAPIConnection.h */,
+				EAA3E6ED1930CC5C00812B6F /* BloggerAPIConnection.m */,
+				EADDA407192A52F9000CCEA9 /* BlogPostsRefresh.h */,
+				EADDA408192A52F9000CCEA9 /* BlogPostsRefresh.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		EADDA410192B88A1000CCEA9 /* ObjectModel */ = {
+			isa = PBXGroup;
+			children = (
+				EADDA418192B8ABF000CCEA9 /* _ */,
+				EA0119E21931D2DD00232E92 /* Blog.h */,
+				EA0119E31931D2DD00232E92 /* Blog.m */,
+				EADDA414192B88C6000CCEA9 /* Gambrinus.xcdatamodeld */,
+				EAC9A7D019446A10006AC834 /* Image.h */,
+				EAC9A7D119446A10006AC834 /* Image.m */,
+				EA0119E51931D45400232E92 /* ObjectModel+Blogs.h */,
+				EA0119E61931D45400232E92 /* ObjectModel+Blogs.m */,
+				EAC9A7D319446A91006AC834 /* ObjectModel+Images.h */,
+				EAC9A7D419446A91006AC834 /* ObjectModel+Images.m */,
+				EADDA41F192B8ADF000CCEA9 /* ObjectModel+Posts.h */,
+				EADDA420192B8ADF000CCEA9 /* ObjectModel+Posts.m */,
+				EAC877C6192E26D200309A23 /* ObjectModel+Settings.h */,
+				EAC877C7192E26D200309A23 /* ObjectModel+Settings.m */,
+				EADDA411192B88B1000CCEA9 /* ObjectModel.h */,
+				EADDA412192B88B1000CCEA9 /* ObjectModel.m */,
+				EADDA41C192B8ACE000CCEA9 /* Post.h */,
+				EADDA41D192B8ACE000CCEA9 /* Post.m */,
+				EAC9A7DF194476DA006AC834 /* PullStatus.h */,
+				EAC9A7E0194476DA006AC834 /* PullStatus.m */,
+				EAC877C3192E26C800309A23 /* Setting.h */,
+				EAC877C4192E26C800309A23 /* Setting.m */,
+			);
+			path = ObjectModel;
+			sourceTree = "<group>";
+		};
+		EADDA418192B8ABF000CCEA9 /* _ */ = {
+			isa = PBXGroup;
+			children = (
+				EA0119DF1931D2D400232E92 /* _Blog.h */,
+				EA0119E01931D2D400232E92 /* _Blog.m */,
+				EAC9A7CD19446A03006AC834 /* _Image.h */,
+				EAC9A7CE19446A03006AC834 /* _Image.m */,
+				EADDA419192B8AC8000CCEA9 /* _Post.h */,
+				EADDA41A192B8AC8000CCEA9 /* _Post.m */,
+				EAC9A7DC194476CC006AC834 /* _PullStatus.h */,
+				EAC9A7DD194476CC006AC834 /* _PullStatus.m */,
+				EAC877C0192E26BE00309A23 /* _Setting.h */,
+				EAC877C1192E26BE00309A23 /* _Setting.m */,
+			);
+			name = _;
+			sourceTree = "<group>";
+		};
+		EADF7E63192B8DE500EC13AB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EA011B22193B467300232E92 /* BlogPostView.h */,
+				EA011B23193B467300232E92 /* BlogPostView.m */,
+				EA011B25193B468400232E92 /* BlogPostView.xib */,
+				EAC877B5192DDC6C00309A23 /* PostsSearchInputView.h */,
+				EAC877B6192DDC6C00309A23 /* PostsSearchInputView.m */,
+				EAC877B8192DDD1600309A23 /* PostsSearchInputView.xib */,
+				EADF7E64192B8E0D00EC13AB /* ProgressOverlayView.h */,
+				EADF7E65192B8E0D00EC13AB /* ProgressOverlayView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EADF7E68192BC5CE00EC13AB /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				EA0119E81931E04F00232E92 /* NSDate+BloggerDate.h */,
+				EA0119E91931E04F00232E92 /* NSDate+BloggerDate.m */,
+				EAC877BD192E224600309A23 /* NSDate+Calculations.h */,
+				EAC877BE192E224600309A23 /* NSDate+Calculations.m */,
+				EADF7E69192BC5DC00EC13AB /* NSString+Cleanup.h */,
+				EADF7E6A192BC5DC00EC13AB /* NSString+Cleanup.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		EADF7E6C192BCB2400EC13AB /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				EADF7E6D192BCB9100EC13AB /* PostCell.h */,
+				EADF7E6E192BCB9100EC13AB /* PostCell.m */,
+				EADF7E70192BCBB500EC13AB /* PostCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		EADF7E74192BD2C000EC13AB /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				EADF7E75192BD2DA00EC13AB /* UIColor+Theme.h */,
+				EADF7E76192BD2DA00EC13AB /* UIColor+Theme.m */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EA0668BF192A45C4009C83F1 /* Gambrinus */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA0668EC192A45C5009C83F1 /* Build configuration list for PBXNativeTarget "Gambrinus" */;
+			buildPhases = (
+				B322B37CE0F14A6AA7A1E7C7 /* Check Pods Manifest.lock */,
+				EADDA417192B8A31000CCEA9 /* mogenerator */,
+				EA15CB1A194EE5B400A140B5 /* Check localization */,
+				EA0668BC192A45C4009C83F1 /* Sources */,
+				EA0668BD192A45C4009C83F1 /* Frameworks */,
+				EA0668BE192A45C4009C83F1 /* Resources */,
+				EA15CB09194E2F6200A140B5 /* Version update */,
+				98942834C7904B2385904992 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Gambrinus;
+			productName = Gambrinus;
+			productReference = EA0668C0192A45C4009C83F1 /* Gambrinus.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EA0668DA192A45C4009C83F1 /* GambrinusTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA0668EF192A45C5009C83F1 /* Build configuration list for PBXNativeTarget "GambrinusTests" */;
+			buildPhases = (
+				EA0668D7192A45C4009C83F1 /* Sources */,
+				EA0668D8192A45C4009C83F1 /* Frameworks */,
+				EA0668D9192A45C4009C83F1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EA0668E1192A45C5009C83F1 /* PBXTargetDependency */,
+			);
+			name = GambrinusTests;
+			productName = GambrinusTests;
+			productReference = EA0668DB192A45C4009C83F1 /* GambrinusTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EA0668B8192A45C4009C83F1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Coodly LLC";
+				TargetAttributes = {
+					EA0668BF192A45C4009C83F1 = {
+						DevelopmentTeam = 5T8DRBFCBP;
+					};
+					EA0668DA192A45C4009C83F1 = {
+						TestTargetID = EA0668BF192A45C4009C83F1;
+					};
+				};
+			};
+			buildConfigurationList = EA0668BB192A45C4009C83F1 /* Build configuration list for PBXProject "Gambrinus" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				et,
+			);
+			mainGroup = EA0668B7192A45C4009C83F1;
+			productRefGroup = EA0668C1192A45C4009C83F1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EA0668BF192A45C4009C83F1 /* Gambrinus */,
+				EA0668DA192A45C4009C83F1 /* GambrinusTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EA0668BE192A45C4009C83F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA43D7C7198B6A08000B5AF5 /* Localizable.strings in Resources */,
+				EA0668CE192A45C4009C83F1 /* InfoPlist.strings in Resources */,
+				EA43D7C6198B6A08000B5AF5 /* InfoPlist.strings in Resources */,
+				EAA3E6EB1930BBB500812B6F /* PoweredByViewController.xib in Resources */,
+				EADF7E71192BCBB500EC13AB /* PostCell.xib in Resources */,
+				EA925DF519502952001E0AC9 /* PostsViewController.xib in Resources */,
+				EA43D7C8198B6A08000B5AF5 /* InfoPlist.strings in Resources */,
+				EA666BCB19822C4E00F72C0F /* PostImageController.xib in Resources */,
+				EA011AD81937B9A600232E92 /* Gambrinus.sqlite in Resources */,
+				EA0668D6192A45C4009C83F1 /* Images.xcassets in Resources */,
+				EADF7E7C192BDC7F00EC13AB /* PostViewController.xib in Resources */,
+				EAC877B9192DDD1600309A23 /* PostsSearchInputView.xib in Resources */,
+				EA43D7C9198B6A08000B5AF5 /* Localizable.strings in Resources */,
+				EA011B26193B468400232E92 /* BlogPostView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA0668D9192A45C4009C83F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA0668E7192A45C5009C83F1 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		98942834C7904B2385904992 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B322B37CE0F14A6AA7A1E7C7 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EA15CB09194E2F6200A140B5 /* Version update */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Version update";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo -n ${TARGET_BUILD_DIR}/${INFOPLIST_PATH} \\\n| xargs -0 /usr/libexec/PlistBuddy -c \"Set :CFBundleVersion `git rev-list HEAD | wc -l`\"";
+		};
+		EA15CB1A194EE5B400A140B5 /* Check localization */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check localization";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "ruby scripts/check_localizable.rb Gambrinus";
+		};
+		EADDA417192B8A31000CCEA9 /* mogenerator */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = mogenerator;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "PATH_TO_MODELD=\"Gambrinus/ObjectModel/Gambrinus.xcdatamodeld\"\nOUTPUT_PATH=\"Gambrinus/ObjectModel\"\n\ntype mogenerator >/dev/null 2>&1 || {\n    echo >&2 \"warning: mogenerator not found. You will need it when changing core data model\";\n    exit 0;\n}\n\n#CURRENT_VERSION=$(/usr/libexec/PlistBuddy -c \"Print :_XCCurrentVersionName\" \"${PATH_TO_MODELD}/.xccurrentversion\")\n\nMODEL_PATH=\"${PATH_TO_MODELD}\"\necho \"Used model path ${MODEL_PATH}\"\n\nmogenerator --v2 -m \"$MODEL_PATH\" -O $OUTPUT_PATH";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EA0668BC192A45C4009C83F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAC9A7D219446A10006AC834 /* Image.m in Sources */,
+				EA3FDE811B18CB0700C93B7D /* Secrets.m in Sources */,
+				EA15CB0C194EDCEB00A140B5 /* MainViewController.m in Sources */,
+				EAC9A7DE194476CC006AC834 /* _PullStatus.m in Sources */,
+				EADF7E7B192BDC7F00EC13AB /* PostViewController.m in Sources */,
+				EA0668D4192A45C4009C83F1 /* AppDelegate.m in Sources */,
+				EADDA409192A52F9000CCEA9 /* BlogPostsRefresh.m in Sources */,
+				EADDA404192A51E5000CCEA9 /* KioskPostsViewController.m in Sources */,
+				EAC877BF192E224600309A23 /* NSDate+Calculations.m in Sources */,
+				EA925DF419502952001E0AC9 /* PostsViewController.m in Sources */,
+				EAC9A7CF19446A03006AC834 /* _Image.m in Sources */,
+				EAC9A7E1194476DA006AC834 /* PullStatus.m in Sources */,
+				EA666BCA19822C4E00F72C0F /* PostImageController.m in Sources */,
+				EA011A3D1936194E00232E92 /* BlogImagesRetrieve.m in Sources */,
+				EADF7E77192BD2DA00EC13AB /* UIColor+Theme.m in Sources */,
+				EAC877AE192DD50700309A23 /* Constants.m in Sources */,
+				EADDA413192B88B1000CCEA9 /* ObjectModel.m in Sources */,
+				EADF7E6B192BC5DC00EC13AB /* NSString+Cleanup.m in Sources */,
+				EADDA41B192B8AC8000CCEA9 /* _Post.m in Sources */,
+				EA925E2619517062001E0AC9 /* StandardPostsListController.m in Sources */,
+				EAC877C8192E26D200309A23 /* ObjectModel+Settings.m in Sources */,
+				EAC877C2192E26BE00309A23 /* _Setting.m in Sources */,
+				EADDA416192B88C6000CCEA9 /* Gambrinus.xcdatamodeld in Sources */,
+				EA011A401936195F00232E92 /* BlogImageAsk.m in Sources */,
+				EAA3E6EA1930BBB500812B6F /* PoweredByViewController.m in Sources */,
+				EA15CB10194EDE4900A140B5 /* BlogPostsViewController.m in Sources */,
+				EA0119E41931D2DD00232E92 /* Blog.m in Sources */,
+				EAA3E6EE1930CC5C00812B6F /* BloggerAPIConnection.m in Sources */,
+				EA0119E11931D2D400232E92 /* _Blog.m in Sources */,
+				EA011B24193B467300232E92 /* BlogPostView.m in Sources */,
+				EA0668D0192A45C4009C83F1 /* main.m in Sources */,
+				EAC9A7D519446A91006AC834 /* ObjectModel+Images.m in Sources */,
+				EA0119EA1931E04F00232E92 /* NSDate+BloggerDate.m in Sources */,
+				EAC877B7192DDC6C00309A23 /* PostsSearchInputView.m in Sources */,
+				EADDA421192B8ADF000CCEA9 /* ObjectModel+Posts.m in Sources */,
+				EA0119E71931D45400232E92 /* ObjectModel+Blogs.m in Sources */,
+				EADF7E66192B8E0D00EC13AB /* ProgressOverlayView.m in Sources */,
+				EADDA41E192B8ACE000CCEA9 /* Post.m in Sources */,
+				EAC877C5192E26C800309A23 /* Setting.m in Sources */,
+				EA15CB15194EDE8800A140B5 /* MarkedPostsViewController.m in Sources */,
+				EADF7E6F192BCB9100EC13AB /* PostCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA0668D7192A45C4009C83F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA0668E9192A45C5009C83F1 /* GambrinusTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EA0668E1192A45C5009C83F1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EA0668BF192A45C4009C83F1 /* Gambrinus */;
+			targetProxy = EA0668E0192A45C5009C83F1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EA0668CC192A45C4009C83F1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA0668CD192A45C4009C83F1 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		EA0668E5192A45C5009C83F1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA0668E6192A45C5009C83F1 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		EA43D7BD198B6A08000B5AF5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA43D7BE198B6A08000B5AF5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		EA43D7BF198B6A08000B5AF5 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA43D7C0198B6A08000B5AF5 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		EA43D7C2198B6A08000B5AF5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA43D7C3198B6A08000B5AF5 /* et */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		EA43D7C4198B6A08000B5AF5 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA43D7C5198B6A08000B5AF5 /* et */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EA0668EA192A45C5009C83F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EA0668EB192A45C5009C83F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EA0668ED192A45C5009C83F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 387B404AB725C6918C894AC8 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Gambrinus/Gambrinus-Prefix.pch";
+				INFOPLIST_FILE = "Gambrinus/Gambrinus-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		EA0668EE192A45C5009C83F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D55ECE79FD59409FD051754A /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Gambrinus/Gambrinus-Prefix.pch";
+				INFOPLIST_FILE = "Gambrinus/Gambrinus-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		EA0668F0192A45C5009C83F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Gambrinus.app/Gambrinus";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Gambrinus/Gambrinus-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "GambrinusTests/GambrinusTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		EA0668F1192A45C5009C83F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Gambrinus.app/Gambrinus";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Gambrinus/Gambrinus-Prefix.pch";
+				INFOPLIST_FILE = "GambrinusTests/GambrinusTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EA0668BB192A45C4009C83F1 /* Build configuration list for PBXProject "Gambrinus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA0668EA192A45C5009C83F1 /* Debug */,
+				EA0668EB192A45C5009C83F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA0668EC192A45C5009C83F1 /* Build configuration list for PBXNativeTarget "Gambrinus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA0668ED192A45C5009C83F1 /* Debug */,
+				EA0668EE192A45C5009C83F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA0668EF192A45C5009C83F1 /* Build configuration list for PBXNativeTarget "GambrinusTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA0668F0192A45C5009C83F1 /* Debug */,
+				EA0668F1192A45C5009C83F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EADDA414192B88C6000CCEA9 /* Gambrinus.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EADDA415192B88C6000CCEA9 /* Gambrinus.xcdatamodel */,
+			);
+			currentVersion = EADDA415192B88C6000CCEA9 /* Gambrinus.xcdatamodel */;
+			path = Gambrinus.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = EA0668B8192A45C4009C83F1 /* Project object */;
+}

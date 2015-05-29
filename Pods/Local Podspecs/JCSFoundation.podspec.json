@@ -1,0 +1,83 @@
+{
+  "name": "JCSFoundation",
+  "version": "0.1.0",
+  "summary": "Standard toolset classes and categories.",
+  "homepage": "https://github.com/jaanussiim/JCSFoundation",
+  "authors": {
+    "Jaanus Siim": "jaanus@jaanussiim.com"
+  },
+  "source": {
+    "git": "https://github.com/jaanussiim/JCSFoundation.git",
+    "tag": "v0.1.0"
+  },
+  "license": {
+    "type": "Apache 2",
+    "file": "LICENSE.txt"
+  },
+  "requires_arc": true,
+  "subspecs": [
+    {
+      "name": "Core",
+      "platforms": {
+        "ios": "6.0"
+      },
+      "source_files": "JCSFoundation/Core/*.{h,m}"
+    },
+    {
+      "name": "CoreData",
+      "platforms": {
+        "ios": "6.0"
+      },
+      "dependencies": {
+        "JCSFoundation/Core": [
+
+        ]
+      },
+      "ios": {
+        "source_files": "JCSFoundation/CoreData/*.{h,m}"
+      }
+    },
+    {
+      "name": "UserInput",
+      "platforms": {
+        "ios": "6.0"
+      },
+      "dependencies": {
+        "JCSFoundation/Core": [
+
+        ]
+      },
+      "ios": {
+        "source_files": "JCSFoundation/UserInput/*.{h,m}"
+      }
+    },
+    {
+      "name": "PopupViews",
+      "platforms": {
+        "ios": "6.0"
+      },
+      "dependencies": {
+        "JCSFoundation/Core": [
+
+        ]
+      },
+      "ios": {
+        "source_files": "JCSFoundation/PopupViews/*.{h,m}"
+      }
+    },
+    {
+      "name": "Image",
+      "platforms": {
+        "ios": "6.0"
+      },
+      "dependencies": {
+        "JCSFoundation/Core": [
+
+        ]
+      },
+      "ios": {
+        "source_files": "JCSFoundation/Image/**/*.{h,m}"
+      }
+    }
+  ]
+}

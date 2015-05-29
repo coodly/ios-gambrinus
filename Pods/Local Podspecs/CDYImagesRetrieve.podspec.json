@@ -1,0 +1,32 @@
+{
+  "name": "CDYImagesRetrieve",
+  "version": "0.1.0",
+  "summary": "Base code for images async retrieve and caching",
+  "homepage": "https://github.com/coodly/CDYImagesRetrieve",
+  "authors": {
+    "Jaanus Siim": "jaanus@coodly.com"
+  },
+  "source": {
+    "git": "https://github.com/coodly/CDYImagesRetrieve.git",
+    "tag": "v0.1.0"
+  },
+  "license": {
+    "type": "Apache 2",
+    "file": "LICENSE"
+  },
+  "requires_arc": true,
+  "subspecs": [
+    {
+      "name": "Core",
+      "platforms": {
+        "ios": "7.0"
+      },
+      "source_files": "Core/*.{h,m}",
+      "dependencies": {
+        "AFNetworking": [
+
+        ]
+      }
+    }
+  ]
+}

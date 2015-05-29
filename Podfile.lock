@@ -1,0 +1,111 @@
+PODS:
+  - AFNetworking (2.5.4):
+    - AFNetworking/NSURLConnection (= 2.5.4)
+    - AFNetworking/NSURLSession (= 2.5.4)
+    - AFNetworking/Reachability (= 2.5.4)
+    - AFNetworking/Security (= 2.5.4)
+    - AFNetworking/Serialization (= 2.5.4)
+    - AFNetworking/UIKit (= 2.5.4)
+  - AFNetworking/NSURLConnection (2.5.4):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.5.4):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.5.4)
+  - AFNetworking/Security (2.5.4)
+  - AFNetworking/Serialization (2.5.4)
+  - AFNetworking/UIKit (2.5.4):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - CDYImageScale (0.1.0):
+    - CDYImageScale/Core (= 0.1.0)
+  - CDYImageScale/Core (0.1.0)
+  - CDYImagesRetrieve (0.1.0):
+    - CDYImagesRetrieve/Core (= 0.1.0)
+  - CDYImagesRetrieve/Core (0.1.0):
+    - AFNetworking
+  - CDYObjectModel (1.0):
+    - CDYObjectModel/Core (= 1.0)
+  - CDYObjectModel/Core (1.0)
+  - JCSFoundation/Core (0.1.0)
+  - JCSFoundation/CoreData (0.1.0):
+    - JCSFoundation/Core
+  - JCSFoundation/UserInput (0.1.0):
+    - JCSFoundation/Core
+  - MRProgress (0.8.2):
+    - MRProgress/ActivityIndicator (= 0.8.2)
+    - MRProgress/Blur (= 0.8.2)
+    - MRProgress/Circular (= 0.8.2)
+    - MRProgress/Icons (= 0.8.2)
+    - MRProgress/NavigationBarProgress (= 0.8.2)
+    - MRProgress/Overlay (= 0.8.2)
+  - MRProgress/ActivityIndicator (0.8.2):
+    - MRProgress/Stopable
+  - MRProgress/Blur (0.8.2):
+    - MRProgress/Helper
+  - MRProgress/Circular (0.8.2):
+    - MRProgress/Helper
+    - MRProgress/ProgressBaseClass
+    - MRProgress/Stopable
+  - MRProgress/Helper (0.8.2)
+  - MRProgress/Icons (0.8.2)
+  - MRProgress/NavigationBarProgress (0.8.2):
+    - MRProgress/ProgressBaseClass
+  - MRProgress/Overlay (0.8.2):
+    - MRProgress/ActivityIndicator
+    - MRProgress/Blur
+    - MRProgress/Circular
+    - MRProgress/Helper
+    - MRProgress/Icons
+  - MRProgress/ProgressBaseClass (0.8.2)
+  - MRProgress/Stopable (0.8.2):
+    - MRProgress/Helper
+  - Ono (1.2.2)
+
+DEPENDENCIES:
+  - AFNetworking
+  - CDYImageScale (from `https://github.com/coodly/CDYImageScale.git`)
+  - CDYImagesRetrieve (from `https://github.com/coodly/CDYImagesRetrieve.git`)
+  - CDYObjectModel (from `https://github.com/coodly/CDYObjectModel.git`)
+  - JCSFoundation/CoreData (from `https://github.com/jaanussiim/JCSFoundation.git`)
+  - JCSFoundation/UserInput (from `https://github.com/jaanussiim/JCSFoundation.git`)
+  - MRProgress
+  - Ono
+
+EXTERNAL SOURCES:
+  CDYImageScale:
+    :git: https://github.com/coodly/CDYImageScale.git
+  CDYImagesRetrieve:
+    :git: https://github.com/coodly/CDYImagesRetrieve.git
+  CDYObjectModel:
+    :git: https://github.com/coodly/CDYObjectModel.git
+  JCSFoundation:
+    :git: https://github.com/jaanussiim/JCSFoundation.git
+
+CHECKOUT OPTIONS:
+  CDYImageScale:
+    :commit: a1ec1bd514d9d98f9664a52814d6a58928a58e53
+    :git: https://github.com/coodly/CDYImageScale.git
+  CDYImagesRetrieve:
+    :commit: ccb4ffe453f2747bd149c8140dbeed80eed199e0
+    :git: https://github.com/coodly/CDYImagesRetrieve.git
+  CDYObjectModel:
+    :commit: 4e8d91343197c26197e0ab0b408e3c72c06336c6
+    :git: https://github.com/coodly/CDYObjectModel.git
+  JCSFoundation:
+    :commit: 57db8c94e3c92a40a0adb8c911290034e7ba1e1c
+    :git: https://github.com/jaanussiim/JCSFoundation.git
+
+SPEC CHECKSUMS:
+  AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
+  CDYImageScale: 38273882da26bca58d143ae97db74788a0451011
+  CDYImagesRetrieve: bf12c13b064cfa14b744ed006f075e710bc059fd
+  CDYObjectModel: 22a37c4a1d22b067965668711d69f92fa1a144c7
+  JCSFoundation: 2f986cfd674d8c2d06db8f6a236b97f01c136e9d
+  MRProgress: f4cfe862082418e8f542f077772283f425d6c699
+  Ono: 80b1c686777d3f6d5d5ce6fcac8a74afef4ca197
+
+COCOAPODS: 0.37.1

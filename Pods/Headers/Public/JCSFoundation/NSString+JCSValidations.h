@@ -1,0 +1,1 @@
+../../../JCSFoundation/JCSFoundation/Core/NSString+JCSValidations.h

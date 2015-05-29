@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13D65" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Blog" representedClassName="Blog" syncable="YES">
+        <attribute name="baseURLString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="blogId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="postsURLString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="published" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="posts" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Post" inverseName="blog" inverseEntity="Post" syncable="YES"/>
+    </entity>
+    <entity name="Image" representedClassName="Image" syncable="YES">
+        <attribute name="imageURLString" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="posts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Post" inverseName="image" inverseEntity="Post" syncable="YES"/>
+        <relationship name="pullStatus" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="PullStatus" inverseName="statusForImage" inverseEntity="PullStatus" syncable="YES"/>
+    </entity>
+    <entity name="Post" representedClassName="Post" syncable="YES">
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hidden" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="postId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="publishDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="slug" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="starred" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="blog" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Blog" inverseName="posts" inverseEntity="Blog" syncable="YES"/>
+        <relationship name="image" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Image" inverseName="posts" inverseEntity="Image" syncable="YES"/>
+    </entity>
+    <entity name="PullStatus" representedClassName="PullStatus" syncable="YES">
+        <attribute name="lastPullAttempt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="pullFailed" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <relationship name="statusForImage" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Image" inverseName="pullStatus" inverseEntity="Image" syncable="YES"/>
+    </entity>
+    <entity name="Setting" representedClassName="Setting" syncable="YES">
+        <attribute name="key" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="value" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Blog" positionX="-63" positionY="27" width="128" height="118"/>
+        <element name="Image" positionX="-54" positionY="54" width="128" height="88"/>
+        <element name="Post" positionX="-63" positionY="-18" width="128" height="180"/>
+        <element name="PullStatus" positionX="-45" positionY="54" width="128" height="88"/>
+        <element name="Setting" positionX="-63" positionY="27" width="128" height="75"/>
+    </elements>
+</model>

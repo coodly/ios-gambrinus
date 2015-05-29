@@ -1,0 +1,27 @@
+{
+  "name": "CDYObjectModel",
+  "version": "1.0",
+  "summary": "Wrapper layer on top of Core Data.",
+  "homepage": "https://github.com/coodly/CDYObjectModel",
+  "authors": {
+    "Jaanus Siim": "jaanus@coodly.com"
+  },
+  "source": {
+    "git": "https://github.com/coodly/CDYObjectModel.git",
+    "tag": "v1.0"
+  },
+  "license": {
+    "type": "Apache 2",
+    "file": "LICENSE.txt"
+  },
+  "requires_arc": true,
+  "subspecs": [
+    {
+      "name": "Core",
+      "platforms": {
+        "ios": "6.0"
+      },
+      "source_files": "Core/*.{h,m}"
+    }
+  ]
+}
