@@ -163,7 +163,9 @@
     if (IS_PAD) {
         return CGSizeMake(240, 240);
     } else {
-        return CGSizeMake(150, 150);
+        CGFloat screenWidth = CGRectGetWidth(self.view.frame);
+        screenWidth -= 20;
+        return CGSizeMake(screenWidth / 2, screenWidth / 2);
     }
 }
 

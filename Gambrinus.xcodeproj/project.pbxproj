@@ -501,7 +501,6 @@
 				EA0668BC192A45C4009C83F1 /* Sources */,
 				EA0668BD192A45C4009C83F1 /* Frameworks */,
 				EA0668BE192A45C4009C83F1 /* Resources */,
-				EA15CB09194E2F6200A140B5 /* Version update */,
 				98942834C7904B2385904992 /* Copy Pods Resources */,
 			);
 			buildRules = (
@@ -630,20 +629,6 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
-		};
-		EA15CB09194E2F6200A140B5 /* Version update */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Version update";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "echo -n ${TARGET_BUILD_DIR}/${INFOPLIST_PATH} \\\n| xargs -0 /usr/libexec/PlistBuddy -c \"Set :CFBundleVersion `git rev-list HEAD | wc -l`\"";
 		};
 		EA15CB1A194EE5B400A140B5 /* Check localization */ = {
 			isa = PBXShellScriptBuildPhase;
