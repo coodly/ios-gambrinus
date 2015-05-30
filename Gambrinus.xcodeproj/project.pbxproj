@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		50F2507DFDD64163B684B6FE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 268DF4099A4B434EAB40A71F /* libPods.a */; };
+		BA665AAA129ABC2E206BA2C5 /* mapping.json in Resources */ = {isa = PBXBuildFile; fileRef = BA665BA7D5ECAA081827FF24 /* mapping.json */; };
 		EA0119E11931D2D400232E92 /* _Blog.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0119E01931D2D400232E92 /* _Blog.m */; };
 		EA0119E41931D2DD00232E92 /* Blog.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0119E31931D2DD00232E92 /* Blog.m */; };
 		EA0119E71931D45400232E92 /* ObjectModel+Blogs.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0119E61931D45400232E92 /* ObjectModel+Blogs.m */; };
@@ -87,6 +88,7 @@
 /* Begin PBXFileReference section */
 		268DF4099A4B434EAB40A71F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		387B404AB725C6918C894AC8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		BA665BA7D5ECAA081827FF24 /* mapping.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = mapping.json; sourceTree = "<group>"; };
 		D55ECE79FD59409FD051754A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		EA0119DF1931D2D400232E92 /* _Blog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Blog.h; sourceTree = "<group>"; };
 		EA0119E01931D2D400232E92 /* _Blog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Blog.m; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 				EA0668C2192A45C4009C83F1 /* Frameworks */,
 				EA0668C1192A45C4009C83F1 /* Products */,
 				722480EDFA73F3857AFE6ACE /* Pods */,
+				BA665BA7D5ECAA081827FF24 /* mapping.json */,
 			);
 			sourceTree = "<group>";
 		};
@@ -586,6 +589,7 @@
 				EA6FD0E51B18D74B000DB461 /* LaunchView.xib in Resources */,
 				EA43D7C9198B6A08000B5AF5 /* Localizable.strings in Resources */,
 				EA011B26193B468400232E92 /* BlogPostView.xib in Resources */,
+				BA665AAA129ABC2E206BA2C5 /* mapping.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -867,7 +871,7 @@
 				GCC_PREFIX_HEADER = "Gambrinus/Gambrinus-Prefix.pch";
 				INFOPLIST_FILE = "Gambrinus/Gambrinus-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "a4b27cf9-9207-4032-af5e-35b946acf794";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -888,7 +892,7 @@
 				GCC_PREFIX_HEADER = "Gambrinus/Gambrinus-Prefix.pch";
 				INFOPLIST_FILE = "Gambrinus/Gambrinus-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "a4b27cf9-9207-4032-af5e-35b946acf794";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
