@@ -23,6 +23,9 @@
 #import "AFNetworkActivityIndicatorManager.h"
 #import "MainViewController.h"
 #import "Secrets.h"
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
+
 
 @interface AppDelegate ()
 
@@ -34,6 +37,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+
+    [Fabric with:@[CrashlyticsKit]];
 
     [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
 

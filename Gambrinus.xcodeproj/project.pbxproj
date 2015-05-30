@@ -33,6 +33,8 @@
 		EA15CB0C194EDCEB00A140B5 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA15CB0B194EDCEB00A140B5 /* MainViewController.m */; };
 		EA15CB10194EDE4900A140B5 /* BlogPostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA15CB0E194EDE4900A140B5 /* BlogPostsViewController.m */; };
 		EA15CB15194EDE8800A140B5 /* MarkedPostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA15CB13194EDE8800A140B5 /* MarkedPostsViewController.m */; };
+		EA2713AD1B1A4B40002D655E /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2713AB1B1A4B40002D655E /* Fabric.framework */; };
+		EA2713AE1B1A4B40002D655E /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2713AC1B1A4B40002D655E /* Crashlytics.framework */; };
 		EA3FDE811B18CB0700C93B7D /* Secrets.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3FDE801B18CB0700C93B7D /* Secrets.m */; };
 		EA43D7C6198B6A08000B5AF5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA43D7BD198B6A08000B5AF5 /* InfoPlist.strings */; };
 		EA43D7C7198B6A08000B5AF5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA43D7BF198B6A08000B5AF5 /* Localizable.strings */; };
@@ -128,6 +130,8 @@
 		EA15CB0E194EDE4900A140B5 /* BlogPostsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogPostsViewController.m; sourceTree = "<group>"; };
 		EA15CB12194EDE8800A140B5 /* MarkedPostsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarkedPostsViewController.h; sourceTree = "<group>"; };
 		EA15CB13194EDE8800A140B5 /* MarkedPostsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarkedPostsViewController.m; sourceTree = "<group>"; };
+		EA2713AB1B1A4B40002D655E /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		EA2713AC1B1A4B40002D655E /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		EA3FDE7F1B18CB0700C93B7D /* Secrets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Secrets.h; sourceTree = "<group>"; };
 		EA3FDE801B18CB0700C93B7D /* Secrets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Secrets.m; sourceTree = "<group>"; };
 		EA43D7BE198B6A08000B5AF5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
@@ -204,8 +208,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA0668C6192A45C4009C83F1 /* CoreGraphics.framework in Frameworks */,
+				EA2713AD1B1A4B40002D655E /* Fabric.framework in Frameworks */,
 				EA0668C8192A45C4009C83F1 /* UIKit.framework in Frameworks */,
 				EA0668C4192A45C4009C83F1 /* Foundation.framework in Frameworks */,
+				EA2713AE1B1A4B40002D655E /* Crashlytics.framework in Frameworks */,
 				50F2507DFDD64163B684B6FE /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,6 +262,8 @@
 		EA0668C2192A45C4009C83F1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EA2713AB1B1A4B40002D655E /* Fabric.framework */,
+				EA2713AC1B1A4B40002D655E /* Crashlytics.framework */,
 				EA0668C3192A45C4009C83F1 /* Foundation.framework */,
 				EA0668C5192A45C4009C83F1 /* CoreGraphics.framework */,
 				EA0668C7192A45C4009C83F1 /* UIKit.framework */,
@@ -505,6 +513,7 @@
 				EA0668BD192A45C4009C83F1 /* Frameworks */,
 				EA0668BE192A45C4009C83F1 /* Resources */,
 				98942834C7904B2385904992 /* Copy Pods Resources */,
+				EA2713AA1B1A4A9C002D655E /* Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -647,6 +656,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "ruby scripts/check_localizable.rb Gambrinus";
+		};
+		EA2713AA1B1A4A9C002D655E /* Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Crashlytics;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 1498b1e841189deded0a8957a47057c88a75503b 84939d122fb533ac07e3e9b3d0fb8601e68f89a868e9f5889891d1a6684b0d72";
 		};
 		EADDA417192B8A31000CCEA9 /* mogenerator */ = {
 			isa = PBXShellScriptBuildPhase;
