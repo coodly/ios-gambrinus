@@ -30,6 +30,7 @@
 		EA0668DF192A45C5009C83F1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA0668C7192A45C4009C83F1 /* UIKit.framework */; };
 		EA0668E7192A45C5009C83F1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA0668E5192A45C5009C83F1 /* InfoPlist.strings */; };
 		EA0668E9192A45C5009C83F1 /* GambrinusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0668E8192A45C5009C83F1 /* GambrinusTests.m */; };
+		EA0986CD1B1E40C6006FEC11 /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0986CC1B1E40C6006FEC11 /* SlideMenuController.swift */; };
 		EA15CB0C194EDCEB00A140B5 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA15CB0B194EDCEB00A140B5 /* MainViewController.m */; };
 		EA15CB10194EDE4900A140B5 /* BlogPostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA15CB0E194EDE4900A140B5 /* BlogPostsViewController.m */; };
 		EA15CB15194EDE8800A140B5 /* MarkedPostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA15CB13194EDE8800A140B5 /* MarkedPostsViewController.m */; };
@@ -124,6 +125,8 @@
 		EA0668E4192A45C5009C83F1 /* GambrinusTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GambrinusTests-Info.plist"; sourceTree = "<group>"; };
 		EA0668E6192A45C5009C83F1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EA0668E8192A45C5009C83F1 /* GambrinusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GambrinusTests.m; sourceTree = "<group>"; };
+		EA0986C71B1E4082006FEC11 /* Gambrinus-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gambrinus-Bridging-Header.h"; sourceTree = "<group>"; };
+		EA0986CC1B1E40C6006FEC11 /* SlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuController.swift; sourceTree = "<group>"; };
 		EA15CB0A194EDCEB00A140B5 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		EA15CB0B194EDCEB00A140B5 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		EA15CB0D194EDE4900A140B5 /* BlogPostsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogPostsViewController.h; sourceTree = "<group>"; };
@@ -241,6 +244,7 @@
 		EA0668B7192A45C4009C83F1 = {
 			isa = PBXGroup;
 			children = (
+				EA0986CA1B1E40C6006FEC11 /* Thirdparty */,
 				EA0668C9192A45C4009C83F1 /* Gambrinus */,
 				EA0668E2192A45C5009C83F1 /* GambrinusTests */,
 				EA0668C2192A45C4009C83F1 /* Frameworks */,
@@ -302,6 +306,7 @@
 			children = (
 				EA43D7BC198B6A08000B5AF5 /* en.lproj */,
 				EA43D7C1198B6A08000B5AF5 /* et.lproj */,
+				EA0986C71B1E4082006FEC11 /* Gambrinus-Bridging-Header.h */,
 				EA0668CB192A45C4009C83F1 /* Gambrinus-Info.plist */,
 				EA0668CC192A45C4009C83F1 /* InfoPlist.strings */,
 				EA0668CF192A45C4009C83F1 /* main.m */,
@@ -326,6 +331,22 @@
 				EA0668E5192A45C5009C83F1 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EA0986CA1B1E40C6006FEC11 /* Thirdparty */ = {
+			isa = PBXGroup;
+			children = (
+				EA0986CB1B1E40C6006FEC11 /* SlideMenuController */,
+			);
+			path = Thirdparty;
+			sourceTree = "<group>";
+		};
+		EA0986CB1B1E40C6006FEC11 /* SlideMenuController */ = {
+			isa = PBXGroup;
+			children = (
+				EA0986CC1B1E40C6006FEC11 /* SlideMenuController.swift */,
+			);
+			path = SlideMenuController;
 			sourceTree = "<group>";
 		};
 		EA43D7BC198B6A08000B5AF5 /* en.lproj */ = {
@@ -714,6 +735,7 @@
 				EA925E2619517062001E0AC9 /* StandardPostsListController.m in Sources */,
 				EAC877C8192E26D200309A23 /* ObjectModel+Settings.m in Sources */,
 				EAC877C2192E26BE00309A23 /* _Setting.m in Sources */,
+				EA0986CD1B1E40C6006FEC11 /* SlideMenuController.swift in Sources */,
 				EADDA416192B88C6000CCEA9 /* Gambrinus.xcdatamodeld in Sources */,
 				EA011A401936195F00232E92 /* BlogImageAsk.m in Sources */,
 				EAA3E6EA1930BBB500812B6F /* PoweredByViewController.m in Sources */,
@@ -884,6 +906,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -893,8 +916,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Gambrinus/Gambrinus-Prefix.pch";
 				INFOPLIST_FILE = "Gambrinus/Gambrinus-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "a4b27cf9-9207-4032-af5e-35b946acf794";
+				SWIFT_OBJC_BRIDGING_HEADER = "Gambrinus/Gambrinus-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -905,6 +931,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -914,8 +941,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Gambrinus/Gambrinus-Prefix.pch";
 				INFOPLIST_FILE = "Gambrinus/Gambrinus-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "a4b27cf9-9207-4032-af5e-35b946acf794";
+				SWIFT_OBJC_BRIDGING_HEADER = "Gambrinus/Gambrinus-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
