@@ -31,6 +31,9 @@
 		EA0668E7192A45C5009C83F1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA0668E5192A45C5009C83F1 /* InfoPlist.strings */; };
 		EA0668E9192A45C5009C83F1 /* GambrinusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0668E8192A45C5009C83F1 /* GambrinusTests.m */; };
 		EA0986CD1B1E40C6006FEC11 /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0986CC1B1E40C6006FEC11 /* SlideMenuController.swift */; };
+		EA0986D41B1E4356006FEC11 /* SideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0986D21B1E4356006FEC11 /* SideMenuViewController.m */; };
+		EA0986D51B1E4356006FEC11 /* SideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA0986D31B1E4356006FEC11 /* SideMenuViewController.xib */; };
+		EA0986D71B1E4767006FEC11 /* KioskSlideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0986D61B1E4767006FEC11 /* KioskSlideMenuViewController.swift */; };
 		EA15CB0C194EDCEB00A140B5 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA15CB0B194EDCEB00A140B5 /* MainViewController.m */; };
 		EA15CB10194EDE4900A140B5 /* BlogPostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA15CB0E194EDE4900A140B5 /* BlogPostsViewController.m */; };
 		EA15CB15194EDE8800A140B5 /* MarkedPostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA15CB13194EDE8800A140B5 /* MarkedPostsViewController.m */; };
@@ -127,6 +130,10 @@
 		EA0668E8192A45C5009C83F1 /* GambrinusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GambrinusTests.m; sourceTree = "<group>"; };
 		EA0986C71B1E4082006FEC11 /* Gambrinus-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gambrinus-Bridging-Header.h"; sourceTree = "<group>"; };
 		EA0986CC1B1E40C6006FEC11 /* SlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuController.swift; sourceTree = "<group>"; };
+		EA0986D11B1E4356006FEC11 /* SideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideMenuViewController.h; sourceTree = "<group>"; };
+		EA0986D21B1E4356006FEC11 /* SideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideMenuViewController.m; sourceTree = "<group>"; };
+		EA0986D31B1E4356006FEC11 /* SideMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuViewController.xib; sourceTree = "<group>"; };
+		EA0986D61B1E4767006FEC11 /* KioskSlideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KioskSlideMenuViewController.swift; sourceTree = "<group>"; };
 		EA15CB0A194EDCEB00A140B5 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		EA15CB0B194EDCEB00A140B5 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		EA15CB0D194EDE4900A140B5 /* BlogPostsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogPostsViewController.h; sourceTree = "<group>"; };
@@ -253,6 +260,7 @@
 				BA665BA7D5ECAA081827FF24 /* mapping.json */,
 			);
 			sourceTree = "<group>";
+			wrapsLines = 0;
 		};
 		EA0668C1192A45C4009C83F1 /* Products */ = {
 			isa = PBXGroup;
@@ -393,6 +401,7 @@
 				EA15CB0E194EDE4900A140B5 /* BlogPostsViewController.m */,
 				EADDA401192A51E5000CCEA9 /* KioskPostsViewController.h */,
 				EADDA402192A51E5000CCEA9 /* KioskPostsViewController.m */,
+				EA0986D61B1E4767006FEC11 /* KioskSlideMenuViewController.swift */,
 				EA15CB0A194EDCEB00A140B5 /* MainViewController.h */,
 				EA15CB0B194EDCEB00A140B5 /* MainViewController.m */,
 				EA15CB12194EDE8800A140B5 /* MarkedPostsViewController.h */,
@@ -409,6 +418,9 @@
 				EAA3E6E71930BBB500812B6F /* PoweredByViewController.h */,
 				EAA3E6E81930BBB500812B6F /* PoweredByViewController.m */,
 				EAA3E6E91930BBB500812B6F /* PoweredByViewController.xib */,
+				EA0986D11B1E4356006FEC11 /* SideMenuViewController.h */,
+				EA0986D21B1E4356006FEC11 /* SideMenuViewController.m */,
+				EA0986D31B1E4356006FEC11 /* SideMenuViewController.xib */,
 				EA925E2419517062001E0AC9 /* StandardPostsListController.h */,
 				EA925E2519517062001E0AC9 /* StandardPostsListController.m */,
 			);
@@ -612,6 +624,7 @@
 				EA925DF519502952001E0AC9 /* PostsViewController.xib in Resources */,
 				EA43D7C8198B6A08000B5AF5 /* InfoPlist.strings in Resources */,
 				EA666BCB19822C4E00F72C0F /* PostImageController.xib in Resources */,
+				EA0986D51B1E4356006FEC11 /* SideMenuViewController.xib in Resources */,
 				EA011AD81937B9A600232E92 /* Gambrinus.sqlite in Resources */,
 				EA0668D6192A45C4009C83F1 /* Images.xcassets in Resources */,
 				EADF7E7C192BDC7F00EC13AB /* PostViewController.xib in Resources */,
@@ -718,6 +731,7 @@
 				EA15CB0C194EDCEB00A140B5 /* MainViewController.m in Sources */,
 				EAC9A7DE194476CC006AC834 /* _PullStatus.m in Sources */,
 				EADF7E7B192BDC7F00EC13AB /* PostViewController.m in Sources */,
+				EA0986D71B1E4767006FEC11 /* KioskSlideMenuViewController.swift in Sources */,
 				EA0668D4192A45C4009C83F1 /* AppDelegate.m in Sources */,
 				EADDA409192A52F9000CCEA9 /* BlogPostsRefresh.m in Sources */,
 				EADDA404192A51E5000CCEA9 /* KioskPostsViewController.m in Sources */,
@@ -744,6 +758,7 @@
 				EAA3E6EE1930CC5C00812B6F /* BloggerAPIConnection.m in Sources */,
 				EA0119E11931D2D400232E92 /* _Blog.m in Sources */,
 				EA011B24193B467300232E92 /* BlogPostView.m in Sources */,
+				EA0986D41B1E4356006FEC11 /* SideMenuViewController.m in Sources */,
 				EA0668D0192A45C4009C83F1 /* main.m in Sources */,
 				EAC9A7D519446A91006AC834 /* ObjectModel+Images.m in Sources */,
 				EA0119EA1931E04F00232E92 /* NSDate+BloggerDate.m in Sources */,

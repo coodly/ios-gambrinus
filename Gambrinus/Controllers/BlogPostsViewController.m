@@ -34,13 +34,6 @@
     return self;
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-
-    UIBarButtonItem *editButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"posts.controller.edit.button", nil) style:UIBarButtonItemStylePlain target:self action:@selector(editPressed)];
-    [self setEditButton:editButton];
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -50,7 +43,6 @@
     [super viewWillAppear:animated];
 
     [self.navigationItem setTitle:NSLocalizedString(@"posts.controller.title", nil)];
-    [self.navigationItem setLeftBarButtonItem:self.editButton];
 }
 
 - (void)editPressed {

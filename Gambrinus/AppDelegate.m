@@ -21,10 +21,11 @@
 #import "BloggerAPIConnection.h"
 #import "BlogImagesRetrieve.h"
 #import "AFNetworkActivityIndicatorManager.h"
-#import "MainViewController.h"
 #import "Secrets.h"
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
+#import "Gambrinus-Swift.h"
+#import "SideMenuViewController.h"
 
 
 @interface AppDelegate ()
@@ -63,11 +64,13 @@
     BloggerAPIConnection *apiConnection = [[BloggerAPIConnection alloc] initWithBlogURLString:@"http://tartugambrinus.blogspot.com/" bloggerKey:GambrinusBloggerAPIKey objectModel:model];
 
     [application setStatusBarStyle:UIStatusBarStyleLightContent];
+
     [[UINavigationBar appearance] setBarTintColor:[UIColor myOrange]];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
 
-    MainViewController *controller = [[MainViewController alloc] init];
+    KioskSlideMenuViewController *controller = [[KioskSlideMenuViewController alloc] initWithMainViewController:[[UINavigationController alloc] init] leftMenuViewController:[[SideMenuViewController alloc] init]];
+    NSLog(@"setting");
     [controller setObjectModel:model];
     [controller setBloggerAPIConnection:apiConnection];
     [controller setImagesRetrieve:imagesRetrieve];
