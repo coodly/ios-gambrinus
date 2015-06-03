@@ -16,12 +16,13 @@
 
 #import <UIKit/UIKit.h>
 #import <JCSFoundation/JCSFetchedCollectionViewController.h>
+#import "KioskController.h"
 
 @class ObjectModel;
 @class BlogImagesRetrieve;
 @class BloggerAPIConnection;
 
-@interface PostsViewController : JCSFetchedCollectionViewController
+@interface PostsViewController : JCSFetchedCollectionViewController <KioskController>
 
 @property (nonatomic, strong) ObjectModel *objectModel;
 @property (nonatomic, strong) BloggerAPIConnection *bloggerAPIConnection;

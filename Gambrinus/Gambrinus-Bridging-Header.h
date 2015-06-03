@@ -11,6 +11,8 @@
 #import "CDYImagesRetrieve.h"
 #import "CDYObjectModel.h"
 
+#import "KioskController.h"
+
 #import "ObjectModel.h"
 
 #import "SideMenuViewController.h"

@@ -34,6 +34,8 @@
 		EA0986D41B1E4356006FEC11 /* SideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0986D21B1E4356006FEC11 /* SideMenuViewController.m */; };
 		EA0986D51B1E4356006FEC11 /* SideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA0986D31B1E4356006FEC11 /* SideMenuViewController.xib */; };
 		EA0986D71B1E4767006FEC11 /* KioskSlideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0986D61B1E4767006FEC11 /* KioskSlideMenuViewController.swift */; };
+		EA0986DB1B1EB174006FEC11 /* MenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0986D91B1EB174006FEC11 /* MenuCell.m */; };
+		EA0986DC1B1EB174006FEC11 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA0986DA1B1EB174006FEC11 /* MenuCell.xib */; };
 		EA15CB0C194EDCEB00A140B5 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA15CB0B194EDCEB00A140B5 /* MainViewController.m */; };
 		EA15CB10194EDE4900A140B5 /* BlogPostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA15CB0E194EDE4900A140B5 /* BlogPostsViewController.m */; };
 		EA15CB15194EDE8800A140B5 /* MarkedPostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA15CB13194EDE8800A140B5 /* MarkedPostsViewController.m */; };
@@ -134,6 +136,10 @@
 		EA0986D21B1E4356006FEC11 /* SideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideMenuViewController.m; sourceTree = "<group>"; };
 		EA0986D31B1E4356006FEC11 /* SideMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuViewController.xib; sourceTree = "<group>"; };
 		EA0986D61B1E4767006FEC11 /* KioskSlideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KioskSlideMenuViewController.swift; sourceTree = "<group>"; };
+		EA0986D81B1EB174006FEC11 /* MenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuCell.h; sourceTree = "<group>"; };
+		EA0986D91B1EB174006FEC11 /* MenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuCell.m; sourceTree = "<group>"; };
+		EA0986DA1B1EB174006FEC11 /* MenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
+		EA0986DD1B1EB581006FEC11 /* KioskController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KioskController.h; sourceTree = "<group>"; };
 		EA15CB0A194EDCEB00A140B5 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		EA15CB0B194EDCEB00A140B5 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		EA15CB0D194EDE4900A140B5 /* BlogPostsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogPostsViewController.h; sourceTree = "<group>"; };
@@ -399,6 +405,7 @@
 			children = (
 				EA15CB0D194EDE4900A140B5 /* BlogPostsViewController.h */,
 				EA15CB0E194EDE4900A140B5 /* BlogPostsViewController.m */,
+				EA0986DD1B1EB581006FEC11 /* KioskController.h */,
 				EADDA401192A51E5000CCEA9 /* KioskPostsViewController.h */,
 				EADDA402192A51E5000CCEA9 /* KioskPostsViewController.m */,
 				EA0986D61B1E4767006FEC11 /* KioskSlideMenuViewController.swift */,
@@ -516,6 +523,9 @@
 		EADF7E6C192BCB2400EC13AB /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				EA0986D81B1EB174006FEC11 /* MenuCell.h */,
+				EA0986D91B1EB174006FEC11 /* MenuCell.m */,
+				EA0986DA1B1EB174006FEC11 /* MenuCell.xib */,
 				EADF7E6D192BCB9100EC13AB /* PostCell.h */,
 				EADF7E6E192BCB9100EC13AB /* PostCell.m */,
 				EADF7E70192BCBB500EC13AB /* PostCell.xib */,
@@ -628,6 +638,7 @@
 				EA011AD81937B9A600232E92 /* Gambrinus.sqlite in Resources */,
 				EA0668D6192A45C4009C83F1 /* Images.xcassets in Resources */,
 				EADF7E7C192BDC7F00EC13AB /* PostViewController.xib in Resources */,
+				EA0986DC1B1EB174006FEC11 /* MenuCell.xib in Resources */,
 				EAC877B9192DDD1600309A23 /* PostsSearchInputView.xib in Resources */,
 				EA6FD0E51B18D74B000DB461 /* LaunchView.xib in Resources */,
 				EA43D7C9198B6A08000B5AF5 /* Localizable.strings in Resources */,
@@ -740,6 +751,7 @@
 				EAC9A7CF19446A03006AC834 /* _Image.m in Sources */,
 				EAC9A7E1194476DA006AC834 /* PullStatus.m in Sources */,
 				EA666BCA19822C4E00F72C0F /* PostImageController.m in Sources */,
+				EA0986DB1B1EB174006FEC11 /* MenuCell.m in Sources */,
 				EA011A3D1936194E00232E92 /* BlogImagesRetrieve.m in Sources */,
 				EADF7E77192BD2DA00EC13AB /* UIColor+Theme.m in Sources */,
 				EAC877AE192DD50700309A23 /* Constants.m in Sources */,

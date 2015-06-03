@@ -35,24 +35,34 @@ class KioskSlideMenuViewController: SlideMenuController {
         containedNavigation = mainViewController as! UINavigationController
         menuController = leftViewController as! SideMenuViewController
 
+        menuController.container = self
+
         let blogPostsController = BlogPostsViewController()
-        blogPostsController.objectModel = objectModel
-        blogPostsController.imagesRetrieve = imagesRetrieve
-        blogPostsController.bloggerAPIConnection = bloggerAPIConnection
         presentRootController(blogPostsController)
     }
 
-    private func presentRootController(controller: UIViewController) {
+    internal func presentRootController(controller: UIViewController) {
+        closeLeft()
         removeLeftGestures()
+
+        if object_getClassName(containedNavigation.viewControllers.first) == object_getClassName(controller) {
+            return
+        }
+
+        if let presented: KioskController = controller as? KioskController {
+            presented.objectModel = objectModel
+            presented.imagesRetrieve = imagesRetrieve
+            presented.bloggerAPIConnection = bloggerAPIConnection
+        }
         controller.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "1099-list-1-toolbar-selected"), style: .Plain, target: self, action: "openMenu")
-        containedNavigation.pushViewController(controller, animated: containedNavigation.viewControllers.count > 0)
+        containedNavigation.setViewControllers([controller], animated: containedNavigation.viewControllers.count > 0)
     }
 
     func openMenu() {
         addLeftGestures()
         openLeft()
     }
-    
+
     override func track(trackAction: TrackAction) {
         if trackAction == .TapClose || trackAction == .FlickClose {
             removeLeftGestures()

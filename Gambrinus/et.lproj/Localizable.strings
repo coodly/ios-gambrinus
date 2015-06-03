@@ -2,6 +2,9 @@
 
 "marked.controller.title" = "Lemmikud";
 
+"menu.controller.option.all.posts" = "Kõik postitused";
+"menu.controller.option.favorites" = "Lemmikud";
+
 "posts.controller.edit.button" = "Peida";
 "posts.controller.edit.done.button" = "Valmis";
 "posts.controller.title" = "Kõik postitused";

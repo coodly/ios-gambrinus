@@ -14,12 +14,44 @@
 * limitations under the License.
 */
 
+#import <JCSFoundation/UIView+JCSLoadView.h>
 #import "SideMenuViewController.h"
+#import "MenuCell.h"
+#import "BlogPostsViewController.h"
+#import "MarkedPostsViewController.h"
+#import "Gambrinus-Swift.h"
+
+NSString *const KioskMenuCellIdentifier = @"KioskMenuCellIdentifier";
 
 @interface SideMenuViewController ()
+
+@property (nonatomic, strong) NSIndexPath *allPost;
+@property (nonatomic, strong) NSIndexPath *favorites;
 
 @end
 
 @implementation SideMenuViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    [self.tableView registerNib:[MenuCell viewNib] forCellReuseIdentifier:KioskMenuCellIdentifier];
+
+    MenuCell *allPostCell = [self.tableView dequeueReusableCellWithIdentifier:KioskMenuCellIdentifier];
+    [allPostCell.textLabel setText:NSLocalizedString(@"menu.controller.option.all.posts", nil)];
+    self.allPost = [self addCellForPresentation:allPostCell];
+
+    MenuCell *favoritesCell = [self.tableView dequeueReusableCellWithIdentifier:KioskMenuCellIdentifier];
+    [favoritesCell.textLabel setText:NSLocalizedString(@"menu.controller.option.favorites", nil)];
+    self.favorites = [self addCellForPresentation:favoritesCell];
+}
+
+- (void)tappedCellAtIndexPath:(NSIndexPath *)indexPath {
+    if ([self.allPost isEqual:indexPath]) {
+        [self.container presentRootController:[[BlogPostsViewController alloc] init]];
+    } else if ([self.favorites isEqual:indexPath]) {
+        [self.container presentRootController:[[MarkedPostsViewController alloc] init]];
+    }
+}
 
 @end
