@@ -68,6 +68,7 @@
     [[UINavigationBar appearance] setBarTintColor:[UIColor myOrange]];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    [[UIRefreshControl appearance] setTintColor:[UIColor myOrange]];
 
     KioskSlideMenuViewController *controller = [[KioskSlideMenuViewController alloc] initWithMainViewController:[[UINavigationController alloc] init] leftMenuViewController:[[SideMenuViewController alloc] init]];
     NSLog(@"setting");
