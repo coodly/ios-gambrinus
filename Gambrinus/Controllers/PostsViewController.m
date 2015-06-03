@@ -65,7 +65,7 @@
     [refreshControl addTarget:self action:@selector(startPullRefresh) forControlEvents:UIControlEventValueChanged];
     [self.collectionView addSubview:refreshControl];
 
-    UIBarButtonItem *search = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"708-search"] style:UIBarButtonItemStyleDone target:self action:@selector(searchTapped)];
+    UIBarButtonItem *search = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"708-search-toolbar"] style:UIBarButtonItemStyleDone target:self action:@selector(searchTapped)];
     [self.navigationItem setRightBarButtonItem:search];
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(contentSizeChanged:) name:UIContentSizeCategoryDidChangeNotification object:nil];
