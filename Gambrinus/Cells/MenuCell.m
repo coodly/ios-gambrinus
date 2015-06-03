@@ -7,11 +7,13 @@
 //
 
 #import "MenuCell.h"
+#import "UIColor+Theme.h"
 
 @implementation MenuCell
 
 - (void)awakeFromNib {
-    // Initialization code
+    [self.contentView setBackgroundColor:[UIColor whiteColor]];
+    [self.textLabel setTextColor:[UIColor myOrange]];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

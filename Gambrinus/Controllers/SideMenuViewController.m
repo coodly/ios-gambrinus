@@ -20,6 +20,7 @@
 #import "BlogPostsViewController.h"
 #import "MarkedPostsViewController.h"
 #import "Gambrinus-Swift.h"
+#import "UIColor+Theme.h"
 
 NSString *const KioskMenuCellIdentifier = @"KioskMenuCellIdentifier";
 
@@ -44,6 +45,9 @@ NSString *const KioskMenuCellIdentifier = @"KioskMenuCellIdentifier";
     MenuCell *favoritesCell = [self.tableView dequeueReusableCellWithIdentifier:KioskMenuCellIdentifier];
     [favoritesCell.textLabel setText:NSLocalizedString(@"menu.controller.option.favorites", nil)];
     self.favorites = [self addCellForPresentation:favoritesCell];
+
+    [self.view setBackgroundColor:[UIColor controllerBackgroundColor]];
+    [self.tableView setSeparatorColor:[UIColor controllerBackgroundColor]];
 }
 
 - (void)tappedCellAtIndexPath:(NSIndexPath *)indexPath {
