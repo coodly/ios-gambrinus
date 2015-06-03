@@ -79,7 +79,7 @@ CGFloat const kPostContentPadding = 20;
     postFrame.size = CGSizeMake(CGRectGetWidth(postFrame) - 2 * kPostContentPadding, CGRectGetHeight(postFrame) - 2 * kPostContentPadding);
     [self.postView setFrame:postFrame];
 
-    [self setStarButton:[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"726-star"] style:UIBarButtonItemStylePlain target:self action:@selector(starPressed)]];
+    [self setStarButton:[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"726-star-toolbar"] style:UIBarButtonItemStylePlain target:self action:@selector(starPressed)]];
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(contentSizeChanged) name:UIContentSizeCategoryDidChangeNotification object:nil];
 }
@@ -149,7 +149,7 @@ CGFloat const kPostContentPadding = 20;
 }
 
 - (void)updateStarStatus:(BOOL)starred {
-    [self.starButton setImage:starred ? [UIImage imageNamed:@"726-star-selected"] : [UIImage imageNamed:@"726-star"]];
+    [self.starButton setImage:starred ? [UIImage imageNamed:@"726-star-toolbar-selected"] : [UIImage imageNamed:@"726-star-toolbar"]];
 }
 
 - (void)presentImage {
