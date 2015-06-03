@@ -48,6 +48,10 @@ NSString *const KioskMenuCellIdentifier = @"KioskMenuCellIdentifier";
 
     [self.view setBackgroundColor:[UIColor controllerBackgroundColor]];
     [self.tableView setSeparatorColor:[UIColor controllerBackgroundColor]];
+
+    UIImageView *poweredBy = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"PoweredBy"]];
+    [poweredBy setContentMode:UIViewContentModeCenter];
+    [self.tableView setTableFooterView:poweredBy];
 }
 
 - (void)tappedCellAtIndexPath:(NSIndexPath *)indexPath {
