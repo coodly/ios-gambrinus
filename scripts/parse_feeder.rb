@@ -41,14 +41,57 @@ class AppConfig
     DateTime.parse(date_string)
   end
 
-  def set_date(date, key)
-    @config[key] = date.xmlschema
+  def string_for_key(key)
+    return '' if @config.length == 0
+
+    @config[key]
+  end
+
+  def set_string(value, key)
+    @config[key] = value
     write
+  end
+
+  def set_date(date, key)
+    set_string(date.xmlschema, key)
   end
 
   def write
     File.open(@file_name,'w') do |h|
       h.write @config.to_yaml
+    end
+  end
+end
+
+class Mappings
+  def initialize(parse)
+    @parse = parse
+    @config = AppConfig.new('mappings')
+  end
+
+  def create_post_to_beer_mappings
+    file = File.read('mapping.json')
+    mappings = JSON.parse(file)
+
+    last_known = @config.string_for_key('last_known_post_id')
+    last_known_seen = last_known.length == 0
+
+    mappings.each do |m|
+      post_id = m['p']
+      last_known_seen = last_known_seen || post_id.eql?(last_known)
+
+      next unless last_known_seen
+
+      post_id = m['p']
+      beer_id = m['id']
+      beer_id = [beer_id] if beer_id.is_a?(Fixnum)
+
+      post_object_id = @parse.object_id_for_post(post_id)['results'][0]['objectId']
+      beer_object_ids = @parse.object_id_for_beers(beer_id)['results'].map { |e| e['objectId']}
+      puts "Create mapping for #{post_id} >> #{beer_id.inspect}"
+      @parse.set_beer_relationships(post_object_id, beer_object_ids)
+
+      @config.set_string(post_id, 'last_known_post_id')
     end
   end
 end
@@ -73,6 +116,8 @@ class BeersServer
       json = response.body
 
       puts "#{json.length} updates"
+
+      break if json.length == 0
 
       ids =  json.map { |d| d['id']}
       existing_data = @parse.check_existing_beers(ids)['results']
@@ -211,6 +256,29 @@ class Parse
     response = Unirest.get "https://api.parse.com/1/classes/Post?keys=identifier&#{escaped}", headers:{'X-Parse-Application-Id' => @app_id, 'X-Parse-REST-API-Key' => @rest_key, 'Content-Type' => 'application/json'}
     response.body
   end
+
+  def object_id_for_post(post_id)
+    params = "where={\"identifier\":\"#{post_id}\"}"
+    escaped = CGI.escape(params)
+    response = Unirest.get "https://api.parse.com/1/classes/Post?keys=objectId&#{escaped}", headers:{'X-Parse-Application-Id' => @app_id, 'X-Parse-REST-API-Key' => @rest_key, 'Content-Type' => 'application/json'}
+    response.body
+  end
+
+  def object_id_for_beers(beer_ids)
+    params = "where={\"identifier\":{\"$in\":[#{beer_ids.join(',')}]}}"
+    escaped = CGI.escape(params)
+    check_url = "https://api.parse.com/1/classes/Beer?keys=objectId&#{escaped}"
+    response = Unirest.get check_url, headers:{'X-Parse-Application-Id' => @app_id, 'X-Parse-REST-API-Key' => @rest_key, 'Content-Type' => 'application/json'}
+    response.body
+  end
+
+  def set_beer_relationships(post_object_id, beer_object_ids)
+    url = "https://api.parse.com/1/classes/Post/#{post_object_id}"
+    data = {}
+    data['beers'] = beer_object_ids
+    response = Unirest.put url, headers:{'X-Parse-Application-Id' => @app_id, 'X-Parse-REST-API-Key' => @rest_key, 'Content-Type' => 'application/json'}, parameters:JSON.generate(data)
+    exit(1) unless response.code == 200
+  end
 end
 
 class ParseFeeder
@@ -218,6 +286,7 @@ class ParseFeeder
     @blogger = Blogger.new(blogger_key)
     @parse = Parse.new(parse_app_id, parse_rest_key)
     @beers = BeersServer.new(beers_app_token, @parse)
+    @mappings = Mappings.new(@parse)
   end
 
   def execute
@@ -245,6 +314,8 @@ class ParseFeeder
         @parse.save_post(post)
       end
     end while @blogger.has_more_pages? && !did_see_existing
+
+    @mappings.create_post_to_beer_mappings
   end
 end
 
