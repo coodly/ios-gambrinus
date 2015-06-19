@@ -46,6 +46,9 @@
 		EA43D7C7198B6A08000B5AF5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA43D7BF198B6A08000B5AF5 /* Localizable.strings */; };
 		EA43D7C8198B6A08000B5AF5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA43D7C2198B6A08000B5AF5 /* InfoPlist.strings */; };
 		EA43D7C9198B6A08000B5AF5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA43D7C4198B6A08000B5AF5 /* Localizable.strings */; };
+		EA50FC731B34A09D0000F304 /* ParseService.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FC721B34A09D0000F304 /* ParseService.m */; };
+		EA50FC761B34A16F0000F304 /* ParsePost.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FC751B34A16F0000F304 /* ParsePost.m */; };
+		EA50FC791B34A1780000F304 /* ParseBeer.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FC781B34A1780000F304 /* ParseBeer.m */; };
 		EA666BCA19822C4E00F72C0F /* PostImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA666BC819822C4E00F72C0F /* PostImageController.m */; };
 		EA666BCB19822C4E00F72C0F /* PostImageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA666BC919822C4E00F72C0F /* PostImageController.xib */; };
 		EA6FD0E51B18D74B000DB461 /* LaunchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA6FD0E41B18D74B000DB461 /* LaunchView.xib */; };
@@ -154,6 +157,12 @@
 		EA43D7C0198B6A08000B5AF5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
 		EA43D7C3198B6A08000B5AF5 /* et */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = et; path = InfoPlist.strings; sourceTree = "<group>"; };
 		EA43D7C5198B6A08000B5AF5 /* et */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = et; path = Localizable.strings; sourceTree = "<group>"; };
+		EA50FC711B34A09D0000F304 /* ParseService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseService.h; sourceTree = "<group>"; };
+		EA50FC721B34A09D0000F304 /* ParseService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseService.m; sourceTree = "<group>"; };
+		EA50FC741B34A16F0000F304 /* ParsePost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParsePost.h; sourceTree = "<group>"; };
+		EA50FC751B34A16F0000F304 /* ParsePost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParsePost.m; sourceTree = "<group>"; };
+		EA50FC771B34A1780000F304 /* ParseBeer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseBeer.h; sourceTree = "<group>"; };
+		EA50FC781B34A1780000F304 /* ParseBeer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseBeer.m; sourceTree = "<group>"; };
 		EA666BC719822C4E00F72C0F /* PostImageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostImageController.h; sourceTree = "<group>"; };
 		EA666BC819822C4E00F72C0F /* PostImageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostImageController.m; sourceTree = "<group>"; };
 		EA666BC919822C4E00F72C0F /* PostImageController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostImageController.xib; sourceTree = "<group>"; };
@@ -385,6 +394,12 @@
 		EA50FC701B349E330000F304 /* Parse */ = {
 			isa = PBXGroup;
 			children = (
+				EA50FC771B34A1780000F304 /* ParseBeer.h */,
+				EA50FC781B34A1780000F304 /* ParseBeer.m */,
+				EA50FC741B34A16F0000F304 /* ParsePost.h */,
+				EA50FC751B34A16F0000F304 /* ParsePost.m */,
+				EA50FC711B34A09D0000F304 /* ParseService.h */,
+				EA50FC721B34A09D0000F304 /* ParseService.m */,
 			);
 			path = Parse;
 			sourceTree = "<group>";
@@ -752,6 +767,7 @@
 				EADF7E7B192BDC7F00EC13AB /* PostViewController.m in Sources */,
 				EA0986D71B1E4767006FEC11 /* KioskSlideMenuViewController.swift in Sources */,
 				EA0668D4192A45C4009C83F1 /* AppDelegate.m in Sources */,
+				EA50FC731B34A09D0000F304 /* ParseService.m in Sources */,
 				EADDA409192A52F9000CCEA9 /* BlogPostsRefresh.m in Sources */,
 				EADDA404192A51E5000CCEA9 /* KioskPostsViewController.m in Sources */,
 				EAC877BF192E224600309A23 /* NSDate+Calculations.m in Sources */,
@@ -762,6 +778,7 @@
 				EA0986DB1B1EB174006FEC11 /* MenuCell.m in Sources */,
 				EA011A3D1936194E00232E92 /* BlogImagesRetrieve.m in Sources */,
 				EADF7E77192BD2DA00EC13AB /* UIColor+Theme.m in Sources */,
+				EA50FC761B34A16F0000F304 /* ParsePost.m in Sources */,
 				EAC877AE192DD50700309A23 /* Constants.m in Sources */,
 				EADDA413192B88B1000CCEA9 /* ObjectModel.m in Sources */,
 				EADF7E6B192BC5DC00EC13AB /* NSString+Cleanup.m in Sources */,
@@ -774,6 +791,7 @@
 				EA011A401936195F00232E92 /* BlogImageAsk.m in Sources */,
 				EAA3E6EA1930BBB500812B6F /* PoweredByViewController.m in Sources */,
 				EA15CB10194EDE4900A140B5 /* BlogPostsViewController.m in Sources */,
+				EA50FC791B34A1780000F304 /* ParseBeer.m in Sources */,
 				EA0119E41931D2DD00232E92 /* Blog.m in Sources */,
 				EAA3E6EE1930CC5C00812B6F /* BloggerAPIConnection.m in Sources */,
 				EA0119E11931D2D400232E92 /* _Blog.m in Sources */,

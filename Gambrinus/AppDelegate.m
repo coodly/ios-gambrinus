@@ -27,6 +27,7 @@
 #import "Gambrinus-Swift.h"
 #import "SideMenuViewController.h"
 #import "Parse.h"
+#import "ParseService.h"
 
 
 @interface AppDelegate ()
@@ -41,6 +42,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
     [Parse setApplicationId:GambrinusParseApplicationId clientKey:GambrinusParseClientKey];
+    [ParseService registerCustomClasses];
 
     [Fabric with:@[CrashlyticsKit]];
 
@@ -50,6 +52,9 @@
 
     ObjectModel *model = [[ObjectModel alloc] init];
     [self setObjectModel:model];
+
+    ParseService *parse = [[ParseService alloc] init];
+    [parse fetchChangesSinceDate:[NSDate distantPast]];
 
     CDYLog(@"DB path:%@", [model storeURL]);
 
