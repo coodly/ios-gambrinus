@@ -1,5 +1,8 @@
+.beersapp.yml
 .idea
+.mappings.yml
 project.xcworkspace
 xcuserdata
 xcshareddata
 Gambrinus/Secrets.m
+scripts/bang

@@ -11,3 +11,4 @@ pod 'JCSFoundation/CoreData', :git => 'https://github.com/jaanussiim/JCSFoundati
 pod 'CDYImagesRetrieve', :git => 'https://github.com/coodly/CDYImagesRetrieve.git'
 #pod 'CDYImageScale', :path => '../CDYImageScale'
 pod 'CDYImageScale', :git => 'https://github.com/coodly/CDYImageScale.git'
+pod 'Parse', '~> 1.7.4'

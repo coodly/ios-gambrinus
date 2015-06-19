@@ -26,6 +26,7 @@
 #import <Crashlytics/Crashlytics.h>
 #import "Gambrinus-Swift.h"
 #import "SideMenuViewController.h"
+#import "Parse.h"
 
 
 @interface AppDelegate ()
@@ -38,6 +39,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+
+    [Parse setApplicationId:GambrinusParseApplicationId clientKey:GambrinusParseClientKey];
 
     [Fabric with:@[CrashlyticsKit]];
 

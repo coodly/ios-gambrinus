@@ -20,6 +20,7 @@ PODS:
   - AFNetworking/UIKit (2.5.4):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - Bolts/Tasks (1.2.0)
   - CDYImageScale (0.1.0):
     - CDYImageScale/Core (= 0.1.0)
   - CDYImageScale/Core (0.1.0)
@@ -64,6 +65,8 @@ PODS:
   - MRProgress/Stopable (0.8.2):
     - MRProgress/Helper
   - Ono (1.2.2)
+  - Parse (1.7.4):
+    - Bolts/Tasks (>= 1.1.5)
 
 DEPENDENCIES:
   - AFNetworking
@@ -74,6 +77,7 @@ DEPENDENCIES:
   - JCSFoundation/UserInput (from `https://github.com/jaanussiim/JCSFoundation.git`)
   - MRProgress
   - Ono
+  - Parse (~> 1.7.4)
 
 EXTERNAL SOURCES:
   CDYImageScale:
@@ -101,11 +105,13 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
+  Bolts: d176cb1e0012175589e389a9db49b85e27787576
   CDYImageScale: 38273882da26bca58d143ae97db74788a0451011
   CDYImagesRetrieve: bf12c13b064cfa14b744ed006f075e710bc059fd
   CDYObjectModel: 22a37c4a1d22b067965668711d69f92fa1a144c7
   JCSFoundation: 2f986cfd674d8c2d06db8f6a236b97f01c136e9d
   MRProgress: f4cfe862082418e8f542f077772283f425d6c699
   Ono: 80b1c686777d3f6d5d5ce6fcac8a74afef4ca197
+  Parse: 6ca512c6e860b66739c95151b2f76ac4712b7842
 
 COCOAPODS: 0.37.1

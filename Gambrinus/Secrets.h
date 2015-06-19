@@ -15,3 +15,7 @@
 */
 
 extern NSString *const GambrinusBloggerAPIKey;
+
+extern NSString *const GambrinusParseApplicationId;
+extern NSString *const GambrinusParseClientKey;
+extern NSString *const GambrinusParseRestAPIKey;
