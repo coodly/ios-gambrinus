@@ -1,5 +1,7 @@
 platform :ios, '7.0'
 
+inhibit_all_warnings!
+
 pod 'Ono'
 pod 'CDYObjectModel', :git => 'https://github.com/coodly/CDYObjectModel.git'
 pod 'AFNetworking'

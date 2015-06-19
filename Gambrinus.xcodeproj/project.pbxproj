@@ -301,6 +301,7 @@
 				EAC877CC192E405700309A23 /* Images */,
 				EADDA406192A527F000CCEA9 /* Network */,
 				EADDA410192B88A1000CCEA9 /* ObjectModel */,
+				EA50FC701B349E330000F304 /* Parse */,
 				EA0668CA192A45C4009C83F1 /* Supporting Files */,
 				EADF7E74192BD2C000EC13AB /* Theme */,
 				EADF7E63192B8DE500EC13AB /* Views */,
@@ -379,6 +380,13 @@
 				EA43D7C4198B6A08000B5AF5 /* Localizable.strings */,
 			);
 			path = et.lproj;
+			sourceTree = "<group>";
+		};
+		EA50FC701B349E330000F304 /* Parse */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Parse;
 			sourceTree = "<group>";
 		};
 		EAC877C9192E33C400309A23 /* Data */ = {
