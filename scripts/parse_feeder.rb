@@ -78,11 +78,11 @@ class BeersServer
       existing_data = @parse.check_existing_beers(ids)['results']
       existing_ids = existing_data.map { |e| e['identifier']}
 
-      puts "Existing beers #{existing_ids}"
+      puts "Existing beers #{existing_ids.count}"
 
       json.each do |d|
         if d['rate_beer'].nil?
-          puts "No RB info"
+          puts "No RB info #{d.inspect}"
           next
         end
 
@@ -177,6 +177,7 @@ class Parse
     data['rbidentifier'] = beer['rate_beer']['identifier']
     data['brewer'] = beer['rate_beer']['brewer']['name']
     data['style'] = beer['rate_beer']['style']['name']
+    data['aliased'] = beer['rate_beer']['aliased']
     url = 'https://api.parse.com/1/classes/Beer'
     if object_id.length > 0
       url = "#{url}/#{object_id}"
@@ -233,7 +234,6 @@ class ParseFeeder
 
       ids =  data.map { |d| d['id']}
       existing = @parse.check_existing_posts(ids)['results'].map { |e| e['identifier']}
-      puts existing.inspect
 
       data.each do |post|
         if existing.include?(post['id'])
