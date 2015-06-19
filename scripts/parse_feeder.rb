@@ -223,7 +223,8 @@ class ParseFeeder
     puts 'Execute feeder'
 
     @beers.retrieve_updates
-    return
+
+    did_see_existing = false
 
     begin
       sleep(1)
@@ -236,13 +237,14 @@ class ParseFeeder
 
       data.each do |post|
         if existing.include?(post['id'])
+          did_see_existing = true
           puts "Skip posting of #{post['title']}"
           next
         end
 
         @parse.save_post(post)
       end
-    end while @blogger.has_more_pages?
+    end while @blogger.has_more_pages? && !did_see_existing
   end
 end
 
