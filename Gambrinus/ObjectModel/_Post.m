@@ -14,6 +14,7 @@ const struct PostAttributes PostAttributes = {
 };
 
 const struct PostRelationships PostRelationships = {
+	.beers = @"beers",
 	.blog = @"blog",
 	.image = @"image",
 };
@@ -107,6 +108,17 @@ const struct PostRelationships PostRelationships = {
 }
 
 @dynamic title;
+
+@dynamic beers;
+
+- (NSMutableSet*)beersSet {
+	[self willAccessValueForKey:@"beers"];
+
+	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"beers"];
+
+	[self didAccessValueForKey:@"beers"];
+	return result;
+}
 
 @dynamic blog;
 

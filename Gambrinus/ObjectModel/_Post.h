@@ -14,10 +14,12 @@ extern const struct PostAttributes {
 } PostAttributes;
 
 extern const struct PostRelationships {
+	__unsafe_unretained NSString *beers;
 	__unsafe_unretained NSString *blog;
 	__unsafe_unretained NSString *image;
 } PostRelationships;
 
+@class Beer;
 @class Blog;
 @class Image;
 
@@ -66,6 +68,10 @@ extern const struct PostRelationships {
 
 //- (BOOL)validateTitle:(id*)value_ error:(NSError**)error_;
 
+@property (nonatomic, strong) NSSet *beers;
+
+- (NSMutableSet*)beersSet;
+
 @property (nonatomic, strong) Blog *blog;
 
 //- (BOOL)validateBlog:(id*)value_ error:(NSError**)error_;
@@ -73,6 +79,14 @@ extern const struct PostRelationships {
 @property (nonatomic, strong) Image *image;
 
 //- (BOOL)validateImage:(id*)value_ error:(NSError**)error_;
+
+@end
+
+@interface _Post (BeersCoreDataGeneratedAccessors)
+- (void)addBeers:(NSSet*)value_;
+- (void)removeBeers:(NSSet*)value_;
+- (void)addBeersObject:(Beer*)value_;
+- (void)removeBeersObject:(Beer*)value_;
 
 @end
 
@@ -104,6 +118,9 @@ extern const struct PostRelationships {
 
 - (NSString*)primitiveTitle;
 - (void)setPrimitiveTitle:(NSString*)value;
+
+- (NSMutableSet*)primitiveBeers;
+- (void)setPrimitiveBeers:(NSMutableSet*)value;
 
 - (Blog*)primitiveBlog;
 - (void)setPrimitiveBlog:(Blog*)value;

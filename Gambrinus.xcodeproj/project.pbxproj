@@ -49,6 +49,12 @@
 		EA50FC731B34A09D0000F304 /* ParseService.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FC721B34A09D0000F304 /* ParseService.m */; };
 		EA50FC761B34A16F0000F304 /* ParsePost.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FC751B34A16F0000F304 /* ParsePost.m */; };
 		EA50FC791B34A1780000F304 /* ParseBeer.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FC781B34A1780000F304 /* ParseBeer.m */; };
+		EA50FC811B34A8110000F304 /* _Beer.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FC7C1B34A8110000F304 /* _Beer.m */; };
+		EA50FC821B34A8110000F304 /* _Brewer.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FC7E1B34A8110000F304 /* _Brewer.m */; };
+		EA50FC831B34A8110000F304 /* _Style.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FC801B34A8110000F304 /* _Style.m */; };
+		EA50FC8A1B34A8200000F304 /* Beer.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FC851B34A8200000F304 /* Beer.m */; };
+		EA50FC8B1B34A8200000F304 /* Brewer.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FC871B34A8200000F304 /* Brewer.m */; };
+		EA50FC8C1B34A8200000F304 /* Style.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FC891B34A8200000F304 /* Style.m */; };
 		EA666BCA19822C4E00F72C0F /* PostImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA666BC819822C4E00F72C0F /* PostImageController.m */; };
 		EA666BCB19822C4E00F72C0F /* PostImageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA666BC919822C4E00F72C0F /* PostImageController.xib */; };
 		EA6FD0E51B18D74B000DB461 /* LaunchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA6FD0E41B18D74B000DB461 /* LaunchView.xib */; };
@@ -164,6 +170,18 @@
 		EA50FC771B34A1780000F304 /* ParseBeer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseBeer.h; sourceTree = "<group>"; };
 		EA50FC781B34A1780000F304 /* ParseBeer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseBeer.m; sourceTree = "<group>"; };
 		EA50FC7A1B34A5EE0000F304 /* Gambrinus_2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Gambrinus_2.xcdatamodel; sourceTree = "<group>"; };
+		EA50FC7B1B34A8110000F304 /* _Beer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Beer.h; sourceTree = "<group>"; };
+		EA50FC7C1B34A8110000F304 /* _Beer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Beer.m; sourceTree = "<group>"; };
+		EA50FC7D1B34A8110000F304 /* _Brewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Brewer.h; sourceTree = "<group>"; };
+		EA50FC7E1B34A8110000F304 /* _Brewer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Brewer.m; sourceTree = "<group>"; };
+		EA50FC7F1B34A8110000F304 /* _Style.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Style.h; sourceTree = "<group>"; };
+		EA50FC801B34A8110000F304 /* _Style.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Style.m; sourceTree = "<group>"; };
+		EA50FC841B34A8200000F304 /* Beer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Beer.h; sourceTree = "<group>"; };
+		EA50FC851B34A8200000F304 /* Beer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Beer.m; sourceTree = "<group>"; };
+		EA50FC861B34A8200000F304 /* Brewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Brewer.h; sourceTree = "<group>"; };
+		EA50FC871B34A8200000F304 /* Brewer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Brewer.m; sourceTree = "<group>"; };
+		EA50FC881B34A8200000F304 /* Style.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Style.h; sourceTree = "<group>"; };
+		EA50FC891B34A8200000F304 /* Style.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Style.m; sourceTree = "<group>"; };
 		EA666BC719822C4E00F72C0F /* PostImageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostImageController.h; sourceTree = "<group>"; };
 		EA666BC819822C4E00F72C0F /* PostImageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostImageController.m; sourceTree = "<group>"; };
 		EA666BC919822C4E00F72C0F /* PostImageController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostImageController.xib; sourceTree = "<group>"; };
@@ -473,11 +491,17 @@
 			isa = PBXGroup;
 			children = (
 				EADDA418192B8ABF000CCEA9 /* _ */,
+				EA50FC841B34A8200000F304 /* Beer.h */,
+				EA50FC851B34A8200000F304 /* Beer.m */,
 				EA0119E21931D2DD00232E92 /* Blog.h */,
 				EA0119E31931D2DD00232E92 /* Blog.m */,
+				EA50FC861B34A8200000F304 /* Brewer.h */,
+				EA50FC871B34A8200000F304 /* Brewer.m */,
 				EADDA414192B88C6000CCEA9 /* Gambrinus.xcdatamodeld */,
 				EAC9A7D019446A10006AC834 /* Image.h */,
 				EAC9A7D119446A10006AC834 /* Image.m */,
+				EADDA411192B88B1000CCEA9 /* ObjectModel.h */,
+				EADDA412192B88B1000CCEA9 /* ObjectModel.m */,
 				EA0119E51931D45400232E92 /* ObjectModel+Blogs.h */,
 				EA0119E61931D45400232E92 /* ObjectModel+Blogs.m */,
 				EAC9A7D319446A91006AC834 /* ObjectModel+Images.h */,
@@ -486,14 +510,14 @@
 				EADDA420192B8ADF000CCEA9 /* ObjectModel+Posts.m */,
 				EAC877C6192E26D200309A23 /* ObjectModel+Settings.h */,
 				EAC877C7192E26D200309A23 /* ObjectModel+Settings.m */,
-				EADDA411192B88B1000CCEA9 /* ObjectModel.h */,
-				EADDA412192B88B1000CCEA9 /* ObjectModel.m */,
 				EADDA41C192B8ACE000CCEA9 /* Post.h */,
 				EADDA41D192B8ACE000CCEA9 /* Post.m */,
 				EAC9A7DF194476DA006AC834 /* PullStatus.h */,
 				EAC9A7E0194476DA006AC834 /* PullStatus.m */,
 				EAC877C3192E26C800309A23 /* Setting.h */,
 				EAC877C4192E26C800309A23 /* Setting.m */,
+				EA50FC881B34A8200000F304 /* Style.h */,
+				EA50FC891B34A8200000F304 /* Style.m */,
 			);
 			path = ObjectModel;
 			sourceTree = "<group>";
@@ -501,8 +525,12 @@
 		EADDA418192B8ABF000CCEA9 /* _ */ = {
 			isa = PBXGroup;
 			children = (
+				EA50FC7B1B34A8110000F304 /* _Beer.h */,
+				EA50FC7C1B34A8110000F304 /* _Beer.m */,
 				EA0119DF1931D2D400232E92 /* _Blog.h */,
 				EA0119E01931D2D400232E92 /* _Blog.m */,
+				EA50FC7D1B34A8110000F304 /* _Brewer.h */,
+				EA50FC7E1B34A8110000F304 /* _Brewer.m */,
 				EAC9A7CD19446A03006AC834 /* _Image.h */,
 				EAC9A7CE19446A03006AC834 /* _Image.m */,
 				EADDA419192B8AC8000CCEA9 /* _Post.h */,
@@ -511,6 +539,8 @@
 				EAC9A7DD194476CC006AC834 /* _PullStatus.m */,
 				EAC877C0192E26BE00309A23 /* _Setting.h */,
 				EAC877C1192E26BE00309A23 /* _Setting.m */,
+				EA50FC7F1B34A8110000F304 /* _Style.h */,
+				EA50FC801B34A8110000F304 /* _Style.m */,
 			);
 			name = _;
 			sourceTree = "<group>";
@@ -767,11 +797,14 @@
 				EAC9A7DE194476CC006AC834 /* _PullStatus.m in Sources */,
 				EADF7E7B192BDC7F00EC13AB /* PostViewController.m in Sources */,
 				EA0986D71B1E4767006FEC11 /* KioskSlideMenuViewController.swift in Sources */,
+				EA50FC8B1B34A8200000F304 /* Brewer.m in Sources */,
 				EA0668D4192A45C4009C83F1 /* AppDelegate.m in Sources */,
 				EA50FC731B34A09D0000F304 /* ParseService.m in Sources */,
+				EA50FC831B34A8110000F304 /* _Style.m in Sources */,
 				EADDA409192A52F9000CCEA9 /* BlogPostsRefresh.m in Sources */,
 				EADDA404192A51E5000CCEA9 /* KioskPostsViewController.m in Sources */,
 				EAC877BF192E224600309A23 /* NSDate+Calculations.m in Sources */,
+				EA50FC811B34A8110000F304 /* _Beer.m in Sources */,
 				EA925DF419502952001E0AC9 /* PostsViewController.m in Sources */,
 				EAC9A7CF19446A03006AC834 /* _Image.m in Sources */,
 				EAC9A7E1194476DA006AC834 /* PullStatus.m in Sources */,
@@ -784,6 +817,8 @@
 				EADDA413192B88B1000CCEA9 /* ObjectModel.m in Sources */,
 				EADF7E6B192BC5DC00EC13AB /* NSString+Cleanup.m in Sources */,
 				EADDA41B192B8AC8000CCEA9 /* _Post.m in Sources */,
+				EA50FC821B34A8110000F304 /* _Brewer.m in Sources */,
+				EA50FC8C1B34A8200000F304 /* Style.m in Sources */,
 				EA925E2619517062001E0AC9 /* StandardPostsListController.m in Sources */,
 				EAC877C8192E26D200309A23 /* ObjectModel+Settings.m in Sources */,
 				EAC877C2192E26BE00309A23 /* _Setting.m in Sources */,
@@ -797,6 +832,7 @@
 				EAA3E6EE1930CC5C00812B6F /* BloggerAPIConnection.m in Sources */,
 				EA0119E11931D2D400232E92 /* _Blog.m in Sources */,
 				EA011B24193B467300232E92 /* BlogPostView.m in Sources */,
+				EA50FC8A1B34A8200000F304 /* Beer.m in Sources */,
 				EA0986D41B1E4356006FEC11 /* SideMenuViewController.m in Sources */,
 				EA0668D0192A45C4009C83F1 /* main.m in Sources */,
 				EAC9A7D519446A91006AC834 /* ObjectModel+Images.m in Sources */,

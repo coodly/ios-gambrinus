@@ -1,11 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13D65" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14D136" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Beer" representedClassName="Beer" syncable="YES">
+        <attribute name="alcohol" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="aliased" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="identifier" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rbIdentifier" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rbScore" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="brewer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Brewer" inverseName="beers" inverseEntity="Brewer" syncable="YES"/>
+        <relationship name="posts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Post" inverseName="beers" inverseEntity="Post" syncable="YES"/>
+        <relationship name="style" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Style" inverseName="beers" inverseEntity="Style" syncable="YES"/>
+    </entity>
     <entity name="Blog" representedClassName="Blog" syncable="YES">
         <attribute name="baseURLString" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="blogId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="postsURLString" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="published" optional="YES" attributeType="Date" syncable="YES"/>
         <relationship name="posts" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Post" inverseName="blog" inverseEntity="Post" syncable="YES"/>
+    </entity>
+    <entity name="Brewer" representedClassName="Brewer" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="beers" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Beer" inverseName="brewer" inverseEntity="Beer" syncable="YES"/>
     </entity>
     <entity name="Image" representedClassName="Image" syncable="YES">
         <attribute name="imageURLString" optional="YES" attributeType="String" syncable="YES"/>
@@ -20,6 +35,7 @@
         <attribute name="slug" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="starred" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="beers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Beer" inverseName="posts" inverseEntity="Beer" syncable="YES"/>
         <relationship name="blog" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Blog" inverseName="posts" inverseEntity="Blog" syncable="YES"/>
         <relationship name="image" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Image" inverseName="posts" inverseEntity="Image" syncable="YES"/>
     </entity>
@@ -32,11 +48,18 @@
         <attribute name="key" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="value" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Style" representedClassName="Style" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="beers" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Beer" inverseName="style" inverseEntity="Beer" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="Blog" positionX="-63" positionY="27" width="128" height="118"/>
+        <element name="Blog" positionX="-63" positionY="27" width="128" height="120"/>
         <element name="Image" positionX="-54" positionY="54" width="128" height="88"/>
-        <element name="Post" positionX="-63" positionY="-18" width="128" height="180"/>
+        <element name="Post" positionX="-63" positionY="-18" width="128" height="195"/>
         <element name="PullStatus" positionX="-45" positionY="54" width="128" height="88"/>
         <element name="Setting" positionX="-63" positionY="27" width="128" height="75"/>
+        <element name="Beer" positionX="-27" positionY="72" width="128" height="180"/>
+        <element name="Brewer" positionX="-18" positionY="81" width="128" height="75"/>
+        <element name="Style" positionX="-9" positionY="90" width="128" height="75"/>
     </elements>
 </model>
