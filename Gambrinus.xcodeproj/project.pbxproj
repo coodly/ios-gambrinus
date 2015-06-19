@@ -163,6 +163,7 @@
 		EA50FC751B34A16F0000F304 /* ParsePost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParsePost.m; sourceTree = "<group>"; };
 		EA50FC771B34A1780000F304 /* ParseBeer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseBeer.h; sourceTree = "<group>"; };
 		EA50FC781B34A1780000F304 /* ParseBeer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseBeer.m; sourceTree = "<group>"; };
+		EA50FC7A1B34A5EE0000F304 /* Gambrinus_2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Gambrinus_2.xcdatamodel; sourceTree = "<group>"; };
 		EA666BC719822C4E00F72C0F /* PostImageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostImageController.h; sourceTree = "<group>"; };
 		EA666BC819822C4E00F72C0F /* PostImageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostImageController.m; sourceTree = "<group>"; };
 		EA666BC919822C4E00F72C0F /* PostImageController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostImageController.xib; sourceTree = "<group>"; };
@@ -1078,9 +1079,10 @@
 		EADDA414192B88C6000CCEA9 /* Gambrinus.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				EA50FC7A1B34A5EE0000F304 /* Gambrinus_2.xcdatamodel */,
 				EADDA415192B88C6000CCEA9 /* Gambrinus.xcdatamodel */,
 			);
-			currentVersion = EADDA415192B88C6000CCEA9 /* Gambrinus.xcdatamodel */;
+			currentVersion = EA50FC7A1B34A5EE0000F304 /* Gambrinus_2.xcdatamodel */;
 			path = Gambrinus.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
