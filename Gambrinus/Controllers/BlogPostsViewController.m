@@ -20,8 +20,6 @@
 
 @interface BlogPostsViewController ()
 
-@property (nonatomic, strong) UIBarButtonItem *editButton;
-
 @end
 
 @implementation BlogPostsViewController
@@ -29,7 +27,7 @@
 - (id)init {
     self = [super init];
     if (self) {
-        [self setTabBarItem:[[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"posts.controller.title", nil) image:[UIImage imageNamed:@"957-beer-mug"] selectedImage:[UIImage imageNamed:@"957-beer-mug-selected"]]];
+
     }
     return self;
 }
@@ -43,11 +41,6 @@
     [super viewWillAppear:animated];
 
     [self.navigationItem setTitle:NSLocalizedString(@"posts.controller.title", nil)];
-}
-
-- (void)editPressed {
-    [self setEditingPosts:!self.isEditingPosts];
-    [self.editButton setTitle:self.isEditingPosts ? NSLocalizedString(@"posts.controller.edit.done.button", nil) : NSLocalizedString(@"posts.controller.edit.button", nil)];
 }
 
 - (NSFetchedResultsController *)createFetchedController {

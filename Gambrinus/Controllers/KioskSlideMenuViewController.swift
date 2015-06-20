@@ -18,12 +18,13 @@ import UIKit
 
 class KioskSlideMenuViewController: SlideMenuController {
     private var containedNavigation: UINavigationController!
-    private var menuController: SideMenuViewController!
+    private var menuController: MenuViewController!
     private var shown = false
 
     var objectModel: ObjectModel!
     var imagesRetrieve: BlogImagesRetrieve!
     var contentUpdate: ContentUpdate!
+    var initialViewController: UIViewController!
 
     override func viewWillAppear(animated: Bool) {
         if shown {
@@ -33,12 +34,11 @@ class KioskSlideMenuViewController: SlideMenuController {
         shown = true
 
         containedNavigation = mainViewController as! UINavigationController
-        menuController = leftViewController as! SideMenuViewController
+        menuController = leftViewController as! MenuViewController
 
         menuController.container = self
 
-        let blogPostsController = BlogPostsViewController()
-        presentRootController(blogPostsController)
+        presentRootController(initialViewController)
     }
 
     internal func presentRootController(controller: UIViewController) {
@@ -56,6 +56,7 @@ class KioskSlideMenuViewController: SlideMenuController {
         }
         controller.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "1099-list-1-toolbar-selected"), style: .Plain, target: self, action: "openMenu")
         containedNavigation.setViewControllers([controller], animated: containedNavigation.viewControllers.count > 0)
+        controller.viewWillAppear(true)
     }
 
     func openMenu() {

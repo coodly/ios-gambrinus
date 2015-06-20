@@ -15,6 +15,6 @@
 
 #import "KioskController.h"
 
-#import "ObjectModel.h"
+#import "MenuViewController.h"
 
-#import "SideMenuViewController.h"
+#import "ObjectModel.h"

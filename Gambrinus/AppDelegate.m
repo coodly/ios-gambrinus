@@ -24,12 +24,14 @@
 #import "Secrets.h"
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
-#import "Gambrinus-Swift.h"
+#import <Gambrinus-Swift.h>
 #import "SideMenuViewController.h"
 #import "Parse.h"
 #import "ParseService.h"
 #import "ContentUpdate.h"
 #import "KioskPostsViewController.h"
+#import "BlogPostsViewController.h"
+#import "KioskModeMenuViewController.h"
 
 @interface AppDelegate ()
 
@@ -95,10 +97,10 @@
     [[UIRefreshControl appearance] setTintColor:[UIColor myOrange]];
 
     KioskSlideMenuViewController *controller = [[KioskSlideMenuViewController alloc] initWithMainViewController:[[UINavigationController alloc] init] leftMenuViewController:[[SideMenuViewController alloc] init]];
-    NSLog(@"setting");
     [controller setObjectModel:model];
     [controller setContentUpdate:contentUpdate];
     [controller setImagesRetrieve:imagesRetrieve];
+    [controller setInitialViewController:[[BlogPostsViewController alloc] init]];
 
     [self.window setRootViewController:controller];
     self.window.backgroundColor = [UIColor whiteColor];
@@ -136,13 +138,13 @@
 }
 
 - (void)presentKioskController {
-    KioskPostsViewController *controller = [[KioskPostsViewController alloc] init];
+    KioskSlideMenuViewController *controller = [[KioskSlideMenuViewController alloc] initWithMainViewController:[[UINavigationController alloc] init] leftMenuViewController:[[KioskModeMenuViewController alloc] init]];
     [controller setObjectModel:self.objectModel];
     [controller setContentUpdate:self.contentUpdate];
     [controller setImagesRetrieve:self.imagesRetrieve];
+    [controller setInitialViewController:[[KioskPostsViewController alloc] init]];
 
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
-    [self.window.rootViewController presentViewController:navigationController animated:YES completion:nil];
+    [self.window.rootViewController presentViewController:controller animated:YES completion:nil];
 }
 
 @end

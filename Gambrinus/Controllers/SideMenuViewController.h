@@ -16,11 +16,8 @@
 
 #import <UIKit/UIKit.h>
 #import "JCSInputCellsViewController.h"
+#import "MenuViewController.h"
 
-@class KioskSlideMenuViewController;
-
-@interface SideMenuViewController : JCSInputCellsViewController
-
-@property (nonatomic, weak) KioskSlideMenuViewController *container;
+@interface SideMenuViewController : MenuViewController
 
 @end

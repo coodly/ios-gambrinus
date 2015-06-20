@@ -22,8 +22,6 @@
 #import "Gambrinus-Swift.h"
 #import "UIColor+Theme.h"
 
-NSString *const KioskMenuCellIdentifier = @"KioskMenuCellIdentifier";
-
 @interface SideMenuViewController ()
 
 @property (nonatomic, strong) NSIndexPath *allPost;
@@ -36,8 +34,6 @@ NSString *const KioskMenuCellIdentifier = @"KioskMenuCellIdentifier";
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self.tableView registerNib:[MenuCell viewNib] forCellReuseIdentifier:KioskMenuCellIdentifier];
-
     MenuCell *allPostCell = [self.tableView dequeueReusableCellWithIdentifier:KioskMenuCellIdentifier];
     [allPostCell.textLabel setText:NSLocalizedString(@"menu.controller.option.all.posts", nil)];
     self.allPost = [self addCellForPresentation:allPostCell];
@@ -45,13 +41,6 @@ NSString *const KioskMenuCellIdentifier = @"KioskMenuCellIdentifier";
     MenuCell *favoritesCell = [self.tableView dequeueReusableCellWithIdentifier:KioskMenuCellIdentifier];
     [favoritesCell.textLabel setText:NSLocalizedString(@"menu.controller.option.favorites", nil)];
     self.favorites = [self addCellForPresentation:favoritesCell];
-
-    [self.view setBackgroundColor:[UIColor controllerBackgroundColor]];
-    [self.tableView setSeparatorColor:[UIColor controllerBackgroundColor]];
-
-    UIImageView *poweredBy = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"PoweredBy"]];
-    [poweredBy setContentMode:UIViewContentModeCenter];
-    [self.tableView setTableFooterView:poweredBy];
 }
 
 - (void)tappedCellAtIndexPath:(NSIndexPath *)indexPath {
