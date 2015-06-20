@@ -27,9 +27,9 @@
 #import "BlogImageAsk.h"
 #import "Post.h"
 #import "Image.h"
-#import "PostViewController.h"
 #import "ContentUpdate.h"
 #import "PostsSearchInputView.h"
+#import "PostExtendedDetailsViewController.h"
 
 @interface PostsViewController () <UICollectionViewDelegateFlowLayout>
 
@@ -130,12 +130,19 @@
 }
 
 - (void)tappedOnObject:(id)tapped {
-    PostViewController *controller = [[PostViewController alloc] init];
+    PostExtendedDetailsViewController *controller = [[PostExtendedDetailsViewController alloc] init];
     [controller setPost:tapped];
     [controller setContentUpdate:self.contentUpdate];
     [controller setImagesRetrieve:self.imagesRetrieve];
-    [controller.navigationController setHidesBottomBarWhenPushed:YES];
-    [self.navigationController pushViewController:controller animated:YES];
+    [controller setShowMarked:self.shouldShowMarked];
+    if (IS_PAD) {
+        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
+        [navigationController setModalPresentationStyle:UIModalPresentationFormSheet];
+        [navigationController setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+        [self presentViewController:navigationController animated:YES completion:nil];
+    } else {
+        [self.navigationController pushViewController:controller animated:YES];
+    }
 }
 
 - (void)contentChanged {
@@ -224,14 +231,6 @@
 - (void)contentSizeChanged:(NSNotification *)notification {
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.collectionView reloadData];
-    });
-}
-
-- (void)setEditingPosts:(BOOL)editingPosts {
-    _editingPosts = editingPosts;
-
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self searchTermChanged:self.searchInputView.searchField.text forceUpdate:YES];
     });
 }
 

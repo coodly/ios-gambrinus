@@ -27,7 +27,7 @@
 @property (nonatomic, strong) ObjectModel *objectModel;
 @property (nonatomic, strong) ContentUpdate *contentUpdate;
 @property (nonatomic, strong) BlogImagesRetrieve *imagesRetrieve;
-@property (nonatomic, assign, getter=isEditingPosts) BOOL editingPosts;
+@property (nonatomic, assign) BOOL shouldShowMarked;
 
 - (void)checkImagesNeeded;
 - (void)removeRefreshControl;

@@ -14,8 +14,8 @@
 * limitations under the License.
 */
 
-#import "KioskModeMenuViewController.h"
+#import <UIKit/UIKit.h>
 
-@implementation KioskModeMenuViewController
+@interface PostContentCell : UICollectionViewCell
 
 @end

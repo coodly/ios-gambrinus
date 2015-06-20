@@ -5,6 +5,8 @@
 "menu.controller.option.all.posts" = "All Posts";
 "menu.controller.option.favorites" = "Favorites";
 
+"post.extended.details.back.button.title" = "Back";
+
 "posts.controller.edit.button" = "Edit";
 "posts.controller.edit.done.button" = "Done";
 "posts.controller.title" = "All Posts";

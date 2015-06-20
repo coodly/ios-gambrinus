@@ -14,8 +14,10 @@
 * limitations under the License.
 */
 
-#import "KioskModeMenuViewController.h"
+#import <UIKit/UIKit.h>
 
-@implementation KioskModeMenuViewController
+@interface UIView (Loading)
+
++ (UINib *)viewNib;
 
 @end

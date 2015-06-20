@@ -47,8 +47,4 @@
     return [self.objectModel fetchedControllerForVisiblePostsOrderedByDate];
 }
 
-- (BOOL)showHiddenPosts {
-    return self.isEditingPosts;
-}
-
 @end

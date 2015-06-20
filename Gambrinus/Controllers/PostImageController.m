@@ -36,9 +36,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageTapped)];
-    [self.imageView addGestureRecognizer:recognizer];
-
     [self.imageView setBackgroundColor:[UIColor controllerBackgroundColor]];
 }
 
@@ -51,19 +48,6 @@
     [super viewWillAppear:animated];
 
     [self.imageView setImage:self.image];
-
-    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-
-    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
-}
-
-
-- (void)imageTapped {
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

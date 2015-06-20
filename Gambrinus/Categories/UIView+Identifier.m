@@ -14,8 +14,12 @@
 * limitations under the License.
 */
 
-#import "KioskModeMenuViewController.h"
+#import "UIView+Identifier.h"
 
-@implementation KioskModeMenuViewController
+@implementation UIView (Identifier)
+
++ (NSString *)identifier {
+    return NSStringFromClass([self class]);
+}
 
 @end

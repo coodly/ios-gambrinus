@@ -5,6 +5,8 @@
 "menu.controller.option.all.posts" = "Kõik postitused";
 "menu.controller.option.favorites" = "Lemmikud";
 
+"post.extended.details.back.button.title" = "Tagasi";
+
 "posts.controller.edit.button" = "Peida";
 "posts.controller.edit.done.button" = "Valmis";
 "posts.controller.title" = "Kõik postitused";

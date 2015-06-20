@@ -14,8 +14,17 @@
 * limitations under the License.
 */
 
-#import "KioskModeMenuViewController.h"
+#import <UIKit/UIKit.h>
 
-@implementation KioskModeMenuViewController
+@class Post;
+@class ContentUpdate;
+@class BlogImagesRetrieve;
+
+@interface PostExtendedDetailsViewController : UICollectionViewController
+
+@property (nonatomic, strong) Post *post;
+@property (nonatomic, strong) ContentUpdate *contentUpdate;
+@property (nonatomic, strong) BlogImagesRetrieve *imagesRetrieve;
+@property (nonatomic, assign) BOOL showMarked;
 
 @end

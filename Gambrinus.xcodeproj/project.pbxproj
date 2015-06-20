@@ -63,6 +63,14 @@
 		EA50FCBC1B3592EE0000F304 /* KioskModeMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FCBB1B3592EE0000F304 /* KioskModeMenuViewController.m */; };
 		EA50FCBE1B3593020000F304 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA50FCBD1B3593020000F304 /* MenuViewController.xib */; };
 		EA50FCC11B3593450000F304 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FCC01B3593450000F304 /* MenuViewController.m */; };
+		EA50FCC51B35B8AC0000F304 /* PostImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FCC31B35B8AC0000F304 /* PostImageCell.m */; };
+		EA50FCC61B35B8AC0000F304 /* PostImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA50FCC41B35B8AC0000F304 /* PostImageCell.xib */; };
+		EA50FCCA1B35B8C10000F304 /* PostContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FCC81B35B8C10000F304 /* PostContentCell.m */; };
+		EA50FCCB1B35B8C10000F304 /* PostContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA50FCC91B35B8C10000F304 /* PostContentCell.xib */; };
+		EA50FCCE1B35B9260000F304 /* UIView+Identifier.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FCCD1B35B9260000F304 /* UIView+Identifier.m */; };
+		EA50FCD11B35B9570000F304 /* UIView+Loading.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FCD01B35B9570000F304 /* UIView+Loading.m */; };
+		EA50FCD51B35BAAC0000F304 /* PostExtendedDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FCD31B35BAAC0000F304 /* PostExtendedDetailsViewController.m */; };
+		EA50FCD61B35BAAC0000F304 /* PostExtendedDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA50FCD41B35BAAC0000F304 /* PostExtendedDetailsViewController.xib */; };
 		EA666BCA19822C4E00F72C0F /* PostImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA666BC819822C4E00F72C0F /* PostImageController.m */; };
 		EA666BCB19822C4E00F72C0F /* PostImageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA666BC919822C4E00F72C0F /* PostImageController.xib */; };
 		EA6FD0E51B18D74B000DB461 /* LaunchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA6FD0E41B18D74B000DB461 /* LaunchView.xib */; };
@@ -204,6 +212,19 @@
 		EA50FCBD1B3593020000F304 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
 		EA50FCBF1B3593450000F304 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		EA50FCC01B3593450000F304 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		EA50FCC21B35B8AC0000F304 /* PostImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostImageCell.h; sourceTree = "<group>"; };
+		EA50FCC31B35B8AC0000F304 /* PostImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostImageCell.m; sourceTree = "<group>"; };
+		EA50FCC41B35B8AC0000F304 /* PostImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostImageCell.xib; sourceTree = "<group>"; };
+		EA50FCC71B35B8C10000F304 /* PostContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostContentCell.h; sourceTree = "<group>"; };
+		EA50FCC81B35B8C10000F304 /* PostContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostContentCell.m; sourceTree = "<group>"; };
+		EA50FCC91B35B8C10000F304 /* PostContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostContentCell.xib; sourceTree = "<group>"; };
+		EA50FCCC1B35B9260000F304 /* UIView+Identifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Identifier.h"; sourceTree = "<group>"; };
+		EA50FCCD1B35B9260000F304 /* UIView+Identifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Identifier.m"; sourceTree = "<group>"; };
+		EA50FCCF1B35B9570000F304 /* UIView+Loading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Loading.h"; sourceTree = "<group>"; };
+		EA50FCD01B35B9570000F304 /* UIView+Loading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Loading.m"; sourceTree = "<group>"; };
+		EA50FCD21B35BAAC0000F304 /* PostExtendedDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostExtendedDetailsViewController.h; sourceTree = "<group>"; };
+		EA50FCD31B35BAAC0000F304 /* PostExtendedDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostExtendedDetailsViewController.m; sourceTree = "<group>"; };
+		EA50FCD41B35BAAC0000F304 /* PostExtendedDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostExtendedDetailsViewController.xib; sourceTree = "<group>"; };
 		EA666BC719822C4E00F72C0F /* PostImageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostImageController.h; sourceTree = "<group>"; };
 		EA666BC819822C4E00F72C0F /* PostImageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostImageController.m; sourceTree = "<group>"; };
 		EA666BC919822C4E00F72C0F /* PostImageController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostImageController.xib; sourceTree = "<group>"; };
@@ -493,6 +514,9 @@
 				EA50FCBF1B3593450000F304 /* MenuViewController.h */,
 				EA50FCC01B3593450000F304 /* MenuViewController.m */,
 				EA50FCBD1B3593020000F304 /* MenuViewController.xib */,
+				EA50FCD21B35BAAC0000F304 /* PostExtendedDetailsViewController.h */,
+				EA50FCD31B35BAAC0000F304 /* PostExtendedDetailsViewController.m */,
+				EA50FCD41B35BAAC0000F304 /* PostExtendedDetailsViewController.xib */,
 				EA666BC719822C4E00F72C0F /* PostImageController.h */,
 				EA666BC819822C4E00F72C0F /* PostImageController.m */,
 				EA666BC919822C4E00F72C0F /* PostImageController.xib */,
@@ -614,6 +638,10 @@
 				EAC877BE192E224600309A23 /* NSDate+Calculations.m */,
 				EADF7E69192BC5DC00EC13AB /* NSString+Cleanup.h */,
 				EADF7E6A192BC5DC00EC13AB /* NSString+Cleanup.m */,
+				EA50FCCC1B35B9260000F304 /* UIView+Identifier.h */,
+				EA50FCCD1B35B9260000F304 /* UIView+Identifier.m */,
+				EA50FCCF1B35B9570000F304 /* UIView+Loading.h */,
+				EA50FCD01B35B9570000F304 /* UIView+Loading.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -627,6 +655,12 @@
 				EADF7E6D192BCB9100EC13AB /* PostCell.h */,
 				EADF7E6E192BCB9100EC13AB /* PostCell.m */,
 				EADF7E70192BCBB500EC13AB /* PostCell.xib */,
+				EA50FCC71B35B8C10000F304 /* PostContentCell.h */,
+				EA50FCC81B35B8C10000F304 /* PostContentCell.m */,
+				EA50FCC91B35B8C10000F304 /* PostContentCell.xib */,
+				EA50FCC21B35B8AC0000F304 /* PostImageCell.h */,
+				EA50FCC31B35B8AC0000F304 /* PostImageCell.m */,
+				EA50FCC41B35B8AC0000F304 /* PostImageCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -727,12 +761,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA43D7C7198B6A08000B5AF5 /* Localizable.strings in Resources */,
+				EA50FCCB1B35B8C10000F304 /* PostContentCell.xib in Resources */,
 				EA0668CE192A45C4009C83F1 /* InfoPlist.strings in Resources */,
 				EA43D7C6198B6A08000B5AF5 /* InfoPlist.strings in Resources */,
 				EAA3E6EB1930BBB500812B6F /* PoweredByViewController.xib in Resources */,
+				EA50FCD61B35BAAC0000F304 /* PostExtendedDetailsViewController.xib in Resources */,
 				EADF7E71192BCBB500EC13AB /* PostCell.xib in Resources */,
 				EA925DF519502952001E0AC9 /* PostsViewController.xib in Resources */,
 				EA43D7C8198B6A08000B5AF5 /* InfoPlist.strings in Resources */,
+				EA50FCC61B35B8AC0000F304 /* PostImageCell.xib in Resources */,
 				EA666BCB19822C4E00F72C0F /* PostImageController.xib in Resources */,
 				EA50FCB31B355B920000F304 /* triplex-bold.ttf in Resources */,
 				EA011AD81937B9A600232E92 /* Gambrinus.sqlite in Resources */,
@@ -857,6 +894,7 @@
 				EAC9A7E1194476DA006AC834 /* PullStatus.m in Sources */,
 				EA50FCA11B351BB00000F304 /* ParseBeer.m in Sources */,
 				EA666BCA19822C4E00F72C0F /* PostImageController.m in Sources */,
+				EA50FCD51B35BAAC0000F304 /* PostExtendedDetailsViewController.m in Sources */,
 				EA0986DB1B1EB174006FEC11 /* MenuCell.m in Sources */,
 				EA011A3D1936194E00232E92 /* BlogImagesRetrieve.m in Sources */,
 				EA50FCB01B354D260000F304 /* ObjectModel+Styles.m in Sources */,
@@ -871,8 +909,11 @@
 				EAC877C8192E26D200309A23 /* ObjectModel+Settings.m in Sources */,
 				EAC877C2192E26BE00309A23 /* _Setting.m in Sources */,
 				EA50FC921B351AB70000F304 /* BeerStyle.m in Sources */,
+				EA50FCCA1B35B8C10000F304 /* PostContentCell.m in Sources */,
 				EA0986CD1B1E40C6006FEC11 /* SlideMenuController.swift in Sources */,
 				EADDA416192B88C6000CCEA9 /* Gambrinus.xcdatamodeld in Sources */,
+				EA50FCC51B35B8AC0000F304 /* PostImageCell.m in Sources */,
+				EA50FCCE1B35B9260000F304 /* UIView+Identifier.m in Sources */,
 				EA011A401936195F00232E92 /* BlogImageAsk.m in Sources */,
 				EA50FCB61B355CE60000F304 /* UIFont+Theme.m in Sources */,
 				EAA3E6EA1930BBB500812B6F /* PoweredByViewController.m in Sources */,
@@ -897,6 +938,7 @@
 				EAC877C5192E26C800309A23 /* Setting.m in Sources */,
 				EA15CB15194EDE8800A140B5 /* MarkedPostsViewController.m in Sources */,
 				EADF7E6F192BCB9100EC13AB /* PostCell.m in Sources */,
+				EA50FCD11B35B9570000F304 /* UIView+Loading.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1063,6 +1105,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Gambrinus/Gambrinus-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1087,6 +1130,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Gambrinus/Gambrinus-Bridging-Header.h";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

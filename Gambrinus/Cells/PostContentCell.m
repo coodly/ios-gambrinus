@@ -14,8 +14,12 @@
 * limitations under the License.
 */
 
-#import "KioskModeMenuViewController.h"
+#import "PostContentCell.h"
 
-@implementation KioskModeMenuViewController
+@implementation PostContentCell
+
+- (void)awakeFromNib {
+    // Initialization code
+}
 
 @end

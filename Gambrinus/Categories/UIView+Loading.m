@@ -14,8 +14,13 @@
 * limitations under the License.
 */
 
-#import "KioskModeMenuViewController.h"
+#import "UIView+Loading.h"
 
-@implementation KioskModeMenuViewController
+@implementation UIView (Loading)
+
++ (UINib *)viewNib {
+    NSString *expectedNibName = NSStringFromClass([self class]);
+    return [UINib nibWithNibName:expectedNibName bundle:nil];
+}
 
 @end

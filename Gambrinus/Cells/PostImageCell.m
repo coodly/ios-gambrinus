@@ -14,8 +14,22 @@
 * limitations under the License.
 */
 
-#import "KioskModeMenuViewController.h"
+#import "PostImageCell.h"
+#import "UIColor+Theme.h"
 
-@implementation KioskModeMenuViewController
+@interface PostImageCell ()
+
+@property (nonatomic, strong) IBOutlet UIImageView *imageView;
+
+@end
+
+@implementation PostImageCell
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+
+    [self.imageView setBackgroundColor:[UIColor controllerBackgroundColor]];
+}
+
 
 @end
