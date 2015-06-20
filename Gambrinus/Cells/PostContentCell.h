@@ -18,4 +18,6 @@
 
 @interface PostContentCell : UICollectionViewCell
 
+@property (nonatomic, strong, readonly) UILabel *contentLabel;
+
 @end

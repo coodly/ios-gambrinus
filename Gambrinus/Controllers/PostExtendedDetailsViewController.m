@@ -35,6 +35,7 @@ typedef NS_ENUM(short, DetailRow) {
 @interface PostExtendedDetailsViewController () <UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, strong) NSArray *presentedSections;
+@property (nonatomic, strong) PostContentCell *contentCell;
 
 @end
 
@@ -47,6 +48,10 @@ typedef NS_ENUM(short, DetailRow) {
     }
 
     return self;
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)viewDidLoad {
@@ -67,6 +72,8 @@ typedef NS_ENUM(short, DetailRow) {
     if (IS_PAD) {
         [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"post.extended.details.back.button.title", nil) style:UIBarButtonItemStylePlain target:self action:@selector(close)]];
     }
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(contentSizeChanged) name:UIContentSizeCategoryDidChangeNotification object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -105,7 +112,15 @@ typedef NS_ENUM(short, DetailRow) {
             break;
         }
         case RowContent: {
-            PostContentCell *contentCell = [self.collectionView dequeueReusableCellWithReuseIdentifier:[PostContentCell identifier] forIndexPath:indexPath];
+            PostContentCell *contentCell = self.contentCell;
+            if (!contentCell) {
+                contentCell = [self.collectionView dequeueReusableCellWithReuseIdentifier:[PostContentCell identifier] forIndexPath:indexPath];
+                self.contentCell = contentCell;
+            }
+            CGRect frame = contentCell.frame;
+            frame.size.width = CGRectGetWidth(self.view.frame);
+            [contentCell setFrame:frame];
+            [contentCell.contentLabel setText:self.post.content];
             cell = contentCell;
             break;
         }
@@ -150,10 +165,19 @@ typedef NS_ENUM(short, DetailRow) {
             size = CGSizeMake(CGRectGetWidth(self.view.frame), IS_PAD ? 200 : 150);
             break;
         case RowContent:
-            size = CGSizeMake(CGRectGetWidth(self.view.frame), 300);
+            size = CGSizeMake(CGRectGetWidth(self.view.frame), [self calculateHeightForContent]);
+            [self.contentCell layoutIfNeeded];
             break;
     }
     return size;
+}
+
+- (CGFloat)calculateHeightForContent {
+    CGRect bounds = [self.post.content boundingRectWithSize:CGSizeMake(CGRectGetWidth(self.view.frame) -8 *2, CGFLOAT_MAX)
+                                                    options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
+                                                 attributes:@{NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleBody]}
+                                                    context:nil];
+    return CGRectGetHeight(bounds) + 8 * 2;
 }
 
 - (void)retrievePostImage:(PostImageCell *)cell {
@@ -172,6 +196,12 @@ typedef NS_ENUM(short, DetailRow) {
         CDYLog(@"Retrieve image");
         [self.imagesRetrieve retrieveImageForAsk:ask completion:imageLoadBlock];
     }
+}
+
+- (void)contentSizeChanged {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.collectionView.collectionViewLayout invalidateLayout];
+    });
 }
 
 @end

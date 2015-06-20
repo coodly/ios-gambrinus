@@ -16,10 +16,30 @@
 
 #import "PostContentCell.h"
 
+@interface PostContentCell ()
+
+@property (nonatomic, strong) IBOutlet UILabel *contentLabel;
+
+@end
+
 @implementation PostContentCell
 
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)awakeFromNib {
-    // Initialization code
+    [super awakeFromNib];
+
+    [self setBackgroundColor:[UIColor whiteColor]];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(adjustContentFont:) name:UIContentSizeCategoryDidChangeNotification object:nil];
+    [self adjustContentFont:nil];
+}
+
+- (void)adjustContentFont:(NSNotification *)notification {
+    [self.contentLabel setFont:[UIFont preferredFontForTextStyle:UIFontTextStyleBody]];
+    [self layoutIfNeeded];
 }
 
 @end
