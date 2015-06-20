@@ -20,5 +20,8 @@
 
 + (UIColor *)myOrange;
 + (UIColor *)controllerBackgroundColor;
++ (UIColor *)rateBeerYellow;
++ (UIColor *)rateBeerWhite;
++ (UIColor *)rateBeerBlue;
 
 @end

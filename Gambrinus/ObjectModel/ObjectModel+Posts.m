@@ -93,7 +93,7 @@
 - (NSFetchedResultsController *)fetchedControllerForVisiblePostsOrderedByDate {
     NSPredicate *notHiddenPredicate = [self postsPredicateForOptions:KioskNoOptions];
     NSSortDescriptor *hiddenDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"hidden" ascending:YES];
-    NSSortDescriptor *publishDateDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"publishDate" ascending:YES];
+    NSSortDescriptor *publishDateDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"publishDate" ascending:NO];
     return [self fetchedControllerForEntity:[Post entityName] predicate:notHiddenPredicate sortDescriptors:@[hiddenDescriptor, publishDateDescriptor]];
 }
 

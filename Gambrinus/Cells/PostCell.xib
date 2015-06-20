@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -44,15 +45,23 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jPE-xK-iS2" userLabel="RB score">
-                        <rect key="frame" x="190" y="28.5" width="42" height="20.5"/>
-                        <color key="backgroundColor" red="0.070588235289999995" green="0.54901960780000003" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jPE-xK-iS2" userLabel="RB score">
+                        <rect key="frame" x="181.5" y="0.5" width="58.5" height="58.5"/>
+                        <color key="backgroundColor" red="0.99607843137254903" green="0.99607843137254903" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" id="akh-h1-k0N"/>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" id="i6Y-WG-8nb"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" id="424-Q6-v8N"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" id="Dc5-TE-hM3"/>
+                            <constraint firstAttribute="width" secondItem="jPE-xK-iS2" secondAttribute="height" multiplier="1:1" id="JUB-Lx-Pc5"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <attributedString key="attributedText">
+                            <fragment content=" rb:100 ">
+                                <attributes>
+                                    <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -62,15 +71,15 @@
             <constraints>
                 <constraint firstItem="Z3p-W9-qVo" firstAttribute="leading" secondItem="ejy-75-Szc" secondAttribute="leading" constant="5" id="0zi-kH-FQh"/>
                 <constraint firstAttribute="trailing" secondItem="CWC-du-9hJ" secondAttribute="trailing" id="4LX-b7-0K6"/>
-                <constraint firstItem="jPE-xK-iS2" firstAttribute="top" secondItem="wP4-uU-70q" secondAttribute="bottom" constant="8" id="5aM-Kh-2sd"/>
                 <constraint firstItem="CWC-du-9hJ" firstAttribute="leading" secondItem="ejy-75-Szc" secondAttribute="leading" id="E99-P8-mFa"/>
                 <constraint firstAttribute="bottom" secondItem="CWC-du-9hJ" secondAttribute="bottom" id="HQy-r5-7QK"/>
                 <constraint firstItem="t73-do-qtc" firstAttribute="leading" secondItem="ejy-75-Szc" secondAttribute="leading" id="JkK-Nv-RJH"/>
+                <constraint firstItem="jPE-xK-iS2" firstAttribute="top" secondItem="ejy-75-Szc" secondAttribute="top" id="Spq-Gs-SnP"/>
                 <constraint firstAttribute="trailing" secondItem="t73-do-qtc" secondAttribute="trailing" id="WDj-I5-co8"/>
                 <constraint firstAttribute="bottom" secondItem="Z3p-W9-qVo" secondAttribute="bottom" id="ZBA-Gi-A6T"/>
                 <constraint firstAttribute="trailing" secondItem="Z3p-W9-qVo" secondAttribute="trailing" constant="5" id="bNH-oN-iF4"/>
-                <constraint firstAttribute="trailing" secondItem="jPE-xK-iS2" secondAttribute="trailing" constant="8" id="bwK-L1-jQl"/>
                 <constraint firstItem="wP4-uU-70q" firstAttribute="leading" secondItem="ejy-75-Szc" secondAttribute="leading" constant="5" id="dbE-c7-cLb"/>
+                <constraint firstAttribute="trailing" secondItem="jPE-xK-iS2" secondAttribute="trailing" id="gGp-IV-JqG"/>
                 <constraint firstItem="T3g-tO-C2f" firstAttribute="top" secondItem="ejy-75-Szc" secondAttribute="top" id="iPG-9V-WPv"/>
                 <constraint firstItem="t73-do-qtc" firstAttribute="height" secondItem="Z3p-W9-qVo" secondAttribute="height" id="kho-QL-P0N"/>
                 <constraint firstItem="CWC-du-9hJ" firstAttribute="top" secondItem="ejy-75-Szc" secondAttribute="top" id="oCw-zu-tev"/>

@@ -26,4 +26,16 @@
     return [UIColor colorWithWhite:0.914 alpha:1.000];
 }
 
++ (UIColor *)rateBeerYellow {
+    return [UIColor colorWithRed:0.980 green:0.773 blue:0.027 alpha:1.000];
+}
+
++ (UIColor *)rateBeerWhite {
+    return [UIColor colorWithWhite:0.996 alpha:1.000];
+}
+
++ (UIColor *)rateBeerBlue {
+    return [UIColor colorWithRed:0.000 green:0.176 blue:0.427 alpha:1.000];
+}
+
 @end

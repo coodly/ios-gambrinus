@@ -60,6 +60,8 @@
 		EA50FCAA1B3545A80000F304 /* ObjectModel+Beers.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FCA91B3545A80000F304 /* ObjectModel+Beers.m */; };
 		EA50FCAD1B354C810000F304 /* ObjectModel+Brewers.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FCAC1B354C810000F304 /* ObjectModel+Brewers.m */; };
 		EA50FCB01B354D260000F304 /* ObjectModel+Styles.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FCAF1B354D260000F304 /* ObjectModel+Styles.m */; };
+		EA50FCB31B355B920000F304 /* triplex-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA50FCB21B355B920000F304 /* triplex-bold.ttf */; };
+		EA50FCB61B355CE60000F304 /* UIFont+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FCB51B355CE60000F304 /* UIFont+Theme.m */; };
 		EA666BCA19822C4E00F72C0F /* PostImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA666BC819822C4E00F72C0F /* PostImageController.m */; };
 		EA666BCB19822C4E00F72C0F /* PostImageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA666BC919822C4E00F72C0F /* PostImageController.xib */; };
 		EA6FD0E51B18D74B000DB461 /* LaunchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA6FD0E41B18D74B000DB461 /* LaunchView.xib */; };
@@ -196,6 +198,9 @@
 		EA50FCAC1B354C810000F304 /* ObjectModel+Brewers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ObjectModel+Brewers.m"; sourceTree = "<group>"; };
 		EA50FCAE1B354D260000F304 /* ObjectModel+Styles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ObjectModel+Styles.h"; sourceTree = "<group>"; };
 		EA50FCAF1B354D260000F304 /* ObjectModel+Styles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ObjectModel+Styles.m"; sourceTree = "<group>"; };
+		EA50FCB21B355B920000F304 /* triplex-bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "triplex-bold.ttf"; sourceTree = "<group>"; };
+		EA50FCB41B355CE60000F304 /* UIFont+Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+Theme.h"; sourceTree = "<group>"; };
+		EA50FCB51B355CE60000F304 /* UIFont+Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+Theme.m"; sourceTree = "<group>"; };
 		EA666BC719822C4E00F72C0F /* PostImageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostImageController.h; sourceTree = "<group>"; };
 		EA666BC819822C4E00F72C0F /* PostImageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostImageController.m; sourceTree = "<group>"; };
 		EA666BC919822C4E00F72C0F /* PostImageController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostImageController.xib; sourceTree = "<group>"; };
@@ -336,6 +341,7 @@
 				EADF7E6C192BCB2400EC13AB /* Cells */,
 				EADDA400192A51BD000CCEA9 /* Controllers */,
 				EAC877C9192E33C400309A23 /* Data */,
+				EA50FCB11B355B390000F304 /* Fonts */,
 				EAC877CC192E405700309A23 /* Images */,
 				EADDA406192A527F000CCEA9 /* Network */,
 				EADDA410192B88A1000CCEA9 /* ObjectModel */,
@@ -439,6 +445,14 @@
 				EA50FCA01B351BB00000F304 /* ParseService.m */,
 			);
 			path = Parse;
+			sourceTree = "<group>";
+		};
+		EA50FCB11B355B390000F304 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				EA50FCB21B355B920000F304 /* triplex-bold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		EAC877C9192E33C400309A23 /* Data */ = {
@@ -617,6 +631,8 @@
 			children = (
 				EADF7E75192BD2DA00EC13AB /* UIColor+Theme.h */,
 				EADF7E76192BD2DA00EC13AB /* UIColor+Theme.m */,
+				EA50FCB41B355CE60000F304 /* UIFont+Theme.h */,
+				EA50FCB51B355CE60000F304 /* UIFont+Theme.m */,
 			);
 			path = Theme;
 			sourceTree = "<group>";
@@ -714,6 +730,7 @@
 				EA43D7C8198B6A08000B5AF5 /* InfoPlist.strings in Resources */,
 				EA666BCB19822C4E00F72C0F /* PostImageController.xib in Resources */,
 				EA0986D51B1E4356006FEC11 /* SideMenuViewController.xib in Resources */,
+				EA50FCB31B355B920000F304 /* triplex-bold.ttf in Resources */,
 				EA011AD81937B9A600232E92 /* Gambrinus.sqlite in Resources */,
 				EA0668D6192A45C4009C83F1 /* Images.xcassets in Resources */,
 				EADF7E7C192BDC7F00EC13AB /* PostViewController.xib in Resources */,
@@ -852,6 +869,7 @@
 				EA0986CD1B1E40C6006FEC11 /* SlideMenuController.swift in Sources */,
 				EADDA416192B88C6000CCEA9 /* Gambrinus.xcdatamodeld in Sources */,
 				EA011A401936195F00232E92 /* BlogImageAsk.m in Sources */,
+				EA50FCB61B355CE60000F304 /* UIFont+Theme.m in Sources */,
 				EAA3E6EA1930BBB500812B6F /* PoweredByViewController.m in Sources */,
 				EA15CB10194EDE4900A140B5 /* BlogPostsViewController.m in Sources */,
 				EA0119E41931D2DD00232E92 /* Blog.m in Sources */,

@@ -14,9 +14,10 @@
 * limitations under the License.
 */
 
+#import <JCSFoundation/NSString+JCSValidations.h>
 #import "PostCell.h"
 #import "UIColor+Theme.h"
-#import "Constants.h"
+#import "UIFont+Theme.h"
 
 @interface PostCell ()
 
@@ -51,6 +52,12 @@
     [self.dateLabel setTextColor:[UIColor myOrange]];
     [self.layer setCornerRadius:5];
 
+    [self.rateBeerScoreLabel setTransform:CGAffineTransformMakeRotation((CGFloat) (M_PI / 4))];
+    [self.rateBeerScoreLabel setBackgroundColor:[UIColor clearColor]];
+    [self.rateBeerScoreLabel.layer setShadowColor:[UIColor rateBeerBlue].CGColor];
+    [self.rateBeerScoreLabel.layer setShadowRadius:10];
+    [self.rateBeerScoreLabel.layer setMasksToBounds:NO];
+
     [self.titleBackground setBackgroundColor:[UIColor colorWithWhite:1 alpha:0.8]];
     [self.titleLabel setBackgroundColor:[UIColor clearColor]];
 
@@ -64,6 +71,7 @@
 - (void)adjustContentFont:(NSNotification *)notification {
     [self.titleLabel setFont:[UIFont preferredFontForTextStyle:UIFontTextStyleHeadline]];
     [self.dateLabel setFont:[UIFont preferredFontForTextStyle:UIFontTextStyleCaption1]];
+    [self.rateBeerScoreLabel setFont:[UIFont rateBeerFont]];
     [self layoutIfNeeded];
 }
 
@@ -84,8 +92,22 @@
 }
 
 - (void)setRateBeerScore:(NSString *)score {
-    CDYLog(@"%@ - %@", self.titleLabel.text, score);
-    [self.rateBeerScoreLabel setText:score];
+    if (score.hasValue) {
+        NSString *presented = [NSString stringWithFormat:@"rb:%@", score];
+        NSMutableAttributedString *attributedPresented = [[NSMutableAttributedString alloc] initWithString:presented];
+        [attributedPresented addAttribute:NSForegroundColorAttributeName value:[UIColor rateBeerYellow] range:NSMakeRange(0, 1)];
+        [attributedPresented addAttribute:NSForegroundColorAttributeName value:[UIColor rateBeerWhite] range:NSMakeRange(1, presented.length - 1)];
+
+        NSShadow *shadow = [[NSShadow alloc] init];
+        shadow.shadowColor = [UIColor rateBeerBlue];
+        shadow.shadowOffset = CGSizeMake(2.0f, 2.0f);
+        shadow.shadowBlurRadius = 2;
+        [attributedPresented addAttribute:NSShadowAttributeName value:shadow range:NSMakeRange(0, presented.length)];
+
+        [self.rateBeerScoreLabel setAttributedText:attributedPresented];
+    } else {
+        [self.rateBeerScoreLabel setText:@""];
+    }
 }
 
 @end
