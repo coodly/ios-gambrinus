@@ -27,7 +27,7 @@
 @property (nonatomic, strong) ObjectModel *objectModel;
 @property (nonatomic, strong) ContentUpdate *contentUpdate;
 @property (nonatomic, strong) BlogImagesRetrieve *imagesRetrieve;
-@property (nonatomic, assign) BOOL shouldShowMarked;
+@property (nonatomic, assign) BOOL showingInKioskMode;
 
 - (void)checkImagesNeeded;
 - (void)removeRefreshControl;

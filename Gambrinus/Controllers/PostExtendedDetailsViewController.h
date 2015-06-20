@@ -19,12 +19,14 @@
 @class Post;
 @class ContentUpdate;
 @class BlogImagesRetrieve;
+@class ObjectModel;
 
 @interface PostExtendedDetailsViewController : UICollectionViewController
 
 @property (nonatomic, strong) Post *post;
 @property (nonatomic, strong) ContentUpdate *contentUpdate;
 @property (nonatomic, strong) BlogImagesRetrieve *imagesRetrieve;
-@property (nonatomic, assign) BOOL showMarked;
+@property (nonatomic, assign, getter=isInKioskMode) BOOL inKioskMode;
+@property (nonatomic, strong) ObjectModel *objectModel;
 
 @end

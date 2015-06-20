@@ -25,10 +25,4 @@
 
 @implementation StandardPostsListController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-
-    [self setShouldShowMarked:YES];
-}
-
 @end

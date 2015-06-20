@@ -134,7 +134,8 @@
     [controller setPost:tapped];
     [controller setContentUpdate:self.contentUpdate];
     [controller setImagesRetrieve:self.imagesRetrieve];
-    [controller setShowMarked:self.shouldShowMarked];
+    [controller setInKioskMode:self.showingInKioskMode];
+    [controller setObjectModel:self.objectModel];
     if (IS_PAD) {
         UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
         [navigationController setModalPresentationStyle:UIModalPresentationFormSheet];

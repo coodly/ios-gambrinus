@@ -53,6 +53,8 @@
 
     UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showPoweredBy)];
     [poweredByContainer addGestureRecognizer:recognizer];
+
+    [self setShowingInKioskMode:YES];
 }
 
 - (void)didReceiveMemoryWarning {

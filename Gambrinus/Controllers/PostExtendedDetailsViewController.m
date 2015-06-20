@@ -26,6 +26,7 @@
 #import "BlogImagesRetrieve.h"
 #import "BlogImageAsk.h"
 #import "PostImageController.h"
+#import "ObjectModel.h"
 
 typedef NS_ENUM(short, DetailRow) {
     RowImage,
@@ -80,6 +81,23 @@ typedef NS_ENUM(short, DetailRow) {
     [super viewWillAppear:animated];
 
     [self.navigationItem setTitle:self.post.title];
+
+    [self updateStarButton];
+}
+
+- (void)updateStarButton {
+    if (self.isInKioskMode) {
+        return;
+    }
+
+    UIImage *image = self.post.starredValue ? [UIImage imageNamed:@"726-star-toolbar-selected"] : [UIImage imageNamed:@"726-star-toolbar"];
+    [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(starPost)]];
+}
+
+- (void)starPost {
+    [self.post setStarredValue:!self.post.starredValue];
+    [self updateStarButton];
+    [self.objectModel saveContext];
 }
 
 - (void)close {
