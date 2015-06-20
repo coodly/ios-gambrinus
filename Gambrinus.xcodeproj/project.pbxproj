@@ -32,7 +32,6 @@
 		EA0668E9192A45C5009C83F1 /* GambrinusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0668E8192A45C5009C83F1 /* GambrinusTests.m */; };
 		EA0986CD1B1E40C6006FEC11 /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0986CC1B1E40C6006FEC11 /* SlideMenuController.swift */; };
 		EA0986D41B1E4356006FEC11 /* SideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0986D21B1E4356006FEC11 /* SideMenuViewController.m */; };
-		EA0986D51B1E4356006FEC11 /* SideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA0986D31B1E4356006FEC11 /* SideMenuViewController.xib */; };
 		EA0986D71B1E4767006FEC11 /* KioskSlideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0986D61B1E4767006FEC11 /* KioskSlideMenuViewController.swift */; };
 		EA0986DB1B1EB174006FEC11 /* MenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0986D91B1EB174006FEC11 /* MenuCell.m */; };
 		EA0986DC1B1EB174006FEC11 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA0986DA1B1EB174006FEC11 /* MenuCell.xib */; };
@@ -62,7 +61,7 @@
 		EA50FCB31B355B920000F304 /* triplex-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA50FCB21B355B920000F304 /* triplex-bold.ttf */; };
 		EA50FCB61B355CE60000F304 /* UIFont+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FCB51B355CE60000F304 /* UIFont+Theme.m */; };
 		EA50FCBC1B3592EE0000F304 /* KioskModeMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FCBB1B3592EE0000F304 /* KioskModeMenuViewController.m */; };
-		EA50FCBE1B3593020000F304 /* KioskModeMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA50FCBD1B3593020000F304 /* KioskModeMenuViewController.xib */; };
+		EA50FCBE1B3593020000F304 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA50FCBD1B3593020000F304 /* MenuViewController.xib */; };
 		EA50FCC11B3593450000F304 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FCC01B3593450000F304 /* MenuViewController.m */; };
 		EA666BCA19822C4E00F72C0F /* PostImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA666BC819822C4E00F72C0F /* PostImageController.m */; };
 		EA666BCB19822C4E00F72C0F /* PostImageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA666BC919822C4E00F72C0F /* PostImageController.xib */; };
@@ -150,7 +149,6 @@
 		EA0986CC1B1E40C6006FEC11 /* SlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuController.swift; sourceTree = "<group>"; };
 		EA0986D11B1E4356006FEC11 /* SideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideMenuViewController.h; sourceTree = "<group>"; };
 		EA0986D21B1E4356006FEC11 /* SideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideMenuViewController.m; sourceTree = "<group>"; };
-		EA0986D31B1E4356006FEC11 /* SideMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuViewController.xib; sourceTree = "<group>"; };
 		EA0986D61B1E4767006FEC11 /* KioskSlideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KioskSlideMenuViewController.swift; sourceTree = "<group>"; };
 		EA0986D81B1EB174006FEC11 /* MenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuCell.h; sourceTree = "<group>"; };
 		EA0986D91B1EB174006FEC11 /* MenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuCell.m; sourceTree = "<group>"; };
@@ -203,7 +201,7 @@
 		EA50FCB51B355CE60000F304 /* UIFont+Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+Theme.m"; sourceTree = "<group>"; };
 		EA50FCBA1B3592EE0000F304 /* KioskModeMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KioskModeMenuViewController.h; sourceTree = "<group>"; };
 		EA50FCBB1B3592EE0000F304 /* KioskModeMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KioskModeMenuViewController.m; sourceTree = "<group>"; };
-		EA50FCBD1B3593020000F304 /* KioskModeMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KioskModeMenuViewController.xib; sourceTree = "<group>"; };
+		EA50FCBD1B3593020000F304 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
 		EA50FCBF1B3593450000F304 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		EA50FCC01B3593450000F304 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		EA666BC719822C4E00F72C0F /* PostImageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostImageController.h; sourceTree = "<group>"; };
@@ -487,7 +485,6 @@
 				EA0986DD1B1EB581006FEC11 /* KioskController.h */,
 				EA50FCBA1B3592EE0000F304 /* KioskModeMenuViewController.h */,
 				EA50FCBB1B3592EE0000F304 /* KioskModeMenuViewController.m */,
-				EA50FCBD1B3593020000F304 /* KioskModeMenuViewController.xib */,
 				EADDA401192A51E5000CCEA9 /* KioskPostsViewController.h */,
 				EADDA402192A51E5000CCEA9 /* KioskPostsViewController.m */,
 				EA0986D61B1E4767006FEC11 /* KioskSlideMenuViewController.swift */,
@@ -495,6 +492,7 @@
 				EA15CB13194EDE8800A140B5 /* MarkedPostsViewController.m */,
 				EA50FCBF1B3593450000F304 /* MenuViewController.h */,
 				EA50FCC01B3593450000F304 /* MenuViewController.m */,
+				EA50FCBD1B3593020000F304 /* MenuViewController.xib */,
 				EA666BC719822C4E00F72C0F /* PostImageController.h */,
 				EA666BC819822C4E00F72C0F /* PostImageController.m */,
 				EA666BC919822C4E00F72C0F /* PostImageController.xib */,
@@ -509,7 +507,6 @@
 				EAA3E6E91930BBB500812B6F /* PoweredByViewController.xib */,
 				EA0986D11B1E4356006FEC11 /* SideMenuViewController.h */,
 				EA0986D21B1E4356006FEC11 /* SideMenuViewController.m */,
-				EA0986D31B1E4356006FEC11 /* SideMenuViewController.xib */,
 				EA925E2419517062001E0AC9 /* StandardPostsListController.h */,
 				EA925E2519517062001E0AC9 /* StandardPostsListController.m */,
 			);
@@ -737,13 +734,12 @@
 				EA925DF519502952001E0AC9 /* PostsViewController.xib in Resources */,
 				EA43D7C8198B6A08000B5AF5 /* InfoPlist.strings in Resources */,
 				EA666BCB19822C4E00F72C0F /* PostImageController.xib in Resources */,
-				EA0986D51B1E4356006FEC11 /* SideMenuViewController.xib in Resources */,
 				EA50FCB31B355B920000F304 /* triplex-bold.ttf in Resources */,
 				EA011AD81937B9A600232E92 /* Gambrinus.sqlite in Resources */,
 				EA0668D6192A45C4009C83F1 /* Images.xcassets in Resources */,
 				EADF7E7C192BDC7F00EC13AB /* PostViewController.xib in Resources */,
 				EA0986DC1B1EB174006FEC11 /* MenuCell.xib in Resources */,
-				EA50FCBE1B3593020000F304 /* KioskModeMenuViewController.xib in Resources */,
+				EA50FCBE1B3593020000F304 /* MenuViewController.xib in Resources */,
 				EAC877B9192DDD1600309A23 /* PostsSearchInputView.xib in Resources */,
 				EA6FD0E51B18D74B000DB461 /* LaunchView.xib in Resources */,
 				EA43D7C9198B6A08000B5AF5 /* Localizable.strings in Resources */,
@@ -1064,7 +1060,7 @@
 				INFOPLIST_FILE = "Gambrinus/Gambrinus-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a4b27cf9-9207-4032-af5e-35b946acf794";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Gambrinus/Gambrinus-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
@@ -1089,7 +1085,7 @@
 				INFOPLIST_FILE = "Gambrinus/Gambrinus-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a4b27cf9-9207-4032-af5e-35b946acf794";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Gambrinus/Gambrinus-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};

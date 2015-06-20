@@ -10,14 +10,4 @@
 
 @implementation KioskModeMenuViewController
 
-- (instancetype)init {
-    self = [super initWithNibName:@"KioskModeMenuViewController" bundle:nil];
-    if (self) {
-
-    }
-
-    return self;
-}
-
-
 @end

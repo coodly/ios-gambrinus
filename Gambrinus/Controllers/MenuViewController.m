@@ -19,6 +19,15 @@ NSString *const KioskMenuCellIdentifier = @"KioskMenuCellIdentifier";
 
 @implementation MenuViewController
 
+- (instancetype)init {
+    self = [super initWithNibName:@"MenuViewController" bundle:nil];
+    if (self) {
+
+    }
+
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -30,6 +39,8 @@ NSString *const KioskMenuCellIdentifier = @"KioskMenuCellIdentifier";
     UIImageView *poweredBy = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"PoweredBy"]];
     [poweredBy setContentMode:UIViewContentModeCenter];
     [self.tableView setTableFooterView:poweredBy];
+
+    [self.tableView setScrollsToTop:NO];
 }
 
 @end
