@@ -15,10 +15,14 @@
 */
 
 #import <Foundation/Foundation.h>
+#import "RemoteService.h"
 
-@interface ParseService : NSObject
+@class ObjectModel;
+@class Post;
 
-+ (void)registerCustomClasses;
-- (void)fetchChangesSinceDate:(NSDate *)sinceDate;
+@interface BloggerAPIConnection : NSObject <RemoteService>
+
+- (id)initWithBlogURLString:(NSString *)blogURLString bloggerKey:(NSString *)key objectModel:(ObjectModel *)model;
+- (void)refreshPost:(Post *)post withCompletionHandler:(ContentUpdateBlock)completion;
 
 @end

@@ -9,7 +9,11 @@
         <attribute name="rbScore" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="brewer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Brewer" inverseName="beers" inverseEntity="Brewer" syncable="YES"/>
         <relationship name="posts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Post" inverseName="beers" inverseEntity="Post" syncable="YES"/>
-        <relationship name="style" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Style" inverseName="beers" inverseEntity="Style" syncable="YES"/>
+        <relationship name="style" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BeerStyle" inverseName="beers" inverseEntity="BeerStyle" syncable="YES"/>
+    </entity>
+    <entity name="BeerStyle" representedClassName="BeerStyle" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="beers" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Beer" inverseName="style" inverseEntity="Beer" syncable="YES"/>
     </entity>
     <entity name="Blog" representedClassName="Blog" syncable="YES">
         <attribute name="baseURLString" optional="YES" attributeType="String" syncable="YES"/>
@@ -48,10 +52,6 @@
         <attribute name="key" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="value" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="Style" representedClassName="Style" syncable="YES">
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="beers" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Beer" inverseName="style" inverseEntity="Beer" syncable="YES"/>
-    </entity>
     <elements>
         <element name="Blog" positionX="-63" positionY="27" width="128" height="120"/>
         <element name="Image" positionX="-54" positionY="54" width="128" height="88"/>
@@ -60,6 +60,6 @@
         <element name="Setting" positionX="-63" positionY="27" width="128" height="75"/>
         <element name="Beer" positionX="-27" positionY="72" width="128" height="180"/>
         <element name="Brewer" positionX="-18" positionY="81" width="128" height="75"/>
-        <element name="Style" positionX="-9" positionY="90" width="128" height="75"/>
+        <element name="BeerStyle" positionX="-9" positionY="90" width="128" height="75"/>
     </elements>
 </model>

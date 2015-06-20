@@ -17,13 +17,13 @@
 #import <UIKit/UIKit.h>
 
 @class ObjectModel;
-@class BloggerAPIConnection;
 @class BlogImagesRetrieve;
+@class ContentUpdate;
 
 @interface MainViewController : UIViewController
 
 @property (nonatomic, strong) ObjectModel *objectModel;
-@property (nonatomic, strong) BloggerAPIConnection *bloggerAPIConnection;
+@property (nonatomic, strong) ContentUpdate *contentUpdate;
 @property (nonatomic, strong) BlogImagesRetrieve *imagesRetrieve;
 
 @end

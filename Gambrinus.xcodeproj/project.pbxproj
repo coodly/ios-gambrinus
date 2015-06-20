@@ -46,15 +46,17 @@
 		EA43D7C7198B6A08000B5AF5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA43D7BF198B6A08000B5AF5 /* Localizable.strings */; };
 		EA43D7C8198B6A08000B5AF5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA43D7C2198B6A08000B5AF5 /* InfoPlist.strings */; };
 		EA43D7C9198B6A08000B5AF5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA43D7C4198B6A08000B5AF5 /* Localizable.strings */; };
-		EA50FC731B34A09D0000F304 /* ParseService.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FC721B34A09D0000F304 /* ParseService.m */; };
-		EA50FC761B34A16F0000F304 /* ParsePost.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FC751B34A16F0000F304 /* ParsePost.m */; };
-		EA50FC791B34A1780000F304 /* ParseBeer.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FC781B34A1780000F304 /* ParseBeer.m */; };
 		EA50FC811B34A8110000F304 /* _Beer.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FC7C1B34A8110000F304 /* _Beer.m */; };
 		EA50FC821B34A8110000F304 /* _Brewer.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FC7E1B34A8110000F304 /* _Brewer.m */; };
-		EA50FC831B34A8110000F304 /* _Style.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FC801B34A8110000F304 /* _Style.m */; };
 		EA50FC8A1B34A8200000F304 /* Beer.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FC851B34A8200000F304 /* Beer.m */; };
 		EA50FC8B1B34A8200000F304 /* Brewer.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FC871B34A8200000F304 /* Brewer.m */; };
-		EA50FC8C1B34A8200000F304 /* Style.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FC891B34A8200000F304 /* Style.m */; };
+		EA50FC8F1B351AA40000F304 /* _BeerStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FC8E1B351AA40000F304 /* _BeerStyle.m */; };
+		EA50FC921B351AB70000F304 /* BeerStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FC911B351AB70000F304 /* BeerStyle.m */; };
+		EA50FC991B351B9D0000F304 /* BloggerAPIConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FC961B351B9D0000F304 /* BloggerAPIConnection.m */; };
+		EA50FCA11B351BB00000F304 /* ParseBeer.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FC9C1B351BB00000F304 /* ParseBeer.m */; };
+		EA50FCA21B351BB00000F304 /* ParsePost.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FC9E1B351BB00000F304 /* ParsePost.m */; };
+		EA50FCA31B351BB00000F304 /* ParseService.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FCA01B351BB00000F304 /* ParseService.m */; };
+		EA50FCA61B351C6C0000F304 /* ContentUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FCA51B351C6C0000F304 /* ContentUpdate.m */; };
 		EA666BCA19822C4E00F72C0F /* PostImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA666BC819822C4E00F72C0F /* PostImageController.m */; };
 		EA666BCB19822C4E00F72C0F /* PostImageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA666BC919822C4E00F72C0F /* PostImageController.xib */; };
 		EA6FD0E51B18D74B000DB461 /* LaunchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA6FD0E41B18D74B000DB461 /* LaunchView.xib */; };
@@ -63,7 +65,6 @@
 		EA925E2619517062001E0AC9 /* StandardPostsListController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA925E2519517062001E0AC9 /* StandardPostsListController.m */; };
 		EAA3E6EA1930BBB500812B6F /* PoweredByViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA3E6E81930BBB500812B6F /* PoweredByViewController.m */; };
 		EAA3E6EB1930BBB500812B6F /* PoweredByViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAA3E6E91930BBB500812B6F /* PoweredByViewController.xib */; };
-		EAA3E6EE1930CC5C00812B6F /* BloggerAPIConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA3E6ED1930CC5C00812B6F /* BloggerAPIConnection.m */; };
 		EAC877AE192DD50700309A23 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC877AD192DD50700309A23 /* Constants.m */; };
 		EAC877B7192DDC6C00309A23 /* PostsSearchInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC877B6192DDC6C00309A23 /* PostsSearchInputView.m */; };
 		EAC877B9192DDD1600309A23 /* PostsSearchInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAC877B8192DDD1600309A23 /* PostsSearchInputView.xib */; };
@@ -77,7 +78,6 @@
 		EAC9A7DE194476CC006AC834 /* _PullStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC9A7DD194476CC006AC834 /* _PullStatus.m */; };
 		EAC9A7E1194476DA006AC834 /* PullStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC9A7E0194476DA006AC834 /* PullStatus.m */; };
 		EADDA404192A51E5000CCEA9 /* KioskPostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EADDA402192A51E5000CCEA9 /* KioskPostsViewController.m */; };
-		EADDA409192A52F9000CCEA9 /* BlogPostsRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = EADDA408192A52F9000CCEA9 /* BlogPostsRefresh.m */; };
 		EADDA413192B88B1000CCEA9 /* ObjectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EADDA412192B88B1000CCEA9 /* ObjectModel.m */; };
 		EADDA416192B88C6000CCEA9 /* Gambrinus.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EADDA414192B88C6000CCEA9 /* Gambrinus.xcdatamodeld */; };
 		EADDA41B192B8AC8000CCEA9 /* _Post.m in Sources */ = {isa = PBXBuildFile; fileRef = EADDA41A192B8AC8000CCEA9 /* _Post.m */; };
@@ -163,25 +163,30 @@
 		EA43D7C0198B6A08000B5AF5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
 		EA43D7C3198B6A08000B5AF5 /* et */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = et; path = InfoPlist.strings; sourceTree = "<group>"; };
 		EA43D7C5198B6A08000B5AF5 /* et */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = et; path = Localizable.strings; sourceTree = "<group>"; };
-		EA50FC711B34A09D0000F304 /* ParseService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseService.h; sourceTree = "<group>"; };
-		EA50FC721B34A09D0000F304 /* ParseService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseService.m; sourceTree = "<group>"; };
-		EA50FC741B34A16F0000F304 /* ParsePost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParsePost.h; sourceTree = "<group>"; };
-		EA50FC751B34A16F0000F304 /* ParsePost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParsePost.m; sourceTree = "<group>"; };
-		EA50FC771B34A1780000F304 /* ParseBeer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseBeer.h; sourceTree = "<group>"; };
-		EA50FC781B34A1780000F304 /* ParseBeer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseBeer.m; sourceTree = "<group>"; };
 		EA50FC7A1B34A5EE0000F304 /* Gambrinus_2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Gambrinus_2.xcdatamodel; sourceTree = "<group>"; };
 		EA50FC7B1B34A8110000F304 /* _Beer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Beer.h; sourceTree = "<group>"; };
 		EA50FC7C1B34A8110000F304 /* _Beer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Beer.m; sourceTree = "<group>"; };
 		EA50FC7D1B34A8110000F304 /* _Brewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Brewer.h; sourceTree = "<group>"; };
 		EA50FC7E1B34A8110000F304 /* _Brewer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Brewer.m; sourceTree = "<group>"; };
-		EA50FC7F1B34A8110000F304 /* _Style.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Style.h; sourceTree = "<group>"; };
-		EA50FC801B34A8110000F304 /* _Style.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Style.m; sourceTree = "<group>"; };
 		EA50FC841B34A8200000F304 /* Beer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Beer.h; sourceTree = "<group>"; };
 		EA50FC851B34A8200000F304 /* Beer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Beer.m; sourceTree = "<group>"; };
 		EA50FC861B34A8200000F304 /* Brewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Brewer.h; sourceTree = "<group>"; };
 		EA50FC871B34A8200000F304 /* Brewer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Brewer.m; sourceTree = "<group>"; };
-		EA50FC881B34A8200000F304 /* Style.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Style.h; sourceTree = "<group>"; };
-		EA50FC891B34A8200000F304 /* Style.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Style.m; sourceTree = "<group>"; };
+		EA50FC8D1B351AA40000F304 /* _BeerStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _BeerStyle.h; sourceTree = "<group>"; };
+		EA50FC8E1B351AA40000F304 /* _BeerStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _BeerStyle.m; sourceTree = "<group>"; };
+		EA50FC901B351AB70000F304 /* BeerStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeerStyle.h; sourceTree = "<group>"; };
+		EA50FC911B351AB70000F304 /* BeerStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeerStyle.m; sourceTree = "<group>"; };
+		EA50FC951B351B9D0000F304 /* BloggerAPIConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BloggerAPIConnection.h; sourceTree = "<group>"; };
+		EA50FC961B351B9D0000F304 /* BloggerAPIConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BloggerAPIConnection.m; sourceTree = "<group>"; };
+		EA50FC9B1B351BB00000F304 /* ParseBeer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseBeer.h; sourceTree = "<group>"; };
+		EA50FC9C1B351BB00000F304 /* ParseBeer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseBeer.m; sourceTree = "<group>"; };
+		EA50FC9D1B351BB00000F304 /* ParsePost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParsePost.h; sourceTree = "<group>"; };
+		EA50FC9E1B351BB00000F304 /* ParsePost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParsePost.m; sourceTree = "<group>"; };
+		EA50FC9F1B351BB00000F304 /* ParseService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseService.h; sourceTree = "<group>"; };
+		EA50FCA01B351BB00000F304 /* ParseService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseService.m; sourceTree = "<group>"; };
+		EA50FCA41B351C6C0000F304 /* ContentUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentUpdate.h; sourceTree = "<group>"; };
+		EA50FCA51B351C6C0000F304 /* ContentUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentUpdate.m; sourceTree = "<group>"; };
+		EA50FCA71B351E8C0000F304 /* RemoteService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RemoteService.h; sourceTree = "<group>"; };
 		EA666BC719822C4E00F72C0F /* PostImageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostImageController.h; sourceTree = "<group>"; };
 		EA666BC819822C4E00F72C0F /* PostImageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostImageController.m; sourceTree = "<group>"; };
 		EA666BC919822C4E00F72C0F /* PostImageController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostImageController.xib; sourceTree = "<group>"; };
@@ -194,8 +199,6 @@
 		EAA3E6E71930BBB500812B6F /* PoweredByViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoweredByViewController.h; sourceTree = "<group>"; };
 		EAA3E6E81930BBB500812B6F /* PoweredByViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PoweredByViewController.m; sourceTree = "<group>"; };
 		EAA3E6E91930BBB500812B6F /* PoweredByViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PoweredByViewController.xib; sourceTree = "<group>"; };
-		EAA3E6EC1930CC5C00812B6F /* BloggerAPIConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BloggerAPIConnection.h; sourceTree = "<group>"; };
-		EAA3E6ED1930CC5C00812B6F /* BloggerAPIConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BloggerAPIConnection.m; sourceTree = "<group>"; };
 		EAC877AC192DD50700309A23 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		EAC877AD192DD50700309A23 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		EAC877B5192DDC6C00309A23 /* PostsSearchInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostsSearchInputView.h; sourceTree = "<group>"; };
@@ -221,8 +224,6 @@
 		EAC9A7E0194476DA006AC834 /* PullStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullStatus.m; sourceTree = "<group>"; };
 		EADDA401192A51E5000CCEA9 /* KioskPostsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KioskPostsViewController.h; sourceTree = "<group>"; };
 		EADDA402192A51E5000CCEA9 /* KioskPostsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KioskPostsViewController.m; sourceTree = "<group>"; };
-		EADDA407192A52F9000CCEA9 /* BlogPostsRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogPostsRefresh.h; sourceTree = "<group>"; };
-		EADDA408192A52F9000CCEA9 /* BlogPostsRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogPostsRefresh.m; sourceTree = "<group>"; };
 		EADDA411192B88B1000CCEA9 /* ObjectModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectModel.h; sourceTree = "<group>"; };
 		EADDA412192B88B1000CCEA9 /* ObjectModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectModel.m; sourceTree = "<group>"; };
 		EADDA415192B88C6000CCEA9 /* Gambrinus.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Gambrinus.xcdatamodel; sourceTree = "<group>"; };
@@ -329,7 +330,6 @@
 				EAC877CC192E405700309A23 /* Images */,
 				EADDA406192A527F000CCEA9 /* Network */,
 				EADDA410192B88A1000CCEA9 /* ObjectModel */,
-				EA50FC701B349E330000F304 /* Parse */,
 				EA0668CA192A45C4009C83F1 /* Supporting Files */,
 				EADF7E74192BD2C000EC13AB /* Theme */,
 				EADF7E63192B8DE500EC13AB /* Views */,
@@ -410,15 +410,24 @@
 			path = et.lproj;
 			sourceTree = "<group>";
 		};
-		EA50FC701B349E330000F304 /* Parse */ = {
+		EA50FC931B351B4D0000F304 /* Blogger */ = {
 			isa = PBXGroup;
 			children = (
-				EA50FC771B34A1780000F304 /* ParseBeer.h */,
-				EA50FC781B34A1780000F304 /* ParseBeer.m */,
-				EA50FC741B34A16F0000F304 /* ParsePost.h */,
-				EA50FC751B34A16F0000F304 /* ParsePost.m */,
-				EA50FC711B34A09D0000F304 /* ParseService.h */,
-				EA50FC721B34A09D0000F304 /* ParseService.m */,
+				EA50FC951B351B9D0000F304 /* BloggerAPIConnection.h */,
+				EA50FC961B351B9D0000F304 /* BloggerAPIConnection.m */,
+			);
+			path = Blogger;
+			sourceTree = "<group>";
+		};
+		EA50FC941B351B4D0000F304 /* Parse */ = {
+			isa = PBXGroup;
+			children = (
+				EA50FC9B1B351BB00000F304 /* ParseBeer.h */,
+				EA50FC9C1B351BB00000F304 /* ParseBeer.m */,
+				EA50FC9D1B351BB00000F304 /* ParsePost.h */,
+				EA50FC9E1B351BB00000F304 /* ParsePost.m */,
+				EA50FC9F1B351BB00000F304 /* ParseService.h */,
+				EA50FCA01B351BB00000F304 /* ParseService.m */,
 			);
 			path = Parse;
 			sourceTree = "<group>";
@@ -479,10 +488,11 @@
 		EADDA406192A527F000CCEA9 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				EAA3E6EC1930CC5C00812B6F /* BloggerAPIConnection.h */,
-				EAA3E6ED1930CC5C00812B6F /* BloggerAPIConnection.m */,
-				EADDA407192A52F9000CCEA9 /* BlogPostsRefresh.h */,
-				EADDA408192A52F9000CCEA9 /* BlogPostsRefresh.m */,
+				EA50FC931B351B4D0000F304 /* Blogger */,
+				EA50FC941B351B4D0000F304 /* Parse */,
+				EA50FCA41B351C6C0000F304 /* ContentUpdate.h */,
+				EA50FCA51B351C6C0000F304 /* ContentUpdate.m */,
+				EA50FCA71B351E8C0000F304 /* RemoteService.h */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -493,6 +503,8 @@
 				EADDA418192B8ABF000CCEA9 /* _ */,
 				EA50FC841B34A8200000F304 /* Beer.h */,
 				EA50FC851B34A8200000F304 /* Beer.m */,
+				EA50FC901B351AB70000F304 /* BeerStyle.h */,
+				EA50FC911B351AB70000F304 /* BeerStyle.m */,
 				EA0119E21931D2DD00232E92 /* Blog.h */,
 				EA0119E31931D2DD00232E92 /* Blog.m */,
 				EA50FC861B34A8200000F304 /* Brewer.h */,
@@ -516,8 +528,6 @@
 				EAC9A7E0194476DA006AC834 /* PullStatus.m */,
 				EAC877C3192E26C800309A23 /* Setting.h */,
 				EAC877C4192E26C800309A23 /* Setting.m */,
-				EA50FC881B34A8200000F304 /* Style.h */,
-				EA50FC891B34A8200000F304 /* Style.m */,
 			);
 			path = ObjectModel;
 			sourceTree = "<group>";
@@ -527,6 +537,8 @@
 			children = (
 				EA50FC7B1B34A8110000F304 /* _Beer.h */,
 				EA50FC7C1B34A8110000F304 /* _Beer.m */,
+				EA50FC8D1B351AA40000F304 /* _BeerStyle.h */,
+				EA50FC8E1B351AA40000F304 /* _BeerStyle.m */,
 				EA0119DF1931D2D400232E92 /* _Blog.h */,
 				EA0119E01931D2D400232E92 /* _Blog.m */,
 				EA50FC7D1B34A8110000F304 /* _Brewer.h */,
@@ -539,8 +551,6 @@
 				EAC9A7DD194476CC006AC834 /* _PullStatus.m */,
 				EAC877C0192E26BE00309A23 /* _Setting.h */,
 				EAC877C1192E26BE00309A23 /* _Setting.m */,
-				EA50FC7F1B34A8110000F304 /* _Style.h */,
-				EA50FC801B34A8110000F304 /* _Style.m */,
 			);
 			name = _;
 			sourceTree = "<group>";
@@ -796,40 +806,38 @@
 				EA15CB0C194EDCEB00A140B5 /* MainViewController.m in Sources */,
 				EAC9A7DE194476CC006AC834 /* _PullStatus.m in Sources */,
 				EADF7E7B192BDC7F00EC13AB /* PostViewController.m in Sources */,
+				EA50FCA61B351C6C0000F304 /* ContentUpdate.m in Sources */,
 				EA0986D71B1E4767006FEC11 /* KioskSlideMenuViewController.swift in Sources */,
 				EA50FC8B1B34A8200000F304 /* Brewer.m in Sources */,
 				EA0668D4192A45C4009C83F1 /* AppDelegate.m in Sources */,
-				EA50FC731B34A09D0000F304 /* ParseService.m in Sources */,
-				EA50FC831B34A8110000F304 /* _Style.m in Sources */,
-				EADDA409192A52F9000CCEA9 /* BlogPostsRefresh.m in Sources */,
 				EADDA404192A51E5000CCEA9 /* KioskPostsViewController.m in Sources */,
 				EAC877BF192E224600309A23 /* NSDate+Calculations.m in Sources */,
 				EA50FC811B34A8110000F304 /* _Beer.m in Sources */,
 				EA925DF419502952001E0AC9 /* PostsViewController.m in Sources */,
 				EAC9A7CF19446A03006AC834 /* _Image.m in Sources */,
 				EAC9A7E1194476DA006AC834 /* PullStatus.m in Sources */,
+				EA50FCA11B351BB00000F304 /* ParseBeer.m in Sources */,
 				EA666BCA19822C4E00F72C0F /* PostImageController.m in Sources */,
 				EA0986DB1B1EB174006FEC11 /* MenuCell.m in Sources */,
 				EA011A3D1936194E00232E92 /* BlogImagesRetrieve.m in Sources */,
 				EADF7E77192BD2DA00EC13AB /* UIColor+Theme.m in Sources */,
-				EA50FC761B34A16F0000F304 /* ParsePost.m in Sources */,
 				EAC877AE192DD50700309A23 /* Constants.m in Sources */,
 				EADDA413192B88B1000CCEA9 /* ObjectModel.m in Sources */,
 				EADF7E6B192BC5DC00EC13AB /* NSString+Cleanup.m in Sources */,
+				EA50FCA21B351BB00000F304 /* ParsePost.m in Sources */,
 				EADDA41B192B8AC8000CCEA9 /* _Post.m in Sources */,
 				EA50FC821B34A8110000F304 /* _Brewer.m in Sources */,
-				EA50FC8C1B34A8200000F304 /* Style.m in Sources */,
 				EA925E2619517062001E0AC9 /* StandardPostsListController.m in Sources */,
 				EAC877C8192E26D200309A23 /* ObjectModel+Settings.m in Sources */,
 				EAC877C2192E26BE00309A23 /* _Setting.m in Sources */,
+				EA50FC921B351AB70000F304 /* BeerStyle.m in Sources */,
 				EA0986CD1B1E40C6006FEC11 /* SlideMenuController.swift in Sources */,
 				EADDA416192B88C6000CCEA9 /* Gambrinus.xcdatamodeld in Sources */,
 				EA011A401936195F00232E92 /* BlogImageAsk.m in Sources */,
 				EAA3E6EA1930BBB500812B6F /* PoweredByViewController.m in Sources */,
 				EA15CB10194EDE4900A140B5 /* BlogPostsViewController.m in Sources */,
-				EA50FC791B34A1780000F304 /* ParseBeer.m in Sources */,
 				EA0119E41931D2DD00232E92 /* Blog.m in Sources */,
-				EAA3E6EE1930CC5C00812B6F /* BloggerAPIConnection.m in Sources */,
+				EA50FC991B351B9D0000F304 /* BloggerAPIConnection.m in Sources */,
 				EA0119E11931D2D400232E92 /* _Blog.m in Sources */,
 				EA011B24193B467300232E92 /* BlogPostView.m in Sources */,
 				EA50FC8A1B34A8200000F304 /* Beer.m in Sources */,
@@ -841,6 +849,8 @@
 				EADDA421192B8ADF000CCEA9 /* ObjectModel+Posts.m in Sources */,
 				EA0119E71931D45400232E92 /* ObjectModel+Blogs.m in Sources */,
 				EADF7E66192B8E0D00EC13AB /* ProgressOverlayView.m in Sources */,
+				EA50FC8F1B351AA40000F304 /* _BeerStyle.m in Sources */,
+				EA50FCA31B351BB00000F304 /* ParseService.m in Sources */,
 				EADDA41E192B8ACE000CCEA9 /* Post.m in Sources */,
 				EAC877C5192E26C800309A23 /* Setting.m in Sources */,
 				EA15CB15194EDE8800A140B5 /* MarkedPostsViewController.m in Sources */,

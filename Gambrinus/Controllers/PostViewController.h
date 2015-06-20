@@ -17,14 +17,14 @@
 #import <UIKit/UIKit.h>
 
 @class Post;
-@class BloggerAPIConnection;
 @class BlogImagesRetrieve;
 @class ObjectModel;
+@class ContentUpdate;
 
 @interface PostViewController : UIViewController
 
 @property (nonatomic, strong) Post *post;
-@property (nonatomic, strong) BloggerAPIConnection *bloggerAPIConnection;
+@property (nonatomic, strong) ContentUpdate *contentUpdate;
 @property (nonatomic, strong) BlogImagesRetrieve *imagesRetrieve;
 @property (nonatomic, assign) BOOL showMarked;
 @property (nonatomic, strong) ObjectModel *objectModel;

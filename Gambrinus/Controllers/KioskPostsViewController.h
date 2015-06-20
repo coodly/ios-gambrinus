@@ -18,10 +18,6 @@
 #import "JCSFetchedCollectionViewController.h"
 #import "PostsViewController.h"
 
-@class ObjectModel;
-@class BloggerAPIConnection;
-@class BlogImagesRetrieve;
-
 @interface KioskPostsViewController : PostsViewController
 
 @end

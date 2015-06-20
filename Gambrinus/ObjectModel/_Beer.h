@@ -20,7 +20,7 @@ extern const struct BeerRelationships {
 
 @class Brewer;
 @class Post;
-@class Style;
+@class BeerStyle;
 
 @interface BeerID : NSManagedObjectID {}
 @end
@@ -71,7 +71,7 @@ extern const struct BeerRelationships {
 
 - (NSMutableSet*)postsSet;
 
-@property (nonatomic, strong) Style *style;
+@property (nonatomic, strong) BeerStyle *style;
 
 //- (BOOL)validateStyle:(id*)value_ error:(NSError**)error_;
 
@@ -117,7 +117,7 @@ extern const struct BeerRelationships {
 - (NSMutableSet*)primitivePosts;
 - (void)setPrimitivePosts:(NSMutableSet*)value;
 
-- (Style*)primitiveStyle;
-- (void)setPrimitiveStyle:(Style*)value;
+- (BeerStyle*)primitiveStyle;
+- (void)setPrimitiveStyle:(BeerStyle*)value;
 
 @end

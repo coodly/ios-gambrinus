@@ -23,6 +23,7 @@
 #import "BlogPostView.h"
 #import "UIView+JCSLoadView.h"
 #import "ObjectModel.h"
+#import "ContentUpdate.h"
 #import "PostImageController.h"
 #import "Constants.h"
 
@@ -128,7 +129,7 @@ CGFloat const kPostContentPadding = 20;
 }
 
 - (void)startPullRefresh {
-    [self.bloggerAPIConnection refreshPost:self.post withCompletionHandler:^(BOOL complete, NSError *error) {
+    [self.contentUpdate refreshPost:self.post withCompletionHandler:^(BOOL complete, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.post.managedObjectContext refreshObject:self.post mergeChanges:YES];
             [self loadPostDetails];

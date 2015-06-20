@@ -47,7 +47,7 @@
     Post *post = tapped;
     PostViewController *controller = [[PostViewController alloc] init];
     [controller setPost:post];
-    [controller setBloggerAPIConnection:self.bloggerAPIConnection];
+    [controller setContentUpdate:self.contentUpdate];
     [controller setImagesRetrieve:self.imagesRetrieve];
     [controller setShowMarked:YES];
     [controller setObjectModel:self.objectModel];

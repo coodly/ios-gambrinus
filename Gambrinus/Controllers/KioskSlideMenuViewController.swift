@@ -23,7 +23,7 @@ class KioskSlideMenuViewController: SlideMenuController {
 
     var objectModel: ObjectModel!
     var imagesRetrieve: BlogImagesRetrieve!
-    var bloggerAPIConnection: BloggerAPIConnection!
+    var contentUpdate: ContentUpdate!
 
     override func viewWillAppear(animated: Bool) {
         if shown {
@@ -52,7 +52,7 @@ class KioskSlideMenuViewController: SlideMenuController {
         if let presented: KioskController = controller as? KioskController {
             presented.objectModel = objectModel
             presented.imagesRetrieve = imagesRetrieve
-            presented.bloggerAPIConnection = bloggerAPIConnection
+            presented.contentUpdate = contentUpdate
         }
         controller.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "1099-list-1-toolbar-selected"), style: .Plain, target: self, action: "openMenu")
         containedNavigation.setViewControllers([controller], animated: containedNavigation.viewControllers.count > 0)

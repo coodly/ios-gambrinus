@@ -28,6 +28,7 @@
 #import "Post.h"
 #import "Image.h"
 #import "PostViewController.h"
+#import "ContentUpdate.h"
 #import "PostsSearchInputView.h"
 
 @interface PostsViewController () <UICollectionViewDelegateFlowLayout>
@@ -101,7 +102,7 @@
     if (showHud) {
         hud = [ProgressOverlayView showHUDOnView:self.navigationController.view];
     }
-    [self.bloggerAPIConnection refreshWithCompletionHandler:^(BOOL complete, NSError *error) {
+    [self.contentUpdate updateWithCompletionHandler:^(BOOL complete, NSError *error) {
         [self.refreshControl endRefreshing];
         [hud hide];
     }];
@@ -145,7 +146,7 @@
 - (void)tappedOnObject:(id)tapped {
     PostViewController *controller = [[PostViewController alloc] init];
     [controller setPost:tapped];
-    [controller setBloggerAPIConnection:self.bloggerAPIConnection];
+    [controller setContentUpdate:self.contentUpdate];
     [controller setImagesRetrieve:self.imagesRetrieve];
     [controller.navigationController setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:controller animated:YES];

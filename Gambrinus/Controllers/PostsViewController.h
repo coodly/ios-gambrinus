@@ -20,12 +20,12 @@
 
 @class ObjectModel;
 @class BlogImagesRetrieve;
-@class BloggerAPIConnection;
+@class ContentUpdate;
 
 @interface PostsViewController : JCSFetchedCollectionViewController <KioskController>
 
 @property (nonatomic, strong) ObjectModel *objectModel;
-@property (nonatomic, strong) BloggerAPIConnection *bloggerAPIConnection;
+@property (nonatomic, strong) ContentUpdate *contentUpdate;
 @property (nonatomic, strong) BlogImagesRetrieve *imagesRetrieve;
 @property (nonatomic, assign, getter=isEditingPosts) BOOL editingPosts;
 

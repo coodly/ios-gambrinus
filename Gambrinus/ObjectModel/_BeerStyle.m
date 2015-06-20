@@ -1,37 +1,37 @@
 // DO NOT EDIT. This file is machine-generated and constantly overwritten.
-// Make changes to Style.m instead.
+// Make changes to BeerStyle.m instead.
 
-#import "_Style.h"
+#import "_BeerStyle.h"
 
-const struct StyleAttributes StyleAttributes = {
+const struct BeerStyleAttributes BeerStyleAttributes = {
 	.name = @"name",
 };
 
-const struct StyleRelationships StyleRelationships = {
+const struct BeerStyleRelationships BeerStyleRelationships = {
 	.beers = @"beers",
 };
 
-@implementation StyleID
+@implementation BeerStyleID
 @end
 
-@implementation _Style
+@implementation _BeerStyle
 
 + (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_ {
 	NSParameterAssert(moc_);
-	return [NSEntityDescription insertNewObjectForEntityForName:@"Style" inManagedObjectContext:moc_];
+	return [NSEntityDescription insertNewObjectForEntityForName:@"BeerStyle" inManagedObjectContext:moc_];
 }
 
 + (NSString*)entityName {
-	return @"Style";
+	return @"BeerStyle";
 }
 
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_ {
 	NSParameterAssert(moc_);
-	return [NSEntityDescription entityForName:@"Style" inManagedObjectContext:moc_];
+	return [NSEntityDescription entityForName:@"BeerStyle" inManagedObjectContext:moc_];
 }
 
-- (StyleID*)objectID {
-	return (StyleID*)[super objectID];
+- (BeerStyleID*)objectID {
+	return (BeerStyleID*)[super objectID];
 }
 
 + (NSSet*)keyPathsForValuesAffectingValueForKey:(NSString*)key {

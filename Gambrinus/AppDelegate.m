@@ -28,7 +28,7 @@
 #import "SideMenuViewController.h"
 #import "Parse.h"
 #import "ParseService.h"
-
+#import "ContentUpdate.h"
 
 @interface AppDelegate ()
 
@@ -53,9 +53,6 @@
     ObjectModel *model = [[ObjectModel alloc] init];
     [self setObjectModel:model];
 
-    ParseService *parse = [[ParseService alloc] init];
-    [parse fetchChangesSinceDate:[NSDate distantPast]];
-
     CDYLog(@"DB path:%@", [model storeURL]);
 
     if (![model databaseFileExists]) {
@@ -70,6 +67,10 @@
 
     BlogImagesRetrieve *imagesRetrieve = [[BlogImagesRetrieve alloc] init];
     BloggerAPIConnection *apiConnection = [[BloggerAPIConnection alloc] initWithBlogURLString:@"http://tartugambrinus.blogspot.com/" bloggerKey:GambrinusBloggerAPIKey objectModel:model];
+    ParseService *parseService = [[ParseService alloc] initWithObjectModel:model];
+    ContentUpdate *contentUpdate = [[ContentUpdate alloc] initWithObjectModel:model];
+    [contentUpdate setBloggerAPIConnection:apiConnection];
+    [contentUpdate setParseService:parseService];
 
     [application setStatusBarStyle:UIStatusBarStyleLightContent];
 
@@ -81,7 +82,7 @@
     KioskSlideMenuViewController *controller = [[KioskSlideMenuViewController alloc] initWithMainViewController:[[UINavigationController alloc] init] leftMenuViewController:[[SideMenuViewController alloc] init]];
     NSLog(@"setting");
     [controller setObjectModel:model];
-    [controller setBloggerAPIConnection:apiConnection];
+    [controller setContentUpdate:contentUpdate];
     [controller setImagesRetrieve:imagesRetrieve];
 
     [self.window setRootViewController:controller];

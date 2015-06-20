@@ -14,17 +14,17 @@
 * limitations under the License.
 */
 
+#import <JCSFoundation/NSString+JCSValidations.h>
 #import "BloggerAPIConnection.h"
 #import "AFHTTPRequestOperationManager.h"
 #import "Constants.h"
 #import "ObjectModel.h"
 #import "ObjectModel+Blogs.h"
-#import "_Blog.h"
 #import "Blog.h"
-#import "NSDate+Calculations.h"
 #import "NSDate+BloggerDate.h"
 #import "ObjectModel+Posts.h"
 #import "Post.h"
+#import "NSDate+ISO8601.h"
 
 typedef void (^BloggerResponseBlock)(id response, NSError *error);
 
@@ -50,18 +50,25 @@ NSString *const kGoogleBloggerAPIPath = @"https://www.googleapis.com/blogger/v3"
     return self;
 }
 
-- (void)refreshWithCompletionHandler:(BloggerRefreshBlock)completion {
+- (void)retrieveUpdatesSinceDate:(NSDate *)date completion:(ContentUpdateBlock)completion {
     [self.objectModel performBlock:^{
         Blog *blog = [self.objectModel blogWithBaseURL:self.blogURLString];
         if (!blog) {
-            [self retrieveBlogDetailsWithRefreshHandler:completion];
+            [self retrieveBlogDetailsWithCompetionHandler:^(BOOL complete, NSError *error) {
+                if (error) {
+                    completion(complete, error);
+                    return;
+                }
+
+                [self checkForUpdatesSinceDate:date withRefreshHandler:completion];
+            }];
         } else {
-            [self checkForUpdatesWithRefreshHandler:completion];
+            [self checkForUpdatesSinceDate:date withRefreshHandler:completion];
         }
     }];
 }
 
-- (void)refreshPost:(Post *)post withCompletionHandler:(BloggerRefreshBlock)completion {
+- (void)refreshPost:(Post *)post withCompletionHandler:(ContentUpdateBlock)completion {
     [self.objectModel performBlock:^{
         Blog *blog = [self.objectModel blogWithBaseURL:self.blogURLString];
         NSString *path = [NSString stringWithFormat:@"/blogs/%@/posts/%@", blog.blogId, post.postId];
@@ -81,7 +88,7 @@ NSString *const kGoogleBloggerAPIPath = @"https://www.googleapis.com/blogger/v3"
     }];
 }
 
-- (void)retrieveBlogDetailsWithRefreshHandler:(BloggerRefreshBlock)refreshHandler {
+- (void)retrieveBlogDetailsWithCompetionHandler:(ContentUpdateBlock)refreshHandler {
     CDYLog(@"retrieveBlogDetailsWithRefreshHandler");
     [self GET:@"/blogs/byurl" params:@{@"url": self.blogURLString} responseHandler:^(id response, NSError *error) {
         if (error) {
@@ -93,30 +100,34 @@ NSString *const kGoogleBloggerAPIPath = @"https://www.googleapis.com/blogger/v3"
             ObjectModel *model = (ObjectModel *) objectModel;
             [model createOrUpdateBlogWithData:response];
         } completion:^{
-            [self checkForUpdatesWithRefreshHandler:refreshHandler];
+            [self checkForUpdatesSinceDate:nil withRefreshHandler:refreshHandler];
         }];
     }];
 }
 
-- (void)checkForUpdatesWithRefreshHandler:(BloggerRefreshBlock)refreshHandler {
+- (void)checkForUpdatesSinceDate:(NSDate *)sinceDate withRefreshHandler:(ContentUpdateBlock)refreshHandler {
     CDYLog(@"checkForUpdatesWithRefreshHandler");
     [self.objectModel performBlock:^{
         Blog *blog = [self.objectModel blogWithBaseURL:self.blogURLString];
-        NSDate *latestKnownDate = [self.objectModel lastKnownPostDateForBlog:blog];
-
-        [self retrievePostsWithStartDate:[latestKnownDate beginningOfWeek] blogId:blog.blogId refreshHandler:refreshHandler];
+        [self retrievePostsWithStartDate:sinceDate toDate:[NSDate date] blogId:blog.blogId refreshHandler:refreshHandler];
     }];
 }
 
-- (void)retrievePostsWithStartDate:(NSDate *)rangeStartDate blogId:(NSString *)blogId refreshHandler:(BloggerRefreshBlock)refreshHandler {
-    CDYLog(@"retrievePostsWithStartDate:%@", rangeStartDate);
+- (void)retrievePostsWithStartDate:(NSDate *)rangeStartDate toDate:(NSDate *)rangeEndDate blogId:(NSString *)blogId refreshHandler:(ContentUpdateBlock)refreshHandler {
+    [self retrievePostsWithStartDate:rangeStartDate toDate:rangeEndDate blogId:blogId nextPageToken:nil refreshHandler:refreshHandler];
+}
+
+- (void)retrievePostsWithStartDate:(NSDate *)rangeStartDate toDate:(NSDate *)rangeEndDate blogId:(NSString *)blogId nextPageToken:(NSString *)nextPageToken refreshHandler:(ContentUpdateBlock)refreshHandler {
+    CDYLog(@"retrievePostsInRange:%@ to %@", rangeStartDate.iso8601String, rangeEndDate.iso8601String);
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"startDate"] = [rangeStartDate bloggerDateString];
-    NSDate *endDate = [rangeStartDate startOfNextWeek];
-    params[@"endDate"] = [endDate bloggerDateString];
+    params[@"endDate"] = [rangeEndDate bloggerDateString];
     params[@"status"] = @"live";
     params[@"fetchImages"] = @"true";
     params[@"maxResults"] = @(100);
+    if (nextPageToken.hasValue) {
+        params[@"pageToken"] = nextPageToken;
+    }
 
     NSString *path = [NSString stringWithFormat:@"/blogs/%@/posts", blogId];
     [self GET:path params:params responseHandler:^(id response, NSError *error) {
@@ -136,9 +147,9 @@ NSString *const kGoogleBloggerAPIPath = @"https://www.googleapis.com/blogger/v3"
                 [post setBlog:postForBlog];
             }
         } completion:^{
-            NSDate *now = [NSDate date];
-            if ([[now laterDate:endDate] isEqualToDate:now]) {
-                [self retrievePostsWithStartDate:endDate blogId:blogId refreshHandler:refreshHandler];
+            NSString *token = response[@"nextPageToken"];
+            if (token.hasValue) {
+                [self retrievePostsWithStartDate:rangeStartDate toDate:rangeEndDate blogId:blogId nextPageToken:token refreshHandler:refreshHandler];
             } else {
                 refreshHandler(YES, nil);
             }

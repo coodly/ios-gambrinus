@@ -1,12 +1,12 @@
-#import "Style.h"
+#import "BeerStyle.h"
 
-@interface Style ()
+@interface BeerStyle ()
 
 // Private interface goes here.
 
 @end
 
-@implementation Style
+@implementation BeerStyle
 
 // Custom logic goes here.
 

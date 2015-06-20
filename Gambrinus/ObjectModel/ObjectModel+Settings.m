@@ -48,7 +48,7 @@ typedef NS_ENUM(short, SettingKey) {
 
 - (void)setSettingValue:(NSString *)value forKey:(SettingKey)key {
     Setting *setting = [self loadSettingWithKey:key];
-    if (setting) {
+    if (!setting) {
         setting = [Setting insertInManagedObjectContext:self.managedObjectContext];
         [setting setKeyValue:key];
     }

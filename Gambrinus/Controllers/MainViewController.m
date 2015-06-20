@@ -16,12 +16,12 @@
 
 #import "MainViewController.h"
 #import "ObjectModel.h"
-#import "BloggerAPIConnection.h"
 #import "BlogImagesRetrieve.h"
 #import "MarkedPostsViewController.h"
 #import "BlogPostsViewController.h"
 #import "UIColor+Theme.h"
 #import "ObjectModel+Posts.h"
+#import "ContentUpdate.h"
 #import "KioskPostsViewController.h"
 
 @interface MainViewController ()
@@ -53,13 +53,13 @@
     MarkedPostsViewController *markedViewController = [[MarkedPostsViewController alloc] init];
     UINavigationController *markedNavigationController = [[UINavigationController alloc] initWithRootViewController:markedViewController];
     [markedViewController setObjectModel:self.objectModel];
-    [markedViewController setBloggerAPIConnection:self.bloggerAPIConnection];
+    [markedViewController setContentUpdate:self.contentUpdate];
     [markedViewController setImagesRetrieve:self.imagesRetrieve];
 
     BlogPostsViewController *postsViewController = [[BlogPostsViewController alloc] init];
     UINavigationController *postsNavigationController = [[UINavigationController alloc] initWithRootViewController:postsViewController];
     [postsViewController setObjectModel:self.objectModel];
-    [postsViewController setBloggerAPIConnection:self.bloggerAPIConnection];
+    [postsViewController setContentUpdate:self.contentUpdate];
     [postsViewController setImagesRetrieve:self.imagesRetrieve];
 
     [self.contentTabController setViewControllers:@[markedNavigationController, postsNavigationController]];
@@ -96,7 +96,7 @@
 - (void)presentKioskController {
     KioskPostsViewController *controller = [[KioskPostsViewController alloc] init];
     [controller setObjectModel:self.objectModel];
-    [controller setBloggerAPIConnection:self.bloggerAPIConnection];
+    [controller setContentUpdate:self.contentUpdate];
     [controller setImagesRetrieve:self.imagesRetrieve];
 
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:controller];

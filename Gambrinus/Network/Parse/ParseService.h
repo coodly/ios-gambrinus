@@ -15,16 +15,14 @@
 */
 
 #import <Foundation/Foundation.h>
+#import "RemoteService.h"
 
 @class ObjectModel;
-@class Post;
 
-typedef void (^BloggerRefreshBlock)(BOOL complete, NSError *error);
+@interface ParseService : NSObject <RemoteService>
 
-@interface BloggerAPIConnection : NSObject
+- (instancetype)initWithObjectModel:(ObjectModel *)objectModel;
 
-- (id)initWithBlogURLString:(NSString *)blogURLString bloggerKey:(NSString *)key objectModel:(ObjectModel *)model;
-- (void)refreshWithCompletionHandler:(BloggerRefreshBlock)completion;
-- (void)refreshPost:(Post *)post withCompletionHandler:(BloggerRefreshBlock)completion;
++ (void)registerCustomClasses;
 
 @end

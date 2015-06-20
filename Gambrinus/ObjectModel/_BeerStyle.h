@@ -1,26 +1,26 @@
 // DO NOT EDIT. This file is machine-generated and constantly overwritten.
-// Make changes to Style.h instead.
+// Make changes to BeerStyle.h instead.
 
 @import CoreData;
 
-extern const struct StyleAttributes {
+extern const struct BeerStyleAttributes {
 	__unsafe_unretained NSString *name;
-} StyleAttributes;
+} BeerStyleAttributes;
 
-extern const struct StyleRelationships {
+extern const struct BeerStyleRelationships {
 	__unsafe_unretained NSString *beers;
-} StyleRelationships;
+} BeerStyleRelationships;
 
 @class Beer;
 
-@interface StyleID : NSManagedObjectID {}
+@interface BeerStyleID : NSManagedObjectID {}
 @end
 
-@interface _Style : NSManagedObject {}
+@interface _BeerStyle : NSManagedObject {}
 + (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_;
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
-@property (nonatomic, readonly, strong) StyleID* objectID;
+@property (nonatomic, readonly, strong) BeerStyleID* objectID;
 
 @property (nonatomic, strong) NSString* name;
 
@@ -32,7 +32,7 @@ extern const struct StyleRelationships {
 
 @end
 
-@interface _Style (BeersCoreDataGeneratedAccessors)
+@interface _BeerStyle (BeersCoreDataGeneratedAccessors)
 - (void)addBeers:(NSSet*)value_;
 - (void)removeBeers:(NSSet*)value_;
 - (void)addBeersObject:(Beer*)value_;
@@ -40,7 +40,7 @@ extern const struct StyleRelationships {
 
 @end
 
-@interface _Style (CoreDataGeneratedPrimitiveAccessors)
+@interface _BeerStyle (CoreDataGeneratedPrimitiveAccessors)
 
 - (NSString*)primitiveName;
 - (void)setPrimitiveName:(NSString*)value;
