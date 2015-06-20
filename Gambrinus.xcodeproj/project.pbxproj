@@ -36,7 +36,6 @@
 		EA0986D71B1E4767006FEC11 /* KioskSlideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0986D61B1E4767006FEC11 /* KioskSlideMenuViewController.swift */; };
 		EA0986DB1B1EB174006FEC11 /* MenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0986D91B1EB174006FEC11 /* MenuCell.m */; };
 		EA0986DC1B1EB174006FEC11 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA0986DA1B1EB174006FEC11 /* MenuCell.xib */; };
-		EA15CB0C194EDCEB00A140B5 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA15CB0B194EDCEB00A140B5 /* MainViewController.m */; };
 		EA15CB10194EDE4900A140B5 /* BlogPostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA15CB0E194EDE4900A140B5 /* BlogPostsViewController.m */; };
 		EA15CB15194EDE8800A140B5 /* MarkedPostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA15CB13194EDE8800A140B5 /* MarkedPostsViewController.m */; };
 		EA2713AD1B1A4B40002D655E /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2713AB1B1A4B40002D655E /* Fabric.framework */; };
@@ -154,8 +153,6 @@
 		EA0986D91B1EB174006FEC11 /* MenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuCell.m; sourceTree = "<group>"; };
 		EA0986DA1B1EB174006FEC11 /* MenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 		EA0986DD1B1EB581006FEC11 /* KioskController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KioskController.h; sourceTree = "<group>"; };
-		EA15CB0A194EDCEB00A140B5 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		EA15CB0B194EDCEB00A140B5 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		EA15CB0D194EDE4900A140B5 /* BlogPostsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogPostsViewController.h; sourceTree = "<group>"; };
 		EA15CB0E194EDE4900A140B5 /* BlogPostsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogPostsViewController.m; sourceTree = "<group>"; };
 		EA15CB12194EDE8800A140B5 /* MarkedPostsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarkedPostsViewController.h; sourceTree = "<group>"; };
@@ -483,8 +480,6 @@
 				EADDA401192A51E5000CCEA9 /* KioskPostsViewController.h */,
 				EADDA402192A51E5000CCEA9 /* KioskPostsViewController.m */,
 				EA0986D61B1E4767006FEC11 /* KioskSlideMenuViewController.swift */,
-				EA15CB0A194EDCEB00A140B5 /* MainViewController.h */,
-				EA15CB0B194EDCEB00A140B5 /* MainViewController.m */,
 				EA15CB12194EDE8800A140B5 /* MarkedPostsViewController.h */,
 				EA15CB13194EDE8800A140B5 /* MarkedPostsViewController.m */,
 				EA666BC719822C4E00F72C0F /* PostImageController.h */,
@@ -835,7 +830,6 @@
 			files = (
 				EAC9A7D219446A10006AC834 /* Image.m in Sources */,
 				EA3FDE811B18CB0700C93B7D /* Secrets.m in Sources */,
-				EA15CB0C194EDCEB00A140B5 /* MainViewController.m in Sources */,
 				EAC9A7DE194476CC006AC834 /* _PullStatus.m in Sources */,
 				EADF7E7B192BDC7F00EC13AB /* PostViewController.m in Sources */,
 				EA50FCAD1B354C810000F304 /* ObjectModel+Brewers.m in Sources */,

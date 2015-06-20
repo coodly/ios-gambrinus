@@ -29,10 +29,13 @@
 #import "Parse.h"
 #import "ParseService.h"
 #import "ContentUpdate.h"
+#import "KioskPostsViewController.h"
 
 @interface AppDelegate ()
 
 @property (nonatomic, strong) ObjectModel *objectModel;
+@property (nonatomic, strong) ContentUpdate *contentUpdate;
+@property (nonatomic, strong) BlogImagesRetrieve *imagesRetrieve;
 
 @end
 
@@ -65,10 +68,22 @@
         }
     }
 
+#if DEBUG
+    UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(presentKioskController)];
+    [recognizer setNumberOfTapsRequired:3];
+    [recognizer setNumberOfTouchesRequired:1];
+    [self.window addGestureRecognizer:recognizer];
+#endif
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(guidedAccessStatusChanged) name:UIAccessibilityGuidedAccessStatusDidChangeNotification object:nil];
+
+
     BlogImagesRetrieve *imagesRetrieve = [[BlogImagesRetrieve alloc] init];
+    self.imagesRetrieve = imagesRetrieve;
     BloggerAPIConnection *apiConnection = [[BloggerAPIConnection alloc] initWithBlogURLString:@"http://tartugambrinus.blogspot.com/" bloggerKey:GambrinusBloggerAPIKey objectModel:model];
     ParseService *parseService = [[ParseService alloc] initWithObjectModel:model];
     ContentUpdate *contentUpdate = [[ContentUpdate alloc] initWithObjectModel:model];
+    self.contentUpdate = contentUpdate;
     [contentUpdate setBloggerAPIConnection:apiConnection];
     [contentUpdate setParseService:parseService];
 
@@ -110,6 +125,24 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)guidedAccessStatusChanged  {
+    if (UIAccessibilityIsGuidedAccessEnabled()) {
+        [self presentKioskController];
+    } else {
+        [self.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
+    }
+}
+
+- (void)presentKioskController {
+    KioskPostsViewController *controller = [[KioskPostsViewController alloc] init];
+    [controller setObjectModel:self.objectModel];
+    [controller setContentUpdate:self.contentUpdate];
+    [controller setImagesRetrieve:self.imagesRetrieve];
+
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
+    [self.window.rootViewController presentViewController:navigationController animated:YES completion:nil];
 }
 
 @end
