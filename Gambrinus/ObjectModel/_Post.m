@@ -11,6 +11,7 @@ const struct PostAttributes PostAttributes = {
 	.slug = @"slug",
 	.starred = @"starred",
 	.title = @"title",
+	.touchedAt = @"touchedAt",
 };
 
 const struct PostRelationships PostRelationships = {
@@ -108,6 +109,8 @@ const struct PostRelationships PostRelationships = {
 }
 
 @dynamic title;
+
+@dynamic touchedAt;
 
 @dynamic beers;
 

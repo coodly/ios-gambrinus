@@ -20,4 +20,7 @@
 
 @interface ParsePost : PFObject <PFSubclassing>
 
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic, strong) NSArray *beers;
+
 @end

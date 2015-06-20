@@ -18,7 +18,10 @@
 #import "BlogImageAsk.h"
 #import "Image.h"
 #import "Constants.h"
+#import "Beer.h"
 
+NSString *const PostDataKeyIdentifier = @"PostDataKeyIdentifier";
+NSString *const PostDataKeyBeerBindingIds = @"PostDataKeyBeerBindingIds";
 
 @interface Post ()
 
@@ -60,6 +63,21 @@
 
 - (NSString *)publishDateString {
     return [[Post publishDateFormatter] stringFromDate:self.publishDate];
+}
+
+- (void)markTouched {
+    [self setTouchedAt:[NSDate date]];
+}
+
+- (NSString *)rateBeerScore {
+    if (self.beers.count == 0) {
+        return @"";
+    } else if (self.beers.count == 1) {
+        Beer *beer = self.beers.anyObject;
+        return beer.rbScore;
+    } else {
+        return @"*";
+    }
 }
 
 static NSDateFormatter *__publishDateFormatter;

@@ -54,7 +54,7 @@ NSString *const kGoogleBloggerAPIPath = @"https://www.googleapis.com/blogger/v3"
     [self.objectModel performBlock:^{
         Blog *blog = [self.objectModel blogWithBaseURL:self.blogURLString];
         if (!blog) {
-            [self retrieveBlogDetailsWithCompetionHandler:^(BOOL complete, NSError *error) {
+            [self retrieveBlogDetailsWithCompletionHandler:^(BOOL complete, NSError *error) {
                 if (error) {
                     completion(complete, error);
                     return;
@@ -88,7 +88,7 @@ NSString *const kGoogleBloggerAPIPath = @"https://www.googleapis.com/blogger/v3"
     }];
 }
 
-- (void)retrieveBlogDetailsWithCompetionHandler:(ContentUpdateBlock)refreshHandler {
+- (void)retrieveBlogDetailsWithCompletionHandler:(ContentUpdateBlock)refreshHandler {
     CDYLog(@"retrieveBlogDetailsWithRefreshHandler");
     [self GET:@"/blogs/byurl" params:@{@"url": self.blogURLString} responseHandler:^(id response, NSError *error) {
         if (error) {
@@ -100,7 +100,7 @@ NSString *const kGoogleBloggerAPIPath = @"https://www.googleapis.com/blogger/v3"
             ObjectModel *model = (ObjectModel *) objectModel;
             [model createOrUpdateBlogWithData:response];
         } completion:^{
-            [self checkForUpdatesSinceDate:nil withRefreshHandler:refreshHandler];
+            refreshHandler(YES, nil);
         }];
     }];
 }

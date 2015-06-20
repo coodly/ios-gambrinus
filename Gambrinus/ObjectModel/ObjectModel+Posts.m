@@ -22,6 +22,7 @@
 #import "NSString+Cleanup.h"
 #import "ObjectModel+Images.h"
 #import "NSString+JCSValidations.h"
+#import "ObjectModel+Beers.h"
 
 @implementation ObjectModel (Posts)
 
@@ -92,7 +93,7 @@
 - (NSFetchedResultsController *)fetchedControllerForVisiblePostsOrderedByDate {
     NSPredicate *notHiddenPredicate = [self postsPredicateForOptions:KioskNoOptions];
     NSSortDescriptor *hiddenDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"hidden" ascending:YES];
-    NSSortDescriptor *publishDateDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"publishDate" ascending:NO];
+    NSSortDescriptor *publishDateDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"publishDate" ascending:YES];
     return [self fetchedControllerForEntity:[Post entityName] predicate:notHiddenPredicate sortDescriptors:@[hiddenDescriptor, publishDateDescriptor]];
 }
 
@@ -145,6 +146,20 @@
     }
 
     return [self postsPredicateForOptions:options searchTerm:searchTerm];
+}
+
+- (void)bindPostBeersWithData:(NSDictionary *)data {
+    Post *post = [self existingPostWithId:data[PostDataKeyIdentifier]];
+    if (!post) {
+        return;
+    }
+
+    NSArray *beers = [self beersWithBindingKeys:data[PostDataKeyBeerBindingIds]];
+    if (beers.count == 0) {
+        return;
+    }
+
+    [post setBeers:[NSSet setWithArray:beers]];
 }
 
 @end

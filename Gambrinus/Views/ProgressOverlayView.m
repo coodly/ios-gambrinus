@@ -15,11 +15,13 @@
 */
 
 #import "ProgressOverlayView.h"
+#import "UIColor+Theme.h"
 
 @implementation ProgressOverlayView
 
 + (ProgressOverlayView *)showHUDOnView:(UIView *)view {
     ProgressOverlayView *overlayView = [[ProgressOverlayView alloc] init];
+    [overlayView setTintColor:[UIColor myOrange]];
     [overlayView setTitleLabelText:@""];
     [view addSubview:overlayView];
     [overlayView show:NO];

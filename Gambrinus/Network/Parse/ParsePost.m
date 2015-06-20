@@ -18,6 +18,9 @@
 
 @implementation ParsePost
 
+@dynamic identifier;
+@dynamic beers;
+
 + (NSString *)parseClassName {
     return @"Post";
 }

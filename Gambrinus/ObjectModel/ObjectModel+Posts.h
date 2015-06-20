@@ -37,5 +37,6 @@ typedef NS_OPTIONS(short, KioskPostShowOptions) {
 - (NSPredicate *)postsPredicateForOptions:(KioskPostShowOptions)options;
 - (BOOL)hasStarredPosts;
 - (NSPredicate *)postsPredicateWithSearchTerm:(NSString *)search showHidden:(BOOL)showHidden showOnlyStarred:(BOOL)showOnlyStarred;
+- (void)bindPostBeersWithData:(NSDictionary *)data;
 
 @end

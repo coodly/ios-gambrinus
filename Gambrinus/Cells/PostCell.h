@@ -19,12 +19,11 @@
 
 @interface PostCell : UICollectionViewCell
 
-@property (nonatomic, copy) JCSActionBlock addRemoveHandler;
 @property (nonatomic, strong, readonly) UILabel *titleLabel;
 @property (nonatomic, strong, readonly) UIImageView *imageView;
-@property (nonatomic, strong, readonly) UIButton *addRemoveButton;
 
 - (void)setTitle:(NSString *)title;
 - (void)setDateString:(NSString *)dateString;
+- (void)setRateBeerScore:(NSString *)score;
 
 @end

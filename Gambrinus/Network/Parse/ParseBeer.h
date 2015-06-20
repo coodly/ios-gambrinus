@@ -21,4 +21,13 @@
 
 @interface ParseBeer : PFObject <PFSubclassing>
 
+@property (nonatomic, strong) NSNumber *identifier;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *rbscore;
+@property (nonatomic, copy) NSString *rbidentifier;
+@property (nonatomic, copy) NSString *brewer;
+@property (nonatomic, copy) NSString *style;
+@property (nonatomic, copy) NSString *alcohol;
+@property (nonatomic, assign) BOOL aliased;
+
 @end

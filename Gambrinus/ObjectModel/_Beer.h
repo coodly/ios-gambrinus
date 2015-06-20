@@ -6,6 +6,7 @@
 extern const struct BeerAttributes {
 	__unsafe_unretained NSString *alcohol;
 	__unsafe_unretained NSString *aliased;
+	__unsafe_unretained NSString *bindingKey;
 	__unsafe_unretained NSString *identifier;
 	__unsafe_unretained NSString *name;
 	__unsafe_unretained NSString *rbIdentifier;
@@ -42,6 +43,10 @@ extern const struct BeerRelationships {
 - (void)setAliasedValue:(BOOL)value_;
 
 //- (BOOL)validateAliased:(id*)value_ error:(NSError**)error_;
+
+@property (nonatomic, strong) NSString* bindingKey;
+
+//- (BOOL)validateBindingKey:(id*)value_ error:(NSError**)error_;
 
 @property (nonatomic, strong) NSNumber* identifier;
 
@@ -95,6 +100,9 @@ extern const struct BeerRelationships {
 
 - (BOOL)primitiveAliasedValue;
 - (void)setPrimitiveAliasedValue:(BOOL)value_;
+
+- (NSString*)primitiveBindingKey;
+- (void)setPrimitiveBindingKey:(NSString*)value;
 
 - (NSNumber*)primitiveIdentifier;
 - (void)setPrimitiveIdentifier:(NSNumber*)value;

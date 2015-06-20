@@ -11,6 +11,7 @@ extern const struct PostAttributes {
 	__unsafe_unretained NSString *slug;
 	__unsafe_unretained NSString *starred;
 	__unsafe_unretained NSString *title;
+	__unsafe_unretained NSString *touchedAt;
 } PostAttributes;
 
 extern const struct PostRelationships {
@@ -68,6 +69,10 @@ extern const struct PostRelationships {
 
 //- (BOOL)validateTitle:(id*)value_ error:(NSError**)error_;
 
+@property (nonatomic, strong) NSDate* touchedAt;
+
+//- (BOOL)validateTouchedAt:(id*)value_ error:(NSError**)error_;
+
 @property (nonatomic, strong) NSSet *beers;
 
 - (NSMutableSet*)beersSet;
@@ -118,6 +123,9 @@ extern const struct PostRelationships {
 
 - (NSString*)primitiveTitle;
 - (void)setPrimitiveTitle:(NSString*)value;
+
+- (NSDate*)primitiveTouchedAt;
+- (void)setPrimitiveTouchedAt:(NSDate*)value;
 
 - (NSMutableSet*)primitiveBeers;
 - (void)setPrimitiveBeers:(NSMutableSet*)value;

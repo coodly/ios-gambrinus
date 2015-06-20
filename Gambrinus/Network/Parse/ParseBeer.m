@@ -18,6 +18,15 @@
 
 @implementation ParseBeer
 
+@dynamic identifier;
+@dynamic name;
+@dynamic rbscore;
+@dynamic rbidentifier;
+@dynamic brewer;
+@dynamic style;
+@dynamic alcohol;
+@dynamic aliased;
+
 + (NSString *)parseClassName {
     return @"Beer";
 }

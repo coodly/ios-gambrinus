@@ -20,6 +20,13 @@
 #import "PFQuery.h"
 #import "ObjectModel.h"
 #import "Constants.h"
+#import "NSDate+Calculations.h"
+#import "ObjectModel+Beers.h"
+#import "Beer.h"
+#import "Post.h"
+#import "ObjectModel+Posts.h"
+
+typedef void (^ParseObjectsHandler)(id objects, ObjectModel *objectModel);
 
 NSUInteger ParsePageSize = 100;
 
@@ -45,44 +52,68 @@ NSUInteger ParsePageSize = 100;
 }
 
 - (void)fetchBeersSinceDate:(NSDate *)sinceDate offset:(NSUInteger)offset completion:(ContentUpdateBlock)completion {
-    NSPredicate *afterDate = [NSPredicate predicateWithFormat:@"updatedAt >= %@", sinceDate];
-    PFQuery *query = [ParseBeer queryWithPredicate:afterDate];
-    [query setLimit:ParsePageSize];
-    [query setSkip:offset];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        CDYLog(@"Fetched %d beers", objects.count);
-        if (error) {
-            completion(NO, error);
-            return;
+    ParseObjectsHandler beersHandler = ^(ParseBeer *beer, ObjectModel *objectModel) {
+        NSMutableDictionary *save = [NSMutableDictionary dictionary];
+        save[BeerDataKeyBindingKey] = beer.objectId;
+        save[BeerDataKeyIdentifier] = beer.identifier;
+        save[BeerDataKeyName] = beer.name;
+        save[BeerDataKeyRbScore] = beer.rbscore;
+        save[BeerDataKeyRbIdentifier] = beer.rbidentifier;
+        if (beer.brewer) {
+            save[BeerDataKeyBrewer] = beer.brewer;
         }
-
-        if (objects.count == ParsePageSize) {
-            [self fetchBeersSinceDate:sinceDate offset:offset + ParsePageSize completion:completion];
-        } else {
-            CDYLog(@"Beers fetch complete");
-            completion(YES, nil);
+        if (beer.style) {
+            save[BeerDataKeyStyle] = beer.style;
         }
-    }];
+        save[BeerDataKeyAlcohol] = beer.alcohol;
+        save[BeerDataKeyAliased] = @(beer.aliased);
+        [objectModel createOrUpdateBeerWithData:save];
+    };
+    [self fetchUpdateForObject:[ParseBeer parseClassName] since:sinceDate offset:offset objectsHandler:beersHandler completion:completion];
 }
 
 - (void)fetchPostsSinceDate:(NSDate *)sinceDate offset:(NSUInteger)offset completion:(ContentUpdateBlock)completion {
+    ParseObjectsHandler postsHandler = ^(ParsePost *post, ObjectModel *objectModel) {
+        if ([post.beers count] == 0) {
+            return;
+        }
+
+        NSMutableDictionary *data = [NSMutableDictionary dictionary];
+        data[PostDataKeyIdentifier] = post.identifier;
+        data[PostDataKeyBeerBindingIds] = post.beers;
+        [objectModel bindPostBeersWithData:data];
+    };
+    [self fetchUpdateForObject:[ParsePost parseClassName] since:sinceDate offset:offset objectsHandler:postsHandler completion:completion];
+}
+
+- (void)fetchUpdateForObject:(NSString *)className
+                       since:(NSDate *)sinceDate
+                      offset:(NSUInteger)offset
+              objectsHandler:(ParseObjectsHandler)objectsHandler
+                  completion:(ContentUpdateBlock)completion {
     NSPredicate *afterDate = [NSPredicate predicateWithFormat:@"updatedAt >= %@", sinceDate];
-    PFQuery *query = [ParsePost queryWithPredicate:afterDate];
+    PFQuery *query = [PFQuery queryWithClassName:className predicate:afterDate];
     [query setLimit:ParsePageSize];
     [query setSkip:offset];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        CDYLog(@"Fetched %d posts", objects.count);
+        CDYLog(@"Fetched %tu of type %@", objects.count, className);
         if (error) {
             completion(NO, error);
             return;
         }
 
-        if (objects.count == ParsePageSize) {
-            [self fetchPostsSinceDate:sinceDate offset:offset + ParsePageSize completion:completion];
-        } else {
-            CDYLog(@"Posts fetch complete");
-            completion(YES, nil);
-        }
+        [self.objectModel saveInBlock:^(CDYObjectModel *objectModel) {
+            for (id object in objects) {
+                objectsHandler(object, (ObjectModel *) objectModel);
+            }
+        } completion:^{
+            if (objects.count == ParsePageSize) {
+                [self fetchUpdateForObject:className since:sinceDate offset:offset + ParsePageSize objectsHandler:objectsHandler completion:completion];
+            } else {
+                CDYLog(@"%@ fetch complete", className);
+                completion(YES, nil);
+            }
+        }];
     }];
 }
 

@@ -113,21 +113,7 @@
     Post *post = object;
     [postCell setTitle:post.title];
     [postCell setDateString:[self showDates] ? post.publishDateString : nil];
-
-    if (post.hiddenValue) {
-        [postCell.addRemoveButton setImage:[UIImage imageNamed:@"PostAdd"] forState:UIControlStateNormal];
-    } else {
-        [postCell.addRemoveButton setImage:[UIImage imageNamed:@"PostRemove"] forState:UIControlStateNormal];
-    }
-
-    [postCell.addRemoveButton setHidden:!self.isEditingPosts];
-
-    [postCell setAddRemoveHandler:^{
-        [self.objectModel performBlock:^{
-            [post setHiddenValue:!post.hiddenValue];
-            [self.objectModel saveContext];
-        }];
-    }];
+    [postCell setRateBeerScore:post.rateBeerScore];
 
     if (!post.image) {
         [postCell.imageView setImage:nil];

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="7531" systemVersion="14C109" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -19,11 +19,11 @@
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </imageView>
                     <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T3g-tO-C2f" userLabel="Date background">
-                        <rect key="frame" x="0.0" y="0.0" width="240" height="21"/>
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="20.5"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wP4-uU-70q" userLabel="Date">
-                        <rect key="frame" x="5" y="0.0" width="230" height="21"/>
+                        <rect key="frame" x="5" y="0.0" width="230" height="20.5"/>
                         <constraints>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="10" id="Kj7-gq-6pp"/>
                         </constraints>
@@ -44,21 +44,17 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w3F-E4-1k1" userLabel="AddRemoveButton">
-                        <rect key="frame" x="196" y="-5" width="49" height="49"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jPE-xK-iS2" userLabel="RB score">
+                        <rect key="frame" x="190" y="28.5" width="42" height="20.5"/>
+                        <color key="backgroundColor" red="0.070588235289999995" green="0.54901960780000003" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="49" id="GvE-mV-Jia"/>
-                            <constraint firstAttribute="width" constant="49" id="a8F-IN-fOw"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" id="akh-h1-k0N"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" id="i6Y-WG-8nb"/>
                         </constraints>
-                        <inset key="imageEdgeInsets" minX="0.0" minY="5" maxX="5" maxY="0.0"/>
-                        <state key="normal" image="PostAdd">
-                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                        </state>
-                        <connections>
-                            <action selector="addRemoveTapped" destination="ejy-75-Szc" eventType="touchUpInside" id="QnQ-VJ-GLB"/>
-                        </connections>
-                    </button>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
@@ -66,14 +62,14 @@
             <constraints>
                 <constraint firstItem="Z3p-W9-qVo" firstAttribute="leading" secondItem="ejy-75-Szc" secondAttribute="leading" constant="5" id="0zi-kH-FQh"/>
                 <constraint firstAttribute="trailing" secondItem="CWC-du-9hJ" secondAttribute="trailing" id="4LX-b7-0K6"/>
+                <constraint firstItem="jPE-xK-iS2" firstAttribute="top" secondItem="wP4-uU-70q" secondAttribute="bottom" constant="8" id="5aM-Kh-2sd"/>
                 <constraint firstItem="CWC-du-9hJ" firstAttribute="leading" secondItem="ejy-75-Szc" secondAttribute="leading" id="E99-P8-mFa"/>
-                <constraint firstItem="w3F-E4-1k1" firstAttribute="top" secondItem="ejy-75-Szc" secondAttribute="top" constant="-5" id="FPn-SP-pWv"/>
                 <constraint firstAttribute="bottom" secondItem="CWC-du-9hJ" secondAttribute="bottom" id="HQy-r5-7QK"/>
                 <constraint firstItem="t73-do-qtc" firstAttribute="leading" secondItem="ejy-75-Szc" secondAttribute="leading" id="JkK-Nv-RJH"/>
-                <constraint firstAttribute="trailing" secondItem="w3F-E4-1k1" secondAttribute="trailing" constant="-5" id="QBe-Dt-HzV"/>
                 <constraint firstAttribute="trailing" secondItem="t73-do-qtc" secondAttribute="trailing" id="WDj-I5-co8"/>
                 <constraint firstAttribute="bottom" secondItem="Z3p-W9-qVo" secondAttribute="bottom" id="ZBA-Gi-A6T"/>
                 <constraint firstAttribute="trailing" secondItem="Z3p-W9-qVo" secondAttribute="trailing" constant="5" id="bNH-oN-iF4"/>
+                <constraint firstAttribute="trailing" secondItem="jPE-xK-iS2" secondAttribute="trailing" constant="8" id="bwK-L1-jQl"/>
                 <constraint firstItem="wP4-uU-70q" firstAttribute="leading" secondItem="ejy-75-Szc" secondAttribute="leading" constant="5" id="dbE-c7-cLb"/>
                 <constraint firstItem="T3g-tO-C2f" firstAttribute="top" secondItem="ejy-75-Szc" secondAttribute="top" id="iPG-9V-WPv"/>
                 <constraint firstItem="t73-do-qtc" firstAttribute="height" secondItem="Z3p-W9-qVo" secondAttribute="height" id="kho-QL-P0N"/>
@@ -87,18 +83,15 @@
             </constraints>
             <size key="customSize" width="243" height="226"/>
             <connections>
-                <outlet property="addRemoveButton" destination="w3F-E4-1k1" id="Ofr-51-mx3"/>
                 <outlet property="dateBackground" destination="T3g-tO-C2f" id="MPU-2B-bVX"/>
                 <outlet property="dateLabel" destination="wP4-uU-70q" id="tzo-3q-efp"/>
                 <outlet property="imageView" destination="CWC-du-9hJ" id="UgZ-vI-AQF"/>
+                <outlet property="rateBeerScoreLabel" destination="jPE-xK-iS2" id="WjB-n6-mzE"/>
                 <outlet property="titleBackground" destination="t73-do-qtc" id="Vkp-vb-F6Q"/>
                 <outlet property="titleLabel" destination="Z3p-W9-qVo" id="wuq-l1-wfW"/>
             </connections>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="PostAdd" width="32" height="32"/>
-    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

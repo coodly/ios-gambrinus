@@ -6,6 +6,7 @@
 const struct BeerAttributes BeerAttributes = {
 	.alcohol = @"alcohol",
 	.aliased = @"aliased",
+	.bindingKey = @"bindingKey",
 	.identifier = @"identifier",
 	.name = @"name",
 	.rbIdentifier = @"rbIdentifier",
@@ -79,6 +80,8 @@ const struct BeerRelationships BeerRelationships = {
 - (void)setPrimitiveAliasedValue:(BOOL)value_ {
 	[self setPrimitiveAliased:@(value_)];
 }
+
+@dynamic bindingKey;
 
 @dynamic identifier;
 

@@ -16,6 +16,9 @@
 
 #import "_Post.h"
 
+extern NSString *const PostDataKeyIdentifier;
+extern NSString *const PostDataKeyBeerBindingIds;
+
 @class BlogImageAsk;
 
 @interface Post : _Post {}
@@ -24,5 +27,7 @@
 - (BlogImageAsk *)postImageAsk;
 - (BlogImageAsk *)originalImageAsk;
 - (NSString *)publishDateString;
+- (void)markTouched;
+- (NSString *)rateBeerScore;
 
 @end
