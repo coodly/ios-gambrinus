@@ -70,14 +70,22 @@ NSString *const PostDataKeyBeerBindingIds = @"PostDataKeyBeerBindingIds";
 }
 
 - (NSString *)rateBeerScore {
-    if (self.beers.count == 0) {
+    NSArray *unaliased = self.unaliasedBeers;
+    if (unaliased.count == 0) {
         return @"";
-    } else if (self.beers.count == 1) {
-        Beer *beer = self.beers.anyObject;
+    } else if (unaliased.count == 1) {
+        Beer *beer = unaliased.firstObject;
         return beer.rbScore;
     } else {
         return @"*";
     }
+}
+
+- (NSArray *)unaliasedBeers {
+    return [self.beers filteredSetUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
+        Beer *beer = evaluatedObject;
+        return !beer.aliasedValue;
+    }]].allObjects;
 }
 
 static NSDateFormatter *__publishDateFormatter;
