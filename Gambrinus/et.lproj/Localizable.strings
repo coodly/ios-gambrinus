@@ -6,6 +6,7 @@
 "menu.controller.option.favorites" = "Lemmikud";
 
 "post.extended.details.back.button.title" = "Tagasi";
+"post.extended.details.posted.on.label" = "Postitatud";
 
 "posts.controller.edit.button" = "Peida";
 "posts.controller.edit.done.button" = "Valmis";

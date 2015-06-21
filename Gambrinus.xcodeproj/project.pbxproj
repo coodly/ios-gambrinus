@@ -71,6 +71,8 @@
 		EA50FCD11B35B9570000F304 /* UIView+Loading.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FCD01B35B9570000F304 /* UIView+Loading.m */; };
 		EA50FCD51B35BAAC0000F304 /* PostExtendedDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FCD31B35BAAC0000F304 /* PostExtendedDetailsViewController.m */; };
 		EA50FCD61B35BAAC0000F304 /* PostExtendedDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA50FCD41B35BAAC0000F304 /* PostExtendedDetailsViewController.xib */; };
+		EA50FCDA1B36C2E70000F304 /* PostInfoRowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FCD81B36C2E70000F304 /* PostInfoRowCell.m */; };
+		EA50FCDB1B36C2E70000F304 /* PostInfoRowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA50FCD91B36C2E70000F304 /* PostInfoRowCell.xib */; };
 		EA666BCA19822C4E00F72C0F /* PostImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA666BC819822C4E00F72C0F /* PostImageController.m */; };
 		EA666BCB19822C4E00F72C0F /* PostImageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA666BC919822C4E00F72C0F /* PostImageController.xib */; };
 		EA6FD0E51B18D74B000DB461 /* LaunchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA6FD0E41B18D74B000DB461 /* LaunchView.xib */; };
@@ -225,6 +227,9 @@
 		EA50FCD21B35BAAC0000F304 /* PostExtendedDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostExtendedDetailsViewController.h; sourceTree = "<group>"; };
 		EA50FCD31B35BAAC0000F304 /* PostExtendedDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostExtendedDetailsViewController.m; sourceTree = "<group>"; };
 		EA50FCD41B35BAAC0000F304 /* PostExtendedDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostExtendedDetailsViewController.xib; sourceTree = "<group>"; };
+		EA50FCD71B36C2E70000F304 /* PostInfoRowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostInfoRowCell.h; sourceTree = "<group>"; };
+		EA50FCD81B36C2E70000F304 /* PostInfoRowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostInfoRowCell.m; sourceTree = "<group>"; };
+		EA50FCD91B36C2E70000F304 /* PostInfoRowCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostInfoRowCell.xib; sourceTree = "<group>"; };
 		EA666BC719822C4E00F72C0F /* PostImageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostImageController.h; sourceTree = "<group>"; };
 		EA666BC819822C4E00F72C0F /* PostImageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostImageController.m; sourceTree = "<group>"; };
 		EA666BC919822C4E00F72C0F /* PostImageController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostImageController.xib; sourceTree = "<group>"; };
@@ -661,6 +666,9 @@
 				EA50FCC21B35B8AC0000F304 /* PostImageCell.h */,
 				EA50FCC31B35B8AC0000F304 /* PostImageCell.m */,
 				EA50FCC41B35B8AC0000F304 /* PostImageCell.xib */,
+				EA50FCD71B36C2E70000F304 /* PostInfoRowCell.h */,
+				EA50FCD81B36C2E70000F304 /* PostInfoRowCell.m */,
+				EA50FCD91B36C2E70000F304 /* PostInfoRowCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -763,6 +771,7 @@
 			files = (
 				EA43D7C7198B6A08000B5AF5 /* Localizable.strings in Resources */,
 				EA50FCCB1B35B8C10000F304 /* PostContentCell.xib in Resources */,
+				EA50FCDB1B36C2E70000F304 /* PostInfoRowCell.xib in Resources */,
 				EA0668CE192A45C4009C83F1 /* InfoPlist.strings in Resources */,
 				EA43D7C6198B6A08000B5AF5 /* InfoPlist.strings in Resources */,
 				EAA3E6EB1930BBB500812B6F /* PoweredByViewController.xib in Resources */,
@@ -938,6 +947,7 @@
 				EADDA41E192B8ACE000CCEA9 /* Post.m in Sources */,
 				EAC877C5192E26C800309A23 /* Setting.m in Sources */,
 				EA15CB15194EDE8800A140B5 /* MarkedPostsViewController.m in Sources */,
+				EA50FCDA1B36C2E70000F304 /* PostInfoRowCell.m in Sources */,
 				EADF7E6F192BCB9100EC13AB /* PostCell.m in Sources */,
 				EA50FCD11B35B9570000F304 /* UIView+Loading.m in Sources */,
 			);

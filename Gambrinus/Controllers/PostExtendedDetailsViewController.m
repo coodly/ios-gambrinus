@@ -27,16 +27,22 @@
 #import "BlogImageAsk.h"
 #import "PostImageController.h"
 #import "ObjectModel.h"
+#import "PostInfoRowCell.h"
+
+typedef NS_ENUM(short, DetailSection) {
+    SectionContent,
+    SectionRateBeer
+};
 
 typedef NS_ENUM(short, DetailRow) {
     RowImage,
-    RowContent
+    RowContent,
+    RowPostDate
 };
 
 @interface PostExtendedDetailsViewController () <UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, strong) NSArray *presentedSections;
-@property (nonatomic, strong) PostContentCell *contentCell;
 
 @end
 
@@ -59,16 +65,18 @@ typedef NS_ENUM(short, DetailRow) {
     [super viewDidLoad];
 
     [self setPresentedSections:@[
-        @[
-                @(RowImage),
-                @(RowContent)
-        ]
+            @[
+                    @(RowImage),
+                    @(RowContent),
+                    @(RowPostDate)
+            ]
     ]];
 
     [self.collectionView setBackgroundColor:[UIColor whiteColor]];
 
     [self.collectionView registerNib:[PostImageCell viewNib] forCellWithReuseIdentifier:[PostImageCell identifier]];
     [self.collectionView registerNib:[PostContentCell viewNib] forCellWithReuseIdentifier:[PostContentCell identifier]];
+    [self.collectionView registerNib:[PostInfoRowCell viewNib] forCellWithReuseIdentifier:[PostInfoRowCell identifier]];
 
     if (IS_PAD) {
         [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"post.extended.details.back.button.title", nil) style:UIBarButtonItemStylePlain target:self action:@selector(close)]];
@@ -130,18 +138,17 @@ typedef NS_ENUM(short, DetailRow) {
             break;
         }
         case RowContent: {
-            PostContentCell *contentCell = self.contentCell;
-            if (!contentCell) {
-                contentCell = [self.collectionView dequeueReusableCellWithReuseIdentifier:[PostContentCell identifier] forIndexPath:indexPath];
-                self.contentCell = contentCell;
-            }
-            CGRect frame = contentCell.frame;
-            frame.size.width = CGRectGetWidth(self.view.frame);
-            [contentCell setFrame:frame];
+            PostContentCell *contentCell = [self.collectionView dequeueReusableCellWithReuseIdentifier:[PostContentCell identifier] forIndexPath:indexPath];
             [contentCell.contentLabel setText:self.post.content];
             cell = contentCell;
             break;
         }
+        case RowPostDate: {
+            PostInfoRowCell *dateRowCell = [self.collectionView dequeueReusableCellWithReuseIdentifier:[PostInfoRowCell identifier] forIndexPath:indexPath];
+            [dateRowCell setTitle:NSLocalizedString(@"post.extended.details.posted.on.label", nil) value:self.post.publishDateString];
+            cell = dateRowCell;
+            break;
+        };
     }
 
     return cell;
@@ -183,20 +190,23 @@ typedef NS_ENUM(short, DetailRow) {
             size = CGSizeMake(CGRectGetWidth(self.view.frame), IS_PAD ? 200 : 150);
             break;
         case RowContent:
-            size = CGSizeMake(CGRectGetWidth(self.view.frame), [self calculateHeightForContent]);
-            [self.contentCell layoutIfNeeded];
+            size = CGSizeMake(CGRectGetWidth(self.view.frame),
+                    [self calculateHeightForString:self.post.content usingFont:[UIFont preferredFontForTextStyle:UIFontTextStyleBody]] + 8 * 2 + 50);
+            break;
+        case RowPostDate:
+            size = CGSizeMake(CGRectGetWidth(self.view.frame),
+                    [self calculateHeightForString:NSLocalizedString(@"post.extended.details.posted.on.label", nil) usingFont:[UIFont preferredFontForTextStyle:UIFontTextStyleHeadline]] + 8 * 2);
             break;
     }
     return size;
 }
 
-- (CGFloat)calculateHeightForContent {
-    CGRect bounds = [self.post.content boundingRectWithSize:CGSizeMake(CGRectGetWidth(self.view.frame) -8 *2, CGFLOAT_MAX)
-                                                    options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
-                                                 attributes:@{NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleBody]}
-                                                    context:nil];
-    // + 50 for additional spacing
-    return CGRectGetHeight(bounds) + 8 * 2 + 50;
+- (CGFloat)calculateHeightForString:(NSString *)string usingFont:(UIFont *)font {
+    CGRect bounds = [string boundingRectWithSize:CGSizeMake(CGRectGetWidth(self.view.frame) - 8 * 2, CGFLOAT_MAX)
+                                         options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
+                                      attributes:@{NSFontAttributeName : font}
+                                         context:nil];
+    return CGRectGetHeight(bounds);
 }
 
 - (void)retrievePostImage:(PostImageCell *)cell {
@@ -222,5 +232,14 @@ typedef NS_ENUM(short, DetailRow) {
         [self.collectionView.collectionViewLayout invalidateLayout];
     });
 }
+
+- (CGFloat)calculateHeightForCell:(UICollectionViewCell *)sizingCell {
+    [sizingCell setNeedsLayout];
+    [sizingCell layoutIfNeeded];
+
+    CGSize size = [sizingCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+    return size.height + 1.0f; // Add 1.0f for the cell separator height
+}
+
 
 @end
