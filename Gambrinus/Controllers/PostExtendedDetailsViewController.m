@@ -195,7 +195,8 @@ typedef NS_ENUM(short, DetailRow) {
                                                     options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
                                                  attributes:@{NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleBody]}
                                                     context:nil];
-    return CGRectGetHeight(bounds) + 8 * 2;
+    // + 50 for additional spacing
+    return CGRectGetHeight(bounds) + 8 * 2 + 50;
 }
 
 - (void)retrievePostImage:(PostImageCell *)cell {
