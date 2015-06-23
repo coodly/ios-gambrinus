@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="RateBeerDetailsCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="84"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="84"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Name: Beer name is here" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kbo-XK-Uxw">
+                        <rect key="frame" x="8" y="8" width="304" height="20.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="10" id="P1T-C4-ABL"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Style: Stouting" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdo-zb-nn9">
+                        <rect key="frame" x="8" y="33" width="304" height="19.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="10" id="L9u-8u-l3b"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Brewer: Kokomoko" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="15R-Ul-t4A">
+                        <rect key="frame" x="8" y="57" width="304" height="19.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="10" id="iYX-f5-nTO"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X98-8K-Ijd" userLabel="RB score" customClass="RateBeerScoreLabel">
+                        <rect key="frame" x="262" y="0.0" width="58.5" height="58.5"/>
+                        <color key="backgroundColor" red="0.99607843139999996" green="0.99607843139999996" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" id="Dtt-m6-Xdg"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" id="d7n-1v-hNM"/>
+                            <constraint firstAttribute="width" secondItem="X98-8K-Ijd" secondAttribute="height" multiplier="1:1" id="qnf-gK-QSl"/>
+                        </constraints>
+                        <attributedString key="attributedText">
+                            <fragment content=" rb:100 ">
+                                <attributes>
+                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstItem="15R-Ul-t4A" firstAttribute="top" secondItem="gdo-zb-nn9" secondAttribute="bottom" constant="4" id="2Yg-WS-BRg"/>
+                <constraint firstAttribute="trailing" secondItem="15R-Ul-t4A" secondAttribute="trailing" constant="8" id="3Gf-8L-9SM"/>
+                <constraint firstAttribute="trailing" secondItem="gdo-zb-nn9" secondAttribute="trailing" constant="8" id="3Oy-2V-KjW"/>
+                <constraint firstAttribute="bottom" secondItem="15R-Ul-t4A" secondAttribute="bottom" constant="8" id="5wz-Ve-h7O"/>
+                <constraint firstItem="X98-8K-Ijd" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="7Ci-tD-8OA"/>
+                <constraint firstItem="gdo-zb-nn9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="Pfm-Mk-gsk"/>
+                <constraint firstItem="gdo-zb-nn9" firstAttribute="top" secondItem="Kbo-XK-Uxw" secondAttribute="bottom" constant="4" id="gOv-Zk-uFs"/>
+                <constraint firstAttribute="trailing" secondItem="Kbo-XK-Uxw" secondAttribute="trailing" constant="8" id="hXa-Lh-hgO"/>
+                <constraint firstItem="Kbo-XK-Uxw" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="kCd-9C-fKY"/>
+                <constraint firstItem="Kbo-XK-Uxw" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="mWC-aN-5mN"/>
+                <constraint firstAttribute="trailing" secondItem="X98-8K-Ijd" secondAttribute="trailing" id="mwq-VM-RgO"/>
+                <constraint firstItem="15R-Ul-t4A" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="sCk-IW-74J"/>
+            </constraints>
+            <size key="customSize" width="285" height="177"/>
+            <connections>
+                <outlet property="brewerLabel" destination="15R-Ul-t4A" id="DNp-LI-s0A"/>
+                <outlet property="nameLabel" destination="Kbo-XK-Uxw" id="Wea-7n-m1X"/>
+                <outlet property="scoreLabel" destination="X98-8K-Ijd" id="9Dp-IA-lXA"/>
+                <outlet property="styleLabel" destination="gdo-zb-nn9" id="tkh-q9-IQs"/>
+            </connections>
+            <point key="canvasLocation" x="349" y="395"/>
+        </collectionViewCell>
+    </objects>
+</document>
