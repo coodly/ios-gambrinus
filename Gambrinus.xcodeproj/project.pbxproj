@@ -1195,7 +1195,7 @@
 				INFOPLIST_FILE = "Gambrinus/Gambrinus-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "a4b27cf9-9207-4032-af5e-35b946acf794";
 				SWIFT_OBJC_BRIDGING_HEADER = "Gambrinus/Gambrinus-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
@@ -1221,7 +1221,7 @@
 				INFOPLIST_FILE = "Gambrinus/Gambrinus-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "a4b27cf9-9207-4032-af5e-35b946acf794";
 				SWIFT_OBJC_BRIDGING_HEADER = "Gambrinus/Gambrinus-Bridging-Header.h";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 				WRAPPER_EXTENSION = app;
