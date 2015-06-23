@@ -16,13 +16,12 @@
 
 #import <Foundation/Foundation.h>
 
-#define IS_PAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+@interface InfoCellDefinition : NSObject
 
-extern NSString *const KioskPostsThumbnailName;
-extern NSString *const KioskPostsImageFamily;
+@property (nonatomic, copy, readonly) NSString *cellIdentifier;
 
-#define CDYLog(s, ...) NSLog( @"<%@:%@ (%d)> %@", [[NSString stringWithUTF8String:__FILE__] lastPathComponent], NSStringFromSelector(_cmd), __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
+- (instancetype)initWithCellIdentifier:(NSString *)identifier;
+- (void)configureCell:(UICollectionViewCell *)cell;
+- (CGFloat)heightOfContentForWidth:(CGFloat)presentationWidth;
 
-#define GambrinusForceET 1
-
-static CGFloat const GambrinusSpacing = 8;
+@end

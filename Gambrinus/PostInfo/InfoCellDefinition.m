@@ -14,15 +14,31 @@
 * limitations under the License.
 */
 
-#import <Foundation/Foundation.h>
+#import <JCSFoundation/JCSFoundationConstants.h>
+#import "InfoCellDefinition.h"
 
-#define IS_PAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+@interface InfoCellDefinition ()
 
-extern NSString *const KioskPostsThumbnailName;
-extern NSString *const KioskPostsImageFamily;
+@property (nonatomic, copy) NSString *cellIdentifier;
 
-#define CDYLog(s, ...) NSLog( @"<%@:%@ (%d)> %@", [[NSString stringWithUTF8String:__FILE__] lastPathComponent], NSStringFromSelector(_cmd), __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
+@end
 
-#define GambrinusForceET 1
+@implementation InfoCellDefinition
 
-static CGFloat const GambrinusSpacing = 8;
+- (instancetype)initWithCellIdentifier:(NSString *)identifier {
+    self = [super init];
+    if (self) {
+        _cellIdentifier = identifier;
+    }
+    return self;
+}
+
+- (void)configureCell:(UICollectionViewCell *)cell {
+    JCS_ABSTRACT_METHOD;
+}
+
+- (CGFloat)heightOfContentForWidth:(CGFloat)presentationWidth {
+    return 0;
+}
+
+@end

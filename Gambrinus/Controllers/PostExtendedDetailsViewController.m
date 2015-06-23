@@ -28,21 +28,13 @@
 #import "PostImageController.h"
 #import "ObjectModel.h"
 #import "PostInfoRowCell.h"
-
-typedef NS_ENUM(short, DetailSection) {
-    SectionContent,
-    SectionRateBeer
-};
-
-typedef NS_ENUM(short, DetailRow) {
-    RowImage,
-    RowContent,
-    RowPostDate
-};
+#import "InfoImageCellDefinition.h"
+#import "InfoPostContentCellDefinition.h"
+#import "InfoTitleDetailCellDefinition.h"
 
 @interface PostExtendedDetailsViewController () <UICollectionViewDelegateFlowLayout>
 
-@property (nonatomic, strong) NSArray *presentedSections;
+@property (nonatomic, strong) NSArray *infoRows;
 
 @end
 
@@ -64,14 +56,6 @@ typedef NS_ENUM(short, DetailRow) {
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self setPresentedSections:@[
-            @[
-                    @(RowImage),
-                    @(RowContent),
-                    @(RowPostDate)
-            ]
-    ]];
-
     [self.collectionView setBackgroundColor:[UIColor whiteColor]];
 
     [self.collectionView registerNib:[PostImageCell viewNib] forCellWithReuseIdentifier:[PostImageCell identifier]];
@@ -83,6 +67,21 @@ typedef NS_ENUM(short, DetailRow) {
     }
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(contentSizeChanged) name:UIContentSizeCategoryDidChangeNotification object:nil];
+
+    InfoImageCellDefinition *imageDefinition = [[InfoImageCellDefinition alloc] initWithCellIdentifier:[PostImageCell identifier]];
+    [imageDefinition setImageAsk:self.post.postImageAsk];
+    [imageDefinition setImagesRetrieve:self.imagesRetrieve];
+
+    InfoPostContentCellDefinition *contentDefinition = [[InfoPostContentCellDefinition alloc] initWithCellIdentifier:[PostContentCell identifier]];
+    [contentDefinition setText:self.post.content];
+
+    InfoTitleDetailCellDefinition *postDateDefinition = [[InfoTitleDetailCellDefinition alloc] initWithCellIdentifier:[PostInfoRowCell identifier]];
+    [postDateDefinition setTitle:NSLocalizedString(@"post.extended.details.posted.on.label", nil)];
+    [postDateDefinition setValue:self.post.publishDateString];
+
+    [self setInfoRows:@[
+            @[imageDefinition, contentDefinition, postDateDefinition]
+    ]];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -113,52 +112,28 @@ typedef NS_ENUM(short, DetailRow) {
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return self.presentedSections.count;
+    return self.infoRows.count;
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    NSArray *sectionRows = self.presentedSections[section];
+    NSArray *sectionRows = self.infoRows[section];
     return sectionRows.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [self configuredCellForIndexPath:indexPath];
-    return cell;
-}
-
-- (UICollectionViewCell *)configuredCellForIndexPath:(NSIndexPath *)indexPath {
-    DetailRow type = [self typeForIndexPath:indexPath];
-    UICollectionViewCell *cell = nil;
-    switch (type) {
-        case RowImage: {
-            PostImageCell *imageCell = [self.collectionView dequeueReusableCellWithReuseIdentifier:[PostImageCell identifier] forIndexPath:indexPath];
-            [self retrievePostImage:imageCell];
-            cell = imageCell;
-            break;
-        }
-        case RowContent: {
-            PostContentCell *contentCell = [self.collectionView dequeueReusableCellWithReuseIdentifier:[PostContentCell identifier] forIndexPath:indexPath];
-            [contentCell.contentLabel setText:self.post.content];
-            cell = contentCell;
-            break;
-        }
-        case RowPostDate: {
-            PostInfoRowCell *dateRowCell = [self.collectionView dequeueReusableCellWithReuseIdentifier:[PostInfoRowCell identifier] forIndexPath:indexPath];
-            [dateRowCell setTitle:NSLocalizedString(@"post.extended.details.posted.on.label", nil) value:self.post.publishDateString];
-            cell = dateRowCell;
-            break;
-        };
-    }
-
+    InfoCellDefinition *cellDefinition = self.infoRows[indexPath.section][indexPath.row];
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellDefinition.cellIdentifier forIndexPath:indexPath];
+    [cellDefinition configureCell:cell];
     return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
 
-    DetailRow type = [self typeForIndexPath:indexPath];
-    if (type == RowImage) {
+    InfoCellDefinition *cellDefinition = self.infoRows[indexPath.section][indexPath.row];
+
+    if ([cellDefinition isKindOfClass:[InfoImageCellDefinition class]]) {
         [self presentImage];
     }
 }
@@ -177,54 +152,9 @@ typedef NS_ENUM(short, DetailRow) {
     [self.navigationController pushViewController:controller animated:YES];
 }
 
-- (DetailRow)typeForIndexPath:(NSIndexPath *)indexPath {
-    NSNumber *row = self.presentedSections[(NSUInteger) indexPath.section][(NSUInteger) indexPath.row];
-    return (DetailRow) row.integerValue;
-}
-
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    DetailRow type = [self typeForIndexPath:indexPath];
-    CGSize size = CGSizeZero;
-    switch (type) {
-        case RowImage:
-            size = CGSizeMake(CGRectGetWidth(self.view.frame), IS_PAD ? 200 : 150);
-            break;
-        case RowContent:
-            size = CGSizeMake(CGRectGetWidth(self.view.frame),
-                    [self calculateHeightForString:self.post.content usingFont:[UIFont preferredFontForTextStyle:UIFontTextStyleBody]] + 8 * 2 + 50);
-            break;
-        case RowPostDate:
-            size = CGSizeMake(CGRectGetWidth(self.view.frame),
-                    [self calculateHeightForString:NSLocalizedString(@"post.extended.details.posted.on.label", nil) usingFont:[UIFont preferredFontForTextStyle:UIFontTextStyleHeadline]] + 8 * 2);
-            break;
-    }
-    return size;
-}
-
-- (CGFloat)calculateHeightForString:(NSString *)string usingFont:(UIFont *)font {
-    CGRect bounds = [string boundingRectWithSize:CGSizeMake(CGRectGetWidth(self.view.frame) - 8 * 2, CGFLOAT_MAX)
-                                         options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
-                                      attributes:@{NSFontAttributeName : font}
-                                         context:nil];
-    return CGRectGetHeight(bounds);
-}
-
-- (void)retrievePostImage:(PostImageCell *)cell {
-    void (^imageLoadBlock)(CDYImageAsk *, UIImage *) = ^(CDYImageAsk *forAsk, UIImage *image) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [cell.imageView setImage:image];
-            [cell.imageView.layer addAnimation:[CATransition animation] forKey:kCATransition];
-        });
-    };
-
-    BlogImageAsk *ask = [self.post postImageAsk];
-    if ([self.imagesRetrieve hasImageForAsk:ask]) {
-        CDYLog(@"Load image");
-        imageLoadBlock(ask, [self.imagesRetrieve imageForAsk:ask]);
-    } else {
-        CDYLog(@"Retrieve image");
-        [self.imagesRetrieve retrieveImageForAsk:ask completion:imageLoadBlock];
-    }
+    InfoCellDefinition *cellDefinition = self.infoRows[indexPath.section][indexPath.row];
+    return CGSizeMake(CGRectGetWidth(self.view.frame), [cellDefinition heightOfContentForWidth:CGRectGetWidth(self.view.frame)]);
 }
 
 - (void)contentSizeChanged {

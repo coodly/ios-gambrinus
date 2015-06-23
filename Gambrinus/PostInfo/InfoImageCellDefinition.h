@@ -14,15 +14,14 @@
 * limitations under the License.
 */
 
-#import <Foundation/Foundation.h>
+#import "InfoCellDefinition.h"
 
-#define IS_PAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+@class BlogImageAsk;
+@class BlogImagesRetrieve;
 
-extern NSString *const KioskPostsThumbnailName;
-extern NSString *const KioskPostsImageFamily;
+@interface InfoImageCellDefinition : InfoCellDefinition
 
-#define CDYLog(s, ...) NSLog( @"<%@:%@ (%d)> %@", [[NSString stringWithUTF8String:__FILE__] lastPathComponent], NSStringFromSelector(_cmd), __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
+@property (nonatomic, strong) BlogImageAsk *imageAsk;
+@property (nonatomic, strong) BlogImagesRetrieve *imagesRetrieve;
 
-#define GambrinusForceET 1
-
-static CGFloat const GambrinusSpacing = 8;
+@end

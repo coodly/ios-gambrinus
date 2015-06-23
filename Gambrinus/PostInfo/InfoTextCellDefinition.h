@@ -14,15 +14,10 @@
 * limitations under the License.
 */
 
-#import <Foundation/Foundation.h>
+#import "InfoCellDefinition.h"
 
-#define IS_PAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+@interface InfoTextCellDefinition : InfoCellDefinition
 
-extern NSString *const KioskPostsThumbnailName;
-extern NSString *const KioskPostsImageFamily;
+- (CGFloat)calculateHeightForString:(NSString *)string usingFont:(UIFont *)font presentationWidth:(CGFloat)presentationWidth;
 
-#define CDYLog(s, ...) NSLog( @"<%@:%@ (%d)> %@", [[NSString stringWithUTF8String:__FILE__] lastPathComponent], NSStringFromSelector(_cmd), __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
-
-#define GambrinusForceET 1
-
-static CGFloat const GambrinusSpacing = 8;
+@end

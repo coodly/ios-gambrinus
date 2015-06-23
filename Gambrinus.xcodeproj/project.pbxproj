@@ -37,6 +37,11 @@
 		EA0986DC1B1EB174006FEC11 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA0986DA1B1EB174006FEC11 /* MenuCell.xib */; };
 		EA15CB10194EDE4900A140B5 /* BlogPostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA15CB0E194EDE4900A140B5 /* BlogPostsViewController.m */; };
 		EA15CB15194EDE8800A140B5 /* MarkedPostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA15CB13194EDE8800A140B5 /* MarkedPostsViewController.m */; };
+		EA16BF021B392A4D0018FED4 /* InfoCellDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = EA16BF011B392A4D0018FED4 /* InfoCellDefinition.m */; };
+		EA16BF051B392A5B0018FED4 /* InfoImageCellDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = EA16BF041B392A5B0018FED4 /* InfoImageCellDefinition.m */; };
+		EA16BF081B392A6C0018FED4 /* InfoPostContentCellDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = EA16BF071B392A6C0018FED4 /* InfoPostContentCellDefinition.m */; };
+		EA16BF0B1B392A810018FED4 /* InfoTitleDetailCellDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = EA16BF0A1B392A810018FED4 /* InfoTitleDetailCellDefinition.m */; };
+		EA16BF0E1B392FD50018FED4 /* InfoTextCellDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = EA16BF0D1B392FD50018FED4 /* InfoTextCellDefinition.m */; };
 		EA2713AD1B1A4B40002D655E /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2713AB1B1A4B40002D655E /* Fabric.framework */; };
 		EA2713AE1B1A4B40002D655E /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2713AC1B1A4B40002D655E /* Crashlytics.framework */; };
 		EA3FDE811B18CB0700C93B7D /* Secrets.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3FDE801B18CB0700C93B7D /* Secrets.m */; };
@@ -168,6 +173,16 @@
 		EA15CB0E194EDE4900A140B5 /* BlogPostsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogPostsViewController.m; sourceTree = "<group>"; };
 		EA15CB12194EDE8800A140B5 /* MarkedPostsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarkedPostsViewController.h; sourceTree = "<group>"; };
 		EA15CB13194EDE8800A140B5 /* MarkedPostsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarkedPostsViewController.m; sourceTree = "<group>"; };
+		EA16BF001B392A4D0018FED4 /* InfoCellDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoCellDefinition.h; sourceTree = "<group>"; };
+		EA16BF011B392A4D0018FED4 /* InfoCellDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoCellDefinition.m; sourceTree = "<group>"; };
+		EA16BF031B392A5B0018FED4 /* InfoImageCellDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoImageCellDefinition.h; sourceTree = "<group>"; };
+		EA16BF041B392A5B0018FED4 /* InfoImageCellDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoImageCellDefinition.m; sourceTree = "<group>"; };
+		EA16BF061B392A6C0018FED4 /* InfoPostContentCellDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoPostContentCellDefinition.h; sourceTree = "<group>"; };
+		EA16BF071B392A6C0018FED4 /* InfoPostContentCellDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoPostContentCellDefinition.m; sourceTree = "<group>"; };
+		EA16BF091B392A810018FED4 /* InfoTitleDetailCellDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoTitleDetailCellDefinition.h; sourceTree = "<group>"; };
+		EA16BF0A1B392A810018FED4 /* InfoTitleDetailCellDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoTitleDetailCellDefinition.m; sourceTree = "<group>"; };
+		EA16BF0C1B392FD50018FED4 /* InfoTextCellDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoTextCellDefinition.h; sourceTree = "<group>"; };
+		EA16BF0D1B392FD50018FED4 /* InfoTextCellDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoTextCellDefinition.m; sourceTree = "<group>"; };
 		EA2713AB1B1A4B40002D655E /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		EA2713AC1B1A4B40002D655E /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		EA3FDE7F1B18CB0700C93B7D /* Secrets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Secrets.h; sourceTree = "<group>"; };
@@ -374,6 +389,7 @@
 				EAC877CC192E405700309A23 /* Images */,
 				EADDA406192A527F000CCEA9 /* Network */,
 				EADDA410192B88A1000CCEA9 /* ObjectModel */,
+				EA16BEFF1B392A3E0018FED4 /* PostInfo */,
 				EA0668CA192A45C4009C83F1 /* Supporting Files */,
 				EADF7E74192BD2C000EC13AB /* Theme */,
 				EADF7E63192B8DE500EC13AB /* Views */,
@@ -434,6 +450,23 @@
 				EA0986CC1B1E40C6006FEC11 /* SlideMenuController.swift */,
 			);
 			path = SlideMenuController;
+			sourceTree = "<group>";
+		};
+		EA16BEFF1B392A3E0018FED4 /* PostInfo */ = {
+			isa = PBXGroup;
+			children = (
+				EA16BF001B392A4D0018FED4 /* InfoCellDefinition.h */,
+				EA16BF011B392A4D0018FED4 /* InfoCellDefinition.m */,
+				EA16BF031B392A5B0018FED4 /* InfoImageCellDefinition.h */,
+				EA16BF041B392A5B0018FED4 /* InfoImageCellDefinition.m */,
+				EA16BF061B392A6C0018FED4 /* InfoPostContentCellDefinition.h */,
+				EA16BF071B392A6C0018FED4 /* InfoPostContentCellDefinition.m */,
+				EA16BF0C1B392FD50018FED4 /* InfoTextCellDefinition.h */,
+				EA16BF0D1B392FD50018FED4 /* InfoTextCellDefinition.m */,
+				EA16BF091B392A810018FED4 /* InfoTitleDetailCellDefinition.h */,
+				EA16BF0A1B392A810018FED4 /* InfoTitleDetailCellDefinition.m */,
+			);
+			path = PostInfo;
 			sourceTree = "<group>";
 		};
 		EA43D7BC198B6A08000B5AF5 /* en.lproj */ = {
@@ -902,6 +935,7 @@
 				EA925DF419502952001E0AC9 /* PostsViewController.m in Sources */,
 				EAC9A7CF19446A03006AC834 /* _Image.m in Sources */,
 				EAC9A7E1194476DA006AC834 /* PullStatus.m in Sources */,
+				EA16BF0B1B392A810018FED4 /* InfoTitleDetailCellDefinition.m in Sources */,
 				EA50FCA11B351BB00000F304 /* ParseBeer.m in Sources */,
 				EA666BCA19822C4E00F72C0F /* PostImageController.m in Sources */,
 				EA50FCD51B35BAAC0000F304 /* PostExtendedDetailsViewController.m in Sources */,
@@ -922,11 +956,13 @@
 				EA50FCCA1B35B8C10000F304 /* PostContentCell.m in Sources */,
 				EA0986CD1B1E40C6006FEC11 /* SlideMenuController.swift in Sources */,
 				EADDA416192B88C6000CCEA9 /* Gambrinus.xcdatamodeld in Sources */,
+				EA16BF081B392A6C0018FED4 /* InfoPostContentCellDefinition.m in Sources */,
 				EA50FCC51B35B8AC0000F304 /* PostImageCell.m in Sources */,
 				EA50FCCE1B35B9260000F304 /* UIView+Identifier.m in Sources */,
 				EA011A401936195F00232E92 /* BlogImageAsk.m in Sources */,
 				EA50FCB61B355CE60000F304 /* UIFont+Theme.m in Sources */,
 				EAA3E6EA1930BBB500812B6F /* PoweredByViewController.m in Sources */,
+				EA16BF021B392A4D0018FED4 /* InfoCellDefinition.m in Sources */,
 				EA15CB10194EDE4900A140B5 /* BlogPostsViewController.m in Sources */,
 				EA0119E41931D2DD00232E92 /* Blog.m in Sources */,
 				EA50FC991B351B9D0000F304 /* BloggerAPIConnection.m in Sources */,
@@ -939,6 +975,7 @@
 				EAC9A7D519446A91006AC834 /* ObjectModel+Images.m in Sources */,
 				EA0119EA1931E04F00232E92 /* NSDate+BloggerDate.m in Sources */,
 				EAC877B7192DDC6C00309A23 /* PostsSearchInputView.m in Sources */,
+				EA16BF0E1B392FD50018FED4 /* InfoTextCellDefinition.m in Sources */,
 				EADDA421192B8ADF000CCEA9 /* ObjectModel+Posts.m in Sources */,
 				EA0119E71931D45400232E92 /* ObjectModel+Blogs.m in Sources */,
 				EADF7E66192B8E0D00EC13AB /* ProgressOverlayView.m in Sources */,
@@ -946,6 +983,7 @@
 				EA50FCA31B351BB00000F304 /* ParseService.m in Sources */,
 				EADDA41E192B8ACE000CCEA9 /* Post.m in Sources */,
 				EAC877C5192E26C800309A23 /* Setting.m in Sources */,
+				EA16BF051B392A5B0018FED4 /* InfoImageCellDefinition.m in Sources */,
 				EA15CB15194EDE8800A140B5 /* MarkedPostsViewController.m in Sources */,
 				EA50FCDA1B36C2E70000F304 /* PostInfoRowCell.m in Sources */,
 				EADF7E6F192BCB9100EC13AB /* PostCell.m in Sources */,
