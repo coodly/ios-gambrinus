@@ -14,13 +14,16 @@
 * limitations under the License.
 */
 
-#import <UIKit/UIKit.h>
+#import "InfoSpacingCellDefinition.h"
 
-@interface PostInfoRowCell : UICollectionViewCell
+@implementation InfoSpacingCellDefinition
 
-@property (nonatomic, strong, readonly) UILabel *rowLabel;
+- (void)configureCell:(UICollectionViewCell *)cell {
+    //NO OP
+}
 
-- (void)setTitle:(NSString *)title value:(NSString *)value;
-- (void)setVerticalSpacing:(CGFloat)spacing;
+- (CGFloat)heightOfContentForWidth:(CGFloat)presentationWidth {
+    return self.spacingHeight;
+}
 
 @end

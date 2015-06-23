@@ -14,13 +14,10 @@
 * limitations under the License.
 */
 
-#import <UIKit/UIKit.h>
+#import "InfoCellDefinition.h"
 
-@interface PostInfoRowCell : UICollectionViewCell
+@interface InfoSpacingCellDefinition : InfoCellDefinition
 
-@property (nonatomic, strong, readonly) UILabel *rowLabel;
-
-- (void)setTitle:(NSString *)title value:(NSString *)value;
-- (void)setVerticalSpacing:(CGFloat)spacing;
+@property (nonatomic, assign) CGFloat spacingHeight;
 
 @end

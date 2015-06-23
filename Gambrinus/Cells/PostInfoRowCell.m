@@ -21,6 +21,7 @@
 @property (nonatomic, strong) IBOutlet UILabel *rowLabel;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *value;
+@property (nonatomic, strong) IBOutletCollection(NSLayoutConstraint) NSArray *labelVerticalSpacing;
 
 @end
 
@@ -48,6 +49,14 @@
     [self setTitle:title];
     [self setValue:value];
     [self presentContent];
+}
+
+- (void)setVerticalSpacing:(CGFloat)spacing {
+    for (NSLayoutConstraint *constraint in self.labelVerticalSpacing) {
+        [constraint setConstant:spacing];
+    }
+
+    [self layoutIfNeeded];
 }
 
 @end

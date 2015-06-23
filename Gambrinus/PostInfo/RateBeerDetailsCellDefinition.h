@@ -14,13 +14,12 @@
 * limitations under the License.
 */
 
-#import <UIKit/UIKit.h>
+#import "InfoTextCellDefinition.h"
 
-@interface PostInfoRowCell : UICollectionViewCell
+@class Beer;
 
-@property (nonatomic, strong, readonly) UILabel *rowLabel;
+@interface RateBeerDetailsCellDefinition : InfoTextCellDefinition
 
-- (void)setTitle:(NSString *)title value:(NSString *)value;
-- (void)setVerticalSpacing:(CGFloat)spacing;
+@property (nonatomic, strong) Beer *beer;
 
 @end

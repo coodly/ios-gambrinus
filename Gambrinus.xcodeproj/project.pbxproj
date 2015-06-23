@@ -42,6 +42,14 @@
 		EA16BF081B392A6C0018FED4 /* InfoPostContentCellDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = EA16BF071B392A6C0018FED4 /* InfoPostContentCellDefinition.m */; };
 		EA16BF0B1B392A810018FED4 /* InfoTitleDetailCellDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = EA16BF0A1B392A810018FED4 /* InfoTitleDetailCellDefinition.m */; };
 		EA16BF0E1B392FD50018FED4 /* InfoTextCellDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = EA16BF0D1B392FD50018FED4 /* InfoTextCellDefinition.m */; };
+		EA16BF111B3934EE0018FED4 /* InfoRateBeerSectionTitleDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = EA16BF101B3934EE0018FED4 /* InfoRateBeerSectionTitleDefinition.m */; };
+		EA16BF151B3935590018FED4 /* RateBeerSectionTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA16BF131B3935590018FED4 /* RateBeerSectionTitleCell.m */; };
+		EA16BF161B3935590018FED4 /* RateBeerSectionTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA16BF141B3935590018FED4 /* RateBeerSectionTitleCell.xib */; };
+		EA16BF1A1B3969AB0018FED4 /* RateBeerDetailsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA16BF181B3969AB0018FED4 /* RateBeerDetailsCollectionViewCell.m */; };
+		EA16BF1D1B396BB80018FED4 /* RateBeerDetailsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA16BF1C1B396BB80018FED4 /* RateBeerDetailsCollectionViewCell.xib */; };
+		EA16BF201B396D960018FED4 /* RateBeerDetailsCellDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = EA16BF1F1B396D960018FED4 /* RateBeerDetailsCellDefinition.m */; };
+		EA16BF231B39752C0018FED4 /* RateBeerScoreLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = EA16BF221B39752C0018FED4 /* RateBeerScoreLabel.m */; };
+		EA16BF261B3978240018FED4 /* InfoSpacingCellDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = EA16BF251B3978240018FED4 /* InfoSpacingCellDefinition.m */; };
 		EA2713AD1B1A4B40002D655E /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2713AB1B1A4B40002D655E /* Fabric.framework */; };
 		EA2713AE1B1A4B40002D655E /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2713AC1B1A4B40002D655E /* Crashlytics.framework */; };
 		EA3FDE811B18CB0700C93B7D /* Secrets.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3FDE801B18CB0700C93B7D /* Secrets.m */; };
@@ -183,6 +191,20 @@
 		EA16BF0A1B392A810018FED4 /* InfoTitleDetailCellDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoTitleDetailCellDefinition.m; sourceTree = "<group>"; };
 		EA16BF0C1B392FD50018FED4 /* InfoTextCellDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoTextCellDefinition.h; sourceTree = "<group>"; };
 		EA16BF0D1B392FD50018FED4 /* InfoTextCellDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoTextCellDefinition.m; sourceTree = "<group>"; };
+		EA16BF0F1B3934EE0018FED4 /* InfoRateBeerSectionTitleDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoRateBeerSectionTitleDefinition.h; sourceTree = "<group>"; };
+		EA16BF101B3934EE0018FED4 /* InfoRateBeerSectionTitleDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoRateBeerSectionTitleDefinition.m; sourceTree = "<group>"; };
+		EA16BF121B3935590018FED4 /* RateBeerSectionTitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RateBeerSectionTitleCell.h; sourceTree = "<group>"; };
+		EA16BF131B3935590018FED4 /* RateBeerSectionTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateBeerSectionTitleCell.m; sourceTree = "<group>"; };
+		EA16BF141B3935590018FED4 /* RateBeerSectionTitleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RateBeerSectionTitleCell.xib; sourceTree = "<group>"; };
+		EA16BF171B3969AB0018FED4 /* RateBeerDetailsCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RateBeerDetailsCollectionViewCell.h; sourceTree = "<group>"; };
+		EA16BF181B3969AB0018FED4 /* RateBeerDetailsCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateBeerDetailsCollectionViewCell.m; sourceTree = "<group>"; };
+		EA16BF1C1B396BB80018FED4 /* RateBeerDetailsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RateBeerDetailsCollectionViewCell.xib; sourceTree = "<group>"; };
+		EA16BF1E1B396D960018FED4 /* RateBeerDetailsCellDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RateBeerDetailsCellDefinition.h; sourceTree = "<group>"; };
+		EA16BF1F1B396D960018FED4 /* RateBeerDetailsCellDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateBeerDetailsCellDefinition.m; sourceTree = "<group>"; };
+		EA16BF211B39752C0018FED4 /* RateBeerScoreLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RateBeerScoreLabel.h; sourceTree = "<group>"; };
+		EA16BF221B39752C0018FED4 /* RateBeerScoreLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateBeerScoreLabel.m; sourceTree = "<group>"; };
+		EA16BF241B3978240018FED4 /* InfoSpacingCellDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoSpacingCellDefinition.h; sourceTree = "<group>"; };
+		EA16BF251B3978240018FED4 /* InfoSpacingCellDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoSpacingCellDefinition.m; sourceTree = "<group>"; };
 		EA2713AB1B1A4B40002D655E /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		EA2713AC1B1A4B40002D655E /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		EA3FDE7F1B18CB0700C93B7D /* Secrets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Secrets.h; sourceTree = "<group>"; };
@@ -461,10 +483,16 @@
 				EA16BF041B392A5B0018FED4 /* InfoImageCellDefinition.m */,
 				EA16BF061B392A6C0018FED4 /* InfoPostContentCellDefinition.h */,
 				EA16BF071B392A6C0018FED4 /* InfoPostContentCellDefinition.m */,
+				EA16BF0F1B3934EE0018FED4 /* InfoRateBeerSectionTitleDefinition.h */,
+				EA16BF101B3934EE0018FED4 /* InfoRateBeerSectionTitleDefinition.m */,
+				EA16BF241B3978240018FED4 /* InfoSpacingCellDefinition.h */,
+				EA16BF251B3978240018FED4 /* InfoSpacingCellDefinition.m */,
 				EA16BF0C1B392FD50018FED4 /* InfoTextCellDefinition.h */,
 				EA16BF0D1B392FD50018FED4 /* InfoTextCellDefinition.m */,
 				EA16BF091B392A810018FED4 /* InfoTitleDetailCellDefinition.h */,
 				EA16BF0A1B392A810018FED4 /* InfoTitleDetailCellDefinition.m */,
+				EA16BF1E1B396D960018FED4 /* RateBeerDetailsCellDefinition.h */,
+				EA16BF1F1B396D960018FED4 /* RateBeerDetailsCellDefinition.m */,
 			);
 			path = PostInfo;
 			sourceTree = "<group>";
@@ -663,6 +691,8 @@
 				EAC877B8192DDD1600309A23 /* PostsSearchInputView.xib */,
 				EADF7E64192B8E0D00EC13AB /* ProgressOverlayView.h */,
 				EADF7E65192B8E0D00EC13AB /* ProgressOverlayView.m */,
+				EA16BF211B39752C0018FED4 /* RateBeerScoreLabel.h */,
+				EA16BF221B39752C0018FED4 /* RateBeerScoreLabel.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -702,6 +732,12 @@
 				EA50FCD71B36C2E70000F304 /* PostInfoRowCell.h */,
 				EA50FCD81B36C2E70000F304 /* PostInfoRowCell.m */,
 				EA50FCD91B36C2E70000F304 /* PostInfoRowCell.xib */,
+				EA16BF171B3969AB0018FED4 /* RateBeerDetailsCollectionViewCell.h */,
+				EA16BF181B3969AB0018FED4 /* RateBeerDetailsCollectionViewCell.m */,
+				EA16BF1C1B396BB80018FED4 /* RateBeerDetailsCollectionViewCell.xib */,
+				EA16BF121B3935590018FED4 /* RateBeerSectionTitleCell.h */,
+				EA16BF131B3935590018FED4 /* RateBeerSectionTitleCell.m */,
+				EA16BF141B3935590018FED4 /* RateBeerSectionTitleCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -808,7 +844,9 @@
 				EA0668CE192A45C4009C83F1 /* InfoPlist.strings in Resources */,
 				EA43D7C6198B6A08000B5AF5 /* InfoPlist.strings in Resources */,
 				EAA3E6EB1930BBB500812B6F /* PoweredByViewController.xib in Resources */,
+				EA16BF161B3935590018FED4 /* RateBeerSectionTitleCell.xib in Resources */,
 				EA50FCD61B35BAAC0000F304 /* PostExtendedDetailsViewController.xib in Resources */,
+				EA16BF1D1B396BB80018FED4 /* RateBeerDetailsCollectionViewCell.xib in Resources */,
 				EADF7E71192BCBB500EC13AB /* PostCell.xib in Resources */,
 				EA925DF519502952001E0AC9 /* PostsViewController.xib in Resources */,
 				EA43D7C8198B6A08000B5AF5 /* InfoPlist.strings in Resources */,
@@ -948,7 +986,10 @@
 				EADF7E6B192BC5DC00EC13AB /* NSString+Cleanup.m in Sources */,
 				EA50FCA21B351BB00000F304 /* ParsePost.m in Sources */,
 				EADDA41B192B8AC8000CCEA9 /* _Post.m in Sources */,
+				EA16BF151B3935590018FED4 /* RateBeerSectionTitleCell.m in Sources */,
 				EA50FC821B34A8110000F304 /* _Brewer.m in Sources */,
+				EA16BF261B3978240018FED4 /* InfoSpacingCellDefinition.m in Sources */,
+				EA16BF231B39752C0018FED4 /* RateBeerScoreLabel.m in Sources */,
 				EA925E2619517062001E0AC9 /* StandardPostsListController.m in Sources */,
 				EAC877C8192E26D200309A23 /* ObjectModel+Settings.m in Sources */,
 				EAC877C2192E26BE00309A23 /* _Setting.m in Sources */,
@@ -957,9 +998,11 @@
 				EA0986CD1B1E40C6006FEC11 /* SlideMenuController.swift in Sources */,
 				EADDA416192B88C6000CCEA9 /* Gambrinus.xcdatamodeld in Sources */,
 				EA16BF081B392A6C0018FED4 /* InfoPostContentCellDefinition.m in Sources */,
+				EA16BF1A1B3969AB0018FED4 /* RateBeerDetailsCollectionViewCell.m in Sources */,
 				EA50FCC51B35B8AC0000F304 /* PostImageCell.m in Sources */,
 				EA50FCCE1B35B9260000F304 /* UIView+Identifier.m in Sources */,
 				EA011A401936195F00232E92 /* BlogImageAsk.m in Sources */,
+				EA16BF111B3934EE0018FED4 /* InfoRateBeerSectionTitleDefinition.m in Sources */,
 				EA50FCB61B355CE60000F304 /* UIFont+Theme.m in Sources */,
 				EAA3E6EA1930BBB500812B6F /* PoweredByViewController.m in Sources */,
 				EA16BF021B392A4D0018FED4 /* InfoCellDefinition.m in Sources */,
@@ -988,6 +1031,7 @@
 				EA50FCDA1B36C2E70000F304 /* PostInfoRowCell.m in Sources */,
 				EADF7E6F192BCB9100EC13AB /* PostCell.m in Sources */,
 				EA50FCD11B35B9570000F304 /* UIView+Loading.m in Sources */,
+				EA16BF201B396D960018FED4 /* RateBeerDetailsCellDefinition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

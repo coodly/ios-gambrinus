@@ -19,7 +19,7 @@
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="10" id="WU4-La-GRC"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -34,6 +34,8 @@
             <size key="customSize" width="411" height="50"/>
             <connections>
                 <outlet property="rowLabel" destination="h4y-RK-jd2" id="LNI-eH-Pja"/>
+                <outletCollection property="labelVerticalSpacing" destination="HSL-bJ-MNI" id="DUw-o6-Z3r"/>
+                <outletCollection property="labelVerticalSpacing" destination="arJ-og-Lq6" id="7LC-vY-TQY"/>
             </connections>
             <point key="canvasLocation" x="397.5" y="269"/>
         </collectionViewCell>

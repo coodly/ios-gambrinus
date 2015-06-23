@@ -20,15 +20,29 @@
 
 @implementation InfoTitleDetailCellDefinition
 
+- (instancetype)initWithCellIdentifier:(NSString *)identifier {
+    self = [super initWithCellIdentifier:identifier];
+    if (self) {
+        _backgroundColor = [UIColor whiteColor];
+        _foregroundColor = [UIColor blackColor];
+        _verticalSpacing = GambrinusSpacing;
+    }
+
+    return self;
+}
+
 - (void)configureCell:(UICollectionViewCell *)cell {
     PostInfoRowCell *infoRowCell = (PostInfoRowCell *) cell;
+    [infoRowCell setBackgroundColor:self.backgroundColor];
+    [infoRowCell.rowLabel setTextColor:self.foregroundColor];
     [infoRowCell setTitle:self.title value:self.value];
+    [infoRowCell setVerticalSpacing:self.verticalSpacing];
 }
 
 - (CGFloat)heightOfContentForWidth:(CGFloat)presentationWidth {
     return [self calculateHeightForString:self.title
                                 usingFont:[UIFont preferredFontForTextStyle:UIFontTextStyleHeadline]
-                        presentationWidth:presentationWidth - 2 * GambrinusSpacing] + 2 * GambrinusSpacing;
+                        presentationWidth:presentationWidth - 2 * GambrinusSpacing] + 2 * self.verticalSpacing;
 }
 
 @end

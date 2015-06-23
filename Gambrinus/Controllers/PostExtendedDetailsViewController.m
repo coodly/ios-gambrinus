@@ -31,6 +31,12 @@
 #import "InfoImageCellDefinition.h"
 #import "InfoPostContentCellDefinition.h"
 #import "InfoTitleDetailCellDefinition.h"
+#import "InfoRateBeerSectionTitleDefinition.h"
+#import "RateBeerSectionTitleCell.h"
+#import "Beer.h"
+#import "RateBeerDetailsCellDefinition.h"
+#import "RateBeerDetailsCollectionViewCell.h"
+#import "InfoSpacingCellDefinition.h"
 
 @interface PostExtendedDetailsViewController () <UICollectionViewDelegateFlowLayout>
 
@@ -61,6 +67,9 @@
     [self.collectionView registerNib:[PostImageCell viewNib] forCellWithReuseIdentifier:[PostImageCell identifier]];
     [self.collectionView registerNib:[PostContentCell viewNib] forCellWithReuseIdentifier:[PostContentCell identifier]];
     [self.collectionView registerNib:[PostInfoRowCell viewNib] forCellWithReuseIdentifier:[PostInfoRowCell identifier]];
+    [self.collectionView registerNib:[RateBeerSectionTitleCell viewNib] forCellWithReuseIdentifier:[RateBeerSectionTitleCell identifier]];
+    [self.collectionView registerNib:[RateBeerDetailsCollectionViewCell viewNib] forCellWithReuseIdentifier:[RateBeerDetailsCollectionViewCell identifier]];
+    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:[UICollectionViewCell identifier]];
 
     if (IS_PAD) {
         [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"post.extended.details.back.button.title", nil) style:UIBarButtonItemStylePlain target:self action:@selector(close)]];
@@ -68,19 +77,40 @@
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(contentSizeChanged) name:UIContentSizeCategoryDidChangeNotification object:nil];
 
+    NSMutableArray *presented = [NSMutableArray array];
+
     InfoImageCellDefinition *imageDefinition = [[InfoImageCellDefinition alloc] initWithCellIdentifier:[PostImageCell identifier]];
     [imageDefinition setImageAsk:self.post.postImageAsk];
     [imageDefinition setImagesRetrieve:self.imagesRetrieve];
+    [presented addObject:imageDefinition];
 
     InfoPostContentCellDefinition *contentDefinition = [[InfoPostContentCellDefinition alloc] initWithCellIdentifier:[PostContentCell identifier]];
     [contentDefinition setText:self.post.content];
+    [presented addObject:contentDefinition];
 
     InfoTitleDetailCellDefinition *postDateDefinition = [[InfoTitleDetailCellDefinition alloc] initWithCellIdentifier:[PostInfoRowCell identifier]];
     [postDateDefinition setTitle:NSLocalizedString(@"post.extended.details.posted.on.label", nil)];
     [postDateDefinition setValue:self.post.publishDateString];
+    [presented addObject:postDateDefinition];
+
+    if (self.post.beers.count > 0)  {
+        InfoRateBeerSectionTitleDefinition *rateBeerTitle = [[InfoRateBeerSectionTitleDefinition alloc] initWithCellIdentifier:[RateBeerSectionTitleCell identifier]];
+        [presented addObject:rateBeerTitle];
+
+        NSArray *beers = [self.post.beers.allObjects sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]]];
+        for (Beer *beer in beers) {
+            RateBeerDetailsCellDefinition *beerCell = [[RateBeerDetailsCellDefinition alloc] initWithCellIdentifier:[RateBeerDetailsCollectionViewCell identifier]];
+            [beerCell setBeer:beer];
+            [presented addObject:beerCell];
+        }
+    }
+
+    InfoSpacingCellDefinition *bottomSpacing = [[InfoSpacingCellDefinition alloc] initWithCellIdentifier:[UICollectionViewCell identifier]];
+    [bottomSpacing setSpacingHeight:20];
+    [presented addObject:bottomSpacing];
 
     [self setInfoRows:@[
-            @[imageDefinition, contentDefinition, postDateDefinition]
+            presented
     ]];
 }
 

@@ -16,11 +16,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PostInfoRowCell : UICollectionViewCell
-
-@property (nonatomic, strong, readonly) UILabel *rowLabel;
-
-- (void)setTitle:(NSString *)title value:(NSString *)value;
-- (void)setVerticalSpacing:(CGFloat)spacing;
+@interface RateBeerSectionTitleCell : UICollectionViewCell
 
 @end

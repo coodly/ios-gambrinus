@@ -14,13 +14,20 @@
 * limitations under the License.
 */
 
-#import <UIKit/UIKit.h>
+#import "InfoRateBeerSectionTitleDefinition.h"
+#import "UIFont+Theme.h"
+#import "Constants.h"
 
-@interface PostInfoRowCell : UICollectionViewCell
+@implementation InfoRateBeerSectionTitleDefinition
 
-@property (nonatomic, strong, readonly) UILabel *rowLabel;
+- (void)configureCell:(UICollectionViewCell *)cell {
+    //no op
+}
 
-- (void)setTitle:(NSString *)title value:(NSString *)value;
-- (void)setVerticalSpacing:(CGFloat)spacing;
+- (CGFloat)heightOfContentForWidth:(CGFloat)presentationWidth {
+    return [self calculateHeightForString:@"ratebeer"
+                                usingFont:[UIFont rateBeerFont]
+                        presentationWidth:presentationWidth - 2 * GambrinusSpacing] + 2 * GambrinusSpacing;
+}
 
 @end

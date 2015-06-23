@@ -21,4 +21,8 @@
 
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *value;
+@property (nonatomic, strong) UIColor *backgroundColor;
+@property (nonatomic, strong) UIColor *foregroundColor;
+@property (nonatomic, assign) CGFloat verticalSpacing;
+
 @end

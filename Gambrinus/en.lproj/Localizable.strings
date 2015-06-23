@@ -6,7 +6,9 @@
 "menu.controller.option.favorites" = "Favorites";
 
 "post.extended.details.back.button.title" = "Back";
+"post.extended.details.brewer.label" = "Brewer";
 "post.extended.details.posted.on.label" = "Posted on";
+"post.extended.details.style.label" = "Style";
 
 "posts.controller.edit.button" = "Edit";
 "posts.controller.edit.done.button" = "Done";
