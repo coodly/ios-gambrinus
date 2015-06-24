@@ -41,9 +41,8 @@ class KioskSlideMenuViewController: SlideMenuController {
         presentRootController(initialViewController)
     }
 
-    internal func presentRootController(controller: UIViewController) {
-        closeLeft()
-        removeLeftGestures()
+    func presentRootController(controller: UIViewController) {
+        closeMenu()
 
         if object_getClassName(containedNavigation.viewControllers.first) == object_getClassName(controller) {
             return
@@ -62,6 +61,11 @@ class KioskSlideMenuViewController: SlideMenuController {
     func openMenu() {
         addLeftGestures()
         openLeft()
+    }
+
+    func closeMenu() {
+        closeLeft();
+        removeLeftGestures()
     }
 
     override func track(trackAction: TrackAction) {

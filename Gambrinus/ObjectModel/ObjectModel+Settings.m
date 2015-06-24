@@ -17,9 +17,11 @@
 #import <JCSFoundation/NSDate+ISO8601.h>
 #import "ObjectModel+Settings.h"
 #import "Setting.h"
+#import "Constants.h"
 
 typedef NS_ENUM(short, SettingKey) {
-    SettingLastVerifiedPullDate
+    SettingLastVerifiedPullDate,
+    SettingSortOrder
 };
 
 @implementation ObjectModel (Settings)
@@ -30,6 +32,35 @@ typedef NS_ENUM(short, SettingKey) {
 
 - (NSDate *)lastVerifiedPullDate:(NSDate *)defaultDate {
     return [self dateSettingWithKey:SettingLastVerifiedPullDate defaultValue:defaultDate];
+}
+
+- (PostsSortOrder)postsSortOrder {
+    return (PostsSortOrder) [self shortValueForKey:SettingSortOrder defaultValue:OrderByDateDesc];
+}
+
+- (void)setPostsSortOrder:(PostsSortOrder)order {
+    [self setShortValue:order forKey:SettingSortOrder];
+    [self saveContext:^{
+        [[NSNotificationCenter defaultCenter] postNotificationName:GambrinusSortOrderChangedNotification object:nil];
+    }];
+}
+
+- (short)shortValueForKey:(SettingKey)key defaultValue:(short)defaultValue {
+    Setting *setting = [self loadSettingWithKey:key];
+    if (!setting) {
+        return defaultValue;
+    }
+    return (short) [setting.value intValue];
+}
+
+- (void)setShortValue:(short)value forKey:(SettingKey)key {
+    Setting *setting = [self loadSettingWithKey:key];
+    if (!setting) {
+        setting = [Setting insertInManagedObjectContext:self.managedObjectContext];
+        [setting setKeyValue:key];
+    }
+
+    [setting setValue:[NSString stringWithFormat:@"%d", value]];
 }
 
 - (NSDate *)dateSettingWithKey:(SettingKey)key defaultValue:(NSDate *)defaultValue {

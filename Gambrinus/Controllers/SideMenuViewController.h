@@ -18,6 +18,10 @@
 #import "JCSInputCellsViewController.h"
 #import "MenuViewController.h"
 
+@class ObjectModel;
+
 @interface SideMenuViewController : MenuViewController
+
+@property (nonatomic, strong) ObjectModel *objectModel;
 
 @end

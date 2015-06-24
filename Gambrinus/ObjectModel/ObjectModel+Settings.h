@@ -16,9 +16,21 @@
 
 #import "ObjectModel.h"
 
+typedef NS_ENUM(short, PostsSortOrder) {
+    OrderByDateDesc,
+    OrderByDateAsc,
+    OrderByPostName,
+    OrderByRBBeerName,
+    OrderByRBScore,
+    OrderByStyle,
+    OrderByBrewer
+};
+
 @interface ObjectModel (Settings)
 
 - (void)setLastVerifiedPullDate:(NSDate *)date;
 - (NSDate *)lastVerifiedPullDate:(NSDate *)defaultDate;
+- (PostsSortOrder)postsSortOrder;
+- (void)setPostsSortOrder:(PostsSortOrder)order;
 
 @end

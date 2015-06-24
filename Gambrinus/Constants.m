@@ -18,3 +18,5 @@
 
 NSString *const KioskPostsThumbnailName = @"KioskPostsThumbnailName";
 NSString *const KioskPostsImageFamily = @"KioskPostsImageFamily";
+
+NSString *const GambrinusSortOrderChangedNotification = @"GambrinusSortOrderChangedNotification";

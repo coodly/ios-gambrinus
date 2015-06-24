@@ -96,7 +96,9 @@
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     [[UIRefreshControl appearance] setTintColor:[UIColor myOrange]];
 
-    KioskSlideMenuViewController *controller = [[KioskSlideMenuViewController alloc] initWithMainViewController:[[UINavigationController alloc] init] leftMenuViewController:[[SideMenuViewController alloc] init]];
+    SideMenuViewController *menuViewController = [[SideMenuViewController alloc] init];
+    [menuViewController setObjectModel:model];
+    KioskSlideMenuViewController *controller = [[KioskSlideMenuViewController alloc] initWithMainViewController:[[UINavigationController alloc] init] leftMenuViewController:menuViewController];
     [controller setObjectModel:model];
     [controller setContentUpdate:contentUpdate];
     [controller setImagesRetrieve:imagesRetrieve];

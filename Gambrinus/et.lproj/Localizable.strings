@@ -4,6 +4,13 @@
 
 "menu.controller.option.all.posts" = "Kõik postitused";
 "menu.controller.option.favorites" = "Lemmikud";
+"menu.controller.sort.by.beer" = "RB õlle nimi";
+"menu.controller.sort.by.brewer" = "pruulija";
+"menu.controller.sort.by.date" = "kuupäev";
+"menu.controller.sort.by.posts" = "posti nimi";
+"menu.controller.sort.by.score" = "RB punktid";
+"menu.controller.sort.by.style" = "stiil";
+"menu.controller.sort.section.title" = "Postituste järjestus";
 
 "post.extended.details.back.button.title" = "Tagasi";
 "post.extended.details.brewer.label" = "Pruulija";

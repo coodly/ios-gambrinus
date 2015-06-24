@@ -14,12 +14,7 @@
 - (void)awakeFromNib {
     [self.contentView setBackgroundColor:[UIColor whiteColor]];
     [self.textLabel setTextColor:[UIColor myOrange]];
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+    [self setTintColor:[UIColor myOrange]];
 }
 
 @end

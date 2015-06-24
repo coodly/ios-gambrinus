@@ -4,6 +4,13 @@
 
 "menu.controller.option.all.posts" = "All Posts";
 "menu.controller.option.favorites" = "Favorites";
+"menu.controller.sort.by.beer" = "RB beer name";
+"menu.controller.sort.by.brewer" = "brewer";
+"menu.controller.sort.by.date" = "date";
+"menu.controller.sort.by.posts" = "post title";
+"menu.controller.sort.by.score" = "RB score";
+"menu.controller.sort.by.style" = "style";
+"menu.controller.sort.section.title" = "Sort by";
 
 "post.extended.details.back.button.title" = "Back";
 "post.extended.details.brewer.label" = "Brewer";
