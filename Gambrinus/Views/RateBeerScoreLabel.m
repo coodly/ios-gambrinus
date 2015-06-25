@@ -40,6 +40,10 @@
 }
 
 - (void)setScore:(NSString *)score {
+    if ([score isEqualToString:@"-1"]) {
+        score = @"-";
+    }
+
     if (score.hasValue) {
         NSString *presented = [NSString stringWithFormat:@"rb:%@", score];
         NSMutableAttributedString *attributedPresented = [[NSMutableAttributedString alloc] initWithString:presented];

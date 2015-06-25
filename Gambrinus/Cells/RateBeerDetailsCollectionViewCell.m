@@ -56,6 +56,10 @@
 }
 
 - (void)setTitle:(NSString *)title value:(NSString *)value intoLabel:(UILabel *)label {
+    if (!value) {
+        value = @"-";
+    }
+
     NSString *present = [NSString stringWithFormat:@"%@: %@", title, value];
     NSMutableAttributedString *attributed = [[NSMutableAttributedString alloc] initWithString:present];
     [attributed setAttributes:@{NSFontAttributeName : [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline], NSForegroundColorAttributeName : [UIColor rateBeerBlue]} range:NSMakeRange(0, present.length)];
