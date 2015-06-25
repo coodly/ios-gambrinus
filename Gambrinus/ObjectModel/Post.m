@@ -14,11 +14,13 @@
 * limitations under the License.
 */
 
+#import <JCSFoundation/NSString+JCSValidations.h>
 #import "Post.h"
 #import "BlogImageAsk.h"
 #import "Image.h"
 #import "Constants.h"
 #import "Beer.h"
+#import "NSString+Normalize.h"
 
 NSString *const PostDataKeyIdentifier = @"PostDataKeyIdentifier";
 NSString *const PostDataKeyBeerBindingIds = @"PostDataKeyBeerBindingIds";
@@ -28,6 +30,21 @@ NSString *const PostDataKeyBeerBindingIds = @"PostDataKeyBeerBindingIds";
 @end
 
 @implementation Post
+
+- (void)willSave {
+    [super willSave];
+
+    if (self.normalizedTitle.hasValue) {
+        return;
+    }
+
+    if (!self.title.hasValue) {
+        return;
+    }
+
+    NSString *normalizedTitle = [self.title normalize];
+    [self setNormalizedTitle:normalizedTitle];
+}
 
 - (BlogImageAsk *)thumbnailImageAsk {
     if (!self.image) {

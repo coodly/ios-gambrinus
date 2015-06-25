@@ -30,6 +30,7 @@
 #import "ContentUpdate.h"
 #import "PostsSearchInputView.h"
 #import "PostExtendedDetailsViewController.h"
+#import "NSString+Normalize.h"
 
 @interface PostsViewController () <UICollectionViewDelegateFlowLayout>
 
@@ -285,7 +286,7 @@
 
     [self setCurrentFilter:searchTerm];
 
-    NSPredicate *predicate = [self.objectModel postsPredicateWithSearchTerm:searchTerm showHidden:[self showHiddenPosts] showOnlyStarred:[self showOnlyStarred]];
+    NSPredicate *predicate = [self.objectModel postsPredicateWithSearchTerm:[searchTerm normalize] showHidden:[self showHiddenPosts] showOnlyStarred:[self showOnlyStarred]];
     [self refreshFetchedControllerUsingPredicate:predicate sortDescriptors:nil];
 }
 

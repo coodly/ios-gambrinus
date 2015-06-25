@@ -114,7 +114,7 @@
     }
 
     if ([searchTerm hasValue]) {
-        NSPredicate *titlePredicate = [NSPredicate predicateWithFormat:@"title CONTAINS[cd] %@", searchTerm];
+        NSPredicate *titlePredicate = [NSPredicate predicateWithFormat:@"normalizedTitle CONTAINS %@", searchTerm];
         [predicates addObject:titlePredicate];
     }
 
@@ -167,7 +167,7 @@
         case OrderByDateAsc:
             return @[[NSSortDescriptor sortDescriptorWithKey:@"publishDate" ascending:YES]];
         case OrderByPostName:
-            return @[[NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES]];
+            return @[[NSSortDescriptor sortDescriptorWithKey:@"normalizedTitle" ascending:YES]];
         case OrderByRBBeerName:
         case OrderByRBScore:
         case OrderByStyle:

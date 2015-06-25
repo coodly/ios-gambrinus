@@ -6,6 +6,7 @@
 const struct PostAttributes PostAttributes = {
 	.content = @"content",
 	.hidden = @"hidden",
+	.normalizedTitle = @"normalizedTitle",
 	.postId = @"postId",
 	.publishDate = @"publishDate",
 	.slug = @"slug",
@@ -81,6 +82,8 @@ const struct PostRelationships PostRelationships = {
 - (void)setPrimitiveHiddenValue:(BOOL)value_ {
 	[self setPrimitiveHidden:@(value_)];
 }
+
+@dynamic normalizedTitle;
 
 @dynamic postId;
 

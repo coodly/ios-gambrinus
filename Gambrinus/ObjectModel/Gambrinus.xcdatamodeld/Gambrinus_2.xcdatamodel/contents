@@ -35,6 +35,7 @@
     <entity name="Post" representedClassName="Post" syncable="YES">
         <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="hidden" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="normalizedTitle" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="postId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="publishDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="slug" optional="YES" attributeType="String" syncable="YES"/>
@@ -55,13 +56,13 @@
         <attribute name="value" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
+        <element name="Beer" positionX="-27" positionY="72" width="128" height="195"/>
+        <element name="BeerStyle" positionX="-9" positionY="90" width="128" height="75"/>
         <element name="Blog" positionX="-63" positionY="27" width="128" height="120"/>
+        <element name="Brewer" positionX="-18" positionY="81" width="128" height="75"/>
         <element name="Image" positionX="-54" positionY="54" width="128" height="88"/>
-        <element name="Post" positionX="-63" positionY="-18" width="128" height="210"/>
+        <element name="Post" positionX="-63" positionY="-18" width="128" height="225"/>
         <element name="PullStatus" positionX="-45" positionY="54" width="128" height="88"/>
         <element name="Setting" positionX="-63" positionY="27" width="128" height="75"/>
-        <element name="Beer" positionX="-27" positionY="72" width="128" height="195"/>
-        <element name="Brewer" positionX="-18" positionY="81" width="128" height="75"/>
-        <element name="BeerStyle" positionX="-9" positionY="90" width="128" height="75"/>
     </elements>
 </model>

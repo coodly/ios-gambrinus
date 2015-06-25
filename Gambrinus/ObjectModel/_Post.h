@@ -6,6 +6,7 @@
 extern const struct PostAttributes {
 	__unsafe_unretained NSString *content;
 	__unsafe_unretained NSString *hidden;
+	__unsafe_unretained NSString *normalizedTitle;
 	__unsafe_unretained NSString *postId;
 	__unsafe_unretained NSString *publishDate;
 	__unsafe_unretained NSString *slug;
@@ -44,6 +45,10 @@ extern const struct PostRelationships {
 - (void)setHiddenValue:(BOOL)value_;
 
 //- (BOOL)validateHidden:(id*)value_ error:(NSError**)error_;
+
+@property (nonatomic, strong) NSString* normalizedTitle;
+
+//- (BOOL)validateNormalizedTitle:(id*)value_ error:(NSError**)error_;
 
 @property (nonatomic, strong) NSString* postId;
 
@@ -105,6 +110,9 @@ extern const struct PostRelationships {
 
 - (BOOL)primitiveHiddenValue;
 - (void)setPrimitiveHiddenValue:(BOOL)value_;
+
+- (NSString*)primitiveNormalizedTitle;
+- (void)setPrimitiveNormalizedTitle:(NSString*)value;
 
 - (NSString*)primitivePostId;
 - (void)setPrimitivePostId:(NSString*)value;
