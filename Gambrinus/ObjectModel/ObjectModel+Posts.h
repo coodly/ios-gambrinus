@@ -38,5 +38,6 @@ typedef NS_OPTIONS(short, KioskPostShowOptions) {
 - (BOOL)hasStarredPosts;
 - (NSPredicate *)postsPredicateWithSearchTerm:(NSString *)search showHidden:(BOOL)showHidden showOnlyStarred:(BOOL)showOnlyStarred;
 - (void)bindPostBeersWithData:(NSDictionary *)data;
+- (NSArray *)postSortDescriptorsForCurrentSortOrder;
 
 @end

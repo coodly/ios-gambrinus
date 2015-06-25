@@ -23,6 +23,7 @@
 #import "ObjectModel+Images.h"
 #import "NSString+JCSValidations.h"
 #import "ObjectModel+Beers.h"
+#import "ObjectModel+Settings.h"
 
 @implementation ObjectModel (Posts)
 
@@ -45,8 +46,7 @@
 }
 
 - (NSFetchedResultsController *)fetchedControllerForAllPosts {
-    NSSortDescriptor *titleDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES];
-    return [self fetchedControllerForEntity:[Post entityName] sortDescriptors:@[titleDescriptor]];
+    return [self fetchedControllerForEntity:[Post entityName] sortDescriptors:[self postSortDescriptorsForCurrentSortOrder]];
 }
 
 - (Post *)createOrUpdatePostWithData:(NSDictionary *)dictionary {
@@ -92,15 +92,13 @@
 
 - (NSFetchedResultsController *)fetchedControllerForVisiblePostsOrderedByDate {
     NSPredicate *notHiddenPredicate = [self postsPredicateForOptions:KioskNoOptions];
-    NSSortDescriptor *hiddenDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"hidden" ascending:YES];
-    NSSortDescriptor *publishDateDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"publishDate" ascending:NO];
-    return [self fetchedControllerForEntity:[Post entityName] predicate:notHiddenPredicate sortDescriptors:@[hiddenDescriptor, publishDateDescriptor]];
+    return [self fetchedControllerForEntity:[Post entityName] predicate:notHiddenPredicate sortDescriptors:[self postSortDescriptorsForCurrentSortOrder]];
 }
 
 - (NSFetchedResultsController *)fetchedControllerForStarredPostsSortedByName {
     NSPredicate *starredPredicate = [NSPredicate predicateWithFormat:@"starred = YES"];
-    NSSortDescriptor *nameDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES];
-    return [self fetchedControllerForEntity:[Post entityName] predicate:starredPredicate sortDescriptors:@[nameDescriptor]];
+    NSArray *sortDescriptors = [self postSortDescriptorsForCurrentSortOrder];
+    return [self fetchedControllerForEntity:[Post entityName] predicate:starredPredicate sortDescriptors:sortDescriptors];
 }
 
 - (NSPredicate *)postsPredicateForOptions:(KioskPostShowOptions)options searchTerm:(NSString *)searchTerm {
@@ -160,6 +158,23 @@
     }
 
     [post setBeers:[NSSet setWithArray:beers]];
+}
+
+- (NSArray *)postSortDescriptorsForCurrentSortOrder {
+    switch ([self postsSortOrder]) {
+        case OrderByDateDesc:
+            return @[[NSSortDescriptor sortDescriptorWithKey:@"publishDate" ascending:NO]];
+        case OrderByDateAsc:
+            return @[[NSSortDescriptor sortDescriptorWithKey:@"publishDate" ascending:YES]];
+        case OrderByPostName:
+            return @[[NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES]];
+        case OrderByRBBeerName:
+        case OrderByRBScore:
+        case OrderByStyle:
+        case OrderByBrewer:
+        default:
+            return @[[NSSortDescriptor sortDescriptorWithKey:@"publishDate" ascending:NO]];
+    }
 }
 
 @end

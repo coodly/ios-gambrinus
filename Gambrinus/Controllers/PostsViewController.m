@@ -70,6 +70,7 @@
     [self.navigationItem setRightBarButtonItem:search];
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(contentSizeChanged:) name:UIContentSizeCategoryDidChangeNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(sortOrderChanged) name:GambrinusSortOrderChangedNotification object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -285,7 +286,17 @@
     [self setCurrentFilter:searchTerm];
 
     NSPredicate *predicate = [self.objectModel postsPredicateWithSearchTerm:searchTerm showHidden:[self showHiddenPosts] showOnlyStarred:[self showOnlyStarred]];
-    [self.allObjects.fetchRequest setPredicate:predicate];
+    [self refreshFetchedControllerUsingPredicate:predicate sortDescriptors:nil];
+}
+
+- (void)refreshFetchedControllerUsingPredicate:(NSPredicate *)predicate sortDescriptors:(NSArray *)sortDescriptors {
+    if (predicate) {
+        [self.allObjects.fetchRequest setPredicate:predicate];
+    }
+
+    if (sortDescriptors) {
+        [self.allObjects.fetchRequest setSortDescriptors:sortDescriptors];
+    }
 
     NSError *fetchError = nil;
     [self.allObjects performFetch:&fetchError];
@@ -293,8 +304,16 @@
         NSLog(@"Fetch error:%@", fetchError);
     }
 
-    [self.collectionView reloadData];
-    [self checkImagesNeeded];
+    [self.collectionView performBatchUpdates:^{
+        [self.collectionView reloadSections:[NSIndexSet indexSetWithIndex:0]];
+    } completion:^(BOOL finished) {
+        [self checkImagesNeeded];
+    }];
+}
+
+- (void)sortOrderChanged {
+    NSArray *sortDescriptors = [self.objectModel postSortDescriptorsForCurrentSortOrder];
+    [self refreshFetchedControllerUsingPredicate:nil sortDescriptors:sortDescriptors];
 }
 
 - (BOOL)showHiddenPosts {
