@@ -167,6 +167,14 @@ NSString *const kGoogleBloggerAPIPath = @"https://www.googleapis.com/blogger/v3"
     sentParams[@"key"] = self.bloggerKey;
     NSString *requestPath = [NSString stringWithFormat:@"%@%@", kGoogleBloggerAPIPath, path];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+
+    [manager.requestSerializer setValue:@"gzip" forHTTPHeaderField:@"Accept-Encoding"];
+    NSString *appName = [[NSBundle mainBundle] infoDictionary][@"CFBundleDisplayName"];
+    NSString *version = [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"];
+    NSString *build = [[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"];
+    NSString *userAgent = [NSString stringWithFormat:@"%@/v%@(%@) (gzip)", appName, version, build];
+    [manager.requestSerializer setValue:userAgent forHTTPHeaderField:@"User-Agent"];
+
     [manager GET:requestPath parameters:sentParams success:^(AFHTTPRequestOperation *operation, id responseObject) {
         CDYLog(@"Path:%@", operation.request.URL);
         CDYLog(@"Success");
