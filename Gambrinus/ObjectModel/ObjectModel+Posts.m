@@ -24,6 +24,7 @@
 #import "NSString+JCSValidations.h"
 #import "ObjectModel+Beers.h"
 #import "ObjectModel+Settings.h"
+#import "Beer.h"
 
 @implementation ObjectModel (Posts)
 
@@ -157,7 +158,21 @@
         return;
     }
 
+    [post setTopScore:[self topBeerScore:beers]];
     [post setBeers:[NSSet setWithArray:beers]];
+}
+
+- (NSNumber *)topBeerScore:(NSArray *)beers {
+    NSArray *sorted = [beers sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        Beer *one = obj1;
+        Beer *two = obj2;
+
+        NSInteger scoreOne = one.rbScore.integerValue;
+        NSInteger scoreTwo = two.rbScore.integerValue;
+        return [@(scoreTwo) compare:@(scoreOne)];
+    }];
+    Beer *top = [sorted firstObject];
+    return @(top.rbScore.integerValue);
 }
 
 - (NSArray *)postSortDescriptorsForCurrentSortOrder {
@@ -168,8 +183,9 @@
             return @[[NSSortDescriptor sortDescriptorWithKey:@"publishDate" ascending:YES]];
         case OrderByPostName:
             return @[[NSSortDescriptor sortDescriptorWithKey:@"normalizedTitle" ascending:YES]];
-        case OrderByRBBeerName:
         case OrderByRBScore:
+            return @[[NSSortDescriptor sortDescriptorWithKey:@"topScore" ascending:NO], [NSSortDescriptor sortDescriptorWithKey:@"normalizedTitle" ascending:YES]];
+        case OrderByRBBeerName:
         case OrderByStyle:
         case OrderByBrewer:
         default:

@@ -12,6 +12,7 @@ extern const struct PostAttributes {
 	__unsafe_unretained NSString *slug;
 	__unsafe_unretained NSString *starred;
 	__unsafe_unretained NSString *title;
+	__unsafe_unretained NSString *topScore;
 	__unsafe_unretained NSString *touchedAt;
 } PostAttributes;
 
@@ -74,6 +75,14 @@ extern const struct PostRelationships {
 
 //- (BOOL)validateTitle:(id*)value_ error:(NSError**)error_;
 
+@property (nonatomic, strong) NSNumber* topScore;
+
+@property (atomic) int16_t topScoreValue;
+- (int16_t)topScoreValue;
+- (void)setTopScoreValue:(int16_t)value_;
+
+//- (BOOL)validateTopScore:(id*)value_ error:(NSError**)error_;
+
 @property (nonatomic, strong) NSDate* touchedAt;
 
 //- (BOOL)validateTouchedAt:(id*)value_ error:(NSError**)error_;
@@ -131,6 +140,12 @@ extern const struct PostRelationships {
 
 - (NSString*)primitiveTitle;
 - (void)setPrimitiveTitle:(NSString*)value;
+
+- (NSNumber*)primitiveTopScore;
+- (void)setPrimitiveTopScore:(NSNumber*)value;
+
+- (int16_t)primitiveTopScoreValue;
+- (void)setPrimitiveTopScoreValue:(int16_t)value_;
 
 - (NSDate*)primitiveTouchedAt;
 - (void)setPrimitiveTouchedAt:(NSDate*)value;

@@ -12,6 +12,7 @@ const struct PostAttributes PostAttributes = {
 	.slug = @"slug",
 	.starred = @"starred",
 	.title = @"title",
+	.topScore = @"topScore",
 	.touchedAt = @"touchedAt",
 };
 
@@ -54,6 +55,11 @@ const struct PostRelationships PostRelationships = {
 	}
 	if ([key isEqualToString:@"starredValue"]) {
 		NSSet *affectingKey = [NSSet setWithObject:@"starred"];
+		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
+		return keyPaths;
+	}
+	if ([key isEqualToString:@"topScoreValue"]) {
+		NSSet *affectingKey = [NSSet setWithObject:@"topScore"];
 		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
 		return keyPaths;
 	}
@@ -112,6 +118,26 @@ const struct PostRelationships PostRelationships = {
 }
 
 @dynamic title;
+
+@dynamic topScore;
+
+- (int16_t)topScoreValue {
+	NSNumber *result = [self topScore];
+	return [result shortValue];
+}
+
+- (void)setTopScoreValue:(int16_t)value_ {
+	[self setTopScore:@(value_)];
+}
+
+- (int16_t)primitiveTopScoreValue {
+	NSNumber *result = [self primitiveTopScore];
+	return [result shortValue];
+}
+
+- (void)setPrimitiveTopScoreValue:(int16_t)value_ {
+	[self setPrimitiveTopScore:@(value_)];
+}
 
 @dynamic touchedAt;
 
