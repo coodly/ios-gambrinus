@@ -34,15 +34,15 @@ NSString *const PostDataKeyBeerBindingIds = @"PostDataKeyBeerBindingIds";
 - (void)willSave {
     [super willSave];
 
-    if (self.normalizedTitle.hasValue) {
-        return;
-    }
-
     if (!self.title.hasValue) {
         return;
     }
 
     NSString *normalizedTitle = [self.title normalize];
+    if ([normalizedTitle isEqualToString:self.normalizedTitle]) {
+        return;
+    }
+
     [self setNormalizedTitle:normalizedTitle];
 }
 
