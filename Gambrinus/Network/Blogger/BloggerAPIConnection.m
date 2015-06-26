@@ -125,6 +125,7 @@ NSString *const kGoogleBloggerAPIPath = @"https://www.googleapis.com/blogger/v3"
     params[@"status"] = @"live";
     params[@"fetchImages"] = @"true";
     params[@"maxResults"] = @(100);
+    params[@"fields"] = @"nextPageToken,items(id,published,title,content,images)";
     if (nextPageToken.hasValue) {
         params[@"pageToken"] = nextPageToken;
     }
