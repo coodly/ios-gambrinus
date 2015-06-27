@@ -22,6 +22,4 @@
 
 @interface SideMenuViewController : MenuViewController
 
-@property (nonatomic, strong) ObjectModel *objectModel;
-
 @end

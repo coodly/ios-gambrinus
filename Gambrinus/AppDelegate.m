@@ -140,7 +140,10 @@
 }
 
 - (void)presentKioskController {
-    KioskSlideMenuViewController *controller = [[KioskSlideMenuViewController alloc] initWithMainViewController:[[UINavigationController alloc] init] leftMenuViewController:[[KioskModeMenuViewController alloc] init]];
+    KioskModeMenuViewController *menuViewController = [[KioskModeMenuViewController alloc] init];
+    [menuViewController setObjectModel:self.objectModel];
+
+    KioskSlideMenuViewController *controller = [[KioskSlideMenuViewController alloc] initWithMainViewController:[[UINavigationController alloc] init] leftMenuViewController:menuViewController];
     [controller setObjectModel:self.objectModel];
     [controller setContentUpdate:self.contentUpdate];
     [controller setImagesRetrieve:self.imagesRetrieve];

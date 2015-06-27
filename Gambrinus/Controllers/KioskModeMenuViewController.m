@@ -18,4 +18,10 @@
 
 @implementation KioskModeMenuViewController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    [self appendSortOptions];
+}
+
 @end

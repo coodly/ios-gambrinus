@@ -18,11 +18,16 @@
 #import <JCSFoundation/JCSInputCellsViewController.h>
 
 @class KioskSlideMenuViewController;
+@class ObjectModel;
 
 extern NSString *const KioskMenuCellIdentifier;
 
 @interface MenuViewController : JCSInputCellsViewController
 
+@property (nonatomic, strong) ObjectModel *objectModel;
 @property (nonatomic, weak) KioskSlideMenuViewController *container;
+
+- (void)appendSortOptions;
+- (NSIndexPath *)addMenuCellWithTitle:(NSString *)title;
 
 @end
