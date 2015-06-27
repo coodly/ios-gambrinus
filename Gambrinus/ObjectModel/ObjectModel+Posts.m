@@ -26,6 +26,8 @@
 #import "ObjectModel+Beers.h"
 #import "ObjectModel+Settings.h"
 #import "Beer.h"
+#import "BeerStyle.h"
+#import "Brewer.h"
 
 @implementation ObjectModel (Posts)
 
@@ -165,6 +167,14 @@
 
     Beer *topBeer = [self topBeer:beers];
     [post setTopScore:@(topBeer.rbScore.integerValue)];
+    [post setBrewerSort:topBeer.brewer.normalizedName];
+    if (!topBeer.brewer) {
+        [post setBrewerSort:@"æææææ"];
+    }
+    [post setStyleSort:topBeer.style.normalizedName];
+    if (!topBeer.style) {
+        [post setStyleSort:@"æææææ"];
+    }
     [post setBeers:[NSSet setWithArray:beers]];
 }
 
@@ -203,9 +213,11 @@
             return @[[NSSortDescriptor sortDescriptorWithKey:@"normalizedTitle" ascending:YES]];
         case OrderByRBScore:
             return @[[NSSortDescriptor sortDescriptorWithKey:@"topScore" ascending:NO], [NSSortDescriptor sortDescriptorWithKey:@"normalizedTitle" ascending:YES]];
-        case OrderByRBBeerName:
         case OrderByStyle:
+            return @[[NSSortDescriptor sortDescriptorWithKey:@"styleSort" ascending:YES], [NSSortDescriptor sortDescriptorWithKey:@"normalizedTitle" ascending:YES]];
         case OrderByBrewer:
+            return @[[NSSortDescriptor sortDescriptorWithKey:@"brewerSort" ascending:YES], [NSSortDescriptor sortDescriptorWithKey:@"normalizedTitle" ascending:YES]];
+        case OrderByRBBeerName:
         default:
             return @[[NSSortDescriptor sortDescriptorWithKey:@"publishDate" ascending:NO]];
     }

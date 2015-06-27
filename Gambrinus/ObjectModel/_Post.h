@@ -4,6 +4,7 @@
 @import CoreData;
 
 extern const struct PostAttributes {
+	__unsafe_unretained NSString *brewerSort;
 	__unsafe_unretained NSString *combinedBeers;
 	__unsafe_unretained NSString *combinedBrewers;
 	__unsafe_unretained NSString *combinedStyles;
@@ -14,6 +15,7 @@ extern const struct PostAttributes {
 	__unsafe_unretained NSString *publishDate;
 	__unsafe_unretained NSString *slug;
 	__unsafe_unretained NSString *starred;
+	__unsafe_unretained NSString *styleSort;
 	__unsafe_unretained NSString *title;
 	__unsafe_unretained NSString *topScore;
 	__unsafe_unretained NSString *touchedAt;
@@ -37,6 +39,10 @@ extern const struct PostRelationships {
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
 @property (nonatomic, readonly, strong) PostID* objectID;
+
+@property (nonatomic, strong) NSString* brewerSort;
+
+//- (BOOL)validateBrewerSort:(id*)value_ error:(NSError**)error_;
 
 @property (nonatomic, strong) NSString* combinedBeers;
 
@@ -86,6 +92,10 @@ extern const struct PostRelationships {
 
 //- (BOOL)validateStarred:(id*)value_ error:(NSError**)error_;
 
+@property (nonatomic, strong) NSString* styleSort;
+
+//- (BOOL)validateStyleSort:(id*)value_ error:(NSError**)error_;
+
 @property (nonatomic, strong) NSString* title;
 
 //- (BOOL)validateTitle:(id*)value_ error:(NSError**)error_;
@@ -126,6 +136,9 @@ extern const struct PostRelationships {
 
 @interface _Post (CoreDataGeneratedPrimitiveAccessors)
 
+- (NSString*)primitiveBrewerSort;
+- (void)setPrimitiveBrewerSort:(NSString*)value;
+
 - (NSString*)primitiveCombinedBeers;
 - (void)setPrimitiveCombinedBeers:(NSString*)value;
 
@@ -161,6 +174,9 @@ extern const struct PostRelationships {
 
 - (BOOL)primitiveStarredValue;
 - (void)setPrimitiveStarredValue:(BOOL)value_;
+
+- (NSString*)primitiveStyleSort;
+- (void)setPrimitiveStyleSort:(NSString*)value;
 
 - (NSString*)primitiveTitle;
 - (void)setPrimitiveTitle:(NSString*)value;

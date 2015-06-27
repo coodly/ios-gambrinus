@@ -4,6 +4,7 @@
 #import "_Post.h"
 
 const struct PostAttributes PostAttributes = {
+	.brewerSort = @"brewerSort",
 	.combinedBeers = @"combinedBeers",
 	.combinedBrewers = @"combinedBrewers",
 	.combinedStyles = @"combinedStyles",
@@ -14,6 +15,7 @@ const struct PostAttributes PostAttributes = {
 	.publishDate = @"publishDate",
 	.slug = @"slug",
 	.starred = @"starred",
+	.styleSort = @"styleSort",
 	.title = @"title",
 	.topScore = @"topScore",
 	.touchedAt = @"touchedAt",
@@ -70,6 +72,8 @@ const struct PostRelationships PostRelationships = {
 	return keyPaths;
 }
 
+@dynamic brewerSort;
+
 @dynamic combinedBeers;
 
 @dynamic combinedBrewers;
@@ -125,6 +129,8 @@ const struct PostRelationships PostRelationships = {
 - (void)setPrimitiveStarredValue:(BOOL)value_ {
 	[self setPrimitiveStarred:@(value_)];
 }
+
+@dynamic styleSort;
 
 @dynamic title;
 

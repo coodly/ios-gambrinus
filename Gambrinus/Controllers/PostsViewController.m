@@ -31,6 +31,7 @@
 #import "PostsSearchInputView.h"
 #import "PostExtendedDetailsViewController.h"
 #import "NSString+Normalize.h"
+#import "ObjectModel+Settings.h"
 
 @interface PostsViewController () <UICollectionViewDelegateFlowLayout>
 
@@ -287,34 +288,39 @@
     [self setCurrentFilter:searchTerm];
 
     NSPredicate *predicate = [self.objectModel postsPredicateWithSearchTerm:[searchTerm normalize] showHidden:[self showHiddenPosts] showOnlyStarred:[self showOnlyStarred]];
-    [self refreshFetchedControllerUsingPredicate:predicate sortDescriptors:nil];
+    [self refreshFetchedControllerUsingPredicate:predicate sortDescriptors:nil sectionNameKeyPath:nil];
 }
 
-- (void)refreshFetchedControllerUsingPredicate:(NSPredicate *)predicate sortDescriptors:(NSArray *)sortDescriptors {
+- (void)refreshFetchedControllerUsingPredicate:(NSPredicate *)predicate sortDescriptors:(NSArray *)sortDescriptors sectionNameKeyPath:(NSString *)sectionNameKeyPath {
+    NSPredicate *usedPredicate = self.allObjects.fetchRequest.predicate;
     if (predicate) {
-        [self.allObjects.fetchRequest setPredicate:predicate];
+        usedPredicate = predicate;
     }
 
+    NSArray *usedSortDescriptors = self.allObjects.fetchRequest.sortDescriptors;
     if (sortDescriptors) {
-        [self.allObjects.fetchRequest setSortDescriptors:sortDescriptors];
+        usedSortDescriptors = sortDescriptors;
     }
 
-    NSError *fetchError = nil;
-    [self.allObjects performFetch:&fetchError];
-    if (fetchError) {
-        NSLog(@"Fetch error:%@", fetchError);
+    NSString *usedSectionNameKeyPath = self.allObjects.sectionNameKeyPath;
+    if (sectionNameKeyPath) {
+        usedSectionNameKeyPath = sectionNameKeyPath.length == 0 ? nil : sectionNameKeyPath;
     }
 
-    [self.collectionView performBatchUpdates:^{
-        [self.collectionView reloadSections:[NSIndexSet indexSetWithIndex:0]];
-    } completion:^(BOOL finished) {
-        [self checkImagesNeeded];
-    }];
+    NSFetchedResultsController *fetchedController = [self.objectModel fetchedControllerForEntity:[Post entityName] predicate:usedPredicate sortDescriptors:usedSortDescriptors sectionNameKeyPath:usedSectionNameKeyPath];
+    [self changeFetchedControllerTo:fetchedController];
 }
 
 - (void)sortOrderChanged {
     NSArray *sortDescriptors = [self.objectModel postSortDescriptorsForCurrentSortOrder];
-    [self refreshFetchedControllerUsingPredicate:nil sortDescriptors:sortDescriptors];
+    PostsSortOrder order = [self.objectModel postsSortOrder];
+    NSString *sectionNameKeyPath = @"";
+    if (order == OrderByStyle) {
+        sectionNameKeyPath = @"styleSort";
+    } else if (order == OrderByBrewer) {
+        sectionNameKeyPath = @"brewerSort";
+    }
+    [self refreshFetchedControllerUsingPredicate:nil sortDescriptors:sortDescriptors sectionNameKeyPath:sectionNameKeyPath];
 }
 
 - (BOOL)showHiddenPosts {

@@ -36,6 +36,7 @@
         <relationship name="pullStatus" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="PullStatus" inverseName="statusForImage" inverseEntity="PullStatus" syncable="YES"/>
     </entity>
     <entity name="Post" representedClassName="Post" syncable="YES">
+        <attribute name="brewerSort" attributeType="String" defaultValueString="æææææ" syncable="YES"/>
         <attribute name="combinedBeers" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="combinedBrewers" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="combinedStyles" optional="YES" attributeType="String" syncable="YES"/>
@@ -46,6 +47,7 @@
         <attribute name="publishDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="slug" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="starred" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="styleSort" attributeType="String" defaultValueString="æææææ" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="topScore" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="touchedAt" optional="YES" attributeType="Date" syncable="YES"/>
@@ -68,7 +70,7 @@
         <element name="Blog" positionX="-63" positionY="27" width="128" height="120"/>
         <element name="Brewer" positionX="-18" positionY="81" width="128" height="90"/>
         <element name="Image" positionX="-54" positionY="54" width="128" height="88"/>
-        <element name="Post" positionX="-63" positionY="-18" width="128" height="285"/>
+        <element name="Post" positionX="-63" positionY="-18" width="128" height="315"/>
         <element name="PullStatus" positionX="-45" positionY="54" width="128" height="88"/>
         <element name="Setting" positionX="-63" positionY="27" width="128" height="75"/>
     </elements>
