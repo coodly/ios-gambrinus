@@ -53,18 +53,18 @@ NSInteger const GambrinusSortSectionIndex = 1;
 
     self.sortByPostDate = [self addCellWithTitle:NSLocalizedString(@"menu.controller.sort.by.date", nil)];
     self.sortByPostName = [self addCellWithTitle:NSLocalizedString(@"menu.controller.sort.by.posts", nil)];
-    self.sortByBeerName = [self addCellWithTitle:NSLocalizedString(@"menu.controller.sort.by.beer", nil)];
+    //self.sortByBeerName = [self addCellWithTitle:NSLocalizedString(@"menu.controller.sort.by.beer", nil)];
     self.sortByScore = [self addCellWithTitle:NSLocalizedString(@"menu.controller.sort.by.score", nil)];
-    self.sortByStyle = [self addCellWithTitle:NSLocalizedString(@"menu.controller.sort.by.style", nil)];
-    self.sortByStyle = [self addCellWithTitle:NSLocalizedString(@"menu.controller.sort.by.brewer", nil)];
+    //self.sortByStyle = [self addCellWithTitle:NSLocalizedString(@"menu.controller.sort.by.style", nil)];
+    //self.sortByStyle = [self addCellWithTitle:NSLocalizedString(@"menu.controller.sort.by.brewer", nil)];
 
     self.sortOptions = @[
         @[@(OrderByDateDesc), @(OrderByDateAsc)],
         @[@(OrderByPostName)],
-        @[@(OrderByRBBeerName)],
+        //@[@(OrderByRBBeerName)],
         @[@(OrderByRBScore)],
-        @[@(OrderByStyle)],
-        @[@(OrderByBrewer)]
+        //@[@(OrderByStyle)],
+        //@[@(OrderByBrewer)]
     ];
 }
 
