@@ -4,6 +4,7 @@
 @import CoreData;
 
 extern const struct PostAttributes {
+	__unsafe_unretained NSString *combinedBeers;
 	__unsafe_unretained NSString *content;
 	__unsafe_unretained NSString *hidden;
 	__unsafe_unretained NSString *normalizedTitle;
@@ -34,6 +35,10 @@ extern const struct PostRelationships {
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
 @property (nonatomic, readonly, strong) PostID* objectID;
+
+@property (nonatomic, strong) NSString* combinedBeers;
+
+//- (BOOL)validateCombinedBeers:(id*)value_ error:(NSError**)error_;
 
 @property (nonatomic, strong) NSString* content;
 
@@ -110,6 +115,9 @@ extern const struct PostRelationships {
 @end
 
 @interface _Post (CoreDataGeneratedPrimitiveAccessors)
+
+- (NSString*)primitiveCombinedBeers;
+- (void)setPrimitiveCombinedBeers:(NSString*)value;
 
 - (NSString*)primitiveContent;
 - (void)setPrimitiveContent:(NSString*)value;

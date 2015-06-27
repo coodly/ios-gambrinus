@@ -27,9 +27,10 @@ typedef NS_OPTIONS(short, KioskPostShowOptions) {
 
 @interface ObjectModel (Posts)
 
-- (void)createPostWithId:(NSString *)postId title:(NSString *)title content:(NSString *)content image:(NSString *)imageURL publisDate:(NSDate *)publishDate;
 - (NSFetchedResultsController *)fetchedControllerForAllPosts;
-- (Post *)createOrUpdatePostWithData:(NSDictionary *)dictionary;
+- (Post *)insertPostWithData:(NSDictionary *)dictionary;
+- (void)updatePostWithData:(NSDictionary *)dictionary;
+- (NSArray *)knownPostIds;
 - (NSDate *)lastKnownPostDateForBlog:(Blog *)blog;
 - (BOOL)postsNotLoaded;
 - (NSFetchedResultsController *)fetchedControllerForVisiblePostsOrderedByDate;

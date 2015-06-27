@@ -80,7 +80,7 @@ NSString *const kGoogleBloggerAPIPath = @"https://www.googleapis.com/blogger/v3"
 
             [self.objectModel saveInBlock:^(CDYObjectModel *objectModel) {
                 ObjectModel *model = (ObjectModel *) objectModel;
-                [model createOrUpdatePostWithData:response];
+                [model updatePostWithData:response];
             } completion:^{
                 completion(YES, nil);
             }];
@@ -142,10 +142,16 @@ NSString *const kGoogleBloggerAPIPath = @"https://www.googleapis.com/blogger/v3"
             ObjectModel *model = (ObjectModel *) objectModel;
             Blog *postForBlog = [model blogWithBaseURL:self.blogURLString];
             NSArray *items = response[@"items"];
+            NSArray *knownPostIds = [model knownPostIds];
             for (NSDictionary *postData in items) {
                 CDYLog(@"%@", postData[@"title"]);
-                Post *post = [model createOrUpdatePostWithData:postData];
-                [post setBlog:postForBlog];
+                NSString *postId = postData[@"title"];
+                if ([knownPostIds containsObject:postId]) {
+                    [model updatePostWithData:postData];
+                } else {
+                    Post *post = [model insertPostWithData:postData];
+                    [post setBlog:postForBlog];
+                }
             }
         } completion:^{
             NSString *token = response[@"nextPageToken"];

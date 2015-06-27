@@ -4,6 +4,7 @@
 #import "_Post.h"
 
 const struct PostAttributes PostAttributes = {
+	.combinedBeers = @"combinedBeers",
 	.content = @"content",
 	.hidden = @"hidden",
 	.normalizedTitle = @"normalizedTitle",
@@ -66,6 +67,8 @@ const struct PostRelationships PostRelationships = {
 
 	return keyPaths;
 }
+
+@dynamic combinedBeers;
 
 @dynamic content;
 

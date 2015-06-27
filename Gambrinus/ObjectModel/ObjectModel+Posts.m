@@ -15,6 +15,7 @@
 */
 
 #import <Ono/ONOXMLDocument.h>
+#import <JCSFoundation/JCSFoundationConstants.h>
 #import "ObjectModel+Posts.h"
 #import "Post.h"
 #import "NSDate+BloggerDate.h"
@@ -28,19 +29,6 @@
 
 @implementation ObjectModel (Posts)
 
-- (void)createPostWithId:(NSString *)postId title:(NSString *)title content:(NSString *)content image:(NSString *)imageURL publisDate:(NSDate *)publishDate {
-    Post *post = [self existingPostWithId:postId];
-    if (!post) {
-        post = [Post insertInManagedObjectContext:self.managedObjectContext];
-        [post setPostId:postId];
-    }
-
-    [post setTitle:title];
-    [post setContent:content];
-    [post setImage:imageURL];
-    [post setPublishDate:publishDate];
-}
-
 - (Post *)existingPostWithId:(NSString *)postId {
     NSPredicate *postIdPredicate = [NSPredicate predicateWithFormat:@"postId = %@", postId];
     return [self fetchEntityNamed:[Post entityName] withPredicate:postIdPredicate];
@@ -50,14 +38,21 @@
     return [self fetchedControllerForEntity:[Post entityName] sortDescriptors:[self postSortDescriptorsForCurrentSortOrder]];
 }
 
-- (Post *)createOrUpdatePostWithData:(NSDictionary *)dictionary {
+- (void)updatePostWithData:(NSDictionary *)dictionary {
     NSString *postId = dictionary[@"id"];
     Post *post = [self existingPostWithId:postId];
-    if (!post) {
-        post = [Post insertInManagedObjectContext:self.managedObjectContext];
-        [post setPostId:postId];
-    }
+    JCSAssert(post);
+    [self loadDataFromDictionary:dictionary intoPost:post];
+}
 
+- (Post *)insertPostWithData:(NSDictionary *)dictionary {
+    Post *post = [Post insertInManagedObjectContext:self.managedObjectContext];
+    [post setPostId:dictionary[@"id"]];
+    [self loadDataFromDictionary:dictionary intoPost:post];
+    return post;
+}
+
+- (void)loadDataFromDictionary:(NSDictionary *)dictionary intoPost:(Post *)post {
     [post setTitle:[dictionary[@"title"] trimWhitespace]];
     [post setPublishDate:[NSDate bloggerDateFromString:dictionary[@"published"]]];
     NSError *error = error;
@@ -71,8 +66,10 @@
         imageURLString = [imageURLString stringByReplacingOccurrencesOfString:@"/s200/" withString:@"/s1600/"];
     }
     [post setImage:[self findOrCreteImageWithURLString:imageURLString]];
+}
 
-    return post;
+- (NSArray *)knownPostIds {
+    return [self fetchAttributeNamed:@"postId" forEntity:[Post entityName]];
 }
 
 - (NSDate *)lastKnownPostDateForBlog:(Blog *)blog {
@@ -116,7 +113,9 @@
 
     if ([searchTerm hasValue]) {
         NSPredicate *titlePredicate = [NSPredicate predicateWithFormat:@"normalizedTitle CONTAINS %@", searchTerm];
-        [predicates addObject:titlePredicate];
+        NSPredicate *beersPredicate = [NSPredicate predicateWithFormat:@"combinedBeers CONTAINS %@", searchTerm];
+        NSPredicate *searchPredicate = [NSCompoundPredicate orPredicateWithSubpredicates:@[titlePredicate, beersPredicate]];
+        [predicates addObject:searchPredicate];
     }
 
     if ([predicates count] == 0) {
@@ -158,11 +157,22 @@
         return;
     }
 
-    [post setTopScore:[self topBeerScore:beers]];
+    [post setCombinedBeers:[self combinedValuesFrom:beers usingKeyPath:@"normalizedName"]];
+
+    Beer *topBeer = [self topBeer:beers];
+    [post setTopScore:@(topBeer.rbScore.integerValue)];
     [post setBeers:[NSSet setWithArray:beers]];
 }
 
-- (NSNumber *)topBeerScore:(NSArray *)beers {
+- (NSString *)combinedValuesFrom:(NSArray *)beers usingKeyPath:(NSString *)keyPath {
+    NSArray *normalized = [beers valueForKeyPath:keyPath];
+    NSSet *set = [NSSet setWithArray:normalized];
+    NSArray *unique = [set allObjects];
+    NSArray *sorted = [unique sortedArrayUsingSelector:@selector(compare:)];
+    return [sorted componentsJoinedByString:@"|"];
+}
+
+- (Beer *)topBeer:(NSArray *)beers {
     NSArray *sorted = [beers sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         Beer *one = obj1;
         Beer *two = obj2;
@@ -172,7 +182,7 @@
         return [@(scoreTwo) compare:@(scoreOne)];
     }];
     Beer *top = [sorted firstObject];
-    return @(top.rbScore.integerValue);
+    return top;
 }
 
 - (NSArray *)postSortDescriptorsForCurrentSortOrder {
