@@ -62,7 +62,12 @@
     if (error) {
         NSLog(@"HTML error:%@", error);
     }
-    [post setContent:document.rootElement.stringValue];
+
+    NSString *content = document.rootElement.stringValue;
+    content = [content stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    content = [content stringByReplacingOccurrencesOfString:@"\n\n\n" withString:@"\n\n"];
+    [post setContent:content];
+
     NSString *imageURLString = [dictionary[@"images"] firstObject][@"url"];
     if ([imageURLString rangeOfString:@"blogspot.com"].location != NSNotFound) {
         imageURLString = [imageURLString stringByReplacingOccurrencesOfString:@"/s200/" withString:@"/s1600/"];
