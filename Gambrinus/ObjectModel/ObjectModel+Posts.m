@@ -114,7 +114,9 @@
     if ([searchTerm hasValue]) {
         NSPredicate *titlePredicate = [NSPredicate predicateWithFormat:@"normalizedTitle CONTAINS %@", searchTerm];
         NSPredicate *beersPredicate = [NSPredicate predicateWithFormat:@"combinedBeers CONTAINS %@", searchTerm];
-        NSPredicate *searchPredicate = [NSCompoundPredicate orPredicateWithSubpredicates:@[titlePredicate, beersPredicate]];
+        NSPredicate *stylesPredicate = [NSPredicate predicateWithFormat:@"combinedStyles CONTAINS %@", searchTerm];
+        NSPredicate *brewersPredicate = [NSPredicate predicateWithFormat:@"combinedBrewers CONTAINS %@", searchTerm];
+        NSPredicate *searchPredicate = [NSCompoundPredicate orPredicateWithSubpredicates:@[titlePredicate, beersPredicate, stylesPredicate, brewersPredicate]];
         [predicates addObject:searchPredicate];
     }
 
@@ -158,6 +160,8 @@
     }
 
     [post setCombinedBeers:[self combinedValuesFrom:beers usingKeyPath:@"normalizedName"]];
+    [post setCombinedStyles:[self combinedValuesFrom:beers usingKeyPath:@"style.normalizedName"]];
+    [post setCombinedBrewers:[self combinedValuesFrom:beers usingKeyPath:@"brewer.normalizedName"]];
 
     Beer *topBeer = [self topBeer:beers];
     [post setTopScore:@(topBeer.rbScore.integerValue)];
@@ -166,6 +170,10 @@
 
 - (NSString *)combinedValuesFrom:(NSArray *)beers usingKeyPath:(NSString *)keyPath {
     NSArray *normalized = [beers valueForKeyPath:keyPath];
+    normalized = [normalized filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
+        return ![evaluatedObject isKindOfClass:[NSNull class]];
+    }]];
+
     NSSet *set = [NSSet setWithArray:normalized];
     NSArray *unique = [set allObjects];
     NSArray *sorted = [unique sortedArrayUsingSelector:@selector(compare:)];

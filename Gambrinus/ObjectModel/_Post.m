@@ -5,6 +5,8 @@
 
 const struct PostAttributes PostAttributes = {
 	.combinedBeers = @"combinedBeers",
+	.combinedBrewers = @"combinedBrewers",
+	.combinedStyles = @"combinedStyles",
 	.content = @"content",
 	.hidden = @"hidden",
 	.normalizedTitle = @"normalizedTitle",
@@ -69,6 +71,10 @@ const struct PostRelationships PostRelationships = {
 }
 
 @dynamic combinedBeers;
+
+@dynamic combinedBrewers;
+
+@dynamic combinedStyles;
 
 @dynamic content;
 

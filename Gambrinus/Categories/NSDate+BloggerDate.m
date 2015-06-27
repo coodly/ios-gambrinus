@@ -23,13 +23,11 @@
     NSString *parsed = [NSString stringWithString:dateString];
     parsed = [parsed stringByReplacingCharactersInRange:NSMakeRange(dateString.length - 3, 3) withString:@"00"];
     NSDate *result = [[NSDate bloggerDateFormatter] dateFromString:parsed];
-    CDYLog(@"%@ -> %@", parsed, result);
     return result;
 }
 
 - (id)bloggerDateString {
     NSString *dateString = [[NSDate bloggerDateFormatter] stringFromDate:self];
-    CDYLog(@"%@ -> %@", self, dateString);
     return dateString;
 }
 

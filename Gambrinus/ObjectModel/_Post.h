@@ -5,6 +5,8 @@
 
 extern const struct PostAttributes {
 	__unsafe_unretained NSString *combinedBeers;
+	__unsafe_unretained NSString *combinedBrewers;
+	__unsafe_unretained NSString *combinedStyles;
 	__unsafe_unretained NSString *content;
 	__unsafe_unretained NSString *hidden;
 	__unsafe_unretained NSString *normalizedTitle;
@@ -39,6 +41,14 @@ extern const struct PostRelationships {
 @property (nonatomic, strong) NSString* combinedBeers;
 
 //- (BOOL)validateCombinedBeers:(id*)value_ error:(NSError**)error_;
+
+@property (nonatomic, strong) NSString* combinedBrewers;
+
+//- (BOOL)validateCombinedBrewers:(id*)value_ error:(NSError**)error_;
+
+@property (nonatomic, strong) NSString* combinedStyles;
+
+//- (BOOL)validateCombinedStyles:(id*)value_ error:(NSError**)error_;
 
 @property (nonatomic, strong) NSString* content;
 
@@ -118,6 +128,12 @@ extern const struct PostRelationships {
 
 - (NSString*)primitiveCombinedBeers;
 - (void)setPrimitiveCombinedBeers:(NSString*)value;
+
+- (NSString*)primitiveCombinedBrewers;
+- (void)setPrimitiveCombinedBrewers:(NSString*)value;
+
+- (NSString*)primitiveCombinedStyles;
+- (void)setPrimitiveCombinedStyles:(NSString*)value;
 
 - (NSString*)primitiveContent;
 - (void)setPrimitiveContent:(NSString*)value;

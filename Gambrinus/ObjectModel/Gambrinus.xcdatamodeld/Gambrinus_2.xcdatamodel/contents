@@ -15,6 +15,7 @@
     </entity>
     <entity name="BeerStyle" representedClassName="BeerStyle" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="normalizedName" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="beers" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Beer" inverseName="style" inverseEntity="Beer" syncable="YES"/>
     </entity>
     <entity name="Blog" representedClassName="Blog" syncable="YES">
@@ -26,6 +27,7 @@
     </entity>
     <entity name="Brewer" representedClassName="Brewer" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="normalizedName" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="beers" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Beer" inverseName="brewer" inverseEntity="Beer" syncable="YES"/>
     </entity>
     <entity name="Image" representedClassName="Image" syncable="YES">
@@ -35,6 +37,8 @@
     </entity>
     <entity name="Post" representedClassName="Post" syncable="YES">
         <attribute name="combinedBeers" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="combinedBrewers" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="combinedStyles" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="hidden" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="normalizedTitle" optional="YES" attributeType="String" syncable="YES"/>
@@ -60,11 +64,11 @@
     </entity>
     <elements>
         <element name="Beer" positionX="-27" positionY="72" width="128" height="210"/>
-        <element name="BeerStyle" positionX="-9" positionY="90" width="128" height="75"/>
+        <element name="BeerStyle" positionX="-9" positionY="90" width="128" height="90"/>
         <element name="Blog" positionX="-63" positionY="27" width="128" height="120"/>
-        <element name="Brewer" positionX="-18" positionY="81" width="128" height="75"/>
+        <element name="Brewer" positionX="-18" positionY="81" width="128" height="90"/>
         <element name="Image" positionX="-54" positionY="54" width="128" height="88"/>
-        <element name="Post" positionX="-63" positionY="-18" width="128" height="255"/>
+        <element name="Post" positionX="-63" positionY="-18" width="128" height="285"/>
         <element name="PullStatus" positionX="-45" positionY="54" width="128" height="88"/>
         <element name="Setting" positionX="-63" positionY="27" width="128" height="75"/>
     </elements>

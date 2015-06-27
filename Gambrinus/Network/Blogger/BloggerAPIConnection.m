@@ -145,7 +145,7 @@ NSString *const kGoogleBloggerAPIPath = @"https://www.googleapis.com/blogger/v3"
             NSArray *knownPostIds = [model knownPostIds];
             for (NSDictionary *postData in items) {
                 CDYLog(@"%@", postData[@"title"]);
-                NSString *postId = postData[@"title"];
+                NSString *postId = postData[@"id"];
                 if ([knownPostIds containsObject:postId]) {
                     [model updatePostWithData:postData];
                 } else {

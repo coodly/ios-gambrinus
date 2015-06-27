@@ -5,6 +5,7 @@
 
 const struct BeerStyleAttributes BeerStyleAttributes = {
 	.name = @"name",
+	.normalizedName = @"normalizedName",
 };
 
 const struct BeerStyleRelationships BeerStyleRelationships = {
@@ -41,6 +42,8 @@ const struct BeerStyleRelationships BeerStyleRelationships = {
 }
 
 @dynamic name;
+
+@dynamic normalizedName;
 
 @dynamic beers;
 
