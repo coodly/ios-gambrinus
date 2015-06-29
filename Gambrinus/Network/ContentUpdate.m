@@ -33,6 +33,8 @@
 
 - (void)updateWithCompletionHandler:(ContentUpdateBlock)completion {
     [self.objectModel performBlock:^{
+        TICK;
+
         NSDate *lastPullDate = [self.objectModel lastVerifiedPullDate:[NSDate dateOnYear:2010 month:1 day:1]];
         CDYLog(@"Last pull date:%@", lastPullDate);
         NSDate *refreshStartTime = [NSDate date];
@@ -54,6 +56,7 @@
                     ObjectModel *model = (ObjectModel *) objectModel;
                     [model setLastVerifiedPullDate:refreshStartTime];
                 } completion:^{
+                    TOCK(@"Content refreshed");
                     completion(YES, nil);
                 }];
             }];

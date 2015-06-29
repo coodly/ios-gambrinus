@@ -24,6 +24,9 @@ extern NSString *const KioskPostsImageFamily;
 extern NSString *const GambrinusSortOrderChangedNotification;
 
 #define CDYLog(s, ...) NSLog( @"<%@:%@ (%d)> %@", [[NSString stringWithUTF8String:__FILE__] lastPathComponent], NSStringFromSelector(_cmd), __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
+#define TICK   NSDate *startTime = [NSDate date]
+#define TOCK(s)   CDYLog(@"%@: %f", s, -[startTime timeIntervalSinceNow])
+
 
 #define GambrinusForceET 1
 
