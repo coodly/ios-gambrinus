@@ -38,12 +38,20 @@ NSString *const PostDataKeyBeerBindingIds = @"PostDataKeyBeerBindingIds";
         return;
     }
 
-    NSString *normalizedTitle = [self.title normalize];
-    if ([normalizedTitle isEqualToString:self.normalizedTitle]) {
+    if ([self.shadowTitle isEqualToString:self.title]) {
         return;
     }
 
+    [self setShadowTitle:self.title];
+
+    NSString *normalizedTitle = [self.title normalize];
     [self setNormalizedTitle:normalizedTitle];
+}
+
+- (void)awakeFromFetch {
+    [super awakeFromFetch];
+
+    [self setShadowTitle:self.title];
 }
 
 - (BlogImageAsk *)thumbnailImageAsk {

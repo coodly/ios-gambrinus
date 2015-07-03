@@ -12,6 +12,7 @@ const struct BeerAttributes BeerAttributes = {
 	.normalizedName = @"normalizedName",
 	.rbIdentifier = @"rbIdentifier",
 	.rbScore = @"rbScore",
+	.shadowName = @"shadowName",
 };
 
 const struct BeerRelationships BeerRelationships = {
@@ -111,6 +112,8 @@ const struct BeerRelationships BeerRelationships = {
 @dynamic rbIdentifier;
 
 @dynamic rbScore;
+
+@dynamic shadowName;
 
 @dynamic brewer;
 

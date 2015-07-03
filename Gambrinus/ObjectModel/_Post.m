@@ -13,6 +13,7 @@ const struct PostAttributes PostAttributes = {
 	.normalizedTitle = @"normalizedTitle",
 	.postId = @"postId",
 	.publishDate = @"publishDate",
+	.shadowTitle = @"shadowTitle",
 	.slug = @"slug",
 	.starred = @"starred",
 	.styleSort = @"styleSort",
@@ -107,6 +108,8 @@ const struct PostRelationships PostRelationships = {
 @dynamic postId;
 
 @dynamic publishDate;
+
+@dynamic shadowTitle;
 
 @dynamic slug;
 

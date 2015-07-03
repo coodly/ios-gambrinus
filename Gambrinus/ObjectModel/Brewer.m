@@ -33,12 +33,20 @@
         return;
     }
 
-    NSString *normalizedName = [self.name normalize];
-    if ([normalizedName isEqualToString:self.normalizedName]) {
+    if ([self.shadowName isEqualToString:self.name]) {
         return;
     }
 
+    [self setShadowName:self.name];
+
+    NSString *normalizedName = [self.name normalize];
     [self setNormalizedName:normalizedName];
+}
+
+- (void)awakeFromFetch {
+    [super awakeFromFetch];
+
+    [self setShadowName:self.name];
 }
 
 @end

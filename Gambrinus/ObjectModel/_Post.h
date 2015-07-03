@@ -13,6 +13,7 @@ extern const struct PostAttributes {
 	__unsafe_unretained NSString *normalizedTitle;
 	__unsafe_unretained NSString *postId;
 	__unsafe_unretained NSString *publishDate;
+	__unsafe_unretained NSString *shadowTitle;
 	__unsafe_unretained NSString *slug;
 	__unsafe_unretained NSString *starred;
 	__unsafe_unretained NSString *styleSort;
@@ -79,6 +80,10 @@ extern const struct PostRelationships {
 @property (nonatomic, strong) NSDate* publishDate;
 
 //- (BOOL)validatePublishDate:(id*)value_ error:(NSError**)error_;
+
+@property (nonatomic, strong) NSString* shadowTitle;
+
+//- (BOOL)validateShadowTitle:(id*)value_ error:(NSError**)error_;
 
 @property (nonatomic, strong) NSString* slug;
 
@@ -165,6 +170,9 @@ extern const struct PostRelationships {
 
 - (NSDate*)primitivePublishDate;
 - (void)setPrimitivePublishDate:(NSDate*)value;
+
+- (NSString*)primitiveShadowTitle;
+- (void)setPrimitiveShadowTitle:(NSString*)value;
 
 - (NSString*)primitiveSlug;
 - (void)setPrimitiveSlug:(NSString*)value;

@@ -12,6 +12,7 @@ extern const struct BeerAttributes {
 	__unsafe_unretained NSString *normalizedName;
 	__unsafe_unretained NSString *rbIdentifier;
 	__unsafe_unretained NSString *rbScore;
+	__unsafe_unretained NSString *shadowName;
 } BeerAttributes;
 
 extern const struct BeerRelationships {
@@ -73,6 +74,10 @@ extern const struct BeerRelationships {
 
 //- (BOOL)validateRbScore:(id*)value_ error:(NSError**)error_;
 
+@property (nonatomic, strong) NSString* shadowName;
+
+//- (BOOL)validateShadowName:(id*)value_ error:(NSError**)error_;
+
 @property (nonatomic, strong) Brewer *brewer;
 
 //- (BOOL)validateBrewer:(id*)value_ error:(NSError**)error_;
@@ -126,6 +131,9 @@ extern const struct BeerRelationships {
 
 - (NSString*)primitiveRbScore;
 - (void)setPrimitiveRbScore:(NSString*)value;
+
+- (NSString*)primitiveShadowName;
+- (void)setPrimitiveShadowName:(NSString*)value;
 
 - (Brewer*)primitiveBrewer;
 - (void)setPrimitiveBrewer:(Brewer*)value;
