@@ -61,6 +61,8 @@
 
     [self setCurrentFilter:@""];
 
+    [self setIgnoreOffScreenUpdates:YES];
+
     [self.collectionView setBackgroundColor:[UIColor clearColor]];
     [self.view setBackgroundColor:[UIColor controllerBackgroundColor]];
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
