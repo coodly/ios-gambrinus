@@ -38,7 +38,7 @@ NSString *const PostDataKeyBeerBindingIds = @"PostDataKeyBeerBindingIds";
         return;
     }
 
-    if ([self.shadowTitle isEqualToString:self.title]) {
+    if ([self.shadowTitle isEqualToString:self.title] && [self.normalizedTitle hasValue]) {
         return;
     }
 
