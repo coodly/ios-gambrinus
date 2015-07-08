@@ -26,29 +26,10 @@
     return [[NSDate gregorian] dateFromComponents:components];
 }
 
-- (NSDate *)beginningOfWeek {
-    return [NSDate dateForUnit:NSWeekCalendarUnit beforeDate:self];
-}
-
-+ (NSDate *)dateForUnit:(NSCalendarUnit)unit beforeDate:(NSDate *)date {
-    NSDate *result;
-    [[NSDate gregorian] rangeOfUnit:unit
-                          startDate:&result
-                           interval:0
-                            forDate:date];
-    return result;
-}
-
-- (NSDate *)startOfNextWeek {
-    NSDateComponents *components = [[NSDateComponents alloc] init];
-    components.week = 1;
-    return [[NSDate gregorian] dateByAddingComponents:components toDate:self options:0];
-}
-
 NSCalendar *__gregorian;
 + (NSCalendar *)gregorian {
     if (!__gregorian) {
-        __gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+        __gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     }
 
     return __gregorian;

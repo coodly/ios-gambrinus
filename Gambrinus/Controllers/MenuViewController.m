@@ -116,7 +116,6 @@ NSString *const KioskMenuCellIdentifier = @"KioskMenuCellIdentifier";
     }
 
     NSIndexPath *indexPathForCurrentOrder = [self indexPathForOrder:currentOrder];
-    NSIndexPath *indexPathForNextOrder = [self indexPathForOrder:nextOrder];
 
     MenuCell *oldCell = (MenuCell *) [self.tableView cellForRowAtIndexPath:indexPathForCurrentOrder];
     [oldCell setAccessoryType:UITableViewCellAccessoryNone];

@@ -19,7 +19,5 @@
 @interface NSDate (Calculations)
 
 + (NSDate *)dateOnYear:(NSUInteger)year month:(NSUInteger)month day:(NSUInteger)day;
-- (NSDate *)beginningOfWeek;
-- (NSDate *)startOfNextWeek;
 
 @end

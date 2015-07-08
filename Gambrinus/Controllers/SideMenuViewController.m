@@ -18,6 +18,7 @@
 #import "BlogPostsViewController.h"
 #import "MarkedPostsViewController.h"
 #import "Gambrinus-Swift.h"
+#import "FeedbackViewController.h"
 
 @interface SideMenuViewController ()
 
@@ -42,14 +43,11 @@
 - (void)tappedCellAtIndexPath:(NSIndexPath *)indexPath {
     if ([self.allPost isEqual:indexPath]) {
         [self.container presentRootController:[[BlogPostsViewController alloc] init]];
-        return;
     } else if ([self.favorites isEqual:indexPath]) {
         [self.container presentRootController:[[MarkedPostsViewController alloc] init]];
-        return;
     } else  {
         [super tappedCellAtIndexPath:indexPath];
     }
-
 }
 
 @end

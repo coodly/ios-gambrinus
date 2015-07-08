@@ -41,6 +41,14 @@ class KioskSlideMenuViewController: SlideMenuController {
         presentRootController(initialViewController)
     }
 
+    func presentModalController(controller: UIViewController) {
+        closeMenu()
+
+        controller.modalPresentationStyle = UIModalPresentationStyle.FormSheet;
+        controller.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve;
+        presentViewController(controller, animated: true, completion: nil)
+    }
+    
     func presentRootController(controller: UIViewController) {
         closeMenu()
 
@@ -53,6 +61,7 @@ class KioskSlideMenuViewController: SlideMenuController {
             presented.imagesRetrieve = imagesRetrieve
             presented.contentUpdate = contentUpdate
         }
+
         controller.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "1099-list-1-toolbar-selected"), style: .Plain, target: self, action: "openMenu")
         containedNavigation.setViewControllers([controller], animated: containedNavigation.viewControllers.count > 0)
         controller.viewWillAppear(true)
