@@ -18,6 +18,7 @@
 #import "ObjectModel+Blogs.h"
 #import "ObjectModel+Posts.h"
 #import "PostCell.h"
+#import "JCSLocalization.h"
 
 @interface MarkedPostsViewController ()
 
@@ -47,7 +48,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 
-    [self.navigationItem setTitle:NSLocalizedString(@"marked.controller.title", nil)];
+    [self.navigationItem setTitle:JCSLocalizedString(@"marked.controller.title", nil)];
 }
 
 - (NSFetchedResultsController *)createFetchedController {

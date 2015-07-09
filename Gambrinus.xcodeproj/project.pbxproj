@@ -52,6 +52,7 @@
 		EA16BF261B3978240018FED4 /* InfoSpacingCellDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = EA16BF251B3978240018FED4 /* InfoSpacingCellDefinition.m */; };
 		EA2713AD1B1A4B40002D655E /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2713AB1B1A4B40002D655E /* Fabric.framework */; };
 		EA2713AE1B1A4B40002D655E /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2713AC1B1A4B40002D655E /* Crashlytics.framework */; };
+		EA2B8D901B4F052B0043A84B /* JCSLocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2B8D8F1B4F052B0043A84B /* JCSLocalization.m */; };
 		EA3FDE811B18CB0700C93B7D /* Secrets.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3FDE801B18CB0700C93B7D /* Secrets.m */; };
 		EA43D7C6198B6A08000B5AF5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA43D7BD198B6A08000B5AF5 /* InfoPlist.strings */; };
 		EA43D7C7198B6A08000B5AF5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA43D7BF198B6A08000B5AF5 /* Localizable.strings */; };
@@ -208,6 +209,8 @@
 		EA16BF251B3978240018FED4 /* InfoSpacingCellDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoSpacingCellDefinition.m; sourceTree = "<group>"; };
 		EA2713AB1B1A4B40002D655E /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		EA2713AC1B1A4B40002D655E /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		EA2B8D8E1B4F052B0043A84B /* JCSLocalization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCSLocalization.h; sourceTree = "<group>"; };
+		EA2B8D8F1B4F052B0043A84B /* JCSLocalization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCSLocalization.m; sourceTree = "<group>"; };
 		EA3FDE7F1B18CB0700C93B7D /* Secrets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Secrets.h; sourceTree = "<group>"; };
 		EA3FDE801B18CB0700C93B7D /* Secrets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Secrets.m; sourceTree = "<group>"; };
 		EA43D7BE198B6A08000B5AF5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
@@ -464,6 +467,7 @@
 		EA0986CA1B1E40C6006FEC11 /* Thirdparty */ = {
 			isa = PBXGroup;
 			children = (
+				EA2B8D8D1B4F05180043A84B /* JCSLocalization */,
 				EA0986CB1B1E40C6006FEC11 /* SlideMenuController */,
 			);
 			path = Thirdparty;
@@ -498,6 +502,15 @@
 				EA16BF1F1B396D960018FED4 /* RateBeerDetailsCellDefinition.m */,
 			);
 			path = PostInfo;
+			sourceTree = "<group>";
+		};
+		EA2B8D8D1B4F05180043A84B /* JCSLocalization */ = {
+			isa = PBXGroup;
+			children = (
+				EA2B8D8E1B4F052B0043A84B /* JCSLocalization.h */,
+				EA2B8D8F1B4F052B0043A84B /* JCSLocalization.m */,
+			);
+			path = JCSLocalization;
 			sourceTree = "<group>";
 		};
 		EA43D7BC198B6A08000B5AF5 /* en.lproj */ = {
@@ -978,6 +991,7 @@
 				EA925DF419502952001E0AC9 /* PostsViewController.m in Sources */,
 				EAC9A7CF19446A03006AC834 /* _Image.m in Sources */,
 				EAC9A7E1194476DA006AC834 /* PullStatus.m in Sources */,
+				EA2B8D901B4F052B0043A84B /* JCSLocalization.m in Sources */,
 				EA16BF0B1B392A810018FED4 /* InfoTitleDetailCellDefinition.m in Sources */,
 				EA50FCA11B351BB00000F304 /* ParseBeer.m in Sources */,
 				EA666BCA19822C4E00F72C0F /* PostImageController.m in Sources */,

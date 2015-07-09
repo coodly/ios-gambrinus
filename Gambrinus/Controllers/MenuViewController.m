@@ -21,6 +21,7 @@
 #import "UIColor+Theme.h"
 #import "ObjectModel.h"
 #import "ObjectModel+Settings.h"
+#import "JCSLocalization.h"
 #import <Gambrinus-Swift.h>
 
 NSString *const KioskMenuCellIdentifier = @"KioskMenuCellIdentifier";
@@ -78,12 +79,12 @@ NSString *const KioskMenuCellIdentifier = @"KioskMenuCellIdentifier";
 - (void)appendSortOptions {
     self.sortOptionsSection = [self currentOpenSection];
 
-    self.sortByPostDate = [self addMenuCellWithTitle:NSLocalizedString(@"menu.controller.sort.by.date", nil)];
-    self.sortByPostName = [self addMenuCellWithTitle:NSLocalizedString(@"menu.controller.sort.by.posts", nil)];
-    //self.sortByBeerName = [self addMenuCellWithTitle:NSLocalizedString(@"menu.controller.sort.by.beer", nil)];
-    self.sortByScore = [self addMenuCellWithTitle:NSLocalizedString(@"menu.controller.sort.by.score", nil)];
-    //self.sortByStyle = [self addMenuCellWithTitle:NSLocalizedString(@"menu.controller.sort.by.style", nil)];
-    //self.sortByStyle = [self addMenuCellWithTitle:NSLocalizedString(@"menu.controller.sort.by.brewer", nil)];
+    self.sortByPostDate = [self addMenuCellWithTitle:JCSLocalizedString(@"menu.controller.sort.by.date", nil)];
+    self.sortByPostName = [self addMenuCellWithTitle:JCSLocalizedString(@"menu.controller.sort.by.posts", nil)];
+    //self.sortByBeerName = [self addMenuCellWithTitle:JCSLocalizedString(@"menu.controller.sort.by.beer", nil)];
+    self.sortByScore = [self addMenuCellWithTitle:JCSLocalizedString(@"menu.controller.sort.by.score", nil)];
+    //self.sortByStyle = [self addMenuCellWithTitle:JCSLocalizedString(@"menu.controller.sort.by.style", nil)];
+    //self.sortByStyle = [self addMenuCellWithTitle:JCSLocalizedString(@"menu.controller.sort.by.brewer", nil)];
 
     self.sortOptions = @[
             @[@(OrderByDateDesc), @(OrderByDateAsc)],
@@ -151,7 +152,7 @@ NSString *const KioskMenuCellIdentifier = @"KioskMenuCellIdentifier";
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     if (section == self.sortOptionsSection) {
-        return NSLocalizedString(@"menu.controller.sort.section.title", nil);
+        return JCSLocalizedString(@"menu.controller.sort.section.title", nil);
     }
 
     return nil;

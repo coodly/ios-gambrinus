@@ -20,6 +20,7 @@
 #import "PostCell.h"
 #import "UIView+JCSLoadView.h"
 #import "PoweredByViewController.h"
+#import "JCSLocalization.h"
 
 @interface KioskPostsViewController ()
 
@@ -38,7 +39,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self.navigationItem setTitle:NSLocalizedString(@"kiosk.posts.controller.title", nil)];
+    [self.navigationItem setTitle:JCSLocalizedString(@"kiosk.posts.controller.title", nil)];
 
     UIImageView *poweredByImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"PoweredBy"]];
 

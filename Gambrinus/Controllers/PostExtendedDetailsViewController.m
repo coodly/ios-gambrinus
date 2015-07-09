@@ -37,6 +37,7 @@
 #import "RateBeerDetailsCellDefinition.h"
 #import "RateBeerDetailsCollectionViewCell.h"
 #import "InfoSpacingCellDefinition.h"
+#import "JCSLocalization.h"
 
 @interface PostExtendedDetailsViewController () <UICollectionViewDelegateFlowLayout>
 
@@ -89,7 +90,7 @@
     [presented addObject:contentDefinition];
 
     InfoTitleDetailCellDefinition *postDateDefinition = [[InfoTitleDetailCellDefinition alloc] initWithCellIdentifier:[PostInfoRowCell identifier]];
-    [postDateDefinition setTitle:NSLocalizedString(@"post.extended.details.posted.on.label", nil)];
+    [postDateDefinition setTitle:JCSLocalizedString(@"post.extended.details.posted.on.label", nil)];
     [postDateDefinition setValue:self.post.publishDateString];
     [presented addObject:postDateDefinition];
 

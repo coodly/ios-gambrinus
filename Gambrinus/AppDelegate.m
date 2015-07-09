@@ -32,6 +32,7 @@
 #import "KioskPostsViewController.h"
 #import "BlogPostsViewController.h"
 #import "KioskModeMenuViewController.h"
+#import "JCSLocalization.h"
 
 @interface AppDelegate ()
 
@@ -45,6 +46,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+
+    [[JCSLocalization sharedInstance] setForcedLocale:[NSLocale localeWithLocaleIdentifier:@"et"]];
 
     [Parse setApplicationId:GambrinusParseApplicationId clientKey:GambrinusParseClientKey];
     [ParseService registerCustomClasses];

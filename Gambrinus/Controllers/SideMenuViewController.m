@@ -18,6 +18,7 @@
 #import "BlogPostsViewController.h"
 #import "MarkedPostsViewController.h"
 #import "Gambrinus-Swift.h"
+#import "JCSLocalization.h"
 
 @interface SideMenuViewController ()
 
@@ -31,8 +32,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.allPost = [self addMenuCellWithTitle:NSLocalizedString(@"menu.controller.option.all.posts", nil)];
-    self.favorites = [self addMenuCellWithTitle:NSLocalizedString(@"menu.controller.option.favorites", nil)];
+    self.allPost = [self addMenuCellWithTitle:JCSLocalizedString(@"menu.controller.option.all.posts", nil)];
+    self.favorites = [self addMenuCellWithTitle:JCSLocalizedString(@"menu.controller.option.favorites", nil)];
 
     [self closeSection];
 
