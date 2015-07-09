@@ -18,7 +18,6 @@
 #import "BlogPostsViewController.h"
 #import "MarkedPostsViewController.h"
 #import "Gambrinus-Swift.h"
-#import "FeedbackViewController.h"
 
 @interface SideMenuViewController ()
 
