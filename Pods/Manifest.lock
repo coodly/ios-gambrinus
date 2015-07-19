@@ -100,7 +100,7 @@ CHECKOUT OPTIONS:
     :commit: 4e8d91343197c26197e0ab0b408e3c72c06336c6
     :git: https://github.com/coodly/CDYObjectModel.git
   JCSFoundation:
-    :commit: 956a9beae17f93a6bd19f0db48ada6eda17a9af8
+    :commit: bfcb3bdc696076032a60825478634ec891fbb28e
     :git: https://github.com/jaanussiim/JCSFoundation.git
 
 SPEC CHECKSUMS:
