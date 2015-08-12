@@ -310,7 +310,7 @@
     }
 
     NSFetchedResultsController *fetchedController = [self.objectModel fetchedControllerForEntity:[Post entityName] predicate:usedPredicate sortDescriptors:usedSortDescriptors sectionNameKeyPath:usedSectionNameKeyPath];
-    [self changeFetchedControllerTo:fetchedController];
+    [self changeFetchedControllerTo:fetchedController fetch:NO];
 }
 
 - (void)sortOrderChanged {
