@@ -59,7 +59,7 @@
     [application setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
 
     ObjectModel *model = [[ObjectModel alloc] init];
-    [self setObjectModel:model];
+    [self setObjectModel:model.spawnBackgroundInstance];
 
     CDYLog(@"DB path:%@", [model storeURL]);
 

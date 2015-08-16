@@ -28,6 +28,7 @@
 #import "Beer.h"
 #import "BeerStyle.h"
 #import "Brewer.h"
+#import "Constants.h"
 
 @implementation ObjectModel (Posts)
 
@@ -107,6 +108,7 @@
 }
 
 - (NSPredicate *)postsPredicateForOptions:(KioskPostShowOptions)options searchTerm:(NSString *)searchTerm {
+    CDYLog(@"searchTerm:%@", searchTerm);
     NSMutableArray *predicates = [NSMutableArray array];
     if ((options & KioskShowHiddenPosts) != KioskShowHiddenPosts) {
         NSPredicate *hideHiddenPredicate = [NSPredicate predicateWithFormat:@"hidden = NO"];

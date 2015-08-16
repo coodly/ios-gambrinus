@@ -97,7 +97,7 @@ CHECKOUT OPTIONS:
     :commit: ccb4ffe453f2747bd149c8140dbeed80eed199e0
     :git: https://github.com/coodly/CDYImagesRetrieve.git
   CDYObjectModel:
-    :commit: 4e8d91343197c26197e0ab0b408e3c72c06336c6
+    :commit: eda2aff2073c0f560cf75531b91c12695558c819
     :git: https://github.com/coodly/CDYObjectModel.git
   JCSFoundation:
     :commit: cf1f5173bbfef22b6d87e6bc97babe4903c10985
