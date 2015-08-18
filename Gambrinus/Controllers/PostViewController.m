@@ -26,6 +26,7 @@
 #import "ContentUpdate.h"
 #import "PostImageController.h"
 #import "Constants.h"
+#import "PostContent.h"
 
 CGFloat const kPostContentPadding = 20;
 
@@ -125,7 +126,7 @@ CGFloat const kPostContentPadding = 20;
         [self.imagesRetrieve retrieveImageForAsk:ask completion:imageLoadBlock];
     }
 
-    [self.postView setPostContent:self.post.content];
+    [self.postView setPostContent:self.post.content.content];
 }
 
 - (void)startPullRefresh {

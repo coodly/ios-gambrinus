@@ -20,7 +20,6 @@
 #import "PostImageCell.h"
 #import "UIView+Identifier.h"
 #import "Constants.h"
-#import "_Post.h"
 #import "Post.h"
 #import "PostContentCell.h"
 #import "BlogImagesRetrieve.h"
@@ -38,6 +37,7 @@
 #import "RateBeerDetailsCollectionViewCell.h"
 #import "InfoSpacingCellDefinition.h"
 #import "JCSLocalization.h"
+#import "PostContent.h"
 
 @interface PostExtendedDetailsViewController () <UICollectionViewDelegateFlowLayout>
 
@@ -86,7 +86,7 @@
     [presented addObject:imageDefinition];
 
     InfoPostContentCellDefinition *contentDefinition = [[InfoPostContentCellDefinition alloc] initWithCellIdentifier:[PostContentCell identifier]];
-    [contentDefinition setText:self.post.content];
+    [contentDefinition setText:self.post.content.content];
     [presented addObject:contentDefinition];
 
     InfoTitleDetailCellDefinition *postDateDefinition = [[InfoTitleDetailCellDefinition alloc] initWithCellIdentifier:[PostInfoRowCell identifier]];

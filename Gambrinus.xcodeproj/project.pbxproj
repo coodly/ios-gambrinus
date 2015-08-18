@@ -91,6 +91,8 @@
 		EA666BCB19822C4E00F72C0F /* PostImageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA666BC919822C4E00F72C0F /* PostImageController.xib */; };
 		EA6FD0E51B18D74B000DB461 /* LaunchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA6FD0E41B18D74B000DB461 /* LaunchView.xib */; };
 		EA716EB41B3C935100A395A1 /* NSString+Normalize.m in Sources */ = {isa = PBXBuildFile; fileRef = EA716EB31B3C935100A395A1 /* NSString+Normalize.m */; };
+		EA74C9E71B82EDCA00A0C748 /* _PostContent.m in Sources */ = {isa = PBXBuildFile; fileRef = EA74C9E61B82EDCA00A0C748 /* _PostContent.m */; };
+		EA74C9EA1B82EDD700A0C748 /* PostContent.m in Sources */ = {isa = PBXBuildFile; fileRef = EA74C9E91B82EDD700A0C748 /* PostContent.m */; };
 		EA925DF419502952001E0AC9 /* PostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA925DF219502952001E0AC9 /* PostsViewController.m */; };
 		EA925DF519502952001E0AC9 /* PostsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA925DF319502952001E0AC9 /* PostsViewController.xib */; };
 		EA925E2619517062001E0AC9 /* StandardPostsListController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA925E2519517062001E0AC9 /* StandardPostsListController.m */; };
@@ -277,6 +279,10 @@
 		EA6FD0E41B18D74B000DB461 /* LaunchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchView.xib; sourceTree = "<group>"; };
 		EA716EB21B3C935100A395A1 /* NSString+Normalize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Normalize.h"; sourceTree = "<group>"; };
 		EA716EB31B3C935100A395A1 /* NSString+Normalize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Normalize.m"; sourceTree = "<group>"; };
+		EA74C9E51B82EDCA00A0C748 /* _PostContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _PostContent.h; sourceTree = "<group>"; };
+		EA74C9E61B82EDCA00A0C748 /* _PostContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _PostContent.m; sourceTree = "<group>"; };
+		EA74C9E81B82EDD700A0C748 /* PostContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostContent.h; sourceTree = "<group>"; };
+		EA74C9E91B82EDD700A0C748 /* PostContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostContent.m; sourceTree = "<group>"; };
 		EA925DF119502952001E0AC9 /* PostsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostsViewController.h; sourceTree = "<group>"; };
 		EA925DF219502952001E0AC9 /* PostsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostsViewController.m; sourceTree = "<group>"; };
 		EA925DF319502952001E0AC9 /* PostsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostsViewController.xib; sourceTree = "<group>"; };
@@ -664,6 +670,8 @@
 				EA50FCAF1B354D260000F304 /* ObjectModel+Styles.m */,
 				EADDA41C192B8ACE000CCEA9 /* Post.h */,
 				EADDA41D192B8ACE000CCEA9 /* Post.m */,
+				EA74C9E81B82EDD700A0C748 /* PostContent.h */,
+				EA74C9E91B82EDD700A0C748 /* PostContent.m */,
 				EAC9A7DF194476DA006AC834 /* PullStatus.h */,
 				EAC9A7E0194476DA006AC834 /* PullStatus.m */,
 				EAC877C3192E26C800309A23 /* Setting.h */,
@@ -687,6 +695,8 @@
 				EAC9A7CE19446A03006AC834 /* _Image.m */,
 				EADDA419192B8AC8000CCEA9 /* _Post.h */,
 				EADDA41A192B8AC8000CCEA9 /* _Post.m */,
+				EA74C9E51B82EDCA00A0C748 /* _PostContent.h */,
+				EA74C9E61B82EDCA00A0C748 /* _PostContent.m */,
 				EAC9A7DC194476CC006AC834 /* _PullStatus.h */,
 				EAC9A7DD194476CC006AC834 /* _PullStatus.m */,
 				EAC877C0192E26BE00309A23 /* _Setting.h */,
@@ -1015,9 +1025,11 @@
 				EAC877C2192E26BE00309A23 /* _Setting.m in Sources */,
 				EA50FC921B351AB70000F304 /* BeerStyle.m in Sources */,
 				EA50FCCA1B35B8C10000F304 /* PostContentCell.m in Sources */,
+				EA74C9EA1B82EDD700A0C748 /* PostContent.m in Sources */,
 				EA0986CD1B1E40C6006FEC11 /* SlideMenuController.swift in Sources */,
 				EADDA416192B88C6000CCEA9 /* Gambrinus.xcdatamodeld in Sources */,
 				EA16BF081B392A6C0018FED4 /* InfoPostContentCellDefinition.m in Sources */,
+				EA74C9E71B82EDCA00A0C748 /* _PostContent.m in Sources */,
 				EA16BF1A1B3969AB0018FED4 /* RateBeerDetailsCollectionViewCell.m in Sources */,
 				EA50FCC51B35B8AC0000F304 /* PostImageCell.m in Sources */,
 				EA50FCCE1B35B9260000F304 /* UIView+Identifier.m in Sources */,

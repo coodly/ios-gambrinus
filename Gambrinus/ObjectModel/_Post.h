@@ -8,7 +8,6 @@ extern const struct PostAttributes {
 	__unsafe_unretained NSString *combinedBeers;
 	__unsafe_unretained NSString *combinedBrewers;
 	__unsafe_unretained NSString *combinedStyles;
-	__unsafe_unretained NSString *content;
 	__unsafe_unretained NSString *hidden;
 	__unsafe_unretained NSString *normalizedTitle;
 	__unsafe_unretained NSString *postId;
@@ -25,11 +24,13 @@ extern const struct PostAttributes {
 extern const struct PostRelationships {
 	__unsafe_unretained NSString *beers;
 	__unsafe_unretained NSString *blog;
+	__unsafe_unretained NSString *content;
 	__unsafe_unretained NSString *image;
 } PostRelationships;
 
 @class Beer;
 @class Blog;
+@class PostContent;
 @class Image;
 
 @interface PostID : NSManagedObjectID {}
@@ -56,10 +57,6 @@ extern const struct PostRelationships {
 @property (nonatomic, strong) NSString* combinedStyles;
 
 //- (BOOL)validateCombinedStyles:(id*)value_ error:(NSError**)error_;
-
-@property (nonatomic, strong) NSString* content;
-
-//- (BOOL)validateContent:(id*)value_ error:(NSError**)error_;
 
 @property (nonatomic, strong) NSNumber* hidden;
 
@@ -125,6 +122,10 @@ extern const struct PostRelationships {
 
 //- (BOOL)validateBlog:(id*)value_ error:(NSError**)error_;
 
+@property (nonatomic, strong) PostContent *content;
+
+//- (BOOL)validateContent:(id*)value_ error:(NSError**)error_;
+
 @property (nonatomic, strong) Image *image;
 
 //- (BOOL)validateImage:(id*)value_ error:(NSError**)error_;
@@ -152,9 +153,6 @@ extern const struct PostRelationships {
 
 - (NSString*)primitiveCombinedStyles;
 - (void)setPrimitiveCombinedStyles:(NSString*)value;
-
-- (NSString*)primitiveContent;
-- (void)setPrimitiveContent:(NSString*)value;
 
 - (NSNumber*)primitiveHidden;
 - (void)setPrimitiveHidden:(NSNumber*)value;
@@ -203,6 +201,9 @@ extern const struct PostRelationships {
 
 - (Blog*)primitiveBlog;
 - (void)setPrimitiveBlog:(Blog*)value;
+
+- (PostContent*)primitiveContent;
+- (void)setPrimitiveContent:(PostContent*)value;
 
 - (Image*)primitiveImage;
 - (void)setPrimitiveImage:(Image*)value;

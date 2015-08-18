@@ -309,7 +309,7 @@
         usedSectionNameKeyPath = sectionNameKeyPath.length == 0 ? nil : sectionNameKeyPath;
     }
 
-    [self updateFetchedControllerWithPredicate:usedPredicate sortDescriptors:usedSortDescriptors];
+    [self updateFetchedControllerWithPredicate:usedPredicate sortDescriptors:usedSortDescriptors animate:NO];
     return;
 
     NSFetchedResultsController *fetchedController = [self.objectModel fetchedControllerForEntity:[Post entityName] predicate:usedPredicate sortDescriptors:usedSortDescriptors sectionNameKeyPath:usedSectionNameKeyPath];

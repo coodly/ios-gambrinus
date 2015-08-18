@@ -4,6 +4,7 @@ inhibit_all_warnings!
 
 pod 'Ono'
 pod 'CDYObjectModel', :git => 'https://github.com/coodly/CDYObjectModel.git'
+#pod 'CDYObjectModel', :path => '../CDYObjectModel'
 pod 'AFNetworking'
 pod 'MRProgress'
 pod 'JCSFoundation/UserInput', :git => 'https://github.com/jaanussiim/JCSFoundation.git'

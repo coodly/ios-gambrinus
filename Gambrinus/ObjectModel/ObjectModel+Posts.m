@@ -29,6 +29,7 @@
 #import "BeerStyle.h"
 #import "Brewer.h"
 #import "Constants.h"
+#import "PostContent.h"
 
 @implementation ObjectModel (Posts)
 
@@ -67,7 +68,12 @@
     NSString *content = document.rootElement.stringValue;
     content = [content stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     content = [content stringByReplacingOccurrencesOfString:@"\n\n\n" withString:@"\n\n"];
-    [post setContent:content];
+    PostContent *postContent = post.content;
+    if (!postContent) {
+        postContent = [PostContent insertInManagedObjectContext:post.managedObjectContext];
+    }
+    [postContent setContent:content];
+    [post setContent:postContent];
 
     NSString *imageURLString = [dictionary[@"images"] firstObject][@"url"];
     if ([imageURLString rangeOfString:@"blogspot.com"].location != NSNotFound) {

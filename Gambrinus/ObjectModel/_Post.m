@@ -8,7 +8,6 @@ const struct PostAttributes PostAttributes = {
 	.combinedBeers = @"combinedBeers",
 	.combinedBrewers = @"combinedBrewers",
 	.combinedStyles = @"combinedStyles",
-	.content = @"content",
 	.hidden = @"hidden",
 	.normalizedTitle = @"normalizedTitle",
 	.postId = @"postId",
@@ -25,6 +24,7 @@ const struct PostAttributes PostAttributes = {
 const struct PostRelationships PostRelationships = {
 	.beers = @"beers",
 	.blog = @"blog",
+	.content = @"content",
 	.image = @"image",
 };
 
@@ -80,8 +80,6 @@ const struct PostRelationships PostRelationships = {
 @dynamic combinedBrewers;
 
 @dynamic combinedStyles;
-
-@dynamic content;
 
 @dynamic hidden;
 
@@ -171,6 +169,8 @@ const struct PostRelationships PostRelationships = {
 }
 
 @dynamic blog;
+
+@dynamic content;
 
 @dynamic image;
 
