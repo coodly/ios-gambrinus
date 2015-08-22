@@ -273,6 +273,7 @@
 		EA50FCD71B36C2E70000F304 /* PostInfoRowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostInfoRowCell.h; sourceTree = "<group>"; };
 		EA50FCD81B36C2E70000F304 /* PostInfoRowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostInfoRowCell.m; sourceTree = "<group>"; };
 		EA50FCD91B36C2E70000F304 /* PostInfoRowCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostInfoRowCell.xib; sourceTree = "<group>"; };
+		EA528A1C1B88B03B002A877F /* Gambrinus_3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Gambrinus_3.xcdatamodel; sourceTree = "<group>"; };
 		EA666BC719822C4E00F72C0F /* PostImageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostImageController.h; sourceTree = "<group>"; };
 		EA666BC819822C4E00F72C0F /* PostImageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostImageController.m; sourceTree = "<group>"; };
 		EA666BC919822C4E00F72C0F /* PostImageController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostImageController.xib; sourceTree = "<group>"; };
@@ -1227,7 +1228,7 @@
 				INFOPLIST_FILE = "Gambrinus/Gambrinus-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a4b27cf9-9207-4032-af5e-35b946acf794";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Gambrinus/Gambrinus-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
@@ -1253,7 +1254,7 @@
 				INFOPLIST_FILE = "Gambrinus/Gambrinus-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a4b27cf9-9207-4032-af5e-35b946acf794";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Gambrinus/Gambrinus-Bridging-Header.h";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 				WRAPPER_EXTENSION = app;
@@ -1336,10 +1337,11 @@
 		EADDA414192B88C6000CCEA9 /* Gambrinus.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				EA528A1C1B88B03B002A877F /* Gambrinus_3.xcdatamodel */,
 				EA50FC7A1B34A5EE0000F304 /* Gambrinus_2.xcdatamodel */,
 				EADDA415192B88C6000CCEA9 /* Gambrinus.xcdatamodel */,
 			);
-			currentVersion = EA50FC7A1B34A5EE0000F304 /* Gambrinus_2.xcdatamodel */;
+			currentVersion = EA528A1C1B88B03B002A877F /* Gambrinus_3.xcdatamodel */;
 			path = Gambrinus.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

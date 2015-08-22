@@ -43,7 +43,6 @@
         <attribute name="combinedBeers" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="combinedBrewers" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="combinedStyles" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="hidden" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="normalizedTitle" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="postId" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
@@ -57,7 +56,12 @@
         <attribute name="touchedAt" optional="YES" attributeType="Date" syncable="YES"/>
         <relationship name="beers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Beer" inverseName="posts" inverseEntity="Beer" syncable="YES"/>
         <relationship name="blog" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Blog" inverseName="posts" inverseEntity="Blog" syncable="YES"/>
+        <relationship name="content" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="PostContent" inverseName="post" inverseEntity="PostContent" syncable="YES"/>
         <relationship name="image" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Image" inverseName="posts" inverseEntity="Image" syncable="YES"/>
+    </entity>
+    <entity name="PostContent" representedClassName="PostContent" syncable="YES">
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="post" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Post" inverseName="content" inverseEntity="Post" syncable="YES"/>
     </entity>
     <entity name="PullStatus" representedClassName="PullStatus" syncable="YES">
         <attribute name="lastPullAttempt" optional="YES" attributeType="Date" syncable="YES"/>
@@ -77,5 +81,6 @@
         <element name="Post" positionX="-63" positionY="-18" width="128" height="330"/>
         <element name="PullStatus" positionX="-45" positionY="54" width="128" height="88"/>
         <element name="Setting" positionX="-63" positionY="27" width="128" height="75"/>
+        <element name="PostContent" positionX="-36" positionY="135" width="128" height="75"/>
     </elements>
 </model>
