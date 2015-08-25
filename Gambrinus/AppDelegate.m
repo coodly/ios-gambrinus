@@ -33,6 +33,7 @@
 #import "BlogPostsViewController.h"
 #import "KioskModeMenuViewController.h"
 #import "JCSLocalization.h"
+#import "MigrationViewController.h"
 
 @interface AppDelegate ()
 
@@ -82,16 +83,6 @@
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(guidedAccessStatusChanged) name:UIAccessibilityGuidedAccessStatusDidChangeNotification object:nil];
 
-
-    BlogImagesRetrieve *imagesRetrieve = [[BlogImagesRetrieve alloc] init];
-    self.imagesRetrieve = imagesRetrieve;
-    BloggerAPIConnection *apiConnection = [[BloggerAPIConnection alloc] initWithBlogURLString:@"http://tartugambrinus.blogspot.com/" bloggerKey:GambrinusBloggerAPIKey objectModel:model];
-    ParseService *parseService = [[ParseService alloc] initWithObjectModel:model];
-    ContentUpdate *contentUpdate = [[ContentUpdate alloc] initWithObjectModel:model];
-    self.contentUpdate = contentUpdate;
-    [contentUpdate setBloggerAPIConnection:apiConnection];
-    [contentUpdate setParseService:parseService];
-
     [application setStatusBarStyle:UIStatusBarStyleLightContent];
 
     [[UINavigationBar appearance] setBarTintColor:[UIColor myOrange]];
@@ -99,15 +90,34 @@
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     [[UIRefreshControl appearance] setTintColor:[UIColor myOrange]];
 
-    SideMenuViewController *menuViewController = [[SideMenuViewController alloc] init];
-    [menuViewController setObjectModel:model];
-    KioskSlideMenuViewController *controller = [[KioskSlideMenuViewController alloc] initWithMainViewController:[[UINavigationController alloc] init] leftMenuViewController:menuViewController];
-    [controller setObjectModel:model];
-    [controller setContentUpdate:contentUpdate];
-    [controller setImagesRetrieve:imagesRetrieve];
-    [controller setInitialViewController:[[BlogPostsViewController alloc] init]];
+    MigrationViewController *migrationViewController = [[MigrationViewController alloc] init];
+    [migrationViewController setObjectModel:model];
+    [migrationViewController setCompletion:^{
+        BlogImagesRetrieve *imagesRetrieve = [[BlogImagesRetrieve alloc] init];
+        self.imagesRetrieve = imagesRetrieve;
+        BloggerAPIConnection *apiConnection = [[BloggerAPIConnection alloc] initWithBlogURLString:@"http://tartugambrinus.blogspot.com/" bloggerKey:GambrinusBloggerAPIKey objectModel:model];
+        ParseService *parseService = [[ParseService alloc] initWithObjectModel:model];
+        ContentUpdate *contentUpdate = [[ContentUpdate alloc] initWithObjectModel:model];
+        self.contentUpdate = contentUpdate;
+        [contentUpdate setBloggerAPIConnection:apiConnection];
+        [contentUpdate setParseService:parseService];
 
-    [self.window setRootViewController:controller];
+        SideMenuViewController *menuViewController = [[SideMenuViewController alloc] init];
+        [menuViewController setObjectModel:model];
+        KioskSlideMenuViewController *controller = [[KioskSlideMenuViewController alloc] initWithMainViewController:[[UINavigationController alloc] init] leftMenuViewController:menuViewController];
+        [controller setObjectModel:model];
+        [controller setContentUpdate:contentUpdate];
+        [controller setImagesRetrieve:imagesRetrieve];
+        [controller setInitialViewController:[[BlogPostsViewController alloc] init]];
+
+        [UIView animateWithDuration:0.3 animations:^{
+            [self.window setRootViewController:controller];
+        }];
+    }];
+
+
+
+    [self.window setRootViewController:migrationViewController];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

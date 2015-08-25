@@ -111,6 +111,8 @@
 		EAC9A7D519446A91006AC834 /* ObjectModel+Images.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC9A7D419446A91006AC834 /* ObjectModel+Images.m */; };
 		EAC9A7DE194476CC006AC834 /* _PullStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC9A7DD194476CC006AC834 /* _PullStatus.m */; };
 		EAC9A7E1194476DA006AC834 /* PullStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC9A7E0194476DA006AC834 /* PullStatus.m */; };
+		EACECFE51B8CEC2900EB485F /* MigrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EACECFE31B8CEC2900EB485F /* MigrationViewController.m */; };
+		EACECFE61B8CEC2900EB485F /* MigrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EACECFE41B8CEC2900EB485F /* MigrationViewController.xib */; };
 		EADDA404192A51E5000CCEA9 /* KioskPostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EADDA402192A51E5000CCEA9 /* KioskPostsViewController.m */; };
 		EADDA413192B88B1000CCEA9 /* ObjectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EADDA412192B88B1000CCEA9 /* ObjectModel.m */; };
 		EADDA416192B88C6000CCEA9 /* Gambrinus.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EADDA414192B88C6000CCEA9 /* Gambrinus.xcdatamodeld */; };
@@ -317,6 +319,9 @@
 		EAC9A7DD194476CC006AC834 /* _PullStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _PullStatus.m; sourceTree = "<group>"; };
 		EAC9A7DF194476DA006AC834 /* PullStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullStatus.h; sourceTree = "<group>"; };
 		EAC9A7E0194476DA006AC834 /* PullStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullStatus.m; sourceTree = "<group>"; };
+		EACECFE21B8CEC2900EB485F /* MigrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MigrationViewController.h; sourceTree = "<group>"; };
+		EACECFE31B8CEC2900EB485F /* MigrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MigrationViewController.m; sourceTree = "<group>"; };
+		EACECFE41B8CEC2900EB485F /* MigrationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MigrationViewController.xib; sourceTree = "<group>"; };
 		EADDA401192A51E5000CCEA9 /* KioskPostsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KioskPostsViewController.h; sourceTree = "<group>"; };
 		EADDA402192A51E5000CCEA9 /* KioskPostsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KioskPostsViewController.m; sourceTree = "<group>"; };
 		EADDA411192B88B1000CCEA9 /* ObjectModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectModel.h; sourceTree = "<group>"; };
@@ -605,6 +610,9 @@
 				EA50FCBF1B3593450000F304 /* MenuViewController.h */,
 				EA50FCC01B3593450000F304 /* MenuViewController.m */,
 				EA50FCBD1B3593020000F304 /* MenuViewController.xib */,
+				EACECFE21B8CEC2900EB485F /* MigrationViewController.h */,
+				EACECFE31B8CEC2900EB485F /* MigrationViewController.m */,
+				EACECFE41B8CEC2900EB485F /* MigrationViewController.xib */,
 				EA50FCD21B35BAAC0000F304 /* PostExtendedDetailsViewController.h */,
 				EA50FCD31B35BAAC0000F304 /* PostExtendedDetailsViewController.m */,
 				EA50FCD41B35BAAC0000F304 /* PostExtendedDetailsViewController.xib */,
@@ -873,6 +881,7 @@
 				EA43D7C7198B6A08000B5AF5 /* Localizable.strings in Resources */,
 				EA50FCCB1B35B8C10000F304 /* PostContentCell.xib in Resources */,
 				EA50FCDB1B36C2E70000F304 /* PostInfoRowCell.xib in Resources */,
+				EACECFE61B8CEC2900EB485F /* MigrationViewController.xib in Resources */,
 				EA0668CE192A45C4009C83F1 /* InfoPlist.strings in Resources */,
 				EA43D7C6198B6A08000B5AF5 /* InfoPlist.strings in Resources */,
 				EAA3E6EB1930BBB500812B6F /* PoweredByViewController.xib in Resources */,
@@ -993,6 +1002,7 @@
 				EAC9A7DE194476CC006AC834 /* _PullStatus.m in Sources */,
 				EADF7E7B192BDC7F00EC13AB /* PostViewController.m in Sources */,
 				EA50FCAD1B354C810000F304 /* ObjectModel+Brewers.m in Sources */,
+				EACECFE51B8CEC2900EB485F /* MigrationViewController.m in Sources */,
 				EA50FCA61B351C6C0000F304 /* ContentUpdate.m in Sources */,
 				EA0986D71B1E4767006FEC11 /* KioskSlideMenuViewController.swift in Sources */,
 				EA50FCAA1B3545A80000F304 /* ObjectModel+Beers.m in Sources */,
