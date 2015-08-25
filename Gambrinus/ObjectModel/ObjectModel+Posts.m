@@ -68,12 +68,12 @@
     NSString *content = document.rootElement.stringValue;
     content = [content stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     content = [content stringByReplacingOccurrencesOfString:@"\n\n\n" withString:@"\n\n"];
-    PostContent *postContent = post.content;
+    PostContent *postContent = post.body;
     if (!postContent) {
         postContent = [PostContent insertInManagedObjectContext:post.managedObjectContext];
     }
     [postContent setContent:content];
-    [post setContent:postContent];
+    [post setBody:postContent];
 
     NSString *imageURLString = [dictionary[@"images"] firstObject][@"url"];
     if ([imageURLString rangeOfString:@"blogspot.com"].location != NSNotFound) {

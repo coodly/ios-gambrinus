@@ -86,7 +86,7 @@
     [presented addObject:imageDefinition];
 
     InfoPostContentCellDefinition *contentDefinition = [[InfoPostContentCellDefinition alloc] initWithCellIdentifier:[PostContentCell identifier]];
-    [contentDefinition setText:self.post.content.content];
+    [contentDefinition setText:self.post.body.content];
     [presented addObject:contentDefinition];
 
     InfoTitleDetailCellDefinition *postDateDefinition = [[InfoTitleDetailCellDefinition alloc] initWithCellIdentifier:[PostInfoRowCell identifier]];

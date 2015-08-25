@@ -126,7 +126,7 @@ CGFloat const kPostContentPadding = 20;
         [self.imagesRetrieve retrieveImageForAsk:ask completion:imageLoadBlock];
     }
 
-    [self.postView setPostContent:self.post.content.content];
+    [self.postView setPostContent:self.post.body.content];
 }
 
 - (void)startPullRefresh {

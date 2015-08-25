@@ -24,7 +24,7 @@ extern const struct PostAttributes {
 extern const struct PostRelationships {
 	__unsafe_unretained NSString *beers;
 	__unsafe_unretained NSString *blog;
-	__unsafe_unretained NSString *content;
+	__unsafe_unretained NSString *body;
 	__unsafe_unretained NSString *image;
 } PostRelationships;
 
@@ -122,9 +122,9 @@ extern const struct PostRelationships {
 
 //- (BOOL)validateBlog:(id*)value_ error:(NSError**)error_;
 
-@property (nonatomic, strong) PostContent *content;
+@property (nonatomic, strong) PostContent *body;
 
-//- (BOOL)validateContent:(id*)value_ error:(NSError**)error_;
+//- (BOOL)validateBody:(id*)value_ error:(NSError**)error_;
 
 @property (nonatomic, strong) Image *image;
 
@@ -202,8 +202,8 @@ extern const struct PostRelationships {
 - (Blog*)primitiveBlog;
 - (void)setPrimitiveBlog:(Blog*)value;
 
-- (PostContent*)primitiveContent;
-- (void)setPrimitiveContent:(PostContent*)value;
+- (PostContent*)primitiveBody;
+- (void)setPrimitiveBody:(PostContent*)value;
 
 - (Image*)primitiveImage;
 - (void)setPrimitiveImage:(Image*)value;

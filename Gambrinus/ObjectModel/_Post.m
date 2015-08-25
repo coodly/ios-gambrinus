@@ -24,7 +24,7 @@ const struct PostAttributes PostAttributes = {
 const struct PostRelationships PostRelationships = {
 	.beers = @"beers",
 	.blog = @"blog",
-	.content = @"content",
+	.body = @"body",
 	.image = @"image",
 };
 
@@ -170,7 +170,7 @@ const struct PostRelationships PostRelationships = {
 
 @dynamic blog;
 
-@dynamic content;
+@dynamic body;
 
 @dynamic image;
 

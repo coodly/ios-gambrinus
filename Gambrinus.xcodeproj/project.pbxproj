@@ -87,6 +87,7 @@
 		EA50FCD61B35BAAC0000F304 /* PostExtendedDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA50FCD41B35BAAC0000F304 /* PostExtendedDetailsViewController.xib */; };
 		EA50FCDA1B36C2E70000F304 /* PostInfoRowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FCD81B36C2E70000F304 /* PostInfoRowCell.m */; };
 		EA50FCDB1B36C2E70000F304 /* PostInfoRowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA50FCD91B36C2E70000F304 /* PostInfoRowCell.xib */; };
+		EA5F6FA61B8CE6B100A8E4F2 /* Map_v2tov3.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = EA5F6FA51B8CE6B100A8E4F2 /* Map_v2tov3.xcmappingmodel */; };
 		EA666BCA19822C4E00F72C0F /* PostImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA666BC819822C4E00F72C0F /* PostImageController.m */; };
 		EA666BCB19822C4E00F72C0F /* PostImageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA666BC919822C4E00F72C0F /* PostImageController.xib */; };
 		EA6FD0E51B18D74B000DB461 /* LaunchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA6FD0E41B18D74B000DB461 /* LaunchView.xib */; };
@@ -274,6 +275,7 @@
 		EA50FCD81B36C2E70000F304 /* PostInfoRowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostInfoRowCell.m; sourceTree = "<group>"; };
 		EA50FCD91B36C2E70000F304 /* PostInfoRowCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostInfoRowCell.xib; sourceTree = "<group>"; };
 		EA528A1C1B88B03B002A877F /* Gambrinus_3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Gambrinus_3.xcdatamodel; sourceTree = "<group>"; };
+		EA5F6FA51B8CE6B100A8E4F2 /* Map_v2tov3.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = Map_v2tov3.xcmappingmodel; sourceTree = "<group>"; };
 		EA666BC719822C4E00F72C0F /* PostImageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostImageController.h; sourceTree = "<group>"; };
 		EA666BC819822C4E00F72C0F /* PostImageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostImageController.m; sourceTree = "<group>"; };
 		EA666BC919822C4E00F72C0F /* PostImageController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostImageController.xib; sourceTree = "<group>"; };
@@ -653,6 +655,7 @@
 				EADDA414192B88C6000CCEA9 /* Gambrinus.xcdatamodeld */,
 				EAC9A7D019446A10006AC834 /* Image.h */,
 				EAC9A7D119446A10006AC834 /* Image.m */,
+				EA5F6FA51B8CE6B100A8E4F2 /* Map_v2tov3.xcmappingmodel */,
 				EADDA411192B88B1000CCEA9 /* ObjectModel.h */,
 				EADDA412192B88B1000CCEA9 /* ObjectModel.m */,
 				EA50FCA81B3545A80000F304 /* ObjectModel+Beers.h */,
@@ -1059,6 +1062,7 @@
 				EA50FCA31B351BB00000F304 /* ParseService.m in Sources */,
 				EADDA41E192B8ACE000CCEA9 /* Post.m in Sources */,
 				EAC877C5192E26C800309A23 /* Setting.m in Sources */,
+				EA5F6FA61B8CE6B100A8E4F2 /* Map_v2tov3.xcmappingmodel in Sources */,
 				EA16BF051B392A5B0018FED4 /* InfoImageCellDefinition.m in Sources */,
 				EA15CB15194EDE8800A140B5 /* MarkedPostsViewController.m in Sources */,
 				EA50FCDA1B36C2E70000F304 /* PostInfoRowCell.m in Sources */,
