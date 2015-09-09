@@ -117,6 +117,14 @@
     NSString *originalDataPath = [self cachePathForAsk:ask withSize:NO];
     NSData *data = [NSData dataWithContentsOfFile:originalDataPath];
     UIImage *original = [[UIImage alloc] initWithData:data];
+
+    if (CGSizeEqualToSize(CGSizeZero, ask.resultSize)) {
+        ask.completion(ask, original);
+        [self setProcessedAsk:nil];
+        [self processNextAsk];
+        return;
+    }
+
     UIImage *atAskSize = [original scaleTo:ask.resultSize mode:ask.imageMode];
 
     NSString *askDataPath = [self cachePathForAsk:ask];
@@ -144,7 +152,7 @@
     [manager setResponseSerializer:[AFHTTPResponseSerializer serializer]];
     [manager.requestSerializer setTimeoutInterval:self.timeoutInterval];
     CDYIRLog(@"Pull image from %@", ask.imageURL);
-    [manager GET:ask.imageURL.absoluteString parameters:@"" success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager GET:ask.imageURL.absoluteString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         dispatch_async([self retrieveQueue], ^{
             CDYIRLog(@"Success");
             [self cacheData:responseObject forAsk:ask];

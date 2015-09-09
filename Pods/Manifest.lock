@@ -1,26 +1,26 @@
 PODS:
-  - AFNetworking (2.5.4):
-    - AFNetworking/NSURLConnection (= 2.5.4)
-    - AFNetworking/NSURLSession (= 2.5.4)
-    - AFNetworking/Reachability (= 2.5.4)
-    - AFNetworking/Security (= 2.5.4)
-    - AFNetworking/Serialization (= 2.5.4)
-    - AFNetworking/UIKit (= 2.5.4)
-  - AFNetworking/NSURLConnection (2.5.4):
+  - AFNetworking (2.6.0):
+    - AFNetworking/NSURLConnection (= 2.6.0)
+    - AFNetworking/NSURLSession (= 2.6.0)
+    - AFNetworking/Reachability (= 2.6.0)
+    - AFNetworking/Security (= 2.6.0)
+    - AFNetworking/Serialization (= 2.6.0)
+    - AFNetworking/UIKit (= 2.6.0)
+  - AFNetworking/NSURLConnection (2.6.0):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.5.4):
+  - AFNetworking/NSURLSession (2.6.0):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.5.4)
-  - AFNetworking/Security (2.5.4)
-  - AFNetworking/Serialization (2.5.4)
-  - AFNetworking/UIKit (2.5.4):
+  - AFNetworking/Reachability (2.6.0)
+  - AFNetworking/Security (2.6.0)
+  - AFNetworking/Serialization (2.6.0)
+  - AFNetworking/UIKit (2.6.0):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - Bolts/Tasks (1.2.0)
+  - Bolts/Tasks (1.2.1)
   - CDYImageScale (0.1.0):
     - CDYImageScale/Core (= 0.1.0)
   - CDYImageScale/Core (0.1.0)
@@ -65,8 +65,8 @@ PODS:
   - MRProgress/Stopable (0.8.2):
     - MRProgress/Helper
   - Ono (1.2.2)
-  - Parse (1.7.4):
-    - Bolts/Tasks (>= 1.1.5)
+  - Parse (1.8.2):
+    - Bolts/Tasks (>= 1.2.1)
 
 DEPENDENCIES:
   - AFNetworking
@@ -77,7 +77,7 @@ DEPENDENCIES:
   - JCSFoundation/UserInput (from `https://github.com/jaanussiim/JCSFoundation.git`)
   - MRProgress
   - Ono
-  - Parse (~> 1.7.4)
+  - Parse (~> 1.8)
 
 EXTERNAL SOURCES:
   CDYImageScale:
@@ -94,24 +94,24 @@ CHECKOUT OPTIONS:
     :commit: a1ec1bd514d9d98f9664a52814d6a58928a58e53
     :git: https://github.com/coodly/CDYImageScale.git
   CDYImagesRetrieve:
-    :commit: ccb4ffe453f2747bd149c8140dbeed80eed199e0
+    :commit: 7a2c4ba45cca3711bd7ba90b7542326569af3c30
     :git: https://github.com/coodly/CDYImagesRetrieve.git
   CDYObjectModel:
     :commit: eda2aff2073c0f560cf75531b91c12695558c819
     :git: https://github.com/coodly/CDYObjectModel.git
   JCSFoundation:
-    :commit: d38f7ae07154ce0dfad8825ea115b62043519572
+    :commit: 8e8947a0197427396e91f386a433b3aa152dd2f2
     :git: https://github.com/jaanussiim/JCSFoundation.git
 
 SPEC CHECKSUMS:
-  AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
-  Bolts: d176cb1e0012175589e389a9db49b85e27787576
+  AFNetworking: 79f7eb1a0fcfa7beb409332b2ca49afe9ce53b05
+  Bolts: 7686a5cb204d1ac54cee26f12d9b7622db3f80d1
   CDYImageScale: 38273882da26bca58d143ae97db74788a0451011
   CDYImagesRetrieve: bf12c13b064cfa14b744ed006f075e710bc059fd
   CDYObjectModel: 22a37c4a1d22b067965668711d69f92fa1a144c7
   JCSFoundation: 2f986cfd674d8c2d06db8f6a236b97f01c136e9d
   MRProgress: f4cfe862082418e8f542f077772283f425d6c699
   Ono: 80b1c686777d3f6d5d5ce6fcac8a74afef4ca197
-  Parse: 6ca512c6e860b66739c95151b2f76ac4712b7842
+  Parse: 188601c6cd91fae55906badd283b513104a3a8c9
 
-COCOAPODS: 0.37.1
+COCOAPODS: 0.39.0.beta.4

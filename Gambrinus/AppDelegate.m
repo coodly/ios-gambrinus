@@ -25,8 +25,8 @@
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
 #import <Gambrinus-Swift.h>
+#import <Parse/Parse.h>
 #import "SideMenuViewController.h"
-#import "Parse.h"
 #import "ParseService.h"
 #import "ContentUpdate.h"
 #import "KioskPostsViewController.h"

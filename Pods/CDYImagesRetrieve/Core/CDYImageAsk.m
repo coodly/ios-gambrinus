@@ -22,6 +22,7 @@
     self = [super init];
     if (self) {
         [self setImageMode:UIViewContentModeScaleAspectFill];
+        [self setResultSize:CGSizeZero];
     }
 
     return self;
