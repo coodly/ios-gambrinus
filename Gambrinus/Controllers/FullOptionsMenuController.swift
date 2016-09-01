@@ -18,8 +18,12 @@ import Foundation
 import SWLogger
 
 class FullOptionsMenuController: MenuViewController, InjectionHandler {
-    private var allPostsCell: MenuCell!
-    private var favoritesCell: MenuCell!
+    private var allPostsCell: MenuCell?
+    private var favoritesCell: MenuCell?
+    
+    private var postDateCell: MenuCell?
+    private var postNameCell: MenuCell?
+    private var rbScoreCell: MenuCell?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,30 +46,41 @@ class FullOptionsMenuController: MenuViewController, InjectionHandler {
     
     func loadContent() {
         appendNavigationOptions()
+        appendSortOptions()
     }
     
     final func appendNavigationOptions() {
         allPostsCell = tableView.dequeueReusableCell() as MenuCell
-        allPostsCell.textLabel!.text = NSLocalizedString("menu.controller.option.all.posts", comment: "")
+        allPostsCell!.textLabel!.text = NSLocalizedString("menu.controller.option.all.posts", comment: "")
         
         favoritesCell = tableView.dequeueReusableCell() as MenuCell
-        favoritesCell.textLabel!.text = NSLocalizedString("menu.controller.option.favorites", comment: "")
+        favoritesCell!.textLabel!.text = NSLocalizedString("menu.controller.option.favorites", comment: "")
         
-        addSection(InputCellsSection(cells: [allPostsCell, favoritesCell]))
+        addSection(InputCellsSection(cells: [allPostsCell!, favoritesCell!]))
+    }
+    
+    func appendSortOptions() {
+        postDateCell = tableView.dequeueReusableCell() as MenuCell
+        postDateCell!.textLabel!.text = NSLocalizedString("menu.controller.sort.by.date", comment: "")
+
+        postNameCell = tableView.dequeueReusableCell() as MenuCell
+        postNameCell!.textLabel!.text = NSLocalizedString("menu.controller.sort.by.posts", comment: "")
+
+        rbScoreCell = tableView.dequeueReusableCell() as MenuCell
+        rbScoreCell!.textLabel!.text = NSLocalizedString("menu.controller.sort.by.score", comment: "")
+
+        addSection(InputCellsSection(title: NSLocalizedString("menu.controller.sort.section.title", comment: ""), cells: [postDateCell!, postNameCell!, rbScoreCell!]))
     }
     
     override func tappedCell(_ cell: UITableViewCell, atIndexPath: IndexPath) -> Bool {
-        switch cell {
-        case allPostsCell:
+        if let allCell = allPostsCell, allCell == cell {
             let controller = BlogPostsViewController()
             inject(into: controller)
             container.presentRootController(controller)
-        case favoritesCell:
+        } else if let favorites = favoritesCell, favorites == cell {
             let controller = MarkedPostsViewController()
             inject(into: controller)
             container.presentRootController(controller)
-        default:
-            Log.debug("Unhandled \(cell)")
         }
         
         return false
