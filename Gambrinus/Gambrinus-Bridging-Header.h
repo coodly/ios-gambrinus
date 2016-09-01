@@ -21,3 +21,5 @@
 #import "MenuCell.h"
 
 #import "ObjectModel.h"
+
+#import "PostsViewController.h"

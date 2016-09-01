@@ -37,9 +37,7 @@
 
 @interface AppDelegate ()
 
-@property (nonatomic, strong) ObjectModel *objectModel;
 @property (nonatomic, strong) ContentUpdate *contentUpdate;
-@property (nonatomic, strong) BlogImagesRetrieve *imagesRetrieve;
 
 @end
 
@@ -59,9 +57,8 @@
 
     [application setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
 
-    ObjectModel *model = [[ObjectModel alloc] init];
-    [self setObjectModel:model];
-
+    ObjectModel *model = [Injector sharedInstance].objectModel;
+    
     CDYLog(@"DB path:%@", [model storeURL]);
 
     if (![model databaseFileExists]) {
@@ -93,8 +90,6 @@
     MigrationViewController *migrationViewController = [[MigrationViewController alloc] init];
     [migrationViewController setObjectModel:model];
     [migrationViewController setCompletion:^{
-        BlogImagesRetrieve *imagesRetrieve = [[BlogImagesRetrieve alloc] init];
-        self.imagesRetrieve = imagesRetrieve;
         BloggerAPIConnection *apiConnection = [[BloggerAPIConnection alloc] initWithBlogURLString:@"http://tartugambrinus.blogspot.com/" bloggerKey:GambrinusBloggerAPIKey objectModel:model];
         ParseService *parseService = [[ParseService alloc] initWithObjectModel:model];
         ContentUpdate *contentUpdate = [[ContentUpdate alloc] initWithObjectModel:model];
@@ -104,10 +99,10 @@
 
         FullOptionsMenuController *menuViewController = [[FullOptionsMenuController alloc] init];
         KioskSlideMenuViewController *controller = [[KioskSlideMenuViewController alloc] initWithMainViewController:[[UINavigationController alloc] init] leftMenuViewController:menuViewController];
-        [controller setObjectModel:model];
-        [controller setContentUpdate:contentUpdate];
-        [controller setImagesRetrieve:imagesRetrieve];
-        [controller setInitialViewController:[[BlogPostsViewController alloc] init]];
+        BlogPostsViewController *postsController = [[BlogPostsViewController alloc] init];
+        [Injector.sharedInstance injectInto:postsController];
+        [controller setInitialViewController:postsController];
+        
 
         [UIView animateWithDuration:0.3 animations:^{
             [self.window setRootViewController:controller];
@@ -155,10 +150,9 @@
     SortOnlyMenuController *menuViewController = [[SortOnlyMenuController alloc] init];
 
     KioskSlideMenuViewController *controller = [[KioskSlideMenuViewController alloc] initWithMainViewController:[[UINavigationController alloc] init] leftMenuViewController:menuViewController];
-    [controller setObjectModel:self.objectModel];
-    [controller setContentUpdate:self.contentUpdate];
-    [controller setImagesRetrieve:self.imagesRetrieve];
-    [controller setInitialViewController:[[KioskPostsViewController alloc] init]];
+    KioskPostsViewController *postsController = [[KioskPostsViewController alloc] init];
+    [Injector.sharedInstance injectInto:postsController];
+    [controller setInitialViewController:postsController];
 
     [self.window.rootViewController presentViewController:controller animated:YES completion:nil];
 }

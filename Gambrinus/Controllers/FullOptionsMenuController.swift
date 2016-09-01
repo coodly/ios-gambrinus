@@ -17,7 +17,7 @@
 import Foundation
 import SWLogger
 
-class FullOptionsMenuController: MenuViewController {
+class FullOptionsMenuController: MenuViewController, InjectionHandler {
     private var allPostsCell: MenuCell!
     private var favoritesCell: MenuCell!
     
@@ -57,9 +57,13 @@ class FullOptionsMenuController: MenuViewController {
     override func tappedCell(_ cell: UITableViewCell, atIndexPath: IndexPath) -> Bool {
         switch cell {
         case allPostsCell:
-            container.presentRootController(BlogPostsViewController())
+            let controller = BlogPostsViewController()
+            inject(into: controller)
+            container.presentRootController(controller)
         case favoritesCell:
-            container.presentRootController(MarkedPostsViewController())
+            let controller = MarkedPostsViewController()
+            inject(into: controller)
+            container.presentRootController(controller)
         default:
             Log.debug("Unhandled \(cell)")
         }

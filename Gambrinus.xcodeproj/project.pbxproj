@@ -42,6 +42,10 @@
 		A7B8B8151D782F54003C8469 /* JCSNumericInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B8B8141D782F54003C8469 /* JCSNumericInputAccessoryView.m */; };
 		A7B8B8191D782F88003C8469 /* JCSDecimalInputValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B8B8181D782F88003C8469 /* JCSDecimalInputValidation.m */; };
 		A7B8B81C1D782F9E003C8469 /* JCSQuickNumericInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B8B81B1D782F9E003C8469 /* JCSQuickNumericInputAccessoryView.m */; };
+		A7D647691D7877C900FF52A4 /* Injector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D647681D7877C900FF52A4 /* Injector.swift */; };
+		A7D6476B1D78788F00FF52A4 /* ObjectModelConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D6476A1D78788F00FF52A4 /* ObjectModelConsumer.swift */; };
+		A7D6476D1D7878D100FF52A4 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D6476C1D7878D100FF52A4 /* PostsViewController.swift */; };
+		A7D6476F1D787B8100FF52A4 /* ImagesRetrieveConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D6476E1D787B8100FF52A4 /* ImagesRetrieveConsumer.swift */; };
 		BA665AAA129ABC2E206BA2C5 /* mapping.json in Resources */ = {isa = PBXBuildFile; fileRef = BA665BA7D5ECAA081827FF24 /* mapping.json */; };
 		EA0119E11931D2D400232E92 /* _Blog.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0119E01931D2D400232E92 /* _Blog.m */; };
 		EA0119E41931D2DD00232E92 /* Blog.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0119E31931D2DD00232E92 /* Blog.m */; };
@@ -227,6 +231,10 @@
 		A7B8B8181D782F88003C8469 /* JCSDecimalInputValidation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCSDecimalInputValidation.m; sourceTree = "<group>"; };
 		A7B8B81A1D782F9E003C8469 /* JCSQuickNumericInputAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCSQuickNumericInputAccessoryView.h; sourceTree = "<group>"; };
 		A7B8B81B1D782F9E003C8469 /* JCSQuickNumericInputAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCSQuickNumericInputAccessoryView.m; sourceTree = "<group>"; };
+		A7D647681D7877C900FF52A4 /* Injector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Injector.swift; sourceTree = "<group>"; };
+		A7D6476A1D78788F00FF52A4 /* ObjectModelConsumer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectModelConsumer.swift; sourceTree = "<group>"; };
+		A7D6476C1D7878D100FF52A4 /* PostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
+		A7D6476E1D787B8100FF52A4 /* ImagesRetrieveConsumer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesRetrieveConsumer.swift; sourceTree = "<group>"; };
 		BA665BA7D5ECAA081827FF24 /* mapping.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = mapping.json; sourceTree = "<group>"; };
 		C9500B6301C764BA1D0D47AC /* Pods-Gambrinus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gambrinus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gambrinus/Pods-Gambrinus.debug.xcconfig"; sourceTree = "<group>"; };
 		DA69DCA20CC7434C02417339 /* Pods_Gambrinus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gambrinus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -547,6 +555,16 @@
 			path = CDYImageScale;
 			sourceTree = "<group>";
 		};
+		A7D647671D7877BD00FF52A4 /* Injection */ = {
+			isa = PBXGroup;
+			children = (
+				A7D647681D7877C900FF52A4 /* Injector.swift */,
+				A7D6476A1D78788F00FF52A4 /* ObjectModelConsumer.swift */,
+				A7D6476E1D787B8100FF52A4 /* ImagesRetrieveConsumer.swift */,
+			);
+			path = Injection;
+			sourceTree = "<group>";
+		};
 		CF35BA0BC6A9AAA2667487B5 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -602,6 +620,7 @@
 				EAC877C9192E33C400309A23 /* Data */,
 				EA50FCB11B355B390000F304 /* Fonts */,
 				EAC877CC192E405700309A23 /* Images */,
+				A7D647671D7877BD00FF52A4 /* Injection */,
 				EADDA406192A527F000CCEA9 /* Network */,
 				EADDA410192B88A1000CCEA9 /* ObjectModel */,
 				EA16BEFF1B392A3E0018FED4 /* PostInfo */,
@@ -800,6 +819,7 @@
 				EA666BC919822C4E00F72C0F /* PostImageController.xib */,
 				EA925DF119502952001E0AC9 /* PostsViewController.h */,
 				EA925DF219502952001E0AC9 /* PostsViewController.m */,
+				A7D6476C1D7878D100FF52A4 /* PostsViewController.swift */,
 				EA925DF319502952001E0AC9 /* PostsViewController.xib */,
 				EADF7E78192BDC7F00EC13AB /* PostViewController.h */,
 				EADF7E79192BDC7F00EC13AB /* PostViewController.m */,
@@ -1197,9 +1217,11 @@
 				A734E2B31D780DFC0057D136 /* FullScreenTableCreate.swift in Sources */,
 				EA3FDE811B18CB0700C93B7D /* Secrets.m in Sources */,
 				EAC9A7DE194476CC006AC834 /* _PullStatus.m in Sources */,
+				A7D647691D7877C900FF52A4 /* Injector.swift in Sources */,
 				EADF7E7B192BDC7F00EC13AB /* PostViewController.m in Sources */,
 				EA50FCAD1B354C810000F304 /* ObjectModel+Brewers.m in Sources */,
 				EACECFE51B8CEC2900EB485F /* MigrationViewController.m in Sources */,
+				A7D6476B1D78788F00FF52A4 /* ObjectModelConsumer.swift in Sources */,
 				EA50FCA61B351C6C0000F304 /* ContentUpdate.m in Sources */,
 				EA0986D71B1E4767006FEC11 /* KioskSlideMenuViewController.swift in Sources */,
 				EA50FCAA1B3545A80000F304 /* ObjectModel+Beers.m in Sources */,
@@ -1261,6 +1283,7 @@
 				EA74C9E71B82EDCA00A0C748 /* _PostContent.m in Sources */,
 				A734E2BD1D7810670057D136 /* Logging.swift in Sources */,
 				A7B8B8091D782E82003C8469 /* NSDate+ISO8601.m in Sources */,
+				A7D6476D1D7878D100FF52A4 /* PostsViewController.swift in Sources */,
 				EA16BF1A1B3969AB0018FED4 /* RateBeerDetailsCollectionViewCell.m in Sources */,
 				A7AC19A31D786C08007F3AC9 /* UITableViewCell+Identifier.swift in Sources */,
 				EA50FCC51B35B8AC0000F304 /* PostImageCell.m in Sources */,
@@ -1277,6 +1300,7 @@
 				EA50FCBC1B3592EE0000F304 /* KioskModeMenuViewController.m in Sources */,
 				EA0119E11931D2D400232E92 /* _Blog.m in Sources */,
 				A734E2C81D7816080057D136 /* NSString+JCSValidations.m in Sources */,
+				A7D6476F1D787B8100FF52A4 /* ImagesRetrieveConsumer.swift in Sources */,
 				EA011B24193B467300232E92 /* BlogPostView.m in Sources */,
 				A7B8B8061D782E46003C8469 /* JCSCoreDataChangeAction.m in Sources */,
 				EA50FC8A1B34A8200000F304 /* Beer.m in Sources */,
