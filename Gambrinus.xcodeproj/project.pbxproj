@@ -28,6 +28,10 @@
 		A734E2C51D7815CF0057D136 /* UIView+JCSLoadView.m in Sources */ = {isa = PBXBuildFile; fileRef = A734E2C41D7815CF0057D136 /* UIView+JCSLoadView.m */; };
 		A734E2C81D7816080057D136 /* NSString+JCSValidations.m in Sources */ = {isa = PBXBuildFile; fileRef = A734E2C71D7816080057D136 /* NSString+JCSValidations.m */; };
 		A734E2CC1D7817FC0057D136 /* UIImage+CDYImageScale.m in Sources */ = {isa = PBXBuildFile; fileRef = A734E2CB1D7817FC0057D136 /* UIImage+CDYImageScale.m */; };
+		A7AC19A21D786C08007F3AC9 /* UITableView+Dequeue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AC19A01D786C08007F3AC9 /* UITableView+Dequeue.swift */; };
+		A7AC19A31D786C08007F3AC9 /* UITableViewCell+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AC19A11D786C08007F3AC9 /* UITableViewCell+Identifier.swift */; };
+		A7AC19A61D786CD6007F3AC9 /* UINib+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AC19A41D786CD6007F3AC9 /* UINib+Loading.swift */; };
+		A7AC19A71D786CD6007F3AC9 /* UIView+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AC19A51D786CD6007F3AC9 /* UIView+Loading.swift */; };
 		A7B8B8011D782B5E003C8469 /* FullOptionsMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B8B8001D782B5E003C8469 /* FullOptionsMenuController.swift */; };
 		A7B8B8031D782BEB003C8469 /* SortOnlyMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B8B8021D782BEB003C8469 /* SortOnlyMenuController.swift */; };
 		A7B8B8061D782E46003C8469 /* JCSCoreDataChangeAction.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B8B8051D782E46003C8469 /* JCSCoreDataChangeAction.m */; };
@@ -200,6 +204,10 @@
 		A734E2C71D7816080057D136 /* NSString+JCSValidations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+JCSValidations.m"; sourceTree = "<group>"; };
 		A734E2CA1D7817FC0057D136 /* UIImage+CDYImageScale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CDYImageScale.h"; sourceTree = "<group>"; };
 		A734E2CB1D7817FC0057D136 /* UIImage+CDYImageScale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CDYImageScale.m"; sourceTree = "<group>"; };
+		A7AC19A01D786C08007F3AC9 /* UITableView+Dequeue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Dequeue.swift"; sourceTree = "<group>"; };
+		A7AC19A11D786C08007F3AC9 /* UITableViewCell+Identifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Identifier.swift"; sourceTree = "<group>"; };
+		A7AC19A41D786CD6007F3AC9 /* UINib+Loading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINib+Loading.swift"; sourceTree = "<group>"; };
+		A7AC19A51D786CD6007F3AC9 /* UIView+Loading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Loading.swift"; sourceTree = "<group>"; };
 		A7B8B8001D782B5E003C8469 /* FullOptionsMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullOptionsMenuController.swift; sourceTree = "<group>"; };
 		A7B8B8021D782BEB003C8469 /* SortOnlyMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortOnlyMenuController.swift; sourceTree = "<group>"; };
 		A7B8B8041D782E46003C8469 /* JCSCoreDataChangeAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCSCoreDataChangeAction.h; sourceTree = "<group>"; };
@@ -521,7 +529,11 @@
 				A734E2B41D780E150057D136 /* SmoothTableRowDeselection.swift */,
 				A734E2BE1D7810C90057D136 /* String+Extensions.swift */,
 				A734E2B81D78101D0057D136 /* TextEntryCell.swift */,
+				A7AC19A41D786CD6007F3AC9 /* UINib+Loading.swift */,
+				A7AC19A01D786C08007F3AC9 /* UITableView+Dequeue.swift */,
+				A7AC19A11D786C08007F3AC9 /* UITableViewCell+Identifier.swift */,
 				A734E2C01D7811020057D136 /* UIView+FindCell.swift */,
+				A7AC19A51D786CD6007F3AC9 /* UIView+Loading.swift */,
 			);
 			path = LaughingAdventure;
 			sourceTree = "<group>";
@@ -1215,12 +1227,14 @@
 				EA50FCD51B35BAAC0000F304 /* PostExtendedDetailsViewController.m in Sources */,
 				EA0986DB1B1EB174006FEC11 /* MenuCell.m in Sources */,
 				EA011A3D1936194E00232E92 /* BlogImagesRetrieve.m in Sources */,
+				A7AC19A21D786C08007F3AC9 /* UITableView+Dequeue.swift in Sources */,
 				A734E29D1D7717B50057D136 /* CDYImageAsk.m in Sources */,
 				EA50FCB01B354D260000F304 /* ObjectModel+Styles.m in Sources */,
 				EA716EB41B3C935100A395A1 /* NSString+Normalize.m in Sources */,
 				EADF7E77192BD2DA00EC13AB /* UIColor+Theme.m in Sources */,
 				A734E2AF1D780DAF0057D136 /* MenuViewController.swift in Sources */,
 				A734E2BF1D7810C90057D136 /* String+Extensions.swift in Sources */,
+				A7AC19A71D786CD6007F3AC9 /* UIView+Loading.swift in Sources */,
 				EAC877AE192DD50700309A23 /* Constants.m in Sources */,
 				EADDA413192B88B1000CCEA9 /* ObjectModel.m in Sources */,
 				EADF7E6B192BC5DC00EC13AB /* NSString+Cleanup.m in Sources */,
@@ -1248,6 +1262,7 @@
 				A734E2BD1D7810670057D136 /* Logging.swift in Sources */,
 				A7B8B8091D782E82003C8469 /* NSDate+ISO8601.m in Sources */,
 				EA16BF1A1B3969AB0018FED4 /* RateBeerDetailsCollectionViewCell.m in Sources */,
+				A7AC19A31D786C08007F3AC9 /* UITableViewCell+Identifier.swift in Sources */,
 				EA50FCC51B35B8AC0000F304 /* PostImageCell.m in Sources */,
 				EA50FCCE1B35B9260000F304 /* UIView+Identifier.m in Sources */,
 				EA011A401936195F00232E92 /* BlogImageAsk.m in Sources */,
@@ -1275,6 +1290,7 @@
 				A7B8B8151D782F54003C8469 /* JCSNumericInputAccessoryView.m in Sources */,
 				EADDA421192B8ADF000CCEA9 /* ObjectModel+Posts.m in Sources */,
 				EA0119E71931D45400232E92 /* ObjectModel+Blogs.m in Sources */,
+				A7AC19A61D786CD6007F3AC9 /* UINib+Loading.swift in Sources */,
 				A734E2AA1D7718B50057D136 /* JCSInputCellsViewController.m in Sources */,
 				EADF7E66192B8E0D00EC13AB /* ProgressOverlayView.m in Sources */,
 				EA50FC8F1B351AA40000F304 /* _BeerStyle.m in Sources */,

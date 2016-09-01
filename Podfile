@@ -13,9 +13,9 @@ def pods
     pod 'Ono'
     
     if UseLocalPods
-
+        pod 'SWLogger', :path => '../swift-logger'
     else
-
+        pod 'SWLogger', :git => 'git@github.com:coodly/swlogger.git'
     end
 end
 

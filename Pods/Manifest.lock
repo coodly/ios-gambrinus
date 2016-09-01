@@ -55,6 +55,7 @@ PODS:
   - Ono (1.2.2)
   - Parse (1.14.2):
     - Bolts/Tasks (~> 1.8)
+  - SWLogger (0.2.0)
 
 DEPENDENCIES:
   - AFNetworking (= 2.6.3)
@@ -63,6 +64,16 @@ DEPENDENCIES:
   - MRProgress
   - Ono
   - Parse (= 1.14.2)
+  - SWLogger (from `git@github.com:coodly/swlogger.git`)
+
+EXTERNAL SOURCES:
+  SWLogger:
+    :git: git@github.com:coodly/swlogger.git
+
+CHECKOUT OPTIONS:
+  SWLogger:
+    :commit: 5bd06d09604d4a4e3b58469eed66eeb361a3fdc7
+    :git: git@github.com:coodly/swlogger.git
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
@@ -72,7 +83,8 @@ SPEC CHECKSUMS:
   MRProgress: 16de7cc9f347e8846797a770db102a323fe7ef09
   Ono: 80b1c686777d3f6d5d5ce6fcac8a74afef4ca197
   Parse: 4335d65f40cb3d43190d723144bbe1afb9c38230
+  SWLogger: 817a1e80f0fa7c93214861212f16d3760e35cbeb
 
-PODFILE CHECKSUM: 89ffb9d82331dccbe90c969263736c3ddf5d3217
+PODFILE CHECKSUM: 8882d62e91937e90fd7e334ba89a46df47c65ac6
 
 COCOAPODS: 1.1.0.beta.1

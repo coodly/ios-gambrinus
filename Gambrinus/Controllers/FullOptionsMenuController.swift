@@ -15,7 +15,55 @@
  */
 
 import Foundation
+import SWLogger
 
 class FullOptionsMenuController: MenuViewController {
+    private var allPostsCell: MenuCell!
+    private var favoritesCell: MenuCell!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        loadContent()
+        
+        tableView.bounces = false
+        
+        tableView.backgroundColor = UIColor.clear
+        view.backgroundColor = UIColor.controllerBackground()
+        tableView.separatorColor = UIColor.controllerBackground()
+        
+        
+        let powered = UIImageView(image: UIImage(named: "PoweredBy"))
+        powered.contentMode = .scaleAspectFit
+        tableView.tableFooterView = powered
+        
+        tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
+    }
+    
+    func loadContent() {
+        appendNavigationOptions()
+    }
+    
+    final func appendNavigationOptions() {
+        allPostsCell = tableView.dequeueReusableCell() as MenuCell
+        allPostsCell.textLabel!.text = NSLocalizedString("menu.controller.option.all.posts", comment: "")
+        
+        favoritesCell = tableView.dequeueReusableCell() as MenuCell
+        favoritesCell.textLabel!.text = NSLocalizedString("menu.controller.option.favorites", comment: "")
+        
+        addSection(InputCellsSection(cells: [allPostsCell, favoritesCell]))
+    }
+    
+    override func tappedCell(_ cell: UITableViewCell, atIndexPath: IndexPath) -> Bool {
+        switch cell {
+        case allPostsCell:
+            container.presentRootController(BlogPostsViewController())
+        case favoritesCell:
+            container.presentRootController(MarkedPostsViewController())
+        default:
+            Log.debug("Unhandled \(cell)")
+        }
+        
+        return false
+    }
 }

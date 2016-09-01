@@ -11,10 +11,13 @@
 #import "CDYImagesRetrieve.h"
 #import "CDYObjectModel.h"
 
+#import "UIColor+Theme.h"
+
 #import "ContentUpdate.h"
 
 #import "KioskController.h"
 
-#import "MenuViewController.h"
+#import "MarkedPostsViewController.h"
+#import "MenuCell.h"
 
 #import "ObjectModel.h"
