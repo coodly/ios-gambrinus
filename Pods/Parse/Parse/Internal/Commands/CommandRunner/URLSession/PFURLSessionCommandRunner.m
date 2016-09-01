@@ -33,6 +33,7 @@
 @interface PFURLSessionCommandRunner () <PFURLSessionDelegate>
 
 @property (nonatomic, strong) NSNotificationCenter *notificationCenter;
+@property (nonatomic, assign) NSUInteger retryAttempts;
 
 @end
 
@@ -40,31 +41,43 @@
 
 @synthesize applicationId = _applicationId;
 @synthesize clientKey = _clientKey;
+@synthesize serverURL = _serverURL;
 @synthesize initialRetryDelay = _initialRetryDelay;
 
 ///--------------------------------------
 #pragma mark - Init
 ///--------------------------------------
 
-- (instancetype)init {
-    PFNotDesignatedInitializer();
+- (instancetype)initWithDataSource:(id<PFInstallationIdentifierStoreProvider>)dataSource
+                     applicationId:(NSString *)applicationId
+                         clientKey:(nullable NSString *)clientKey
+                         serverURL:(NSURL *)serverURL {
+    return [self initWithDataSource:dataSource
+                      retryAttempts:PFCommandRunningDefaultMaxAttemptsCount
+                      applicationId:applicationId
+                          clientKey:clientKey
+                          serverURL:serverURL];
 }
 
 - (instancetype)initWithDataSource:(id<PFInstallationIdentifierStoreProvider>)dataSource
+                     retryAttempts:(NSUInteger)retryAttempts
                      applicationId:(NSString *)applicationId
-                         clientKey:(NSString *)clientKey {
-    NSURLSessionConfiguration *configuration = [[self class] _urlSessionConfigurationForApplicationId:applicationId
-                                                                                            clientKey:clientKey];
+                         clientKey:(nullable NSString *)clientKey
+                         serverURL:(NSURL *)serverURL {
+    NSURLSessionConfiguration *configuration = [[self class] _urlSessionConfigurationForApplicationId:applicationId clientKey:clientKey];
+
     PFURLSession *session = [PFURLSession sessionWithConfiguration:configuration delegate:self];
-    PFCommandURLRequestConstructor *constructor = [PFCommandURLRequestConstructor constructorWithDataSource:dataSource];
+    PFCommandURLRequestConstructor *constructor = [PFCommandURLRequestConstructor constructorWithDataSource:dataSource serverURL:serverURL];
     self = [self initWithDataSource:dataSource
                             session:session
                  requestConstructor:constructor
                  notificationCenter:[NSNotificationCenter defaultCenter]];
     if (!self) return nil;
 
+    _retryAttempts = retryAttempts;
     _applicationId = [applicationId copy];
     _clientKey = [clientKey copy];
+    _serverURL = serverURL;
 
     return self;
 }
@@ -77,6 +90,7 @@
     if (!self) return nil;
 
     _initialRetryDelay = PFCommandRunningDefaultRetryDelay;
+    _retryAttempts = PFCommandRunningDefaultMaxAttemptsCount;
 
     _requestConstructor = requestConstructor;
     _session = session;
@@ -87,8 +101,21 @@
 
 + (instancetype)commandRunnerWithDataSource:(id<PFInstallationIdentifierStoreProvider>)dataSource
                               applicationId:(NSString *)applicationId
-                                  clientKey:(NSString *)clientKey {
-    return [[self alloc] initWithDataSource:dataSource applicationId:applicationId clientKey:clientKey];
+                                  clientKey:(nullable NSString *)clientKey
+                                  serverURL:(nonnull NSURL *)serverURL {
+    return [[self alloc] initWithDataSource:dataSource applicationId:applicationId clientKey:clientKey serverURL:serverURL];
+}
+
++ (instancetype)commandRunnerWithDataSource:(id<PFInstallationIdentifierStoreProvider>)dataSource
+                              retryAttempts:(NSUInteger)retryAttempts
+                              applicationId:(NSString *)applicationId
+                                  clientKey:(nullable NSString *)clientKey
+                                  serverURL:(nonnull NSURL *)serverURL {
+    return [[self alloc] initWithDataSource:dataSource
+                              retryAttempts:retryAttempts
+                              applicationId:applicationId
+                                  clientKey:clientKey
+                                  serverURL:serverURL];
 }
 
 ///--------------------------------------
@@ -112,17 +139,18 @@
 #pragma mark - Data Commands
 ///--------------------------------------
 
-- (BFTask *)runCommandAsync:(PFRESTCommand *)command withOptions:(PFCommandRunningOptions)options {
+- (BFTask<PFCommandResult *> *)runCommandAsync:(PFRESTCommand *)command withOptions:(PFCommandRunningOptions)options {
     return [self runCommandAsync:command withOptions:options cancellationToken:nil];
 }
 
-- (BFTask *)runCommandAsync:(PFRESTCommand *)command
-                withOptions:(PFCommandRunningOptions)options
-          cancellationToken:(BFCancellationToken *)cancellationToken {
-    return [self _performCommandRunningBlock:^id{
+- (BFTask<PFCommandResult *> *)runCommandAsync:(PFRESTCommand *)command
+                                   withOptions:(PFCommandRunningOptions)options
+                             cancellationToken:(BFCancellationToken *)cancellationToken {
+    return [self _performCommandRunningBlock:^id {
         [command resolveLocalIds];
-        NSURLRequest *request = [self.requestConstructor dataURLRequestForCommand:command];
-        return [_session performDataURLRequestAsync:request forCommand:command cancellationToken:cancellationToken];
+        return [[self.requestConstructor getDataURLRequestAsyncForCommand:command] continueWithSuccessBlock:^id(BFTask <NSURLRequest *>*task) {
+            return [_session performDataURLRequestAsync:task.result forCommand:command cancellationToken:cancellationToken];
+        }];
     } withOptions:options cancellationToken:cancellationToken];
 }
 
@@ -130,40 +158,41 @@
 #pragma mark - File Commands
 ///--------------------------------------
 
-- (BFTask *)runFileUploadCommandAsync:(PFRESTCommand *)command
-                      withContentType:(NSString *)contentType
-                contentSourceFilePath:(NSString *)sourceFilePath
-                              options:(PFCommandRunningOptions)options
-                    cancellationToken:(nullable BFCancellationToken *)cancellationToken
-                        progressBlock:(nullable PFProgressBlock)progressBlock {
+- (BFTask<PFCommandResult *> *)runFileUploadCommandAsync:(PFRESTCommand *)command
+                                         withContentType:(NSString *)contentType
+                                   contentSourceFilePath:(NSString *)sourceFilePath
+                                                 options:(PFCommandRunningOptions)options
+                                       cancellationToken:(nullable BFCancellationToken *)cancellationToken
+                                           progressBlock:(nullable PFProgressBlock)progressBlock {
     @weakify(self);
-    return [self _performCommandRunningBlock:^id{
+    return [self _performCommandRunningBlock:^id {
         @strongify(self);
 
         [command resolveLocalIds];
-        NSURLRequest *request = [self.requestConstructor fileUploadURLRequestForCommand:command
-                                                                        withContentType:contentType
-                                                                  contentSourceFilePath:sourceFilePath];
-        return [_session performFileUploadURLRequestAsync:request
-                                               forCommand:command
-                                withContentSourceFilePath:sourceFilePath
-                                        cancellationToken:cancellationToken
-                                            progressBlock:progressBlock];
-
+        return [[self.requestConstructor getFileUploadURLRequestAsyncForCommand:command
+                                                                withContentType:contentType
+                                                          contentSourceFilePath:sourceFilePath] continueWithSuccessBlock:^id(BFTask<NSURLRequest *> *task) {
+            return [_session performFileUploadURLRequestAsync:task.result
+                                                   forCommand:command
+                                    withContentSourceFilePath:sourceFilePath
+                                            cancellationToken:cancellationToken
+                                                progressBlock:progressBlock];
+        }];
     } withOptions:options cancellationToken:cancellationToken];
 }
 
-- (BFTask *)runFileDownloadCommandAsyncWithFileURL:(NSURL *)url
-                                    targetFilePath:(NSString *)filePath
-                                 cancellationToken:(nullable BFCancellationToken *)cancellationToken
-                                     progressBlock:(nullable PFProgressBlock)progressBlock {
-    return [self _performCommandRunningBlock:^id{
+- (BFTask<PFCommandResult *> *)runFileDownloadCommandAsyncWithFileURL:(NSURL *)url
+                                                       targetFilePath:(NSString *)filePath
+                                                    cancellationToken:(nullable BFCancellationToken *)cancellationToken
+                                                        progressBlock:(nullable PFProgressBlock)progressBlock {
+    return [self _performCommandRunningBlock:^id {
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
         return [_session performFileDownloadURLRequestAsync:request
                                                toFileAtPath:filePath
                                       withCancellationToken:cancellationToken
                                               progressBlock:progressBlock];
-    } withOptions:PFCommandRunningOptionRetryIfFailed cancellationToken:cancellationToken];
+    } withOptions:PFCommandRunningOptionRetryIfFailed
+                           cancellationToken:cancellationToken];
 }
 
 ///--------------------------------------
@@ -190,7 +219,7 @@
     return [self _performCommandRunningBlock:block
                        withCancellationToken:cancellationToken
                                        delay:delay
-                                 forAttempts:PFCommandRunningDefaultMaxAttemptsCount];
+                                 forAttempts:_retryAttempts];
 }
 
 - (BFTask *)_performCommandRunningBlock:(nonnull id (^)())block
@@ -204,10 +233,10 @@
             return task;
         }
 
-        if ([[task.error userInfo][@"temporary"] boolValue] && attempts > 1) {
+        if ([task.error.userInfo[@"temporary"] boolValue] && attempts > 1) {
             PFLogError(PFLoggingTagCommon,
                        @"Network connection failed. Making attempt %lu after sleeping for %f seconds.",
-                       (unsigned long)(PFCommandRunningDefaultMaxAttemptsCount - attempts + 1), (double)delay);
+                       (unsigned long)(_retryAttempts - attempts + 1), (double)delay);
 
             return [[BFTask taskWithDelay:(int)(delay * 1000)] continueWithBlock:^id(BFTask *task) {
                 return [self _performCommandRunningBlock:block
@@ -225,7 +254,7 @@
 ///--------------------------------------
 
 + (NSURLSessionConfiguration *)_urlSessionConfigurationForApplicationId:(NSString *)applicationId
-                                                              clientKey:(NSString *)clientKey {
+                                                              clientKey:(nullable NSString *)clientKey {
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
 
     // No cookies, they are bad for you.
@@ -252,21 +281,31 @@
 
 - (void)urlSession:(PFURLSession *)session willPerformURLRequest:(NSURLRequest *)request {
     [[BFExecutor defaultPriorityBackgroundExecutor] execute:^{
-        NSDictionary *userInfo = @{ PFCommandRunnerNotificationURLRequestUserInfoKey : request };
-        [self.notificationCenter postNotificationName:PFCommandRunnerWillSendURLRequestNotification
+        NSDictionary *userInfo = ([PFLogger sharedLogger].logLevel == PFLogLevelDebug ?
+                                  @{ PFNetworkNotificationURLRequestUserInfoKey : request } : nil);
+        [self.notificationCenter postNotificationName:PFNetworkWillSendURLRequestNotification
                                                object:self
                                              userInfo:userInfo];
     }];
 }
 
-- (void)urlSession:(PFURLSession *)session didPerformURLRequest:(NSURLRequest *)request withURLResponse:(nullable NSURLResponse *)response {
+- (void)urlSession:(PFURLSession *)session
+didPerformURLRequest:(NSURLRequest *)request
+   withURLResponse:(nullable NSURLResponse *)response
+    responseString:(nullable NSString *)responseString {
     [[BFExecutor defaultPriorityBackgroundExecutor] execute:^{
-        NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
-        userInfo[PFCommandRunnerNotificationURLRequestUserInfoKey] = request;
-        if (response) {
-            userInfo[PFCommandRunnerNotificationURLResponseUserInfoKey] = response;
+        NSMutableDictionary *userInfo = nil;
+        if ([PFLogger sharedLogger].logLevel == PFLogLevelDebug) {
+            userInfo = [NSMutableDictionary dictionaryWithObject:request
+                                                          forKey:PFNetworkNotificationURLRequestUserInfoKey];
+            if (response) {
+                userInfo[PFNetworkNotificationURLResponseUserInfoKey] = response;
+            }
+            if (responseString) {
+                userInfo[PFNetworkNotificationURLResponseBodyUserInfoKey] = responseString;
+            }
         }
-        [self.notificationCenter postNotificationName:PFCommandRunnerDidReceiveURLResponseNotification
+        [self.notificationCenter postNotificationName:PFNetworkDidReceiveURLResponseNotification
                                                object:self
                                              userInfo:userInfo];
     }];

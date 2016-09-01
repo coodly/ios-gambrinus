@@ -15,9 +15,7 @@
 */
 
 #import <Foundation/Foundation.h>
-#import "PFObject.h"
-#import "PFSubclassing.h"
-#import "PFObject+Subclass.h"
+#import <Parse/Parse.h>
 
 @interface ParseBeer : PFObject <PFSubclassing>
 

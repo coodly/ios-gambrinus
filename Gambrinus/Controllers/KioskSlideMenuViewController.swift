@@ -16,7 +16,7 @@
 
 import UIKit
 
-class KioskSlideMenuViewController: SlideMenuController {
+class KioskSlideMenuViewController: CoodlySlideMenuViewController {
     private var containedNavigation: UINavigationController!
     private var menuController: MenuViewController!
     private var shown = false
@@ -24,62 +24,10 @@ class KioskSlideMenuViewController: SlideMenuController {
     var objectModel: ObjectModel!
     var imagesRetrieve: BlogImagesRetrieve!
     var contentUpdate: ContentUpdate!
-    var initialViewController: UIViewController!
 
-    override func viewWillAppear(animated: Bool) {
-        if shown {
-            return
-        }
-
-        shown = true
-
-        containedNavigation = mainViewController as! UINavigationController
-        menuController = leftViewController as! MenuViewController
-
-        menuController.container = self
-
-        presentRootController(initialViewController)
-    }
-
-    func presentModalController(controller: UIViewController) {
-        closeMenu()
-
-        controller.modalPresentationStyle = UIModalPresentationStyle.FormSheet;
-        controller.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve;
-        presentViewController(controller, animated: true, completion: nil)
-    }
-    
-    func presentRootController(controller: UIViewController) {
-        closeMenu()
-
-        if object_getClassName(containedNavigation.viewControllers.first) == object_getClassName(controller) {
-            return
-        }
-
-        if let presented: KioskController = controller as? KioskController {
-            presented.objectModel = objectModel
-            presented.imagesRetrieve = imagesRetrieve
-            presented.contentUpdate = contentUpdate
-        }
-
-        controller.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "1099-list-1-toolbar-selected"), style: .Plain, target: self, action: "openMenu")
-        containedNavigation.setViewControllers([controller], animated: containedNavigation.viewControllers.count > 0)
-        controller.viewWillAppear(true)
-    }
-
-    func openMenu() {
-        addLeftGestures()
-        openLeft()
-    }
-
-    func closeMenu() {
-        closeLeft();
-        removeLeftGestures()
-    }
-
-    override func track(trackAction: TrackAction) {
-        if trackAction == .TapClose || trackAction == .FlickClose {
-            removeLeftGestures()
-        }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        menuButton = UIBarButtonItem(image: UIImage(named: "1099-list-1-toolbar-selected"), style: .plain, target: nil, action: nil)
     }
 }

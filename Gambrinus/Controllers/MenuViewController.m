@@ -14,7 +14,7 @@
 * limitations under the License.
 */
 
-#import <JCSFoundation/JCSFoundationConstants.h>
+#import "JCSFoundationConstants.h"
 #import "MenuViewController.h"
 #import "MenuCell.h"
 #import "UIView+JCSLoadView.h"
@@ -24,7 +24,7 @@
 #import "JCSLocalization.h"
 #import <Gambrinus-Swift.h>
 
-NSString *const KioskMenuCellIdentifier = @"KioskMenuCellIdentifier";
+/*NSString *const KioskMenuCellIdentifier = @"KioskMenuCellIdentifier";
 
 @interface MenuViewController ()
 
@@ -181,4 +181,4 @@ NSString *const KioskMenuCellIdentifier = @"KioskMenuCellIdentifier";
     return nextOrder;
 }
 
-@end
+@end */

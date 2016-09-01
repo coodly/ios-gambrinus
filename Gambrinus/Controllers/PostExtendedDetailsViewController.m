@@ -14,8 +14,8 @@
 * limitations under the License.
 */
 
-#import <JCSFoundation/UIView+JCSLoadView.h>
-#import <CDYImagesRetrieve/CDYImageAsk.h>
+#import "UIView+JCSLoadView.h"
+#import "CDYImageAsk.h"
 #import "PostExtendedDetailsViewController.h"
 #import "PostImageCell.h"
 #import "UIView+Identifier.h"

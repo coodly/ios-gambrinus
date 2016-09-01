@@ -3,20 +3,12 @@
 
 #import "_PostContent.h"
 
-const struct PostContentAttributes PostContentAttributes = {
-	.content = @"content",
-};
-
-const struct PostContentRelationships PostContentRelationships = {
-	.post = @"post",
-};
-
 @implementation PostContentID
 @end
 
 @implementation _PostContent
 
-+ (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_ {
++ (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_ {
 	NSParameterAssert(moc_);
 	return [NSEntityDescription insertNewObjectForEntityForName:@"PostContent" inManagedObjectContext:moc_];
 }
@@ -44,5 +36,17 @@ const struct PostContentRelationships PostContentRelationships = {
 
 @dynamic post;
 
+@end
+
+@implementation PostContentAttributes 
++ (NSString *)content {
+	return @"content";
+}
+@end
+
+@implementation PostContentRelationships 
++ (NSString *)post {
+	return @"post";
+}
 @end
 

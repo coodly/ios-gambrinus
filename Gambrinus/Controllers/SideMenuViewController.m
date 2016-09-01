@@ -14,7 +14,7 @@
 * limitations under the License.
 */
 
-#import "SideMenuViewController.h"
+/*#import "SideMenuViewController.h"
 #import "BlogPostsViewController.h"
 #import "MarkedPostsViewController.h"
 #import "Gambrinus-Swift.h"
@@ -50,4 +50,4 @@
     }
 }
 
-@end
+@end */

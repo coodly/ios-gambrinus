@@ -1,1 +1,0 @@
-../../../CDYImagesRetrieve/Core/CDYImageAsk.h

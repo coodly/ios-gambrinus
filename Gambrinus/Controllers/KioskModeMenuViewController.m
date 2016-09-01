@@ -14,7 +14,7 @@
 * limitations under the License.
 */
 
-#import "KioskModeMenuViewController.h"
+/*#import "KioskModeMenuViewController.h"
 
 @implementation KioskModeMenuViewController
 
@@ -24,4 +24,4 @@
     [self appendSortOptions];
 }
 
-@end
+@end*/

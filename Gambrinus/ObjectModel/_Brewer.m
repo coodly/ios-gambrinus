@@ -3,22 +3,12 @@
 
 #import "_Brewer.h"
 
-const struct BrewerAttributes BrewerAttributes = {
-	.name = @"name",
-	.normalizedName = @"normalizedName",
-	.shadowName = @"shadowName",
-};
-
-const struct BrewerRelationships BrewerRelationships = {
-	.beers = @"beers",
-};
-
 @implementation BrewerID
 @end
 
 @implementation _Brewer
 
-+ (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_ {
++ (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_ {
 	NSParameterAssert(moc_);
 	return [NSEntityDescription insertNewObjectForEntityForName:@"Brewer" inManagedObjectContext:moc_];
 }
@@ -50,14 +40,32 @@ const struct BrewerRelationships BrewerRelationships = {
 
 @dynamic beers;
 
-- (NSMutableSet*)beersSet {
+- (NSMutableSet<Beer*>*)beersSet {
 	[self willAccessValueForKey:@"beers"];
 
-	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"beers"];
+	NSMutableSet<Beer*> *result = (NSMutableSet<Beer*>*)[self mutableSetValueForKey:@"beers"];
 
 	[self didAccessValueForKey:@"beers"];
 	return result;
 }
 
+@end
+
+@implementation BrewerAttributes 
++ (NSString *)name {
+	return @"name";
+}
++ (NSString *)normalizedName {
+	return @"normalizedName";
+}
++ (NSString *)shadowName {
+	return @"shadowName";
+}
+@end
+
+@implementation BrewerRelationships 
++ (NSString *)beers {
+	return @"beers";
+}
 @end
 

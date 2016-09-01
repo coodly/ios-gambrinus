@@ -14,7 +14,7 @@
 * limitations under the License.
 */
 
-#import <JCSFoundation/JCSFoundationConstants.h>
+#import "JCSFoundationConstants.h"
 #import "InfoCellDefinition.h"
 
 @interface InfoCellDefinition ()

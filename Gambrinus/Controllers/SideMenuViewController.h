@@ -14,7 +14,7 @@
 * limitations under the License.
 */
 
-#import <UIKit/UIKit.h>
+/*#import <UIKit/UIKit.h>
 #import "JCSInputCellsViewController.h"
 #import "MenuViewController.h"
 
@@ -22,4 +22,4 @@
 
 @interface SideMenuViewController : MenuViewController
 
-@end
+@end*/

@@ -3,29 +3,20 @@
 
 @import CoreData;
 
-extern const struct PullStatusAttributes {
-	__unsafe_unretained NSString *lastPullAttempt;
-	__unsafe_unretained NSString *pullFailed;
-} PullStatusAttributes;
-
-extern const struct PullStatusRelationships {
-	__unsafe_unretained NSString *statusForImage;
-} PullStatusRelationships;
+NS_ASSUME_NONNULL_BEGIN
 
 @class Image;
 
 @interface PullStatusID : NSManagedObjectID {}
 @end
 
-@interface _PullStatus : NSManagedObject {}
-+ (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_;
+@interface _PullStatus : NSManagedObject
++ (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_;
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
-@property (nonatomic, readonly, strong) PullStatusID* objectID;
+@property (nonatomic, readonly, strong) PullStatusID*objectID;
 
-@property (nonatomic, strong) NSDate* lastPullAttempt;
-
-//- (BOOL)validateLastPullAttempt:(id*)value_ error:(NSError**)error_;
+@property (nonatomic, strong, nullable) NSDate* lastPullAttempt;
 
 @property (nonatomic, strong) NSNumber* pullFailed;
 
@@ -33,11 +24,7 @@ extern const struct PullStatusRelationships {
 - (BOOL)pullFailedValue;
 - (void)setPullFailedValue:(BOOL)value_;
 
-//- (BOOL)validatePullFailed:(id*)value_ error:(NSError**)error_;
-
-@property (nonatomic, strong) Image *statusForImage;
-
-//- (BOOL)validateStatusForImage:(id*)value_ error:(NSError**)error_;
+@property (nonatomic, strong, nullable) Image *statusForImage;
 
 @end
 
@@ -56,3 +43,14 @@ extern const struct PullStatusRelationships {
 - (void)setPrimitiveStatusForImage:(Image*)value;
 
 @end
+
+@interface PullStatusAttributes: NSObject 
++ (NSString *)lastPullAttempt;
++ (NSString *)pullFailed;
+@end
+
+@interface PullStatusRelationships: NSObject
++ (NSString *)statusForImage;
+@end
+
+NS_ASSUME_NONNULL_END

@@ -3,23 +3,7 @@
 
 @import CoreData;
 
-extern const struct BeerAttributes {
-	__unsafe_unretained NSString *alcohol;
-	__unsafe_unretained NSString *aliased;
-	__unsafe_unretained NSString *bindingKey;
-	__unsafe_unretained NSString *identifier;
-	__unsafe_unretained NSString *name;
-	__unsafe_unretained NSString *normalizedName;
-	__unsafe_unretained NSString *rbIdentifier;
-	__unsafe_unretained NSString *rbScore;
-	__unsafe_unretained NSString *shadowName;
-} BeerAttributes;
-
-extern const struct BeerRelationships {
-	__unsafe_unretained NSString *brewer;
-	__unsafe_unretained NSString *posts;
-	__unsafe_unretained NSString *style;
-} BeerRelationships;
+NS_ASSUME_NONNULL_BEGIN
 
 @class Brewer;
 @class Post;
@@ -28,15 +12,13 @@ extern const struct BeerRelationships {
 @interface BeerID : NSManagedObjectID {}
 @end
 
-@interface _Beer : NSManagedObject {}
-+ (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_;
+@interface _Beer : NSManagedObject
++ (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_;
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
-@property (nonatomic, readonly, strong) BeerID* objectID;
+@property (nonatomic, readonly, strong) BeerID*objectID;
 
-@property (nonatomic, strong) NSString* alcohol;
-
-//- (BOOL)validateAlcohol:(id*)value_ error:(NSError**)error_;
+@property (nonatomic, strong, nullable) NSString* alcohol;
 
 @property (nonatomic, strong) NSNumber* aliased;
 
@@ -44,57 +26,36 @@ extern const struct BeerRelationships {
 - (BOOL)aliasedValue;
 - (void)setAliasedValue:(BOOL)value_;
 
-//- (BOOL)validateAliased:(id*)value_ error:(NSError**)error_;
+@property (nonatomic, strong, nullable) NSString* bindingKey;
 
-@property (nonatomic, strong) NSString* bindingKey;
-
-//- (BOOL)validateBindingKey:(id*)value_ error:(NSError**)error_;
-
-@property (nonatomic, strong) NSNumber* identifier;
+@property (nonatomic, strong, nullable) NSNumber* identifier;
 
 @property (atomic) int32_t identifierValue;
 - (int32_t)identifierValue;
 - (void)setIdentifierValue:(int32_t)value_;
 
-//- (BOOL)validateIdentifier:(id*)value_ error:(NSError**)error_;
+@property (nonatomic, strong, nullable) NSString* name;
 
-@property (nonatomic, strong) NSString* name;
+@property (nonatomic, strong, nullable) NSString* normalizedName;
 
-//- (BOOL)validateName:(id*)value_ error:(NSError**)error_;
+@property (nonatomic, strong, nullable) NSString* rbIdentifier;
 
-@property (nonatomic, strong) NSString* normalizedName;
+@property (nonatomic, strong, nullable) NSString* rbScore;
 
-//- (BOOL)validateNormalizedName:(id*)value_ error:(NSError**)error_;
+@property (nonatomic, strong, nullable) NSString* shadowName;
 
-@property (nonatomic, strong) NSString* rbIdentifier;
+@property (nonatomic, strong, nullable) Brewer *brewer;
 
-//- (BOOL)validateRbIdentifier:(id*)value_ error:(NSError**)error_;
+@property (nonatomic, strong, nullable) NSSet<Post*> *posts;
+- (nullable NSMutableSet<Post*>*)postsSet;
 
-@property (nonatomic, strong) NSString* rbScore;
-
-//- (BOOL)validateRbScore:(id*)value_ error:(NSError**)error_;
-
-@property (nonatomic, strong) NSString* shadowName;
-
-//- (BOOL)validateShadowName:(id*)value_ error:(NSError**)error_;
-
-@property (nonatomic, strong) Brewer *brewer;
-
-//- (BOOL)validateBrewer:(id*)value_ error:(NSError**)error_;
-
-@property (nonatomic, strong) NSSet *posts;
-
-- (NSMutableSet*)postsSet;
-
-@property (nonatomic, strong) BeerStyle *style;
-
-//- (BOOL)validateStyle:(id*)value_ error:(NSError**)error_;
+@property (nonatomic, strong, nullable) BeerStyle *style;
 
 @end
 
 @interface _Beer (PostsCoreDataGeneratedAccessors)
-- (void)addPosts:(NSSet*)value_;
-- (void)removePosts:(NSSet*)value_;
+- (void)addPosts:(NSSet<Post*>*)value_;
+- (void)removePosts:(NSSet<Post*>*)value_;
 - (void)addPostsObject:(Post*)value_;
 - (void)removePostsObject:(Post*)value_;
 
@@ -138,10 +99,30 @@ extern const struct BeerRelationships {
 - (Brewer*)primitiveBrewer;
 - (void)setPrimitiveBrewer:(Brewer*)value;
 
-- (NSMutableSet*)primitivePosts;
-- (void)setPrimitivePosts:(NSMutableSet*)value;
+- (NSMutableSet<Post*>*)primitivePosts;
+- (void)setPrimitivePosts:(NSMutableSet<Post*>*)value;
 
 - (BeerStyle*)primitiveStyle;
 - (void)setPrimitiveStyle:(BeerStyle*)value;
 
 @end
+
+@interface BeerAttributes: NSObject 
++ (NSString *)alcohol;
++ (NSString *)aliased;
++ (NSString *)bindingKey;
++ (NSString *)identifier;
++ (NSString *)name;
++ (NSString *)normalizedName;
++ (NSString *)rbIdentifier;
++ (NSString *)rbScore;
++ (NSString *)shadowName;
+@end
+
+@interface BeerRelationships: NSObject
++ (NSString *)brewer;
++ (NSString *)posts;
++ (NSString *)style;
+@end
+
+NS_ASSUME_NONNULL_END

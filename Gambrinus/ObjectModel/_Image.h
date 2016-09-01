@@ -3,14 +3,7 @@
 
 @import CoreData;
 
-extern const struct ImageAttributes {
-	__unsafe_unretained NSString *imageURLString;
-} ImageAttributes;
-
-extern const struct ImageRelationships {
-	__unsafe_unretained NSString *posts;
-	__unsafe_unretained NSString *pullStatus;
-} ImageRelationships;
+NS_ASSUME_NONNULL_BEGIN
 
 @class Post;
 @class PullStatus;
@@ -18,29 +11,24 @@ extern const struct ImageRelationships {
 @interface ImageID : NSManagedObjectID {}
 @end
 
-@interface _Image : NSManagedObject {}
-+ (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_;
+@interface _Image : NSManagedObject
++ (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_;
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
-@property (nonatomic, readonly, strong) ImageID* objectID;
+@property (nonatomic, readonly, strong) ImageID*objectID;
 
-@property (nonatomic, strong) NSString* imageURLString;
+@property (nonatomic, strong, nullable) NSString* imageURLString;
 
-//- (BOOL)validateImageURLString:(id*)value_ error:(NSError**)error_;
+@property (nonatomic, strong, nullable) NSSet<Post*> *posts;
+- (nullable NSMutableSet<Post*>*)postsSet;
 
-@property (nonatomic, strong) NSSet *posts;
-
-- (NSMutableSet*)postsSet;
-
-@property (nonatomic, strong) PullStatus *pullStatus;
-
-//- (BOOL)validatePullStatus:(id*)value_ error:(NSError**)error_;
+@property (nonatomic, strong, nullable) PullStatus *pullStatus;
 
 @end
 
 @interface _Image (PostsCoreDataGeneratedAccessors)
-- (void)addPosts:(NSSet*)value_;
-- (void)removePosts:(NSSet*)value_;
+- (void)addPosts:(NSSet<Post*>*)value_;
+- (void)removePosts:(NSSet<Post*>*)value_;
 - (void)addPostsObject:(Post*)value_;
 - (void)removePostsObject:(Post*)value_;
 
@@ -51,10 +39,21 @@ extern const struct ImageRelationships {
 - (NSString*)primitiveImageURLString;
 - (void)setPrimitiveImageURLString:(NSString*)value;
 
-- (NSMutableSet*)primitivePosts;
-- (void)setPrimitivePosts:(NSMutableSet*)value;
+- (NSMutableSet<Post*>*)primitivePosts;
+- (void)setPrimitivePosts:(NSMutableSet<Post*>*)value;
 
 - (PullStatus*)primitivePullStatus;
 - (void)setPrimitivePullStatus:(PullStatus*)value;
 
 @end
+
+@interface ImageAttributes: NSObject 
++ (NSString *)imageURLString;
+@end
+
+@interface ImageRelationships: NSObject
++ (NSString *)posts;
++ (NSString *)pullStatus;
+@end
+
+NS_ASSUME_NONNULL_END

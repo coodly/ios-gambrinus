@@ -3,32 +3,22 @@
 
 @import CoreData;
 
-extern const struct PostContentAttributes {
-	__unsafe_unretained NSString *content;
-} PostContentAttributes;
-
-extern const struct PostContentRelationships {
-	__unsafe_unretained NSString *post;
-} PostContentRelationships;
+NS_ASSUME_NONNULL_BEGIN
 
 @class Post;
 
 @interface PostContentID : NSManagedObjectID {}
 @end
 
-@interface _PostContent : NSManagedObject {}
-+ (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_;
+@interface _PostContent : NSManagedObject
++ (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_;
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
-@property (nonatomic, readonly, strong) PostContentID* objectID;
+@property (nonatomic, readonly, strong) PostContentID*objectID;
 
-@property (nonatomic, strong) NSString* content;
+@property (nonatomic, strong, nullable) NSString* content;
 
-//- (BOOL)validateContent:(id*)value_ error:(NSError**)error_;
-
-@property (nonatomic, strong) Post *post;
-
-//- (BOOL)validatePost:(id*)value_ error:(NSError**)error_;
+@property (nonatomic, strong, nullable) Post *post;
 
 @end
 
@@ -41,3 +31,13 @@ extern const struct PostContentRelationships {
 - (void)setPrimitivePost:(Post*)value;
 
 @end
+
+@interface PostContentAttributes: NSObject 
++ (NSString *)content;
+@end
+
+@interface PostContentRelationships: NSObject
++ (NSString *)post;
+@end
+
+NS_ASSUME_NONNULL_END

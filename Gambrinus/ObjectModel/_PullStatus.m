@@ -3,21 +3,12 @@
 
 #import "_PullStatus.h"
 
-const struct PullStatusAttributes PullStatusAttributes = {
-	.lastPullAttempt = @"lastPullAttempt",
-	.pullFailed = @"pullFailed",
-};
-
-const struct PullStatusRelationships PullStatusRelationships = {
-	.statusForImage = @"statusForImage",
-};
-
 @implementation PullStatusID
 @end
 
 @implementation _PullStatus
 
-+ (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_ {
++ (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_ {
 	NSParameterAssert(moc_);
 	return [NSEntityDescription insertNewObjectForEntityForName:@"PullStatus" inManagedObjectContext:moc_];
 }
@@ -71,5 +62,20 @@ const struct PullStatusRelationships PullStatusRelationships = {
 
 @dynamic statusForImage;
 
+@end
+
+@implementation PullStatusAttributes 
++ (NSString *)lastPullAttempt {
+	return @"lastPullAttempt";
+}
++ (NSString *)pullFailed {
+	return @"pullFailed";
+}
+@end
+
+@implementation PullStatusRelationships 
++ (NSString *)statusForImage {
+	return @"statusForImage";
+}
 @end
 

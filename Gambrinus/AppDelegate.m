@@ -102,8 +102,7 @@
         [contentUpdate setBloggerAPIConnection:apiConnection];
         [contentUpdate setParseService:parseService];
 
-        SideMenuViewController *menuViewController = [[SideMenuViewController alloc] init];
-        [menuViewController setObjectModel:model];
+        FullOptionsMenuController *menuViewController = [[FullOptionsMenuController alloc] init];
         KioskSlideMenuViewController *controller = [[KioskSlideMenuViewController alloc] initWithMainViewController:[[UINavigationController alloc] init] leftMenuViewController:menuViewController];
         [controller setObjectModel:model];
         [controller setContentUpdate:contentUpdate];
@@ -153,8 +152,7 @@
 }
 
 - (void)presentKioskController {
-    KioskModeMenuViewController *menuViewController = [[KioskModeMenuViewController alloc] init];
-    [menuViewController setObjectModel:self.objectModel];
+    SortOnlyMenuController *menuViewController = [[SortOnlyMenuController alloc] init];
 
     KioskSlideMenuViewController *controller = [[KioskSlideMenuViewController alloc] initWithMainViewController:[[UINavigationController alloc] init] leftMenuViewController:menuViewController];
     [controller setObjectModel:self.objectModel];

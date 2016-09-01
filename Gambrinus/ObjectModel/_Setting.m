@@ -3,17 +3,12 @@
 
 #import "_Setting.h"
 
-const struct SettingAttributes SettingAttributes = {
-	.key = @"key",
-	.value = @"value",
-};
-
 @implementation SettingID
 @end
 
 @implementation _Setting
 
-+ (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_ {
++ (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_ {
 	NSParameterAssert(moc_);
 	return [NSEntityDescription insertNewObjectForEntityForName:@"Setting" inManagedObjectContext:moc_];
 }
@@ -65,5 +60,14 @@ const struct SettingAttributes SettingAttributes = {
 
 @dynamic value;
 
+@end
+
+@implementation SettingAttributes 
++ (NSString *)key {
+	return @"key";
+}
++ (NSString *)value {
+	return @"value";
+}
 @end
 

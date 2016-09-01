@@ -14,7 +14,7 @@
 * limitations under the License.
 */
 
-#import <JCSFoundation/UIView+JCSLoadView.h>
+#import "UIView+JCSLoadView.h"
 #import "PostsViewController.h"
 #import "PostCell.h"
 #import "ObjectModel.h"

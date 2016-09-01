@@ -14,8 +14,8 @@
 * limitations under the License.
 */
 
-#import <UIKit/UIKit.h>
-#import <JCSFoundation/JCSInputCellsViewController.h>
+/*#import <UIKit/UIKit.h>
+#import "JCSInputCellsViewController.h"
 
 @class KioskSlideMenuViewController;
 @class ObjectModel;
@@ -31,3 +31,4 @@ extern NSString *const KioskMenuCellIdentifier;
 - (NSIndexPath *)addMenuCellWithTitle:(NSString *)title;
 
 @end
+*/

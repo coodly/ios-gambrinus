@@ -15,7 +15,7 @@
 */
 
 #import <Ono/ONOXMLDocument.h>
-#import <JCSFoundation/JCSFoundationConstants.h>
+#import "JCSFoundationConstants.h"
 #import "ObjectModel+Posts.h"
 #import "Post.h"
 #import "NSDate+BloggerDate.h"

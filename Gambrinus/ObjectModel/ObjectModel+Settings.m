@@ -14,7 +14,7 @@
 * limitations under the License.
 */
 
-#import <JCSFoundation/NSDate+ISO8601.h>
+#import "NSDate+ISO8601.h"
 #import "ObjectModel+Settings.h"
 #import "Setting.h"
 #import "Constants.h"

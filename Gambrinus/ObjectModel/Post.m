@@ -14,7 +14,7 @@
 * limitations under the License.
 */
 
-#import <JCSFoundation/NSString+JCSValidations.h>
+#import "NSString+JCSValidations.h"
 #import "Post.h"
 #import "BlogImageAsk.h"
 #import "Image.h"

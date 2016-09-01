@@ -3,23 +3,12 @@
 
 #import "_Blog.h"
 
-const struct BlogAttributes BlogAttributes = {
-	.baseURLString = @"baseURLString",
-	.blogId = @"blogId",
-	.postsURLString = @"postsURLString",
-	.published = @"published",
-};
-
-const struct BlogRelationships BlogRelationships = {
-	.posts = @"posts",
-};
-
 @implementation BlogID
 @end
 
 @implementation _Blog
 
-+ (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_ {
++ (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_ {
 	NSParameterAssert(moc_);
 	return [NSEntityDescription insertNewObjectForEntityForName:@"Blog" inManagedObjectContext:moc_];
 }
@@ -53,14 +42,35 @@ const struct BlogRelationships BlogRelationships = {
 
 @dynamic posts;
 
-- (NSMutableSet*)postsSet {
+- (NSMutableSet<Post*>*)postsSet {
 	[self willAccessValueForKey:@"posts"];
 
-	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"posts"];
+	NSMutableSet<Post*> *result = (NSMutableSet<Post*>*)[self mutableSetValueForKey:@"posts"];
 
 	[self didAccessValueForKey:@"posts"];
 	return result;
 }
 
+@end
+
+@implementation BlogAttributes 
++ (NSString *)baseURLString {
+	return @"baseURLString";
+}
++ (NSString *)blogId {
+	return @"blogId";
+}
++ (NSString *)postsURLString {
+	return @"postsURLString";
+}
++ (NSString *)published {
+	return @"published";
+}
+@end
+
+@implementation BlogRelationships 
++ (NSString *)posts {
+	return @"posts";
+}
 @end
 

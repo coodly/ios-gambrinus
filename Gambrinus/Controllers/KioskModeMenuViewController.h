@@ -14,9 +14,9 @@
 * limitations under the License.
 */
 
-#import <UIKit/UIKit.h>
+/*#import <UIKit/UIKit.h>
 #import "MenuViewController.h"
 
 @interface KioskModeMenuViewController : MenuViewController
 
-@end
+@end */

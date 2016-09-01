@@ -3,37 +3,12 @@
 
 #import "_Post.h"
 
-const struct PostAttributes PostAttributes = {
-	.brewerSort = @"brewerSort",
-	.combinedBeers = @"combinedBeers",
-	.combinedBrewers = @"combinedBrewers",
-	.combinedStyles = @"combinedStyles",
-	.hidden = @"hidden",
-	.normalizedTitle = @"normalizedTitle",
-	.postId = @"postId",
-	.publishDate = @"publishDate",
-	.shadowTitle = @"shadowTitle",
-	.slug = @"slug",
-	.starred = @"starred",
-	.styleSort = @"styleSort",
-	.title = @"title",
-	.topScore = @"topScore",
-	.touchedAt = @"touchedAt",
-};
-
-const struct PostRelationships PostRelationships = {
-	.beers = @"beers",
-	.blog = @"blog",
-	.body = @"body",
-	.image = @"image",
-};
-
 @implementation PostID
 @end
 
 @implementation _Post
 
-+ (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_ {
++ (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_ {
 	NSParameterAssert(moc_);
 	return [NSEntityDescription insertNewObjectForEntityForName:@"Post" inManagedObjectContext:moc_];
 }
@@ -159,10 +134,10 @@ const struct PostRelationships PostRelationships = {
 
 @dynamic beers;
 
-- (NSMutableSet*)beersSet {
+- (NSMutableSet<Beer*>*)beersSet {
 	[self willAccessValueForKey:@"beers"];
 
-	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"beers"];
+	NSMutableSet<Beer*> *result = (NSMutableSet<Beer*>*)[self mutableSetValueForKey:@"beers"];
 
 	[self didAccessValueForKey:@"beers"];
 	return result;
@@ -174,5 +149,68 @@ const struct PostRelationships PostRelationships = {
 
 @dynamic image;
 
+@end
+
+@implementation PostAttributes 
++ (NSString *)brewerSort {
+	return @"brewerSort";
+}
++ (NSString *)combinedBeers {
+	return @"combinedBeers";
+}
++ (NSString *)combinedBrewers {
+	return @"combinedBrewers";
+}
++ (NSString *)combinedStyles {
+	return @"combinedStyles";
+}
++ (NSString *)hidden {
+	return @"hidden";
+}
++ (NSString *)normalizedTitle {
+	return @"normalizedTitle";
+}
++ (NSString *)postId {
+	return @"postId";
+}
++ (NSString *)publishDate {
+	return @"publishDate";
+}
++ (NSString *)shadowTitle {
+	return @"shadowTitle";
+}
++ (NSString *)slug {
+	return @"slug";
+}
++ (NSString *)starred {
+	return @"starred";
+}
++ (NSString *)styleSort {
+	return @"styleSort";
+}
++ (NSString *)title {
+	return @"title";
+}
++ (NSString *)topScore {
+	return @"topScore";
+}
++ (NSString *)touchedAt {
+	return @"touchedAt";
+}
+@end
+
+@implementation PostRelationships 
++ (NSString *)beers {
+	return @"beers";
+}
++ (NSString *)blog {
+	return @"blog";
+}
++ (NSString *)body {
+	return @"body";
+}
++ (NSString *)image {
+	return @"image";
+}
 @end
 

@@ -3,30 +3,7 @@
 
 @import CoreData;
 
-extern const struct PostAttributes {
-	__unsafe_unretained NSString *brewerSort;
-	__unsafe_unretained NSString *combinedBeers;
-	__unsafe_unretained NSString *combinedBrewers;
-	__unsafe_unretained NSString *combinedStyles;
-	__unsafe_unretained NSString *hidden;
-	__unsafe_unretained NSString *normalizedTitle;
-	__unsafe_unretained NSString *postId;
-	__unsafe_unretained NSString *publishDate;
-	__unsafe_unretained NSString *shadowTitle;
-	__unsafe_unretained NSString *slug;
-	__unsafe_unretained NSString *starred;
-	__unsafe_unretained NSString *styleSort;
-	__unsafe_unretained NSString *title;
-	__unsafe_unretained NSString *topScore;
-	__unsafe_unretained NSString *touchedAt;
-} PostAttributes;
-
-extern const struct PostRelationships {
-	__unsafe_unretained NSString *beers;
-	__unsafe_unretained NSString *blog;
-	__unsafe_unretained NSString *body;
-	__unsafe_unretained NSString *image;
-} PostRelationships;
+NS_ASSUME_NONNULL_BEGIN
 
 @class Beer;
 @class Blog;
@@ -36,27 +13,19 @@ extern const struct PostRelationships {
 @interface PostID : NSManagedObjectID {}
 @end
 
-@interface _Post : NSManagedObject {}
-+ (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_;
+@interface _Post : NSManagedObject
++ (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_;
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
-@property (nonatomic, readonly, strong) PostID* objectID;
+@property (nonatomic, readonly, strong) PostID*objectID;
 
 @property (nonatomic, strong) NSString* brewerSort;
 
-//- (BOOL)validateBrewerSort:(id*)value_ error:(NSError**)error_;
+@property (nonatomic, strong, nullable) NSString* combinedBeers;
 
-@property (nonatomic, strong) NSString* combinedBeers;
+@property (nonatomic, strong, nullable) NSString* combinedBrewers;
 
-//- (BOOL)validateCombinedBeers:(id*)value_ error:(NSError**)error_;
-
-@property (nonatomic, strong) NSString* combinedBrewers;
-
-//- (BOOL)validateCombinedBrewers:(id*)value_ error:(NSError**)error_;
-
-@property (nonatomic, strong) NSString* combinedStyles;
-
-//- (BOOL)validateCombinedStyles:(id*)value_ error:(NSError**)error_;
+@property (nonatomic, strong, nullable) NSString* combinedStyles;
 
 @property (nonatomic, strong) NSNumber* hidden;
 
@@ -64,27 +33,15 @@ extern const struct PostRelationships {
 - (BOOL)hiddenValue;
 - (void)setHiddenValue:(BOOL)value_;
 
-//- (BOOL)validateHidden:(id*)value_ error:(NSError**)error_;
+@property (nonatomic, strong, nullable) NSString* normalizedTitle;
 
-@property (nonatomic, strong) NSString* normalizedTitle;
+@property (nonatomic, strong, nullable) NSString* postId;
 
-//- (BOOL)validateNormalizedTitle:(id*)value_ error:(NSError**)error_;
+@property (nonatomic, strong, nullable) NSDate* publishDate;
 
-@property (nonatomic, strong) NSString* postId;
+@property (nonatomic, strong, nullable) NSString* shadowTitle;
 
-//- (BOOL)validatePostId:(id*)value_ error:(NSError**)error_;
-
-@property (nonatomic, strong) NSDate* publishDate;
-
-//- (BOOL)validatePublishDate:(id*)value_ error:(NSError**)error_;
-
-@property (nonatomic, strong) NSString* shadowTitle;
-
-//- (BOOL)validateShadowTitle:(id*)value_ error:(NSError**)error_;
-
-@property (nonatomic, strong) NSString* slug;
-
-//- (BOOL)validateSlug:(id*)value_ error:(NSError**)error_;
+@property (nonatomic, strong, nullable) NSString* slug;
 
 @property (nonatomic, strong) NSNumber* starred;
 
@@ -92,49 +49,32 @@ extern const struct PostRelationships {
 - (BOOL)starredValue;
 - (void)setStarredValue:(BOOL)value_;
 
-//- (BOOL)validateStarred:(id*)value_ error:(NSError**)error_;
-
 @property (nonatomic, strong) NSString* styleSort;
 
-//- (BOOL)validateStyleSort:(id*)value_ error:(NSError**)error_;
+@property (nonatomic, strong, nullable) NSString* title;
 
-@property (nonatomic, strong) NSString* title;
-
-//- (BOOL)validateTitle:(id*)value_ error:(NSError**)error_;
-
-@property (nonatomic, strong) NSNumber* topScore;
+@property (nonatomic, strong, nullable) NSNumber* topScore;
 
 @property (atomic) int16_t topScoreValue;
 - (int16_t)topScoreValue;
 - (void)setTopScoreValue:(int16_t)value_;
 
-//- (BOOL)validateTopScore:(id*)value_ error:(NSError**)error_;
+@property (nonatomic, strong, nullable) NSDate* touchedAt;
 
-@property (nonatomic, strong) NSDate* touchedAt;
+@property (nonatomic, strong, nullable) NSSet<Beer*> *beers;
+- (nullable NSMutableSet<Beer*>*)beersSet;
 
-//- (BOOL)validateTouchedAt:(id*)value_ error:(NSError**)error_;
+@property (nonatomic, strong, nullable) Blog *blog;
 
-@property (nonatomic, strong) NSSet *beers;
+@property (nonatomic, strong, nullable) PostContent *body;
 
-- (NSMutableSet*)beersSet;
-
-@property (nonatomic, strong) Blog *blog;
-
-//- (BOOL)validateBlog:(id*)value_ error:(NSError**)error_;
-
-@property (nonatomic, strong) PostContent *body;
-
-//- (BOOL)validateBody:(id*)value_ error:(NSError**)error_;
-
-@property (nonatomic, strong) Image *image;
-
-//- (BOOL)validateImage:(id*)value_ error:(NSError**)error_;
+@property (nonatomic, strong, nullable) Image *image;
 
 @end
 
 @interface _Post (BeersCoreDataGeneratedAccessors)
-- (void)addBeers:(NSSet*)value_;
-- (void)removeBeers:(NSSet*)value_;
+- (void)addBeers:(NSSet<Beer*>*)value_;
+- (void)removeBeers:(NSSet<Beer*>*)value_;
 - (void)addBeersObject:(Beer*)value_;
 - (void)removeBeersObject:(Beer*)value_;
 
@@ -196,8 +136,8 @@ extern const struct PostRelationships {
 - (NSDate*)primitiveTouchedAt;
 - (void)setPrimitiveTouchedAt:(NSDate*)value;
 
-- (NSMutableSet*)primitiveBeers;
-- (void)setPrimitiveBeers:(NSMutableSet*)value;
+- (NSMutableSet<Beer*>*)primitiveBeers;
+- (void)setPrimitiveBeers:(NSMutableSet<Beer*>*)value;
 
 - (Blog*)primitiveBlog;
 - (void)setPrimitiveBlog:(Blog*)value;
@@ -209,3 +149,30 @@ extern const struct PostRelationships {
 - (void)setPrimitiveImage:(Image*)value;
 
 @end
+
+@interface PostAttributes: NSObject 
++ (NSString *)brewerSort;
++ (NSString *)combinedBeers;
++ (NSString *)combinedBrewers;
++ (NSString *)combinedStyles;
++ (NSString *)hidden;
++ (NSString *)normalizedTitle;
++ (NSString *)postId;
++ (NSString *)publishDate;
++ (NSString *)shadowTitle;
++ (NSString *)slug;
++ (NSString *)starred;
++ (NSString *)styleSort;
++ (NSString *)title;
++ (NSString *)topScore;
++ (NSString *)touchedAt;
+@end
+
+@interface PostRelationships: NSObject
++ (NSString *)beers;
++ (NSString *)blog;
++ (NSString *)body;
++ (NSString *)image;
+@end
+
+NS_ASSUME_NONNULL_END

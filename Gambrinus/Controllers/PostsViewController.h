@@ -15,7 +15,7 @@
 */
 
 #import <UIKit/UIKit.h>
-#import <JCSFoundation/JCSFetchedCollectionViewController.h>
+#import "JCSFetchedCollectionViewController.h"
 #import "KioskController.h"
 
 @class ObjectModel;

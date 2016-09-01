@@ -1,18 +1,33 @@
-platform :ios, '7.0'
+platform :ios, '9.3'
 
-inhibit_all_warnings!
+use_frameworks!
 
-pod 'Ono'
-pod 'CDYObjectModel', :git => 'https://github.com/coodly/CDYObjectModel.git'
-#pod 'CDYObjectModel', :path => '../CDYObjectModel'
-pod 'AFNetworking'
-pod 'MRProgress'
-pod 'JCSFoundation/UserInput', :git => 'https://github.com/jaanussiim/JCSFoundation.git'
-pod 'JCSFoundation/CoreData', :git => 'https://github.com/jaanussiim/JCSFoundation.git'
-#pod 'JCSFoundation/UserInput', :path => '../JCSFoundation'
-#pod 'JCSFoundation/CoreData', :path => '../JCSFoundation'
-#pod 'CDYImagesRetrieve', :path => '../CDYImagesRetrieve'
-pod 'CDYImagesRetrieve', :git => 'https://github.com/coodly/CDYImagesRetrieve.git'
-pod 'CDYImageScale', :git => 'https://github.com/coodly/CDYImageScale.git'
-#pod 'CDYImageScale', :path => '../CDYImageScale'
-pod 'Parse', '~> 1.8'
+UseLocalPods = false
+
+def pods
+    pod 'Fabric'
+    pod 'Crashlytics'
+    pod 'AFNetworking', '2.6.3'
+    pod 'Parse', '1.14.2'
+    pod 'MRProgress'
+    pod 'Ono'
+    
+    if UseLocalPods
+
+    else
+
+    end
+end
+
+target 'Gambrinus' do
+    pods
+    
+end
+
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |configuration|
+            configuration.build_settings['SWIFT_VERSION'] = "3.0"
+        end
+    end
+end

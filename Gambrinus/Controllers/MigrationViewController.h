@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <CDYObjectModel/CDYObjectModel.h>
+#import "CDYObjectModel.h"
 #import "ObjectModel.h"
 
 @interface MigrationViewController : UIViewController

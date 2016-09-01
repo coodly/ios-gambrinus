@@ -3,48 +3,33 @@
 
 @import CoreData;
 
-extern const struct BeerStyleAttributes {
-	__unsafe_unretained NSString *name;
-	__unsafe_unretained NSString *normalizedName;
-	__unsafe_unretained NSString *shadowName;
-} BeerStyleAttributes;
-
-extern const struct BeerStyleRelationships {
-	__unsafe_unretained NSString *beers;
-} BeerStyleRelationships;
+NS_ASSUME_NONNULL_BEGIN
 
 @class Beer;
 
 @interface BeerStyleID : NSManagedObjectID {}
 @end
 
-@interface _BeerStyle : NSManagedObject {}
-+ (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_;
+@interface _BeerStyle : NSManagedObject
++ (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_;
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
-@property (nonatomic, readonly, strong) BeerStyleID* objectID;
+@property (nonatomic, readonly, strong) BeerStyleID*objectID;
 
-@property (nonatomic, strong) NSString* name;
+@property (nonatomic, strong, nullable) NSString* name;
 
-//- (BOOL)validateName:(id*)value_ error:(NSError**)error_;
+@property (nonatomic, strong, nullable) NSString* normalizedName;
 
-@property (nonatomic, strong) NSString* normalizedName;
+@property (nonatomic, strong, nullable) NSString* shadowName;
 
-//- (BOOL)validateNormalizedName:(id*)value_ error:(NSError**)error_;
-
-@property (nonatomic, strong) NSString* shadowName;
-
-//- (BOOL)validateShadowName:(id*)value_ error:(NSError**)error_;
-
-@property (nonatomic, strong) NSSet *beers;
-
-- (NSMutableSet*)beersSet;
+@property (nonatomic, strong, nullable) NSSet<Beer*> *beers;
+- (nullable NSMutableSet<Beer*>*)beersSet;
 
 @end
 
 @interface _BeerStyle (BeersCoreDataGeneratedAccessors)
-- (void)addBeers:(NSSet*)value_;
-- (void)removeBeers:(NSSet*)value_;
+- (void)addBeers:(NSSet<Beer*>*)value_;
+- (void)removeBeers:(NSSet<Beer*>*)value_;
 - (void)addBeersObject:(Beer*)value_;
 - (void)removeBeersObject:(Beer*)value_;
 
@@ -61,7 +46,19 @@ extern const struct BeerStyleRelationships {
 - (NSString*)primitiveShadowName;
 - (void)setPrimitiveShadowName:(NSString*)value;
 
-- (NSMutableSet*)primitiveBeers;
-- (void)setPrimitiveBeers:(NSMutableSet*)value;
+- (NSMutableSet<Beer*>*)primitiveBeers;
+- (void)setPrimitiveBeers:(NSMutableSet<Beer*>*)value;
 
 @end
+
+@interface BeerStyleAttributes: NSObject 
++ (NSString *)name;
++ (NSString *)normalizedName;
++ (NSString *)shadowName;
+@end
+
+@interface BeerStyleRelationships: NSObject
++ (NSString *)beers;
+@end
+
+NS_ASSUME_NONNULL_END

@@ -3,53 +3,35 @@
 
 @import CoreData;
 
-extern const struct BlogAttributes {
-	__unsafe_unretained NSString *baseURLString;
-	__unsafe_unretained NSString *blogId;
-	__unsafe_unretained NSString *postsURLString;
-	__unsafe_unretained NSString *published;
-} BlogAttributes;
-
-extern const struct BlogRelationships {
-	__unsafe_unretained NSString *posts;
-} BlogRelationships;
+NS_ASSUME_NONNULL_BEGIN
 
 @class Post;
 
 @interface BlogID : NSManagedObjectID {}
 @end
 
-@interface _Blog : NSManagedObject {}
-+ (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_;
+@interface _Blog : NSManagedObject
++ (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_;
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
-@property (nonatomic, readonly, strong) BlogID* objectID;
+@property (nonatomic, readonly, strong) BlogID*objectID;
 
-@property (nonatomic, strong) NSString* baseURLString;
+@property (nonatomic, strong, nullable) NSString* baseURLString;
 
-//- (BOOL)validateBaseURLString:(id*)value_ error:(NSError**)error_;
+@property (nonatomic, strong, nullable) NSString* blogId;
 
-@property (nonatomic, strong) NSString* blogId;
+@property (nonatomic, strong, nullable) NSString* postsURLString;
 
-//- (BOOL)validateBlogId:(id*)value_ error:(NSError**)error_;
+@property (nonatomic, strong, nullable) NSDate* published;
 
-@property (nonatomic, strong) NSString* postsURLString;
-
-//- (BOOL)validatePostsURLString:(id*)value_ error:(NSError**)error_;
-
-@property (nonatomic, strong) NSDate* published;
-
-//- (BOOL)validatePublished:(id*)value_ error:(NSError**)error_;
-
-@property (nonatomic, strong) NSSet *posts;
-
-- (NSMutableSet*)postsSet;
+@property (nonatomic, strong, nullable) NSSet<Post*> *posts;
+- (nullable NSMutableSet<Post*>*)postsSet;
 
 @end
 
 @interface _Blog (PostsCoreDataGeneratedAccessors)
-- (void)addPosts:(NSSet*)value_;
-- (void)removePosts:(NSSet*)value_;
+- (void)addPosts:(NSSet<Post*>*)value_;
+- (void)removePosts:(NSSet<Post*>*)value_;
 - (void)addPostsObject:(Post*)value_;
 - (void)removePostsObject:(Post*)value_;
 
@@ -69,7 +51,20 @@ extern const struct BlogRelationships {
 - (NSDate*)primitivePublished;
 - (void)setPrimitivePublished:(NSDate*)value;
 
-- (NSMutableSet*)primitivePosts;
-- (void)setPrimitivePosts:(NSMutableSet*)value;
+- (NSMutableSet<Post*>*)primitivePosts;
+- (void)setPrimitivePosts:(NSMutableSet<Post*>*)value;
 
 @end
+
+@interface BlogAttributes: NSObject 
++ (NSString *)baseURLString;
++ (NSString *)blogId;
++ (NSString *)postsURLString;
++ (NSString *)published;
+@end
+
+@interface BlogRelationships: NSObject
++ (NSString *)posts;
+@end
+
+NS_ASSUME_NONNULL_END

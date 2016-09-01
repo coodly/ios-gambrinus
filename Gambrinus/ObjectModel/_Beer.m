@@ -3,30 +3,12 @@
 
 #import "_Beer.h"
 
-const struct BeerAttributes BeerAttributes = {
-	.alcohol = @"alcohol",
-	.aliased = @"aliased",
-	.bindingKey = @"bindingKey",
-	.identifier = @"identifier",
-	.name = @"name",
-	.normalizedName = @"normalizedName",
-	.rbIdentifier = @"rbIdentifier",
-	.rbScore = @"rbScore",
-	.shadowName = @"shadowName",
-};
-
-const struct BeerRelationships BeerRelationships = {
-	.brewer = @"brewer",
-	.posts = @"posts",
-	.style = @"style",
-};
-
 @implementation BeerID
 @end
 
 @implementation _Beer
 
-+ (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_ {
++ (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_ {
 	NSParameterAssert(moc_);
 	return [NSEntityDescription insertNewObjectForEntityForName:@"Beer" inManagedObjectContext:moc_];
 }
@@ -119,10 +101,10 @@ const struct BeerRelationships BeerRelationships = {
 
 @dynamic posts;
 
-- (NSMutableSet*)postsSet {
+- (NSMutableSet<Post*>*)postsSet {
 	[self willAccessValueForKey:@"posts"];
 
-	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"posts"];
+	NSMutableSet<Post*> *result = (NSMutableSet<Post*>*)[self mutableSetValueForKey:@"posts"];
 
 	[self didAccessValueForKey:@"posts"];
 	return result;
@@ -130,5 +112,47 @@ const struct BeerRelationships BeerRelationships = {
 
 @dynamic style;
 
+@end
+
+@implementation BeerAttributes 
++ (NSString *)alcohol {
+	return @"alcohol";
+}
++ (NSString *)aliased {
+	return @"aliased";
+}
++ (NSString *)bindingKey {
+	return @"bindingKey";
+}
++ (NSString *)identifier {
+	return @"identifier";
+}
++ (NSString *)name {
+	return @"name";
+}
++ (NSString *)normalizedName {
+	return @"normalizedName";
+}
++ (NSString *)rbIdentifier {
+	return @"rbIdentifier";
+}
++ (NSString *)rbScore {
+	return @"rbScore";
+}
++ (NSString *)shadowName {
+	return @"shadowName";
+}
+@end
+
+@implementation BeerRelationships 
++ (NSString *)brewer {
+	return @"brewer";
+}
++ (NSString *)posts {
+	return @"posts";
+}
++ (NSString *)style {
+	return @"style";
+}
 @end
 

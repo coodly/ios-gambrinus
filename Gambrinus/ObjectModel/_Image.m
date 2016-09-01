@@ -3,21 +3,12 @@
 
 #import "_Image.h"
 
-const struct ImageAttributes ImageAttributes = {
-	.imageURLString = @"imageURLString",
-};
-
-const struct ImageRelationships ImageRelationships = {
-	.posts = @"posts",
-	.pullStatus = @"pullStatus",
-};
-
 @implementation ImageID
 @end
 
 @implementation _Image
 
-+ (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_ {
++ (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_ {
 	NSParameterAssert(moc_);
 	return [NSEntityDescription insertNewObjectForEntityForName:@"Image" inManagedObjectContext:moc_];
 }
@@ -45,10 +36,10 @@ const struct ImageRelationships ImageRelationships = {
 
 @dynamic posts;
 
-- (NSMutableSet*)postsSet {
+- (NSMutableSet<Post*>*)postsSet {
 	[self willAccessValueForKey:@"posts"];
 
-	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"posts"];
+	NSMutableSet<Post*> *result = (NSMutableSet<Post*>*)[self mutableSetValueForKey:@"posts"];
 
 	[self didAccessValueForKey:@"posts"];
 	return result;
@@ -56,5 +47,20 @@ const struct ImageRelationships ImageRelationships = {
 
 @dynamic pullStatus;
 
+@end
+
+@implementation ImageAttributes 
++ (NSString *)imageURLString {
+	return @"imageURLString";
+}
+@end
+
+@implementation ImageRelationships 
++ (NSString *)posts {
+	return @"posts";
+}
++ (NSString *)pullStatus {
+	return @"pullStatus";
+}
 @end
 

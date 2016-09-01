@@ -14,7 +14,7 @@
 * limitations under the License.
 */
 
-#import <JCSFoundation/NSString+JCSValidations.h>
+#import "NSString+JCSValidations.h"
 #import "BloggerAPIConnection.h"
 #import "AFHTTPRequestOperationManager.h"
 #import "Constants.h"

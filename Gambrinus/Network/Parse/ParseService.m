@@ -17,7 +17,6 @@
 #import "ParseService.h"
 #import "ParseBeer.h"
 #import "ParsePost.h"
-#import "PFQuery.h"
 #import "ObjectModel.h"
 #import "Constants.h"
 #import "NSDate+Calculations.h"
@@ -25,6 +24,7 @@
 #import "Beer.h"
 #import "Post.h"
 #import "ObjectModel+Posts.h"
+#import <Parse/Parse.h>
 
 typedef void (^ParseObjectsHandler)(id objects, ObjectModel *objectModel);
 
