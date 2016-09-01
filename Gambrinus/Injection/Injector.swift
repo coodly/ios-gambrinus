@@ -32,8 +32,20 @@ class Injector: NSObject {
     lazy var objectModel: ObjectModel = {
         return ObjectModel()
     }()
-    lazy var imagesRetrieve: BlogImagesRetrieve = {
+    private lazy var imagesRetrieve: BlogImagesRetrieve = {
         return BlogImagesRetrieve()
+    }()
+    private lazy var parseService: ParseService = {
+        return ParseService(objectModel: self.objectModel)
+    }()
+    private lazy var contentUpdate: ContentUpdate = {
+        let update = ContentUpdate(objectModel: self.objectModel)!
+        update.parseService = self.parseService
+        update.bloggerAPIConnection = self.bloggerAPI
+        return update
+    }()
+    private lazy var bloggerAPI: BloggerAPIConnection = {
+        return BloggerAPIConnection(blogURLString:"http://tartugambrinus.blogspot.com/", bloggerKey:BloggerAPIKey, objectModel:self.objectModel)
     }()
     
     func inject(into: AnyObject) {
@@ -43,6 +55,10 @@ class Injector: NSObject {
         
         if var consumer = into as? ImagesRetrieveConsumer {
             consumer.imagesRetrieve = imagesRetrieve
+        }
+        
+        if var consumer = into as? ContentUpdateConsumer {
+            consumer.contentUpdate = contentUpdate
         }
     }
 }

@@ -35,12 +35,6 @@
 #import "JCSLocalization.h"
 #import "MigrationViewController.h"
 
-@interface AppDelegate ()
-
-@property (nonatomic, strong) ContentUpdate *contentUpdate;
-
-@end
-
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -90,13 +84,6 @@
     MigrationViewController *migrationViewController = [[MigrationViewController alloc] init];
     [migrationViewController setObjectModel:model];
     [migrationViewController setCompletion:^{
-        BloggerAPIConnection *apiConnection = [[BloggerAPIConnection alloc] initWithBlogURLString:@"http://tartugambrinus.blogspot.com/" bloggerKey:GambrinusBloggerAPIKey objectModel:model];
-        ParseService *parseService = [[ParseService alloc] initWithObjectModel:model];
-        ContentUpdate *contentUpdate = [[ContentUpdate alloc] initWithObjectModel:model];
-        self.contentUpdate = contentUpdate;
-        [contentUpdate setBloggerAPIConnection:apiConnection];
-        [contentUpdate setParseService:parseService];
-
         FullOptionsMenuController *menuViewController = [[FullOptionsMenuController alloc] init];
         KioskSlideMenuViewController *controller = [[KioskSlideMenuViewController alloc] initWithMainViewController:[[UINavigationController alloc] init] leftMenuViewController:menuViewController];
         BlogPostsViewController *postsController = [[BlogPostsViewController alloc] init];

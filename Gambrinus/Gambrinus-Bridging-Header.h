@@ -10,6 +10,7 @@
 
 #import "CDYImagesRetrieve.h"
 #import "CDYObjectModel.h"
+#import "ContentUpdate.h"
 
 #import "UIColor+Theme.h"
 
@@ -22,4 +23,5 @@
 
 #import "ObjectModel.h"
 
+#import "ParseService.h"
 #import "PostsViewController.h"

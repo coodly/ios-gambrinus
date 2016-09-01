@@ -46,6 +46,8 @@
 		A7D6476B1D78788F00FF52A4 /* ObjectModelConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D6476A1D78788F00FF52A4 /* ObjectModelConsumer.swift */; };
 		A7D6476D1D7878D100FF52A4 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D6476C1D7878D100FF52A4 /* PostsViewController.swift */; };
 		A7D6476F1D787B8100FF52A4 /* ImagesRetrieveConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D6476E1D787B8100FF52A4 /* ImagesRetrieveConsumer.swift */; };
+		A7D647711D7883E900FF52A4 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D647701D7883E900FF52A4 /* Secrets.swift */; };
+		A7D647751D78852B00FF52A4 /* ContentUpdateConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D647741D78852B00FF52A4 /* ContentUpdateConsumer.swift */; };
 		BA665AAA129ABC2E206BA2C5 /* mapping.json in Resources */ = {isa = PBXBuildFile; fileRef = BA665BA7D5ECAA081827FF24 /* mapping.json */; };
 		EA0119E11931D2D400232E92 /* _Blog.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0119E01931D2D400232E92 /* _Blog.m */; };
 		EA0119E41931D2DD00232E92 /* Blog.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0119E31931D2DD00232E92 /* Blog.m */; };
@@ -235,6 +237,9 @@
 		A7D6476A1D78788F00FF52A4 /* ObjectModelConsumer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectModelConsumer.swift; sourceTree = "<group>"; };
 		A7D6476C1D7878D100FF52A4 /* PostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
 		A7D6476E1D787B8100FF52A4 /* ImagesRetrieveConsumer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesRetrieveConsumer.swift; sourceTree = "<group>"; };
+		A7D647701D7883E900FF52A4 /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		A7D647721D78845D00FF52A4 /* Secrets.swift.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Secrets.swift.sample; sourceTree = "<group>"; };
+		A7D647741D78852B00FF52A4 /* ContentUpdateConsumer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentUpdateConsumer.swift; sourceTree = "<group>"; };
 		BA665BA7D5ECAA081827FF24 /* mapping.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = mapping.json; sourceTree = "<group>"; };
 		C9500B6301C764BA1D0D47AC /* Pods-Gambrinus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gambrinus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gambrinus/Pods-Gambrinus.debug.xcconfig"; sourceTree = "<group>"; };
 		DA69DCA20CC7434C02417339 /* Pods_Gambrinus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gambrinus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -561,6 +566,7 @@
 				A7D647681D7877C900FF52A4 /* Injector.swift */,
 				A7D6476A1D78788F00FF52A4 /* ObjectModelConsumer.swift */,
 				A7D6476E1D787B8100FF52A4 /* ImagesRetrieveConsumer.swift */,
+				A7D647741D78852B00FF52A4 /* ContentUpdateConsumer.swift */,
 			);
 			path = Injection;
 			sourceTree = "<group>";
@@ -634,6 +640,8 @@
 				EA0668D5192A45C4009C83F1 /* Images.xcassets */,
 				EA3FDE7F1B18CB0700C93B7D /* Secrets.h */,
 				EA3FDE801B18CB0700C93B7D /* Secrets.m */,
+				A7D647701D7883E900FF52A4 /* Secrets.swift */,
+				A7D647721D78845D00FF52A4 /* Secrets.swift.sample */,
 			);
 			path = Gambrinus;
 			sourceTree = "<group>";
@@ -1234,6 +1242,7 @@
 				EA50FCC11B3593450000F304 /* MenuViewController.m in Sources */,
 				EAC877BF192E224600309A23 /* NSDate+Calculations.m in Sources */,
 				A734E2B91D78101D0057D136 /* TextEntryCell.swift in Sources */,
+				A7D647711D7883E900FF52A4 /* Secrets.swift in Sources */,
 				EA50FC811B34A8110000F304 /* _Beer.m in Sources */,
 				EA925DF419502952001E0AC9 /* PostsViewController.m in Sources */,
 				EAC9A7CF19446A03006AC834 /* _Image.m in Sources */,
@@ -1288,6 +1297,7 @@
 				A7AC19A31D786C08007F3AC9 /* UITableViewCell+Identifier.swift in Sources */,
 				EA50FCC51B35B8AC0000F304 /* PostImageCell.m in Sources */,
 				EA50FCCE1B35B9260000F304 /* UIView+Identifier.m in Sources */,
+				A7D647751D78852B00FF52A4 /* ContentUpdateConsumer.swift in Sources */,
 				EA011A401936195F00232E92 /* BlogImageAsk.m in Sources */,
 				EA16BF111B3934EE0018FED4 /* InfoRateBeerSectionTitleDefinition.m in Sources */,
 				EA50FCB61B355CE60000F304 /* UIFont+Theme.m in Sources */,
