@@ -16,6 +16,7 @@
 
 import Foundation
 import SWLogger
+import LaughingAdventure
 
 class FullOptionsMenuController: MenuViewController, InjectionHandler {
     private var allPostsCell: MenuCell?
@@ -72,7 +73,7 @@ class FullOptionsMenuController: MenuViewController, InjectionHandler {
         addSection(InputCellsSection(title: NSLocalizedString("menu.controller.sort.section.title", comment: ""), cells: [postDateCell!, postNameCell!, rbScoreCell!]))
     }
     
-    override func tappedCell(_ cell: UITableViewCell, atIndexPath: IndexPath) -> Bool {
+    override func tapped(cell: UITableViewCell, at indexPath: IndexPath) -> Bool {
         if let allCell = allPostsCell, allCell == cell {
             let controller = BlogPostsViewController()
             inject(into: controller)

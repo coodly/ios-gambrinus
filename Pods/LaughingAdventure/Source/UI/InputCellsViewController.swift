@@ -80,11 +80,11 @@ open class InputCellsViewController: UIViewController, FullScreenTableCreate, Sm
             entryCell.entryField.becomeFirstResponder()
             return false
         } else {
-            return tappedCell(cell, atIndexPath: atIndexPath)
+            return tapped(cell: cell, at: atIndexPath)
         }
     }
     
-    public func tappedCell(_ cell:UITableViewCell, atIndexPath:IndexPath) -> Bool {
+    open func tapped(cell: UITableViewCell, at indexPath: IndexPath) -> Bool {
         Logging.log("tappedCell")
         return false
     }

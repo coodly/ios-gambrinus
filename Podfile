@@ -14,8 +14,10 @@ def pods
     
     if UseLocalPods
         pod 'SWLogger', :path => '../swift-logger'
+        pod 'LaughingAdventure', :path => '../swift-laughing-adventure'
     else
         pod 'SWLogger', :git => 'git@github.com:coodly/swlogger.git'
+        pod 'LaughingAdventure', :git => 'git@github.com:coodly/laughing-adventure.git'
     end
 end
 

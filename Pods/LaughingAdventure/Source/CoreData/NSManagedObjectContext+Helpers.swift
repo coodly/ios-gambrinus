@@ -14,21 +14,10 @@
 * limitations under the License.
 */
 
-import UIKit
-import LaughingAdventure
+import CoreData
 
-class KioskSlideMenuViewController: CoodlySlideMenuViewController {
-    private var containedNavigation: UINavigationController!
-    private var menuController: MenuViewController!
-    private var shown = false
-
-    var objectModel: Gambrinus.ObjectModel!
-    var imagesRetrieve: BlogImagesRetrieve!
-    var contentUpdate: ContentUpdate!
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        menuButton = UIBarButtonItem(image: UIImage(named: "1099-list-1-toolbar-selected"), style: .plain, target: nil, action: nil)
+extension NSManagedObjectContext {
+    public func insertEntity<T: NSManagedObject>() -> T {
+        return NSEntityDescription.insertNewObject(forEntityName: T.entityName(), into: self) as! T
     }
 }

@@ -24,6 +24,9 @@ PODS:
   - Crashlytics (3.8.0):
     - Fabric (~> 1.6.3)
   - Fabric (1.6.8)
+  - LaughingAdventure (0.3.0):
+    - LaughingAdventure/Core (= 0.3.0)
+  - LaughingAdventure/Core (0.3.0)
   - MRProgress (0.8.3):
     - MRProgress/ActivityIndicator (= 0.8.3)
     - MRProgress/Blur (= 0.8.3)
@@ -61,16 +64,22 @@ DEPENDENCIES:
   - AFNetworking (= 2.6.3)
   - Crashlytics
   - Fabric
+  - LaughingAdventure (from `git@github.com:coodly/laughing-adventure.git`)
   - MRProgress
   - Ono
   - Parse (= 1.14.2)
   - SWLogger (from `git@github.com:coodly/swlogger.git`)
 
 EXTERNAL SOURCES:
+  LaughingAdventure:
+    :git: git@github.com:coodly/laughing-adventure.git
   SWLogger:
     :git: git@github.com:coodly/swlogger.git
 
 CHECKOUT OPTIONS:
+  LaughingAdventure:
+    :commit: 7060bfb2b74c10c8f76af64a521bddaba198d18d
+    :git: git@github.com:coodly/laughing-adventure.git
   SWLogger:
     :commit: 5bd06d09604d4a4e3b58469eed66eeb361a3fdc7
     :git: git@github.com:coodly/swlogger.git
@@ -80,11 +89,12 @@ SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   Crashlytics: 8601d9c74a4c4d28f3e7f408bf4c0e490c70e8b4
   Fabric: 5755268d0171435ab167e3d0878a28a777deaf10
+  LaughingAdventure: faee0f18f7f9d1dd9571ec2dc217c66b3e6b82f9
   MRProgress: 16de7cc9f347e8846797a770db102a323fe7ef09
   Ono: 80b1c686777d3f6d5d5ce6fcac8a74afef4ca197
   Parse: 4335d65f40cb3d43190d723144bbe1afb9c38230
   SWLogger: 817a1e80f0fa7c93214861212f16d3760e35cbeb
 
-PODFILE CHECKSUM: 8882d62e91937e90fd7e334ba89a46df47c65ac6
+PODFILE CHECKSUM: 0e0525ae8c3bddb8853dbc6e89e1e025027ac373
 
 COCOAPODS: 1.1.0.beta.1
