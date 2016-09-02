@@ -48,7 +48,9 @@ open class InputCellsViewController: UIViewController, FullScreenTableCreate, Sm
     @IBOutlet public var tableView: UITableView!
     fileprivate var sections: [InputCellsSection] = []
     fileprivate var activeCellInputValidation: InputValidation?
-    public var preferredStyle: UITableViewStyle = .plain
+    open var preferredStyle: UITableViewStyle {
+        return .plain
+    }
     
     deinit {
         NotificationCenter.default.removeObserver(self)

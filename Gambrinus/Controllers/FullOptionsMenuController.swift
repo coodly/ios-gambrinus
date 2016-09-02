@@ -18,13 +18,24 @@ import Foundation
 import SWLogger
 import LaughingAdventure
 
-class FullOptionsMenuController: MenuViewController, InjectionHandler {
+class FullOptionsMenuController: MenuViewController, ObjectModelConsumer, InjectionHandler {
+    var objectModel: Gambrinus.ObjectModel!
+    
     private var allPostsCell: MenuCell?
     private var favoritesCell: MenuCell?
     
     private var postDateCell: MenuCell?
     private var postNameCell: MenuCell?
     private var rbScoreCell: MenuCell?
+    override var preferredStyle: UITableViewStyle {
+        return .grouped
+    }
+    private lazy var upImage: UIImage = {
+        return UIImage(named: "763-arrow-up-toolbar-selected")!
+    }()
+    private lazy var downImage: UIImage = {
+        return UIImage(named: "764-arrow-down-toolbar-selected")!
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +54,17 @@ class FullOptionsMenuController: MenuViewController, InjectionHandler {
         tableView.tableFooterView = powered
         
         tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let order = objectModel.sortOrder()
+        guard let cell = cellFor(sortOrder: order) else {
+            return
+        }
+        
+        markOrder(order, in: cell)
     }
     
     func loadContent() {
@@ -82,8 +104,80 @@ class FullOptionsMenuController: MenuViewController, InjectionHandler {
             let controller = MarkedPostsViewController()
             inject(into: controller)
             container.presentRootController(controller)
+        } else if let dateCell = postDateCell, dateCell == cell {
+            tappedOnSort(cell: dateCell)
+        } else if let nameCell = postNameCell, nameCell == cell {
+            tappedOnSort(cell: nameCell)
+        } else if let rbCell = rbScoreCell, rbCell == cell {
+            tappedOnSort(cell: rbCell)
         }
         
         return false
+    }
+    
+    private func tappedOnSort(cell: MenuCell) {
+        let currentOrder = objectModel.sortOrder()
+        var next: PostsSortOrder?
+        switch cell {
+        case postNameCell!:
+            if currentOrder != .byPostName {
+                next = .byPostName
+            }
+        case rbScoreCell!:
+            if currentOrder != .byRBScore {
+                next = .byRBScore
+            }
+        case postDateCell!:
+            if currentOrder != .byDateAsc && currentOrder != .byDateDesc {
+                next = .byDateDesc
+            } else {
+                next = currentOrder.reversed()
+            }
+        default:
+            Log.debug("Unhandled cell: \(cell)")
+        }
+        
+        guard let nextOrder = next else {
+            return
+        }
+        
+        Log.debug("Change order to \(next)")
+        objectModel.setSortOrder(nextOrder)
+        container.closeLeft()
+    }
+    
+    private func markOrder(_ order: PostsSortOrder, in cell: MenuCell) {
+        switch order {
+        case .byDateAsc:
+            cell.accessoryView = UIImageView(image: upImage)
+        case .byDateDesc:
+            cell.accessoryView = UIImageView(image: downImage)
+        case .byRBScore, .byPostName:
+            cell.accessoryType = .checkmark
+        default:
+            Log.debug("Unhandled order \(order)")
+        }
+        
+        var sortCells = [postDateCell!, postNameCell!, rbScoreCell!]
+        if let index = sortCells.index(of: cell) {
+            sortCells.remove(at: index)
+        }
+        for c in sortCells {
+            c.accessoryType = .none
+            c.accessoryView = nil
+        }
+    }
+    
+    private func cellFor(sortOrder: PostsSortOrder) -> MenuCell? {
+        switch sortOrder {
+        case .byDateAsc, .byDateDesc:
+            return postDateCell
+        case .byPostName:
+            return postNameCell
+        case .byRBScore:
+            return rbScoreCell
+        default:
+            return nil
+        }
     }
 }

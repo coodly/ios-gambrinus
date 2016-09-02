@@ -33,6 +33,8 @@
 		A7D6476F1D787B8100FF52A4 /* ImagesRetrieveConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D6476E1D787B8100FF52A4 /* ImagesRetrieveConsumer.swift */; };
 		A7D647711D7883E900FF52A4 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D647701D7883E900FF52A4 /* Secrets.swift */; };
 		A7D647751D78852B00FF52A4 /* ContentUpdateConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D647741D78852B00FF52A4 /* ContentUpdateConsumer.swift */; };
+		A7D647771D79495500FF52A4 /* ObjectModel+Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D647761D79495500FF52A4 /* ObjectModel+Settings.swift */; };
+		A7D647791D7959B900FF52A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D647781D7959B900FF52A4 /* AppDelegate.swift */; };
 		BA665AAA129ABC2E206BA2C5 /* mapping.json in Resources */ = {isa = PBXBuildFile; fileRef = BA665BA7D5ECAA081827FF24 /* mapping.json */; };
 		EA0119E11931D2D400232E92 /* _Blog.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0119E01931D2D400232E92 /* _Blog.m */; };
 		EA0119E41931D2DD00232E92 /* Blog.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0119E31931D2DD00232E92 /* Blog.m */; };
@@ -209,6 +211,8 @@
 		A7D647701D7883E900FF52A4 /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		A7D647721D78845D00FF52A4 /* Secrets.swift.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Secrets.swift.sample; sourceTree = "<group>"; };
 		A7D647741D78852B00FF52A4 /* ContentUpdateConsumer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentUpdateConsumer.swift; sourceTree = "<group>"; };
+		A7D647761D79495500FF52A4 /* ObjectModel+Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ObjectModel+Settings.swift"; sourceTree = "<group>"; };
+		A7D647781D7959B900FF52A4 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA665BA7D5ECAA081827FF24 /* mapping.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = mapping.json; sourceTree = "<group>"; };
 		C9500B6301C764BA1D0D47AC /* Pods-Gambrinus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gambrinus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gambrinus/Pods-Gambrinus.debug.xcconfig"; sourceTree = "<group>"; };
 		DA69DCA20CC7434C02417339 /* Pods_Gambrinus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gambrinus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -588,6 +592,7 @@
 				EA3FDE801B18CB0700C93B7D /* Secrets.m */,
 				A7D647701D7883E900FF52A4 /* Secrets.swift */,
 				A7D647721D78845D00FF52A4 /* Secrets.swift.sample */,
+				A7D647781D7959B900FF52A4 /* AppDelegate.swift */,
 			);
 			path = Gambrinus;
 			sourceTree = "<group>";
@@ -822,6 +827,7 @@
 				EADDA420192B8ADF000CCEA9 /* ObjectModel+Posts.m */,
 				EAC877C6192E26D200309A23 /* ObjectModel+Settings.h */,
 				EAC877C7192E26D200309A23 /* ObjectModel+Settings.m */,
+				A7D647761D79495500FF52A4 /* ObjectModel+Settings.swift */,
 				EA50FCAE1B354D260000F304 /* ObjectModel+Styles.h */,
 				EA50FCAF1B354D260000F304 /* ObjectModel+Styles.m */,
 				EADDA41C192B8ACE000CCEA9 /* Post.h */,
@@ -1157,6 +1163,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7D647771D79495500FF52A4 /* ObjectModel+Settings.swift in Sources */,
 				EAC9A7D219446A10006AC834 /* Image.m in Sources */,
 				EA3FDE811B18CB0700C93B7D /* Secrets.m in Sources */,
 				EAC9A7DE194476CC006AC834 /* _PullStatus.m in Sources */,
@@ -1204,6 +1211,7 @@
 				EA16BF261B3978240018FED4 /* InfoSpacingCellDefinition.m in Sources */,
 				EA16BF231B39752C0018FED4 /* RateBeerScoreLabel.m in Sources */,
 				A734E2A31D7717EE0057D136 /* JCSFetchedCollectionViewController.m in Sources */,
+				A7D647791D7959B900FF52A4 /* AppDelegate.swift in Sources */,
 				A734E29F1D7717B50057D136 /* CDYImagesRetrieveConstants.m in Sources */,
 				EA925E2619517062001E0AC9 /* StandardPostsListController.m in Sources */,
 				EAC877C8192E26D200309A23 /* ObjectModel+Settings.m in Sources */,

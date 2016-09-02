@@ -46,6 +46,8 @@
     [ParseService registerCustomClasses];
 
     [Fabric with:@[CrashlyticsKit]];
+    
+    [self enableLogging];
 
     [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
 
@@ -85,6 +87,7 @@
     [migrationViewController setObjectModel:model];
     [migrationViewController setCompletion:^{
         FullOptionsMenuController *menuViewController = [[FullOptionsMenuController alloc] init];
+        [Injector.sharedInstance injectInto:menuViewController];
         KioskSlideMenuViewController *controller = [[KioskSlideMenuViewController alloc] initWithMainViewController:[[UINavigationController alloc] init] leftMenuViewController:menuViewController];
         BlogPostsViewController *postsController = [[BlogPostsViewController alloc] init];
         [Injector.sharedInstance injectInto:postsController];
@@ -135,7 +138,7 @@
 
 - (void)presentKioskController {
     SortOnlyMenuController *menuViewController = [[SortOnlyMenuController alloc] init];
-
+    [Injector.sharedInstance injectInto:menuViewController];
     KioskSlideMenuViewController *controller = [[KioskSlideMenuViewController alloc] initWithMainViewController:[[UINavigationController alloc] init] leftMenuViewController:menuViewController];
     KioskPostsViewController *postsController = [[KioskPostsViewController alloc] init];
     [Injector.sharedInstance injectInto:postsController];

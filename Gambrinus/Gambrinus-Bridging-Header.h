@@ -2,7 +2,7 @@
 //  Use this file to import your target's public headers that you would like to expose to Swift.
 //
 
-#import <UIKit/UIKit.h>
+#import "AppDelegate.h"
 
 #import "BloggerAPIConnection.h"
 #import "BlogImagesRetrieve.h"
@@ -17,6 +17,7 @@
 #import "ContentUpdate.h"
 
 #import "KioskController.h"
+#import "KioskPostsViewController.h"
 
 #import "MarkedPostsViewController.h"
 #import "MenuCell.h"
@@ -25,3 +26,6 @@
 
 #import "ParseService.h"
 #import "PostsViewController.h"
+
+#import "_Setting.h"
+#import "Setting.h"

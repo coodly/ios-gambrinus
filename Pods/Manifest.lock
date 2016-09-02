@@ -78,7 +78,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   LaughingAdventure:
-    :commit: 7060bfb2b74c10c8f76af64a521bddaba198d18d
+    :commit: b872740997ff906ea7e52ba87fe5bc2bbe57afc7
     :git: git@github.com:coodly/laughing-adventure.git
   SWLogger:
     :commit: 5bd06d09604d4a4e3b58469eed66eeb361a3fdc7
