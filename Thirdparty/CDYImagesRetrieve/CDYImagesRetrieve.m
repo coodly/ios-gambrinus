@@ -140,7 +140,7 @@
     [askData writeToFile:askDataPath options:NSDataWritingAtomic error:&writeError];
     if (writeError) {
         CDYIRLog(@"Write error:%@", writeError);
-        CDYIRLog(@"File name length:%d - %d", askDataPath.length, ((NSString *)[askDataPath.pathComponents lastObject]).length);
+        CDYIRLog(@"File name length:%tu - %tu", askDataPath.length, ((NSString *)[askDataPath.pathComponents lastObject]).length);
     }
     [self notifyHandlersForAsk:ask withImage:atAskSize];
     [self setProcessedAsk:nil];

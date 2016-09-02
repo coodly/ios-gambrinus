@@ -62,7 +62,7 @@ NSString *const kJCSFetchedCollectionViewCellIdentifier = @"JCSFetchedCollection
         [controller setDelegate:self];
         [self setAllObjects:controller];
 
-        JCSFLog(@"%d objects fetched", [controller.fetchedObjects count]);
+        JCSFLog(@"%tu objects fetched", [controller.fetchedObjects count]);
 
         [self.collectionView reloadData];
     }
@@ -122,7 +122,7 @@ NSString *const kJCSFetchedCollectionViewCellIdentifier = @"JCSFetchedCollection
         NSArray *visibleItems = self.collectionView.indexPathsForVisibleItems;
 
         NSArray *actions = [NSArray arrayWithArray:self.changeActions];
-        JCSFLog(@"Perform %d update actions", [actions count]);
+        JCSFLog(@"Perform %tu update actions", [actions count]);
         for (JCSCoreDataChangeAction *action in actions) {
             NSFetchedResultsChangeType type = action.type;
             switch (type) {
