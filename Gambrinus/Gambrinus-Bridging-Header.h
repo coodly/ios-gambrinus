@@ -24,7 +24,6 @@
 
 #import "ObjectModel.h"
 
-#import "ParseService.h"
 #import "PostsViewController.h"
 
 #import "_Setting.h"

@@ -35,12 +35,8 @@ class Injector: NSObject {
     private lazy var imagesRetrieve: BlogImagesRetrieve = {
         return BlogImagesRetrieve()
     }()
-    private lazy var parseService: ParseService = {
-        return ParseService(objectModel: self.objectModel)
-    }()
     private lazy var contentUpdate: ContentUpdate = {
         let update = ContentUpdate(objectModel: self.objectModel)!
-        update.parseService = self.parseService
         update.bloggerAPIConnection = self.bloggerAPI
         return update
     }()

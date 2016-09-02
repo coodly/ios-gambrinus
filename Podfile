@@ -8,7 +8,6 @@ def pods
     pod 'Fabric'
     pod 'Crashlytics'
     pod 'AFNetworking', '2.6.3'
-    pod 'Parse', '1.14.2'
     pod 'MRProgress'
     pod 'Ono'
     

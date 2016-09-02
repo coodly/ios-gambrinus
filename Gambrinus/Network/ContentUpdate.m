@@ -10,7 +10,6 @@
 #import "ObjectModel.h"
 #import "Post.h"
 #import "BloggerAPIConnection.h"
-#import "ParseService.h"
 #import "ObjectModel+Settings.h"
 #import "Constants.h"
 #import "NSDate+Calculations.h"
@@ -45,20 +44,12 @@
                 return;
             }
 
-            [self refreshParse:lastPullDate completion:^(BOOL pComplete, NSError *pError) {
-                if (error) {
-                    CDYLog(@"Parse refresh error:%@", error);
-                    completion(pComplete, pError);
-                    return;
-                }
-
-                [self.objectModel saveInBlock:^(CDYObjectModel *objectModel) {
-                    ObjectModel *model = (ObjectModel *) objectModel;
-                    [model setLastVerifiedPullDate:refreshStartTime];
-                } completion:^{
-                    TOCK(@"Content refreshed");
-                    completion(YES, nil);
-                }];
+            [self.objectModel saveInBlock:^(CDYObjectModel *objectModel) {
+                ObjectModel *model = (ObjectModel *) objectModel;
+                [model setLastVerifiedPullDate:refreshStartTime];
+            } completion:^{
+                TOCK(@"Content refreshed");
+                completion(YES, nil);
             }];
         }];
     }];
@@ -71,11 +62,6 @@
 - (void)refreshBlogger:(NSDate *)sinceDate completion:(ContentUpdateBlock)completion {
     CDYLog(@"refreshBlogger");
     [self.bloggerAPIConnection retrieveUpdatesSinceDate:sinceDate completion:completion];
-}
-
-- (void)refreshParse:(NSDate *)sinceDate completion:(ContentUpdateBlock)completion {
-    CDYLog(@"refreshParse");
-    [self.parseService retrieveUpdatesSinceDate:sinceDate completion:completion];
 }
 
 @end

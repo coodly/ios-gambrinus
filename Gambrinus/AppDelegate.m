@@ -21,13 +21,10 @@
 #import "BloggerAPIConnection.h"
 #import "BlogImagesRetrieve.h"
 #import "AFNetworkActivityIndicatorManager.h"
-#import "Secrets.h"
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
 #import <Gambrinus-Swift.h>
-#import <Parse/Parse.h>
 #import "SideMenuViewController.h"
-#import "ParseService.h"
 #import "ContentUpdate.h"
 #import "KioskPostsViewController.h"
 #import "BlogPostsViewController.h"
@@ -41,9 +38,6 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
     [[JCSLocalization sharedInstance] setForcedLocale:[NSLocale localeWithLocaleIdentifier:@"et"]];
-
-    [Parse setApplicationId:GambrinusParseApplicationId clientKey:GambrinusParseClientKey];
-    [ParseService registerCustomClasses];
 
     [Fabric with:@[CrashlyticsKit]];
     
