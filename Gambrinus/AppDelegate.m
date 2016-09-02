@@ -125,8 +125,6 @@
 - (void)guidedAccessStatusChanged  {
     if (UIAccessibilityIsGuidedAccessEnabled()) {
         [self presentKioskController];
-    } else {
-        [self.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
     }
 }
 
@@ -138,7 +136,7 @@
     [Injector.sharedInstance injectInto:postsController];
     [controller setInitialViewController:postsController];
 
-    [self.window.rootViewController presentViewController:controller animated:YES completion:nil];
+    [self.window setRootViewController:controller];
 }
 
 @end
