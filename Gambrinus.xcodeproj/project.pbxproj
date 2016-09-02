@@ -57,7 +57,6 @@
 		EA0668DF192A45C5009C83F1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA0668C7192A45C4009C83F1 /* UIKit.framework */; };
 		EA0668E7192A45C5009C83F1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA0668E5192A45C5009C83F1 /* InfoPlist.strings */; };
 		EA0668E9192A45C5009C83F1 /* GambrinusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0668E8192A45C5009C83F1 /* GambrinusTests.m */; };
-		EA0986D41B1E4356006FEC11 /* SideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0986D21B1E4356006FEC11 /* SideMenuViewController.m */; };
 		EA0986D71B1E4767006FEC11 /* KioskSlideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0986D61B1E4767006FEC11 /* KioskSlideMenuViewController.swift */; };
 		EA0986DB1B1EB174006FEC11 /* MenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0986D91B1EB174006FEC11 /* MenuCell.m */; };
 		EA0986DC1B1EB174006FEC11 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA0986DA1B1EB174006FEC11 /* MenuCell.xib */; };
@@ -96,9 +95,6 @@
 		EA50FCB01B354D260000F304 /* ObjectModel+Styles.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FCAF1B354D260000F304 /* ObjectModel+Styles.m */; };
 		EA50FCB31B355B920000F304 /* triplex-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA50FCB21B355B920000F304 /* triplex-bold.ttf */; };
 		EA50FCB61B355CE60000F304 /* UIFont+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FCB51B355CE60000F304 /* UIFont+Theme.m */; };
-		EA50FCBC1B3592EE0000F304 /* KioskModeMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FCBB1B3592EE0000F304 /* KioskModeMenuViewController.m */; };
-		EA50FCBE1B3593020000F304 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA50FCBD1B3593020000F304 /* MenuViewController.xib */; };
-		EA50FCC11B3593450000F304 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FCC01B3593450000F304 /* MenuViewController.m */; };
 		EA50FCC51B35B8AC0000F304 /* PostImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FCC31B35B8AC0000F304 /* PostImageCell.m */; };
 		EA50FCC61B35B8AC0000F304 /* PostImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA50FCC41B35B8AC0000F304 /* PostImageCell.xib */; };
 		EA50FCCA1B35B8C10000F304 /* PostContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FCC81B35B8C10000F304 /* PostContentCell.m */; };
@@ -245,8 +241,6 @@
 		EA0668E6192A45C5009C83F1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EA0668E8192A45C5009C83F1 /* GambrinusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GambrinusTests.m; sourceTree = "<group>"; };
 		EA0986C71B1E4082006FEC11 /* Gambrinus-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gambrinus-Bridging-Header.h"; sourceTree = "<group>"; };
-		EA0986D11B1E4356006FEC11 /* SideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideMenuViewController.h; sourceTree = "<group>"; };
-		EA0986D21B1E4356006FEC11 /* SideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideMenuViewController.m; sourceTree = "<group>"; };
 		EA0986D61B1E4767006FEC11 /* KioskSlideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KioskSlideMenuViewController.swift; sourceTree = "<group>"; };
 		EA0986D81B1EB174006FEC11 /* MenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuCell.h; sourceTree = "<group>"; };
 		EA0986D91B1EB174006FEC11 /* MenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuCell.m; sourceTree = "<group>"; };
@@ -315,11 +309,6 @@
 		EA50FCB21B355B920000F304 /* triplex-bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "triplex-bold.ttf"; sourceTree = "<group>"; };
 		EA50FCB41B355CE60000F304 /* UIFont+Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+Theme.h"; sourceTree = "<group>"; };
 		EA50FCB51B355CE60000F304 /* UIFont+Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+Theme.m"; sourceTree = "<group>"; };
-		EA50FCBA1B3592EE0000F304 /* KioskModeMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KioskModeMenuViewController.h; sourceTree = "<group>"; };
-		EA50FCBB1B3592EE0000F304 /* KioskModeMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KioskModeMenuViewController.m; sourceTree = "<group>"; };
-		EA50FCBD1B3593020000F304 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
-		EA50FCBF1B3593450000F304 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
-		EA50FCC01B3593450000F304 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		EA50FCC21B35B8AC0000F304 /* PostImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostImageCell.h; sourceTree = "<group>"; };
 		EA50FCC31B35B8AC0000F304 /* PostImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostImageCell.m; sourceTree = "<group>"; };
 		EA50FCC41B35B8AC0000F304 /* PostImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostImageCell.xib; sourceTree = "<group>"; };
@@ -720,16 +709,11 @@
 				EA15CB0E194EDE4900A140B5 /* BlogPostsViewController.m */,
 				A7B8B8001D782B5E003C8469 /* FullOptionsMenuController.swift */,
 				EA0986DD1B1EB581006FEC11 /* KioskController.h */,
-				EA50FCBA1B3592EE0000F304 /* KioskModeMenuViewController.h */,
-				EA50FCBB1B3592EE0000F304 /* KioskModeMenuViewController.m */,
 				EADDA401192A51E5000CCEA9 /* KioskPostsViewController.h */,
 				EADDA402192A51E5000CCEA9 /* KioskPostsViewController.m */,
 				EA0986D61B1E4767006FEC11 /* KioskSlideMenuViewController.swift */,
 				EA15CB12194EDE8800A140B5 /* MarkedPostsViewController.h */,
 				EA15CB13194EDE8800A140B5 /* MarkedPostsViewController.m */,
-				EA50FCBF1B3593450000F304 /* MenuViewController.h */,
-				EA50FCC01B3593450000F304 /* MenuViewController.m */,
-				EA50FCBD1B3593020000F304 /* MenuViewController.xib */,
 				EACECFE21B8CEC2900EB485F /* MigrationViewController.h */,
 				EACECFE31B8CEC2900EB485F /* MigrationViewController.m */,
 				EACECFE41B8CEC2900EB485F /* MigrationViewController.xib */,
@@ -749,8 +733,6 @@
 				EAA3E6E71930BBB500812B6F /* PoweredByViewController.h */,
 				EAA3E6E81930BBB500812B6F /* PoweredByViewController.m */,
 				EAA3E6E91930BBB500812B6F /* PoweredByViewController.xib */,
-				EA0986D11B1E4356006FEC11 /* SideMenuViewController.h */,
-				EA0986D21B1E4356006FEC11 /* SideMenuViewController.m */,
 				A7B8B8021D782BEB003C8469 /* SortOnlyMenuController.swift */,
 				EA925E2419517062001E0AC9 /* StandardPostsListController.h */,
 				EA925E2519517062001E0AC9 /* StandardPostsListController.m */,
@@ -1021,7 +1003,6 @@
 				EA0668D6192A45C4009C83F1 /* Images.xcassets in Resources */,
 				EADF7E7C192BDC7F00EC13AB /* PostViewController.xib in Resources */,
 				EA0986DC1B1EB174006FEC11 /* MenuCell.xib in Resources */,
-				EA50FCBE1B3593020000F304 /* MenuViewController.xib in Resources */,
 				EAC877B9192DDD1600309A23 /* PostsSearchInputView.xib in Resources */,
 				EA6FD0E51B18D74B000DB461 /* LaunchView.xib in Resources */,
 				EA43D7C9198B6A08000B5AF5 /* Localizable.strings in Resources */,
@@ -1152,7 +1133,6 @@
 				A734E2CC1D7817FC0057D136 /* UIImage+CDYImageScale.m in Sources */,
 				EADDA404192A51E5000CCEA9 /* KioskPostsViewController.m in Sources */,
 				A734E2C51D7815CF0057D136 /* UIView+JCSLoadView.m in Sources */,
-				EA50FCC11B3593450000F304 /* MenuViewController.m in Sources */,
 				EAC877BF192E224600309A23 /* NSDate+Calculations.m in Sources */,
 				A7D647711D7883E900FF52A4 /* Secrets.swift in Sources */,
 				EA50FC811B34A8110000F304 /* _Beer.m in Sources */,
@@ -1207,14 +1187,12 @@
 				A7B8B8191D782F88003C8469 /* JCSDecimalInputValidation.m in Sources */,
 				EA0119E41931D2DD00232E92 /* Blog.m in Sources */,
 				EA50FC991B351B9D0000F304 /* BloggerAPIConnection.m in Sources */,
-				EA50FCBC1B3592EE0000F304 /* KioskModeMenuViewController.m in Sources */,
 				EA0119E11931D2D400232E92 /* _Blog.m in Sources */,
 				A734E2C81D7816080057D136 /* NSString+JCSValidations.m in Sources */,
 				A7D6476F1D787B8100FF52A4 /* ImagesRetrieveConsumer.swift in Sources */,
 				EA011B24193B467300232E92 /* BlogPostView.m in Sources */,
 				A7B8B8061D782E46003C8469 /* JCSCoreDataChangeAction.m in Sources */,
 				EA50FC8A1B34A8200000F304 /* Beer.m in Sources */,
-				EA0986D41B1E4356006FEC11 /* SideMenuViewController.m in Sources */,
 				EA0668D0192A45C4009C83F1 /* main.m in Sources */,
 				EAC9A7D519446A91006AC834 /* ObjectModel+Images.m in Sources */,
 				EA0119EA1931E04F00232E92 /* NSDate+BloggerDate.m in Sources */,
