@@ -27,6 +27,7 @@
 		A7B8B8151D782F54003C8469 /* JCSNumericInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B8B8141D782F54003C8469 /* JCSNumericInputAccessoryView.m */; };
 		A7B8B8191D782F88003C8469 /* JCSDecimalInputValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B8B8181D782F88003C8469 /* JCSDecimalInputValidation.m */; };
 		A7B8B81C1D782F9E003C8469 /* JCSQuickNumericInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B8B81B1D782F9E003C8469 /* JCSQuickNumericInputAccessoryView.m */; };
+		A7CC88591D7DB4C800B28FEE /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CC88581D7DB4C800B28FEE /* CloudKit.framework */; };
 		A7D647691D7877C900FF52A4 /* Injector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D647681D7877C900FF52A4 /* Injector.swift */; };
 		A7D6476B1D78788F00FF52A4 /* ObjectModelConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D6476A1D78788F00FF52A4 /* ObjectModelConsumer.swift */; };
 		A7D6476D1D7878D100FF52A4 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D6476C1D7878D100FF52A4 /* PostsViewController.swift */; };
@@ -197,6 +198,8 @@
 		A7B8B81A1D782F9E003C8469 /* JCSQuickNumericInputAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCSQuickNumericInputAccessoryView.h; sourceTree = "<group>"; };
 		A7B8B81B1D782F9E003C8469 /* JCSQuickNumericInputAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCSQuickNumericInputAccessoryView.m; sourceTree = "<group>"; };
 		A7CC88551D7D74D500B28FEE /* posts-to-rb.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "posts-to-rb.json"; sourceTree = SOURCE_ROOT; };
+		A7CC88571D7DB4AA00B28FEE /* Gambrinus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Gambrinus.entitlements; sourceTree = "<group>"; };
+		A7CC88581D7DB4C800B28FEE /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		A7D647681D7877C900FF52A4 /* Injector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Injector.swift; sourceTree = "<group>"; };
 		A7D6476A1D78788F00FF52A4 /* ObjectModelConsumer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectModelConsumer.swift; sourceTree = "<group>"; };
 		A7D6476C1D7878D100FF52A4 /* PostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
@@ -402,6 +405,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7CC88591D7DB4C800B28FEE /* CloudKit.framework in Frameworks */,
 				EA0668C6192A45C4009C83F1 /* CoreGraphics.framework in Frameworks */,
 				EA2713AD1B1A4B40002D655E /* Fabric.framework in Frameworks */,
 				EA0668C8192A45C4009C83F1 /* UIKit.framework in Frameworks */,
@@ -534,6 +538,7 @@
 		EA0668C2192A45C4009C83F1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A7CC88581D7DB4C800B28FEE /* CloudKit.framework */,
 				EA2713AB1B1A4B40002D655E /* Fabric.framework */,
 				EA2713AC1B1A4B40002D655E /* Crashlytics.framework */,
 				EA0668C3192A45C4009C83F1 /* Foundation.framework */,
@@ -548,6 +553,7 @@
 		EA0668C9192A45C4009C83F1 /* Gambrinus */ = {
 			isa = PBXGroup;
 			children = (
+				A7CC88571D7DB4AA00B28FEE /* Gambrinus.entitlements */,
 				EADF7E68192BC5CE00EC13AB /* Categories */,
 				EADF7E6C192BCB2400EC13AB /* Cells */,
 				EADDA400192A51BD000CCEA9 /* Controllers */,
@@ -955,6 +961,17 @@
 				TargetAttributes = {
 					EA0668BF192A45C4009C83F1 = {
 						DevelopmentTeam = 5T8DRBFCBP;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					EA0668DA192A45C4009C83F1 = {
 						TestTargetID = EA0668BF192A45C4009C83F1;
@@ -1386,6 +1403,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Gambrinus/Gambrinus.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1415,6 +1433,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Gambrinus/Gambrinus.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
