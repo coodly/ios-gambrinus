@@ -15,7 +15,11 @@
  */
 
 import Foundation
+import CloudKit
 
-protocol ContentUpdateConsumer {
-    var contentUpdate: ContentUpdate! { get set }
+public class CloudContainer {
+    private let container: CKContainer
+    public init(container: CKContainer = CKContainer.default()) {
+        self.container = container
+    }
 }

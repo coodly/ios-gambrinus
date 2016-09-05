@@ -15,7 +15,8 @@
  */
 
 import Foundation
+import LaughingAdventure
 
-protocol ContentUpdateConsumer {
-    var contentUpdate: ContentUpdate! { get set }
+protocol GambrinusContainerConsumer {
+    var gambrinusContainer: CloudContainer! { get set }
 }

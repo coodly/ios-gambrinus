@@ -14,6 +14,7 @@
 * limitations under the License.
 */
 
+#if os(iOS)
 import Foundation
 
 public class ShakeWindow: UIWindow {
@@ -31,3 +32,4 @@ public class ShakeWindow: UIWindow {
         rootViewController?.present(navigation, animated: true, completion: nil)
     }
 }
+#endif

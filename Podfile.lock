@@ -55,7 +55,7 @@ PODS:
   - MRProgress/Stopable (0.8.3):
     - MRProgress/Helper
   - Ono (1.2.2)
-  - SWLogger (0.2.0)
+  - SWLogger (0.3.0)
 
 DEPENDENCIES:
   - AFNetworking (= 2.6.3)
@@ -74,10 +74,10 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   LaughingAdventure:
-    :commit: b872740997ff906ea7e52ba87fe5bc2bbe57afc7
+    :commit: 62df9eef5e31564d309b2c35bd5749ef6b903f64
     :git: git@github.com:coodly/laughing-adventure.git
   SWLogger:
-    :commit: 5bd06d09604d4a4e3b58469eed66eeb361a3fdc7
+    :commit: 5a14a25e047ed73726041d65376a02dc73a62644
     :git: git@github.com:coodly/swlogger.git
 
 SPEC CHECKSUMS:
@@ -87,7 +87,7 @@ SPEC CHECKSUMS:
   LaughingAdventure: faee0f18f7f9d1dd9571ec2dc217c66b3e6b82f9
   MRProgress: 16de7cc9f347e8846797a770db102a323fe7ef09
   Ono: 80b1c686777d3f6d5d5ce6fcac8a74afef4ca197
-  SWLogger: 817a1e80f0fa7c93214861212f16d3760e35cbeb
+  SWLogger: 0fb957f5e299a829e0e8e4fd2bd809e813ad2bd8
 
 PODFILE CHECKSUM: 12532f39fa0785983e625f62496bc13bbd083412
 

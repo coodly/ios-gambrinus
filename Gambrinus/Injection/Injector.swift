@@ -15,6 +15,8 @@
  */
 
 import Foundation
+import LaughingAdventure
+import CloudKit
 
 protocol InjectionHandler {
     func inject(into: AnyObject)
@@ -29,7 +31,7 @@ extension InjectionHandler {
 class Injector: NSObject {
     static let sharedInstance = Injector()
     
-    lazy var objectModel: ObjectModel = {
+    lazy var objectModel: Gambrinus.ObjectModel = {
         return ObjectModel()
     }()
     private lazy var imagesRetrieve: BlogImagesRetrieve = {
@@ -42,6 +44,12 @@ class Injector: NSObject {
     }()
     private lazy var bloggerAPI: BloggerAPIConnection = {
         return BloggerAPIConnection(blogURLString:"http://tartugambrinus.blogspot.com/", bloggerKey:BloggerAPIKey, objectModel:self.objectModel)
+    }()
+    private lazy var gambrinusContainer: CloudContainer = {
+        return CloudContainer(container: CKContainer(identifier: "com.coodly.gambrinus"))
+    }()
+    private lazy var beersContainer: CloudContainer = {
+        return CloudContainer(container: CKContainer(identifier: "com.coodly.beers"))
     }()
     
     func inject(into: AnyObject) {

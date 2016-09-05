@@ -15,7 +15,8 @@
  */
 
 import Foundation
+import LaughingAdventure
 
-protocol ContentUpdateConsumer {
-    var contentUpdate: ContentUpdate! { get set }
+protocol BeersContainerConsumer {
+    var beersContainer: CloudContainer! { get set }
 }
