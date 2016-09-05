@@ -59,7 +59,7 @@ class FullOptionsMenuController: MenuViewController, ObjectModelConsumer, Inject
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let order = objectModel.sortOrder()
+        let order = objectModel.managedObjectContext.sortOrder()
         guard let cell = cellFor(sortOrder: order) else {
             return
         }
@@ -116,7 +116,7 @@ class FullOptionsMenuController: MenuViewController, ObjectModelConsumer, Inject
     }
     
     private func tappedOnSort(cell: MenuCell) {
-        let currentOrder = objectModel.sortOrder()
+        let currentOrder = objectModel.managedObjectContext.sortOrder()
         var next: PostsSortOrder?
         switch cell {
         case postNameCell!:
@@ -142,7 +142,14 @@ class FullOptionsMenuController: MenuViewController, ObjectModelConsumer, Inject
         }
         
         Log.debug("Change order to \(next)")
-        objectModel.setSortOrder(nextOrder)
+        let saveClosure: CDYModelInjectionBlock = {
+            model in
+            
+            model!.managedObjectContext.setSortOrder(nextOrder)
+        }
+        objectModel.save(in: saveClosure) {
+            NotificationCenter.default.post(name: Notification.Name("GambrinusSortOrderChangedNotification"), object: nil)
+        }
         container.closeLeft()
     }
     

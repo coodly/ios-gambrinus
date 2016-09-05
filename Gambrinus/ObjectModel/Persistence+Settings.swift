@@ -15,6 +15,7 @@
  */
 
 import Foundation
+import CoreData
 
 enum Key: Int {
     case lastVerifiedPullDate
@@ -42,7 +43,7 @@ enum PostsSortOrder: Int {
     }
 }
 
-extension ObjectModel {
+extension NSManagedObjectContext {
     func sortOrder() -> PostsSortOrder {
         if let setting = setting(for: .sortOrder), let code = Int(setting.value), let value = PostsSortOrder(rawValue: code) {
             return value
@@ -52,13 +53,9 @@ extension ObjectModel {
     }
     
     func setSortOrder(_ value: PostsSortOrder) {
-        let saved: Setting = setting(for: .sortOrder) ?? managedObjectContext.insertEntity()
+        let saved: Setting = setting(for: .sortOrder) ?? insertEntity()
         saved.key = NSNumber(integerLiteral: Key.sortOrder.rawValue)
         saved.value = "\(value.rawValue)"
-
-        saveContext() {
-            NotificationCenter.default.post(name: Notification.Name("GambrinusSortOrderChangedNotification"), object: nil)
-        }
     }
     
     func lastKnownPullDate() -> Date {
@@ -70,7 +67,7 @@ extension ObjectModel {
     }
     
     private func save(date: Date, for key: Key) {
-        let saved = setting(for: key) ?? managedObjectContext.insertEntity()
+        let saved = setting(for: key) ?? insertEntity()
         saved.key = NSNumber(integerLiteral: key.rawValue)
         saved.value = (date as NSDate).iso8601String()
     }
@@ -84,6 +81,6 @@ extension ObjectModel {
     }
     
     private func setting(for key: Key) -> Setting? {
-        return managedObjectContext.fetchEntity(where: "key", hasValue: key.rawValue as AnyObject)
+        return fetchEntity(where: "key", hasValue: key.rawValue as AnyObject)
     }
 }

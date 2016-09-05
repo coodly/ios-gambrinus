@@ -23,7 +23,6 @@
 #import "BlogPostView.h"
 #import "UIView+JCSLoadView.h"
 #import "ObjectModel.h"
-#import "ContentUpdate.h"
 #import "PostImageController.h"
 #import "Constants.h"
 #import "PostContent.h"

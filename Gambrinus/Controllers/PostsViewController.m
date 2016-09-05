@@ -27,7 +27,6 @@
 #import "BlogImageAsk.h"
 #import "Post.h"
 #import "Image.h"
-#import "ContentUpdate.h"
 #import "PostsSearchInputView.h"
 #import "PostExtendedDetailsViewController.h"
 #import "NSString+Normalize.h"

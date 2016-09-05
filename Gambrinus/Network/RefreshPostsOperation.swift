@@ -25,7 +25,7 @@ class RefreshPostsOperation: ConcurrentOperation, ObjectModelConsumer, BloggerAP
     override func main() {
         Log.debug("Refresh posts")
         objectModel.perform() {
-            let lastPostsRefresDate = self.objectModel.lastKnownPullDate()
+            let lastPostsRefresDate = self.objectModel.managedObjectContext.lastKnownPullDate()
             
             Log.debug("Last know date: \(lastPostsRefresDate)")
             
@@ -36,7 +36,7 @@ class RefreshPostsOperation: ConcurrentOperation, ObjectModelConsumer, BloggerAP
                 
                 if success {
                     self.objectModel.perform() {
-                        self.objectModel.setPostsRefreshTime(refreshTime)
+                        self.objectModel.managedObjectContext.setPostsRefreshTime(refreshTime)
                     }
                 }
                 

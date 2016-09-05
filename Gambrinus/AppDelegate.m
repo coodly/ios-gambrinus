@@ -24,7 +24,6 @@
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
 #import <Gambrinus-Swift.h>
-#import "ContentUpdate.h"
 #import "KioskPostsViewController.h"
 #import "BlogPostsViewController.h"
 #import "JCSLocalization.h"
