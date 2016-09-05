@@ -196,6 +196,7 @@
 		A7B8B8181D782F88003C8469 /* JCSDecimalInputValidation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCSDecimalInputValidation.m; sourceTree = "<group>"; };
 		A7B8B81A1D782F9E003C8469 /* JCSQuickNumericInputAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCSQuickNumericInputAccessoryView.h; sourceTree = "<group>"; };
 		A7B8B81B1D782F9E003C8469 /* JCSQuickNumericInputAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCSQuickNumericInputAccessoryView.m; sourceTree = "<group>"; };
+		A7CC88551D7D74D500B28FEE /* posts-to-rb.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "posts-to-rb.json"; sourceTree = SOURCE_ROOT; };
 		A7D647681D7877C900FF52A4 /* Injector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Injector.swift; sourceTree = "<group>"; };
 		A7D6476A1D78788F00FF52A4 /* ObjectModelConsumer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectModelConsumer.swift; sourceTree = "<group>"; };
 		A7D6476C1D7878D100FF52A4 /* PostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
@@ -562,12 +563,13 @@
 				EADF7E63192B8DE500EC13AB /* Views */,
 				EA0668D2192A45C4009C83F1 /* AppDelegate.h */,
 				EA0668D3192A45C4009C83F1 /* AppDelegate.m */,
+				A7D647781D7959B900FF52A4 /* AppDelegate.swift */,
 				EAC877AC192DD50700309A23 /* Constants.h */,
 				EAC877AD192DD50700309A23 /* Constants.m */,
 				EA0668D5192A45C4009C83F1 /* Images.xcassets */,
 				A7D647701D7883E900FF52A4 /* Secrets.swift */,
 				A7D647721D78845D00FF52A4 /* Secrets.swift.sample */,
-				A7D647781D7959B900FF52A4 /* AppDelegate.swift */,
+				A7CC88551D7D74D500B28FEE /* posts-to-rb.json */,
 			);
 			path = Gambrinus;
 			sourceTree = "<group>";
