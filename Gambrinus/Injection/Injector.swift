@@ -38,9 +38,7 @@ class Injector: NSObject {
         return BlogImagesRetrieve()
     }()
     private lazy var contentUpdate: ContentUpdate = {
-        let update = ContentUpdate(objectModel: self.objectModel)!
-        update.bloggerAPIConnection = self.bloggerAPI
-        return update
+        return ContentUpdate()
     }()
     private lazy var bloggerAPI: BloggerAPIConnection = {
         return BloggerAPIConnection(blogURLString:"http://tartugambrinus.blogspot.com/", bloggerKey:BloggerAPIKey, objectModel:self.objectModel)
@@ -63,6 +61,10 @@ class Injector: NSObject {
         
         if var consumer = into as? ContentUpdateConsumer {
             consumer.contentUpdate = contentUpdate
+        }
+        
+        if var consumer = into as? BloggerAPIConsumer {
+            consumer.bloggerAPI = bloggerAPI
         }
     }
 }

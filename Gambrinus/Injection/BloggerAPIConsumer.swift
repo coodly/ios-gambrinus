@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Coodly LLC
+ * Copyright 2016 Coodly LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,10 +14,8 @@
  * limitations under the License.
  */
 
-typedef void (^ContentUpdateBlock)(BOOL complete, NSError *error);
+import Foundation
 
-@protocol RemoteService
-
-- (void)retrieveUpdatesSinceDate:(NSDate *)date completion:(ContentUpdateBlock)completion;
-
-@end
+protocol BloggerAPIConsumer {
+    var bloggerAPI: BloggerAPIConnection! { get set }
+}

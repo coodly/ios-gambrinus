@@ -30,6 +30,9 @@
 		A7CC88591D7DB4C800B28FEE /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CC88581D7DB4C800B28FEE /* CloudKit.framework */; };
 		A7CC885D1D7DB88600B28FEE /* BeersContainerConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CC885C1D7DB88600B28FEE /* BeersContainerConsumer.swift */; };
 		A7CC885F1D7DB8A700B28FEE /* GambrinusContainerConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CC885E1D7DB8A700B28FEE /* GambrinusContainerConsumer.swift */; };
+		A7CC88611D7DBA9500B28FEE /* ContentUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CC88601D7DBA9500B28FEE /* ContentUpdate.swift */; };
+		A7CC88631D7DC2F100B28FEE /* RefreshPostsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CC88621D7DC2F100B28FEE /* RefreshPostsOperation.swift */; };
+		A7CC88651D7DC35500B28FEE /* BloggerAPIConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CC88641D7DC35500B28FEE /* BloggerAPIConsumer.swift */; };
 		A7D647691D7877C900FF52A4 /* Injector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D647681D7877C900FF52A4 /* Injector.swift */; };
 		A7D6476B1D78788F00FF52A4 /* ObjectModelConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D6476A1D78788F00FF52A4 /* ObjectModelConsumer.swift */; };
 		A7D6476D1D7878D100FF52A4 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D6476C1D7878D100FF52A4 /* PostsViewController.swift */; };
@@ -92,7 +95,6 @@
 		EA50FC8F1B351AA40000F304 /* _BeerStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FC8E1B351AA40000F304 /* _BeerStyle.m */; };
 		EA50FC921B351AB70000F304 /* BeerStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FC911B351AB70000F304 /* BeerStyle.m */; };
 		EA50FC991B351B9D0000F304 /* BloggerAPIConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FC961B351B9D0000F304 /* BloggerAPIConnection.m */; };
-		EA50FCA61B351C6C0000F304 /* ContentUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FCA51B351C6C0000F304 /* ContentUpdate.m */; };
 		EA50FCAA1B3545A80000F304 /* ObjectModel+Beers.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FCA91B3545A80000F304 /* ObjectModel+Beers.m */; };
 		EA50FCAD1B354C810000F304 /* ObjectModel+Brewers.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FCAC1B354C810000F304 /* ObjectModel+Brewers.m */; };
 		EA50FCB01B354D260000F304 /* ObjectModel+Styles.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FCAF1B354D260000F304 /* ObjectModel+Styles.m */; };
@@ -204,6 +206,9 @@
 		A7CC88581D7DB4C800B28FEE /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		A7CC885C1D7DB88600B28FEE /* BeersContainerConsumer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeersContainerConsumer.swift; sourceTree = "<group>"; };
 		A7CC885E1D7DB8A700B28FEE /* GambrinusContainerConsumer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GambrinusContainerConsumer.swift; sourceTree = "<group>"; };
+		A7CC88601D7DBA9500B28FEE /* ContentUpdate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentUpdate.swift; sourceTree = "<group>"; };
+		A7CC88621D7DC2F100B28FEE /* RefreshPostsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshPostsOperation.swift; sourceTree = "<group>"; };
+		A7CC88641D7DC35500B28FEE /* BloggerAPIConsumer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloggerAPIConsumer.swift; sourceTree = "<group>"; };
 		A7D647681D7877C900FF52A4 /* Injector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Injector.swift; sourceTree = "<group>"; };
 		A7D6476A1D78788F00FF52A4 /* ObjectModelConsumer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectModelConsumer.swift; sourceTree = "<group>"; };
 		A7D6476C1D7878D100FF52A4 /* PostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
@@ -305,8 +310,6 @@
 		EA50FC911B351AB70000F304 /* BeerStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeerStyle.m; sourceTree = "<group>"; };
 		EA50FC951B351B9D0000F304 /* BloggerAPIConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BloggerAPIConnection.h; sourceTree = "<group>"; };
 		EA50FC961B351B9D0000F304 /* BloggerAPIConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BloggerAPIConnection.m; sourceTree = "<group>"; };
-		EA50FCA41B351C6C0000F304 /* ContentUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentUpdate.h; sourceTree = "<group>"; };
-		EA50FCA51B351C6C0000F304 /* ContentUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentUpdate.m; sourceTree = "<group>"; };
 		EA50FCA71B351E8C0000F304 /* RemoteService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RemoteService.h; sourceTree = "<group>"; };
 		EA50FCA81B3545A80000F304 /* ObjectModel+Beers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ObjectModel+Beers.h"; sourceTree = "<group>"; };
 		EA50FCA91B3545A80000F304 /* ObjectModel+Beers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ObjectModel+Beers.m"; sourceTree = "<group>"; };
@@ -500,6 +503,7 @@
 			isa = PBXGroup;
 			children = (
 				A7CC885C1D7DB88600B28FEE /* BeersContainerConsumer.swift */,
+				A7CC88641D7DC35500B28FEE /* BloggerAPIConsumer.swift */,
 				A7D647741D78852B00FF52A4 /* ContentUpdateConsumer.swift */,
 				A7CC885E1D7DB8A700B28FEE /* GambrinusContainerConsumer.swift */,
 				A7D6476E1D787B8100FF52A4 /* ImagesRetrieveConsumer.swift */,
@@ -758,8 +762,8 @@
 			isa = PBXGroup;
 			children = (
 				EA50FC931B351B4D0000F304 /* Blogger */,
-				EA50FCA41B351C6C0000F304 /* ContentUpdate.h */,
-				EA50FCA51B351C6C0000F304 /* ContentUpdate.m */,
+				A7CC88601D7DBA9500B28FEE /* ContentUpdate.swift */,
+				A7CC88621D7DC2F100B28FEE /* RefreshPostsOperation.swift */,
 				EA50FCA71B351E8C0000F304 /* RemoteService.h */,
 			);
 			path = Network;
@@ -1150,7 +1154,6 @@
 				EACECFE51B8CEC2900EB485F /* MigrationViewController.m in Sources */,
 				A7CC885F1D7DB8A700B28FEE /* GambrinusContainerConsumer.swift in Sources */,
 				A7D6476B1D78788F00FF52A4 /* ObjectModelConsumer.swift in Sources */,
-				EA50FCA61B351C6C0000F304 /* ContentUpdate.m in Sources */,
 				EA0986D71B1E4767006FEC11 /* KioskSlideMenuViewController.swift in Sources */,
 				EA50FCAA1B3545A80000F304 /* ObjectModel+Beers.m in Sources */,
 				EA50FC8B1B34A8200000F304 /* Brewer.m in Sources */,
@@ -1195,12 +1198,14 @@
 				EA50FC921B351AB70000F304 /* BeerStyle.m in Sources */,
 				EA50FCCA1B35B8C10000F304 /* PostContentCell.m in Sources */,
 				EA74C9EA1B82EDD700A0C748 /* PostContent.m in Sources */,
+				A7CC88631D7DC2F100B28FEE /* RefreshPostsOperation.swift in Sources */,
 				EADDA416192B88C6000CCEA9 /* Gambrinus.xcdatamodeld in Sources */,
 				A7B8B81C1D782F9E003C8469 /* JCSQuickNumericInputAccessoryView.m in Sources */,
 				EA16BF081B392A6C0018FED4 /* InfoPostContentCellDefinition.m in Sources */,
 				EA74C9E71B82EDCA00A0C748 /* _PostContent.m in Sources */,
 				A7B8B8091D782E82003C8469 /* NSDate+ISO8601.m in Sources */,
 				A7D6476D1D7878D100FF52A4 /* PostsViewController.swift in Sources */,
+				A7CC88611D7DBA9500B28FEE /* ContentUpdate.swift in Sources */,
 				EA16BF1A1B3969AB0018FED4 /* RateBeerDetailsCollectionViewCell.m in Sources */,
 				EA50FCC51B35B8AC0000F304 /* PostImageCell.m in Sources */,
 				EA50FCCE1B35B9260000F304 /* UIView+Identifier.m in Sources */,
@@ -1242,6 +1247,7 @@
 				EA50FCDA1B36C2E70000F304 /* PostInfoRowCell.m in Sources */,
 				EADF7E6F192BCB9100EC13AB /* PostCell.m in Sources */,
 				EA50FCD11B35B9570000F304 /* UIView+Loading.m in Sources */,
+				A7CC88651D7DC35500B28FEE /* BloggerAPIConsumer.swift in Sources */,
 				A7B8B8011D782B5E003C8469 /* FullOptionsMenuController.swift in Sources */,
 				EA16BF201B396D960018FED4 /* RateBeerDetailsCellDefinition.m in Sources */,
 			);

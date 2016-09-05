@@ -24,8 +24,8 @@
 @interface PostViewController : UIViewController
 
 @property (nonatomic, strong) Post *post;
-@property (nonatomic, strong) ContentUpdate *contentUpdate;
 @property (nonatomic, strong) BlogImagesRetrieve *imagesRetrieve;
+@property (nonatomic, strong) ContentUpdate *contentUpdate;
 @property (nonatomic, assign) BOOL showMarked;
 @property (nonatomic, strong) ObjectModel *objectModel;
 

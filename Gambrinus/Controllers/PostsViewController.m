@@ -32,6 +32,7 @@
 #import "PostExtendedDetailsViewController.h"
 #import "NSString+Normalize.h"
 #import "ObjectModel+Settings.h"
+#import "Gambrinus-Swift.h"
 
 @interface PostsViewController () <UICollectionViewDelegateFlowLayout>
 
@@ -107,9 +108,11 @@
     if (showHud) {
         hud = [ProgressOverlayView showHUDOnView:self.navigationController.view];
     }
-    [self.contentUpdate updateWithCompletionHandler:^(BOOL complete, NSError *error) {
-        [self.refreshControl endRefreshing];
-        [hud hide];
+    [self.contentUpdate updatePostsWithCompletion:^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.refreshControl endRefreshing];
+            [hud hide];
+        });
     }];
 }
 

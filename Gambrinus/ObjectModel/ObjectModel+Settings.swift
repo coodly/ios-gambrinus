@@ -61,6 +61,28 @@ extension ObjectModel {
         }
     }
     
+    func lastKnownPullDate() -> Date {
+        return date(for: .lastVerifiedPullDate)
+    }
+    
+    func setPostsRefreshTime(_ date: Date) {
+        save(date: date, for: .lastVerifiedPullDate)
+    }
+    
+    private func save(date: Date, for key: Key) {
+        let saved = setting(for: key) ?? managedObjectContext.insertEntity()
+        saved.key = NSNumber(integerLiteral: key.rawValue)
+        saved.value = (date as NSDate).iso8601String()
+    }
+    
+    private func date(for key: Key, defaultValue: Date = Date.distantPast) -> Date {
+        if let existing = setting(for: key) {
+            return existing.dateValue()
+        }
+        
+        return defaultValue
+    }
+    
     private func setting(for key: Key) -> Setting? {
         return managedObjectContext.fetchEntity(where: "key", hasValue: key.rawValue as AnyObject)
     }

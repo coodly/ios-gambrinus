@@ -27,6 +27,7 @@
 #import "PostImageController.h"
 #import "Constants.h"
 #import "PostContent.h"
+#import "Gambrinus-Swift.h"
 
 CGFloat const kPostContentPadding = 20;
 
@@ -130,7 +131,7 @@ CGFloat const kPostContentPadding = 20;
 }
 
 - (void)startPullRefresh {
-    [self.contentUpdate refreshPost:self.post withCompletionHandler:^(BOOL complete, NSError *error) {
+    [self.contentUpdate refreshWithPost:self.post completion:^{
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.post.managedObjectContext refreshObject:self.post mergeChanges:YES];
             [self loadPostDetails];
