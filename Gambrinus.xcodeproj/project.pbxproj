@@ -29,6 +29,7 @@
 		A7B8B8151D782F54003C8469 /* JCSNumericInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B8B8141D782F54003C8469 /* JCSNumericInputAccessoryView.m */; };
 		A7B8B8191D782F88003C8469 /* JCSDecimalInputValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B8B8181D782F88003C8469 /* JCSDecimalInputValidation.m */; };
 		A7B8B81C1D782F9E003C8469 /* JCSQuickNumericInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B8B81B1D782F9E003C8469 /* JCSQuickNumericInputAccessoryView.m */; };
+		A7B9E0831D7EC36900AB64AA /* Gambrinus.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A7B9E0811D7EC36900AB64AA /* Gambrinus.xcdatamodeld */; };
 		A7CC88591D7DB4C800B28FEE /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CC88581D7DB4C800B28FEE /* CloudKit.framework */; };
 		A7CC885D1D7DB88600B28FEE /* BeersContainerConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CC885C1D7DB88600B28FEE /* BeersContainerConsumer.swift */; };
 		A7CC885F1D7DB8A700B28FEE /* GambrinusContainerConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CC885E1D7DB8A700B28FEE /* GambrinusContainerConsumer.swift */; };
@@ -114,7 +115,6 @@
 		EA50FCD61B35BAAC0000F304 /* PostExtendedDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA50FCD41B35BAAC0000F304 /* PostExtendedDetailsViewController.xib */; };
 		EA50FCDA1B36C2E70000F304 /* PostInfoRowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50FCD81B36C2E70000F304 /* PostInfoRowCell.m */; };
 		EA50FCDB1B36C2E70000F304 /* PostInfoRowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA50FCD91B36C2E70000F304 /* PostInfoRowCell.xib */; };
-		EA5F6FA61B8CE6B100A8E4F2 /* Map_v2tov3.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = EA5F6FA51B8CE6B100A8E4F2 /* Map_v2tov3.xcmappingmodel */; };
 		EA666BCA19822C4E00F72C0F /* PostImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA666BC819822C4E00F72C0F /* PostImageController.m */; };
 		EA666BCB19822C4E00F72C0F /* PostImageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA666BC919822C4E00F72C0F /* PostImageController.xib */; };
 		EA6FD0E51B18D74B000DB461 /* LaunchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA6FD0E41B18D74B000DB461 /* LaunchView.xib */; };
@@ -142,7 +142,6 @@
 		EACECFE61B8CEC2900EB485F /* MigrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EACECFE41B8CEC2900EB485F /* MigrationViewController.xib */; };
 		EADDA404192A51E5000CCEA9 /* KioskPostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EADDA402192A51E5000CCEA9 /* KioskPostsViewController.m */; };
 		EADDA413192B88B1000CCEA9 /* ObjectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EADDA412192B88B1000CCEA9 /* ObjectModel.m */; };
-		EADDA416192B88C6000CCEA9 /* Gambrinus.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EADDA414192B88C6000CCEA9 /* Gambrinus.xcdatamodeld */; };
 		EADDA41B192B8AC8000CCEA9 /* _Post.m in Sources */ = {isa = PBXBuildFile; fileRef = EADDA41A192B8AC8000CCEA9 /* _Post.m */; };
 		EADDA41E192B8ACE000CCEA9 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = EADDA41D192B8ACE000CCEA9 /* Post.m */; };
 		EADDA421192B8ADF000CCEA9 /* ObjectModel+Posts.m in Sources */ = {isa = PBXBuildFile; fileRef = EADDA420192B8ADF000CCEA9 /* ObjectModel+Posts.m */; };
@@ -207,6 +206,7 @@
 		A7B8B8181D782F88003C8469 /* JCSDecimalInputValidation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCSDecimalInputValidation.m; sourceTree = "<group>"; };
 		A7B8B81A1D782F9E003C8469 /* JCSQuickNumericInputAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCSQuickNumericInputAccessoryView.h; sourceTree = "<group>"; };
 		A7B8B81B1D782F9E003C8469 /* JCSQuickNumericInputAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCSQuickNumericInputAccessoryView.m; sourceTree = "<group>"; };
+		A7B9E0821D7EC36900AB64AA /* Gambrinus.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Gambrinus.xcdatamodel; sourceTree = "<group>"; };
 		A7CC88551D7D74D500B28FEE /* posts-to-rb.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "posts-to-rb.json"; sourceTree = SOURCE_ROOT; };
 		A7CC88571D7DB4AA00B28FEE /* Gambrinus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Gambrinus.entitlements; sourceTree = "<group>"; };
 		A7CC88581D7DB4C800B28FEE /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
@@ -303,7 +303,6 @@
 		EA43D7C0198B6A08000B5AF5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
 		EA43D7C3198B6A08000B5AF5 /* et */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = et; path = InfoPlist.strings; sourceTree = "<group>"; };
 		EA43D7C5198B6A08000B5AF5 /* et */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = et; path = Localizable.strings; sourceTree = "<group>"; };
-		EA50FC7A1B34A5EE0000F304 /* Gambrinus_2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Gambrinus_2.xcdatamodel; sourceTree = "<group>"; };
 		EA50FC7B1B34A8110000F304 /* _Beer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Beer.h; sourceTree = "<group>"; };
 		EA50FC7C1B34A8110000F304 /* _Beer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Beer.m; sourceTree = "<group>"; };
 		EA50FC7D1B34A8110000F304 /* _Brewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Brewer.h; sourceTree = "<group>"; };
@@ -344,8 +343,6 @@
 		EA50FCD71B36C2E70000F304 /* PostInfoRowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostInfoRowCell.h; sourceTree = "<group>"; };
 		EA50FCD81B36C2E70000F304 /* PostInfoRowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostInfoRowCell.m; sourceTree = "<group>"; };
 		EA50FCD91B36C2E70000F304 /* PostInfoRowCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostInfoRowCell.xib; sourceTree = "<group>"; };
-		EA528A1C1B88B03B002A877F /* Gambrinus_3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Gambrinus_3.xcdatamodel; sourceTree = "<group>"; };
-		EA5F6FA51B8CE6B100A8E4F2 /* Map_v2tov3.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = Map_v2tov3.xcmappingmodel; sourceTree = "<group>"; };
 		EA666BC719822C4E00F72C0F /* PostImageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostImageController.h; sourceTree = "<group>"; };
 		EA666BC819822C4E00F72C0F /* PostImageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostImageController.m; sourceTree = "<group>"; };
 		EA666BC919822C4E00F72C0F /* PostImageController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostImageController.xib; sourceTree = "<group>"; };
@@ -394,7 +391,6 @@
 		EADDA402192A51E5000CCEA9 /* KioskPostsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KioskPostsViewController.m; sourceTree = "<group>"; };
 		EADDA411192B88B1000CCEA9 /* ObjectModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectModel.h; sourceTree = "<group>"; };
 		EADDA412192B88B1000CCEA9 /* ObjectModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectModel.m; sourceTree = "<group>"; };
-		EADDA415192B88C6000CCEA9 /* Gambrinus.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Gambrinus.xcdatamodel; sourceTree = "<group>"; };
 		EADDA419192B8AC8000CCEA9 /* _Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Post.h; sourceTree = "<group>"; };
 		EADDA41A192B8AC8000CCEA9 /* _Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Post.m; sourceTree = "<group>"; };
 		EADDA41C192B8ACE000CCEA9 /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
@@ -793,10 +789,9 @@
 				EA0119E31931D2DD00232E92 /* Blog.m */,
 				EA50FC861B34A8200000F304 /* Brewer.h */,
 				EA50FC871B34A8200000F304 /* Brewer.m */,
-				EADDA414192B88C6000CCEA9 /* Gambrinus.xcdatamodeld */,
+				A7B9E0811D7EC36900AB64AA /* Gambrinus.xcdatamodeld */,
 				EAC9A7D019446A10006AC834 /* Image.h */,
 				EAC9A7D119446A10006AC834 /* Image.m */,
-				EA5F6FA51B8CE6B100A8E4F2 /* Map_v2tov3.xcmappingmodel */,
 				EADDA411192B88B1000CCEA9 /* ObjectModel.h */,
 				EADDA412192B88B1000CCEA9 /* ObjectModel.m */,
 				EA50FCA81B3545A80000F304 /* ObjectModel+Beers.h */,
@@ -1213,7 +1208,6 @@
 				EA50FCCA1B35B8C10000F304 /* PostContentCell.m in Sources */,
 				EA74C9EA1B82EDD700A0C748 /* PostContent.m in Sources */,
 				A7CC88631D7DC2F100B28FEE /* RefreshPostsOperation.swift in Sources */,
-				EADDA416192B88C6000CCEA9 /* Gambrinus.xcdatamodeld in Sources */,
 				A7B8B81C1D782F9E003C8469 /* JCSQuickNumericInputAccessoryView.m in Sources */,
 				EA16BF081B392A6C0018FED4 /* InfoPostContentCellDefinition.m in Sources */,
 				EA74C9E71B82EDCA00A0C748 /* _PostContent.m in Sources */,
@@ -1240,6 +1234,7 @@
 				A7D6476F1D787B8100FF52A4 /* ImagesRetrieveConsumer.swift in Sources */,
 				EA011B24193B467300232E92 /* BlogPostView.m in Sources */,
 				A7B8B8061D782E46003C8469 /* JCSCoreDataChangeAction.m in Sources */,
+				A7B9E0831D7EC36900AB64AA /* Gambrinus.xcdatamodeld in Sources */,
 				EA50FC8A1B34A8200000F304 /* Beer.m in Sources */,
 				EA0668D0192A45C4009C83F1 /* main.m in Sources */,
 				EAC9A7D519446A91006AC834 /* ObjectModel+Images.m in Sources */,
@@ -1256,7 +1251,6 @@
 				EADDA41E192B8ACE000CCEA9 /* Post.m in Sources */,
 				A7B8B80F1D782F19003C8469 /* UIApplication+Keyboard.m in Sources */,
 				EAC877C5192E26C800309A23 /* Setting.m in Sources */,
-				EA5F6FA61B8CE6B100A8E4F2 /* Map_v2tov3.xcmappingmodel in Sources */,
 				A734E2A71D77182F0057D136 /* CDYObjectModel.m in Sources */,
 				EA16BF051B392A5B0018FED4 /* InfoImageCellDefinition.m in Sources */,
 				EA15CB15194EDE8800A140B5 /* MarkedPostsViewController.m in Sources */,
@@ -1559,14 +1553,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		EADDA414192B88C6000CCEA9 /* Gambrinus.xcdatamodeld */ = {
+		A7B9E0811D7EC36900AB64AA /* Gambrinus.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				EA528A1C1B88B03B002A877F /* Gambrinus_3.xcdatamodel */,
-				EA50FC7A1B34A5EE0000F304 /* Gambrinus_2.xcdatamodel */,
-				EADDA415192B88C6000CCEA9 /* Gambrinus.xcdatamodel */,
+				A7B9E0821D7EC36900AB64AA /* Gambrinus.xcdatamodel */,
 			);
-			currentVersion = EA528A1C1B88B03B002A877F /* Gambrinus_3.xcdatamodel */;
+			currentVersion = A7B9E0821D7EC36900AB64AA /* Gambrinus.xcdatamodel */;
 			path = Gambrinus.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
