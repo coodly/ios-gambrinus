@@ -32,6 +32,10 @@ class ContentUpdate: NSObject, InjectionHandler, ObjectModelConsumer {
         inject(into: postsRefresh)
         operations.add(operation: postsRefresh)
         
+        let pullMappings = PullPostMappingsOperation()
+        inject(into: pullMappings)
+        operations.add(operation: pullMappings)
+        
         let notifyCompletion = BlockOperation(block: completion)
         operations.add(operation: notifyCompletion)
         

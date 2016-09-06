@@ -24,17 +24,16 @@ public protocol RemoteRecord {
 
     init()
     
-    mutating func load(_ record: CKRecord) -> Bool
-    mutating func loadFields(_ record: CKRecord) -> Bool
+    mutating func loadFields(from record: CKRecord) -> Bool
     func referenceRepresentation() -> CKReference
 }
 
 public extension RemoteRecord {
-    final mutating func load(_ record: CKRecord) -> Bool {
+    internal mutating func load(record: CKRecord) -> Bool {
         recordData = archiveRecord(record) as Data
         recordName = record.recordID.recordName
         parent = record.parent?.recordID
-        return loadFields(record)
+        return loadFields(from: record)
     }
     
     func referenceRepresentation() -> CKReference {

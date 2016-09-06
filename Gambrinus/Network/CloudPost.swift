@@ -15,11 +15,24 @@
  */
 
 import Foundation
+import LaughingAdventure
 import CloudKit
 
-public class CloudContainer {
-    private let container: CKContainer
-    public init(container: CKContainer = CKContainer.default()) {
-        self.container = container
+struct CloudPost: RemoteRecord {
+    var parent: CKRecordID?
+    var recordData: Data?
+    var recordName: String?
+    static var recordType: String {
+        return "Post"
+    }
+    
+    var identifier: String?
+    var rateBeers: [String]?
+
+    mutating func loadFields(from record: CKRecord) -> Bool {
+        identifier = record["identifier"] as? String
+        rateBeers = record["rateBeers"] as? [String]
+        
+        return true
     }
 }

@@ -17,9 +17,17 @@
 import Foundation
 import LaughingAdventure
 import SWLogger
+import CloudKit
 
-class PullPostMappingsOperation: ConcurrentOperation {
-    override func main() {
-        Log.debug("Pull post mappings")
+class PullPostMappingsOperation: CloudKitRequest<CloudPost>, GambrinusContainerConsumer {
+    var gambrinusContainer: CKContainer! {
+        didSet {
+            container = gambrinusContainer
+        }
+    }
+    
+    override func performRequest() {
+        Log.debug("Pull maapings")
+        fetchFirst(inDatabase: .public)
     }
 }

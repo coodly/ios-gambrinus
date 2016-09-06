@@ -23,6 +23,7 @@ public class SubscriptionCheck {
     private let options: CKSubscriptionOptions
     private let desiredKeys: [String]
     private let deleteOthers: Bool
+    public var container = CKContainer.default()
     
     public init(recordType: String, predicate: NSPredicate = NSPredicate(format: "TRUEPREDICATE"), options: CKSubscriptionOptions, desiredKeys: [String] = [], deleteOthers: Bool = false) {
         self.recordType = recordType
@@ -71,7 +72,7 @@ public class SubscriptionCheck {
                         Logging.log("Deletion result: \(id) - \(error)")
                     }
                     
-                    Cloud.container.publicCloudDatabase.delete(withSubscriptionID: sub.subscriptionID, completionHandler: deletionHandler)
+                    self.container.publicCloudDatabase.delete(withSubscriptionID: sub.subscriptionID, completionHandler: deletionHandler)
                 }
             }
             
@@ -84,7 +85,7 @@ public class SubscriptionCheck {
             self.subscribe()
         }
 
-        Cloud.container.publicCloudDatabase.fetchAllSubscriptions(completionHandler: resultHandler)
+        container.publicCloudDatabase.fetchAllSubscriptions(completionHandler: resultHandler)
     }
     
     func subscribe() {
@@ -98,7 +99,7 @@ public class SubscriptionCheck {
             notificationInfo.desiredKeys = desiredKeys
         }
         subscription.notificationInfo = notificationInfo
-        Cloud.container.publicCloudDatabase.save(subscription) {
+        container.publicCloudDatabase.save(subscription) {
             subscription, error in
             
             Logging.log("Subscription result: \(subscription) - \(error)")

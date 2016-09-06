@@ -16,33 +16,31 @@
 
 import CloudKit
 
-public struct Cloud {
-    public static var container: CKContainer = CKContainer.default()
-}
-
 public enum CloudResult<T: RemoteRecord> {
     case success([T], [CKRecordID])
     case failure
 }
 
-public class CloudKitRequest<T: RemoteRecord>: ConcurrentOperation, CloudRequest {
+open class CloudKitRequest<T: RemoteRecord>: ConcurrentOperation, CloudRequest {
     fileprivate var records = [T]()
     fileprivate var deleted = [CKRecordID]()
+    
+    public var container = CKContainer.default()
     
     public override init() {
         
     }
     
-    public override func main() {
+    public final override func main() {
         Logging.log("Start \(T.self)")
         performRequest()
     }
     
-    public func performRequest() {
+    open func performRequest() {
         Logging.log("Override: \(#function)")
     }
     
-    public func handleResult(_ result: CloudResult<T>, completion: () -> ()) {
+    open func handle(result: CloudResult<T>, completion: () -> ()) {
         Logging.log("Handle result \(result)")
         completion()
     }
@@ -50,9 +48,9 @@ public class CloudKitRequest<T: RemoteRecord>: ConcurrentOperation, CloudRequest
     fileprivate func database(_ type: UsedDatabase) -> CKDatabase {
         switch type {
         case .public:
-            return Cloud.container.publicCloudDatabase
+            return container.publicCloudDatabase
         case .private:
-            return Cloud.container.privateCloudDatabase
+            return container.privateCloudDatabase
         }
     }
     
@@ -81,9 +79,9 @@ public class CloudKitRequest<T: RemoteRecord>: ConcurrentOperation, CloudRequest
         } else if let error = error {
             Logging.log("Error: \(error)")
             hadFailure = true
-            self.handleResult(.failure, completion: finalizer)
+            self.handle(result: .failure, completion: finalizer)
         } else {
-            self.handleResult(.success(self.records, self.deleted), completion: finalizer)
+            self.handle(result: .success(self.records, self.deleted), completion: finalizer)
         }
     }
 }
@@ -126,7 +124,7 @@ public extension CloudKitRequest {
             if let saved = saved {
                 for s in saved {
                     var local = T()
-                    if local.load(s) {
+                    if local.load(record: s) {
                         self.records.append(local)
                     }
                 }
@@ -188,7 +186,7 @@ public extension CloudKitRequest {
             record in
             
             var local = T()
-            if local.load(record) {
+            if local.load(record: record) {
                 self.records.append(local)
             }
         }

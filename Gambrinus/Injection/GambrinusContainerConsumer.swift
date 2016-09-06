@@ -15,8 +15,8 @@
  */
 
 import Foundation
-import LaughingAdventure
+import CloudKit
 
 protocol GambrinusContainerConsumer {
-    var gambrinusContainer: CloudContainer! { get set }
+    var gambrinusContainer: CKContainer! { get set }
 }

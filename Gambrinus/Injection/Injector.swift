@@ -43,11 +43,11 @@ class Injector: NSObject {
     private lazy var bloggerAPI: BloggerAPIConnection = {
         return BloggerAPIConnection(blogURLString:"http://tartugambrinus.blogspot.com/", bloggerKey:BloggerAPIKey, objectModel:self.objectModel)
     }()
-    private lazy var gambrinusContainer: CloudContainer = {
-        return CloudContainer(container: CKContainer(identifier: "com.coodly.gambrinus"))
+    private lazy var gambrinusContainer: CKContainer = {
+        return CKContainer(identifier: "iCloud.com.coodly.gambrinus")
     }()
-    private lazy var beersContainer: CloudContainer = {
-        return CloudContainer(container: CKContainer(identifier: "com.coodly.beers"))
+    private lazy var beersContainer: CKContainer = {
+        return CKContainer(identifier: "iCloud.com.coodly.beers")
     }()
     
     func inject(into: AnyObject) {
@@ -65,6 +65,14 @@ class Injector: NSObject {
         
         if var consumer = into as? BloggerAPIConsumer {
             consumer.bloggerAPI = bloggerAPI
+        }
+        
+        if var consumer = into as? GambrinusContainerConsumer {
+            consumer.gambrinusContainer = gambrinusContainer
+        }
+        
+        if var consumer = into as? BeersContainerConsumer {
+            consumer.beersContainer = beersContainer
         }
     }
 }

@@ -15,8 +15,8 @@
  */
 
 import Foundation
-import LaughingAdventure
+import CloudKit
 
 protocol BeersContainerConsumer {
-    var beersContainer: CloudContainer! { get set }
+    var beersContainer: CKContainer! { get set }
 }

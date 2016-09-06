@@ -16,11 +16,24 @@
 
 import Foundation
 import SWLogger
+import LaughingAdventure
+
+private struct Static {
+    static let laughing = LaughingDelegate()
+}
 
 extension AppDelegate {
     func enableLogging() {
         Log.add(output: ConsoleOutput())
         Log.add(output: FileOutput())
         Log.logLevel = .debug
+        
+        LaughingAdventure.Logging.set(delegate: Static.laughing)
+    }
+}
+
+private class LaughingDelegate: LoggingDelegate {
+    func log<T>(_ object: T, file: String, function: String, line: Int) {
+        Log.debug(object, file: file, function: function, line: line)
     }
 }
