@@ -29,8 +29,36 @@
 + (NSSet*)keyPathsForValuesAffectingValueForKey:(NSString*)key {
 	NSSet *keyPaths = [super keyPathsForValuesAffectingValueForKey:key];
 
+	if ([key isEqualToString:@"dataNeededValue"]) {
+		NSSet *affectingKey = [NSSet setWithObject:@"dataNeeded"];
+		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
+		return keyPaths;
+	}
+
 	return keyPaths;
 }
+
+@dynamic dataNeeded;
+
+- (BOOL)dataNeededValue {
+	NSNumber *result = [self dataNeeded];
+	return [result boolValue];
+}
+
+- (void)setDataNeededValue:(BOOL)value_ {
+	[self setDataNeeded:@(value_)];
+}
+
+- (BOOL)primitiveDataNeededValue {
+	NSNumber *result = [self primitiveDataNeeded];
+	return [result boolValue];
+}
+
+- (void)setPrimitiveDataNeededValue:(BOOL)value_ {
+	[self setPrimitiveDataNeeded:@(value_)];
+}
+
+@dynamic identifier;
 
 @dynamic name;
 
@@ -52,6 +80,12 @@
 @end
 
 @implementation BrewerAttributes 
++ (NSString *)dataNeeded {
+	return @"dataNeeded";
+}
++ (NSString *)identifier {
+	return @"identifier";
+}
 + (NSString *)name {
 	return @"name";
 }

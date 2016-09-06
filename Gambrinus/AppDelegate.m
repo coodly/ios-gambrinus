@@ -48,7 +48,7 @@
     
     CDYLog(@"DB path:%@", [model storeURL]);
 
-    if (![model databaseFileExists]) {
+    if (![model databaseFileExists] && NO) {
         CDYLog(@"Copy DB file");
         NSURL *url = [[NSBundle mainBundle] URLForResource:@"Gambrinus" withExtension:@"sqlite"];
         NSError *copyError = nil;

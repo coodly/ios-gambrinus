@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14E46" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11224.2" systemVersion="15G1004" minimumToolsVersion="Xcode 4.3" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
     <entity name="Beer" representedClassName="Beer" syncable="YES">
         <attribute name="alcohol" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="aliased" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="aliased" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="bindingKey" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="identifier" optional="YES" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="dataNeeded" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="identifier" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" indexed="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="normalizedName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="rbIdentifier" optional="YES" attributeType="String" syncable="YES"/>
@@ -15,6 +16,8 @@
         <relationship name="style" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BeerStyle" inverseName="beers" inverseEntity="BeerStyle" syncable="YES"/>
     </entity>
     <entity name="BeerStyle" representedClassName="BeerStyle" syncable="YES">
+        <attribute name="dataNeeded" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="identifier" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="normalizedName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="shadowName" optional="YES" transient="YES" attributeType="String" syncable="YES"/>
@@ -24,10 +27,12 @@
         <attribute name="baseURLString" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="blogId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="postsURLString" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="published" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="published" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <relationship name="posts" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Post" inverseName="blog" inverseEntity="Post" syncable="YES"/>
     </entity>
     <entity name="Brewer" representedClassName="Brewer" syncable="YES">
+        <attribute name="dataNeeded" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="identifier" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="normalizedName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="shadowName" optional="YES" transient="YES" attributeType="String" syncable="YES"/>
@@ -43,17 +48,17 @@
         <attribute name="combinedBeers" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="combinedBrewers" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="combinedStyles" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="hidden" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="hidden" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="normalizedTitle" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="postId" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
-        <attribute name="publishDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="publishDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="shadowTitle" optional="YES" transient="YES" attributeType="String" syncable="YES"/>
         <attribute name="slug" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="starred" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="starred" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="styleSort" attributeType="String" defaultValueString="æææææ" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="topScore" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="touchedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="topScore" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="touchedAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <relationship name="beers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Beer" inverseName="posts" inverseEntity="Beer" syncable="YES"/>
         <relationship name="blog" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Blog" inverseName="posts" inverseEntity="Blog" syncable="YES"/>
         <relationship name="body" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="PostContent" inverseName="post" inverseEntity="PostContent" syncable="YES"/>
@@ -64,19 +69,19 @@
         <relationship name="post" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Post" inverseName="body" inverseEntity="Post" syncable="YES"/>
     </entity>
     <entity name="PullStatus" representedClassName="PullStatus" syncable="YES">
-        <attribute name="lastPullAttempt" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="pullFailed" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="lastPullAttempt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="pullFailed" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
         <relationship name="statusForImage" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Image" inverseName="pullStatus" inverseEntity="Image" syncable="YES"/>
     </entity>
     <entity name="Setting" representedClassName="Setting" syncable="YES">
-        <attribute name="key" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="key" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="value" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Beer" positionX="-27" positionY="72" width="128" height="225"/>
-        <element name="BeerStyle" positionX="-9" positionY="90" width="128" height="105"/>
+        <element name="Beer" positionX="-27" positionY="72" width="128" height="240"/>
+        <element name="BeerStyle" positionX="-9" positionY="90" width="128" height="135"/>
         <element name="Blog" positionX="-63" positionY="27" width="128" height="120"/>
-        <element name="Brewer" positionX="-18" positionY="81" width="128" height="105"/>
+        <element name="Brewer" positionX="-18" positionY="81" width="128" height="135"/>
         <element name="Image" positionX="-54" positionY="54" width="128" height="88"/>
         <element name="Post" positionX="-63" positionY="-18" width="128" height="330"/>
         <element name="PostContent" positionX="-36" positionY="135" width="128" height="75"/>

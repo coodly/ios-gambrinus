@@ -28,6 +28,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong, nullable) NSString* bindingKey;
 
+@property (nonatomic, strong) NSNumber* dataNeeded;
+
+@property (atomic) BOOL dataNeededValue;
+- (BOOL)dataNeededValue;
+- (void)setDataNeededValue:(BOOL)value_;
+
 @property (nonatomic, strong, nullable) NSNumber* identifier;
 
 @property (atomic) int32_t identifierValue;
@@ -75,6 +81,12 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString*)primitiveBindingKey;
 - (void)setPrimitiveBindingKey:(NSString*)value;
 
+- (NSNumber*)primitiveDataNeeded;
+- (void)setPrimitiveDataNeeded:(NSNumber*)value;
+
+- (BOOL)primitiveDataNeededValue;
+- (void)setPrimitiveDataNeededValue:(BOOL)value_;
+
 - (NSNumber*)primitiveIdentifier;
 - (void)setPrimitiveIdentifier:(NSNumber*)value;
 
@@ -111,6 +123,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString *)alcohol;
 + (NSString *)aliased;
 + (NSString *)bindingKey;
++ (NSString *)dataNeeded;
 + (NSString *)identifier;
 + (NSString *)name;
 + (NSString *)normalizedName;

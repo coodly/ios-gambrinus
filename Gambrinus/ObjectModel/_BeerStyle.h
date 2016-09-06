@@ -16,6 +16,14 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
 @property (nonatomic, readonly, strong) BeerStyleID*objectID;
 
+@property (nonatomic, strong) NSNumber* dataNeeded;
+
+@property (atomic) BOOL dataNeededValue;
+- (BOOL)dataNeededValue;
+- (void)setDataNeededValue:(BOOL)value_;
+
+@property (nonatomic, strong, nullable) NSString* identifier;
+
 @property (nonatomic, strong, nullable) NSString* name;
 
 @property (nonatomic, strong, nullable) NSString* normalizedName;
@@ -37,6 +45,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface _BeerStyle (CoreDataGeneratedPrimitiveAccessors)
 
+- (NSNumber*)primitiveDataNeeded;
+- (void)setPrimitiveDataNeeded:(NSNumber*)value;
+
+- (BOOL)primitiveDataNeededValue;
+- (void)setPrimitiveDataNeededValue:(BOOL)value_;
+
+- (NSString*)primitiveIdentifier;
+- (void)setPrimitiveIdentifier:(NSString*)value;
+
 - (NSString*)primitiveName;
 - (void)setPrimitiveName:(NSString*)value;
 
@@ -52,6 +69,8 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface BeerStyleAttributes: NSObject 
++ (NSString *)dataNeeded;
++ (NSString *)identifier;
 + (NSString *)name;
 + (NSString *)normalizedName;
 + (NSString *)shadowName;

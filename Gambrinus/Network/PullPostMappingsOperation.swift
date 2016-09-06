@@ -48,6 +48,10 @@ class PullPostMappingsOperation: CloudKitRequest<CloudPost>, GambrinusContainerC
             case .success(let posts, _):
                 Log.debug("Have \(posts.count) mappings")
                 
+                for post in posts {
+                    model?.managedObjectContext.createMapping(for: post)
+                }
+                
                 if let last = posts.last {
                     model!.managedObjectContext.markLastKnownMapping(last.modificationDate!)
                 }

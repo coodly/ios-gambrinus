@@ -36,6 +36,13 @@ struct CloudRateBeer: RemoteRecord {
     var scoreUpdatedAt: Date?
     
     mutating func loadFields(from record: CKRecord) -> Bool {
+        alcohol = record["alcohol"] as? String
+        aliasFor = record["aliasFor"] as? CKReference
+        brewer = record["brewer"] as? CKReference
+        name = record["name"] as? String
+        rbId = record["rbId"] as? String
+        score = record["score"] as? String
+        style = record["style"] as? CKReference
         scoreUpdatedAt = record["scoreUpdatedAt"] as? Date
         return true
     }

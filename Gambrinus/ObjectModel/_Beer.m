@@ -34,6 +34,11 @@
 		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
 		return keyPaths;
 	}
+	if ([key isEqualToString:@"dataNeededValue"]) {
+		NSSet *affectingKey = [NSSet setWithObject:@"dataNeeded"];
+		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
+		return keyPaths;
+	}
 	if ([key isEqualToString:@"identifierValue"]) {
 		NSSet *affectingKey = [NSSet setWithObject:@"identifier"];
 		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
@@ -66,6 +71,26 @@
 }
 
 @dynamic bindingKey;
+
+@dynamic dataNeeded;
+
+- (BOOL)dataNeededValue {
+	NSNumber *result = [self dataNeeded];
+	return [result boolValue];
+}
+
+- (void)setDataNeededValue:(BOOL)value_ {
+	[self setDataNeeded:@(value_)];
+}
+
+- (BOOL)primitiveDataNeededValue {
+	NSNumber *result = [self primitiveDataNeeded];
+	return [result boolValue];
+}
+
+- (void)setPrimitiveDataNeededValue:(BOOL)value_ {
+	[self setPrimitiveDataNeeded:@(value_)];
+}
 
 @dynamic identifier;
 
@@ -123,6 +148,9 @@
 }
 + (NSString *)bindingKey {
 	return @"bindingKey";
+}
++ (NSString *)dataNeeded {
+	return @"dataNeeded";
 }
 + (NSString *)identifier {
 	return @"identifier";

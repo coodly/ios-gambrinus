@@ -30,6 +30,10 @@
 		A7B8B8191D782F88003C8469 /* JCSDecimalInputValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B8B8181D782F88003C8469 /* JCSDecimalInputValidation.m */; };
 		A7B8B81C1D782F9E003C8469 /* JCSQuickNumericInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B8B81B1D782F9E003C8469 /* JCSQuickNumericInputAccessoryView.m */; };
 		A7B9E0831D7EC36900AB64AA /* Gambrinus.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A7B9E0811D7EC36900AB64AA /* Gambrinus.xcdatamodeld */; };
+		A7B9E0851D7EFC3A00AB64AA /* Persistence+Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B9E0841D7EFC3A00AB64AA /* Persistence+Posts.swift */; };
+		A7B9E0871D7EFDD900AB64AA /* Persistence+Beers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B9E0861D7EFDD900AB64AA /* Persistence+Beers.swift */; };
+		A7B9E0891D7F082900AB64AA /* Persistence+Brewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B9E0881D7F082900AB64AA /* Persistence+Brewer.swift */; };
+		A7B9E08B1D7F08AB00AB64AA /* Persistence+BeerStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B9E08A1D7F08AB00AB64AA /* Persistence+BeerStyle.swift */; };
 		A7CC88591D7DB4C800B28FEE /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CC88581D7DB4C800B28FEE /* CloudKit.framework */; };
 		A7CC885D1D7DB88600B28FEE /* BeersContainerConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CC885C1D7DB88600B28FEE /* BeersContainerConsumer.swift */; };
 		A7CC885F1D7DB8A700B28FEE /* GambrinusContainerConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CC885E1D7DB8A700B28FEE /* GambrinusContainerConsumer.swift */; };
@@ -207,6 +211,10 @@
 		A7B8B81A1D782F9E003C8469 /* JCSQuickNumericInputAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCSQuickNumericInputAccessoryView.h; sourceTree = "<group>"; };
 		A7B8B81B1D782F9E003C8469 /* JCSQuickNumericInputAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCSQuickNumericInputAccessoryView.m; sourceTree = "<group>"; };
 		A7B9E0821D7EC36900AB64AA /* Gambrinus.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Gambrinus.xcdatamodel; sourceTree = "<group>"; };
+		A7B9E0841D7EFC3A00AB64AA /* Persistence+Posts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Persistence+Posts.swift"; sourceTree = "<group>"; };
+		A7B9E0861D7EFDD900AB64AA /* Persistence+Beers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Persistence+Beers.swift"; sourceTree = "<group>"; };
+		A7B9E0881D7F082900AB64AA /* Persistence+Brewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Persistence+Brewer.swift"; sourceTree = "<group>"; };
+		A7B9E08A1D7F08AB00AB64AA /* Persistence+BeerStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Persistence+BeerStyle.swift"; sourceTree = "<group>"; };
 		A7CC88551D7D74D500B28FEE /* posts-to-rb.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "posts-to-rb.json"; sourceTree = SOURCE_ROOT; };
 		A7CC88571D7DB4AA00B28FEE /* Gambrinus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Gambrinus.entitlements; sourceTree = "<group>"; };
 		A7CC88581D7DB4C800B28FEE /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
@@ -808,6 +816,10 @@
 				EAC877C7192E26D200309A23 /* ObjectModel+Settings.m */,
 				EA50FCAE1B354D260000F304 /* ObjectModel+Styles.h */,
 				EA50FCAF1B354D260000F304 /* ObjectModel+Styles.m */,
+				A7B9E0861D7EFDD900AB64AA /* Persistence+Beers.swift */,
+				A7B9E08A1D7F08AB00AB64AA /* Persistence+BeerStyle.swift */,
+				A7B9E0881D7F082900AB64AA /* Persistence+Brewer.swift */,
+				A7B9E0841D7EFC3A00AB64AA /* Persistence+Posts.swift */,
 				A7D647761D79495500FF52A4 /* Persistence+Settings.swift */,
 				EADDA41C192B8ACE000CCEA9 /* Post.h */,
 				EADDA41D192B8ACE000CCEA9 /* Post.m */,
@@ -1179,6 +1191,7 @@
 				EAC9A7E1194476DA006AC834 /* PullStatus.m in Sources */,
 				EA2B8D901B4F052B0043A84B /* JCSLocalization.m in Sources */,
 				EA16BF0B1B392A810018FED4 /* InfoTitleDetailCellDefinition.m in Sources */,
+				A7B9E0871D7EFDD900AB64AA /* Persistence+Beers.swift in Sources */,
 				A7B8B8121D782F32003C8469 /* JCSInlinePickerCell.m in Sources */,
 				EA666BCA19822C4E00F72C0F /* PostImageController.m in Sources */,
 				EA50FCD51B35BAAC0000F304 /* PostExtendedDetailsViewController.m in Sources */,
@@ -1223,6 +1236,7 @@
 				EA011A401936195F00232E92 /* BlogImageAsk.m in Sources */,
 				EA16BF111B3934EE0018FED4 /* InfoRateBeerSectionTitleDefinition.m in Sources */,
 				EA50FCB61B355CE60000F304 /* UIFont+Theme.m in Sources */,
+				A7B9E0891D7F082900AB64AA /* Persistence+Brewer.swift in Sources */,
 				EAA3E6EA1930BBB500812B6F /* PoweredByViewController.m in Sources */,
 				EA16BF021B392A4D0018FED4 /* InfoCellDefinition.m in Sources */,
 				EA15CB10194EDE4900A140B5 /* BlogPostsViewController.m in Sources */,
@@ -1235,6 +1249,7 @@
 				EA011B24193B467300232E92 /* BlogPostView.m in Sources */,
 				A7B8B8061D782E46003C8469 /* JCSCoreDataChangeAction.m in Sources */,
 				A7B9E0831D7EC36900AB64AA /* Gambrinus.xcdatamodeld in Sources */,
+				A7B9E08B1D7F08AB00AB64AA /* Persistence+BeerStyle.swift in Sources */,
 				EA50FC8A1B34A8200000F304 /* Beer.m in Sources */,
 				EA0668D0192A45C4009C83F1 /* main.m in Sources */,
 				EAC9A7D519446A91006AC834 /* ObjectModel+Images.m in Sources */,
@@ -1250,6 +1265,7 @@
 				A7B8B80C1D782EF8003C8469 /* JCSTextEntryCell.m in Sources */,
 				EADDA41E192B8ACE000CCEA9 /* Post.m in Sources */,
 				A7B8B80F1D782F19003C8469 /* UIApplication+Keyboard.m in Sources */,
+				A7B9E0851D7EFC3A00AB64AA /* Persistence+Posts.swift in Sources */,
 				EAC877C5192E26C800309A23 /* Setting.m in Sources */,
 				A734E2A71D77182F0057D136 /* CDYObjectModel.m in Sources */,
 				EA16BF051B392A5B0018FED4 /* InfoImageCellDefinition.m in Sources */,
