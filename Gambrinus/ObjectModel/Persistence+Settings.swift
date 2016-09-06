@@ -21,6 +21,7 @@ enum Key: Int {
     case lastVerifiedPullDate
     case sortOrder
     case lastKnownMappingTime
+    case lastKnownScoresTime
 }
 
 enum PostsSortOrder: Int {
@@ -73,6 +74,14 @@ extension NSManagedObjectContext {
     
     func markLastKnownMapping(_ date: Date) {
         save(date: date, for: .lastKnownMappingTime)
+    }
+
+    func lastKnownScoresTime() -> Date {
+        return date(for: .lastKnownScoresTime)
+    }
+    
+    func markLastKnownScores(_ date: Date) {
+        save(date: date, for: .lastKnownScoresTime)
     }
     
     private func save(date: Date, for key: Key) {

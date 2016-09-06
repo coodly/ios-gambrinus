@@ -36,6 +36,10 @@ class ContentUpdate: NSObject, InjectionHandler, ObjectModelConsumer {
         inject(into: pullMappings)
         operations.add(operation: pullMappings)
         
+        let pullScores = PullRateBeerChangesOperation()
+        inject(into: pullScores)
+        operations.add(operation: pullScores)
+        
         let notifyCompletion = BlockOperation(block: completion)
         operations.add(operation: notifyCompletion)
         

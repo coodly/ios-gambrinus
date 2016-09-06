@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A17B3840ABCCE3610FE15CA4 /* Pods_Gambrinus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA69DCA20CC7434C02417339 /* Pods_Gambrinus.framework */; };
+		A7063F331D7EBCFC00B45C6C /* CloudRateBeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7063F321D7EBCFC00B45C6C /* CloudRateBeer.swift */; };
+		A7063F351D7EBD5D00B45C6C /* PullRateBeerChangesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7063F341D7EBD5D00B45C6C /* PullRateBeerChangesOperation.swift */; };
 		A734E29D1D7717B50057D136 /* CDYImageAsk.m in Sources */ = {isa = PBXBuildFile; fileRef = A734E2981D7717B50057D136 /* CDYImageAsk.m */; };
 		A734E29E1D7717B50057D136 /* CDYImagesRetrieve.m in Sources */ = {isa = PBXBuildFile; fileRef = A734E29A1D7717B50057D136 /* CDYImagesRetrieve.m */; };
 		A734E29F1D7717B50057D136 /* CDYImagesRetrieveConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = A734E29C1D7717B50057D136 /* CDYImagesRetrieveConstants.m */; };
@@ -165,6 +167,8 @@
 
 /* Begin PBXFileReference section */
 		1E80FB9A4CDEB7F93A5A46FB /* Pods-Gambrinus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gambrinus.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gambrinus/Pods-Gambrinus.release.xcconfig"; sourceTree = "<group>"; };
+		A7063F321D7EBCFC00B45C6C /* CloudRateBeer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudRateBeer.swift; sourceTree = "<group>"; };
+		A7063F341D7EBD5D00B45C6C /* PullRateBeerChangesOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullRateBeerChangesOperation.swift; sourceTree = "<group>"; };
 		A734E2971D7717B50057D136 /* CDYImageAsk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDYImageAsk.h; sourceTree = "<group>"; };
 		A734E2981D7717B50057D136 /* CDYImageAsk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDYImageAsk.m; sourceTree = "<group>"; };
 		A734E2991D7717B50057D136 /* CDYImagesRetrieve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDYImagesRetrieve.h; sourceTree = "<group>"; };
@@ -767,8 +771,10 @@
 			children = (
 				EA50FC931B351B4D0000F304 /* Blogger */,
 				A7CC88681D7DCEE600B28FEE /* CloudPost.swift */,
+				A7063F321D7EBCFC00B45C6C /* CloudRateBeer.swift */,
 				A7CC88601D7DBA9500B28FEE /* ContentUpdate.swift */,
 				A7CC88661D7DCC1200B28FEE /* PullPostMappingsOperation.swift */,
+				A7063F341D7EBD5D00B45C6C /* PullRateBeerChangesOperation.swift */,
 				A7CC88621D7DC2F100B28FEE /* RefreshPostsOperation.swift */,
 				EA50FCA71B351E8C0000F304 /* RemoteService.h */,
 			);
@@ -1154,6 +1160,7 @@
 				A7D647771D79495500FF52A4 /* Persistence+Settings.swift in Sources */,
 				EAC9A7D219446A10006AC834 /* Image.m in Sources */,
 				EAC9A7DE194476CC006AC834 /* _PullStatus.m in Sources */,
+				A7063F351D7EBD5D00B45C6C /* PullRateBeerChangesOperation.swift in Sources */,
 				A7D647691D7877C900FF52A4 /* Injector.swift in Sources */,
 				EADF7E7B192BDC7F00EC13AB /* PostViewController.m in Sources */,
 				EA50FCAD1B354C810000F304 /* ObjectModel+Brewers.m in Sources */,
@@ -1218,6 +1225,7 @@
 				A7CC88691D7DCEE600B28FEE /* CloudPost.swift in Sources */,
 				EA50FCCE1B35B9260000F304 /* UIView+Identifier.m in Sources */,
 				A7D647751D78852B00FF52A4 /* ContentUpdateConsumer.swift in Sources */,
+				A7063F331D7EBCFC00B45C6C /* CloudRateBeer.swift in Sources */,
 				EA011A401936195F00232E92 /* BlogImageAsk.m in Sources */,
 				EA16BF111B3934EE0018FED4 /* InfoRateBeerSectionTitleDefinition.m in Sources */,
 				EA50FCB61B355CE60000F304 /* UIFont+Theme.m in Sources */,
