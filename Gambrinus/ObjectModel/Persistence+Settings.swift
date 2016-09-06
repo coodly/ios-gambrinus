@@ -20,6 +20,7 @@ import CoreData
 enum Key: Int {
     case lastVerifiedPullDate
     case sortOrder
+    case lastKnownMappingTime
 }
 
 enum PostsSortOrder: Int {
@@ -64,6 +65,14 @@ extension NSManagedObjectContext {
     
     func setPostsRefreshTime(_ date: Date) {
         save(date: date, for: .lastVerifiedPullDate)
+    }
+    
+    func lastKnownMappingTime() -> Date {
+        return date(for: .lastKnownMappingTime)
+    }
+    
+    func markLastKnownMapping(_ date: Date) {
+        save(date: date, for: .lastKnownMappingTime)
     }
     
     private func save(date: Date, for key: Key) {

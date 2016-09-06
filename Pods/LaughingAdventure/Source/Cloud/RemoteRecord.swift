@@ -30,7 +30,7 @@ public protocol RemoteRecord {
 
 public extension RemoteRecord {
     internal mutating func load(record: CKRecord) -> Bool {
-        recordData = archiveRecord(record) as Data
+        recordData = archive(record: record) as Data
         recordName = record.recordID.recordName
         parent = record.parent?.recordID
         return loadFields(from: record)
@@ -40,7 +40,7 @@ public extension RemoteRecord {
         return CKReference(recordID: CKRecordID(recordName: recordName!), action: .deleteSelf)
     }
     
-    private func archiveRecord(_ record: CKRecord) -> NSMutableData {
+    private func archive(record: CKRecord) -> NSMutableData {
         let archivedData = NSMutableData()
         let archiver = NSKeyedArchiver(forWritingWith: archivedData)
         archiver.requiresSecureCoding = true

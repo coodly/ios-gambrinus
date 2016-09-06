@@ -40,12 +40,12 @@ open class CloudKitRequest<T: RemoteRecord>: ConcurrentOperation, CloudRequest {
         Logging.log("Override: \(#function)")
     }
     
-    open func handle(result: CloudResult<T>, completion: () -> ()) {
+    open func handle(result: CloudResult<T>, completion: @escaping () -> ()) {
         Logging.log("Handle result \(result)")
         completion()
     }
     
-    fileprivate func database(_ type: UsedDatabase) -> CKDatabase {
+    fileprivate func database(for type: UsedDatabase) -> CKDatabase {
         switch type {
         case .public:
             return container.publicCloudDatabase
@@ -106,7 +106,7 @@ public extension CloudKitRequest {
             }
         }
         
-        database(db).add(operation)
+        database(for: db).add(operation)
     }
 }
 
@@ -139,7 +139,7 @@ public extension CloudKitRequest {
             }
         }
         
-        database(db).add(operation)
+        database(for: db).add(operation)
     }
     
     public final func save(record: T, inDatabase db: UsedDatabase = .private) {
@@ -207,6 +207,6 @@ public extension CloudKitRequest {
             self.handleResult(withCursor: usedCursor, limit: limit, error: error, inDatabase: db, retryClosure: retryClosure)
         }
         
-        database(db).add(fetchOperation)
+        database(for: db).add(fetchOperation)
     }
 }

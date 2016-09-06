@@ -19,15 +19,44 @@ import LaughingAdventure
 import SWLogger
 import CloudKit
 
-class PullPostMappingsOperation: CloudKitRequest<CloudPost>, GambrinusContainerConsumer {
+class PullPostMappingsOperation: CloudKitRequest<CloudPost>, GambrinusContainerConsumer, ObjectModelConsumer {
     var gambrinusContainer: CKContainer! {
         didSet {
             container = gambrinusContainer
         }
     }
+    var objectModel: Gambrinus.ObjectModel!
     
     override func performRequest() {
         Log.debug("Pull maapings")
-        fetchFirst(inDatabase: .public)
+        objectModel.perform() {
+            let lastKnownDate = self.objectModel.managedObjectContext.lastKnownMappingTime()
+            Log.debug("Pull mappings after: \(lastKnownDate)")
+            let sort = NSSortDescriptor(key: "modificationDate", ascending: true)
+            let timePredicate = NSPredicate(format: "modificationDate >= %@", lastKnownDate as NSDate)
+            self.fetch(predicate: timePredicate, sort: [sort], inDatabase: .public)
+        }
+    }
+    
+    override func handle(result: CloudResult<CloudPost>, completion: @escaping () -> ()) {
+        let saveClosure: CDYModelInjectionBlock = {
+            model in
+            
+            switch result {
+            case .failure:
+                Log.debug("Failure")
+            case .success(let posts, _):
+                Log.debug("Have \(posts.count) mappings")
+                
+                if let last = posts.last {
+                    model!.managedObjectContext.markLastKnownMapping(last.modificationDate!)
+                }
+            }
+        }
+        
+        let saveCompletion: CDYModelActionBlock = {
+            completion()
+        }
+        objectModel.save(in: saveClosure, completion: saveCompletion)
     }
 }
