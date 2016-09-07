@@ -33,7 +33,7 @@ extension NSManagedObjectContext {
         for r in remaining {
             let b = insertEntity() as Beer
             b.rbIdentifier = r
-            b.dataNeededValue = true
+            b.markForSync(needed: true)
             created.append(b)
         }
         
@@ -52,6 +52,6 @@ extension NSManagedObjectContext {
         saved.brewer = brewer(for: rateBeer.brewer)
         saved.style = style(for: rateBeer.style)
         
-        saved.dataNeededValue = false
+        saved.markForSync(needed: false)
     }
 }

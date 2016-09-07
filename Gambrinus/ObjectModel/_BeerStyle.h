@@ -3,24 +3,20 @@
 
 @import CoreData;
 
+#import "Syncable.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @class Beer;
 
-@interface BeerStyleID : NSManagedObjectID {}
+@interface BeerStyleID : SyncableID {}
 @end
 
-@interface _BeerStyle : NSManagedObject
+@interface _BeerStyle : Syncable
 + (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_;
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
 @property (nonatomic, readonly, strong) BeerStyleID*objectID;
-
-@property (nonatomic, strong) NSNumber* dataNeeded;
-
-@property (atomic) BOOL dataNeededValue;
-- (BOOL)dataNeededValue;
-- (void)setDataNeededValue:(BOOL)value_;
 
 @property (nonatomic, strong, nullable) NSString* identifier;
 
@@ -45,12 +41,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface _BeerStyle (CoreDataGeneratedPrimitiveAccessors)
 
-- (NSNumber*)primitiveDataNeeded;
-- (void)setPrimitiveDataNeeded:(NSNumber*)value;
-
-- (BOOL)primitiveDataNeededValue;
-- (void)setPrimitiveDataNeededValue:(BOOL)value_;
-
 - (NSString*)primitiveIdentifier;
 - (void)setPrimitiveIdentifier:(NSString*)value;
 
@@ -69,7 +59,6 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface BeerStyleAttributes: NSObject 
-+ (NSString *)dataNeeded;
 + (NSString *)identifier;
 + (NSString *)name;
 + (NSString *)normalizedName;

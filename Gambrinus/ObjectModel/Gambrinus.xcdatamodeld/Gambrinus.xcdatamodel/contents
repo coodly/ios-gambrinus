@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11224.2" systemVersion="15G1004" minimumToolsVersion="Xcode 4.3" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
-    <entity name="Beer" representedClassName="Beer" syncable="YES">
+    <entity name="Beer" representedClassName="Beer" parentEntity="Syncable" syncable="YES">
         <attribute name="alcohol" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="aliased" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="bindingKey" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="dataNeeded" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="identifier" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" indexed="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="normalizedName" optional="YES" attributeType="String" syncable="YES"/>
@@ -15,8 +14,7 @@
         <relationship name="posts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Post" inverseName="beers" inverseEntity="Post" syncable="YES"/>
         <relationship name="style" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BeerStyle" inverseName="beers" inverseEntity="BeerStyle" syncable="YES"/>
     </entity>
-    <entity name="BeerStyle" representedClassName="BeerStyle" syncable="YES">
-        <attribute name="dataNeeded" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+    <entity name="BeerStyle" representedClassName="BeerStyle" parentEntity="Syncable" syncable="YES">
         <attribute name="identifier" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="normalizedName" optional="YES" attributeType="String" syncable="YES"/>
@@ -30,8 +28,7 @@
         <attribute name="published" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <relationship name="posts" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Post" inverseName="blog" inverseEntity="Post" syncable="YES"/>
     </entity>
-    <entity name="Brewer" representedClassName="Brewer" syncable="YES">
-        <attribute name="dataNeeded" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+    <entity name="Brewer" representedClassName="Brewer" parentEntity="Syncable" syncable="YES">
         <attribute name="identifier" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="normalizedName" optional="YES" attributeType="String" syncable="YES"/>
@@ -77,15 +74,25 @@
         <attribute name="key" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="value" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Syncable" representedClassName="Syncable" isAbstract="YES" syncable="YES">
+        <relationship name="syncStatus" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="SyncStatus" inverseName="syncable" inverseEntity="SyncStatus" syncable="YES"/>
+    </entity>
+    <entity name="SyncStatus" representedClassName="SyncStatus" syncable="YES">
+        <attribute name="syncFailed" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="syncNeeded" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="syncable" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Syncable" inverseName="syncStatus" inverseEntity="Syncable" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="Beer" positionX="-27" positionY="72" width="128" height="240"/>
-        <element name="BeerStyle" positionX="-9" positionY="90" width="128" height="135"/>
+        <element name="Beer" positionX="-27" positionY="72" width="128" height="225"/>
+        <element name="BeerStyle" positionX="-9" positionY="90" width="128" height="120"/>
         <element name="Blog" positionX="-63" positionY="27" width="128" height="120"/>
-        <element name="Brewer" positionX="-18" positionY="81" width="128" height="135"/>
+        <element name="Brewer" positionX="-18" positionY="81" width="128" height="120"/>
         <element name="Image" positionX="-54" positionY="54" width="128" height="88"/>
         <element name="Post" positionX="-63" positionY="-18" width="128" height="330"/>
         <element name="PostContent" positionX="-36" positionY="135" width="128" height="75"/>
         <element name="PullStatus" positionX="-45" positionY="54" width="128" height="88"/>
         <element name="Setting" positionX="-63" positionY="27" width="128" height="75"/>
+        <element name="Syncable" positionX="-27" positionY="144" width="128" height="60"/>
+        <element name="SyncStatus" positionX="-36" positionY="135" width="128" height="90"/>
     </elements>
 </model>

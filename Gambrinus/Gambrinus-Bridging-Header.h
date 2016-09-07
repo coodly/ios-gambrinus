@@ -7,6 +7,8 @@
 #import "_Brewer.h"
 #import "_Post.h"
 #import "_Setting.h"
+#import "_Syncable.h"
+#import "_SyncStatus.h"
 
 #import "AppDelegate.h"
 
@@ -34,5 +36,7 @@
 #import "PostsViewController.h"
 
 #import "Setting.h"
+#import "Syncable.h"
+#import "SyncStatus.h"
 
 #import "UIColor+Theme.h"

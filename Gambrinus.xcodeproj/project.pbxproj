@@ -34,6 +34,11 @@
 		A7B9E0871D7EFDD900AB64AA /* Persistence+Beers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B9E0861D7EFDD900AB64AA /* Persistence+Beers.swift */; };
 		A7B9E0891D7F082900AB64AA /* Persistence+Brewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B9E0881D7F082900AB64AA /* Persistence+Brewer.swift */; };
 		A7B9E08B1D7F08AB00AB64AA /* Persistence+BeerStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B9E08A1D7F08AB00AB64AA /* Persistence+BeerStyle.swift */; };
+		A7B9E08E1D7FFF0A00AB64AA /* _SyncStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B9E08D1D7FFF0A00AB64AA /* _SyncStatus.m */; };
+		A7B9E0911D7FFF0F00AB64AA /* SyncStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B9E0901D7FFF0F00AB64AA /* SyncStatus.m */; };
+		A7CACD661D800043009347B4 /* _Syncable.m in Sources */ = {isa = PBXBuildFile; fileRef = A7CACD651D800043009347B4 /* _Syncable.m */; };
+		A7CACD691D800047009347B4 /* Syncable.m in Sources */ = {isa = PBXBuildFile; fileRef = A7CACD681D800047009347B4 /* Syncable.m */; };
+		A7CACD6B1D8000A8009347B4 /* Syncable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CACD6A1D8000A8009347B4 /* Syncable.swift */; };
 		A7CC88591D7DB4C800B28FEE /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CC88581D7DB4C800B28FEE /* CloudKit.framework */; };
 		A7CC885D1D7DB88600B28FEE /* BeersContainerConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CC885C1D7DB88600B28FEE /* BeersContainerConsumer.swift */; };
 		A7CC885F1D7DB8A700B28FEE /* GambrinusContainerConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CC885E1D7DB8A700B28FEE /* GambrinusContainerConsumer.swift */; };
@@ -215,6 +220,15 @@
 		A7B9E0861D7EFDD900AB64AA /* Persistence+Beers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Persistence+Beers.swift"; sourceTree = "<group>"; };
 		A7B9E0881D7F082900AB64AA /* Persistence+Brewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Persistence+Brewer.swift"; sourceTree = "<group>"; };
 		A7B9E08A1D7F08AB00AB64AA /* Persistence+BeerStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Persistence+BeerStyle.swift"; sourceTree = "<group>"; };
+		A7B9E08C1D7FFF0A00AB64AA /* _SyncStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _SyncStatus.h; sourceTree = "<group>"; };
+		A7B9E08D1D7FFF0A00AB64AA /* _SyncStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _SyncStatus.m; sourceTree = "<group>"; };
+		A7B9E08F1D7FFF0F00AB64AA /* SyncStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyncStatus.h; sourceTree = "<group>"; };
+		A7B9E0901D7FFF0F00AB64AA /* SyncStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyncStatus.m; sourceTree = "<group>"; };
+		A7CACD641D800043009347B4 /* _Syncable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Syncable.h; sourceTree = "<group>"; };
+		A7CACD651D800043009347B4 /* _Syncable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Syncable.m; sourceTree = "<group>"; };
+		A7CACD671D800047009347B4 /* Syncable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Syncable.h; sourceTree = "<group>"; };
+		A7CACD681D800047009347B4 /* Syncable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Syncable.m; sourceTree = "<group>"; };
+		A7CACD6A1D8000A8009347B4 /* Syncable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Syncable.swift; sourceTree = "<group>"; };
 		A7CC88551D7D74D500B28FEE /* posts-to-rb.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "posts-to-rb.json"; sourceTree = SOURCE_ROOT; };
 		A7CC88571D7DB4AA00B28FEE /* Gambrinus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Gambrinus.entitlements; sourceTree = "<group>"; };
 		A7CC88581D7DB4C800B28FEE /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
@@ -829,6 +843,11 @@
 				EAC9A7E0194476DA006AC834 /* PullStatus.m */,
 				EAC877C3192E26C800309A23 /* Setting.h */,
 				EAC877C4192E26C800309A23 /* Setting.m */,
+				A7CACD671D800047009347B4 /* Syncable.h */,
+				A7CACD681D800047009347B4 /* Syncable.m */,
+				A7B9E08F1D7FFF0F00AB64AA /* SyncStatus.h */,
+				A7B9E0901D7FFF0F00AB64AA /* SyncStatus.m */,
+				A7CACD6A1D8000A8009347B4 /* Syncable.swift */,
 			);
 			path = ObjectModel;
 			sourceTree = "<group>";
@@ -854,6 +873,10 @@
 				EAC9A7DD194476CC006AC834 /* _PullStatus.m */,
 				EAC877C0192E26BE00309A23 /* _Setting.h */,
 				EAC877C1192E26BE00309A23 /* _Setting.m */,
+				A7CACD641D800043009347B4 /* _Syncable.h */,
+				A7CACD651D800043009347B4 /* _Syncable.m */,
+				A7B9E08C1D7FFF0A00AB64AA /* _SyncStatus.h */,
+				A7B9E08D1D7FFF0A00AB64AA /* _SyncStatus.m */,
 			);
 			name = _;
 			sourceTree = "<group>";
@@ -1208,7 +1231,9 @@
 				EADDA41B192B8AC8000CCEA9 /* _Post.m in Sources */,
 				EA16BF151B3935590018FED4 /* RateBeerSectionTitleCell.m in Sources */,
 				A7CC88671D7DCC1200B28FEE /* PullPostMappingsOperation.swift in Sources */,
+				A7B9E0911D7FFF0F00AB64AA /* SyncStatus.m in Sources */,
 				EA50FC821B34A8110000F304 /* _Brewer.m in Sources */,
+				A7CACD691D800047009347B4 /* Syncable.m in Sources */,
 				EA16BF261B3978240018FED4 /* InfoSpacingCellDefinition.m in Sources */,
 				EA16BF231B39752C0018FED4 /* RateBeerScoreLabel.m in Sources */,
 				A734E2A31D7717EE0057D136 /* JCSFetchedCollectionViewController.m in Sources */,
@@ -1259,6 +1284,8 @@
 				A7B8B8151D782F54003C8469 /* JCSNumericInputAccessoryView.m in Sources */,
 				EADDA421192B8ADF000CCEA9 /* ObjectModel+Posts.m in Sources */,
 				EA0119E71931D45400232E92 /* ObjectModel+Blogs.m in Sources */,
+				A7CACD661D800043009347B4 /* _Syncable.m in Sources */,
+				A7CACD6B1D8000A8009347B4 /* Syncable.swift in Sources */,
 				A734E2AA1D7718B50057D136 /* JCSInputCellsViewController.m in Sources */,
 				EADF7E66192B8E0D00EC13AB /* ProgressOverlayView.m in Sources */,
 				EA50FC8F1B351AA40000F304 /* _BeerStyle.m in Sources */,
@@ -1275,6 +1302,7 @@
 				EA50FCD11B35B9570000F304 /* UIView+Loading.m in Sources */,
 				A7CC88651D7DC35500B28FEE /* BloggerAPIConsumer.swift in Sources */,
 				A7B8B8011D782B5E003C8469 /* FullOptionsMenuController.swift in Sources */,
+				A7B9E08E1D7FFF0A00AB64AA /* _SyncStatus.m in Sources */,
 				EA16BF201B396D960018FED4 /* RateBeerDetailsCellDefinition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

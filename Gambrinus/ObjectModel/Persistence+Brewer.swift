@@ -35,7 +35,7 @@ extension NSManagedObjectContext {
         
         let saved: Brewer = insertEntity()
         saved.identifier = id
-        saved.dataNeededValue = true
+        saved.markForSync()
         return saved
     }
 }

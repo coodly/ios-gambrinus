@@ -15,27 +15,12 @@
  */
 
 import Foundation
-import CloudKit
-import CoreData
 import LaughingAdventure
 
-extension NSManagedObjectContext {
-    func style(for reference: CKReference?) -> BeerStyle? {
-        guard let ref = reference else {
-            return nil
-        }
-        
-        guard let id = ref.recordID.recordName.components(separatedBy: "-").last else {
-            return nil
-        }
-        
-        if let existing: BeerStyle = fetchEntity(where: "identifier", hasValue: id as AnyObject) {
-            return existing
-        }
-        
-        let saved: BeerStyle = insertEntity()
-        saved.identifier = id
-        saved.markForSync()
-        return saved
+extension Syncable {
+    func markForSync(needed: Bool = true) {
+        let status = syncStatus ?? managedObjectContext!.insertEntity()
+        status.syncNeededValue = needed
+        self.syncStatus = status
     }
 }

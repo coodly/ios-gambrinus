@@ -3,16 +3,18 @@
 
 @import CoreData;
 
+#import "Syncable.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @class Brewer;
 @class Post;
 @class BeerStyle;
 
-@interface BeerID : NSManagedObjectID {}
+@interface BeerID : SyncableID {}
 @end
 
-@interface _Beer : NSManagedObject
+@interface _Beer : Syncable
 + (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_;
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
@@ -27,12 +29,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)setAliasedValue:(BOOL)value_;
 
 @property (nonatomic, strong, nullable) NSString* bindingKey;
-
-@property (nonatomic, strong) NSNumber* dataNeeded;
-
-@property (atomic) BOOL dataNeededValue;
-- (BOOL)dataNeededValue;
-- (void)setDataNeededValue:(BOOL)value_;
 
 @property (nonatomic, strong, nullable) NSNumber* identifier;
 
@@ -81,12 +77,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString*)primitiveBindingKey;
 - (void)setPrimitiveBindingKey:(NSString*)value;
 
-- (NSNumber*)primitiveDataNeeded;
-- (void)setPrimitiveDataNeeded:(NSNumber*)value;
-
-- (BOOL)primitiveDataNeededValue;
-- (void)setPrimitiveDataNeededValue:(BOOL)value_;
-
 - (NSNumber*)primitiveIdentifier;
 - (void)setPrimitiveIdentifier:(NSNumber*)value;
 
@@ -123,7 +113,6 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString *)alcohol;
 + (NSString *)aliased;
 + (NSString *)bindingKey;
-+ (NSString *)dataNeeded;
 + (NSString *)identifier;
 + (NSString *)name;
 + (NSString *)normalizedName;
