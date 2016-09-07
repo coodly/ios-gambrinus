@@ -31,6 +31,16 @@
 
 @implementation CDYObjectModel
 
+- (id)initWithContext:(NSManagedObjectContext *)context {
+    self = [super init];
+    
+    if (self) {
+        _managedObjectContext = context;
+    }
+    
+    return self;
+}
+
 - (id)initWithDataModelName:(NSString *)modelName storeType:(NSString *)storeType {
     NSURL *databaseURL = [CDYObjectModel fileUrlInDocumentsFolder:[NSString stringWithFormat:@"%@.sqlite", modelName]];
     return [self initWithDataModelName:modelName storeURL:databaseURL storeType:storeType];
@@ -48,10 +58,9 @@
     return self;
 }
 
-- (id)initPrivateModelWithCoordinator:(NSPersistentStoreCoordinator *)coordinator writerContext:(NSManagedObjectContext *)context {
+- (id)initPrivateModelWithWriterContext:(NSManagedObjectContext *)context {
     self = [super init];
     if (self) {
-        _persistentStoreCoordinator = coordinator;
         _writingContext = context;
     }
     return self;
@@ -59,7 +68,7 @@
 
 - (id)spawnBackgroundInstance {
     Class modelClass = [self class];
-    CDYObjectModel *model = [[modelClass alloc] initPrivateModelWithCoordinator:self.persistentStoreCoordinator writerContext:self.managedObjectContext];
+    CDYObjectModel *model = [[modelClass alloc] initPrivateModelWithWriterContext:self.managedObjectContext];
     return model;
 }
 
@@ -342,14 +351,14 @@
         return _managedObjectContext;
     }
 
-    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
-    if (coordinator == nil) {
-        return nil;
-    }
-
     BOOL isPrivateInstance = self.writingContext != nil;
 
     if (!self.writingContext) {
+        NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
+        if (coordinator == nil) {
+            return nil;
+        }
+        
         NSManagedObjectContext *savingContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
         [savingContext setPersistentStoreCoordinator:coordinator];
         [self setWritingContext:savingContext];

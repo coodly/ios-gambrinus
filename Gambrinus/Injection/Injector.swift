@@ -32,13 +32,15 @@ class Injector: NSObject {
     static let sharedInstance = Injector()
     
     lazy var objectModel: Gambrinus.ObjectModel = {
-        return ObjectModel()
+        return ObjectModel(context: self.persistence.mainContext)
     }()
     private lazy var imagesRetrieve: BlogImagesRetrieve = {
         return BlogImagesRetrieve()
     }()
     private lazy var contentUpdate: ContentUpdate = {
-        return ContentUpdate()
+        let update = ContentUpdate()
+        update.persisrtence = self.persistence
+        return update
     }()
     private lazy var bloggerAPI: BloggerAPIConnection = {
         return BloggerAPIConnection(blogURLString:"http://tartugambrinus.blogspot.com/", bloggerKey:BloggerAPIKey, objectModel:self.objectModel)
@@ -48,6 +50,9 @@ class Injector: NSObject {
     }()
     private lazy var beersContainer: CKContainer = {
         return CKContainer(identifier: "iCloud.com.coodly.beers")
+    }()
+    private lazy var persistence: CorePersistence = {
+        return CorePersistence(modelName: "Gambrinus", wipeOnConflict: true)
     }()
     
     func inject(into: AnyObject) {
@@ -73,6 +78,10 @@ class Injector: NSObject {
         
         if var consumer = into as? BeersContainerConsumer {
             consumer.beersContainer = beersContainer
+        }
+        
+        if var consumer = into as? PersistenceConsumer {
+            consumer.persisrtence = persistence
         }
     }
 }

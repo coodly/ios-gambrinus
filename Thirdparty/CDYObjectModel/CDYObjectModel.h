@@ -31,6 +31,7 @@ typedef void (^CDYModelInjectionBlock)(CDYObjectModel *objectModel);
 @property (nonatomic, copy) CDYModelActionBlock databaseWipeCallback;
 @property (nonatomic, strong, readonly) NSURL *storeURL;
 
+- (id)initWithContext:(NSManagedObjectContext *)context;
 - (id)initWithDataModelName:(NSString *)modelName storeType:(NSString *)storeType;
 - (id)initWithDataModelName:(NSString *)modelName storeURL:(NSURL *)storeURL storeType:(NSString *)storeType;
 

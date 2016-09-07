@@ -17,6 +17,7 @@
 import Foundation
 import CoreData
 import LaughingAdventure
+import SWLogger
 
 extension NSManagedObjectContext {
     func beersWith(rbIds: [String]) -> [Beer] {
@@ -54,4 +55,33 @@ extension NSManagedObjectContext {
         
         saved.markForSync(needed: false)
     }
+    
+    func hasBeersWithMissingData() -> Bool {
+        let missingCount = count(instancesOf: Beer.self, predicate: .needsSync)
+        Log.debug("Missing info on \(missingCount) beers")
+        return missingCount != 0
+    }
+    
+    func rateBeerIDsForBeersNeedingSync() -> [String] {
+        if let values = fetchAttribute(named: "rbIdentifier", on: Beer.self, limit: 100, predicate: .needsSync) as? [String] {
+            return values
+        }
+        
+        return []
+    }
+    
+    func markSyncFailureOn(rbids: [String]) {
+        let predicate = NSPredicate(format: "rbIdentifier IN %@", rbids)
+        let beers: [Beer] = fetch(predicate: predicate)
+        for b in beers {
+            b.syncStatus?.syncFailed = true
+        }
+    }
+}
+
+extension NSPredicate {
+    @nonobjc static let needsSync = NSCompoundPredicate(andPredicateWithSubpredicates: [
+        NSPredicate(format: "syncStatus.syncNeeded = YES"),
+        NSPredicate(format: "syncStatus.syncFailed = NO")
+    ])
 }

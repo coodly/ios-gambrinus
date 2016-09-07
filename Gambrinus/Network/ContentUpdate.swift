@@ -15,9 +15,11 @@
  */
 
 import Foundation
+import SWLogger
+import LaughingAdventure
 
-class ContentUpdate: NSObject, InjectionHandler, ObjectModelConsumer {
-    var objectModel: ObjectModel!
+class ContentUpdate: NSObject, InjectionHandler, PersistenceConsumer {
+    var persisrtence: CorePersistence!
     
     private lazy var operationsQueue: OperationQueue = {
         let queue = OperationQueue()
@@ -43,10 +45,44 @@ class ContentUpdate: NSObject, InjectionHandler, ObjectModelConsumer {
         let notifyCompletion = BlockOperation(block: completion)
         operations.add(operation: notifyCompletion)
         
+        let checkMissing = BlockOperation() {
+            self.checkMissingData()
+        }
+        operations.add(operation: checkMissing)
+        
         operationsQueue.addOperations(operations, waitUntilFinished: false)
     }
     
     func refresh(post: Post, completion: (() -> ())) {
         fatalError()
+    }
+    
+    private func checkMissingData() {
+        Log.debug("Check missing")
+        persisrtence.perform() {
+            context in
+
+            var operation: ConcurrentOperation?
+            if context.hasBeersWithMissingData() {
+                Log.debug("Pull beers meta")
+                operation = PullBeersInfoOperation()
+            }
+            
+            guard let executed = operation else {
+                Log.debug("Nothing more to sync")
+                return
+            }
+            
+            executed.completionHandler = {
+                success, op in
+                
+                Log.debug("Op complete")
+                self.checkMissingData()
+            }
+            
+            self.inject(into: executed)
+            
+            self.operationsQueue.addOperation(executed)
+        }
     }
 }

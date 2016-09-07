@@ -39,6 +39,7 @@
 		A7CACD661D800043009347B4 /* _Syncable.m in Sources */ = {isa = PBXBuildFile; fileRef = A7CACD651D800043009347B4 /* _Syncable.m */; };
 		A7CACD691D800047009347B4 /* Syncable.m in Sources */ = {isa = PBXBuildFile; fileRef = A7CACD681D800047009347B4 /* Syncable.m */; };
 		A7CACD6B1D8000A8009347B4 /* Syncable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CACD6A1D8000A8009347B4 /* Syncable.swift */; };
+		A7CACD6D1D801377009347B4 /* PullBeersInfoOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CACD6C1D801377009347B4 /* PullBeersInfoOperation.swift */; };
 		A7CC88591D7DB4C800B28FEE /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CC88581D7DB4C800B28FEE /* CloudKit.framework */; };
 		A7CC885D1D7DB88600B28FEE /* BeersContainerConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CC885C1D7DB88600B28FEE /* BeersContainerConsumer.swift */; };
 		A7CC885F1D7DB8A700B28FEE /* GambrinusContainerConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CC885E1D7DB8A700B28FEE /* GambrinusContainerConsumer.swift */; };
@@ -55,6 +56,7 @@
 		A7D647751D78852B00FF52A4 /* ContentUpdateConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D647741D78852B00FF52A4 /* ContentUpdateConsumer.swift */; };
 		A7D647771D79495500FF52A4 /* Persistence+Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D647761D79495500FF52A4 /* Persistence+Settings.swift */; };
 		A7D647791D7959B900FF52A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D647781D7959B900FF52A4 /* AppDelegate.swift */; };
+		A7EEF6871D80451600C56153 /* PersistenceConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EEF6861D80451600C56153 /* PersistenceConsumer.swift */; };
 		BA665AAA129ABC2E206BA2C5 /* mapping.json in Resources */ = {isa = PBXBuildFile; fileRef = BA665BA7D5ECAA081827FF24 /* mapping.json */; };
 		EA0119E11931D2D400232E92 /* _Blog.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0119E01931D2D400232E92 /* _Blog.m */; };
 		EA0119E41931D2DD00232E92 /* Blog.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0119E31931D2DD00232E92 /* Blog.m */; };
@@ -229,6 +231,7 @@
 		A7CACD671D800047009347B4 /* Syncable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Syncable.h; sourceTree = "<group>"; };
 		A7CACD681D800047009347B4 /* Syncable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Syncable.m; sourceTree = "<group>"; };
 		A7CACD6A1D8000A8009347B4 /* Syncable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Syncable.swift; sourceTree = "<group>"; };
+		A7CACD6C1D801377009347B4 /* PullBeersInfoOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullBeersInfoOperation.swift; sourceTree = "<group>"; };
 		A7CC88551D7D74D500B28FEE /* posts-to-rb.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "posts-to-rb.json"; sourceTree = SOURCE_ROOT; };
 		A7CC88571D7DB4AA00B28FEE /* Gambrinus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Gambrinus.entitlements; sourceTree = "<group>"; };
 		A7CC88581D7DB4C800B28FEE /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
@@ -248,6 +251,7 @@
 		A7D647741D78852B00FF52A4 /* ContentUpdateConsumer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentUpdateConsumer.swift; sourceTree = "<group>"; };
 		A7D647761D79495500FF52A4 /* Persistence+Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Persistence+Settings.swift"; sourceTree = "<group>"; };
 		A7D647781D7959B900FF52A4 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A7EEF6861D80451600C56153 /* PersistenceConsumer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceConsumer.swift; sourceTree = "<group>"; };
 		BA665BA7D5ECAA081827FF24 /* mapping.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = mapping.json; sourceTree = "<group>"; };
 		C9500B6301C764BA1D0D47AC /* Pods-Gambrinus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gambrinus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gambrinus/Pods-Gambrinus.debug.xcconfig"; sourceTree = "<group>"; };
 		DA69DCA20CC7434C02417339 /* Pods_Gambrinus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gambrinus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -535,6 +539,7 @@
 				A7D6476E1D787B8100FF52A4 /* ImagesRetrieveConsumer.swift */,
 				A7D647681D7877C900FF52A4 /* Injector.swift */,
 				A7D6476A1D78788F00FF52A4 /* ObjectModelConsumer.swift */,
+				A7EEF6861D80451600C56153 /* PersistenceConsumer.swift */,
 			);
 			path = Injection;
 			sourceTree = "<group>";
@@ -791,6 +796,7 @@
 				A7CC88681D7DCEE600B28FEE /* CloudPost.swift */,
 				A7063F321D7EBCFC00B45C6C /* CloudRateBeer.swift */,
 				A7CC88601D7DBA9500B28FEE /* ContentUpdate.swift */,
+				A7CACD6C1D801377009347B4 /* PullBeersInfoOperation.swift */,
 				A7CC88661D7DCC1200B28FEE /* PullPostMappingsOperation.swift */,
 				A7063F341D7EBD5D00B45C6C /* PullRateBeerChangesOperation.swift */,
 				A7CC88621D7DC2F100B28FEE /* RefreshPostsOperation.swift */,
@@ -845,9 +851,9 @@
 				EAC877C4192E26C800309A23 /* Setting.m */,
 				A7CACD671D800047009347B4 /* Syncable.h */,
 				A7CACD681D800047009347B4 /* Syncable.m */,
+				A7CACD6A1D8000A8009347B4 /* Syncable.swift */,
 				A7B9E08F1D7FFF0F00AB64AA /* SyncStatus.h */,
 				A7B9E0901D7FFF0F00AB64AA /* SyncStatus.m */,
-				A7CACD6A1D8000A8009347B4 /* Syncable.swift */,
 			);
 			path = ObjectModel;
 			sourceTree = "<group>";
@@ -1213,6 +1219,7 @@
 				EAC9A7CF19446A03006AC834 /* _Image.m in Sources */,
 				EAC9A7E1194476DA006AC834 /* PullStatus.m in Sources */,
 				EA2B8D901B4F052B0043A84B /* JCSLocalization.m in Sources */,
+				A7EEF6871D80451600C56153 /* PersistenceConsumer.swift in Sources */,
 				EA16BF0B1B392A810018FED4 /* InfoTitleDetailCellDefinition.m in Sources */,
 				A7B9E0871D7EFDD900AB64AA /* Persistence+Beers.swift in Sources */,
 				A7B8B8121D782F32003C8469 /* JCSInlinePickerCell.m in Sources */,
@@ -1261,6 +1268,7 @@
 				EA011A401936195F00232E92 /* BlogImageAsk.m in Sources */,
 				EA16BF111B3934EE0018FED4 /* InfoRateBeerSectionTitleDefinition.m in Sources */,
 				EA50FCB61B355CE60000F304 /* UIFont+Theme.m in Sources */,
+				A7CACD6D1D801377009347B4 /* PullBeersInfoOperation.swift in Sources */,
 				A7B9E0891D7F082900AB64AA /* Persistence+Brewer.swift in Sources */,
 				EAA3E6EA1930BBB500812B6F /* PoweredByViewController.m in Sources */,
 				EA16BF021B392A4D0018FED4 /* InfoCellDefinition.m in Sources */,
