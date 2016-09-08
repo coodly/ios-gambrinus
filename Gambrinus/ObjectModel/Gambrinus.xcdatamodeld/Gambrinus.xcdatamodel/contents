@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11224.2" systemVersion="15G1004" minimumToolsVersion="Xcode 4.3" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11232" systemVersion="15G1004" minimumToolsVersion="Xcode 4.3" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
     <entity name="Beer" representedClassName="Beer" parentEntity="Syncable" syncable="YES">
         <attribute name="alcohol" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="aliased" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>

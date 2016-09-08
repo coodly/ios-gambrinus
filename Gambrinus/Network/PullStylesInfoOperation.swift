@@ -19,7 +19,7 @@ import LaughingAdventure
 import SWLogger
 import CloudKit
 
-class PullBrewersInfoOperation: CloudKitRequest<CloudBrewer>, BeersContainerConsumer, PersistenceConsumer {
+class PullStylesInfoOperation: CloudKitRequest<CloudStyle>, BeersContainerConsumer, PersistenceConsumer {
     var persisrtence: CorePersistence!
     var beersContainer: CKContainer! {
         didSet {
@@ -32,8 +32,8 @@ class PullBrewersInfoOperation: CloudKitRequest<CloudBrewer>, BeersContainerCons
         persisrtence.perform() {
             context in
             
-            let rbids = context.rateBeerIDsForBrewersNeedingSync()
-            Log.debug("Pull data on \(rbids.count) brewers")
+            let rbids = context.rateBeerIDsForStylesNeedingSync()
+            Log.debug("Pull data on \(rbids.count) styles")
             self.checked = rbids
             
             let predicate = NSPredicate(format: "rbId IN %@", rbids)
@@ -42,13 +42,13 @@ class PullBrewersInfoOperation: CloudKitRequest<CloudBrewer>, BeersContainerCons
         }
     }
     
-    override func handle(result: CloudResult<CloudBrewer>, completion: @escaping () -> ()) {
+    override func handle(result: CloudResult<CloudStyle>, completion: @escaping () -> ()) {
         let saveClosure: TaskClosure = {
             context in
             
             switch result {
             case .failure:
-                context.markSyncFailureOn(brewers: self.checked!)
+                context.markSyncFailureOn(styles: self.checked!)
             case .success(let beers, _):
                 var missing = self.checked!
                 for b in beers {
@@ -56,10 +56,10 @@ class PullBrewersInfoOperation: CloudKitRequest<CloudBrewer>, BeersContainerCons
                         missing.remove(at: index)
                     }
                     
-                    context.update(brewer: b)
+                    context.update(style: b)
                 }
                 
-                context.markSyncFailureOn(brewers: missing)
+                context.markSyncFailureOn(styles: missing)
             }
         }
         

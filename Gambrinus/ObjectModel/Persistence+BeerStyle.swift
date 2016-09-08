@@ -18,6 +18,7 @@ import Foundation
 import CloudKit
 import CoreData
 import LaughingAdventure
+import SWLogger
 
 extension NSManagedObjectContext {
     func style(for reference: CKReference?) -> BeerStyle? {
@@ -37,5 +38,36 @@ extension NSManagedObjectContext {
         saved.identifier = id
         saved.markForSync()
         return saved
+    }
+    
+    func hasStylesWithMissingData() -> Bool {
+        let missingCount = count(instancesOf: BeerStyle.self, predicate: .needsSync)
+        Log.debug("Missing info on \(missingCount) style")
+        return missingCount != 0
+    }
+
+    func rateBeerIDsForStylesNeedingSync() -> [String] {
+        if let values = fetchAttribute(named: "identifier", on: BeerStyle.self, limit: 100, predicate: .needsSync) as? [String] {
+            return values
+        }
+        
+        return []
+    }
+    
+    func markSyncFailureOn(styles rbids: [String]) {
+        let predicate = NSPredicate(format: "identifier IN %@", rbids)
+        let beers: [BeerStyle] = fetch(predicate: predicate)
+        for b in beers {
+            b.syncStatus?.syncFailed = true
+        }
+    }
+    
+    func update(style: CloudStyle) {
+        let saved: BeerStyle = fetchEntity(where: "identifier", hasValue: style.rbId! as AnyObject) ?? insertEntity()
+        
+        saved.identifier = style.rbId
+        saved.name = style.name
+        
+        saved.markForSync(needed: false)
     }
 }
