@@ -18,6 +18,7 @@ import Foundation
 import CoreData
 import LaughingAdventure
 import CloudKit
+import SWLogger
 
 extension NSManagedObjectContext {
     func brewer(for reference: CKReference?) -> Brewer? {
@@ -38,4 +39,36 @@ extension NSManagedObjectContext {
         saved.markForSync()
         return saved
     }
+    
+    func hasBrewersWithMissingData() -> Bool {
+        let missingCount = count(instancesOf: Brewer.self, predicate: .needsSync)
+        Log.debug("Missing info on \(missingCount) brewers")
+        return missingCount != 0
+    }
+    
+    func rateBeerIDsForBrewersNeedingSync() -> [String] {
+        if let values = fetchAttribute(named: "identifier", on: Brewer.self, limit: 100, predicate: .needsSync) as? [String] {
+            return values
+        }
+        
+        return []
+    }
+
+    func markSyncFailureOn(brewers rbids: [String]) {
+        let predicate = NSPredicate(format: "identifier IN %@", rbids)
+        let beers: [Brewer] = fetch(predicate: predicate)
+        for b in beers {
+            b.syncStatus?.syncFailed = true
+        }
+    }
+    
+    func update(brewer: CloudBrewer) {
+        let saved: Brewer = fetchEntity(where: "identifier", hasValue: brewer.rbId! as AnyObject) ?? insertEntity()
+        
+        saved.identifier = brewer.rbId
+        saved.name = brewer.name
+        
+        saved.markForSync(needed: false)
+    }
+
 }

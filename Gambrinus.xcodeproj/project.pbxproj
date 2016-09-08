@@ -36,6 +36,8 @@
 		A7B9E08B1D7F08AB00AB64AA /* Persistence+BeerStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B9E08A1D7F08AB00AB64AA /* Persistence+BeerStyle.swift */; };
 		A7B9E08E1D7FFF0A00AB64AA /* _SyncStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B9E08D1D7FFF0A00AB64AA /* _SyncStatus.m */; };
 		A7B9E0911D7FFF0F00AB64AA /* SyncStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B9E0901D7FFF0F00AB64AA /* SyncStatus.m */; };
+		A7C9AAD91D81591C0098FD2E /* PullBrewersInfoOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C9AAD81D81591C0098FD2E /* PullBrewersInfoOperation.swift */; };
+		A7C9AADB1D81593A0098FD2E /* CloudBrewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C9AADA1D81593A0098FD2E /* CloudBrewer.swift */; };
 		A7CACD661D800043009347B4 /* _Syncable.m in Sources */ = {isa = PBXBuildFile; fileRef = A7CACD651D800043009347B4 /* _Syncable.m */; };
 		A7CACD691D800047009347B4 /* Syncable.m in Sources */ = {isa = PBXBuildFile; fileRef = A7CACD681D800047009347B4 /* Syncable.m */; };
 		A7CACD6B1D8000A8009347B4 /* Syncable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CACD6A1D8000A8009347B4 /* Syncable.swift */; };
@@ -226,6 +228,8 @@
 		A7B9E08D1D7FFF0A00AB64AA /* _SyncStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _SyncStatus.m; sourceTree = "<group>"; };
 		A7B9E08F1D7FFF0F00AB64AA /* SyncStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyncStatus.h; sourceTree = "<group>"; };
 		A7B9E0901D7FFF0F00AB64AA /* SyncStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyncStatus.m; sourceTree = "<group>"; };
+		A7C9AAD81D81591C0098FD2E /* PullBrewersInfoOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullBrewersInfoOperation.swift; sourceTree = "<group>"; };
+		A7C9AADA1D81593A0098FD2E /* CloudBrewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudBrewer.swift; sourceTree = "<group>"; };
 		A7CACD641D800043009347B4 /* _Syncable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Syncable.h; sourceTree = "<group>"; };
 		A7CACD651D800043009347B4 /* _Syncable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Syncable.m; sourceTree = "<group>"; };
 		A7CACD671D800047009347B4 /* Syncable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Syncable.h; sourceTree = "<group>"; };
@@ -793,10 +797,12 @@
 			isa = PBXGroup;
 			children = (
 				EA50FC931B351B4D0000F304 /* Blogger */,
+				A7C9AADA1D81593A0098FD2E /* CloudBrewer.swift */,
 				A7CC88681D7DCEE600B28FEE /* CloudPost.swift */,
 				A7063F321D7EBCFC00B45C6C /* CloudRateBeer.swift */,
 				A7CC88601D7DBA9500B28FEE /* ContentUpdate.swift */,
 				A7CACD6C1D801377009347B4 /* PullBeersInfoOperation.swift */,
+				A7C9AAD81D81591C0098FD2E /* PullBrewersInfoOperation.swift */,
 				A7CC88661D7DCC1200B28FEE /* PullPostMappingsOperation.swift */,
 				A7063F341D7EBD5D00B45C6C /* PullRateBeerChangesOperation.swift */,
 				A7CC88621D7DC2F100B28FEE /* RefreshPostsOperation.swift */,
@@ -1230,6 +1236,8 @@
 				A734E29D1D7717B50057D136 /* CDYImageAsk.m in Sources */,
 				EA50FCB01B354D260000F304 /* ObjectModel+Styles.m in Sources */,
 				EA716EB41B3C935100A395A1 /* NSString+Normalize.m in Sources */,
+				A7C9AADB1D81593A0098FD2E /* CloudBrewer.swift in Sources */,
+				A7C9AAD91D81591C0098FD2E /* PullBrewersInfoOperation.swift in Sources */,
 				EADF7E77192BD2DA00EC13AB /* UIColor+Theme.m in Sources */,
 				EAC877AE192DD50700309A23 /* Constants.m in Sources */,
 				EADDA413192B88B1000CCEA9 /* ObjectModel.m in Sources */,

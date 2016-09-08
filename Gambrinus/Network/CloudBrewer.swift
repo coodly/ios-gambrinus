@@ -18,36 +18,25 @@ import Foundation
 import LaughingAdventure
 import CloudKit
 
-struct CloudRateBeer: RemoteRecord {
+struct CloudBrewer: RemoteRecord {
     var parent: CKRecordID?
     var recordData: Data?
     var recordName: String?
     static var recordType: String {
-        return "RateBeer"
+        return "RateBeerBrewer"
     }
     
-    var alcohol: String?
-    var aliasFor: CKReference?
-    var brewer: CKReference?
     var name: String?
     var rbId: String?
-    var score: String?
-    var style: CKReference?
-    var scoreUpdatedAt: Date?
     
     mutating func loadFields(from record: CKRecord) -> Bool {
         guard let name = record["name"] as? String else {
-           return false
+            return false
         }
         
-        alcohol = record["alcohol"] as? String
-        aliasFor = record["aliasFor"] as? CKReference
-        brewer = record["brewer"] as? CKReference
         self.name = name
         rbId = record["rbId"] as? String
-        score = record["score"] as? String
-        style = record["style"] as? CKReference
-        scoreUpdatedAt = record["scoreUpdatedAt"] as? Date
+        
         return true
     }
 }

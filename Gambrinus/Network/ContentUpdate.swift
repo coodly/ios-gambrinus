@@ -66,6 +66,9 @@ class ContentUpdate: NSObject, InjectionHandler, PersistenceConsumer {
             if context.hasBeersWithMissingData() {
                 Log.debug("Pull beers meta")
                 operation = PullBeersInfoOperation()
+            } else if context.hasBrewersWithMissingData() {
+                Log.debug("Pull brewers meta")
+                operation = PullBrewersInfoOperation()
             }
             
             guard let executed = operation else {
