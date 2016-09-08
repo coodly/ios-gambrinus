@@ -27,7 +27,7 @@ class ContentUpdate: NSObject, InjectionHandler, PersistenceConsumer {
         return queue
     }()
     
-    func updatePosts(completion: (() -> ())) {
+    func updatePosts(completion: @escaping (() -> ())) {
         var operations = [Operation]()
         
         let postsRefresh = RefreshPostsOperation()

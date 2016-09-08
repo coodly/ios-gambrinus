@@ -23,7 +23,7 @@ public protocol ProductsHandler {
 }
 
 public extension ProductsHandler {
-    func retrieveProducts(_ identifiers: [String], completion: ProductsResponse) {
+    func retrieveProducts(_ identifiers: [String], completion: @escaping ProductsResponse) {
         Logging.log("Retrieve products: \(identifiers)")
         let request = SKProductsRequest(productIdentifiers: Set(identifiers))
         Store.sharedInstance.perform(request, completion: completion)
@@ -34,7 +34,7 @@ private class Store: NSObject, SKProductsRequestDelegate {
     fileprivate static let sharedInstance = Store()
     private var requests = [SKProductsRequest: ProductsResponse]()
     
-    fileprivate func perform(_ request: SKProductsRequest, completion: ProductsResponse) {
+    fileprivate func perform(_ request: SKProductsRequest, completion: @escaping ProductsResponse) {
         request.delegate = self
         requests[request] = completion
         request.start()

@@ -184,11 +184,11 @@ public class ObjectModel {
         saveContext(managedObjectContext, completion: completion)
     }
     
-    public func saveInBlock(_ handler:((ObjectModel) -> Void)) {
+    public func saveInBlock(_ handler: @escaping ((ObjectModel) -> Void)) {
         saveInBlock(handler, completion: nil)
     }
 
-    public func saveInBlock(_ handler:((ObjectModel) -> Void), completion: (() -> ())?) {
+    public func saveInBlock(_ handler: @escaping ((ObjectModel) -> Void), completion: (() -> ())?) {
         let spawned = spawnBackgroundInstance()
         Logging.log("Spawned worker from \(managedObjectContext.name!)")
         spawned.performBlock { () -> () in
@@ -197,7 +197,7 @@ public class ObjectModel {
         }
     }
 
-    public func performBlock(_ block: (() -> ())) {
+    public func performBlock(_ block: @escaping (() -> ())) {
         Logging.log("Perform block on \(managedObjectContext.name!)")
         managedObjectContext.perform(block)
     }

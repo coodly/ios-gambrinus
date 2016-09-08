@@ -35,7 +35,7 @@ public class CorePersistence {
         stack = LegacyCoreStack(modelName: modelName, type: storeType, in: directory, wipeOnConflict: wipeOnConflict)
     }
     
-    public func perform(wait: Bool = true, block: TaskClosure) {
+    public func perform(wait: Bool = true, block: @escaping TaskClosure) {
         let context = stack.mainContext!
         
         if wait {
@@ -49,7 +49,7 @@ public class CorePersistence {
         }
     }
     
-    public func save(inClosure task: TaskClosure, completion: (() -> ())? = nil) {
+    public func save(inClosure task: @escaping TaskClosure, completion: (() -> ())? = nil) {
         save(inClosures: [task], completion: completion)
     }
 
@@ -282,7 +282,7 @@ private class CoreDataStack: CoreStack {
         
     }
 
-    private func performBackgroundTask(closure: ((NSManagedObjectContext) -> ())) {
+    private func performBackgroundTask(closure: @escaping ((NSManagedObjectContext) -> ())) {
         Logging.log("Main: \(container.viewContext) - \(container.viewContext.parent) - \(container.viewContext.persistentStoreCoordinator)")
         container.performBackgroundTask() {
             context in
