@@ -35,7 +35,6 @@
         [beer setIdentifier:identifier];
     }
 
-    [beer setBindingKey:data[BeerDataKeyBindingKey]];
     [beer setName:data[BeerDataKeyName]];
     [beer setAlcohol:data[BeerDataKeyAlcohol]];
     [beer setRbIdentifier:data[BeerDataKeyRbIdentifier]];

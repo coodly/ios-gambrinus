@@ -3,7 +3,6 @@
     <entity name="Beer" representedClassName="Beer" parentEntity="Syncable" syncable="YES">
         <attribute name="alcohol" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="aliased" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="bindingKey" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="identifier" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" indexed="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="normalizedName" optional="YES" attributeType="String" syncable="YES"/>
@@ -84,7 +83,7 @@
         <relationship name="syncable" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Syncable" inverseName="syncStatus" inverseEntity="Syncable" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Beer" positionX="-27" positionY="72" width="128" height="225"/>
+        <element name="Beer" positionX="-27" positionY="72" width="128" height="210"/>
         <element name="BeerStyle" positionX="-9" positionY="90" width="128" height="120"/>
         <element name="Blog" positionX="-63" positionY="27" width="128" height="120"/>
         <element name="Brewer" positionX="-18" positionY="81" width="128" height="120"/>

@@ -65,8 +65,6 @@
 	[self setPrimitiveAliased:@(value_)];
 }
 
-@dynamic bindingKey;
-
 @dynamic identifier;
 
 - (int32_t)identifierValue {
@@ -120,9 +118,6 @@
 }
 + (NSString *)aliased {
 	return @"aliased";
-}
-+ (NSString *)bindingKey {
-	return @"bindingKey";
 }
 + (NSString *)identifier {
 	return @"identifier";

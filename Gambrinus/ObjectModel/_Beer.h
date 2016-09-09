@@ -28,8 +28,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)aliasedValue;
 - (void)setAliasedValue:(BOOL)value_;
 
-@property (nonatomic, strong, nullable) NSString* bindingKey;
-
 @property (nonatomic, strong, nullable) NSNumber* identifier;
 
 @property (atomic) int32_t identifierValue;
@@ -74,9 +72,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)primitiveAliasedValue;
 - (void)setPrimitiveAliasedValue:(BOOL)value_;
 
-- (NSString*)primitiveBindingKey;
-- (void)setPrimitiveBindingKey:(NSString*)value;
-
 - (NSNumber*)primitiveIdentifier;
 - (void)setPrimitiveIdentifier:(NSNumber*)value;
 
@@ -112,7 +107,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface BeerAttributes: NSObject 
 + (NSString *)alcohol;
 + (NSString *)aliased;
-+ (NSString *)bindingKey;
 + (NSString *)identifier;
 + (NSString *)name;
 + (NSString *)normalizedName;
