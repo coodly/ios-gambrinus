@@ -17,6 +17,7 @@
 import Foundation
 import CoreData
 import LaughingAdventure
+import SWLogger
 
 extension NSManagedObjectContext {
     func createMapping(for post: CloudPost) {
@@ -33,5 +34,40 @@ extension NSManagedObjectContext {
         let insert: Post = insertEntity()
         insert.postId = identifier
         return  insert
+    }
+    
+    func updateTopScores(on posts: Set<Post>) {
+        Log.debug("Update top score on \(posts.count) posts")
+        for p in posts {
+            guard let top = p.beers?.sorted(by: {
+                first, second in
+                
+                if first.rbScore == nil && second.rbScore == nil {
+                    return true
+                }
+                
+                if first.rbScore != nil && second.rbScore == nil {
+                    return true
+                }
+
+                if first.rbScore == nil && second.rbScore != nil {
+                    return false
+                }
+
+                return first.rbScore! > second.rbScore!
+            }).first else {
+                continue
+            }
+            
+            guard let score = top.rbScore else {
+                continue
+            }
+            
+            p.topScore = Int(score) as NSNumber?
+            
+            if p.topScore == 0 {
+                Log.debug(p)
+            }
+        }
     }
 }

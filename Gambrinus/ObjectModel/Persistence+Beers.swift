@@ -41,7 +41,7 @@ extension NSManagedObjectContext {
         return existing + created
     }
     
-    func update(rateBeer: CloudRateBeer) {
+    func update(rateBeer: CloudRateBeer) -> Set<Post> {
         let saved: Beer = fetchEntity(where: "rbIdentifier", hasValue: rateBeer.rbId! as AnyObject) ?? insertEntity()
         
         saved.rbIdentifier = rateBeer.rbId
@@ -54,6 +54,8 @@ extension NSManagedObjectContext {
         saved.style = style(for: rateBeer.style)
         
         saved.markForSync(needed: false)
+        
+        return saved.posts!
     }
     
     func hasBeersWithMissingData() -> Bool {
