@@ -46,6 +46,7 @@
         <attribute name="combinedBrewers" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="combinedStyles" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="hidden" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isDirty" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="normalizedTitle" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="postId" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="publishDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
@@ -88,7 +89,7 @@
         <element name="Blog" positionX="-63" positionY="27" width="128" height="120"/>
         <element name="Brewer" positionX="-18" positionY="81" width="128" height="120"/>
         <element name="Image" positionX="-54" positionY="54" width="128" height="88"/>
-        <element name="Post" positionX="-63" positionY="-18" width="128" height="330"/>
+        <element name="Post" positionX="-63" positionY="-18" width="128" height="345"/>
         <element name="PostContent" positionX="-36" positionY="135" width="128" height="75"/>
         <element name="PullStatus" positionX="-45" positionY="54" width="128" height="88"/>
         <element name="Setting" positionX="-63" positionY="27" width="128" height="75"/>

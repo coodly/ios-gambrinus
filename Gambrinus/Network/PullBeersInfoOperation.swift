@@ -51,7 +51,6 @@ class PullBeersInfoOperation: CloudKitRequest<CloudRateBeer>, BeersContainerCons
                 context.markSyncFailureOn(rbids: self.checked!)
             case .success(let beers, _):
                 var missing = self.checked!
-                var modifiedPosts = Set<Post>()
                 for b in beers {
                     if b.name == nil {
                         continue
@@ -61,11 +60,8 @@ class PullBeersInfoOperation: CloudKitRequest<CloudRateBeer>, BeersContainerCons
                         missing.remove(at: index)
                     }
                     
-                    let modified = context.update(rateBeer: b)
-                    modifiedPosts = modifiedPosts.union(modified)
+                    context.update(rateBeer: b)
                 }
-                
-                context.updateTopScores(on: modifiedPosts)
                 
                 context.markSyncFailureOn(rbids: missing)
             }

@@ -35,23 +35,4 @@ extension NSManagedObjectContext {
         insert.postId = identifier
         return  insert
     }
-    
-    func updateTopScores(on posts: Set<Post>) {
-        Log.debug("Update top score on \(posts.count) posts")
-        for p in posts {
-            guard let top = p.topScoredBeer() else {
-                continue
-            }
-            
-            guard let score = top.rbScore else {
-                continue
-            }
-            
-            p.topScore = Int(score) as NSNumber?
-            
-            if p.topScore == 0 {
-                Log.debug(p)
-            }
-        }
-    }
 }

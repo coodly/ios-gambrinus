@@ -33,6 +33,12 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)hiddenValue;
 - (void)setHiddenValue:(BOOL)value_;
 
+@property (nonatomic, strong) NSNumber* isDirty;
+
+@property (atomic) BOOL isDirtyValue;
+- (BOOL)isDirtyValue;
+- (void)setIsDirtyValue:(BOOL)value_;
+
 @property (nonatomic, strong, nullable) NSString* normalizedTitle;
 
 @property (nonatomic, strong, nullable) NSString* postId;
@@ -100,6 +106,12 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)primitiveHiddenValue;
 - (void)setPrimitiveHiddenValue:(BOOL)value_;
 
+- (NSNumber*)primitiveIsDirty;
+- (void)setPrimitiveIsDirty:(NSNumber*)value;
+
+- (BOOL)primitiveIsDirtyValue;
+- (void)setPrimitiveIsDirtyValue:(BOOL)value_;
+
 - (NSString*)primitiveNormalizedTitle;
 - (void)setPrimitiveNormalizedTitle:(NSString*)value;
 
@@ -156,6 +168,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString *)combinedBrewers;
 + (NSString *)combinedStyles;
 + (NSString *)hidden;
++ (NSString *)isDirty;
 + (NSString *)normalizedTitle;
 + (NSString *)postId;
 + (NSString *)publishDate;

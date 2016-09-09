@@ -20,6 +20,7 @@
 		A734E2C81D7816080057D136 /* NSString+JCSValidations.m in Sources */ = {isa = PBXBuildFile; fileRef = A734E2C71D7816080057D136 /* NSString+JCSValidations.m */; };
 		A734E2CC1D7817FC0057D136 /* UIImage+CDYImageScale.m in Sources */ = {isa = PBXBuildFile; fileRef = A734E2CB1D7817FC0057D136 /* UIImage+CDYImageScale.m */; };
 		A75CADB21D82E75700E2B1AE /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75CADB11D82E75700E2B1AE /* Post.swift */; };
+		A75CADB81D82F03700E2B1AE /* UpdateDirtyPostsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75CADB71D82F03700E2B1AE /* UpdateDirtyPostsOperation.swift */; };
 		A7B8B8011D782B5E003C8469 /* FullOptionsMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B8B8001D782B5E003C8469 /* FullOptionsMenuController.swift */; };
 		A7B8B8031D782BEB003C8469 /* SortOnlyMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B8B8021D782BEB003C8469 /* SortOnlyMenuController.swift */; };
 		A7B8B8061D782E46003C8469 /* JCSCoreDataChangeAction.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B8B8051D782E46003C8469 /* JCSCoreDataChangeAction.m */; };
@@ -204,6 +205,7 @@
 		A734E2CA1D7817FC0057D136 /* UIImage+CDYImageScale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CDYImageScale.h"; sourceTree = "<group>"; };
 		A734E2CB1D7817FC0057D136 /* UIImage+CDYImageScale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CDYImageScale.m"; sourceTree = "<group>"; };
 		A75CADB11D82E75700E2B1AE /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		A75CADB71D82F03700E2B1AE /* UpdateDirtyPostsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateDirtyPostsOperation.swift; sourceTree = "<group>"; };
 		A7B8B8001D782B5E003C8469 /* FullOptionsMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullOptionsMenuController.swift; sourceTree = "<group>"; };
 		A7B8B8021D782BEB003C8469 /* SortOnlyMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortOnlyMenuController.swift; sourceTree = "<group>"; };
 		A7B8B8041D782E46003C8469 /* JCSCoreDataChangeAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCSCoreDataChangeAction.h; sourceTree = "<group>"; };
@@ -815,6 +817,7 @@
 				A7C9AADE1D8161900098FD2E /* PullStylesInfoOperation.swift */,
 				A7CC88621D7DC2F100B28FEE /* RefreshPostsOperation.swift */,
 				EA50FCA71B351E8C0000F304 /* RemoteService.h */,
+				A75CADB71D82F03700E2B1AE /* UpdateDirtyPostsOperation.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -1293,6 +1296,7 @@
 				EAA3E6EA1930BBB500812B6F /* PoweredByViewController.m in Sources */,
 				EA16BF021B392A4D0018FED4 /* InfoCellDefinition.m in Sources */,
 				EA15CB10194EDE4900A140B5 /* BlogPostsViewController.m in Sources */,
+				A75CADB81D82F03700E2B1AE /* UpdateDirtyPostsOperation.swift in Sources */,
 				A7B8B8191D782F88003C8469 /* JCSDecimalInputValidation.m in Sources */,
 				EA0119E41931D2DD00232E92 /* Blog.m in Sources */,
 				EA50FC991B351B9D0000F304 /* BloggerAPIConnection.m in Sources */,

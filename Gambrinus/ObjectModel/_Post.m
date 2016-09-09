@@ -34,6 +34,11 @@
 		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
 		return keyPaths;
 	}
+	if ([key isEqualToString:@"isDirtyValue"]) {
+		NSSet *affectingKey = [NSSet setWithObject:@"isDirty"];
+		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
+		return keyPaths;
+	}
 	if ([key isEqualToString:@"starredValue"]) {
 		NSSet *affectingKey = [NSSet setWithObject:@"starred"];
 		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
@@ -74,6 +79,26 @@
 
 - (void)setPrimitiveHiddenValue:(BOOL)value_ {
 	[self setPrimitiveHidden:@(value_)];
+}
+
+@dynamic isDirty;
+
+- (BOOL)isDirtyValue {
+	NSNumber *result = [self isDirty];
+	return [result boolValue];
+}
+
+- (void)setIsDirtyValue:(BOOL)value_ {
+	[self setIsDirty:@(value_)];
+}
+
+- (BOOL)primitiveIsDirtyValue {
+	NSNumber *result = [self primitiveIsDirty];
+	return [result boolValue];
+}
+
+- (void)setPrimitiveIsDirtyValue:(BOOL)value_ {
+	[self setPrimitiveIsDirty:@(value_)];
 }
 
 @dynamic normalizedTitle;
@@ -166,6 +191,9 @@
 }
 + (NSString *)hidden {
 	return @"hidden";
+}
++ (NSString *)isDirty {
+	return @"isDirty";
 }
 + (NSString *)normalizedTitle {
 	return @"normalizedTitle";

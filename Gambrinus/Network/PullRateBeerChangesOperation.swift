@@ -48,15 +48,10 @@ class PullRateBeerChangesOperation: CloudKitRequest<CloudRateBeer>, BeersContain
             case .success(let rbs, _):
                 Log.debug("Have \(rbs.count) mappings")
                 
-                var modifiedPosts = Set<Post>()
                 for rb in rbs {
-                    let posts = model!.managedObjectContext.update(rateBeer: rb)
-                    modifiedPosts = modifiedPosts.union(posts)
+                    model!.managedObjectContext.update(rateBeer: rb)
                 }
-                
-                Log.debug("\(modifiedPosts.count) posts touched")
-                model!.managedObjectContext.updateTopScores(on: modifiedPosts)
-                
+                                
                 if let last = rbs.last {
                     model!.managedObjectContext.markLastKnownScores(last.scoreUpdatedAt!)
                 }

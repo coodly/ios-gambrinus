@@ -42,6 +42,10 @@ class ContentUpdate: NSObject, InjectionHandler, PersistenceConsumer {
         inject(into: pullScores)
         operations.add(operation: pullScores)
         
+        let updateDirty = UpdateDirtyPostsOperation()
+        inject(into: updateDirty)
+        operations.add(operation: updateDirty)
+        
         let notifyCompletion = BlockOperation(block: completion)
         operations.add(operation: notifyCompletion)
         
@@ -79,16 +83,21 @@ class ContentUpdate: NSObject, InjectionHandler, PersistenceConsumer {
                 return
             }
             
-            executed.completionHandler = {
-                success, op in
-                
-                Log.debug("Op complete")
-                self.checkMissingData()
-            }
+            var operations = [Operation]()
             
             self.inject(into: executed)
+            operations.add(operation: executed)
             
-            self.operationsQueue.addOperation(executed)
+            let updateDirty = UpdateDirtyPostsOperation()
+            self.inject(into: updateDirty)
+            operations.add(operation: updateDirty)
+            
+            let performNextCheck = BlockOperation() {
+                self.checkMissingData()
+            }
+            operations.add(operation: performNextCheck)
+            
+            self.operationsQueue.addOperations(operations, waitUntilFinished: false)
         }
     }
 }

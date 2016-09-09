@@ -48,4 +48,29 @@ extension Post {
             return first.rbScore! > second.rbScore!
         }).first
     }
+    
+    func updateSearchMeta() {
+        updateTopScore()
+        guard let beers = self.beers else {
+            return
+        }
+        updateSearchNames(with: Array(beers))
+    }
+    
+    private func updateSearchNames(with beers: [Beer]) {
+        let names = beers.flatMap({ $0.normalizedName }).sorted()
+        combinedBeers = names.joined(separator: "|")
+    }
+    
+    private func updateTopScore() {
+        guard let top = topScoredBeer() else {
+            return
+        }
+        
+        guard let score = top.rbScore else {
+            return
+        }
+        
+        topScore = Int(score) as NSNumber?
+    }
 }
