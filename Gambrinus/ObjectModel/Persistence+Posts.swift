@@ -39,23 +39,7 @@ extension NSManagedObjectContext {
     func updateTopScores(on posts: Set<Post>) {
         Log.debug("Update top score on \(posts.count) posts")
         for p in posts {
-            guard let top = p.beers?.sorted(by: {
-                first, second in
-                
-                if first.rbScore == nil && second.rbScore == nil {
-                    return true
-                }
-                
-                if first.rbScore != nil && second.rbScore == nil {
-                    return true
-                }
-
-                if first.rbScore == nil && second.rbScore != nil {
-                    return false
-                }
-
-                return first.rbScore! > second.rbScore!
-            }).first else {
+            guard let top = p.topScoredBeer() else {
                 continue
             }
             
