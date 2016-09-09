@@ -55,6 +55,21 @@ extension Post {
             return
         }
         updateSearchNames(with: Array(beers))
+        updateSearchBrewers(with: Array(beers))
+        updateSearchStyles(with: Array(beers))
+        isDirtyValue = false
+    }
+
+    private func updateSearchStyles(with: [Beer]) {
+        let styles = Set(with.flatMap({ $0.style }))
+        let styleNames = styles.flatMap({ $0.normalizedName }).sorted()
+        combinedStyles = styleNames.joined(separator: "|")
+    }
+
+    private func updateSearchBrewers(with: [Beer]) {
+        let brewers = Set(with.flatMap({ $0.brewer }))
+        let brewerNames = brewers.flatMap({ $0.normalizedName }).sorted()
+        combinedBrewers = brewerNames.joined(separator: "|")
     }
     
     private func updateSearchNames(with beers: [Beer]) {

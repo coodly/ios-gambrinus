@@ -69,5 +69,20 @@ extension NSManagedObjectContext {
         saved.name = style.name
         
         saved.markForSync(needed: false)
+        
+        guard let beers = saved.beers else {
+            return
+        }
+        
+        for beer in beers {
+            guard let posts = beer.posts else {
+                continue
+            }
+            
+            for post in posts {
+                post.isDirtyValue = true
+            }
+        }
+
     }
 }
