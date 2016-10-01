@@ -20,13 +20,13 @@ private extension Selector {
     static let contentSizeChanged = #selector(DynamicFontReloadingCollectionViewCell.contentSizeChanged)
 }
 
-public class DynamicFontReloadingCollectionViewCell: UICollectionViewCell {
+open class DynamicFontReloadingCollectionViewCell: UICollectionViewCell {
     
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
     
-    override public func awakeFromNib() {
+    override open func awakeFromNib() {
         super.awakeFromNib()
         
         NotificationCenter.default.addObserver(self, selector: .contentSizeChanged, name: NSNotification.Name.UIContentSizeCategoryDidChange, object: nil)

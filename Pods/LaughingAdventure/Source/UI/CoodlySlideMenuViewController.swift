@@ -81,7 +81,7 @@ open class CoodlySlideMenuViewController: SlideMenuController {
         removeLeftGestures()
     }
 
-    override public func track(_ trackAction: TrackAction) {
+    override open func track(_ trackAction: TrackAction) {
         if trackAction == .leftTapClose || trackAction == .leftFlickClose {
             removeLeftGestures()
         }

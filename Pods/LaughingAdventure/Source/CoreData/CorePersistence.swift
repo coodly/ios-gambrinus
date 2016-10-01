@@ -17,7 +17,7 @@
 import Foundation
 import CoreData
 
-public typealias TaskClosure = (NSManagedObjectContext) -> ()
+public typealias ContextClosure = (NSManagedObjectContext) -> ()
 
 private extension NSPredicate {
     static let truePredicate = NSPredicate(format: "TRUEPREDICATE")
@@ -35,7 +35,7 @@ public class CorePersistence {
         stack = LegacyCoreStack(modelName: modelName, type: storeType, in: directory, wipeOnConflict: wipeOnConflict)
     }
     
-    public func perform(wait: Bool = true, block: @escaping TaskClosure) {
+    public func perform(wait: Bool = true, block: @escaping ContextClosure) {
         let context = stack.mainContext!
         
         if wait {
@@ -49,11 +49,15 @@ public class CorePersistence {
         }
     }
     
-    public func save(inClosure task: @escaping TaskClosure, completion: (() -> ())? = nil) {
-        save(inClosures: [task], completion: completion)
+    public func performInBackground(task: @escaping ContextClosure) {
+        performInBackground(task: task, completion: nil)
+    }
+    
+    public func performInBackground(task: @escaping ContextClosure, completion: (() -> ())? = nil) {
+        performInBackground(tasks: [task], completion: completion)
     }
 
-    public func save(inClosures tasks: [TaskClosure], completion: (() -> ())? = nil) {
+    public func performInBackground(tasks: [ContextClosure], completion: (() -> ())? = nil) {
         Logging.log("Perform \(tasks.count) tasks")
         if let task = tasks.first {
             stack.performUsingWorker() {
@@ -63,7 +67,7 @@ public class CorePersistence {
                 self.save(context: context) {
                     var remaining = tasks
                     _ = remaining.removeFirst()
-                    self.save(inClosures: remaining, completion: completion)
+                    self.performInBackground(tasks: remaining, completion: completion)
                 }
             }
         } else if let completion = completion {
@@ -82,9 +86,8 @@ public class CorePersistence {
     
     private func save(context: NSManagedObjectContext, completion: (() -> ())? = nil) {
         context.perform {
-            Logging.log("Save \(context.name)")
-            
             if context.hasChanges {
+                Logging.log("Save \(context.name)")
                 try! context.save()
             }
             

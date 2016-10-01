@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Coodly LLC
+ * Copyright 2016 Coodly LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,22 +14,16 @@
  * limitations under the License.
  */
 
-import Foundation
-import SWLogger
-import LaughingAdventure
-
-extension AppDelegate {
-    func enableLogging() {
-        Log.add(output: ConsoleOutput())
-        Log.add(output: FileOutput())
-        Log.logLevel = .debug
-        
-        LaughingAdventure.Logging.set(logger: LaughingDelegate())
-    }
+public enum RevealAction {
+    case show
+    case hide
 }
 
-private class LaughingDelegate: Logger {
-    func log<T>(_ object: T, file: String, function: String, line: Int) {
-        Log.debug(object, file: file, function: function, line: line)
-    }
+public typealias BannerLoadClosure = (UIView) -> ()
+public typealias BannerRevealClosure = (RevealAction) -> ()
+
+public protocol AdsMediator {
+    var revealHandler: BannerRevealClosure? { get set }
+    
+    func loadBanner(on controller: UIViewController, completion: BannerLoadClosure)
 }

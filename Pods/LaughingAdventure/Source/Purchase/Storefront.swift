@@ -17,18 +17,56 @@
 import Foundation
 import StoreKit
 
-@available(*, deprecated, message: "Use Storefront")
-public class Purchaser: NSObject {
+public enum PurchaseResult {
+    case success
+    case cancelled
+    case failure
+    case defered
+    case restored
+    case notAllowed
+}
+
+public protocol PurchaseMonitor: class {
+    func purchaseResult(_ result: PurchaseResult, for identifier: String)
+}
+
+public typealias ProductsResponse = ([SKProduct], [String]) -> ()
+
+public class Storefront: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObserver {
+    private var requests = [SKProductsRequest: ProductsResponse]()
+
     public weak var passiveMonitor: PurchaseMonitor?
     public weak var activeMonitor: PurchaseMonitor?
-    
-    public func startMonitoring() {
-        Logging.log("Start monitoring")
+
+    override public init() {
+        super.init()
         SKPaymentQueue.default().add(self)
+    }
+    
+    public func retrieve(products: [String], completion: @escaping ProductsResponse) {
+        Logging.log("Retrieve products: \(products)")
+        let request = SKProductsRequest(productIdentifiers: Set(products))
+        request.delegate = self
+        requests[request] = completion
+        request.start()
+    }
+    
+    public func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
+        Logging.log("Retrieved: \(response.products.count). Invalid \(response.invalidProductIdentifiers)")
+        guard let completion = requests.removeValue(forKey: request) else {
+            return
+        }
+        
+        completion(response.products, response.invalidProductIdentifiers)
     }
     
     public func purchase(_ product: SKProduct) {
         Logging.log("Purchase:\(product.productIdentifier)")
+        guard SKPaymentQueue.canMakePayments() else {
+            monitor()?.purchaseResult(.notAllowed, for: product.productIdentifier)
+            return
+        }
+        
         let payment = SKPayment(product: product)
         SKPaymentQueue.default().add(payment)
     }
@@ -45,10 +83,8 @@ public class Purchaser: NSObject {
         
         return passiveMonitor
     }
-}
-
-extension Purchaser: SKPaymentTransactionObserver {
-    @objc public func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+    
+    public func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         for transaction in transactions {
             var finishTransaction = false
             
@@ -60,6 +96,9 @@ extension Purchaser: SKPaymentTransactionObserver {
             
             let notifyMonitor = monitor()
             let productIdentifier = transaction.payment.productIdentifier
+            if notifyMonitor == nil {
+                Logging.log("No monitor set")
+            }
             Logging.log("identifier: \(productIdentifier)")
             
             switch transaction.transactionState {

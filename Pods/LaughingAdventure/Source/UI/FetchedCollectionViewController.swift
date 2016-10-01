@@ -107,7 +107,7 @@ open class FetchedCollectionViewController<Model: NSManagedObject, Cell: UIColle
         return cell
     }
     
-    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let object = fetchedController!.object(at: indexPath)
         configure(cell: measuringCell!, at: indexPath, with: object, forMeasuring: true)
         let height = calculateHeightForConfiguredSizingCell(measuringCell!)
@@ -126,7 +126,7 @@ open class FetchedCollectionViewController<Model: NSManagedObject, Cell: UIColle
         changeActions = [CollectionCoreDataChangeAction]()
     }
     
-    public func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: AnyObject, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+    public func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         changeActions.append(CollectionCoreDataChangeAction.action(indexPath, changeType: type, newIndexPath: newIndexPath))
     }
     
@@ -172,7 +172,7 @@ open class FetchedCollectionViewController<Model: NSManagedObject, Cell: UIColle
         return fetchedController?.fetchedObjects?.count == 0
     }
     
-    public func contentChanged() {
+    open func contentChanged() {
         Logging.log("\(#function)")
     }
     
@@ -180,11 +180,11 @@ open class FetchedCollectionViewController<Model: NSManagedObject, Cell: UIColle
         fatalError("Need to override \(#function)")
     }
     
-    public func configure(cell: Cell, at indexPath: IndexPath, with object: Model, forMeasuring: Bool) {
+    open func configure(cell: Cell, at indexPath: IndexPath, with object: Model, forMeasuring: Bool) {
         Logging.log("configureCell(atIndexPath:\(indexPath))")
     }
     
-    public func tappedCell(at indexPath: IndexPath, object: Model) {
+    open func tappedCell(at indexPath: IndexPath, object object: Model) {
         Logging.log("tappedCell(indexPath:\(indexPath))")
     }
     

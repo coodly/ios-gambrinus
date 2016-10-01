@@ -24,7 +24,7 @@ class UpdateDirtyPostsOperation: ConcurrentOperation, PersistenceConsumer {
     override func main() {
         Log.debug("Update dirty posts")
         
-        let save: TaskClosure = {
+        let save: ContextClosure = {
             context in
             
             let predicate = NSPredicate(format: "isDirty = YES")
@@ -40,6 +40,6 @@ class UpdateDirtyPostsOperation: ConcurrentOperation, PersistenceConsumer {
             self.finish()
         }
         
-        persisrtence.save(inClosure: save, completion: completion)
+        persisrtence.performInBackground(task: save, completion: completion)
     }
 }

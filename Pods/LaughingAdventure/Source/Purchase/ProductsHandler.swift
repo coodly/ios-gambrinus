@@ -16,8 +16,7 @@
 
 import StoreKit
 
-public typealias ProductsResponse = ([SKProduct], [String]) -> ()
-
+@available(*, deprecated, message: "Use Storefront")
 public protocol ProductsHandler {
     func retrieveProducts(_ identifiers: [String], completion: ProductsResponse)
 }

@@ -1,5 +1,5 @@
 /*
-* Copyright 2015 Coodly LLC
+* Copyright 2016 Coodly LLC
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -17,59 +17,80 @@
 import UIKit
 
 public class AdPresentingContainerViewController: UIViewController {
-    @IBOutlet var contentPresentingView: UIView?
-    @IBOutlet var adContainerView: UIView!
-    @IBOutlet var adContainerHeightConstraint: NSLayoutConstraint!
-    public var presented: UIViewController?
-    
-    var banner: UIView!
+    @IBOutlet private var adsContainer: UIView!
+    @IBOutlet private var adsContainerHeight: NSLayoutConstraint!
+    public var mediator: AdsMediator?
     
     public override func viewDidLoad() {
         super.viewDidLoad()
         
-        adContainerHeightConstraint.constant = 0
+        adsContainerHeight.constant = 0
+        adsContainer.clipsToBounds = true
+    }
+    
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        guard let show = presented else {
+        guard var med = mediator else {
+            Logging.log("No ad mediator provided")
             return
         }
         
-        guard let container = contentPresentingView else {
-            return
+        if med.revealHandler == nil {
+            med.revealHandler = {
+                [unowned self] action in
+                
+                switch action {
+                case .show:
+                    self.show()
+                case .hide:
+                    self.hide()
+                }
+            }
         }
         
-        addChildViewController(show)
+        
+        loadBanner()
+    }
+    
+    private func loadBanner() {
+        Logging.log("Load banner")
+        guard var med = mediator else {
+            return
+        }
 
-        show.view.frame = container.bounds
-        show.view.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
-        container.addSubview(show.view)
+        med.loadBanner(on: self) {
+            loaded in
+            
+            self.adsContainer.addSubview(loaded)
+        }
     }
     
-    public override func viewDidAppear(_ animated: Bool) {
-        if let _ = banner {
+    private func show() {
+        Logging.log("Show banner")
+        guard let banner = adsContainer.subviews.first else {
             return
         }
         
-        banner = createBanner()
-        banner.autoresizingMask = [UIViewAutoresizing.flexibleLeftMargin, UIViewAutoresizing.flexibleTopMargin, UIViewAutoresizing.flexibleRightMargin, UIViewAutoresizing.flexibleBottomMargin]
-        adContainerView.addSubview(banner)
+        if banner.frame.height == adsContainerHeight.constant {
+            return
+        }
+        
+        banner.center = CGPoint(x: adsContainer.frame.midX, y: adsContainer.frame.midY)
+        banner.autoresizingMask = [.flexibleTopMargin, .flexibleRightMargin, .flexibleLeftMargin, .flexibleBottomMargin]
+        UIView.animate(withDuration: 0.3) {
+            self.adsContainerHeight.constant = banner.frame.height
+        }
     }
     
-    public func showBanner(_ banner: UIView) {
-        banner.center = CGPoint(x: adContainerView.frame.width / 2, y: adContainerView.frame.height / 2)
-        UIView.animate(withDuration: 0.3, animations: { () -> Void in
-            self.adContainerHeightConstraint.constant = banner.frame.height
-            self.view.layoutIfNeeded()
-        })
-    }
-    
-    public func hideBanner(_ banner: UIView) {
-        UIView.animate(withDuration: 0.3, animations: { () -> Void in
-            self.adContainerHeightConstraint.constant = 0
-            self.view.layoutIfNeeded()
-        })
-    }
-    
-    public func createBanner() -> UIView {
-        fatalError("Override createBanner")
+    private func hide() {
+        Logging.log("Hide banner")
+        guard adsContainerHeight.constant > 0.1 else {
+            return
+        }
+        
+        UIView.animate(withDuration: 0.3) {
+            self.adsContainerHeight.constant = 0
+        }
     }
 }

@@ -43,7 +43,7 @@ class PullBeersInfoOperation: CloudKitRequest<CloudRateBeer>, BeersContainerCons
     }
     
     override func handle(result: CloudResult<CloudRateBeer>, completion: @escaping () -> ()) {
-        let saveClosure: TaskClosure = {
+        let saveClosure: ContextClosure = {
             context in
             
             switch result {
@@ -67,6 +67,6 @@ class PullBeersInfoOperation: CloudKitRequest<CloudRateBeer>, BeersContainerCons
             }
         }
         
-        persisrtence.save(inClosure: saveClosure, completion: completion)
+        persisrtence.performInBackground(task: saveClosure, completion: completion)
     }
 }
