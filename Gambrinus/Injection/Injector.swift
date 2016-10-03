@@ -51,7 +51,7 @@ class Injector: NSObject {
     private lazy var beersContainer: CKContainer = {
         return CKContainer(identifier: "iCloud.com.coodly.beers")
     }()
-    private lazy var persistence: CorePersistence = {
+    lazy var persistence: CorePersistence = {
         return CorePersistence(modelName: "Gambrinus", wipeOnConflict: true)
     }()
     

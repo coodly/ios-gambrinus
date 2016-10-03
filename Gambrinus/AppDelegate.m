@@ -35,23 +35,13 @@
 
     [Fabric with:@[CrashlyticsKit]];
     
-    [self enableLogging];
+    #if DEBUG
+        [self enableLogging];
+    #endif
 
     [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
 
-    ObjectModel *model = [Injector sharedInstance].objectModel;
-    
-    CDYLog(@"DB path:%@", [model storeURL]);
-
-    if (![model databaseFileExists] && NO) {
-        CDYLog(@"Copy DB file");
-        NSURL *url = [[NSBundle mainBundle] URLForResource:@"Gambrinus" withExtension:@"sqlite"];
-        NSError *copyError = nil;
-        [[NSFileManager defaultManager] copyItemAtURL:url toURL:model.storeURL error:&copyError];
-        if (copyError) {
-            CDYLog(@"Copy error:%@", copyError);
-        }
-    }
+    [self copyDatabase];
 
 #if DEBUG
     UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(presentKioskController)];
@@ -66,6 +56,8 @@
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     [[UIRefreshControl appearance] setTintColor:[UIColor myOrange]];
+
+    ObjectModel *model = [Injector sharedInstance].objectModel;
 
     MigrationViewController *migrationViewController = [[MigrationViewController alloc] init];
     [migrationViewController setObjectModel:model];

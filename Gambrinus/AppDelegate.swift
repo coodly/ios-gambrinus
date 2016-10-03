@@ -26,6 +26,34 @@ extension AppDelegate {
         
         LaughingAdventure.Logging.set(logger: LaughingDelegate())
     }
+
+    func copyDatabase() {
+        Log.debug("Copy database")
+        let persistence = Injector.sharedInstance.persistence
+        guard let sqlitePath = persistence.sqliteFilePath else {
+            return
+        }
+        
+        Log.debug("SQLite path: \(sqlitePath)")
+        
+        if FileManager.default.fileExists(atPath: sqlitePath.path) {
+            Log.debug("DB file exists")
+            return
+        }
+        
+        guard let baseDataPath = Bundle.main.url(forResource: "Gambrinus", withExtension: "sqlite") else {
+            Log.debug("No imput file")
+            return
+        }
+        
+        Log.debug("Will copy \(baseDataPath) to \(sqlitePath)")
+        do {
+            try FileManager.default.createDirectory(at: sqlitePath.deletingLastPathComponent(), withIntermediateDirectories: true, attributes: nil)
+            try FileManager.default.copyItem(at: baseDataPath, to: sqlitePath)
+        } catch let error as NSError {
+            Log.error("DB copy failed: \(error)")
+        }
+    }
 }
 
 private class LaughingDelegate: Logger {

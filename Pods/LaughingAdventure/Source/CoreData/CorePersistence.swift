@@ -25,6 +25,11 @@ private extension NSPredicate {
 
 public class CorePersistence {
     private let stack: CoreStack!
+    
+    public var sqliteFilePath: URL? {
+        return stack.databaseFilePath
+    }
+    
     public lazy var mainContext: NSManagedObjectContext = {
         let context = self.stack.mainContext!
         context.name = "Main"
@@ -251,12 +256,14 @@ public extension NSManagedObjectContext {
 
 private protocol CoreStack {
     var mainContext: NSManagedObjectContext! { get }
+    var databaseFilePath: URL? { get }
     func performUsingWorker(closure: ((NSManagedObjectContext) -> ()))
 }
 
 @available(iOS 10, *)
 @available(tvOS 10.0, *)
 private class CoreDataStack: CoreStack {
+    fileprivate var databaseFilePath: URL?
     private let modelName: String!
     private lazy var container: NSPersistentContainer = {
         let container = NSPersistentContainer(name: self.modelName)
@@ -384,7 +391,7 @@ private class LegacyCoreStack: CoreStack {
     
     lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
-        let url = self.databaseFilePath()
+        let url = self.databaseFilePath
         
         Logging.log("Using DB file at \(url)")
         
@@ -423,7 +430,7 @@ private class LegacyCoreStack: CoreStack {
         return false
     }
     
-    private func databaseFilePath() -> URL? {
+    fileprivate var databaseFilePath: URL? {
         if let existing = pathToSQLiteFile {
             return existing
         } else if self.storeType == NSSQLiteStoreType {

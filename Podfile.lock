@@ -74,7 +74,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   LaughingAdventure:
-    :commit: 0c2ed44e149cb67877f470d308bb5bdbd4549722
+    :commit: 8969ef6dc5cf53f431d0f51d2e37d5825b72cd9c
     :git: git@github.com:coodly/laughing-adventure.git
   SWLogger:
     :commit: 5a14a25e047ed73726041d65376a02dc73a62644
@@ -89,6 +89,6 @@ SPEC CHECKSUMS:
   Ono: 80b1c686777d3f6d5d5ce6fcac8a74afef4ca197
   SWLogger: 0fb957f5e299a829e0e8e4fd2bd809e813ad2bd8
 
-PODFILE CHECKSUM: 12532f39fa0785983e625f62496bc13bbd083412
+PODFILE CHECKSUM: e057cb4218e8ac49a74a69f90b107d200f67dede
 
 COCOAPODS: 1.1.0.beta.1

@@ -2,7 +2,13 @@ platform :ios, '9.3'
 
 use_frameworks!
 
-UseLocalPods = false
+module PodSource
+    Local = 1
+    Remote = 2
+    Tagged = 3
+end
+
+UsedSource = PodSource::Remote
 
 def pods
     pod 'Fabric'
@@ -11,7 +17,7 @@ def pods
     pod 'MRProgress'
     pod 'Ono'
     
-    if UseLocalPods
+    if UsedSource == PodSource::Local
         pod 'SWLogger', :path => '../swift-logger'
         pod 'LaughingAdventure', :path => '../swift-laughing-adventure'
     else
