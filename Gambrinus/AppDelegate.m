@@ -42,8 +42,6 @@
 
     [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
 
-    [application setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
-
     ObjectModel *model = [Injector sharedInstance].objectModel;
     
     CDYLog(@"DB path:%@", [model storeURL]);
@@ -66,8 +64,6 @@
 #endif
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(guidedAccessStatusChanged) name:UIAccessibilityGuidedAccessStatusDidChangeNotification object:nil];
-
-    [application setStatusBarStyle:UIStatusBarStyleLightContent];
 
     [[UINavigationBar appearance] setBarTintColor:[UIColor myOrange]];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
