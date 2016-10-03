@@ -28,6 +28,4 @@ extern NSString *const GambrinusSortOrderChangedNotification;
 #define TOCK(s)   CDYLog(@"%@: %f", s, -[startTime timeIntervalSinceNow])
 
 
-#define GambrinusForceET 1
-
 static CGFloat const GambrinusSpacing = 8;

@@ -17,7 +17,6 @@
 #import "BlogPostsViewController.h"
 #import "ObjectModel+Blogs.h"
 #import "ObjectModel+Posts.h"
-#import "JCSLocalization.h"
 
 @interface BlogPostsViewController ()
 
@@ -41,7 +40,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 
-    [self.navigationItem setTitle:JCSLocalizedString(@"posts.controller.title", nil)];
+    [self.navigationItem setTitle:NSLocalizedString(@"posts.controller.title", nil)];
 }
 
 - (NSFetchedResultsController *)createFetchedController {

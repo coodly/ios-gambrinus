@@ -12,6 +12,8 @@
 @implementation MenuCell
 
 - (void)awakeFromNib {
+    [super awakeFromNib];
+
     [self.contentView setBackgroundColor:[UIColor whiteColor]];
     [self.textLabel setTextColor:[UIColor myOrange]];
     [self setTintColor:[UIColor myOrange]];

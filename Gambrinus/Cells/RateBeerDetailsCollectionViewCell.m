@@ -20,7 +20,6 @@
 #import "BeerStyle.h"
 #import "Brewer.h"
 #import "RateBeerScoreLabel.h"
-#import "JCSLocalization.h"
 
 @interface RateBeerDetailsCollectionViewCell ()
 
@@ -52,8 +51,8 @@
 
 - (void)updatePresentation {
     [self.nameLabel setFont:[UIFont preferredFontForTextStyle:UIFontTextStyleHeadline]];
-    [self setTitle:JCSLocalizedString(@"post.extended.details.style.label", nil) value:self.style intoLabel:self.styleLabel];
-    [self setTitle:JCSLocalizedString(@"post.extended.details.brewer.label", nil) value:self.brewer intoLabel:self.brewerLabel];
+    [self setTitle:NSLocalizedString(@"post.extended.details.style.label", nil) value:self.style intoLabel:self.styleLabel];
+    [self setTitle:NSLocalizedString(@"post.extended.details.brewer.label", nil) value:self.brewer intoLabel:self.brewerLabel];
 }
 
 - (void)setTitle:(NSString *)title value:(NSString *)value intoLabel:(UILabel *)label {

@@ -26,15 +26,12 @@
 #import <Gambrinus-Swift.h>
 #import "KioskPostsViewController.h"
 #import "BlogPostsViewController.h"
-#import "JCSLocalization.h"
 #import "MigrationViewController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-
-    [[JCSLocalization sharedInstance] setForcedLocale:[NSLocale localeWithLocaleIdentifier:@"et"]];
 
     [Fabric with:@[CrashlyticsKit]];
     

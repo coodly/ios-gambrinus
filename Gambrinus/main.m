@@ -21,13 +21,6 @@
 int main(int argc, char * argv[])
 {
     @autoreleasepool {
-        NSString *language = @"en";
-#if GambrinusForceET
-        language = @"et";
-#endif
-        [[NSUserDefaults standardUserDefaults] setObject:@[language] forKey:@"AppleLanguages"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }
 }
