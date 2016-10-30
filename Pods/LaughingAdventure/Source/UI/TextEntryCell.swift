@@ -20,7 +20,7 @@ private extension Selector {
     static let dismissKeyboardPressed = #selector(TextEntryCell.dismissPressed)
 }
 
-public class TextEntryCell: DynamicFontReloadingTableViewCell {
+open class TextEntryCell: DynamicFontReloadingTableViewCell {
     @IBOutlet public var entryField: UITextField!
     public var inputValidation: InputValidation?
     fileprivate var dismissButton: UIBarButtonItem?
@@ -46,6 +46,15 @@ public class TextEntryCell: DynamicFontReloadingTableViewCell {
             dismissButton?.title = NSLocalizedString("coodly.text.field.done", comment: "")
         }
     }
+
+    // MARK: - Decimal input
+    #if os(iOS)
+    open func decimalInput() {
+        inputValidation = DecimalInputValidation()
+        entryField.keyboardType = .decimalPad
+        addAccessoryToolbar()
+    }
+    #endif
 }
 
 // MARK: - Done accessory
@@ -58,17 +67,6 @@ public extension TextEntryCell {
         dismissButton = UIBarButtonItem(title: "", style: .plain, target: self, action: .dismissKeyboardPressed)
         toolbar.setItems([spacer, dismissButton!], animated: false)
         entryField.inputAccessoryView = toolbar
-    }
-}
-#endif
-
-// MARK: - Decimal input
-#if os(iOS)
-public extension TextEntryCell {
-    func decimalInput() {
-        inputValidation = DecimalInputValidation()
-        entryField.keyboardType = .decimalPad
-        addAccessoryToolbar()
     }
 }
 #endif

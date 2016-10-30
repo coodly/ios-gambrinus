@@ -1,7 +1,13 @@
 // DO NOT EDIT. This file is machine-generated and constantly overwritten.
 // Make changes to PostContent.h instead.
 
-@import CoreData;
+#if __has_feature(modules)
+    @import Foundation;
+    @import CoreData;
+#else
+    #import <Foundation/Foundation.h>
+    #import <CoreData/CoreData.h>
+#endif
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -14,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_;
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
-@property (nonatomic, readonly, strong) PostContentID*objectID;
+@property (nonatomic, readonly, strong) PostContentID *objectID;
 
 @property (nonatomic, strong, nullable) NSString* content;
 

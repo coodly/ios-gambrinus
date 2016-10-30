@@ -16,11 +16,11 @@
 
 import UIKit
 
-public class SingleSelectionViewController: SelectionViewController {
+open class SingleSelectionViewController: SelectionViewController {
     public var selectionHandler: ((AnyObject?) -> Void)!
     var selectedElement: AnyObject?
         
-    public override func viewWillDisappear(_ animated: Bool) {
+    open override func viewWillDisappear(_ animated: Bool) {
         selectionHandler(selectedElement)
     }
 

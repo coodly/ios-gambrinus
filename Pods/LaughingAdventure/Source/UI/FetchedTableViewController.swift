@@ -21,7 +21,7 @@ private extension Selector {
     static let contentSizeChanged = #selector(FetchedTableViewController.contentSizeChanged)
 }
 
-public class FetchedTableViewController<Entity: NSManagedObject, Cell: UITableViewCell>: UIViewController, FullScreenTableCreate, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate, SmoothTableRowDeselection {
+open class FetchedTableViewController<Entity: NSManagedObject, Cell: UITableViewCell>: UIViewController, FullScreenTableCreate, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate, SmoothTableRowDeselection {
     @IBOutlet public var tableView: UITableView!
     private var fetchedController: NSFetchedResultsController<Entity>?
     
@@ -30,7 +30,7 @@ public class FetchedTableViewController<Entity: NSManagedObject, Cell: UITableVi
         fetchedController?.delegate = nil
     }
     
-    public override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector: .contentSizeChanged, name: NSNotification.Name.UIContentSizeCategoryDidChange, object: nil)
@@ -39,16 +39,14 @@ public class FetchedTableViewController<Entity: NSManagedObject, Cell: UITableVi
         
         tableView.estimatedRowHeight = 44
         tableView.rowHeight = UITableViewAutomaticDimension
-        
-        tableView.registerCell(forType: Cell.self)
     }
     
-    public override func viewWillAppear(_ animated: Bool) {
+    open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         smoothDeselectRows()
         
-        if let _ = fetchedController {
+        if fetchedController != nil {
             return
         }
         
@@ -113,8 +111,7 @@ public class FetchedTableViewController<Entity: NSManagedObject, Cell: UITableVi
         }
     }
     
-    public func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: AnyObject, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-        
+    public func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         switch(type) {
         case NSFetchedResultsChangeType.update:
             tableView.reloadRows(at: [indexPath!], with: .automatic)
@@ -139,20 +136,20 @@ public class FetchedTableViewController<Entity: NSManagedObject, Cell: UITableVi
         }
     }
     
-    public func createFetchedController() -> NSFetchedResultsController<Entity> {
+    open func createFetchedController() -> NSFetchedResultsController<Entity> {
         fatalError("Need to override \(#function)")
     }
     
-    public func tappedCell(at indexPath: IndexPath, object: Entity) -> Bool {
+    open func tappedCell(at indexPath: IndexPath, object: Entity) -> Bool {
         Logging.log("tappedCell(indexPath:\(indexPath))")
         return false
     }
     
-    public func configure(cell: Cell, at indexPath: IndexPath, with object: Entity, forMeasuring: Bool) {
+    open func configure(cell: Cell, at indexPath: IndexPath, with object: Entity, forMeasuring: Bool) {
         Logging.log("configure(cell: at IndexPath:\(indexPath))")
     }
     
-    public func contentChanged() {
+    open func contentChanged() {
         Logging.log("Content changed")
     }
     

@@ -1,7 +1,13 @@
 // DO NOT EDIT. This file is machine-generated and constantly overwritten.
 // Make changes to Beer.h instead.
 
-@import CoreData;
+#if __has_feature(modules)
+    @import Foundation;
+    @import CoreData;
+#else
+    #import <Foundation/Foundation.h>
+    #import <CoreData/CoreData.h>
+#endif
 
 #import "Syncable.h"
 
@@ -18,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_;
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
-@property (nonatomic, readonly, strong) BeerID*objectID;
+@property (nonatomic, readonly, strong) BeerID *objectID;
 
 @property (nonatomic, strong, nullable) NSString* alcohol;
 

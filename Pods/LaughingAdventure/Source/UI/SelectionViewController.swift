@@ -18,18 +18,18 @@ import UIKit
 
 private let SelectionTableCellIdentifier = "SelectionTableCellIdentifier"
 
-public class SelectionViewController: UIViewController, FullScreenTableCreate, UITableViewDataSource, UITableViewDelegate {
+open class SelectionViewController: UIViewController, FullScreenTableCreate, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet public var tableView: UITableView!
     
     public var source: SelectionSource!
     
-    public override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
         
         checkTableView()
     }
     
-    public override func viewWillAppear(_ animated: Bool) {
+    open override func viewWillAppear(_ animated: Bool) {
         source.tableView = tableView
         tableView.reloadData()
     }
@@ -45,7 +45,7 @@ public class SelectionViewController: UIViewController, FullScreenTableCreate, U
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: SelectionTableCellIdentifier)!
         let object = source.objectAtIndexPath(indexPath)
-        configureCell(cell, withObject: object, selected:isSelected(object))
+        configure(cell: cell, with: object, as: isSelected(object))
         return cell
     }
     
@@ -64,7 +64,7 @@ public class SelectionViewController: UIViewController, FullScreenTableCreate, U
         fatalError("Override \(#function)")
     }
     
-    public func configureCell(_ cell: UITableViewCell, withObject: AnyObject, selected: Bool) {
+    open func configure(cell: UITableViewCell, with object: AnyObject, as selected: Bool) {
         Logging.log("configureCell(selected:\(selected))")
     }
 

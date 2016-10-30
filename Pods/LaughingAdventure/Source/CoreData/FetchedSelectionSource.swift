@@ -62,8 +62,8 @@ public class FetchedSelectionSource<T: NSFetchRequestResult>: NSObject, Selectio
         tableView.beginUpdates()
     }
     
-    public func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: AnyObject, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-        
+    
+    public func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {        
         switch(type) {
         case NSFetchedResultsChangeType.insert:
             tableView.insertRows(at: [newIndexPath!], with: .automatic)

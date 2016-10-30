@@ -16,8 +16,33 @@
 
 import Foundation
 
-class Localized {
-    class func string(_ key: String) -> String {
-        return NSLocalizedString(key, comment: "")
+public class Localized {
+    public static let LanguageChangedNotification = Notification.Name(rawValue: "com.coodly.LanguageChangedNotification")
+
+    static let sharedInstance = Localized()
+    public var language = "en" {
+        didSet {
+            if oldValue != language {
+                loadedBundle = bundleForLanguage(language)
+                
+                NotificationCenter.default.post(name: Localized.LanguageChangedNotification, object: nil)
+            }
+        }
+    }
+    
+    private lazy var loadedBundle: Bundle = {
+        return self.bundleForLanguage(self.language)
+    }()
+    
+    public init() {
+        
+    }
+    
+    public func string(for key: String) -> String {
+        return NSLocalizedString(key, tableName: nil, bundle: loadedBundle, value: key, comment: key)
+    }
+    
+    private func bundleForLanguage(_ code: String) -> Bundle {
+        return Bundle(path: Bundle.main.path(forResource: code, ofType: "lproj")!)!
     }
 }

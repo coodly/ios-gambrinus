@@ -24,7 +24,7 @@ private extension NSPredicate {
 }
 
 public class CorePersistence {
-    private let stack: CoreStack!
+    private var stack: CoreStack!
     
     public var sqliteFilePath: URL? {
         return stack.databaseFilePath
@@ -36,8 +36,17 @@ public class CorePersistence {
         return context
     }()
     
-    public init(modelName: String, storeType: String = NSSQLiteStoreType, in directory: FileManager.SearchPathDirectory = .documentDirectory, wipeOnConflict: Bool = false) {
-        stack = LegacyCoreStack(modelName: modelName, type: storeType, in: directory, wipeOnConflict: wipeOnConflict)
+    public var managedObjectModel: NSManagedObjectModel {
+        set {
+            self.stack.managedObjectModel = newValue
+        }
+        get {
+            return self.stack.managedObjectModel
+        }
+    }
+    
+    public init(modelName: String, storeType: String = NSSQLiteStoreType, identifier: String = Bundle.main.bundleIdentifier!, in directory: FileManager.SearchPathDirectory = .documentDirectory, wipeOnConflict: Bool = false) {
+        stack = LegacyCoreStack(modelName: modelName, type: storeType, identifier: identifier, in: directory, wipeOnConflict: wipeOnConflict)
     }
     
     public func perform(wait: Bool = true, block: @escaping ContextClosure) {
@@ -138,12 +147,12 @@ public extension NSManagedObjectContext {
         }
     }
     
-    public func fetchEntity<T: NSManagedObject>(where name: String, hasValue: AnyObject) -> T? {
+    public func fetchEntity<T: NSManagedObject, V: Any>(where name: String, hasValue: V) -> T? {
         let attributePredicate = predicate(for: name, withValue: hasValue)
         return fetchFirst(predicate: attributePredicate)
     }
     
-    public func predicate(for attribute: String, withValue: AnyObject) -> NSPredicate {
+    public func predicate<V: Any>(for attribute: String, withValue: V) -> NSPredicate {
         let predicate: NSPredicate
         
         switch(withValue) {
@@ -212,7 +221,7 @@ public extension NSManagedObjectContext {
         return fetchedController
     }
     
-    public func has<T: NSManagedObject>(entity type: T.Type, where attribute: String, is value: AnyObject) -> Bool {
+    public func has<T: NSManagedObject, V: Any>(entity type: T.Type, where attribute: String, is value: V) -> Bool {
         return count(instancesOf: type, predicate: predicate(for: attribute, withValue: value)) == 1
     }
     
@@ -235,7 +244,7 @@ public extension NSManagedObjectContext {
         }
     }
     
-    public func fetchAttribute<T: NSManagedObject>(named: String, on entity: T.Type, limit: Int? = nil, predicate: NSPredicate = .truePredicate) -> [AnyObject] {
+    public func fetchAttribute<T: NSManagedObject, Result>(named: String, on entity: T.Type, limit: Int? = nil, predicate: NSPredicate = .truePredicate) -> [Result] {
         let request: NSFetchRequest<NSDictionary> = NSFetchRequest(entityName: T.entityName())
         request.resultType = .dictionaryResultType
         request.propertiesToFetch = [named]
@@ -246,7 +255,7 @@ public extension NSManagedObjectContext {
         
         do {
             let objects = try fetch(request)
-            return objects.map { $0[named] as AnyObject }
+            return objects.flatMap { $0[named] as? Result }
         } catch {
             Logging.log("fetchEntityAttribute error: \(error)")
             return []
@@ -256,6 +265,7 @@ public extension NSManagedObjectContext {
 
 private protocol CoreStack {
     var mainContext: NSManagedObjectContext! { get }
+    var managedObjectModel: NSManagedObjectModel! { get set }
     var databaseFilePath: URL? { get }
     func performUsingWorker(closure: ((NSManagedObjectContext) -> ()))
 }
@@ -282,6 +292,8 @@ private class CoreDataStack: CoreStack {
     fileprivate var mainContext: NSManagedObjectContext! {
         return container.viewContext
     }
+    fileprivate var managedObjectModel: NSManagedObjectModel!
+    
     private var workerCount = 0
     
     init(modelName: String) {
@@ -329,15 +341,17 @@ private class LegacyCoreStack: CoreStack {
     private var wipeDatabaseOnConflict = false
     private var pathToSQLiteFile: URL?
     private let mergePolicy: NSMergePolicyType
+    private let identifier: String
     
     private static var spawnedBackgroundCount = 0
     
-    init(modelName: String, type: String = NSSQLiteStoreType, in directory: FileManager.SearchPathDirectory = .documentDirectory, mergePolicy: NSMergePolicyType = .mergeByPropertyObjectTrumpMergePolicyType, wipeOnConflict: Bool) {
+    init(modelName: String, type: String = NSSQLiteStoreType, identifier: String, in directory: FileManager.SearchPathDirectory = .documentDirectory, mergePolicy: NSMergePolicyType = .mergeByPropertyObjectTrumpMergePolicyType, wipeOnConflict: Bool) {
         self.modelName = modelName
         self.storeType = type
         self.directory = directory
         self.mergePolicy = mergePolicy
         self.wipeDatabaseOnConflict = wipeOnConflict
+        self.identifier = identifier
     }
     
     fileprivate func performUsingWorker(closure: ((NSManagedObjectContext) -> ())) {
@@ -373,8 +387,7 @@ private class LegacyCoreStack: CoreStack {
     public lazy var workingFilesDirectory: URL = {
         let urls = FileManager.default.urls(for: self.directory, in: .userDomainMask)
         let last = urls.last!
-        let identifier = Bundle.main.bundleIdentifier!
-        let dbIdentifier = identifier + ".db"
+        let dbIdentifier = self.identifier + ".db"
         let dbFolder = last.appendingPathComponent(dbIdentifier)
         do {
             try FileManager.default.createDirectory(at: dbFolder, withIntermediateDirectories: true, attributes: nil)
@@ -384,7 +397,7 @@ private class LegacyCoreStack: CoreStack {
         return dbFolder
     }()
     
-    lazy var managedObjectModel: NSManagedObjectModel = {
+    lazy var managedObjectModel: NSManagedObjectModel! = {
         let modelURL = Bundle.main.url(forResource: self.modelName, withExtension: "momd")!
         return NSManagedObjectModel(contentsOf: modelURL)!
     }()

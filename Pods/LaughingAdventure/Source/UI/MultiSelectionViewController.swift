@@ -16,11 +16,11 @@
 
 import UIKit
 
-public class MultiSelectionViewController: SelectionViewController {
+open class MultiSelectionViewController: SelectionViewController {
     public var selectionHandler: (([AnyObject]) -> Void)!
     var selectedElements: [AnyObject]!
  
-    public override func viewWillDisappear(_ animated: Bool) {
+    open override func viewWillDisappear(_ animated: Bool) {
         selectionHandler(selectedElements)
     }
 
@@ -56,7 +56,7 @@ public class MultiSelectionViewController: SelectionViewController {
         
     }
 
-    public func didDeselect(_ element: AnyObject) {
+    open func didDeselect(_ element: AnyObject) {
         
     }
 }

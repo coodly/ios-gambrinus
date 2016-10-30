@@ -20,13 +20,13 @@ private extension Selector {
     static let contentSizeChanged = #selector(DynamicFontReloadingTableViewCell.contentSizeChanged)
 }
 
-public class DynamicFontReloadingTableViewCell: UITableViewCell {
+open class DynamicFontReloadingTableViewCell: UITableViewCell {
 
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
     
-    override public func awakeFromNib() {
+    override open func awakeFromNib() {
         super.awakeFromNib()
 
         NotificationCenter.default.addObserver(self, selector: .contentSizeChanged, name: NSNotification.Name.UIContentSizeCategoryDidChange, object: nil)
@@ -37,7 +37,7 @@ public class DynamicFontReloadingTableViewCell: UITableViewCell {
         setUIFont()
     }
     
-    public func setUIFont() {
+    open func setUIFont() {
         Logging.log("Override \(#function) to set cell font")
     }
 }

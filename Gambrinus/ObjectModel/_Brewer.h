@@ -1,7 +1,13 @@
 // DO NOT EDIT. This file is machine-generated and constantly overwritten.
 // Make changes to Brewer.h instead.
 
-@import CoreData;
+#if __has_feature(modules)
+    @import Foundation;
+    @import CoreData;
+#else
+    #import <Foundation/Foundation.h>
+    #import <CoreData/CoreData.h>
+#endif
 
 #import "Syncable.h"
 
@@ -16,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_;
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
-@property (nonatomic, readonly, strong) BrewerID*objectID;
+@property (nonatomic, readonly, strong) BrewerID *objectID;
 
 @property (nonatomic, strong, nullable) NSString* identifier;
 
