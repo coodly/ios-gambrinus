@@ -1,9 +1,14 @@
+"coodly.feedback.controller.title" = "Vestlused";
+"coodly.feedback.message.compose.controller.send.button" = "Saada";
+"coodly.feedback.message.compose.controller.title" = "Uus teade";
+
 "kiosk.posts.controller.title" = "Gambrinus";
 
 "marked.controller.title" = "Lemmikud";
 
 "menu.controller.option.all.posts" = "Kõik postitused";
 "menu.controller.option.favorites" = "Lemmikud";
+"menu.controller.option.feedback" = "Kirjuta arendajale";
 "menu.controller.sort.by.beer" = "RB õlle nimi";
 "menu.controller.sort.by.brewer" = "pruulija";
 "menu.controller.sort.by.date" = "kuupäev";

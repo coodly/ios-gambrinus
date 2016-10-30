@@ -27,6 +27,9 @@ class FullOptionsMenuController: MenuViewController, ObjectModelConsumer, Inject
     private var postDateCell: MenuCell?
     private var postNameCell: MenuCell?
     private var rbScoreCell: MenuCell?
+    
+    private var feedbackCell: MenuCell!
+    
     override var preferredStyle: UITableViewStyle {
         return .grouped
     }
@@ -70,6 +73,11 @@ class FullOptionsMenuController: MenuViewController, ObjectModelConsumer, Inject
     func loadContent() {
         appendNavigationOptions()
         appendSortOptions()
+        
+        feedbackCell = tableView.dequeueReusableCell() as MenuCell
+        feedbackCell.textLabel!.text = NSLocalizedString("menu.controller.option.feedback", comment: "")
+        
+        addSection(InputCellsSection(cells: [feedbackCell]))
     }
     
     final func appendNavigationOptions() {
@@ -110,6 +118,10 @@ class FullOptionsMenuController: MenuViewController, ObjectModelConsumer, Inject
             tappedOnSort(cell: nameCell)
         } else if let rbCell = rbScoreCell, rbCell == cell {
             tappedOnSort(cell: rbCell)
+        } else if cell == feedbackCell {
+            let controller = FeedbackViewController()
+            let navigation = UINavigationController(rootViewController: controller)
+            container.presentModalController(navigation)
         }
         
         return false

@@ -46,7 +46,6 @@
 		A7CACD691D800047009347B4 /* Syncable.m in Sources */ = {isa = PBXBuildFile; fileRef = A7CACD681D800047009347B4 /* Syncable.m */; };
 		A7CACD6B1D8000A8009347B4 /* Syncable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CACD6A1D8000A8009347B4 /* Syncable.swift */; };
 		A7CACD6D1D801377009347B4 /* PullBeersInfoOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CACD6C1D801377009347B4 /* PullBeersInfoOperation.swift */; };
-		A7CC88591D7DB4C800B28FEE /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CC88581D7DB4C800B28FEE /* CloudKit.framework */; };
 		A7CC885D1D7DB88600B28FEE /* BeersContainerConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CC885C1D7DB88600B28FEE /* BeersContainerConsumer.swift */; };
 		A7CC885F1D7DB8A700B28FEE /* GambrinusContainerConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CC885E1D7DB8A700B28FEE /* GambrinusContainerConsumer.swift */; };
 		A7CC88611D7DBA9500B28FEE /* ContentUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CC88601D7DBA9500B28FEE /* ContentUpdate.swift */; };
@@ -54,6 +53,7 @@
 		A7CC88651D7DC35500B28FEE /* BloggerAPIConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CC88641D7DC35500B28FEE /* BloggerAPIConsumer.swift */; };
 		A7CC88671D7DCC1200B28FEE /* PullPostMappingsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CC88661D7DCC1200B28FEE /* PullPostMappingsOperation.swift */; };
 		A7CC88691D7DCEE600B28FEE /* CloudPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CC88681D7DCEE600B28FEE /* CloudPost.swift */; };
+		A7D19E931DC601830024C3A7 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D19E921DC601830024C3A7 /* CloudKit.framework */; };
 		A7D647691D7877C900FF52A4 /* Injector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D647681D7877C900FF52A4 /* Injector.swift */; };
 		A7D6476B1D78788F00FF52A4 /* ObjectModelConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D6476A1D78788F00FF52A4 /* ObjectModelConsumer.swift */; };
 		A7D6476D1D7878D100FF52A4 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D6476C1D7878D100FF52A4 /* PostsViewController.swift */; };
@@ -245,7 +245,6 @@
 		A7CACD6C1D801377009347B4 /* PullBeersInfoOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullBeersInfoOperation.swift; sourceTree = "<group>"; };
 		A7CC88551D7D74D500B28FEE /* posts-to-rb.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "posts-to-rb.json"; sourceTree = SOURCE_ROOT; };
 		A7CC88571D7DB4AA00B28FEE /* Gambrinus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Gambrinus.entitlements; sourceTree = "<group>"; };
-		A7CC88581D7DB4C800B28FEE /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		A7CC885C1D7DB88600B28FEE /* BeersContainerConsumer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeersContainerConsumer.swift; sourceTree = "<group>"; };
 		A7CC885E1D7DB8A700B28FEE /* GambrinusContainerConsumer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GambrinusContainerConsumer.swift; sourceTree = "<group>"; };
 		A7CC88601D7DBA9500B28FEE /* ContentUpdate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentUpdate.swift; sourceTree = "<group>"; };
@@ -253,6 +252,7 @@
 		A7CC88641D7DC35500B28FEE /* BloggerAPIConsumer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloggerAPIConsumer.swift; sourceTree = "<group>"; };
 		A7CC88661D7DCC1200B28FEE /* PullPostMappingsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullPostMappingsOperation.swift; sourceTree = "<group>"; };
 		A7CC88681D7DCEE600B28FEE /* CloudPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudPost.swift; sourceTree = "<group>"; };
+		A7D19E921DC601830024C3A7 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		A7D647681D7877C900FF52A4 /* Injector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Injector.swift; sourceTree = "<group>"; };
 		A7D6476A1D78788F00FF52A4 /* ObjectModelConsumer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectModelConsumer.swift; sourceTree = "<group>"; };
 		A7D6476C1D7878D100FF52A4 /* PostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
@@ -451,7 +451,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7CC88591D7DB4C800B28FEE /* CloudKit.framework in Frameworks */,
+				A7D19E931DC601830024C3A7 /* CloudKit.framework in Frameworks */,
 				EA0668C6192A45C4009C83F1 /* CoreGraphics.framework in Frameworks */,
 				EA2713AD1B1A4B40002D655E /* Fabric.framework in Frameworks */,
 				EA0668C8192A45C4009C83F1 /* UIKit.framework in Frameworks */,
@@ -588,7 +588,7 @@
 		EA0668C2192A45C4009C83F1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A7CC88581D7DB4C800B28FEE /* CloudKit.framework */,
+				A7D19E921DC601830024C3A7 /* CloudKit.framework */,
 				EA2713AB1B1A4B40002D655E /* Fabric.framework */,
 				EA2713AC1B1A4B40002D655E /* Crashlytics.framework */,
 				EA0668C3192A45C4009C83F1 /* Foundation.framework */,

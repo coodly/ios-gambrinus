@@ -1,9 +1,14 @@
+"coodly.feedback.controller.title" = "Conversations";
+"coodly.feedback.message.compose.controller.send.button" = "Send";
+"coodly.feedback.message.compose.controller.title" = "New message";
+
 "kiosk.posts.controller.title" = "Gambrinus";
 
 "marked.controller.title" = "Notables";
 
 "menu.controller.option.all.posts" = "All Posts";
 "menu.controller.option.favorites" = "Favorites";
+"menu.controller.option.feedback" = "Message to developer";
 "menu.controller.sort.by.beer" = "RB beer name";
 "menu.controller.sort.by.brewer" = "brewer";
 "menu.controller.sort.by.date" = "date";
