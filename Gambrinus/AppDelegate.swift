@@ -20,6 +20,10 @@ import LaughingAdventure
 
 extension AppDelegate {
     func enableLogging() {
+        guard AppConfig.current.logs else {
+            return
+        }
+        
         Log.add(output: ConsoleOutput())
         Log.add(output: FileOutput())
         Log.logLevel = .debug
@@ -53,6 +57,14 @@ extension AppDelegate {
         } catch let error as NSError {
             Log.error("DB copy failed: \(error)")
         }
+    }
+    
+    func enableFeedback() {
+        guard AppConfig.current.feedback else {
+            return
+        }
+        
+        Feedback.enable()
     }
 }
 

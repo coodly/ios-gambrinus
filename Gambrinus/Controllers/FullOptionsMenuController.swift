@@ -77,6 +77,10 @@ class FullOptionsMenuController: MenuViewController, ObjectModelConsumer, Inject
         feedbackCell = tableView.dequeueReusableCell() as MenuCell
         feedbackCell.textLabel!.text = NSLocalizedString("menu.controller.option.feedback", comment: "")
         
+        guard AppConfig.current.feedback else {
+            return
+        }
+        
         addSection(InputCellsSection(cells: [feedbackCell]))
     }
     

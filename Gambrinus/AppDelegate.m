@@ -35,13 +35,12 @@
 
     [Fabric with:@[CrashlyticsKit]];
     
-    #if DEBUG
-        [self enableLogging];
-    #endif
+    [self enableLogging];
 
     [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
 
     [self copyDatabase];
+    [self enableFeedback];
 
 #if DEBUG
     UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(presentKioskController)];

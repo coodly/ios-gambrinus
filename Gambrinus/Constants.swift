@@ -18,3 +18,13 @@ import Foundation
 
 //TODO jaanus: remove this
 let RunningOnPad = UIDevice.current.userInterfaceIdiom == .pad
+
+struct AppConfig {
+    let logs: Bool
+    let feedback: Bool
+    
+    private static let development = AppConfig(logs: true, feedback: true)
+    private static let release = AppConfig(logs: false, feedback: false)
+    
+    static let current = AppConfig.release
+}
