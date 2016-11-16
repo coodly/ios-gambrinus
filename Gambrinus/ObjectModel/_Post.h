@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface _Post : NSManagedObject
 + (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_;
 + (NSString*)entityName;
-+ (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
++ (nullable NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
 @property (nonatomic, readonly, strong) PostID *objectID;
 
 @property (nonatomic, strong) NSString* brewerSort;
@@ -97,14 +97,14 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString*)primitiveBrewerSort;
 - (void)setPrimitiveBrewerSort:(NSString*)value;
 
-- (NSString*)primitiveCombinedBeers;
-- (void)setPrimitiveCombinedBeers:(NSString*)value;
+- (nullable NSString*)primitiveCombinedBeers;
+- (void)setPrimitiveCombinedBeers:(nullable NSString*)value;
 
-- (NSString*)primitiveCombinedBrewers;
-- (void)setPrimitiveCombinedBrewers:(NSString*)value;
+- (nullable NSString*)primitiveCombinedBrewers;
+- (void)setPrimitiveCombinedBrewers:(nullable NSString*)value;
 
-- (NSString*)primitiveCombinedStyles;
-- (void)setPrimitiveCombinedStyles:(NSString*)value;
+- (nullable NSString*)primitiveCombinedStyles;
+- (void)setPrimitiveCombinedStyles:(nullable NSString*)value;
 
 - (NSNumber*)primitiveHidden;
 - (void)setPrimitiveHidden:(NSNumber*)value;
@@ -118,20 +118,20 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)primitiveIsDirtyValue;
 - (void)setPrimitiveIsDirtyValue:(BOOL)value_;
 
-- (NSString*)primitiveNormalizedTitle;
-- (void)setPrimitiveNormalizedTitle:(NSString*)value;
+- (nullable NSString*)primitiveNormalizedTitle;
+- (void)setPrimitiveNormalizedTitle:(nullable NSString*)value;
 
-- (NSString*)primitivePostId;
-- (void)setPrimitivePostId:(NSString*)value;
+- (nullable NSString*)primitivePostId;
+- (void)setPrimitivePostId:(nullable NSString*)value;
 
-- (NSDate*)primitivePublishDate;
-- (void)setPrimitivePublishDate:(NSDate*)value;
+- (nullable NSDate*)primitivePublishDate;
+- (void)setPrimitivePublishDate:(nullable NSDate*)value;
 
-- (NSString*)primitiveShadowTitle;
-- (void)setPrimitiveShadowTitle:(NSString*)value;
+- (nullable NSString*)primitiveShadowTitle;
+- (void)setPrimitiveShadowTitle:(nullable NSString*)value;
 
-- (NSString*)primitiveSlug;
-- (void)setPrimitiveSlug:(NSString*)value;
+- (nullable NSString*)primitiveSlug;
+- (void)setPrimitiveSlug:(nullable NSString*)value;
 
 - (NSNumber*)primitiveStarred;
 - (void)setPrimitiveStarred:(NSNumber*)value;
@@ -142,17 +142,17 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString*)primitiveStyleSort;
 - (void)setPrimitiveStyleSort:(NSString*)value;
 
-- (NSString*)primitiveTitle;
-- (void)setPrimitiveTitle:(NSString*)value;
+- (nullable NSString*)primitiveTitle;
+- (void)setPrimitiveTitle:(nullable NSString*)value;
 
-- (NSNumber*)primitiveTopScore;
-- (void)setPrimitiveTopScore:(NSNumber*)value;
+- (nullable NSNumber*)primitiveTopScore;
+- (void)setPrimitiveTopScore:(nullable NSNumber*)value;
 
 - (int16_t)primitiveTopScoreValue;
 - (void)setPrimitiveTopScoreValue:(int16_t)value_;
 
-- (NSDate*)primitiveTouchedAt;
-- (void)setPrimitiveTouchedAt:(NSDate*)value;
+- (nullable NSDate*)primitiveTouchedAt;
+- (void)setPrimitiveTouchedAt:(nullable NSDate*)value;
 
 - (NSMutableSet<Beer*>*)primitiveBeers;
 - (void)setPrimitiveBeers:(NSMutableSet<Beer*>*)value;

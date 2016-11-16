@@ -42,4 +42,5 @@ extension Message {
     @NSManaged var recordName: String?
     @NSManaged var syncNeeded: Bool
     @NSManaged var syncFailed: Bool
+    @NSManaged var sentBy: String?
 }

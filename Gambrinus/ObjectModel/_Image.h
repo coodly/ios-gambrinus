@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface _Image : NSManagedObject
 + (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_;
 + (NSString*)entityName;
-+ (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
++ (nullable NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
 @property (nonatomic, readonly, strong) ImageID *objectID;
 
 @property (nonatomic, strong, nullable) NSString* imageURLString;
@@ -42,8 +42,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface _Image (CoreDataGeneratedPrimitiveAccessors)
 
-- (NSString*)primitiveImageURLString;
-- (void)setPrimitiveImageURLString:(NSString*)value;
+- (nullable NSString*)primitiveImageURLString;
+- (void)setPrimitiveImageURLString:(nullable NSString*)value;
 
 - (NSMutableSet<Post*>*)primitivePosts;
 - (void)setPrimitivePosts:(NSMutableSet<Post*>*)value;

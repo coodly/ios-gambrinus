@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface _Syncable : NSManagedObject
 + (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_;
 + (NSString*)entityName;
-+ (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
++ (nullable NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
 @property (nonatomic, readonly, strong) SyncableID *objectID;
 
 @property (nonatomic, strong, nullable) SyncStatus *syncStatus;

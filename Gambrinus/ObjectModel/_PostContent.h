@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface _PostContent : NSManagedObject
 + (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_;
 + (NSString*)entityName;
-+ (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
++ (nullable NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
 @property (nonatomic, readonly, strong) PostContentID *objectID;
 
 @property (nonatomic, strong, nullable) NSString* content;
@@ -30,8 +30,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface _PostContent (CoreDataGeneratedPrimitiveAccessors)
 
-- (NSString*)primitiveContent;
-- (void)setPrimitiveContent:(NSString*)value;
+- (nullable NSString*)primitiveContent;
+- (void)setPrimitiveContent:(nullable NSString*)value;
 
 - (Post*)primitivePost;
 - (void)setPrimitivePost:(Post*)value;

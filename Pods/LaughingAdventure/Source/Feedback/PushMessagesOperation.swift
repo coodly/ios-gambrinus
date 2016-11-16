@@ -17,13 +17,14 @@
 import Foundation
 import CloudKit
 
-internal class PushMessagesOperation: CloudKitRequest<CloudMessage>, PersistenceConsumer, FeedbackContainerConsumer {
+internal class PushMessagesOperation: CloudKitRequest<CloudMessage>, PersistenceConsumer, FeedbackContainerConsumer, PlatformConsumer {
     var persistence: CorePersistence!
     var feedbackContainer: CKContainer! {
         didSet {
             container = feedbackContainer
         }
     }
+    var platform: String!
     private var messages: [Message]?
     
     override func performRequest() {
@@ -42,7 +43,9 @@ internal class PushMessagesOperation: CloudKitRequest<CloudMessage>, Persistence
             
             var saved = [CloudMessage]()
             for message in messages {
-                saved.append(message.toCloud())
+                var cloud = message.toCloud()
+                cloud.platform = self.platform
+                saved.append(cloud)
             }
             
             self.save(records: saved, inDatabase: .public)

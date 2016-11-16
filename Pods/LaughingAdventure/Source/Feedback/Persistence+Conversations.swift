@@ -27,9 +27,8 @@ internal extension NSPredicate {
 
 internal extension NSManagedObjectContext {
     func fetchedControllerForConversations() -> NSFetchedResultsController<Conversation> {
-        let notEmpty = NSPredicate(format: "empty = NO")
         let sort = NSSortDescriptor(key: "lastMessageTime", ascending: false)
-        return fetchedController(predicate: notEmpty, sort: [sort])
+        return fetchedController(sort: [sort])
     }
     
     func namesForExistingConversations() -> [String] {
@@ -39,17 +38,24 @@ internal extension NSManagedObjectContext {
     func update(_ conversation: CloudConversation) {
         let saved = existing(conversation) ?? insertEntity()
         
+        let wasUpdated: Bool
+        if let existing = saved.lastMessageTime {
+            wasUpdated = conversation.lastMessageTime! > existing
+        } else {
+            wasUpdated = true
+        }
+        
         saved.recordName = conversation.recordName
         saved.recordData = conversation.recordData
         saved.lastMessageTime = conversation.lastMessageTime
         saved.snippet = conversation.snippet
         saved.syncNeeded = false
-        saved.empty = false
+        saved.hasUpdate = wasUpdated
     }
     
     func removeConversations(withNames: [String]) {
         let predicate = NSPredicate(format: "recordName IN %@", withNames)
-        let removed = fetch(predicate: predicate, limit: nil)
+        let removed: [Conversation] = fetch(predicate: predicate, limit: nil)
         Logging.log("Remove \(removed.count) conversations")
         for r in removed {
             delete(r)
@@ -66,6 +72,8 @@ internal extension NSManagedObjectContext {
     }
     
     func conversationsNeedingSync() -> [Conversation] {
+        Logging.log("All conversations: \(count(instancesOf: Conversation.self))")
+        Logging.log("Needing sync: \(count(instancesOf: Conversation.self, predicate: .needingSync))")
         return fetch(predicate: .needingSync, limit: nil)
     }
     
@@ -79,5 +87,10 @@ internal extension NSManagedObjectContext {
     
     func conversation(for reference: CKReference) -> Conversation? {
         return fetchEntity(where: "recordName", hasValue: reference.recordID.recordName)
+    }
+    
+    func hasUnseenConversations() -> Bool {
+        let predicate = NSPredicate(format: "hasUpdate = YES")
+        return count(instancesOf: Conversation.self, predicate: predicate) > 0
     }
 }

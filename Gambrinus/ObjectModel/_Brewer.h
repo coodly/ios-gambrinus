@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface _Brewer : Syncable
 + (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_;
 + (NSString*)entityName;
-+ (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
++ (nullable NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
 @property (nonatomic, readonly, strong) BrewerID *objectID;
 
 @property (nonatomic, strong, nullable) NSString* identifier;
@@ -47,17 +47,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface _Brewer (CoreDataGeneratedPrimitiveAccessors)
 
-- (NSString*)primitiveIdentifier;
-- (void)setPrimitiveIdentifier:(NSString*)value;
+- (nullable NSString*)primitiveIdentifier;
+- (void)setPrimitiveIdentifier:(nullable NSString*)value;
 
-- (NSString*)primitiveName;
-- (void)setPrimitiveName:(NSString*)value;
+- (nullable NSString*)primitiveName;
+- (void)setPrimitiveName:(nullable NSString*)value;
 
-- (NSString*)primitiveNormalizedName;
-- (void)setPrimitiveNormalizedName:(NSString*)value;
+- (nullable NSString*)primitiveNormalizedName;
+- (void)setPrimitiveNormalizedName:(nullable NSString*)value;
 
-- (NSString*)primitiveShadowName;
-- (void)setPrimitiveShadowName:(NSString*)value;
+- (nullable NSString*)primitiveShadowName;
+- (void)setPrimitiveShadowName:(nullable NSString*)value;
 
 - (NSMutableSet<Beer*>*)primitiveBeers;
 - (void)setPrimitiveBeers:(NSMutableSet<Beer*>*)value;

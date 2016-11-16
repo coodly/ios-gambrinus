@@ -36,14 +36,16 @@ class MessagesPush: NSObject, PersistenceConsumer, NSFetchedResultsControllerDel
     }
     
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        Logging.log("Changes in conversations")
-        let pushConversation = PushConversationsOperation()
-        inject(into: pushConversation)
-        
-        let pushMessages = PushMessagesOperation()
-        inject(into: pushMessages)
-        pushMessages.addDependency(pushConversation)
-        
-        queue.addOperations([pushConversation, pushMessages], waitUntilFinished: false)
+        queue.addOperation {
+            Logging.log("Changes in conversations")
+            let pushConversation = PushConversationsOperation()
+            self.inject(into: pushConversation)
+            
+            let pushMessages = PushMessagesOperation()
+            self.inject(into: pushMessages)
+            pushMessages.addDependency(pushConversation)
+            
+            self.queue.addOperations([pushConversation, pushMessages], waitUntilFinished: false)
+        }
     }
 }

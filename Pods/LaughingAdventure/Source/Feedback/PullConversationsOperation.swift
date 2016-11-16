@@ -37,16 +37,18 @@ class PullConversationsOperation: CloudKitRequest<CloudConversation>, Persistenc
             let save: ContextClosure = {
                 context in
                 
-                var existing = Set(context.namesForExistingConversations() ?? [])
-                
+                var lastModifyTime: Date? = nil
                 for c in conversations {
-                    existing.remove(c.recordName!)
-                    
                     context.update(c)
+                    if lastModifyTime == nil {
+                        lastModifyTime = c.modificationDate
+                    } else if c.modificationDate! > lastModifyTime! {
+                        lastModifyTime = c.modificationDate!
+                    }
                 }
                 
-                if existing.count > 0 {
-                    context.removeConversations(withNames: Array(existing))
+                if let modification = lastModifyTime {
+                    context.set(lastKnowConversationTime: modification + 1)
                 }
             }
             
@@ -65,15 +67,27 @@ class PullConversationsOperation: CloudKitRequest<CloudConversation>, Persistenc
                 Logging.log("Fetch user record error \(error)")
                 self.finish(true)
             } else {
-                self.fetchConversationsFor(recordId!)
+                DispatchQueue.main.async {
+                    self.fetchConversationsFor(recordId!)
+                }
             }
         }
     }
     
     private func fetchConversationsFor(_ userRecordId: CKRecordID) {
-        let userPredicate = NSPredicate(format: "creatorUserRecordID = %@", userRecordId)
-        let appPredicate = NSPredicate(format: "appIdentifier = %@", Bundle.main.bundleIdentifier!)
-        let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [userPredicate, appPredicate])
-        fetch(predicate: predicate, inDatabase: .public)
+        persistence.performInBackground() {
+            context in
+            
+            let pullAfter = context.lastKnownConversationsTime()
+            
+            Logging.log("Pull updates after: \(pullAfter)")
+            
+            let userPredicate = NSPredicate(format: "creatorUserRecordID = %@", userRecordId)
+            let appPredicate = NSPredicate(format: "appIdentifier = %@", Bundle.main.bundleIdentifier!)
+            let sort = NSSortDescriptor(key: "modificationDate", ascending: true)
+            let timePredicate = NSPredicate(format: "modificationDate >= %@", pullAfter as NSDate)
+            let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [timePredicate, userPredicate, appPredicate])
+            self.fetch(predicate: predicate, sort: [sort], inDatabase: .public)
+        }
     }
- }
+}

@@ -18,7 +18,7 @@ import StoreKit
 
 @available(*, deprecated, message: "Use Storefront")
 public protocol ProductsHandler {
-    func retrieveProducts(_ identifiers: [String], completion: ProductsResponse)
+    func retrieveProducts(_ identifiers: [String], completion: @escaping ProductsResponse)
 }
 
 public extension ProductsHandler {

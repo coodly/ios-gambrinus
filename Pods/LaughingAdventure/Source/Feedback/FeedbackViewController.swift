@@ -23,15 +23,17 @@ private extension Selector {
     static let donePressed = #selector(FeedbackViewController.donePressed)
     static let addPressed = #selector(FeedbackViewController.addPressed)
     static let refreshConversations = #selector(FeedbackViewController.refresh)
+    static let presentNotice = #selector(FeedbackViewController.presentNotice)
 }
 
-public class FeedbackViewController: FetchedTableViewController<Conversation, ConversationCell>, InjectionHandler, PersistenceConsumer, FeedbackContainerConsumer {
+public class FeedbackViewController: FetchedTableViewController<Conversation, ConversationCell>, InjectionHandler, PersistenceConsumer, FeedbackContainerConsumer, CloudAvailabilityConsumer {
     var persistence: CorePersistence!
     var feedbackContainer: CKContainer!
+    var cloudAvailable: Bool!
 
     private var refreshControl: UIRefreshControl!
     private var accountStatus: CKAccountStatus = .couldNotDetermine
-    private var refreshed = false
+    private var headerLabel: UILabel!
     
     private lazy var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -39,11 +41,17 @@ public class FeedbackViewController: FetchedTableViewController<Conversation, Co
         formatter.timeStyle = .none
         return formatter
     }()
+
+    init() {
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-        
-        inject(into: self)
         
         navigationItem.title = NSLocalizedString("coodly.feedback.controller.title", comment: "")
         
@@ -56,21 +64,47 @@ public class FeedbackViewController: FetchedTableViewController<Conversation, Co
         tableView.addSubview(refreshControl)
         
         tableView.register(ConversationCell.self, forCellReuseIdentifier: ConversationCell.identifier())
+        
+        let header = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 100))
+        header.backgroundColor = UIColor(white: 0.95, alpha: 1)
+        let label = UILabel(frame: CGRect(x: 16, y: 16, width: header.frame.width - 32, height: header.frame.height - 32))
+        self.headerLabel = label
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        label.attributedText = NSAttributedString(string: NSLocalizedString("coodly.feedback.header.message", comment: ""), attributes: [NSUnderlineStyleAttributeName: NSUnderlineStyle.styleDouble.rawValue, NSFontAttributeName: UIFont.preferredFont(forTextStyle: .headline)])
+        label.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
+        header.addSubview(label)
+        tableView.tableHeaderView = header
+        
+        let tapHandler = UITapGestureRecognizer(target: self, action: .presentNotice)
+        header.addGestureRecognizer(tapHandler)
+        
+        tableView.tableFooterView = UIView()
+    }
+    
+    public override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        let height = headerLabel.sizeThatFits(CGSize(width: headerLabel.frame.width, height: 1000)).height
+        tableView.tableHeaderView!.frame.size.height = height + 32
+    }
+    
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if cloudAvailable! {
+            navigationItem.rightBarButtonItem?.isEnabled = true
+        } else {
+            let message = FeedbackMessageView()
+            message.messageLabel.text = NSLocalizedString("coodly.feedback.sign.in.message", comment: "")
+            message.frame = self.view.bounds
+            self.view.addSubview(message)
+        }
     }
     
     public override func createFetchedController() -> NSFetchedResultsController<Conversation> {
         return persistence.mainContext.fetchedControllerForConversations()
-    }
-    
-    public override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        if refreshed {
-            return
-        }
-        
-        refreshControl.beginRefreshingManually()
-        refreshed = true
     }
     
     public override func configure(cell: ConversationCell, at indexPath: IndexPath, with converation: Conversation, forMeasuring: Bool) {
@@ -80,11 +114,11 @@ public class FeedbackViewController: FetchedTableViewController<Conversation, Co
             cell.timeLabel.text = ""
         }
         
-        cell.snippetLabel.text = converation.snippet
+        cell.snippetLabel.text =  (converation.hasUpdate ? "● " : "") + (converation.snippet ?? "")
     }
     
     public override func tappedCell(at indexPath: IndexPath, object: Conversation) -> Bool {
-        pushConversationControllerWith(object)
+        pushConversationController(with: object)
         return true
     }
     
@@ -93,50 +127,30 @@ public class FeedbackViewController: FetchedTableViewController<Conversation, Co
     }
     
     @objc fileprivate func addPressed() {
-        pushConversationControllerWith(nil)
+        pushConversationController(with: nil)
     }
     
-    private func pushConversationControllerWith(_ conversation: Conversation?) {
+    private func pushConversationController(with conversation: Conversation?) {
         let conversationController = ConversationViewController()
         conversationController.conversation = conversation
+        conversationController.goToCompose = conversation == nil
         inject(into: conversationController)
         navigationController?.pushViewController(conversationController, animated: true)
     }
     
     @objc fileprivate func refresh() {
         Logging.log("Refresh conversations")
-        let refreshClosure: ((Bool) -> ()) = {
-            available in
-            
-            Logging.log("Refresh")
-            guard available else {
-                DispatchQueue.main.async {
-                    self.refreshControl.endRefreshing()
-                }
-                return
-            }
+
+        let op = PullConversationsOperation()
+        inject(into: op)
+        op.completionHandler = {
+            success in
             
             DispatchQueue.main.async {
-                self.navigationItem.rightBarButtonItem?.isEnabled = true
+                self.refreshControl.endRefreshing()
             }
-            
-            let op = PullConversationsOperation()
-            self.inject(into: op)
-            op.completionHandler = {
-                success in
-                
-                DispatchQueue.main.async {
-                    self.refreshControl.endRefreshing()
-                }
-            }
-            op.start()
         }
-        
-        if accountStatus == .couldNotDetermine {
-            checkAccountStatus(completion: refreshClosure)
-        } else {
-            refreshClosure(true)
-        }
+        op.start()
     }
     
     private func checkAccountStatus(completion: @escaping ((Bool) -> ())) {
@@ -147,6 +161,12 @@ public class FeedbackViewController: FetchedTableViewController<Conversation, Co
             Logging.log("Account status: \(status.rawValue) - \(error)")
             completion(status == .available)
         }
+    }
+    
+    @objc fileprivate func presentNotice() {
+        let controller = FeedbackNoticeViewController()
+        let navigation = UINavigationController(rootViewController: controller)
+        present(navigation, animated: true, completion: nil)
     }
 }
 #endif

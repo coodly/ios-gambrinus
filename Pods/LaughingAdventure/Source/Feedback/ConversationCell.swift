@@ -35,20 +35,21 @@ public class ConversationCell: UITableViewCell {
         timeLabel.textColor = .lightGray
         
         snippetLabel = UILabel()
-        snippetLabel.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse enim augue, congue non ante aliquet, tempor feugiat nulla. Nulla auctor diam vel velit maximus tristique. Integer congue semper accumsan. Aliquam vel justo vitae mauris ullamcorper interdum sit amet varius urna. Curabitur in aliquet dolor."
         snippetLabel.numberOfLines = 3
         snippetLabel.font = UIFont.preferredFont(forTextStyle: .body)
         snippetLabel.setContentCompressionResistancePriority(1000, for: .vertical)
         snippetLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        contentView.addSubview(timeLabel)
-        contentView.addSubview(snippetLabel)
+        let stack = UIStackView(arrangedSubviews: [timeLabel, snippetLabel])
+        stack.axis = .vertical
+        stack.translatesAutoresizingMaskIntoConstraints = false
         
-        let views: [String: AnyObject] = ["date": timeLabel, "snippet": snippetLabel]
+        contentView.addSubview(stack)
         
-        contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-(8)-[date]-(4)-[snippet]-(8)-|", options: [], metrics: nil, views: views))
-        contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-(16)-[date]-(16)-|", options: [], metrics: nil, views: views))
-        contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-(16)-[snippet]-(16)-|", options: [], metrics: nil, views: views))
+        let views: [String: AnyObject] = ["stack": stack]
+        
+        contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-(8)-[stack]-(8)-|", options: [], metrics: nil, views: views))
+        contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-(16)-[stack]-(16)-|", options: [], metrics: nil, views: views))
     }
     
     required public init?(coder aDecoder: NSCoder) {

@@ -119,7 +119,7 @@ class FullOptionsMenuController: MenuViewController, ObjectModelConsumer, Inject
         } else if let rbCell = rbScoreCell, rbCell == cell {
             tappedOnSort(cell: rbCell)
         } else if cell == feedbackCell {
-            let controller = FeedbackViewController()
+            let controller = Feedback.mainController()
             let navigation = UINavigationController(rootViewController: controller)
             container.presentModalController(navigation)
         }

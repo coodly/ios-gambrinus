@@ -28,7 +28,7 @@ internal class PushConversationsOperation: CloudKitRequest<CloudConversation>, P
     private var names: [String]!
     
     override func performRequest() {
-        persistence.perform() {
+        persistence.performInBackground() {
             context in
             
             let toPush = context.conversationsNeedingSync()

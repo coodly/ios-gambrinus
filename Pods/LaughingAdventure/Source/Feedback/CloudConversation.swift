@@ -28,10 +28,12 @@ struct CloudConversation: RemoteRecord {
     let appIdentifier = Bundle.main.bundleIdentifier!
     var lastMessageTime: Date?
     var snippet: String?
+    var modificationDate: Date?
     
     mutating func loadFields(from record: CKRecord) -> Bool {
         lastMessageTime = record["lastMessageTime"] as? Date
         snippet = record["snippet"] as? String
+        modificationDate = record.modificationDate
         return true
     }
 }

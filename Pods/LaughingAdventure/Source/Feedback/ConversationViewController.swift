@@ -20,15 +20,28 @@ import CoreData
 #if os(iOS)
 private extension Selector {
     static let addMessage = #selector(ConversationViewController.addMessage)
-    static let refreshMessages = #selector(ConversationViewController.refreshMessages)
 }
 
 internal class ConversationViewController: FetchedTableViewController<Message, MessageCell>, InjectionHandler, PersistenceConsumer {
     var persistence: CorePersistence!
     var conversation: Conversation?
+    private lazy var presentedConversation: Conversation = {
+        if let c = self.conversation {
+            return c
+        }
+        
+        return self.persistence.mainContext.insertEntity() as Conversation
+    }()
     
-    private var refreshControl: UIRefreshControl!
     private var refreshed = false
+    var goToCompose = false
+    private var showingCompose = false
+    
+    private lazy var dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.setLocalizedDateFormatFromTemplate("yyyyMMMddHHmm")
+        return formatter
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,54 +50,98 @@ internal class ConversationViewController: FetchedTableViewController<Message, M
         
         tableView.register(MessageCell.self, forCellReuseIdentifier: MessageCell.identifier())
         
-        refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: .refreshMessages, for: .valueChanged)
-        tableView.addSubview(refreshControl)
+        tableView.tableFooterView = UIView()
+        tableView.separatorStyle = .none
     }
     
-    public override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        if refreshed {
+        guard !refreshed && presentedConversation.shouldFetchMessages() else {
             return
         }
         
-        refreshControl.beginRefreshingManually()
+        tableView.tableFooterView = FooterLoadingView()
+        refreshMessages()
         refreshed = true
     }
     
-    override func createFetchedController() -> NSFetchedResultsController<Message> {
-        if conversation == nil {
-            conversation = persistence.mainContext.insertEntity() as Conversation
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        showingCompose = false
+        
+        if goToCompose {
+            goToCompose = false
+            addMessage()
+            return
         }
-        return persistence.mainContext.fetchedControllerForMessages(in: conversation!)
+        
+        let rows = tableView.numberOfRows(inSection: 0)
+        guard rows != 0 else {
+            return
+        }
+        
+        tableView.scrollToRow(at: IndexPath(row: rows - 1, section: 0), at: .middle, animated: true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        if showingCompose {
+            return
+        }
+        
+        if presentedConversation.messages?.count != 0 {
+            return
+        }
+        
+        persistence.mainContext.delete(presentedConversation)
+        persistence.save()
+    }
+    
+    override func createFetchedController() -> NSFetchedResultsController<Message> {
+        return persistence.mainContext.fetchedControllerForMessages(in: presentedConversation)
     }
     
     override func configure(cell: MessageCell, at indexPath: IndexPath, with message: Message, forMeasuring: Bool) {
+        let timeString = dateFormatter.string(from: message.postedAt)
+        let timeValue: String
+        if let sentBy = message.sentBy {
+            timeValue = "\(sentBy) - \(timeString)"
+        } else {
+            timeValue = timeString
+        }
+        cell.timeLabel.text = timeValue
         cell.messageLabel.text = message.body
+        cell.alignment = message.sentBy == nil ? .right : .left
     }
     
     @objc fileprivate func addMessage() {
+        showingCompose = true
         let compose = ComposeViewController()
-        compose.conversation = conversation!
-        inject(into: compose)
+        compose.entryHandler = {
+            message in
+            
+            self.persistence.mainContext.addMessage(message, for: self.presentedConversation)
+            self.persistence.save()
+            
+            DispatchQueue.main.async {
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
         let navigation = UINavigationController(rootViewController: compose)
         navigation.modalPresentationStyle = .formSheet
         present(navigation, animated: true, completion: nil)
     }
     
-    @objc fileprivate func refreshMessages() {
-        guard let c = conversation, c.recordData != nil else {
-            refreshControl.endRefreshing()
-            return
-        }
-        
-        let request = PullMessagesOperation(for: c)
+    private func refreshMessages() {
+        let request = PullMessagesOperation(for: presentedConversation)
         request.completionHandler = {
             success, op in
             
             DispatchQueue.main.async {
-                self.refreshControl.endRefreshing()
+                self.tableView.tableFooterView = UIView()
             }
         }
         inject(into: request)

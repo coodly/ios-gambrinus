@@ -23,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface _Beer : Syncable
 + (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_;
 + (NSString*)entityName;
-+ (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
++ (nullable NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
 @property (nonatomic, readonly, strong) BeerID *objectID;
 
 @property (nonatomic, strong, nullable) NSString* alcohol;
@@ -69,8 +69,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface _Beer (CoreDataGeneratedPrimitiveAccessors)
 
-- (NSString*)primitiveAlcohol;
-- (void)setPrimitiveAlcohol:(NSString*)value;
+- (nullable NSString*)primitiveAlcohol;
+- (void)setPrimitiveAlcohol:(nullable NSString*)value;
 
 - (NSNumber*)primitiveAliased;
 - (void)setPrimitiveAliased:(NSNumber*)value;
@@ -78,26 +78,26 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)primitiveAliasedValue;
 - (void)setPrimitiveAliasedValue:(BOOL)value_;
 
-- (NSNumber*)primitiveIdentifier;
-- (void)setPrimitiveIdentifier:(NSNumber*)value;
+- (nullable NSNumber*)primitiveIdentifier;
+- (void)setPrimitiveIdentifier:(nullable NSNumber*)value;
 
 - (int32_t)primitiveIdentifierValue;
 - (void)setPrimitiveIdentifierValue:(int32_t)value_;
 
-- (NSString*)primitiveName;
-- (void)setPrimitiveName:(NSString*)value;
+- (nullable NSString*)primitiveName;
+- (void)setPrimitiveName:(nullable NSString*)value;
 
-- (NSString*)primitiveNormalizedName;
-- (void)setPrimitiveNormalizedName:(NSString*)value;
+- (nullable NSString*)primitiveNormalizedName;
+- (void)setPrimitiveNormalizedName:(nullable NSString*)value;
 
-- (NSString*)primitiveRbIdentifier;
-- (void)setPrimitiveRbIdentifier:(NSString*)value;
+- (nullable NSString*)primitiveRbIdentifier;
+- (void)setPrimitiveRbIdentifier:(nullable NSString*)value;
 
-- (NSString*)primitiveRbScore;
-- (void)setPrimitiveRbScore:(NSString*)value;
+- (nullable NSString*)primitiveRbScore;
+- (void)setPrimitiveRbScore:(nullable NSString*)value;
 
-- (NSString*)primitiveShadowName;
-- (void)setPrimitiveShadowName:(NSString*)value;
+- (nullable NSString*)primitiveShadowName;
+- (void)setPrimitiveShadowName:(nullable NSString*)value;
 
 - (Brewer*)primitiveBrewer;
 - (void)setPrimitiveBrewer:(Brewer*)value;

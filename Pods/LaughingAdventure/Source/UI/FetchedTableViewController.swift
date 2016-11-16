@@ -156,4 +156,29 @@ open class FetchedTableViewController<Entity: NSManagedObject, Cell: UITableView
     public func object(at indexPath: IndexPath) -> Entity {
         return fetchedController!.object(at: indexPath)
     }
+    
+    public func updateFetch(predicate: NSPredicate? = nil, sort: [NSSortDescriptor]? = nil) {
+        var modified = false
+        if let predicate = predicate {
+            fetchedController!.fetchRequest.predicate = predicate
+            modified = true
+        }
+        
+        if let sort = sort {
+            fetchedController!.fetchRequest.sortDescriptors = sort
+            modified = true
+        }
+        
+        guard modified else {
+            return
+        }
+        
+        do {
+            try fetchedController!.performFetch()
+        } catch {
+            fatalError("Fetch failed: \(error)")
+        }
+        tableView.reloadData()
+        contentChanged()
+    }
 }

@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface _Blog : NSManagedObject
 + (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_;
 + (NSString*)entityName;
-+ (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
++ (nullable NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
 @property (nonatomic, readonly, strong) BlogID *objectID;
 
 @property (nonatomic, strong, nullable) NSString* baseURLString;
@@ -45,17 +45,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface _Blog (CoreDataGeneratedPrimitiveAccessors)
 
-- (NSString*)primitiveBaseURLString;
-- (void)setPrimitiveBaseURLString:(NSString*)value;
+- (nullable NSString*)primitiveBaseURLString;
+- (void)setPrimitiveBaseURLString:(nullable NSString*)value;
 
-- (NSString*)primitiveBlogId;
-- (void)setPrimitiveBlogId:(NSString*)value;
+- (nullable NSString*)primitiveBlogId;
+- (void)setPrimitiveBlogId:(nullable NSString*)value;
 
-- (NSString*)primitivePostsURLString;
-- (void)setPrimitivePostsURLString:(NSString*)value;
+- (nullable NSString*)primitivePostsURLString;
+- (void)setPrimitivePostsURLString:(nullable NSString*)value;
 
-- (NSDate*)primitivePublished;
-- (void)setPrimitivePublished:(NSDate*)value;
+- (nullable NSDate*)primitivePublished;
+- (void)setPrimitivePublished:(nullable NSDate*)value;
 
 - (NSMutableSet<Post*>*)primitivePosts;
 - (void)setPrimitivePosts:(NSMutableSet<Post*>*)value;

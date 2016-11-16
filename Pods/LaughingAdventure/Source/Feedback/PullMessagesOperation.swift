@@ -52,6 +52,9 @@ internal class PullMessagesOperation: CloudKitRequest<CloudMessage>, Persistence
                 for m in messages {
                     context.update(message: m)
                 }
+                
+                let conversation = context.inCurrentContext(entity: self.pullMessagesFor)
+                conversation.hasUpdate = false
             }
         }
         

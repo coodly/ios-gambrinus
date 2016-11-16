@@ -31,14 +31,14 @@ internal extension NSManagedObjectModel {
         conversationLastMessageTime.name = "lastMessageTime"
         conversationLastMessageTime.attributeType = .dateAttributeType
         
-        let conversationEmpty = NSAttributeDescription()
-        conversationEmpty.name = "empty"
-        conversationEmpty.attributeType = .booleanAttributeType
-        conversationEmpty.defaultValue = true
-        
         let conversationSnippet = NSAttributeDescription()
         conversationSnippet.name = "snippet"
         conversationSnippet.attributeType = .stringAttributeType
+        
+        let conversationUnseen = NSAttributeDescription()
+        conversationUnseen.name = "hasUpdate"
+        conversationUnseen.attributeType = .booleanAttributeType
+        conversationUnseen.defaultValue = false
         
         // # Message #
         let messageDesc = NSEntityDescription()
@@ -52,6 +52,25 @@ internal extension NSManagedObjectModel {
         let messageBody = NSAttributeDescription()
         messageBody.name = "body"
         messageBody.attributeType = .stringAttributeType
+        
+        let messageSentBy = NSAttributeDescription()
+        messageSentBy.name = "sentBy"
+        messageSentBy.attributeType = .stringAttributeType
+        messageSentBy.isOptional = true
+        
+        // # Setting #
+        let settingDesc = NSEntityDescription()
+        settingDesc.name = "Setting"
+        settingDesc.managedObjectClassName = Setting.entityName()
+        
+        let settingKey = NSAttributeDescription()
+        settingKey.name = "key"
+        settingKey.attributeType = .integer32AttributeType
+        
+        let settingValue = NSAttributeDescription()
+        settingValue.name = "value"
+        settingValue.attributeType = .stringAttributeType
+        settingValue.isOptional = true
         
         //# common properties
         let recordName = NSAttributeDescription()
@@ -89,10 +108,11 @@ internal extension NSManagedObjectModel {
         conversationHasManyMessages.inverseRelationship = messageBelongsToOneConversation
         messageBelongsToOneConversation.inverseRelationship = conversationHasManyMessages
 
-        conversationDesc.properties = [conversationLastMessageTime, recordName, conversationEmpty, conversationHasManyMessages, conversationSnippet, commonRecordData, syncNeeded, syncFailed]
-        messageDesc.properties = [messageTime, messageBody, messageBelongsToOneConversation, commonRecordData, recordName, syncNeeded, syncFailed]
+        conversationDesc.properties = [conversationLastMessageTime, recordName, conversationHasManyMessages, conversationSnippet, commonRecordData, syncNeeded, syncFailed, conversationUnseen]
+        messageDesc.properties = [messageTime, messageBody, messageBelongsToOneConversation, commonRecordData, recordName, syncNeeded, syncFailed, messageSentBy]
+        settingDesc.properties = [settingKey, settingValue]
         
-        let entities = [conversationDesc, messageDesc]
+        let entities = [conversationDesc, messageDesc, settingDesc]
         
         model.entities = entities
         

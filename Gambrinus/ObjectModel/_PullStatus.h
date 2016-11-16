@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface _PullStatus : NSManagedObject
 + (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_;
 + (NSString*)entityName;
-+ (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
++ (nullable NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
 @property (nonatomic, readonly, strong) PullStatusID *objectID;
 
 @property (nonatomic, strong, nullable) NSDate* lastPullAttempt;
@@ -36,8 +36,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface _PullStatus (CoreDataGeneratedPrimitiveAccessors)
 
-- (NSDate*)primitiveLastPullAttempt;
-- (void)setPrimitiveLastPullAttempt:(NSDate*)value;
+- (nullable NSDate*)primitiveLastPullAttempt;
+- (void)setPrimitiveLastPullAttempt:(nullable NSDate*)value;
 
 - (NSNumber*)primitivePullFailed;
 - (void)setPrimitivePullFailed:(NSNumber*)value;

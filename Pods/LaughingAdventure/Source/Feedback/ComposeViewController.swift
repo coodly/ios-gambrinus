@@ -23,9 +23,8 @@ private extension Selector {
     static let keyboardChanged = #selector(ComposeViewController.keyboardChanged(notification:))
 }
 
-internal class ComposeViewController: UIViewController, PersistenceConsumer {
-    var persistence: CorePersistence!
-    var conversation: Conversation!
+internal class ComposeViewController: UIViewController {
+    var entryHandler: ((String) -> ())!
     
     private var bottomSpacing: NSLayoutConstraint!
     private var textView: UITextView!
@@ -60,16 +59,18 @@ internal class ComposeViewController: UIViewController, PersistenceConsumer {
         NotificationCenter.default.addObserver(self, selector: .keyboardChanged, name: Notification.Name.UIKeyboardDidChangeFrame, object: nil)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        textView.becomeFirstResponder()
+    }
+    
     @objc fileprivate func sendPressed() {
         guard let message = textView.text, message.hasValue() else {
             return
         }
         
-        conversation.empty = false
-        persistence.mainContext.addMessage(message, for: conversation)
-        persistence.save() {
-            self.dismiss(animated: true, completion: nil)
-        }
+        entryHandler(message)
     }
     
     @objc fileprivate func cancelPressed() {

@@ -28,11 +28,15 @@ internal struct CloudMessage: RemoteRecord {
     var body: String?
     var postedAt: Date?
     var conversation: CKReference?
+    var sentBy: String?
+    var platform: String?
     
     mutating func loadFields(from record: CKRecord) -> Bool {
         body = record["body"] as? String
         postedAt = record["postedAt"] as? Date
         conversation = record["conversation"] as? CKReference
+        sentBy = record["sentBy"] as? String
+        platform = record["platform"] as? String
         return true
     }
 }
