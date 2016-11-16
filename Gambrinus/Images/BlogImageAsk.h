@@ -16,14 +16,15 @@
 
 #import <Foundation/Foundation.h>
 #import "CDYImageAsk.h"
+@import CoreData;
 
 @class PostID;
 
 @interface BlogImageAsk : CDYImageAsk
 
-@property (nonatomic, copy, readonly) PostID *postID;
+@property (nonatomic, copy, readonly) NSManagedObjectID *postID;
 @property (nonatomic, assign) BOOL shouldAttemptRemotePull;
 
-- (id)initWithPostID:(PostID *)postID size:(CGSize)size imageURLString:(NSString *)imageURLString attemptRemovePull:(BOOL)pullRemote;
+- (id)initWithPostID:(NSManagedObjectID *)postID size:(CGSize)size imageURLString:(NSString *)imageURLString attemptRemovePull:(BOOL)pullRemote;
 
 @end

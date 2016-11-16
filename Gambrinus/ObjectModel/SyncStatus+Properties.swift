@@ -15,13 +15,11 @@
  */
 
 import Foundation
-import LaughingAdventure
 import CoreData
 
-class Syncable: NSManagedObject {
-    func markForSync(needed: Bool = true) {
-        let status = syncStatus ?? managedObjectContext!.insertEntity()
-        status.syncNeeded = needed
-        self.syncStatus = status
-    }
+extension SyncStatus {
+    @NSManaged var syncFailed: Bool
+    @NSManaged var syncNeeded: Bool
+    
+    @NSManaged var syncable: Syncable?
 }

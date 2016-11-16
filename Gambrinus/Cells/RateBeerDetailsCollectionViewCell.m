@@ -15,11 +15,9 @@
 */
 
 #import "RateBeerDetailsCollectionViewCell.h"
-#import "Beer.h"
 #import "UIColor+Theme.h"
-#import "BeerStyle.h"
-#import "Brewer.h"
 #import "RateBeerScoreLabel.h"
+#import "Gambrinus-Swift.h"
 
 @interface RateBeerDetailsCollectionViewCell ()
 

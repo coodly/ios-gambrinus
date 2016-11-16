@@ -25,8 +25,6 @@
 #import "ObjectModel+Posts.h"
 #import "Constants.h"
 #import "BlogImageAsk.h"
-#import "Post.h"
-#import "Image.h"
 #import "PostsSearchInputView.h"
 #import "PostExtendedDetailsViewController.h"
 #import "NSString+Normalize.h"
@@ -75,11 +73,6 @@
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(contentSizeChanged:) name:UIContentSizeCategoryDidChangeNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(sortOrderChanged) name:GambrinusSortOrderChangedNotification object:nil];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -312,10 +305,6 @@
     }
 
     [self updateFetchedControllerWithPredicate:usedPredicate sortDescriptors:usedSortDescriptors animate:NO];
-    return;
-
-    NSFetchedResultsController *fetchedController = [self.objectModel fetchedControllerForEntity:[Post entityName] predicate:usedPredicate sortDescriptors:usedSortDescriptors sectionNameKeyPath:usedSectionNameKeyPath];
-    [self changeFetchedControllerTo:fetchedController fetch:NO];
 }
 
 - (void)sortOrderChanged {

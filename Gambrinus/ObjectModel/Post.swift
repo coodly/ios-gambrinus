@@ -15,8 +15,43 @@
  */
 
 import Foundation
+import CoreData
 
-extension Post {
+class Post: NSManagedObject {
+    struct Satic {
+        static let postDateFormatter: DateFormatter = {
+            let formatter = DateFormatter()
+            formatter.dateStyle = .medium
+            formatter.timeStyle = .none
+            return formatter
+        }()
+    }
+    
+    func rateBeerScore() -> String {
+        let unaliased = unaliasedBeers()
+        if unaliased.count == 0 {
+           return ""
+        }
+        
+        if unaliased.count > 1 {
+            return "*"
+        }
+        
+        return unaliased.first!.rbScore!
+    }
+
+    private func unaliasedBeers() -> [Beer] {
+        guard let beers = self.beers else {
+            return []
+        }
+        
+        return beers.filter({ !$0.aliased })
+    }
+    
+    func markTouched() {
+        touchedAt = Date()
+    }
+    
     func topScoredBeer() -> Beer? {
         guard let beers = self.beers else {
             return nil
@@ -49,6 +84,46 @@ extension Post {
         }).first
     }
     
+    func publishDateString() -> String? {
+        guard let date = publishDate else {
+            return nil
+        }
+        
+        return Post.Satic.postDateFormatter.string(from: date)
+    }
+    
+    func thumbnailImageAsk() -> BlogImageAsk? {
+        guard let image = self.image else {
+            return nil
+        }
+        
+        let askSize = RunningOnPad ? CGSize(width: 240, height: 240) : CGSize(width: 150, height: 150)
+        return BlogImageAsk(post: self.objectID, size: askSize, imageURLString: image.imageURLString!, attemptRemovePull: image.shouldTryRemote())
+    }
+
+    func postImageAsk() -> BlogImageAsk? {
+        guard let image = self.image else {
+            return nil
+        }
+        
+        let askSize = RunningOnPad ? CGSize(width: 600, height: 600) : CGSize(width: 300, height: 150)
+        let ask = BlogImageAsk(post: objectID, size: askSize, imageURLString: image.imageURLString!, attemptRemovePull: image.shouldTryRemote())!
+        if RunningOnPad {
+            ask.imageMode = .scaleAspectFit
+        } else {
+            ask.imageMode = .scaleAspectFill
+        }
+        return ask
+    }
+
+    func originalImageAsk() -> BlogImageAsk? {
+        guard let image = self.image else {
+            return nil
+        }
+        
+        return BlogImageAsk(post: objectID, size: .zero, imageURLString: image.imageURLString!, attemptRemovePull: image.shouldTryRemote())
+    }
+    
     func updateSearchMeta() {
         updateTopScore()
         guard let beers = self.beers else {
@@ -57,7 +132,7 @@ extension Post {
         updateSearchNames(with: Array(beers))
         updateSearchBrewers(with: Array(beers))
         updateSearchStyles(with: Array(beers))
-        isDirtyValue = false
+        isDirty = false
     }
 
     private func updateSearchStyles(with: [Beer]) {

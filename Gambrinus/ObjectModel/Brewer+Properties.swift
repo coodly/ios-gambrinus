@@ -15,13 +15,13 @@
  */
 
 import Foundation
-import LaughingAdventure
 import CoreData
 
-class Syncable: NSManagedObject {
-    func markForSync(needed: Bool = true) {
-        let status = syncStatus ?? managedObjectContext!.insertEntity()
-        status.syncNeeded = needed
-        self.syncStatus = status
-    }
+extension Brewer {
+    @NSManaged var identifier: String?
+    @NSManaged var name: String?
+    @NSManaged var normalizedName: String?
+    @NSManaged var shadowName: String?
+    
+    @NSManaged var beers: Set<Beer>?
 }

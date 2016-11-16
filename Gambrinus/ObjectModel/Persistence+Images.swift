@@ -15,13 +15,17 @@
  */
 
 import Foundation
-import LaughingAdventure
 import CoreData
+import LaughingAdventure
 
-class Syncable: NSManagedObject {
-    func markForSync(needed: Bool = true) {
-        let status = syncStatus ?? managedObjectContext!.insertEntity()
-        status.syncNeeded = needed
-        self.syncStatus = status
+extension NSManagedObjectContext {
+    func findOrCreteImageWithURLString(_ url: String) -> Image {
+        if let existing: Image = fetchEntity(where: "imageURLString", hasValue: url) {
+            return existing
+        }
+        
+        let created: Image = insertEntity()
+        created.imageURLString = url
+        return created
     }
 }

@@ -15,17 +15,17 @@
 */
 
 #import "BlogImageAsk.h"
-#import "Post.h"
+#import "Gambrinus-Swift.h"
 
 @interface BlogImageAsk ()
 
-@property (nonatomic, copy) PostID *postID;
+@property (nonatomic, copy) NSManagedObjectID *postID;
 
 @end
 
 @implementation BlogImageAsk
 
-- (id)initWithPostID:(PostID *)postID size:(CGSize)size imageURLString:(NSString *)imageURLString attemptRemovePull:(BOOL)pullRemote {
+- (id)initWithPostID:(NSManagedObjectID *)postID size:(CGSize)size imageURLString:(NSString *)imageURLString attemptRemovePull:(BOOL)pullRemote {
     self = [super init]; {
         _postID = postID;
         [self setResultSize:size];

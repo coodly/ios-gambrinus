@@ -20,6 +20,11 @@ import LaughingAdventure
 import SWLogger
 
 extension NSManagedObjectContext {
+    //TODO jaanus: remove this. Added as quick workaround to expose insert to objc
+    func insertPost() -> Post {
+        return insertEntity()
+    }
+    
     func createMapping(for post: CloudPost) {
         let updated = postWith(identifier: post.identifier!)
         let beers = beersWith(rbIds: post.rateBeers!)

@@ -15,13 +15,13 @@
  */
 
 import Foundation
-import LaughingAdventure
 import CoreData
 
-class Syncable: NSManagedObject {
-    func markForSync(needed: Bool = true) {
-        let status = syncStatus ?? managedObjectContext!.insertEntity()
-        status.syncNeeded = needed
-        self.syncStatus = status
-    }
+extension Blog {
+    @NSManaged var baseURLString: String?
+    @NSManaged var blogId: String?
+    @NSManaged var postsURLString: String?
+    @NSManaged var published: Date?
+    
+    @NSManaged var posts: Set<Post>?
 }

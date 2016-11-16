@@ -15,13 +15,20 @@
  */
 
 import Foundation
-import LaughingAdventure
 import CoreData
+import LaughingAdventure
 
-class Syncable: NSManagedObject {
-    func markForSync(needed: Bool = true) {
-        let status = syncStatus ?? managedObjectContext!.insertEntity()
-        status.syncNeeded = needed
-        self.syncStatus = status
+extension NSManagedObjectContext {
+    func blogWithBaseURL(_ url: String) -> Blog? {
+        return fetchEntity(where: "baseURLString", hasValue: url)
+    }
+    
+    func createOrUpdateBlogWithData(_ data: [String: AnyObject]) {
+        let url = data["url"] as! String
+        let saved = blogWithBaseURL(url) ?? insertEntity()
+        saved.baseURLString = url
+        saved.postsURLString = (data["posts"] as! [String: AnyObject])["selfLink"] as? String
+        saved.blogId = data["id"] as? String
+        saved.published = NSDate.bloggerDate(from: data["published"] as! String)
     }
 }

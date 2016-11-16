@@ -46,8 +46,12 @@ enum PostsSortOrder: Int {
 }
 
 extension NSManagedObjectContext {
+    func insertSetting() -> Setting {
+        return insertEntity()
+    }
+    
     func sortOrder() -> PostsSortOrder {
-        if let setting = setting(for: .sortOrder), let code = Int(setting.value), let value = PostsSortOrder(rawValue: code) {
+        if let setting = setting(for: .sortOrder), let stringValue = setting.value, let code = Int(stringValue), let value = PostsSortOrder(rawValue: code) {
             return value
         }
         
@@ -91,8 +95,8 @@ extension NSManagedObjectContext {
     }
     
     private func date(for key: Key, defaultValue: Date = Date.distantPast) -> Date {
-        if let existing = setting(for: key) {
-            return existing.dateValue()
+        if let existing = setting(for: key), let date = existing.dateValue {
+            return date
         }
         
         return defaultValue

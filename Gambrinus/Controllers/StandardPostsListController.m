@@ -17,7 +17,6 @@
 #import "StandardPostsListController.h"
 #import "PostCell.h"
 #import "PostViewController.h"
-#import "Post.h"
 
 @interface StandardPostsListController () <UICollectionViewDelegateFlowLayout>
 

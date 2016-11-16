@@ -7,7 +7,7 @@
 //
 
 #import "MigrationViewController.h"
-#import "Post.h"
+#import "Gambrinus-Swift.h"
 
 @interface MigrationViewController ()
 

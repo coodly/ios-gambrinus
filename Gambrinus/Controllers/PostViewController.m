@@ -15,7 +15,6 @@
 */
 
 #import "PostViewController.h"
-#import "Post.h"
 #import "UIColor+Theme.h"
 #import "BloggerAPIConnection.h"
 #import "BlogImagesRetrieve.h"
@@ -25,7 +24,6 @@
 #import "ObjectModel.h"
 #import "PostImageController.h"
 #import "Constants.h"
-#import "PostContent.h"
 #import "Gambrinus-Swift.h"
 
 CGFloat const kPostContentPadding = 20;
@@ -101,7 +99,7 @@ CGFloat const kPostContentPadding = 20;
     }
 
     [self.navigationItem setRightBarButtonItem:self.starButton];
-    [self updateStarStatus:self.post.starredValue];
+    [self updateStarStatus:self.post.starred];
 }
 
 - (void)contentSizeChanged {
@@ -143,10 +141,10 @@ CGFloat const kPostContentPadding = 20;
     [self.objectModel saveInBlock:^(CDYObjectModel *objectModel) {
         ObjectModel *model = (ObjectModel *) objectModel;
         Post *post = (Post *) [model.managedObjectContext objectWithID:self.post.objectID];
-        [post setStarredValue:!post.starredValue];
+        [post setStarred:!post.starred];
     } completion:^{
         [self.objectModel.managedObjectContext refreshObject:self.post mergeChanges:YES];
-        [self updateStarStatus:self.post.starredValue];
+        [self updateStarStatus:self.post.starred];
     }];
 }
 

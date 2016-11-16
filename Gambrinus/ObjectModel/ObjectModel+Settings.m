@@ -16,8 +16,8 @@
 
 #import "NSDate+ISO8601.h"
 #import "ObjectModel+Settings.h"
-#import "Setting.h"
 #import "Constants.h"
+#import "Gambrinus-Swift.h"
 
 typedef NS_ENUM(short, SettingKey) {
     SettingLastVerifiedPullDate,
@@ -56,8 +56,8 @@ typedef NS_ENUM(short, SettingKey) {
 - (void)setShortValue:(short)value forKey:(SettingKey)key {
     Setting *setting = [self loadSettingWithKey:key];
     if (!setting) {
-        setting = [Setting insertInManagedObjectContext:self.managedObjectContext];
-        [setting setKeyValue:key];
+        setting = [self.managedObjectContext insertSetting];
+        [setting setKey:[NSNumber numberWithShort:key]];
     }
 
     [setting setValue:[NSString stringWithFormat:@"%d", value]];
@@ -80,8 +80,8 @@ typedef NS_ENUM(short, SettingKey) {
 - (void)setSettingValue:(NSString *)value forKey:(SettingKey)key {
     Setting *setting = [self loadSettingWithKey:key];
     if (!setting) {
-        setting = [Setting insertInManagedObjectContext:self.managedObjectContext];
-        [setting setKeyValue:key];
+        setting = [self.managedObjectContext insertSetting];
+        [setting setKey:[NSNumber numberWithShort:key]];
     }
 
     [setting setValue:value];

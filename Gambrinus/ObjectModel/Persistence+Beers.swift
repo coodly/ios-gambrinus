@@ -47,7 +47,7 @@ extension NSManagedObjectContext {
         saved.rbIdentifier = rateBeer.rbId
         saved.alcohol = rateBeer.alcohol
         saved.name = rateBeer.name
-        saved.aliasedValue = rateBeer.aliasFor != nil
+        saved.aliased = rateBeer.aliasFor != nil
         saved.rbScore = rateBeer.score
         
         saved.brewer = brewer(for: rateBeer.brewer)
@@ -57,7 +57,7 @@ extension NSManagedObjectContext {
         
         let posts = saved.posts!
         for p in posts {
-            p.isDirtyValue = true
+            p.isDirty = true
         }
     }
     

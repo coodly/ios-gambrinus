@@ -15,11 +15,9 @@
 */
 
 #import "NSString+JCSValidations.h"
-#import "Post.h"
 #import "BlogImageAsk.h"
 #import "Image.h"
 #import "Constants.h"
-#import "Beer.h"
 #import "NSString+Normalize.h"
 
 NSString *const PostDataKeyIdentifier = @"PostDataKeyIdentifier";
@@ -52,65 +50,6 @@ NSString *const PostDataKeyBeerBindingIds = @"PostDataKeyBeerBindingIds";
     [super awakeFromFetch];
 
     [self setShadowTitle:self.title];
-}
-
-- (BlogImageAsk *)thumbnailImageAsk {
-    if (!self.image) {
-        return nil;
-    }
-
-    CGSize askSize = IS_PAD ? CGSizeMake(240, 240) : CGSizeMake(150, 150);
-    return [[BlogImageAsk alloc] initWithPostID:self.objectID size:askSize imageURLString:self.image.imageURLString attemptRemovePull:[self.image shouldTryRemote]];
-}
-
-- (BlogImageAsk *)postImageAsk {
-    if (!self.image) {
-        return nil;
-    }
-
-    CGSize askSize = IS_PAD ? CGSizeMake(600, 600) : CGSizeMake(300, 150);
-    BlogImageAsk *ask = [[BlogImageAsk alloc] initWithPostID:self.objectID size:askSize imageURLString:self.image.imageURLString attemptRemovePull:[self.image shouldTryRemote]];
-    if (IS_PAD) {
-        [ask setImageMode:UIViewContentModeScaleAspectFit];
-    } else {
-        [ask setImageMode:UIViewContentModeScaleAspectFill];
-    }
-    return ask;
-}
-
-- (BlogImageAsk *)originalImageAsk {
-    if (!self.image) {
-        return nil;
-    }
-
-    return [[BlogImageAsk alloc] initWithPostID:self.objectID size:CGSizeZero imageURLString:self.image.imageURLString attemptRemovePull:[self.image shouldTryRemote]];;
-}
-
-- (NSString *)publishDateString {
-    return [[Post publishDateFormatter] stringFromDate:self.publishDate];
-}
-
-- (void)markTouched {
-    [self setTouchedAt:[NSDate date]];
-}
-
-- (NSString *)rateBeerScore {
-    NSArray *unaliased = self.unaliasedBeers;
-    if (unaliased.count == 0) {
-        return @"";
-    } else if (unaliased.count == 1) {
-        Beer *beer = unaliased.firstObject;
-        return beer.rbScore;
-    } else {
-        return @"*";
-    }
-}
-
-- (NSArray *)unaliasedBeers {
-    return [self.beers filteredSetUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
-        Beer *beer = evaluatedObject;
-        return !beer.aliasedValue;
-    }]].allObjects;
 }
 
 static NSDateFormatter *__publishDateFormatter;

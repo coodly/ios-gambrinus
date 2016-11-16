@@ -19,12 +19,10 @@
 #import "AFHTTPRequestOperationManager.h"
 #import "Constants.h"
 #import "ObjectModel.h"
-#import "ObjectModel+Blogs.h"
-#import "Blog.h"
 #import "NSDate+BloggerDate.h"
 #import "ObjectModel+Posts.h"
-#import "Post.h"
 #import "NSDate+ISO8601.h"
+#import "Gambrinus-Swift.h"
 
 typedef void (^BloggerResponseBlock)(id response, NSError *error);
 
@@ -52,7 +50,7 @@ NSString *const kGoogleBloggerAPIPath = @"https://www.googleapis.com/blogger/v3"
 
 - (void)retrieveUpdatesSinceDate:(NSDate *)date completion:(ContentUpdateBlock)completion {
     [self.objectModel performBlock:^{
-        Blog *blog = [self.objectModel blogWithBaseURL:self.blogURLString];
+        Blog *blog = [self.objectModel.managedObjectContext blogWithBaseURL:self.blogURLString];
         if (!blog) {
             [self retrieveBlogDetailsWithCompletionHandler:^(BOOL complete, NSError *error) {
                 if (error) {
@@ -70,7 +68,7 @@ NSString *const kGoogleBloggerAPIPath = @"https://www.googleapis.com/blogger/v3"
 
 - (void)refreshPost:(Post *)post withCompletionHandler:(ContentUpdateBlock)completion {
     [self.objectModel performBlock:^{
-        Blog *blog = [self.objectModel blogWithBaseURL:self.blogURLString];
+        Blog *blog = [self.objectModel.managedObjectContext blogWithBaseURL:self.blogURLString];
         NSString *path = [NSString stringWithFormat:@"/blogs/%@/posts/%@", blog.blogId, post.postId];
         [self GET:path params:@{@"fetchImages": @"true"} responseHandler:^(id response, NSError *error) {
             if (error) {
@@ -98,7 +96,7 @@ NSString *const kGoogleBloggerAPIPath = @"https://www.googleapis.com/blogger/v3"
 
         [self.objectModel saveInBlock:^(CDYObjectModel *objectModel) {
             ObjectModel *model = (ObjectModel *) objectModel;
-            [model createOrUpdateBlogWithData:response];
+            [model.managedObjectContext createOrUpdateBlogWithData:response];
         } completion:^{
             refreshHandler(YES, nil);
         }];
@@ -108,7 +106,7 @@ NSString *const kGoogleBloggerAPIPath = @"https://www.googleapis.com/blogger/v3"
 - (void)checkForUpdatesSinceDate:(NSDate *)sinceDate withRefreshHandler:(ContentUpdateBlock)refreshHandler {
     CDYLog(@"checkForUpdatesWithRefreshHandler");
     [self.objectModel performBlock:^{
-        Blog *blog = [self.objectModel blogWithBaseURL:self.blogURLString];
+        Blog *blog = [self.objectModel.managedObjectContext blogWithBaseURL:self.blogURLString];
         [self retrievePostsWithStartDate:sinceDate toDate:[NSDate date] blogId:blog.blogId refreshHandler:refreshHandler];
     }];
 }
@@ -140,7 +138,7 @@ NSString *const kGoogleBloggerAPIPath = @"https://www.googleapis.com/blogger/v3"
 
         [self.objectModel saveInBlock:^(CDYObjectModel *objectModel) {
             ObjectModel *model = (ObjectModel *) objectModel;
-            Blog *postForBlog = [model blogWithBaseURL:self.blogURLString];
+            Blog *postForBlog = [model.managedObjectContext blogWithBaseURL:self.blogURLString];
             NSArray *items = response[@"items"];
             NSArray *knownPostIds = [model knownPostIds];
             for (NSDictionary *postData in items) {

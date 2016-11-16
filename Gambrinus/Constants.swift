@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Coodly LLC
+ * Copyright 2015 Coodly LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,13 +15,6 @@
  */
 
 import Foundation
-import LaughingAdventure
-import CoreData
 
-class Syncable: NSManagedObject {
-    func markForSync(needed: Bool = true) {
-        let status = syncStatus ?? managedObjectContext!.insertEntity()
-        status.syncNeeded = needed
-        self.syncStatus = status
-    }
-}
+//TODO jaanus: remove this
+let RunningOnPad = UIDevice.current.userInterfaceIdiom == .pad

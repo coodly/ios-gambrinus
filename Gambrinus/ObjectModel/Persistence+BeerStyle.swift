@@ -80,7 +80,7 @@ extension NSManagedObjectContext {
             }
             
             for post in posts {
-                post.isDirtyValue = true
+                post.isDirty = true
             }
         }
 

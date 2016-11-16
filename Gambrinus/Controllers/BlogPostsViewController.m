@@ -15,7 +15,6 @@
 */
 
 #import "BlogPostsViewController.h"
-#import "ObjectModel+Blogs.h"
 #import "ObjectModel+Posts.h"
 
 @interface BlogPostsViewController ()

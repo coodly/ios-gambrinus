@@ -16,10 +16,8 @@
 
 #import "RateBeerDetailsCellDefinition.h"
 #import "RateBeerDetailsCollectionViewCell.h"
-#import "Beer.h"
-#import "BeerStyle.h"
-#import "Brewer.h"
 #import "Constants.h"
+#import "Gambrinus-Swift.h"
 
 @implementation RateBeerDetailsCellDefinition
 

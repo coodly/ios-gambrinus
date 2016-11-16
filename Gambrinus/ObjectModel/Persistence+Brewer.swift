@@ -21,6 +21,20 @@ import CloudKit
 import SWLogger
 
 extension NSManagedObjectContext {
+    func fetchBrewerWithName(_ name: String) -> Brewer? {
+        return fetchEntity(where: "name", hasValue: name)
+    }
+    
+    func findOrCreateBrewerWithName(_ name: String) -> Brewer {
+        if let existing = fetchBrewerWithName(name) {
+            return existing
+        }
+        
+        let created: Brewer = insertEntity()
+        created.name = name
+        return created
+    }
+    
     func brewer(for reference: CKReference?) -> Brewer? {
         guard let ref = reference else {
             return nil
@@ -80,7 +94,7 @@ extension NSManagedObjectContext {
             }
             
             for post in posts {
-                post.isDirtyValue = true
+                post.isDirty = true
             }
         }
     }

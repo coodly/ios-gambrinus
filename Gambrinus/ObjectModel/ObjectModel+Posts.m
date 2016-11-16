@@ -17,19 +17,13 @@
 #import <Ono/ONOXMLDocument.h>
 #import "JCSFoundationConstants.h"
 #import "ObjectModel+Posts.h"
-#import "Post.h"
 #import "NSDate+BloggerDate.h"
-#import "Blog.h"
 #import "NSString+Cleanup.h"
-#import "ObjectModel+Images.h"
 #import "NSString+JCSValidations.h"
-#import "ObjectModel+Beers.h"
 #import "ObjectModel+Settings.h"
-#import "Beer.h"
-#import "BeerStyle.h"
-#import "Brewer.h"
 #import "Constants.h"
-#import "PostContent.h"
+#import "ObjectModel+Posts.h"
+#import "Gambrinus-Swift.h"
 
 @implementation ObjectModel (Posts)
 
@@ -50,7 +44,7 @@
 }
 
 - (Post *)insertPostWithData:(NSDictionary *)dictionary {
-    Post *post = [Post insertInManagedObjectContext:self.managedObjectContext];
+    Post *post = [self.managedObjectContext insertPost];
     [post setPostId:dictionary[@"id"]];
     [self loadDataFromDictionary:dictionary intoPost:post];
     return post;
@@ -70,7 +64,7 @@
     content = [content stringByReplacingOccurrencesOfString:@"\n\n\n" withString:@"\n\n"];
     PostContent *postContent = post.body;
     if (!postContent) {
-        postContent = [PostContent insertInManagedObjectContext:post.managedObjectContext];
+        postContent = [self.managedObjectContext insertPostContent];
     }
     [postContent setContent:content];
     [post setBody:postContent];
@@ -79,7 +73,7 @@
     if ([imageURLString rangeOfString:@"blogspot.com"].location != NSNotFound) {
         imageURLString = [imageURLString stringByReplacingOccurrencesOfString:@"/s200/" withString:@"/s1600/"];
     }
-    [post setImage:[self findOrCreteImageWithURLString:imageURLString]];
+    [post setImage:[self.managedObjectContext findOrCreteImageWithURLString:imageURLString]];
 }
 
 - (NSArray *)knownPostIds {
@@ -161,34 +155,6 @@
     }
 
     return [self postsPredicateForOptions:options searchTerm:searchTerm];
-}
-
-- (void)bindPostBeersWithData:(NSDictionary *)data {
-    Post *post = [self existingPostWithId:data[PostDataKeyIdentifier]];
-    if (!post) {
-        return;
-    }
-
-    NSArray *beers = [self beersWithBindingKeys:data[PostDataKeyBeerBindingIds]];
-    if (beers.count == 0) {
-        return;
-    }
-
-    [post setCombinedBeers:[self combinedValuesFrom:beers usingKeyPath:@"normalizedName"]];
-    [post setCombinedStyles:[self combinedValuesFrom:beers usingKeyPath:@"style.normalizedName"]];
-    [post setCombinedBrewers:[self combinedValuesFrom:beers usingKeyPath:@"brewer.normalizedName"]];
-
-    Beer *topBeer = [self topBeer:beers];
-    [post setTopScore:@(topBeer.rbScore.integerValue)];
-    [post setBrewerSort:topBeer.brewer.normalizedName];
-    if (!topBeer.brewer) {
-        [post setBrewerSort:@"æææææ"];
-    }
-    [post setStyleSort:topBeer.style.normalizedName];
-    if (!topBeer.style) {
-        [post setStyleSort:@"æææææ"];
-    }
-    [post setBeers:[NSSet setWithArray:beers]];
 }
 
 - (NSString *)combinedValuesFrom:(NSArray *)beers usingKeyPath:(NSString *)keyPath {

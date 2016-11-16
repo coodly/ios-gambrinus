@@ -20,7 +20,6 @@
 #import "PostImageCell.h"
 #import "UIView+Identifier.h"
 #import "Constants.h"
-#import "Post.h"
 #import "PostContentCell.h"
 #import "BlogImagesRetrieve.h"
 #import "BlogImageAsk.h"
@@ -32,11 +31,10 @@
 #import "InfoTitleDetailCellDefinition.h"
 #import "InfoRateBeerSectionTitleDefinition.h"
 #import "RateBeerSectionTitleCell.h"
-#import "Beer.h"
 #import "RateBeerDetailsCellDefinition.h"
 #import "RateBeerDetailsCollectionViewCell.h"
 #import "InfoSpacingCellDefinition.h"
-#import "PostContent.h"
+#import "Gambrinus-Swift.h"
 
 @interface PostExtendedDetailsViewController () <UICollectionViewDelegateFlowLayout>
 
@@ -127,12 +125,12 @@
         return;
     }
 
-    UIImage *image = self.post.starredValue ? [UIImage imageNamed:@"726-star-toolbar-selected"] : [UIImage imageNamed:@"726-star-toolbar"];
+    UIImage *image = self.post.starred ? [UIImage imageNamed:@"726-star-toolbar-selected"] : [UIImage imageNamed:@"726-star-toolbar"];
     [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(starPost)]];
 }
 
 - (void)starPost {
-    [self.post setStarredValue:!self.post.starredValue];
+    [self.post setStarred:!self.post.starred];
     [self updateStarButton];
     [self.objectModel saveContext];
 }

@@ -15,9 +15,9 @@
 */
 
 #import "MarkedPostsViewController.h"
-#import "ObjectModel+Blogs.h"
-#import "ObjectModel+Posts.h"
 #import "PostCell.h"
+#import "ObjectModel+Posts.h"
+#import "Gambrinus-Swift.h"
 
 @interface MarkedPostsViewController ()
 
