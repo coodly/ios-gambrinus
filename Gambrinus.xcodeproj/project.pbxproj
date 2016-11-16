@@ -1189,7 +1189,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "PATH_TO_MODELD=\"Gambrinus/ObjectModel/Gambrinus.xcdatamodeld\"\nOUTPUT_PATH=\"Gambrinus/ObjectModel\"\n\ntype mogenerator >/dev/null 2>&1 || {\n    echo >&2 \"warning: mogenerator not found. You will need it when changing core data model\";\n    exit 0;\n}\n\n#CURRENT_VERSION=$(/usr/libexec/PlistBuddy -c \"Print :_XCCurrentVersionName\" \"${PATH_TO_MODELD}/.xccurrentversion\")\n\nMODEL_PATH=\"${PATH_TO_MODELD}\"\necho \"Used model path ${MODEL_PATH}\"\n\nmogenerator --v2 -m \"$MODEL_PATH\" -O $OUTPUT_PATH";
+			shellScript = "PATH_TO_MODELD=\"Gambrinus/ObjectModel/Gambrinus.xcdatamodeld\"\nOUTPUT_PATH=\"Gambrinus/ObjectModel\"\n\ntype mogenerator >/dev/null 2>&1 || {\n    echo >&2 \"warning: mogenerator not found. You will need it when changing core data model\";\n    exit 0;\n}\n\n#CURRENT_VERSION=$(/usr/libexec/PlistBuddy -c \"Print :_XCCurrentVersionName\" \"${PATH_TO_MODELD}/.xccurrentversion\")\n\nMODEL_PATH=\"${PATH_TO_MODELD}\"\necho \"Used model path ${MODEL_PATH}\"\n\nmogenerator --model \"$MODEL_PATH\" --output-dir $OUTPUT_PATH";
 		};
 /* End PBXShellScriptBuildPhase section */
 
