@@ -345,9 +345,6 @@
 		EA43D7C0198B6A08000B5AF5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
 		EA43D7C3198B6A08000B5AF5 /* et */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = et; path = InfoPlist.strings; sourceTree = "<group>"; };
 		EA43D7C5198B6A08000B5AF5 /* et */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = et; path = Localizable.strings; sourceTree = "<group>"; };
-		EA50FC851B34A8200000F304 /* Beer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Beer.m; sourceTree = "<group>"; };
-		EA50FC871B34A8200000F304 /* Brewer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Brewer.m; sourceTree = "<group>"; };
-		EA50FC911B351AB70000F304 /* BeerStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeerStyle.m; sourceTree = "<group>"; };
 		EA50FC951B351B9D0000F304 /* BloggerAPIConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BloggerAPIConnection.h; sourceTree = "<group>"; };
 		EA50FC961B351B9D0000F304 /* BloggerAPIConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BloggerAPIConnection.m; sourceTree = "<group>"; };
 		EA50FCA71B351E8C0000F304 /* RemoteService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RemoteService.h; sourceTree = "<group>"; };
@@ -376,7 +373,6 @@
 		EA6FD0E41B18D74B000DB461 /* LaunchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchView.xib; sourceTree = "<group>"; };
 		EA716EB21B3C935100A395A1 /* NSString+Normalize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Normalize.h"; sourceTree = "<group>"; };
 		EA716EB31B3C935100A395A1 /* NSString+Normalize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Normalize.m"; sourceTree = "<group>"; };
-		EA74C9E91B82EDD700A0C748 /* PostContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostContent.m; sourceTree = "<group>"; };
 		EA925DF119502952001E0AC9 /* PostsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostsViewController.h; sourceTree = "<group>"; };
 		EA925DF219502952001E0AC9 /* PostsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostsViewController.m; sourceTree = "<group>"; };
 		EA925DF319502952001E0AC9 /* PostsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostsViewController.xib; sourceTree = "<group>"; };
@@ -401,7 +397,6 @@
 		EADDA402192A51E5000CCEA9 /* KioskPostsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KioskPostsViewController.m; sourceTree = "<group>"; };
 		EADDA411192B88B1000CCEA9 /* ObjectModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectModel.h; sourceTree = "<group>"; };
 		EADDA412192B88B1000CCEA9 /* ObjectModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectModel.m; sourceTree = "<group>"; };
-		EADDA41D192B8ACE000CCEA9 /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		EADDA41F192B8ADF000CCEA9 /* ObjectModel+Posts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ObjectModel+Posts.h"; sourceTree = "<group>"; };
 		EADDA420192B8ADF000CCEA9 /* ObjectModel+Posts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ObjectModel+Posts.m"; sourceTree = "<group>"; };
 		EADF7E64192B8E0D00EC13AB /* ProgressOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressOverlayView.h; sourceTree = "<group>"; };
@@ -786,12 +781,9 @@
 			isa = PBXGroup;
 			children = (
 				EADDA418192B8ABF000CCEA9 /* _ */,
-				EA50FC851B34A8200000F304 /* Beer.m */,
 				A7CD3A181DDC34D2009FF9FC /* Beer.swift */,
-				EA50FC911B351AB70000F304 /* BeerStyle.m */,
 				A7CD3A261DDC3821009FF9FC /* BeerStyle.swift */,
 				A7CD3A3B1DDC4917009FF9FC /* Blog.swift */,
-				EA50FC871B34A8200000F304 /* Brewer.m */,
 				A7CD3A221DDC3766009FF9FC /* Brewer.swift */,
 				A7B9E0811D7EC36900AB64AA /* Gambrinus.xcdatamodeld */,
 				A7CD3A2E1DDC400C009FF9FC /* Image.swift */,
@@ -809,9 +801,7 @@
 				A7CD3A411DDC4F4E009FF9FC /* Persistence+PostContents.swift */,
 				A7B9E0841D7EFC3A00AB64AA /* Persistence+Posts.swift */,
 				A7D647761D79495500FF52A4 /* Persistence+Settings.swift */,
-				EADDA41D192B8ACE000CCEA9 /* Post.m */,
 				A75CADB11D82E75700E2B1AE /* Post.swift */,
-				EA74C9E91B82EDD700A0C748 /* PostContent.m */,
 				A7CD3A2A1DDC39EA009FF9FC /* PostContent.swift */,
 				A7CD3A321DDC409E009FF9FC /* PullStatus.swift */,
 				A7CD3A431DDC67F4009FF9FC /* Setting.swift */,

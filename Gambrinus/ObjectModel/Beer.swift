@@ -18,5 +18,26 @@ import Foundation
 import CoreData
 
 class Beer: Syncable {
+    override func awakeFromFetch() {
+        super.awakeFromFetch()
+        
+        shadowName = name
+    }
     
+    override func willSave() {
+        super.willSave()
+        
+        guard let name = self.name, name.hasValue() else {
+            return
+        }
+        
+        if let shadow = shadowName, shadow == name {
+            return
+        }
+        
+        shadowName = name
+        
+        let normalized = name.normalize()
+        normalizedName = normalized
+    }
 }

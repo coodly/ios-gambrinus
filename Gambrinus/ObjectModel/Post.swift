@@ -27,6 +27,29 @@ class Post: NSManagedObject {
         }()
     }
     
+    override func awakeFromFetch() {
+        super.awakeFromFetch()
+        
+        shadowTitle = title
+    }
+    
+    override func willSave() {
+        super.willSave()
+        
+        guard let title = self.title, title.hasValue() else {
+            return
+        }
+        
+        if let shadow = shadowTitle, shadow == title {
+            return
+        }
+        
+        shadowTitle = title
+        
+        let normalized = title.normalize()
+        normalizedTitle = normalized
+    }
+    
     func rateBeerScore() -> String {
         let unaliased = unaliasedBeers()
         if unaliased.count == 0 {

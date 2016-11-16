@@ -20,6 +20,7 @@
 
 #import "NSDate+BloggerDate.h"
 #import "NSDate+ISO8601.h"
+#import "NSString+Normalize.h"
 
 #import "ObjectModel.h"
 
