@@ -60,7 +60,11 @@ class Post: NSManagedObject {
             return "*"
         }
         
-        return unaliased.first!.rbScore!
+        if let beer = unaliased.first, let score = beer.rbScore {
+            return score
+        }
+        
+        return ""
     }
 
     private func unaliasedBeers() -> [Beer] {
