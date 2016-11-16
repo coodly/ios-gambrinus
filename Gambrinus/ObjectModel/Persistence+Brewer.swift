@@ -61,11 +61,7 @@ extension NSManagedObjectContext {
     }
     
     func rateBeerIDsForBrewersNeedingSync() -> [String] {
-        if let values = fetchAttribute(named: "identifier", on: Brewer.self, limit: 100, predicate: .needsSync) as? [String] {
-            return values
-        }
-        
-        return []
+        return fetchAttribute(named: "identifier", on: Brewer.self, limit: 100, predicate: .needsSync)
     }
 
     func markSyncFailureOn(brewers rbids: [String]) {

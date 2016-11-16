@@ -184,7 +184,7 @@
         [self.imagesRetrieve retrieveImageForAsk:ask completion:^(CDYImageAsk *forAsk, UIImage *image) {
             [self.objectModel performBlock:^{
                 BlogImageAsk *imageAsk = (BlogImageAsk *) forAsk;
-                PostID *postID = imageAsk.postID;
+                NSManagedObjectID *postID = imageAsk.postID;
                 Post *askPost = (Post *) [self.objectModel.managedObjectContext objectWithID:postID];
                 if (!image) {
                     CDYLog(@"No image for %@", imageAsk.imageURL);
