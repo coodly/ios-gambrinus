@@ -111,11 +111,11 @@ class FullOptionsMenuController: MenuViewController, ObjectModelConsumer, Inject
         if let allCell = allPostsCell, allCell == cell {
             let controller = BlogPostsViewController()
             inject(into: controller)
-            container.presentRootController(controller)
+            container.present(root: controller)
         } else if let favorites = favoritesCell, favorites == cell {
             let controller = MarkedPostsViewController()
             inject(into: controller)
-            container.presentRootController(controller)
+            container.present(root: controller)
         } else if let dateCell = postDateCell, dateCell == cell {
             tappedOnSort(cell: dateCell)
         } else if let nameCell = postNameCell, nameCell == cell {
@@ -125,7 +125,7 @@ class FullOptionsMenuController: MenuViewController, ObjectModelConsumer, Inject
         } else if cell == feedbackCell {
             let controller = Feedback.mainController()
             let navigation = UINavigationController(rootViewController: controller)
-            container.presentModalController(navigation)
+            container.present(modal: navigation)
         }
         
         return false
