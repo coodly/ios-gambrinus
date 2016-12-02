@@ -120,21 +120,21 @@ class Post: NSManagedObject {
     }
     
     func thumbnailImageAsk() -> BlogImageAsk? {
-        guard let image = self.image else {
+        guard let image = self.image, let imageURLString = image.imageURLString else {
             return nil
         }
         
         let askSize = RunningOnPad ? CGSize(width: 240, height: 240) : CGSize(width: 150, height: 150)
-        return BlogImageAsk(post: self.objectID, size: askSize, imageURLString: image.imageURLString!, attemptRemovePull: image.shouldTryRemote())
+        return BlogImageAsk(post: self.objectID, size: askSize, imageURLString: imageURLString, attemptRemovePull: image.shouldTryRemote())
     }
 
     func postImageAsk() -> BlogImageAsk? {
-        guard let image = self.image else {
+        guard let image = self.image, let imageURLString = image.imageURLString else {
             return nil
         }
         
         let askSize = RunningOnPad ? CGSize(width: 600, height: 600) : CGSize(width: 300, height: 150)
-        let ask = BlogImageAsk(post: objectID, size: askSize, imageURLString: image.imageURLString!, attemptRemovePull: image.shouldTryRemote())!
+        let ask = BlogImageAsk(post: objectID, size: askSize, imageURLString: imageURLString, attemptRemovePull: image.shouldTryRemote())!
         if RunningOnPad {
             ask.imageMode = .scaleAspectFit
         } else {
@@ -144,11 +144,11 @@ class Post: NSManagedObject {
     }
 
     func originalImageAsk() -> BlogImageAsk? {
-        guard let image = self.image else {
+        guard let image = self.image, let imageURLString = image.imageURLString else {
             return nil
         }
         
-        return BlogImageAsk(post: objectID, size: .zero, imageURLString: image.imageURLString!, attemptRemovePull: image.shouldTryRemote())
+        return BlogImageAsk(post: objectID, size: .zero, imageURLString: imageURLString, attemptRemovePull: image.shouldTryRemote())
     }
     
     func updateSearchMeta() {
