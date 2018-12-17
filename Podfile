@@ -11,11 +11,11 @@ end
 UsedSource = PodSource::Remote
 
 def pods
-    pod 'Fabric'
-    pod 'Crashlytics'
+    pod 'Fabric', '1.9.0'
+    pod 'Crashlytics', '3.12.0'
     pod 'AFNetworking', '2.6.3'
-    pod 'MRProgress'
-    pod 'Ono'
+    pod 'MRProgress', '0.8.3'
+    pod 'Ono', '1.2.2'
     
     if UsedSource == PodSource::Local
         pod 'SWLogger', :path => '../swift-logger'

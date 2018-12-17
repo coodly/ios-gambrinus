@@ -20,9 +20,9 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - Crashlytics (3.8.3):
-    - Fabric (~> 1.6.3)
-  - Fabric (1.6.11)
+  - Crashlytics (3.12.0):
+    - Fabric (~> 1.9.0)
+  - Fabric (1.9.0)
   - LaughingAdventure (0.5.0):
     - LaughingAdventure/Core (= 0.5.0)
   - LaughingAdventure/Core (0.5.0)
@@ -59,36 +59,44 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (= 2.6.3)
-  - Crashlytics
-  - Fabric
-  - LaughingAdventure (from `git@github.com:coodly/laughing-adventure.git`)
-  - MRProgress
-  - Ono
-  - SWLogger (from `git@github.com:coodly/swlogger.git`)
+  - Crashlytics (= 3.12.0)
+  - Fabric (= 1.9.0)
+  - "LaughingAdventure (from `git@github.com:coodly/laughing-adventure.git`)"
+  - MRProgress (= 0.8.3)
+  - Ono (= 1.2.2)
+  - "SWLogger (from `git@github.com:coodly/swlogger.git`)"
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - Crashlytics
+    - Fabric
+    - MRProgress
+    - Ono
 
 EXTERNAL SOURCES:
   LaughingAdventure:
-    :git: git@github.com:coodly/laughing-adventure.git
+    :git: "git@github.com:coodly/laughing-adventure.git"
   SWLogger:
-    :git: git@github.com:coodly/swlogger.git
+    :git: "git@github.com:coodly/swlogger.git"
 
 CHECKOUT OPTIONS:
   LaughingAdventure:
     :commit: 953c3c5d44788832af73d06bbc07d1cf0781ea33
-    :git: git@github.com:coodly/laughing-adventure.git
+    :git: "git@github.com:coodly/laughing-adventure.git"
   SWLogger:
     :commit: 4905d4e05d8fa9cc0b21b2869fb899e970290443
-    :git: git@github.com:coodly/swlogger.git
+    :git: "git@github.com:coodly/swlogger.git"
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
-  Crashlytics: 2b6dbe138a42395577cfa73dfa1aa7248cadf39e
-  Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
+  Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
+  Fabric: f988e33c97f08930a413e08123064d2e5f68d655
   LaughingAdventure: 2b3bb42b03512cc5d1a464cba451c16aaf9c803b
   MRProgress: 16de7cc9f347e8846797a770db102a323fe7ef09
   Ono: 80b1c686777d3f6d5d5ce6fcac8a74afef4ca197
   SWLogger: 333135cadd381962c3667f5af500f7ae140c74a4
 
-PODFILE CHECKSUM: 2161f877d33416f051b14d503615369c8c10efa9
+PODFILE CHECKSUM: e01272b74ebcd348f7741d2cbeeba69c39d52de8
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.5.3
