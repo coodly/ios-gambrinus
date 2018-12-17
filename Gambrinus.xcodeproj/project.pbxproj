@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		A17B3840ABCCE3610FE15CA4 /* Pods_Gambrinus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA69DCA20CC7434C02417339 /* Pods_Gambrinus.framework */; };
+		A70238A521C7FB1E00A7CFE9 /* KioskCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A702389E21C7FB1E00A7CFE9 /* KioskCore.framework */; };
+		A70238A621C7FB1E00A7CFE9 /* KioskCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A702389E21C7FB1E00A7CFE9 /* KioskCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A70238B721C7FB2900A7CFE9 /* KioskUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A70238B021C7FB2900A7CFE9 /* KioskUI.framework */; };
+		A70238B821C7FB2900A7CFE9 /* KioskUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A70238B021C7FB2900A7CFE9 /* KioskUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A70238BC21C7FB3100A7CFE9 /* KioskCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A702389E21C7FB1E00A7CFE9 /* KioskCore.framework */; };
 		A7063F331D7EBCFC00B45C6C /* CloudRateBeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7063F321D7EBCFC00B45C6C /* CloudRateBeer.swift */; };
 		A7063F351D7EBD5D00B45C6C /* PullRateBeerChangesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7063F341D7EBD5D00B45C6C /* PullRateBeerChangesOperation.swift */; };
 		A734E29D1D7717B50057D136 /* CDYImageAsk.m in Sources */ = {isa = PBXBuildFile; fileRef = A734E2981D7717B50057D136 /* CDYImageAsk.m */; };
@@ -168,6 +173,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		A70238A321C7FB1E00A7CFE9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA0668B8192A45C4009C83F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A702389D21C7FB1E00A7CFE9;
+			remoteInfo = KioskCore;
+		};
+		A70238B521C7FB2900A7CFE9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA0668B8192A45C4009C83F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A70238AF21C7FB2900A7CFE9;
+			remoteInfo = KioskUI;
+		};
 		EA0668E0192A45C5009C83F1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EA0668B8192A45C4009C83F1 /* Project object */;
@@ -177,8 +196,27 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A70238AA21C7FB1E00A7CFE9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A70238B821C7FB2900A7CFE9 /* KioskUI.framework in Embed Frameworks */,
+				A70238A621C7FB1E00A7CFE9 /* KioskCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1E80FB9A4CDEB7F93A5A46FB /* Pods-Gambrinus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gambrinus.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gambrinus/Pods-Gambrinus.release.xcconfig"; sourceTree = "<group>"; };
+		A702389E21C7FB1E00A7CFE9 /* KioskCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KioskCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A70238A121C7FB1E00A7CFE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A70238B021C7FB2900A7CFE9 /* KioskUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KioskUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A70238B321C7FB2900A7CFE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7063F321D7EBCFC00B45C6C /* CloudRateBeer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudRateBeer.swift; sourceTree = "<group>"; };
 		A7063F341D7EBD5D00B45C6C /* PullRateBeerChangesOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullRateBeerChangesOperation.swift; sourceTree = "<group>"; };
 		A734E2971D7717B50057D136 /* CDYImageAsk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDYImageAsk.h; sourceTree = "<group>"; };
@@ -414,12 +452,29 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A702389B21C7FB1E00A7CFE9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A70238AD21C7FB2900A7CFE9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A70238BC21C7FB3100A7CFE9 /* KioskCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EA0668BD192A45C4009C83F1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				A7D19E931DC601830024C3A7 /* CloudKit.framework in Frameworks */,
+				A70238A521C7FB1E00A7CFE9 /* KioskCore.framework in Frameworks */,
 				EA0668C6192A45C4009C83F1 /* CoreGraphics.framework in Frameworks */,
+				A70238B721C7FB2900A7CFE9 /* KioskUI.framework in Frameworks */,
 				EA2713AD1B1A4B40002D655E /* Fabric.framework in Frameworks */,
 				EA0668C8192A45C4009C83F1 /* UIKit.framework in Frameworks */,
 				EA0668C4192A45C4009C83F1 /* Foundation.framework in Frameworks */,
@@ -441,6 +496,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A702389F21C7FB1E00A7CFE9 /* KioskCore */ = {
+			isa = PBXGroup;
+			children = (
+				A70238BD21C7FB5800A7CFE9 /* Supporting Files */,
+			);
+			path = KioskCore;
+			sourceTree = "<group>";
+		};
+		A70238B121C7FB2900A7CFE9 /* KioskUI */ = {
+			isa = PBXGroup;
+			children = (
+				A70238BE21C7FB6B00A7CFE9 /* Supporting Files */,
+			);
+			path = KioskUI;
+			sourceTree = "<group>";
+		};
+		A70238BD21C7FB5800A7CFE9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A70238A121C7FB1E00A7CFE9 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A70238BE21C7FB6B00A7CFE9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A70238B321C7FB2900A7CFE9 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		A734E2961D7717B50057D136 /* CDYImagesRetrieve */ = {
 			isa = PBXGroup;
 			children = (
@@ -535,6 +622,8 @@
 				EA0986CA1B1E40C6006FEC11 /* Thirdparty */,
 				EA0668C9192A45C4009C83F1 /* Gambrinus */,
 				EA0668E2192A45C5009C83F1 /* GambrinusTests */,
+				A702389F21C7FB1E00A7CFE9 /* KioskCore */,
+				A70238B121C7FB2900A7CFE9 /* KioskUI */,
 				EA0668C2192A45C4009C83F1 /* Frameworks */,
 				EA0668C1192A45C4009C83F1 /* Products */,
 				BA665BA7D5ECAA081827FF24 /* mapping.json */,
@@ -548,6 +637,8 @@
 			children = (
 				EA0668C0192A45C4009C83F1 /* Gambrinus.app */,
 				EA0668DB192A45C4009C83F1 /* GambrinusTests.xctest */,
+				A702389E21C7FB1E00A7CFE9 /* KioskCore.framework */,
+				A70238B021C7FB2900A7CFE9 /* KioskUI.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -907,7 +998,60 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		A702389921C7FB1E00A7CFE9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A70238AB21C7FB2900A7CFE9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		A702389D21C7FB1E00A7CFE9 /* KioskCore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A70238A721C7FB1E00A7CFE9 /* Build configuration list for PBXNativeTarget "KioskCore" */;
+			buildPhases = (
+				A702389921C7FB1E00A7CFE9 /* Headers */,
+				A702389A21C7FB1E00A7CFE9 /* Sources */,
+				A702389B21C7FB1E00A7CFE9 /* Frameworks */,
+				A702389C21C7FB1E00A7CFE9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KioskCore;
+			productName = KioskCore;
+			productReference = A702389E21C7FB1E00A7CFE9 /* KioskCore.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A70238AF21C7FB2900A7CFE9 /* KioskUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A70238B921C7FB2900A7CFE9 /* Build configuration list for PBXNativeTarget "KioskUI" */;
+			buildPhases = (
+				A70238AB21C7FB2900A7CFE9 /* Headers */,
+				A70238AC21C7FB2900A7CFE9 /* Sources */,
+				A70238AD21C7FB2900A7CFE9 /* Frameworks */,
+				A70238AE21C7FB2900A7CFE9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KioskUI;
+			productName = KioskUI;
+			productReference = A70238B021C7FB2900A7CFE9 /* KioskUI.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		EA0668BF192A45C4009C83F1 /* Gambrinus */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EA0668EC192A45C5009C83F1 /* Build configuration list for PBXNativeTarget "Gambrinus" */;
@@ -919,10 +1063,13 @@
 				EA0668BE192A45C4009C83F1 /* Resources */,
 				EA2713AA1B1A4A9C002D655E /* Crashlytics */,
 				256D5DA8CA18D70FB1672C07 /* [CP] Embed Pods Frameworks */,
+				A70238AA21C7FB1E00A7CFE9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A70238A421C7FB1E00A7CFE9 /* PBXTargetDependency */,
+				A70238B621C7FB2900A7CFE9 /* PBXTargetDependency */,
 			);
 			name = Gambrinus;
 			productName = Gambrinus;
@@ -957,6 +1104,14 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Coodly LLC";
 				TargetAttributes = {
+					A702389D21C7FB1E00A7CFE9 = {
+						CreatedOnToolsVersion = 10.1;
+						ProvisioningStyle = Automatic;
+					};
+					A70238AF21C7FB2900A7CFE9 = {
+						CreatedOnToolsVersion = 10.1;
+						ProvisioningStyle = Automatic;
+					};
 					EA0668BF192A45C4009C83F1 = {
 						DevelopmentTeam = 5T8DRBFCBP;
 						LastSwiftMigration = 1010;
@@ -991,12 +1146,28 @@
 			projectRoot = "";
 			targets = (
 				EA0668BF192A45C4009C83F1 /* Gambrinus */,
+				A702389D21C7FB1E00A7CFE9 /* KioskCore */,
+				A70238AF21C7FB2900A7CFE9 /* KioskUI */,
 				EA0668DA192A45C4009C83F1 /* GambrinusTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A702389C21C7FB1E00A7CFE9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A70238AE21C7FB2900A7CFE9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EA0668BE192A45C4009C83F1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1115,6 +1286,20 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A702389A21C7FB1E00A7CFE9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A70238AC21C7FB2900A7CFE9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EA0668BC192A45C4009C83F1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1254,6 +1439,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		A70238A421C7FB1E00A7CFE9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A702389D21C7FB1E00A7CFE9 /* KioskCore */;
+			targetProxy = A70238A321C7FB1E00A7CFE9 /* PBXContainerItemProxy */;
+		};
+		A70238B621C7FB2900A7CFE9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A70238AF21C7FB2900A7CFE9 /* KioskUI */;
+			targetProxy = A70238B521C7FB2900A7CFE9 /* PBXContainerItemProxy */;
+		};
 		EA0668E1192A45C5009C83F1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = EA0668BF192A45C4009C83F1 /* Gambrinus */;
@@ -1313,6 +1508,152 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		A70238A821C7FB1E00A7CFE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "$(SRCROOT)/KioskCore/Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.coodly.kiosk.core;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A70238A921C7FB1E00A7CFE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "$(SRCROOT)/KioskCore/Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.coodly.kiosk.core;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A70238BA21C7FB2900A7CFE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "$(SRCROOT)/KioskUI/Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.coodly.kiosk.ui;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A70238BB21C7FB2900A7CFE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "$(SRCROOT)/KioskUI/Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.coodly.kiosk.ui;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		EA0668EA192A45C5009C83F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1521,6 +1862,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A70238A721C7FB1E00A7CFE9 /* Build configuration list for PBXNativeTarget "KioskCore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A70238A821C7FB1E00A7CFE9 /* Debug */,
+				A70238A921C7FB1E00A7CFE9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A70238B921C7FB2900A7CFE9 /* Build configuration list for PBXNativeTarget "KioskUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A70238BA21C7FB2900A7CFE9 /* Debug */,
+				A70238BB21C7FB2900A7CFE9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		EA0668BB192A45C4009C83F1 /* Build configuration list for PBXProject "Gambrinus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
