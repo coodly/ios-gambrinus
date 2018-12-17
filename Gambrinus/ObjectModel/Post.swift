@@ -163,19 +163,19 @@ class Post: NSManagedObject {
     }
 
     private func updateSearchStyles(with: [Beer]) {
-        let styles = Set(with.flatMap({ $0.style }))
-        let styleNames = styles.flatMap({ $0.normalizedName }).sorted()
+        let styles = Set(with.compactMap({ $0.style }))
+        let styleNames = styles.compactMap({ $0.normalizedName }).sorted()
         combinedStyles = styleNames.joined(separator: "|")
     }
 
     private func updateSearchBrewers(with: [Beer]) {
-        let brewers = Set(with.flatMap({ $0.brewer }))
-        let brewerNames = brewers.flatMap({ $0.normalizedName }).sorted()
+        let brewers = Set(with.compactMap({ $0.brewer }))
+        let brewerNames = brewers.compactMap({ $0.normalizedName }).sorted()
         combinedBrewers = brewerNames.joined(separator: "|")
     }
     
     private func updateSearchNames(with beers: [Beer]) {
-        let names = beers.flatMap({ $0.normalizedName }).sorted()
+        let names = beers.compactMap({ $0.normalizedName }).sorted()
         combinedBeers = names.joined(separator: "|")
     }
     

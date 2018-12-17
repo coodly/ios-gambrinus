@@ -30,7 +30,7 @@ class FullOptionsMenuController: MenuViewController, ObjectModelConsumer, Inject
     
     private var feedbackCell: MenuCell!
     
-    override var preferredStyle: UITableViewStyle {
+    override var preferredStyle: UITableView.Style {
         return .grouped
     }
     private lazy var upImage: UIImage = {
@@ -56,7 +56,7 @@ class FullOptionsMenuController: MenuViewController, ObjectModelConsumer, Inject
         powered.contentMode = .scaleAspectFit
         tableView.tableFooterView = powered
         
-        tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
+        tableView.contentInset = UIEdgeInsets.init(top: 20, left: 0, bottom: 0, right: 0)
     }
     
     override func viewWillAppear(_ animated: Bool) {

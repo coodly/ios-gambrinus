@@ -21,7 +21,7 @@ import LaughingAdventure
 import SWLogger
 
 extension NSManagedObjectContext {
-    func style(for reference: CKReference?) -> BeerStyle? {
+    func style(for reference: CKRecord.Reference?) -> BeerStyle? {
         guard let ref = reference else {
             return nil
         }

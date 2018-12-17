@@ -19,7 +19,7 @@ import LaughingAdventure
 import CloudKit
 
 struct CloudBrewer: RemoteRecord {
-    var parent: CKRecordID?
+    var parent: CKRecord.ID?
     var recordData: Data?
     var recordName: String?
     static var recordType: String {

@@ -35,7 +35,7 @@ extension NSManagedObjectContext {
         return created
     }
     
-    func brewer(for reference: CKReference?) -> Brewer? {
+    func brewer(for reference: CKRecord.Reference?) -> Brewer? {
         guard let ref = reference else {
             return nil
         }

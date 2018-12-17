@@ -19,7 +19,7 @@ import LaughingAdventure
 import CloudKit
 
 struct CloudRateBeer: RemoteRecord {
-    var parent: CKRecordID?
+    var parent: CKRecord.ID?
     var recordData: Data?
     var recordName: String?
     static var recordType: String {
@@ -27,12 +27,12 @@ struct CloudRateBeer: RemoteRecord {
     }
     
     var alcohol: String?
-    var aliasFor: CKReference?
-    var brewer: CKReference?
+    var aliasFor: CKRecord.Reference?
+    var brewer: CKRecord.Reference?
     var name: String?
     var rbId: String?
     var score: String?
-    var style: CKReference?
+    var style: CKRecord.Reference?
     var scoreUpdatedAt: Date?
     
     mutating func loadFields(from record: CKRecord) -> Bool {
@@ -41,12 +41,12 @@ struct CloudRateBeer: RemoteRecord {
         }
         
         alcohol = record["alcohol"] as? String
-        aliasFor = record["aliasFor"] as? CKReference
-        brewer = record["brewer"] as? CKReference
+        aliasFor = record["aliasFor"] as? CKRecord.Reference
+        brewer = record["brewer"] as? CKRecord.Reference
         self.name = name
         rbId = record["rbId"] as? String
         score = record["score"] as? String
-        style = record["style"] as? CKReference
+        style = record["style"] as? CKRecord.Reference
         scoreUpdatedAt = record["scoreUpdatedAt"] as? Date
         return true
     }
