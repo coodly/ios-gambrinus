@@ -13,6 +13,15 @@
 		A70238B721C7FB2900A7CFE9 /* KioskUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A70238B021C7FB2900A7CFE9 /* KioskUI.framework */; };
 		A70238B821C7FB2900A7CFE9 /* KioskUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A70238B021C7FB2900A7CFE9 /* KioskUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A70238BC21C7FB3100A7CFE9 /* KioskCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A702389E21C7FB1E00A7CFE9 /* KioskCore.framework */; };
+		A70238CF21C800BA00A7CFE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70238CE21C800BA00A7CFE9 /* AppDelegate.swift */; };
+		A70238D421C800BA00A7CFE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A70238D221C800BA00A7CFE9 /* Main.storyboard */; };
+		A70238D621C800BD00A7CFE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A70238D521C800BD00A7CFE9 /* Assets.xcassets */; };
+		A70238DE21C800DC00A7CFE9 /* KioskCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A702389E21C7FB1E00A7CFE9 /* KioskCore.framework */; };
+		A70238DF21C800DC00A7CFE9 /* KioskCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A702389E21C7FB1E00A7CFE9 /* KioskCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A70238E221C800DD00A7CFE9 /* KioskUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A70238B021C7FB2900A7CFE9 /* KioskUI.framework */; };
+		A70238E321C800DD00A7CFE9 /* KioskUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A70238B021C7FB2900A7CFE9 /* KioskUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A70238E921C8025B00A7CFE9 /* LaunchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A70238E821C8025B00A7CFE9 /* LaunchView.xib */; };
+		A70238EC21C8030300A7CFE9 /* InitializeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70238EB21C8030300A7CFE9 /* InitializeViewController.swift */; };
 		A7063F331D7EBCFC00B45C6C /* CloudRateBeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7063F321D7EBCFC00B45C6C /* CloudRateBeer.swift */; };
 		A7063F351D7EBD5D00B45C6C /* PullRateBeerChangesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7063F341D7EBD5D00B45C6C /* PullRateBeerChangesOperation.swift */; };
 		A734E29D1D7717B50057D136 /* CDYImageAsk.m in Sources */ = {isa = PBXBuildFile; fileRef = A734E2981D7717B50057D136 /* CDYImageAsk.m */; };
@@ -187,6 +196,20 @@
 			remoteGlobalIDString = A70238AF21C7FB2900A7CFE9;
 			remoteInfo = KioskUI;
 		};
+		A70238E021C800DD00A7CFE9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA0668B8192A45C4009C83F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A702389D21C7FB1E00A7CFE9;
+			remoteInfo = KioskCore;
+		};
+		A70238E421C800DD00A7CFE9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA0668B8192A45C4009C83F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A70238AF21C7FB2900A7CFE9;
+			remoteInfo = KioskUI;
+		};
 		EA0668E0192A45C5009C83F1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EA0668B8192A45C4009C83F1 /* Project object */;
@@ -209,6 +232,18 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A70238E621C800DD00A7CFE9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A70238E321C800DD00A7CFE9 /* KioskUI.framework in Embed Frameworks */,
+				A70238DF21C800DC00A7CFE9 /* KioskCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -217,6 +252,13 @@
 		A70238A121C7FB1E00A7CFE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A70238B021C7FB2900A7CFE9 /* KioskUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KioskUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A70238B321C7FB2900A7CFE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A70238CC21C800BA00A7CFE9 /* Kiosk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kiosk.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A70238CE21C800BA00A7CFE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A70238D321C800BA00A7CFE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A70238D521C800BD00A7CFE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A70238DA21C800BD00A7CFE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A70238E821C8025B00A7CFE9 /* LaunchView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchView.xib; sourceTree = "<group>"; };
+		A70238EB21C8030300A7CFE9 /* InitializeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitializeViewController.swift; sourceTree = "<group>"; };
 		A7063F321D7EBCFC00B45C6C /* CloudRateBeer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudRateBeer.swift; sourceTree = "<group>"; };
 		A7063F341D7EBD5D00B45C6C /* PullRateBeerChangesOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullRateBeerChangesOperation.swift; sourceTree = "<group>"; };
 		A734E2971D7717B50057D136 /* CDYImageAsk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDYImageAsk.h; sourceTree = "<group>"; };
@@ -467,6 +509,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A70238C921C800BA00A7CFE9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A70238E221C800DD00A7CFE9 /* KioskUI.framework in Frameworks */,
+				A70238DE21C800DC00A7CFE9 /* KioskCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EA0668BD192A45C4009C83F1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -524,6 +575,43 @@
 			isa = PBXGroup;
 			children = (
 				A70238B321C7FB2900A7CFE9 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A70238CD21C800BA00A7CFE9 /* Kiosk */ = {
+			isa = PBXGroup;
+			children = (
+				A70238ED21C8040C00A7CFE9 /* Supporting Files */,
+				A70238EA21C802F500A7CFE9 /* ViewControllers */,
+				A70238E721C8024E00A7CFE9 /* Views */,
+				A70238CE21C800BA00A7CFE9 /* AppDelegate.swift */,
+				A70238D521C800BD00A7CFE9 /* Assets.xcassets */,
+			);
+			path = Kiosk;
+			sourceTree = "<group>";
+		};
+		A70238E721C8024E00A7CFE9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A70238E821C8025B00A7CFE9 /* LaunchView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A70238EA21C802F500A7CFE9 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A70238EB21C8030300A7CFE9 /* InitializeViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A70238ED21C8040C00A7CFE9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A70238DA21C800BD00A7CFE9 /* Info.plist */,
+				A70238D221C800BA00A7CFE9 /* Main.storyboard */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -624,6 +712,7 @@
 				EA0668E2192A45C5009C83F1 /* GambrinusTests */,
 				A702389F21C7FB1E00A7CFE9 /* KioskCore */,
 				A70238B121C7FB2900A7CFE9 /* KioskUI */,
+				A70238CD21C800BA00A7CFE9 /* Kiosk */,
 				EA0668C2192A45C4009C83F1 /* Frameworks */,
 				EA0668C1192A45C4009C83F1 /* Products */,
 				BA665BA7D5ECAA081827FF24 /* mapping.json */,
@@ -639,6 +728,7 @@
 				EA0668DB192A45C4009C83F1 /* GambrinusTests.xctest */,
 				A702389E21C7FB1E00A7CFE9 /* KioskCore.framework */,
 				A70238B021C7FB2900A7CFE9 /* KioskUI.framework */,
+				A70238CC21C800BA00A7CFE9 /* Kiosk.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1052,6 +1142,26 @@
 			productReference = A70238B021C7FB2900A7CFE9 /* KioskUI.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		A70238CB21C800BA00A7CFE9 /* Kiosk */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A70238DD21C800BD00A7CFE9 /* Build configuration list for PBXNativeTarget "Kiosk" */;
+			buildPhases = (
+				A70238C821C800BA00A7CFE9 /* Sources */,
+				A70238C921C800BA00A7CFE9 /* Frameworks */,
+				A70238CA21C800BA00A7CFE9 /* Resources */,
+				A70238E621C800DD00A7CFE9 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A70238E121C800DD00A7CFE9 /* PBXTargetDependency */,
+				A70238E521C800DD00A7CFE9 /* PBXTargetDependency */,
+			);
+			name = Kiosk;
+			productName = Kiosk;
+			productReference = A70238CC21C800BA00A7CFE9 /* Kiosk.app */;
+			productType = "com.apple.product-type.application";
+		};
 		EA0668BF192A45C4009C83F1 /* Gambrinus */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EA0668EC192A45C5009C83F1 /* Build configuration list for PBXNativeTarget "Gambrinus" */;
@@ -1100,16 +1210,23 @@
 		EA0668B8192A45C4009C83F1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Coodly LLC";
 				TargetAttributes = {
 					A702389D21C7FB1E00A7CFE9 = {
 						CreatedOnToolsVersion = 10.1;
+						DevelopmentTeam = 5T8DRBFCBP;
 						ProvisioningStyle = Automatic;
 					};
 					A70238AF21C7FB2900A7CFE9 = {
 						CreatedOnToolsVersion = 10.1;
+						DevelopmentTeam = 5T8DRBFCBP;
+						ProvisioningStyle = Automatic;
+					};
+					A70238CB21C800BA00A7CFE9 = {
+						CreatedOnToolsVersion = 10.1;
+						DevelopmentTeam = 5T8DRBFCBP;
 						ProvisioningStyle = Automatic;
 					};
 					EA0668BF192A45C4009C83F1 = {
@@ -1139,6 +1256,7 @@
 			knownRegions = (
 				en,
 				et,
+				Base,
 			);
 			mainGroup = EA0668B7192A45C4009C83F1;
 			productRefGroup = EA0668C1192A45C4009C83F1 /* Products */;
@@ -1146,6 +1264,7 @@
 			projectRoot = "";
 			targets = (
 				EA0668BF192A45C4009C83F1 /* Gambrinus */,
+				A70238CB21C800BA00A7CFE9 /* Kiosk */,
 				A702389D21C7FB1E00A7CFE9 /* KioskCore */,
 				A70238AF21C7FB2900A7CFE9 /* KioskUI */,
 				EA0668DA192A45C4009C83F1 /* GambrinusTests */,
@@ -1165,6 +1284,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A70238CA21C800BA00A7CFE9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A70238E921C8025B00A7CFE9 /* LaunchView.xib in Resources */,
+				A70238D621C800BD00A7CFE9 /* Assets.xcassets in Resources */,
+				A70238D421C800BA00A7CFE9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1297,6 +1426,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A70238C821C800BA00A7CFE9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A70238CF21C800BA00A7CFE9 /* AppDelegate.swift in Sources */,
+				A70238EC21C8030300A7CFE9 /* InitializeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1449,6 +1587,16 @@
 			target = A70238AF21C7FB2900A7CFE9 /* KioskUI */;
 			targetProxy = A70238B521C7FB2900A7CFE9 /* PBXContainerItemProxy */;
 		};
+		A70238E121C800DD00A7CFE9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A702389D21C7FB1E00A7CFE9 /* KioskCore */;
+			targetProxy = A70238E021C800DD00A7CFE9 /* PBXContainerItemProxy */;
+		};
+		A70238E521C800DD00A7CFE9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A70238AF21C7FB2900A7CFE9 /* KioskUI */;
+			targetProxy = A70238E421C800DD00A7CFE9 /* PBXContainerItemProxy */;
+		};
 		EA0668E1192A45C5009C83F1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = EA0668BF192A45C4009C83F1 /* Gambrinus */;
@@ -1457,6 +1605,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		A70238D221C800BA00A7CFE9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A70238D321C800BA00A7CFE9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		EA0668CC192A45C4009C83F1 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1523,6 +1679,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 5T8DRBFCBP;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1561,6 +1718,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 5T8DRBFCBP;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1596,6 +1754,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 5T8DRBFCBP;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1634,6 +1793,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 5T8DRBFCBP;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1651,6 +1811,63 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A70238DB21C800BD00A7CFE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 5T8DRBFCBP;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "$(SRCROOT)/Kiosk/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.coodly.Kiosk;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A70238DC21C800BD00A7CFE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 5T8DRBFCBP;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "$(SRCROOT)/Kiosk/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.coodly.Kiosk;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -1876,6 +2093,15 @@
 			buildConfigurations = (
 				A70238BA21C7FB2900A7CFE9 /* Debug */,
 				A70238BB21C7FB2900A7CFE9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A70238DD21C800BD00A7CFE9 /* Build configuration list for PBXNativeTarget "Kiosk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A70238DB21C800BD00A7CFE9 /* Debug */,
+				A70238DC21C800BD00A7CFE9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
