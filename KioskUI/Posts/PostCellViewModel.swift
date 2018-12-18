@@ -16,11 +16,27 @@
 
 import Foundation
 import KioskCore
+import ImageProvide
 
-internal class PostCellViewModel {
+internal class PostCellViewModel: ImagesConsumer {
+    var imagesSource: ImageSource! {
+        didSet {
+            guard let ask = thumbnailAsk else {
+                return
+            }
+            
+            imagesSource.retrieveImage(for: ask) {
+                image in
+                
+                self.status.thumbnail = image
+            }
+        }
+    }
+    
     internal struct Status {
         var formattedPostDate = ""
         var postTile = ""
+        var thumbnail: UIImage? = nil
     }
     
     private var status = Status() {
@@ -34,8 +50,12 @@ internal class PostCellViewModel {
         }
     }
     
+    private let thumbnailAsk: ImageAsk?
+    
     internal init(post: Post) {
         status.formattedPostDate = post.publishDateString() ?? ""
         status.postTile = post.title ?? ""
+        
+        thumbnailAsk = post.thumbnailAsk
     }
 }

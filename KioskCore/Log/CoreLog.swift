@@ -17,6 +17,7 @@
 import Foundation
 import SWLogger
 import CoreDataPersistence
+import ImageProvide
 
 public class CoreLog {
     public static func enableLogs() {
@@ -32,6 +33,7 @@ public class CoreLog {
         #endif
         
         CoreDataPersistence.Logging.set(logger: CoreLogger())
+        ImageProvide.Logging.set(logger: ImageLogger())
     }
     
     public static func debug<T>(_ object: T, file: String = #file, function: String = #function, line: Int = #line) {
@@ -53,8 +55,21 @@ internal class Log {
     }
 }
 
+internal class Logging {
+    internal static func log<T>(_ object: T, file: String = #file, function: String = #function, line: Int = #line) {
+        CoreLog.debug(object, file: file, function: function, line: line)
+    }
+}
+
 private class CoreLogger: CoreDataPersistence.Logger {
     func log<T>(_ object: T, file: String = #file, function: String = #function, line: Int = #line) {
         CoreLog.debug(object, file: file, function: function, line: line)
     }
 }
+
+private class ImageLogger: ImageProvide.Logger {
+    func log<T>(_ object: T, file: String = #file, function: String = #function, line: Int = #line) {
+        CoreLog.debug(object, file: file, function: function, line: line)
+    }
+}
+

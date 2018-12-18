@@ -105,6 +105,13 @@
 		A792727B21C934C50001F621 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792727921C934C50001F621 /* PostCell.swift */; };
 		A792727C21C934C50001F621 /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A792727A21C934C50001F621 /* PostCell.xib */; };
 		A792727E21C939B30001F621 /* PostCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792727D21C939B20001F621 /* PostCellViewModel.swift */; };
+		A792728221C944910001F621 /* UIInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792728121C944910001F621 /* UIInjection.swift */; };
+		A792728521C944FF0001F621 /* ImagesConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792728321C944F00001F621 /* ImagesConsumer.swift */; };
+		A792728821C945C20001F621 /* ImagesFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792728721C945C20001F621 /* ImagesFetch.swift */; };
+		A792728A21C946000001F621 /* NetworkQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792728921C946000001F621 /* NetworkQueue.swift */; };
+		A792728C21C9461C0001F621 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792728B21C9461C0001F621 /* NetworkRequest.swift */; };
+		A792728F21C946420001F621 /* ConcurrentOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792728E21C946420001F621 /* ConcurrentOperation.swift */; };
+		A792729221C9484B0001F621 /* Post+ImageAsk.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792729121C9484B0001F621 /* Post+ImageAsk.swift */; };
 		A7ADF44621C8F351008B3205 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A7ADF43D21C8F351008B3205 /* Localizable.strings */; };
 		A7ADF44721C8F351008B3205 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A7ADF43F21C8F351008B3205 /* InfoPlist.strings */; };
 		A7ADF45321C8F495008B3205 /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ADF45221C8F495008B3205 /* L10n.swift */; };
@@ -424,6 +431,13 @@
 		A792727921C934C50001F621 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		A792727A21C934C50001F621 /* PostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
 		A792727D21C939B20001F621 /* PostCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCellViewModel.swift; sourceTree = "<group>"; };
+		A792728121C944910001F621 /* UIInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIInjection.swift; sourceTree = "<group>"; };
+		A792728321C944F00001F621 /* ImagesConsumer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesConsumer.swift; sourceTree = "<group>"; };
+		A792728721C945C20001F621 /* ImagesFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesFetch.swift; sourceTree = "<group>"; };
+		A792728921C946000001F621 /* NetworkQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkQueue.swift; sourceTree = "<group>"; };
+		A792728B21C9461C0001F621 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		A792728E21C946420001F621 /* ConcurrentOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcurrentOperation.swift; sourceTree = "<group>"; };
+		A792729121C9484B0001F621 /* Post+ImageAsk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+ImageAsk.swift"; sourceTree = "<group>"; };
 		A7ADF43E21C8F351008B3205 /* et */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = et; path = Localizable.strings; sourceTree = "<group>"; };
 		A7ADF44021C8F351008B3205 /* et */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = et; path = InfoPlist.strings; sourceTree = "<group>"; };
 		A7ADF44321C8F351008B3205 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
@@ -703,12 +717,14 @@
 		A702389F21C7FB1E00A7CFE9 /* KioskCore */ = {
 			isa = PBXGroup;
 			children = (
+				A792728D21C9463A0001F621 /* Utils */,
 				A792726121C926E90001F621 /* Config */,
 				A792725621C9019F0001F621 /* Extensions */,
 				A792725921C9047F0001F621 /* Formatters */,
 				A70238FB21C8084A00A7CFE9 /* Injection */,
 				A792726821C92C860001F621 /* Log */,
 				A792725E21C926A70001F621 /* Model */,
+				A792728621C945B50001F621 /* Network */,
 				A792721E21C8FF3D0001F621 /* Persistence */,
 				A70238BD21C7FB5800A7CFE9 /* Supporting Files */,
 			);
@@ -721,9 +737,11 @@
 				A792721021C8F71C0001F621 /* Assets */,
 				A702390121C8096500A7CFE9 /* Autolayout */,
 				A792721D21C8FEBA0001F621 /* Fetched */,
+				A792728021C944790001F621 /* Injection */,
 				A7ADF43B21C8F2FD008B3205 /* Localization */,
 				A792727621C934520001F621 /* Log */,
 				A70238F421C8072600A7CFE9 /* Menu */,
+				A792729021C948310001F621 /* Persistence */,
 				A792721621C8F8030001F621 /* Posts */,
 				A792727121C933D40001F621 /* Shared */,
 				A70238EE21C8064300A7CFE9 /* Storyboards */,
@@ -811,6 +829,7 @@
 			isa = PBXGroup;
 			children = (
 				A70238FC21C8085800A7CFE9 /* CoreInjection.swift */,
+				A792728321C944F00001F621 /* ImagesConsumer.swift */,
 				A792722121C8FFD10001F621 /* PersistenceConsumer.swift */,
 			);
 			path = Injection;
@@ -1022,6 +1041,40 @@
 				A792727721C934650001F621 /* Log.swift */,
 			);
 			path = Log;
+			sourceTree = "<group>";
+		};
+		A792728021C944790001F621 /* Injection */ = {
+			isa = PBXGroup;
+			children = (
+				A792728121C944910001F621 /* UIInjection.swift */,
+			);
+			path = Injection;
+			sourceTree = "<group>";
+		};
+		A792728621C945B50001F621 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A792728721C945C20001F621 /* ImagesFetch.swift */,
+				A792728921C946000001F621 /* NetworkQueue.swift */,
+				A792728B21C9461C0001F621 /* NetworkRequest.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		A792728D21C9463A0001F621 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A792728E21C946420001F621 /* ConcurrentOperation.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		A792729021C948310001F621 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				A792729121C9484B0001F621 /* Post+ImageAsk.swift */,
+			);
+			path = Persistence;
 			sourceTree = "<group>";
 		};
 		A7ADF43B21C8F2FD008B3205 /* Localization */ = {
@@ -1982,15 +2035,19 @@
 				A792725321C901700001F621 /* Setting.swift in Sources */,
 				A792723821C9010B0001F621 /* PostContent+Properties.swift in Sources */,
 				A792726321C926F20001F621 /* Constants.swift in Sources */,
+				A792728C21C9461C0001F621 /* NetworkRequest.swift in Sources */,
 				A792723921C9010B0001F621 /* PullStatus+Properties.swift in Sources */,
 				A792723A21C9010B0001F621 /* Brewer+Properties.swift in Sources */,
 				A792722021C8FF4D0001F621 /* Persistence.swift in Sources */,
 				A792723C21C9010B0001F621 /* BeerStyle+Properties.swift in Sources */,
 				A792723721C9010B0001F621 /* SyncStatus+Properties.swift in Sources */,
+				A792728F21C946420001F621 /* ConcurrentOperation.swift in Sources */,
 				A792725821C901AB0001F621 /* String+Extensions.swift in Sources */,
 				A792722221C8FFD10001F621 /* PersistenceConsumer.swift in Sources */,
+				A792728521C944FF0001F621 /* ImagesConsumer.swift in Sources */,
 				A792722521C900A80001F621 /* Kiosk.xcdatamodeld in Sources */,
 				A792725121C901700001F621 /* PostContent.swift in Sources */,
+				A792728821C945C20001F621 /* ImagesFetch.swift in Sources */,
 				A792726A21C92C940001F621 /* CoreLog.swift in Sources */,
 				A792724B21C901700001F621 /* Image.swift in Sources */,
 				A792723621C9010B0001F621 /* Setting+Properties.swift in Sources */,
@@ -2006,6 +2063,7 @@
 				A792725221C901700001F621 /* Brewer.swift in Sources */,
 				A792724F21C901700001F621 /* BeerStyle.swift in Sources */,
 				A792726E21C932620001F621 /* Persistence+Posts.swift in Sources */,
+				A792728A21C946000001F621 /* NetworkQueue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2021,11 +2079,13 @@
 				A792721821C8F8190001F621 /* PostsViewController.swift in Sources */,
 				A792727521C934070001F621 /* UIView+Loading.swift in Sources */,
 				A792727B21C934C50001F621 /* PostCell.swift in Sources */,
+				A792729221C9484B0001F621 /* Post+ImageAsk.swift in Sources */,
 				A792727E21C939B30001F621 /* PostCellViewModel.swift in Sources */,
 				A70238FA21C807E400A7CFE9 /* MenuNavigationViewController.swift in Sources */,
 				A702390221C8097D00A7CFE9 /* UIView+Autolayout.swift in Sources */,
 				A7ADF45321C8F495008B3205 /* L10n.swift in Sources */,
 				A70238F221C8068400A7CFE9 /* Storyboards.swift in Sources */,
+				A792728221C944910001F621 /* UIInjection.swift in Sources */,
 				A792727321C933E30001F621 /* UICollectionView+Dequeue.swift in Sources */,
 				A70238F021C8066300A7CFE9 /* StoryboardLoaded.swift in Sources */,
 			);

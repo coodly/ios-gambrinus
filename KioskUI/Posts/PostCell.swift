@@ -25,9 +25,11 @@ internal class PostCell: UICollectionViewCell {
     @IBOutlet private var dateFill: UIView!
     @IBOutlet private var postTitle: UILabel!
     @IBOutlet private var titleFill: UIView!
+    @IBOutlet private var thumbnail: UIImageView!
     
     internal var viewModel: PostCellViewModel? {
         didSet {
+            oldValue?.callback = nil
             viewModel?.callback = {
                 [weak self]
                 
@@ -41,6 +43,7 @@ internal class PostCell: UICollectionViewCell {
     private func update(with status: PostCellViewModel.Status) {
         postDate.text = status.formattedPostDate
         postTitle.text = status.postTile
+        thumbnail.image = status.thumbnail
     }
     
     override func awakeFromNib() {

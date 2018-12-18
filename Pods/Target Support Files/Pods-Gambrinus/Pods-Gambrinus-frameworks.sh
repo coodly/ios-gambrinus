@@ -150,6 +150,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Ono/Ono.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SWLogger/SWLogger.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ImageProvide/ImageProvide.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/ImageProvide/ImageProvide.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
@@ -158,6 +159,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/MRProgress/MRProgress.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Ono/Ono.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SWLogger/SWLogger.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/ImageProvide/ImageProvide.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ImageProvide/ImageProvide.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then

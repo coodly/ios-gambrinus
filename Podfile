@@ -81,4 +81,5 @@ target 'KioskCore' do
 
     core_data_pod
     log_pod
+    images_pod
 end

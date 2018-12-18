@@ -17,7 +17,11 @@
 import Foundation
 import CoreData
 
-class Image: NSManagedObject {
+public class Image: NSManagedObject {
+    public var imageURL: URL? {
+        return URL(string: imageURLString ?? "")
+    }
+    
     func markPullFailed() {
         let status = myPullStatus()
         status.pullFailed = true

@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+import ImageProvide
+
 internal protocol CoreInjector {
     func inject(into object: AnyObject)
 }
@@ -28,10 +30,21 @@ public class CoreInjection {
     public static let sharedInstance = CoreInjection()
     
     private lazy var persistence = Persistence()
+    private lazy var networkQueue = NetworkQueue()
+    private lazy var appQueue: OperationQueue = {
+        let queue = OperationQueue()
+        queue.qualityOfService = .utility
+        return queue
+    }()
+    private lazy var images = ImageSource(fetch: ImagesFetch(queue: self.networkQueue, appQueue: self.appQueue))
 
     public func inject(into object: AnyObject) {
         if var consumer = object as? PersistenceConsumer {
             consumer.persistence = persistence
+        }
+        
+        if var consumer = object as? ImagesConsumer {
+            consumer.imagesSource = images
         }
     }
 }
