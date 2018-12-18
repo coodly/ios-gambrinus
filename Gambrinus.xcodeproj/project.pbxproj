@@ -118,6 +118,8 @@
 		A792729C21C958450001F621 /* ModalPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792729B21C958450001F621 /* ModalPresenter.swift */; };
 		A792729E21C958670001F621 /* ModalPresentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792729D21C958670001F621 /* ModalPresentationViewController.swift */; };
 		A79272A021C958980001F621 /* ModalPresentation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A792729F21C958980001F621 /* ModalPresentation.storyboard */; };
+		A79272A321C959F70001F621 /* ScrollPresented.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79272A221C959F70001F621 /* ScrollPresented.swift */; };
+		A79272A521C95A170001F621 /* ScrolledContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79272A421C95A170001F621 /* ScrolledContentViewController.swift */; };
 		A7ADF44621C8F351008B3205 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A7ADF43D21C8F351008B3205 /* Localizable.strings */; };
 		A7ADF44721C8F351008B3205 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A7ADF43F21C8F351008B3205 /* InfoPlist.strings */; };
 		A7ADF45321C8F495008B3205 /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ADF45221C8F495008B3205 /* L10n.swift */; };
@@ -450,6 +452,8 @@
 		A792729B21C958450001F621 /* ModalPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPresenter.swift; sourceTree = "<group>"; };
 		A792729D21C958670001F621 /* ModalPresentationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPresentationViewController.swift; sourceTree = "<group>"; };
 		A792729F21C958980001F621 /* ModalPresentation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ModalPresentation.storyboard; sourceTree = "<group>"; };
+		A79272A221C959F70001F621 /* ScrollPresented.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollPresented.swift; sourceTree = "<group>"; };
+		A79272A421C95A170001F621 /* ScrolledContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrolledContentViewController.swift; sourceTree = "<group>"; };
 		A7ADF43E21C8F351008B3205 /* et */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = et; path = Localizable.strings; sourceTree = "<group>"; };
 		A7ADF44021C8F351008B3205 /* et */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = et; path = InfoPlist.strings; sourceTree = "<group>"; };
 		A7ADF44321C8F351008B3205 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
@@ -757,6 +761,7 @@
 				A792729021C948310001F621 /* Persistence */,
 				A792729321C957190001F621 /* PostDetails */,
 				A792721621C8F8030001F621 /* Posts */,
+				A79272A121C959DB0001F621 /* Scrolled */,
 				A792727121C933D40001F621 /* Shared */,
 				A70238EE21C8064300A7CFE9 /* Storyboards */,
 				A70238BE21C7FB6B00A7CFE9 /* Supporting Files */,
@@ -1109,6 +1114,15 @@
 				A792729B21C958450001F621 /* ModalPresenter.swift */,
 			);
 			path = Modal;
+			sourceTree = "<group>";
+		};
+		A79272A121C959DB0001F621 /* Scrolled */ = {
+			isa = PBXGroup;
+			children = (
+				A79272A221C959F70001F621 /* ScrollPresented.swift */,
+				A79272A421C95A170001F621 /* ScrolledContentViewController.swift */,
+			);
+			path = Scrolled;
 			sourceTree = "<group>";
 		};
 		A7ADF43B21C8F2FD008B3205 /* Localization */ = {
@@ -2116,10 +2130,12 @@
 				A792721521C8F79F0001F621 /* Assets.swift in Sources */,
 				A792721821C8F8190001F621 /* PostsViewController.swift in Sources */,
 				A792729C21C958450001F621 /* ModalPresenter.swift in Sources */,
+				A79272A321C959F70001F621 /* ScrollPresented.swift in Sources */,
 				A792727521C934070001F621 /* UIView+Loading.swift in Sources */,
 				A792727B21C934C50001F621 /* PostCell.swift in Sources */,
 				A792729221C9484B0001F621 /* Post+ImageAsk.swift in Sources */,
 				A792727E21C939B30001F621 /* PostCellViewModel.swift in Sources */,
+				A79272A521C95A170001F621 /* ScrolledContentViewController.swift in Sources */,
 				A70238FA21C807E400A7CFE9 /* MenuNavigationViewController.swift in Sources */,
 				A702390221C8097D00A7CFE9 /* UIView+Autolayout.swift in Sources */,
 				A7ADF45321C8F495008B3205 /* L10n.swift in Sources */,
