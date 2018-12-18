@@ -112,6 +112,12 @@
 		A792728C21C9461C0001F621 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792728B21C9461C0001F621 /* NetworkRequest.swift */; };
 		A792728F21C946420001F621 /* ConcurrentOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792728E21C946420001F621 /* ConcurrentOperation.swift */; };
 		A792729221C9484B0001F621 /* Post+ImageAsk.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792729121C9484B0001F621 /* Post+ImageAsk.swift */; };
+		A792729521C9573A0001F621 /* PostDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792729421C957390001F621 /* PostDetailsViewController.swift */; };
+		A792729721C957460001F621 /* PostDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A792729621C957460001F621 /* PostDetails.storyboard */; };
+		A792729A21C958070001F621 /* MaybeModalPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792729921C958070001F621 /* MaybeModalPresenter.swift */; };
+		A792729C21C958450001F621 /* ModalPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792729B21C958450001F621 /* ModalPresenter.swift */; };
+		A792729E21C958670001F621 /* ModalPresentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792729D21C958670001F621 /* ModalPresentationViewController.swift */; };
+		A79272A021C958980001F621 /* ModalPresentation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A792729F21C958980001F621 /* ModalPresentation.storyboard */; };
 		A7ADF44621C8F351008B3205 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A7ADF43D21C8F351008B3205 /* Localizable.strings */; };
 		A7ADF44721C8F351008B3205 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A7ADF43F21C8F351008B3205 /* InfoPlist.strings */; };
 		A7ADF45321C8F495008B3205 /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ADF45221C8F495008B3205 /* L10n.swift */; };
@@ -438,6 +444,12 @@
 		A792728B21C9461C0001F621 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		A792728E21C946420001F621 /* ConcurrentOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcurrentOperation.swift; sourceTree = "<group>"; };
 		A792729121C9484B0001F621 /* Post+ImageAsk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+ImageAsk.swift"; sourceTree = "<group>"; };
+		A792729421C957390001F621 /* PostDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsViewController.swift; sourceTree = "<group>"; };
+		A792729621C957460001F621 /* PostDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PostDetails.storyboard; sourceTree = "<group>"; };
+		A792729921C958070001F621 /* MaybeModalPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaybeModalPresenter.swift; sourceTree = "<group>"; };
+		A792729B21C958450001F621 /* ModalPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPresenter.swift; sourceTree = "<group>"; };
+		A792729D21C958670001F621 /* ModalPresentationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPresentationViewController.swift; sourceTree = "<group>"; };
+		A792729F21C958980001F621 /* ModalPresentation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ModalPresentation.storyboard; sourceTree = "<group>"; };
 		A7ADF43E21C8F351008B3205 /* et */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = et; path = Localizable.strings; sourceTree = "<group>"; };
 		A7ADF44021C8F351008B3205 /* et */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = et; path = InfoPlist.strings; sourceTree = "<group>"; };
 		A7ADF44321C8F351008B3205 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
@@ -741,7 +753,9 @@
 				A7ADF43B21C8F2FD008B3205 /* Localization */,
 				A792727621C934520001F621 /* Log */,
 				A70238F421C8072600A7CFE9 /* Menu */,
+				A792729821C957EA0001F621 /* Modal */,
 				A792729021C948310001F621 /* Persistence */,
+				A792729321C957190001F621 /* PostDetails */,
 				A792721621C8F8030001F621 /* Posts */,
 				A792727121C933D40001F621 /* Shared */,
 				A70238EE21C8064300A7CFE9 /* Storyboards */,
@@ -1075,6 +1089,26 @@
 				A792729121C9484B0001F621 /* Post+ImageAsk.swift */,
 			);
 			path = Persistence;
+			sourceTree = "<group>";
+		};
+		A792729321C957190001F621 /* PostDetails */ = {
+			isa = PBXGroup;
+			children = (
+				A792729621C957460001F621 /* PostDetails.storyboard */,
+				A792729421C957390001F621 /* PostDetailsViewController.swift */,
+			);
+			path = PostDetails;
+			sourceTree = "<group>";
+		};
+		A792729821C957EA0001F621 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				A792729921C958070001F621 /* MaybeModalPresenter.swift */,
+				A792729F21C958980001F621 /* ModalPresentation.storyboard */,
+				A792729D21C958670001F621 /* ModalPresentationViewController.swift */,
+				A792729B21C958450001F621 /* ModalPresenter.swift */,
+			);
+			path = Modal;
 			sourceTree = "<group>";
 		};
 		A7ADF43B21C8F2FD008B3205 /* Localization */ = {
@@ -1733,6 +1767,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A792721A21C8F81F0001F621 /* Posts.storyboard in Resources */,
+				A79272A021C958980001F621 /* ModalPresentation.storyboard in Resources */,
+				A792729721C957460001F621 /* PostDetails.storyboard in Resources */,
 				A792721221C8F72A0001F621 /* Media.xcassets in Resources */,
 				A70238F921C807E400A7CFE9 /* MenuNavigation.storyboard in Resources */,
 				A792727C21C934C50001F621 /* PostCell.xib in Resources */,
@@ -2072,11 +2108,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A70238F821C807E400A7CFE9 /* MenuPresentationView.swift in Sources */,
+				A792729A21C958070001F621 /* MaybeModalPresenter.swift in Sources */,
 				A702390421C80B2500A7CFE9 /* MenuViewController.swift in Sources */,
 				A792727821C934650001F621 /* Log.swift in Sources */,
+				A792729521C9573A0001F621 /* PostDetailsViewController.swift in Sources */,
 				A792727021C9332F0001F621 /* FetchedCollectionViewController.swift in Sources */,
 				A792721521C8F79F0001F621 /* Assets.swift in Sources */,
 				A792721821C8F8190001F621 /* PostsViewController.swift in Sources */,
+				A792729C21C958450001F621 /* ModalPresenter.swift in Sources */,
 				A792727521C934070001F621 /* UIView+Loading.swift in Sources */,
 				A792727B21C934C50001F621 /* PostCell.swift in Sources */,
 				A792729221C9484B0001F621 /* Post+ImageAsk.swift in Sources */,
@@ -2084,6 +2123,7 @@
 				A70238FA21C807E400A7CFE9 /* MenuNavigationViewController.swift in Sources */,
 				A702390221C8097D00A7CFE9 /* UIView+Autolayout.swift in Sources */,
 				A7ADF45321C8F495008B3205 /* L10n.swift in Sources */,
+				A792729E21C958670001F621 /* ModalPresentationViewController.swift in Sources */,
 				A70238F221C8068400A7CFE9 /* Storyboards.swift in Sources */,
 				A792728221C944910001F621 /* UIInjection.swift in Sources */,
 				A792727321C933E30001F621 /* UICollectionView+Dequeue.swift in Sources */,

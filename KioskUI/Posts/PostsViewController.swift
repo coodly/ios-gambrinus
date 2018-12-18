@@ -20,7 +20,7 @@ import CoreData
 
 private typealias Dependencies = PersistenceConsumer
 
-public class PostsViewController: FetchedCollectionViewController<Post, PostCell>, StoryboardLoaded, Dependencies, UIInjector {
+public class PostsViewController: FetchedCollectionViewController<Post, PostCell>, StoryboardLoaded, Dependencies, UIInjector, MaybeModalPresenter {
     public static var storyboardName: String {
         return "Posts"
     }
@@ -35,6 +35,13 @@ public class PostsViewController: FetchedCollectionViewController<Post, PostCell
         let viewModel = PostCellViewModel(post: post)
         inject(into: viewModel)
         cell.viewModel = viewModel
+    }
+    
+    override func tapped(_ post: Post, at indexPath: IndexPath) {
+        let details: PostDetailsViewController = Storyboards.loadFromStoryboard()
+        inject(into: details)
+        details.post = post
+        presentMaybeModal(controller: details)
     }
     
     public override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
