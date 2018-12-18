@@ -97,7 +97,7 @@ CHECKOUT OPTIONS:
     :commit: 24521626b5639a69e015deb333060c844a2a7f61
     :git: "git@github.com:coodly/CoreDataPersistence.git"
   ImageProvide:
-    :commit: ef31df48eff4b9cec06b2bc54ec516d371947f95
+    :commit: 13bfd7e42ad53f5bd0f516caea6559f8ca86d0e1
     :git: "git@github.com:coodly/ImageProvide.git"
   LaughingAdventure:
     :commit: 333d66f271f74eac458f506eb6e00bd7261db980
