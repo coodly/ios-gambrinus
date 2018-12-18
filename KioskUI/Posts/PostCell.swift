@@ -16,9 +16,15 @@
 
 import UIKit
 
+private extension Selector {
+    static let adjustFont = #selector(PostCell.adjustFont)
+}
+
 internal class PostCell: UICollectionViewCell {
     @IBOutlet private var postDate: UILabel!
+    @IBOutlet private var dateFill: UIView!
     @IBOutlet private var postTitle: UILabel!
+    @IBOutlet private var titleFill: UIView!
     
     internal var viewModel: PostCellViewModel? {
         didSet {
@@ -35,5 +41,20 @@ internal class PostCell: UICollectionViewCell {
     private func update(with status: PostCellViewModel.Status) {
         postDate.text = status.formattedPostDate
         postTitle.text = status.postTile
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        dateFill.backgroundColor = UIColor.white.withAlphaComponent(0.8)
+        titleFill.backgroundColor = UIColor.white.withAlphaComponent(0.8)
+        
+        NotificationCenter.default.addObserver(self, selector: .adjustFont, name: UIContentSizeCategory.didChangeNotification, object: nil)
+        adjustFont()
+    }
+    
+    @objc fileprivate func adjustFont() {
+        postDate.font = UIFont.preferredFont(forTextStyle: .subheadline)
+        postTitle.font = UIFont.preferredFont(forTextStyle: .headline)
     }
 }

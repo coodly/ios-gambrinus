@@ -49,6 +49,16 @@ def log_pod
     end
 end
 
+def images_pod
+    if UsedSource == PodSource::Local
+        pod 'ImageProvide', :path => '../swift-image-provide'
+        elsif UsedSource == PodSource::Remote
+        pod 'ImageProvide', :git => 'git@github.com:coodly/ImageProvide.git'
+        else
+        pod 'ImageProvide', :git => 'git@github.com:coodly/ImageProvide.git', tag: '0.4.0'
+    end
+end
+
 target 'Gambrinus' do
     pods
     
@@ -63,6 +73,7 @@ target 'KioskUI' do
     platform :ios, '9.3'
 
     pod 'SwiftGen', '6.0.2'
+    images_pod
 end
 
 target 'KioskCore' do

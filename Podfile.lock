@@ -24,6 +24,7 @@ PODS:
   - Crashlytics (3.12.0):
     - Fabric (~> 1.9.0)
   - Fabric (1.9.0)
+  - ImageProvide (0.4.0)
   - LaughingAdventure (0.9.2):
     - LaughingAdventure/Core (= 0.9.2)
   - LaughingAdventure/Core (0.9.2):
@@ -65,6 +66,7 @@ DEPENDENCIES:
   - "CoreDataPersistence (from `git@github.com:coodly/CoreDataPersistence.git`)"
   - Crashlytics (= 3.12.0)
   - Fabric (= 1.9.0)
+  - "ImageProvide (from `git@github.com:coodly/ImageProvide.git`)"
   - "LaughingAdventure (from `git@github.com:coodly/laughing-adventure.git`)"
   - MRProgress (= 0.8.3)
   - Ono (= 1.2.2)
@@ -83,6 +85,8 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   CoreDataPersistence:
     :git: "git@github.com:coodly/CoreDataPersistence.git"
+  ImageProvide:
+    :git: "git@github.com:coodly/ImageProvide.git"
   LaughingAdventure:
     :git: "git@github.com:coodly/laughing-adventure.git"
   SWLogger:
@@ -92,6 +96,9 @@ CHECKOUT OPTIONS:
   CoreDataPersistence:
     :commit: 24521626b5639a69e015deb333060c844a2a7f61
     :git: "git@github.com:coodly/CoreDataPersistence.git"
+  ImageProvide:
+    :commit: ef31df48eff4b9cec06b2bc54ec516d371947f95
+    :git: "git@github.com:coodly/ImageProvide.git"
   LaughingAdventure:
     :commit: 333d66f271f74eac458f506eb6e00bd7261db980
     :git: "git@github.com:coodly/laughing-adventure.git"
@@ -104,12 +111,13 @@ SPEC CHECKSUMS:
   CoreDataPersistence: f6f79d2843b4c7f6e014893abad97cec4b50cf45
   Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
   Fabric: f988e33c97f08930a413e08123064d2e5f68d655
+  ImageProvide: fe609b7115a803417828f5747a8e57d0713fa734
   LaughingAdventure: ff87594a587bd39c9c4b0b9207005322082a9622
   MRProgress: 16de7cc9f347e8846797a770db102a323fe7ef09
   Ono: 80b1c686777d3f6d5d5ce6fcac8a74afef4ca197
   SwiftGen: e5b047067aa84082826a0c4f1c4c2ddc95bcf74c
   SWLogger: 67c20e4ac8bec12c0b8a262a0917e24e8494899b
 
-PODFILE CHECKSUM: 0405f7152658f8a2e6b0f4bb6408eb96b9ec5a76
+PODFILE CHECKSUM: 5fc29fcfe36575d80d04b2b463b0ca68de54ce7b
 
 COCOAPODS: 1.5.3
