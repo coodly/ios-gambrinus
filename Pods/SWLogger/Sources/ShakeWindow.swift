@@ -17,8 +17,14 @@
 #if os(iOS)
 import Foundation
 
+#if !swift(>=4.2)
+public extension UIEvent {
+    typealias EventSubtype = UIEventSubtype
+}
+#endif
+
 public class ShakeWindow: UIWindow {
-    public override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+    public override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
             presentMailController()
         }

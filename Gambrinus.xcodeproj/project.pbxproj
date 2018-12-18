@@ -94,6 +94,9 @@
 		A792725D21C9056D0001F621 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792725C21C9056D0001F621 /* Date+Extensions.swift */; };
 		A792726021C926B30001F621 /* BlogImageAsk.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792725F21C926B30001F621 /* BlogImageAsk.swift */; };
 		A792726321C926F20001F621 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792726221C926F20001F621 /* Constants.swift */; };
+		A792726721C92C330001F621 /* Kiosk.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = A792726621C92C330001F621 /* Kiosk.sqlite */; };
+		A792726A21C92C940001F621 /* CoreLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792726921C92C940001F621 /* CoreLog.swift */; };
+		A792726C21C92D090001F621 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792726B21C92D090001F621 /* AppConfig.swift */; };
 		A7ADF44621C8F351008B3205 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A7ADF43D21C8F351008B3205 /* Localizable.strings */; };
 		A7ADF44721C8F351008B3205 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A7ADF43F21C8F351008B3205 /* InfoPlist.strings */; };
 		A7ADF45321C8F495008B3205 /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ADF45221C8F495008B3205 /* L10n.swift */; };
@@ -402,6 +405,9 @@
 		A792725C21C9056D0001F621 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		A792725F21C926B30001F621 /* BlogImageAsk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogImageAsk.swift; sourceTree = "<group>"; };
 		A792726221C926F20001F621 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A792726621C92C330001F621 /* Kiosk.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Kiosk.sqlite; sourceTree = "<group>"; };
+		A792726921C92C940001F621 /* CoreLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLog.swift; sourceTree = "<group>"; };
+		A792726B21C92D090001F621 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		A7ADF43E21C8F351008B3205 /* et */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = et; path = Localizable.strings; sourceTree = "<group>"; };
 		A7ADF44021C8F351008B3205 /* et */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = et; path = InfoPlist.strings; sourceTree = "<group>"; };
 		A7ADF44321C8F351008B3205 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
@@ -682,10 +688,11 @@
 			isa = PBXGroup;
 			children = (
 				A792726121C926E90001F621 /* Config */,
-				A792725E21C926A70001F621 /* Model */,
-				A792725921C9047F0001F621 /* Formatters */,
 				A792725621C9019F0001F621 /* Extensions */,
+				A792725921C9047F0001F621 /* Formatters */,
 				A70238FB21C8084A00A7CFE9 /* Injection */,
+				A792726821C92C860001F621 /* Log */,
+				A792725E21C926A70001F621 /* Model */,
 				A792721E21C8FF3D0001F621 /* Persistence */,
 				A70238BD21C7FB5800A7CFE9 /* Supporting Files */,
 			);
@@ -726,6 +733,7 @@
 		A70238CD21C800BA00A7CFE9 /* Kiosk */ = {
 			isa = PBXGroup;
 			children = (
+				A792726521C92C0B0001F621 /* Data */,
 				A70238ED21C8040C00A7CFE9 /* Supporting Files */,
 				A70238EA21C802F500A7CFE9 /* ViewControllers */,
 				A70238E721C8024E00A7CFE9 /* Views */,
@@ -955,8 +963,25 @@
 			isa = PBXGroup;
 			children = (
 				A792726221C926F20001F621 /* Constants.swift */,
+				A792726B21C92D090001F621 /* AppConfig.swift */,
 			);
 			path = Config;
+			sourceTree = "<group>";
+		};
+		A792726521C92C0B0001F621 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A792726621C92C330001F621 /* Kiosk.sqlite */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		A792726821C92C860001F621 /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				A792726921C92C940001F621 /* CoreLog.swift */,
+			);
+			path = Log;
 			sourceTree = "<group>";
 		};
 		A7ADF43B21C8F2FD008B3205 /* Localization */ = {
@@ -1628,6 +1653,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A70238E921C8025B00A7CFE9 /* LaunchView.xib in Resources */,
+				A792726721C92C330001F621 /* Kiosk.sqlite in Resources */,
 				A70238D621C800BD00A7CFE9 /* Assets.xcassets in Resources */,
 				A70238D421C800BA00A7CFE9 /* Main.storyboard in Resources */,
 			);
@@ -1684,20 +1710,20 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Gambrinus/Pods-Gambrinus-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/CoreDataPersistence/CoreDataPersistence.framework",
 				"${BUILT_PRODUCTS_DIR}/LaughingAdventure/LaughingAdventure.framework",
 				"${BUILT_PRODUCTS_DIR}/MRProgress/MRProgress.framework",
 				"${BUILT_PRODUCTS_DIR}/Ono/Ono.framework",
 				"${BUILT_PRODUCTS_DIR}/SWLogger/SWLogger.framework",
-				"${BUILT_PRODUCTS_DIR}/CoreDataPersistence/CoreDataPersistence.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CoreDataPersistence.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LaughingAdventure.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MRProgress.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Ono.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWLogger.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CoreDataPersistence.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1714,12 +1740,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Kiosk/Pods-Kiosk-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CoreDataPersistence/CoreDataPersistence.framework",
+				"${BUILT_PRODUCTS_DIR}/SWLogger/SWLogger.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CoreDataPersistence.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWLogger.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1918,10 +1946,12 @@
 				A792722221C8FFD10001F621 /* PersistenceConsumer.swift in Sources */,
 				A792722521C900A80001F621 /* Kiosk.xcdatamodeld in Sources */,
 				A792725121C901700001F621 /* PostContent.swift in Sources */,
+				A792726A21C92C940001F621 /* CoreLog.swift in Sources */,
 				A792724B21C901700001F621 /* Image.swift in Sources */,
 				A792723621C9010B0001F621 /* Setting+Properties.swift in Sources */,
 				A792724E21C901700001F621 /* Syncable.swift in Sources */,
 				A792724A21C901700001F621 /* PullStatus.swift in Sources */,
+				A792726C21C92D090001F621 /* AppConfig.swift in Sources */,
 				A792723321C9010B0001F621 /* Syncable+Properties.swift in Sources */,
 				A792724D21C901700001F621 /* Post.swift in Sources */,
 				A792725D21C9056D0001F621 /* Date+Extensions.swift in Sources */,
@@ -2401,7 +2431,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.coodly.Kiosk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.coodly.kiosk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2433,7 +2463,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.coodly.Kiosk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.coodly.kiosk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -16,9 +16,8 @@
 
 import UIKit
 
-class NoCaretTextField: UITextField {
-    
-    override func caretRect(for position: UITextPosition) -> CGRect {
+open class NoCaretTextField: UITextField {
+    override open func caretRect(for position: UITextPosition) -> CGRect {
         return CGRect.zero
     }
 }

@@ -1,3 +1,6 @@
+source 'https://github.com/coodly/Specs.git'
+source 'https://github.com/CocoaPods/Specs.git'
+
 platform :ios, '9.3'
 
 use_frameworks!
@@ -16,12 +19,12 @@ def pods
     pod 'AFNetworking', '2.6.3'
     pod 'MRProgress', '0.8.3'
     pod 'Ono', '1.2.2'
+
+    log_pod
     
     if UsedSource == PodSource::Local
-        pod 'SWLogger', :path => '../swift-logger'
         pod 'LaughingAdventure', :path => '../swift-laughing-adventure'
     else
-        pod 'SWLogger', :git => 'git@github.com:coodly/swlogger.git'
         pod 'LaughingAdventure', :git => 'git@github.com:coodly/laughing-adventure.git'
     end
 end
@@ -33,6 +36,16 @@ def core_data_pod
         pod 'CoreDataPersistence', :git => 'git@github.com:coodly/CoreDataPersistence.git'
         else
         pod 'CoreDataPersistence', :git => 'git@github.com:coodly/CoreDataPersistence.git', :tag => '0.1.6'
+    end
+end
+
+def log_pod
+    if UsedSource == PodSource::Local
+        pod 'SWLogger', :path => '../swift-logger'
+    elsif UsedSource == PodSource::Remote
+        pod 'SWLogger', :git => 'git@github.com:coodly/swlogger.git'
+    else
+        pod 'SWLogger', :git => 'git@github.com:coodly/swlogger.git', tag: '0.3.4'
     end
 end
 
@@ -56,4 +69,5 @@ target 'KioskCore' do
     platform :ios, '9.3'
 
     core_data_pod
+    log_pod
 end

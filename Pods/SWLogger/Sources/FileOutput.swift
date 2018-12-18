@@ -33,6 +33,13 @@ public class FileOutput: LogOutput {
         }
         return logsFolder
     }()
+    private lazy var appNamePrefix: String = {
+        let appName = Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String ?? ""
+        if appName.count > 0 {
+            return "\(appName)-"
+        }
+        return ""
+    }()
 
     public init(saveInDirectory: FileManager.SearchPathDirectory = .documentDirectory) {
         self.saveInDirectory = saveInDirectory
@@ -40,9 +47,9 @@ public class FileOutput: LogOutput {
     
     public func printMessage(_ message: String) {
         let written = "\(message)\n"
-        let data = written.data(using: String.Encoding.utf8)!
-        if let handle = handle() {
-            handle.write(data)
+        let data = written.data(using: .utf8) ?? "<- No UTF8 data ->\n".data(using: .utf8)
+        if let handle = handle(), let write = data {
+            handle.write(write)
         }
     }
     
@@ -52,7 +59,7 @@ public class FileOutput: LogOutput {
         }
 
         let time = dateFormatter.string(from: Date())
-        let fileURL = logsFolder.appendingPathComponent("\(time).txt")
+        let fileURL = logsFolder.appendingPathComponent("\(appNamePrefix)\(time).txt")
         
         makeSureFileExists(fileURL)
         

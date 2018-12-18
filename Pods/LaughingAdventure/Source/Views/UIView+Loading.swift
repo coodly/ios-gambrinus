@@ -17,12 +17,20 @@
 import UIKit
 
 extension UIView {
-    public class func viewNib() -> UINib {
+    public class func viewNib(_ bundle: Bundle? = nil) -> UINib {
         let name = className()
-        return UINib(nibName: name, bundle: nil)
+        return UINib(nibName: name, bundle: bundle)
     }
     
     public class func className() -> String {
         return NSStringFromClass(self).components(separatedBy: ".").last!
+    }
+    
+    public class func identifier() -> String {
+        return className()
+    }
+    
+    public static func loadInstance<T>(_ bundle: Bundle? = nil) -> T {
+        return viewNib(bundle).instantiate(withOwner: nil, options: nil).first as! T
     }
 }

@@ -24,9 +24,10 @@ PODS:
   - Crashlytics (3.12.0):
     - Fabric (~> 1.9.0)
   - Fabric (1.9.0)
-  - LaughingAdventure (0.5.0):
-    - LaughingAdventure/Core (= 0.5.0)
-  - LaughingAdventure/Core (0.5.0)
+  - LaughingAdventure (0.9.2):
+    - LaughingAdventure/Core (= 0.9.2)
+  - LaughingAdventure/Core (0.9.2):
+    - CoreDataPersistence (= 0.1.8)
   - MRProgress (0.8.3):
     - MRProgress/ActivityIndicator (= 0.8.3)
     - MRProgress/Blur (= 0.8.3)
@@ -57,7 +58,7 @@ PODS:
     - MRProgress/Helper
   - Ono (1.2.2)
   - SwiftGen (6.0.2)
-  - SWLogger (0.3.1)
+  - SWLogger (0.3.5)
 
 DEPENDENCIES:
   - AFNetworking (= 2.6.3)
@@ -92,10 +93,10 @@ CHECKOUT OPTIONS:
     :commit: 24521626b5639a69e015deb333060c844a2a7f61
     :git: "git@github.com:coodly/CoreDataPersistence.git"
   LaughingAdventure:
-    :commit: 953c3c5d44788832af73d06bbc07d1cf0781ea33
+    :commit: 333d66f271f74eac458f506eb6e00bd7261db980
     :git: "git@github.com:coodly/laughing-adventure.git"
   SWLogger:
-    :commit: 4905d4e05d8fa9cc0b21b2869fb899e970290443
+    :commit: 6f98c0136e10c1d8612197584171dc359110b4e5
     :git: "git@github.com:coodly/swlogger.git"
 
 SPEC CHECKSUMS:
@@ -103,12 +104,12 @@ SPEC CHECKSUMS:
   CoreDataPersistence: f6f79d2843b4c7f6e014893abad97cec4b50cf45
   Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
   Fabric: f988e33c97f08930a413e08123064d2e5f68d655
-  LaughingAdventure: 2b3bb42b03512cc5d1a464cba451c16aaf9c803b
+  LaughingAdventure: ff87594a587bd39c9c4b0b9207005322082a9622
   MRProgress: 16de7cc9f347e8846797a770db102a323fe7ef09
   Ono: 80b1c686777d3f6d5d5ce6fcac8a74afef4ca197
   SwiftGen: e5b047067aa84082826a0c4f1c4c2ddc95bcf74c
-  SWLogger: 333135cadd381962c3667f5af500f7ae140c74a4
+  SWLogger: 67c20e4ac8bec12c0b8a262a0917e24e8494899b
 
-PODFILE CHECKSUM: b909e5642338788f57733f8467f1b8f0cc67ab47
+PODFILE CHECKSUM: 0405f7152658f8a2e6b0f4bb6408eb96b9ec5a76
 
 COCOAPODS: 1.5.3

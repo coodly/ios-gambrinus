@@ -21,4 +21,26 @@ public class Persistence: CorePersistence {
     internal init() {
         super.init(modelName: "Kiosk", bundle: Bundle(identifier: "com.coodly.kiosk.core")!, wipeOnConflict: true)
     }
+    
+    public func maybeCopyDatabase(from source: URL) {
+        Log.debug("Maybe copy database")
+        guard let destination = sqliteFilePath else {
+            Log.debug("No SQLite path")
+            return
+        }
+        
+        Log.debug("Copy to \(destination)")
+        
+        if FileManager.default.fileExists(atPath: destination.path) {
+            Log.debug("File exists, no copy")
+            return
+        }
+        
+        do {
+            try FileManager.default.copyItem(at: source, to: destination)
+            Log.debug("Copied")
+        } catch {
+            Log.error("Copy error: \(error)")
+        }
+    }
 }
