@@ -1,0 +1,30 @@
+"coodly.feedback.controller.title" = "Conversations";
+"coodly.feedback.header.message" = "Please read this before posting";
+"coodly.feedback.message.compose.controller.send.button" = "Send";
+"coodly.feedback.message.compose.controller.title" = "Write message";
+"coodly.feedback.response.notice" = "Hello\n\nI'm Jaanus Siim, independent developer based in Estonia.\n\nEvery suggestion and feedback is welcome. I promise to read them all. But I may not be able to respond to all messages.\n\nThanks for undertanding.";
+"coodly.feedback.sign.in.message" = "Please sign in to iCloud to send a message.";
+
+"kiosk.posts.controller.title" = "Gambrinus";
+
+"marked.controller.title" = "Notables";
+
+"menu.controller.option.all.posts" = "All Posts";
+"menu.controller.option.favorites" = "Favorites";
+"menu.controller.option.feedback" = "Message to developer";
+"menu.controller.sort.by.beer" = "RB beer name";
+"menu.controller.sort.by.brewer" = "brewer";
+"menu.controller.sort.by.date" = "date";
+"menu.controller.sort.by.posts" = "post title";
+"menu.controller.sort.by.score" = "RB score";
+"menu.controller.sort.by.style" = "style";
+"menu.controller.sort.section.title" = "Sort by";
+
+"post.extended.details.back.button.title" = "Back";
+"post.extended.details.brewer.label" = "Brewer";
+"post.extended.details.posted.on.label" = "Posted on";
+"post.extended.details.style.label" = "Style";
+
+"posts.controller.edit.button" = "Edit";
+"posts.controller.edit.done.button" = "Done";
+"posts.controller.title" = "All Posts";

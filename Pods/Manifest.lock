@@ -55,6 +55,7 @@ PODS:
   - MRProgress/Stopable (0.8.3):
     - MRProgress/Helper
   - Ono (1.2.2)
+  - SwiftGen (6.0.2)
   - SWLogger (0.3.1)
 
 DEPENDENCIES:
@@ -64,6 +65,7 @@ DEPENDENCIES:
   - "LaughingAdventure (from `git@github.com:coodly/laughing-adventure.git`)"
   - MRProgress (= 0.8.3)
   - Ono (= 1.2.2)
+  - SwiftGen (= 6.0.2)
   - "SWLogger (from `git@github.com:coodly/swlogger.git`)"
 
 SPEC REPOS:
@@ -73,6 +75,7 @@ SPEC REPOS:
     - Fabric
     - MRProgress
     - Ono
+    - SwiftGen
 
 EXTERNAL SOURCES:
   LaughingAdventure:
@@ -95,8 +98,9 @@ SPEC CHECKSUMS:
   LaughingAdventure: 2b3bb42b03512cc5d1a464cba451c16aaf9c803b
   MRProgress: 16de7cc9f347e8846797a770db102a323fe7ef09
   Ono: 80b1c686777d3f6d5d5ce6fcac8a74afef4ca197
+  SwiftGen: e5b047067aa84082826a0c4f1c4c2ddc95bcf74c
   SWLogger: 333135cadd381962c3667f5af500f7ae140c74a4
 
-PODFILE CHECKSUM: e01272b74ebcd348f7741d2cbeeba69c39d52de8
+PODFILE CHECKSUM: 5ba67679b2c674b0222dbecb4a16c7ec22752200
 
 COCOAPODS: 1.5.3

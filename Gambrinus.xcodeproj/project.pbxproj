@@ -6,7 +6,23 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		A7ADF44A21C8F42B008B3205 /* Check localization */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = A7ADF44D21C8F42B008B3205 /* Build configuration list for PBXAggregateTarget "Check localization" */;
+			buildPhases = (
+				A7ADF45021C8F448008B3205 /* Check localization */,
+				A7ADF45121C8F464008B3205 /* Generate L10n */,
+			);
+			dependencies = (
+			);
+			name = "Check localization";
+			productName = "Check localization";
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
+		535728D7539D25E3A7C8A497 /* Pods_KioskUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E344D003416A4F33BA91E5 /* Pods_KioskUI.framework */; };
 		A17B3840ABCCE3610FE15CA4 /* Pods_Gambrinus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA69DCA20CC7434C02417339 /* Pods_Gambrinus.framework */; };
 		A70238A521C7FB1E00A7CFE9 /* KioskCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A702389E21C7FB1E00A7CFE9 /* KioskCore.framework */; };
 		A70238A621C7FB1E00A7CFE9 /* KioskCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A702389E21C7FB1E00A7CFE9 /* KioskCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -22,6 +38,15 @@
 		A70238E321C800DD00A7CFE9 /* KioskUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A70238B021C7FB2900A7CFE9 /* KioskUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A70238E921C8025B00A7CFE9 /* LaunchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A70238E821C8025B00A7CFE9 /* LaunchView.xib */; };
 		A70238EC21C8030300A7CFE9 /* InitializeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70238EB21C8030300A7CFE9 /* InitializeViewController.swift */; };
+		A70238F021C8066300A7CFE9 /* StoryboardLoaded.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70238EF21C8066300A7CFE9 /* StoryboardLoaded.swift */; };
+		A70238F221C8068400A7CFE9 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70238F121C8068400A7CFE9 /* Storyboards.swift */; };
+		A70238F821C807E400A7CFE9 /* MenuPresentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70238F521C807E400A7CFE9 /* MenuPresentationView.swift */; };
+		A70238F921C807E400A7CFE9 /* MenuNavigation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A70238F621C807E400A7CFE9 /* MenuNavigation.storyboard */; };
+		A70238FA21C807E400A7CFE9 /* MenuNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70238F721C807E400A7CFE9 /* MenuNavigationViewController.swift */; };
+		A70238FD21C8085800A7CFE9 /* CoreInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70238FC21C8085800A7CFE9 /* CoreInjection.swift */; };
+		A702390221C8097D00A7CFE9 /* UIView+Autolayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70238FF21C808F600A7CFE9 /* UIView+Autolayout.swift */; };
+		A702390421C80B2500A7CFE9 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A702390321C80B2500A7CFE9 /* MenuViewController.swift */; };
+		A702390621C80B4A00A7CFE9 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A702390521C80B4A00A7CFE9 /* Menu.storyboard */; };
 		A7063F331D7EBCFC00B45C6C /* CloudRateBeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7063F321D7EBCFC00B45C6C /* CloudRateBeer.swift */; };
 		A7063F351D7EBD5D00B45C6C /* PullRateBeerChangesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7063F341D7EBD5D00B45C6C /* PullRateBeerChangesOperation.swift */; };
 		A734E29D1D7717B50057D136 /* CDYImageAsk.m in Sources */ = {isa = PBXBuildFile; fileRef = A734E2981D7717B50057D136 /* CDYImageAsk.m */; };
@@ -35,6 +60,11 @@
 		A734E2CC1D7817FC0057D136 /* UIImage+CDYImageScale.m in Sources */ = {isa = PBXBuildFile; fileRef = A734E2CB1D7817FC0057D136 /* UIImage+CDYImageScale.m */; };
 		A75CADB21D82E75700E2B1AE /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75CADB11D82E75700E2B1AE /* Post.swift */; };
 		A75CADB81D82F03700E2B1AE /* UpdateDirtyPostsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75CADB71D82F03700E2B1AE /* UpdateDirtyPostsOperation.swift */; };
+		A7ADF44621C8F351008B3205 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A7ADF43D21C8F351008B3205 /* Localizable.strings */; };
+		A7ADF44721C8F351008B3205 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A7ADF43F21C8F351008B3205 /* InfoPlist.strings */; };
+		A7ADF44821C8F351008B3205 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A7ADF44221C8F351008B3205 /* Localizable.strings */; };
+		A7ADF44921C8F351008B3205 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A7ADF44421C8F351008B3205 /* InfoPlist.strings */; };
+		A7ADF45321C8F495008B3205 /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ADF45221C8F495008B3205 /* L10n.swift */; };
 		A7B8B8011D782B5E003C8469 /* FullOptionsMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B8B8001D782B5E003C8469 /* FullOptionsMenuController.swift */; };
 		A7B8B8031D782BEB003C8469 /* SortOnlyMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B8B8021D782BEB003C8469 /* SortOnlyMenuController.swift */; };
 		A7B8B8061D782E46003C8469 /* JCSCoreDataChangeAction.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B8B8051D782E46003C8469 /* JCSCoreDataChangeAction.m */; };
@@ -210,6 +240,13 @@
 			remoteGlobalIDString = A70238AF21C7FB2900A7CFE9;
 			remoteInfo = KioskUI;
 		};
+		A7ADF44E21C8F439008B3205 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA0668B8192A45C4009C83F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A7ADF44A21C8F42B008B3205;
+			remoteInfo = "Check localization";
+		};
 		EA0668E0192A45C5009C83F1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EA0668B8192A45C4009C83F1 /* Project object */;
@@ -248,6 +285,9 @@
 
 /* Begin PBXFileReference section */
 		1E80FB9A4CDEB7F93A5A46FB /* Pods-Gambrinus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gambrinus.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gambrinus/Pods-Gambrinus.release.xcconfig"; sourceTree = "<group>"; };
+		5934FADB2943E3B4B7985047 /* Pods-KioskUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KioskUI.release.xcconfig"; path = "Pods/Target Support Files/Pods-KioskUI/Pods-KioskUI.release.xcconfig"; sourceTree = "<group>"; };
+		79E344D003416A4F33BA91E5 /* Pods_KioskUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KioskUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		988AF068811A92C2E6B23EB0 /* Pods-KioskUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KioskUI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KioskUI/Pods-KioskUI.debug.xcconfig"; sourceTree = "<group>"; };
 		A702389E21C7FB1E00A7CFE9 /* KioskCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KioskCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A70238A121C7FB1E00A7CFE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A70238B021C7FB2900A7CFE9 /* KioskUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KioskUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -259,6 +299,15 @@
 		A70238DA21C800BD00A7CFE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A70238E821C8025B00A7CFE9 /* LaunchView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchView.xib; sourceTree = "<group>"; };
 		A70238EB21C8030300A7CFE9 /* InitializeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitializeViewController.swift; sourceTree = "<group>"; };
+		A70238EF21C8066300A7CFE9 /* StoryboardLoaded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardLoaded.swift; sourceTree = "<group>"; };
+		A70238F121C8068400A7CFE9 /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
+		A70238F521C807E400A7CFE9 /* MenuPresentationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuPresentationView.swift; sourceTree = "<group>"; };
+		A70238F621C807E400A7CFE9 /* MenuNavigation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MenuNavigation.storyboard; sourceTree = "<group>"; };
+		A70238F721C807E400A7CFE9 /* MenuNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuNavigationViewController.swift; sourceTree = "<group>"; };
+		A70238FC21C8085800A7CFE9 /* CoreInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreInjection.swift; sourceTree = "<group>"; };
+		A70238FF21C808F600A7CFE9 /* UIView+Autolayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Autolayout.swift"; sourceTree = "<group>"; };
+		A702390321C80B2500A7CFE9 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		A702390521C80B4A00A7CFE9 /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 		A7063F321D7EBCFC00B45C6C /* CloudRateBeer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudRateBeer.swift; sourceTree = "<group>"; };
 		A7063F341D7EBD5D00B45C6C /* PullRateBeerChangesOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullRateBeerChangesOperation.swift; sourceTree = "<group>"; };
 		A734E2971D7717B50057D136 /* CDYImageAsk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDYImageAsk.h; sourceTree = "<group>"; };
@@ -282,6 +331,11 @@
 		A734E2CB1D7817FC0057D136 /* UIImage+CDYImageScale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CDYImageScale.m"; sourceTree = "<group>"; };
 		A75CADB11D82E75700E2B1AE /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		A75CADB71D82F03700E2B1AE /* UpdateDirtyPostsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateDirtyPostsOperation.swift; sourceTree = "<group>"; };
+		A7ADF43E21C8F351008B3205 /* et */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = et; path = Localizable.strings; sourceTree = "<group>"; };
+		A7ADF44021C8F351008B3205 /* et */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = et; path = InfoPlist.strings; sourceTree = "<group>"; };
+		A7ADF44321C8F351008B3205 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
+		A7ADF44521C8F351008B3205 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
+		A7ADF45221C8F495008B3205 /* L10n.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L10n.swift; sourceTree = "<group>"; };
 		A7B8B8001D782B5E003C8469 /* FullOptionsMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullOptionsMenuController.swift; sourceTree = "<group>"; };
 		A7B8B8021D782BEB003C8469 /* SortOnlyMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortOnlyMenuController.swift; sourceTree = "<group>"; };
 		A7B8B8041D782E46003C8469 /* JCSCoreDataChangeAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCSCoreDataChangeAction.h; sourceTree = "<group>"; };
@@ -506,6 +560,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A70238BC21C7FB3100A7CFE9 /* KioskCore.framework in Frameworks */,
+				535728D7539D25E3A7C8A497 /* Pods_KioskUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,6 +605,7 @@
 		A702389F21C7FB1E00A7CFE9 /* KioskCore */ = {
 			isa = PBXGroup;
 			children = (
+				A70238FB21C8084A00A7CFE9 /* Injection */,
 				A70238BD21C7FB5800A7CFE9 /* Supporting Files */,
 			);
 			path = KioskCore;
@@ -558,6 +614,10 @@
 		A70238B121C7FB2900A7CFE9 /* KioskUI */ = {
 			isa = PBXGroup;
 			children = (
+				A702390121C8096500A7CFE9 /* Autolayout */,
+				A7ADF43B21C8F2FD008B3205 /* Localization */,
+				A70238F421C8072600A7CFE9 /* Menu */,
+				A70238EE21C8064300A7CFE9 /* Storyboards */,
 				A70238BE21C7FB6B00A7CFE9 /* Supporting Files */,
 			);
 			path = KioskUI;
@@ -614,6 +674,43 @@
 				A70238D221C800BA00A7CFE9 /* Main.storyboard */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A70238EE21C8064300A7CFE9 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				A70238EF21C8066300A7CFE9 /* StoryboardLoaded.swift */,
+				A70238F121C8068400A7CFE9 /* Storyboards.swift */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		A70238F421C8072600A7CFE9 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				A702390521C80B4A00A7CFE9 /* Menu.storyboard */,
+				A70238F621C807E400A7CFE9 /* MenuNavigation.storyboard */,
+				A70238F721C807E400A7CFE9 /* MenuNavigationViewController.swift */,
+				A70238F521C807E400A7CFE9 /* MenuPresentationView.swift */,
+				A702390321C80B2500A7CFE9 /* MenuViewController.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		A70238FB21C8084A00A7CFE9 /* Injection */ = {
+			isa = PBXGroup;
+			children = (
+				A70238FC21C8085800A7CFE9 /* CoreInjection.swift */,
+			);
+			path = Injection;
+			sourceTree = "<group>";
+		};
+		A702390121C8096500A7CFE9 /* Autolayout */ = {
+			isa = PBXGroup;
+			children = (
+				A70238FF21C808F600A7CFE9 /* UIView+Autolayout.swift */,
+			);
+			path = Autolayout;
 			sourceTree = "<group>";
 		};
 		A734E2961D7717B50057D136 /* CDYImagesRetrieve */ = {
@@ -680,6 +777,34 @@
 			path = CDYImageScale;
 			sourceTree = "<group>";
 		};
+		A7ADF43B21C8F2FD008B3205 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				A7ADF44121C8F351008B3205 /* en.lproj */,
+				A7ADF43C21C8F351008B3205 /* et.lproj */,
+				A7ADF45221C8F495008B3205 /* L10n.swift */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		A7ADF43C21C8F351008B3205 /* et.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				A7ADF43D21C8F351008B3205 /* Localizable.strings */,
+				A7ADF43F21C8F351008B3205 /* InfoPlist.strings */,
+			);
+			path = et.lproj;
+			sourceTree = "<group>";
+		};
+		A7ADF44121C8F351008B3205 /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				A7ADF44221C8F351008B3205 /* Localizable.strings */,
+				A7ADF44421C8F351008B3205 /* InfoPlist.strings */,
+			);
+			path = en.lproj;
+			sourceTree = "<group>";
+		};
 		A7D647671D7877BD00FF52A4 /* Injection */ = {
 			isa = PBXGroup;
 			children = (
@@ -700,6 +825,8 @@
 			children = (
 				C9500B6301C764BA1D0D47AC /* Pods-Gambrinus.debug.xcconfig */,
 				1E80FB9A4CDEB7F93A5A46FB /* Pods-Gambrinus.release.xcconfig */,
+				988AF068811A92C2E6B23EB0 /* Pods-KioskUI.debug.xcconfig */,
+				5934FADB2943E3B4B7985047 /* Pods-KioskUI.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -744,6 +871,7 @@
 				EA0668C7192A45C4009C83F1 /* UIKit.framework */,
 				EA0668DC192A45C4009C83F1 /* XCTest.framework */,
 				DA69DCA20CC7434C02417339 /* Pods_Gambrinus.framework */,
+				79E344D003416A4F33BA91E5 /* Pods_KioskUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1128,6 +1256,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A70238B921C7FB2900A7CFE9 /* Build configuration list for PBXNativeTarget "KioskUI" */;
 			buildPhases = (
+				9924FE908D7DB3A6CFB572AE /* [CP] Check Pods Manifest.lock */,
 				A70238AB21C7FB2900A7CFE9 /* Headers */,
 				A70238AC21C7FB2900A7CFE9 /* Sources */,
 				A70238AD21C7FB2900A7CFE9 /* Frameworks */,
@@ -1136,6 +1265,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				A7ADF44F21C8F439008B3205 /* PBXTargetDependency */,
 			);
 			name = KioskUI;
 			productName = KioskUI;
@@ -1217,14 +1347,21 @@
 					A702389D21C7FB1E00A7CFE9 = {
 						CreatedOnToolsVersion = 10.1;
 						DevelopmentTeam = 5T8DRBFCBP;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 					};
 					A70238AF21C7FB2900A7CFE9 = {
 						CreatedOnToolsVersion = 10.1;
 						DevelopmentTeam = 5T8DRBFCBP;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 					};
 					A70238CB21C800BA00A7CFE9 = {
+						CreatedOnToolsVersion = 10.1;
+						DevelopmentTeam = 5T8DRBFCBP;
+						ProvisioningStyle = Automatic;
+					};
+					A7ADF44A21C8F42B008B3205 = {
 						CreatedOnToolsVersion = 10.1;
 						DevelopmentTeam = 5T8DRBFCBP;
 						ProvisioningStyle = Automatic;
@@ -1267,6 +1404,7 @@
 				A70238CB21C800BA00A7CFE9 /* Kiosk */,
 				A702389D21C7FB1E00A7CFE9 /* KioskCore */,
 				A70238AF21C7FB2900A7CFE9 /* KioskUI */,
+				A7ADF44A21C8F42B008B3205 /* Check localization */,
 				EA0668DA192A45C4009C83F1 /* GambrinusTests */,
 			);
 		};
@@ -1284,6 +1422,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7ADF44821C8F351008B3205 /* Localizable.strings in Resources */,
+				A7ADF44921C8F351008B3205 /* InfoPlist.strings in Resources */,
+				A70238F921C807E400A7CFE9 /* MenuNavigation.storyboard in Resources */,
+				A7ADF44721C8F351008B3205 /* InfoPlist.strings in Resources */,
+				A7ADF44621C8F351008B3205 /* Localizable.strings in Resources */,
+				A702390621C80B4A00A7CFE9 /* Menu.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1384,6 +1528,64 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		9924FE908D7DB3A6CFB572AE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KioskUI-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A7ADF45021C8F448008B3205 /* Check localization */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Check localization";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/bin/env xcrun --sdk macosx swift scripts/CheckLocalization.swift KioskUI/Localization/\n";
+		};
+		A7ADF45121C8F464008B3205 /* Generate L10n */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Generate L10n";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${SRCROOT}/Pods/SwiftGen/bin/swiftgen strings -t structured-swift4 KioskUI/Localization/en.lproj/Localizable.strings -o KioskUI/Localization/L10n.swift\n";
+		};
 		EA15CB1A194EE5B400A140B5 /* Check localization */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1419,6 +1621,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A70238FD21C8085800A7CFE9 /* CoreInjection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1426,6 +1629,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A70238F821C807E400A7CFE9 /* MenuPresentationView.swift in Sources */,
+				A702390421C80B2500A7CFE9 /* MenuViewController.swift in Sources */,
+				A70238FA21C807E400A7CFE9 /* MenuNavigationViewController.swift in Sources */,
+				A702390221C8097D00A7CFE9 /* UIView+Autolayout.swift in Sources */,
+				A7ADF45321C8F495008B3205 /* L10n.swift in Sources */,
+				A70238F221C8068400A7CFE9 /* Storyboards.swift in Sources */,
+				A70238F021C8066300A7CFE9 /* StoryboardLoaded.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1597,6 +1807,11 @@
 			target = A70238AF21C7FB2900A7CFE9 /* KioskUI */;
 			targetProxy = A70238E421C800DD00A7CFE9 /* PBXContainerItemProxy */;
 		};
+		A7ADF44F21C8F439008B3205 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A7ADF44A21C8F42B008B3205 /* Check localization */;
+			targetProxy = A7ADF44E21C8F439008B3205 /* PBXContainerItemProxy */;
+		};
 		EA0668E1192A45C5009C83F1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = EA0668BF192A45C4009C83F1 /* Gambrinus */;
@@ -1611,6 +1826,38 @@
 				A70238D321C800BA00A7CFE9 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A7ADF43D21C8F351008B3205 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A7ADF43E21C8F351008B3205 /* et */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		A7ADF43F21C8F351008B3205 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A7ADF44021C8F351008B3205 /* et */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		A7ADF44221C8F351008B3205 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A7ADF44321C8F351008B3205 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		A7ADF44421C8F351008B3205 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A7ADF44521C8F351008B3205 /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		EA0668CC192A45C4009C83F1 /* InfoPlist.strings */ = {
@@ -1670,6 +1917,7 @@
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
@@ -1686,7 +1934,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "$(SRCROOT)/KioskCore/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -1708,6 +1956,7 @@
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
@@ -1725,7 +1974,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "$(SRCROOT)/KioskCore/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -1741,10 +1990,12 @@
 		};
 		A70238BA21C7FB2900A7CFE9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 988AF068811A92C2E6B23EB0 /* Pods-KioskUI.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
@@ -1761,7 +2012,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "$(SRCROOT)/KioskUI/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -1779,10 +2030,12 @@
 		};
 		A70238BB21C7FB2900A7CFE9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5934FADB2943E3B4B7985047 /* Pods-KioskUI.release.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
@@ -1800,7 +2053,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "$(SRCROOT)/KioskUI/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -1817,6 +2070,7 @@
 		A70238DB21C800BD00A7CFE9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -1846,6 +2100,7 @@
 		A70238DC21C800BD00A7CFE9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -1868,6 +2123,24 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A7ADF44B21C8F42B008B3205 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5T8DRBFCBP;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A7ADF44C21C8F42B008B3205 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5T8DRBFCBP;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -2102,6 +2375,15 @@
 			buildConfigurations = (
 				A70238DB21C800BD00A7CFE9 /* Debug */,
 				A70238DC21C800BD00A7CFE9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A7ADF44D21C8F42B008B3205 /* Build configuration list for PBXAggregateTarget "Check localization" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7ADF44B21C8F42B008B3205 /* Debug */,
+				A7ADF44C21C8F42B008B3205 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

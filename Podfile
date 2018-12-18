@@ -30,3 +30,7 @@ target 'Gambrinus' do
     pods
     
 end
+
+target 'KioskUI' do
+    pod 'SwiftGen', '6.0.2'
+end
