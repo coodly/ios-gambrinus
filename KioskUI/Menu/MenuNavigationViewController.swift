@@ -28,7 +28,7 @@ public class MenuNavigationViewController: UINavigationController, StoryboardLoa
 
     @IBOutlet private var menuPresentationView: MenuPresentationView!
 
-    private lazy var menuButton = UIBarButtonItem(title: "Menu", style: .plain, target: self, action: .toggleMenu)
+    private lazy var menuButton = UIBarButtonItem(image: Asset.menu.image, style: .plain, target: self, action: .toggleMenu)
     public var menuController: UIViewController!
     
     public override func viewDidLoad() {
@@ -70,12 +70,11 @@ public class MenuNavigationViewController: UINavigationController, StoryboardLoa
     
     @objc fileprivate func toggleMenu() {
         if menuPresentationView.superview == nil {
-            menuController.viewWillAppear(false)
-            
             view.addSubview(menuPresentationView)
             menuPresentationView.pinToSuperviewEdges(insets: UIEdgeInsets(top: navigationBar.frame.maxY, left: 0, bottom: 0, right: 0))
             menuPresentationView.layoutIfNeeded()
 
+            menuController.viewWillAppear(false)
             menuPresentationView.animateIn()
         } else {
             menuPresentationView.animateOut() {

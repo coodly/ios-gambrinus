@@ -21,9 +21,10 @@ internal extension UIView {
         guard let s = superview else {
             return
         }
-        
-        leadingAnchor.constraint(equalTo: s.leadingAnchor, constant: insets.top).isActive = true
-        topAnchor.constraint(equalTo: s.topAnchor).isActive = true
+
+        translatesAutoresizingMaskIntoConstraints = false
+        leadingAnchor.constraint(equalTo: s.leadingAnchor).isActive = true
+        topAnchor.constraint(equalTo: s.topAnchor, constant: insets.top).isActive = true
         trailingAnchor.constraint(equalTo: s.trailingAnchor).isActive = true
         bottomAnchor.constraint(equalTo: s.bottomAnchor).isActive = true
     }

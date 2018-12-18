@@ -33,6 +33,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let navigation: MenuNavigationViewController = Storyboards.loadFromStoryboard()
             navigation.menuController = menu
             
+            let posts: PostsViewController = Storyboards.loadFromStoryboard()
+            navigation.present(root: posts, animated: false)
+            
             let animation: (() -> ()) = {
                 self.window?.rootViewController = navigation
             }
