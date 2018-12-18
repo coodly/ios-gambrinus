@@ -15,16 +15,5 @@
  */
 
 import UIKit
-import KioskCore
 
-internal class InitializeViewController: UIViewController, PersistenceConsumer {
-    var persistence: Persistence!
-    
-    internal var afterLoad: (() -> Void)!
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    
-        persistence.loadPersistentStores(completion: afterLoad)
-    }
-}
+internal let RunningOnPad = UIDevice.current.userInterfaceIdiom == .pad

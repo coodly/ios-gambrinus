@@ -14,17 +14,18 @@
  * limitations under the License.
  */
 
-import UIKit
-import KioskCore
+import Foundation
 
-internal class InitializeViewController: UIViewController, PersistenceConsumer {
-    var persistence: Persistence!
+extension String {
+    internal func hasValue() -> Bool {
+        return !trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).isEmpty
+    }
     
-    internal var afterLoad: (() -> Void)!
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    
-        persistence.loadPersistentStores(completion: afterLoad)
+    internal func normalize() -> String {
+        let mutableString = NSMutableString(string: self) as CFMutableString
+        CFStringTransform(mutableString, nil, kCFStringTransformToLatin, false)
+        CFStringTransform(mutableString, nil, kCFStringTransformStripCombiningMarks, false)
+        CFStringLowercase(mutableString, CFLocaleCopyCurrent())
+        return String(mutableString)
     }
 }

@@ -16,6 +16,7 @@
 
 import UIKit
 import KioskUI
+import KioskCore
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -26,6 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         let initialization = window!.rootViewController as! InitializeViewController
+        CoreInjection.sharedInstance.inject(into: initialization)
+        
         initialization.afterLoad = {
             
             let menu: MenuViewController = Storyboards.loadFromStoryboard()

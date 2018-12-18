@@ -41,10 +41,19 @@ target 'Gambrinus' do
     
 end
 
+target 'Kiosk' do
+    platform :ios, '9.3'
+    
+end
+
 target 'KioskUI' do
+    platform :ios, '9.3'
+
     pod 'SwiftGen', '6.0.2'
 end
 
 target 'KioskCore' do
+    platform :ios, '9.3'
+
     core_data_pod
 end

@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Coodly LLC
+ * Copyright 2016 Coodly LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,17 +14,30 @@
  * limitations under the License.
  */
 
-import UIKit
-import KioskCore
+import Foundation
+import CoreData
 
-internal class InitializeViewController: UIViewController, PersistenceConsumer {
-    var persistence: Persistence!
+class BeerStyle: Syncable {
+    override func awakeFromFetch() {
+        super.awakeFromFetch()
+        
+        shadowName = name
+    }
     
-    internal var afterLoad: (() -> Void)!
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    
-        persistence.loadPersistentStores(completion: afterLoad)
+    override func willSave() {
+        super.willSave()
+        
+        guard let name = self.name, name.hasValue() else {
+            return
+        }
+        
+        if let shadow = shadowName, shadow == name {
+            return
+        }
+        
+        shadowName = name
+        
+        let normalized = name.normalize()
+        normalizedName = normalized
     }
 }

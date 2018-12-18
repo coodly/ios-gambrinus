@@ -14,17 +14,13 @@
  * limitations under the License.
  */
 
-import UIKit
-import KioskCore
+import Foundation
 
-internal class InitializeViewController: UIViewController, PersistenceConsumer {
-    var persistence: Persistence!
-    
-    internal var afterLoad: (() -> Void)!
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    
-        persistence.loadPersistentStores(completion: afterLoad)
-    }
+extension DateFormatter {
+    internal static let iso8601Formatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
+        return formatter
+    }()
 }

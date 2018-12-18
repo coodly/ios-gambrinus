@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Coodly LLC
+ * Copyright 2016 Coodly LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,17 +14,14 @@
  * limitations under the License.
  */
 
-import UIKit
-import KioskCore
+import Foundation
+import CoreData
 
-internal class InitializeViewController: UIViewController, PersistenceConsumer {
-    var persistence: Persistence!
+extension Blog {
+    @NSManaged var baseURLString: String?
+    @NSManaged var blogId: String?
+    @NSManaged var postsURLString: String?
+    @NSManaged var published: Date?
     
-    internal var afterLoad: (() -> Void)!
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    
-        persistence.loadPersistentStores(completion: afterLoad)
-    }
+    @NSManaged var posts: Set<Post>?
 }

@@ -14,17 +14,14 @@
  * limitations under the License.
  */
 
+import Foundation
+import CoreData
 import UIKit
-import KioskCore
 
-internal class InitializeViewController: UIViewController, PersistenceConsumer {
-    var persistence: Persistence!
+public class BlogImageAsk {
+    internal var imageMode = UIView.ContentMode.center
     
-    internal var afterLoad: (() -> Void)!
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    
-        persistence.loadPersistentStores(completion: afterLoad)
+    internal init?(post: NSManagedObjectID, size: CGSize, imageURLString: String, attemptRemovePull: Bool) {
+        
     }
 }

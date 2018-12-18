@@ -14,17 +14,8 @@
  * limitations under the License.
  */
 
-import UIKit
-import KioskCore
+import Foundation
 
-internal class InitializeViewController: UIViewController, PersistenceConsumer {
-    var persistence: Persistence!
-    
-    internal var afterLoad: (() -> Void)!
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    
-        persistence.loadPersistentStores(completion: afterLoad)
-    }
+public protocol PersistenceConsumer {
+    var persistence: Persistence! { get set }
 }

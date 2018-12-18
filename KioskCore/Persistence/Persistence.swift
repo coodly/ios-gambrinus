@@ -14,17 +14,11 @@
  * limitations under the License.
  */
 
-import UIKit
-import KioskCore
+import Foundation
+import CoreDataPersistence
 
-internal class InitializeViewController: UIViewController, PersistenceConsumer {
-    var persistence: Persistence!
-    
-    internal var afterLoad: (() -> Void)!
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    
-        persistence.loadPersistentStores(completion: afterLoad)
+public class Persistence: CorePersistence {
+    internal init() {
+        super.init(modelName: "Kiosk", bundle: Bundle(identifier: "com.coodly.kiosk.core")!, wipeOnConflict: true)
     }
 }

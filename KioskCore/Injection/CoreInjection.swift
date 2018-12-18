@@ -26,8 +26,12 @@ internal extension CoreInjector {
 
 public class CoreInjection {
     public static let sharedInstance = CoreInjection()
+    
+    private lazy var persistence = Persistence()
 
     public func inject(into object: AnyObject) {
-
+        if var consumer = object as? PersistenceConsumer {
+            consumer.persistence = persistence
+        }
     }
 }

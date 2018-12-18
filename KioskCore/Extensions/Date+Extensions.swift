@@ -14,17 +14,13 @@
  * limitations under the License.
  */
 
-import UIKit
-import KioskCore
+import Foundation
 
-internal class InitializeViewController: UIViewController, PersistenceConsumer {
-    var persistence: Persistence!
-    
-    internal var afterLoad: (() -> Void)!
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    
-        persistence.loadPersistentStores(completion: afterLoad)
+extension Date {
+    internal func iso8601String() -> String {
+        return DateFormatter.iso8601Formatter.string(from: self)
+    }
+    internal static func dateFromISO8601String(_ string: String) -> Date? {
+        return DateFormatter.iso8601Formatter.date(from: string)
     }
 }
