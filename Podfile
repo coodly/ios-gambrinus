@@ -26,6 +26,16 @@ def pods
     end
 end
 
+def core_data_pod
+    if UsedSource == PodSource::Local
+        pod 'CoreDataPersistence', :path => '../swift-core-data-persistence'
+        elsif UsedSource == PodSource::Remote
+        pod 'CoreDataPersistence', :git => 'git@github.com:coodly/CoreDataPersistence.git'
+        else
+        pod 'CoreDataPersistence', :git => 'git@github.com:coodly/CoreDataPersistence.git', :tag => '0.1.6'
+    end
+end
+
 target 'Gambrinus' do
     pods
     
@@ -33,4 +43,8 @@ end
 
 target 'KioskUI' do
     pod 'SwiftGen', '6.0.2'
+end
+
+target 'KioskCore' do
+    core_data_pod
 end

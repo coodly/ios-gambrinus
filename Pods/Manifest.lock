@@ -20,6 +20,7 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - CoreDataPersistence (0.1.8)
   - Crashlytics (3.12.0):
     - Fabric (~> 1.9.0)
   - Fabric (1.9.0)
@@ -60,6 +61,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (= 2.6.3)
+  - "CoreDataPersistence (from `git@github.com:coodly/CoreDataPersistence.git`)"
   - Crashlytics (= 3.12.0)
   - Fabric (= 1.9.0)
   - "LaughingAdventure (from `git@github.com:coodly/laughing-adventure.git`)"
@@ -78,12 +80,17 @@ SPEC REPOS:
     - SwiftGen
 
 EXTERNAL SOURCES:
+  CoreDataPersistence:
+    :git: "git@github.com:coodly/CoreDataPersistence.git"
   LaughingAdventure:
     :git: "git@github.com:coodly/laughing-adventure.git"
   SWLogger:
     :git: "git@github.com:coodly/swlogger.git"
 
 CHECKOUT OPTIONS:
+  CoreDataPersistence:
+    :commit: 24521626b5639a69e015deb333060c844a2a7f61
+    :git: "git@github.com:coodly/CoreDataPersistence.git"
   LaughingAdventure:
     :commit: 953c3c5d44788832af73d06bbc07d1cf0781ea33
     :git: "git@github.com:coodly/laughing-adventure.git"
@@ -93,6 +100,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  CoreDataPersistence: f6f79d2843b4c7f6e014893abad97cec4b50cf45
   Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
   Fabric: f988e33c97f08930a413e08123064d2e5f68d655
   LaughingAdventure: 2b3bb42b03512cc5d1a464cba451c16aaf9c803b
@@ -101,6 +109,6 @@ SPEC CHECKSUMS:
   SwiftGen: e5b047067aa84082826a0c4f1c4c2ddc95bcf74c
   SWLogger: 333135cadd381962c3667f5af500f7ae140c74a4
 
-PODFILE CHECKSUM: 5ba67679b2c674b0222dbecb4a16c7ec22752200
+PODFILE CHECKSUM: f738726de88943a5cc74f8aa4ab7ff532aea2f33
 
 COCOAPODS: 1.5.3

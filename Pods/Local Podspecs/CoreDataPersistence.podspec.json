@@ -1,0 +1,21 @@
+{
+  "name": "CoreDataPersistence",
+  "version": "0.1.8",
+  "license": "Apache 2",
+  "summary": "Core data wrapperoO in Swift",
+  "homepage": "https://github.com/coodly/CoreDataPersistence",
+  "authors": {
+    "Jaanus Siim": "jaanus@coodly.com"
+  },
+  "source": {
+    "git": "git@github.com:coodly/CoreDataPersistence.git",
+    "tag": "0.1.8"
+  },
+  "platforms": {
+    "ios": "9.0",
+    "tvos": "9.0",
+    "osx": "10.11"
+  },
+  "source_files": "Sources/*.swift",
+  "requires_arc": true
+}
