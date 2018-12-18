@@ -18,7 +18,7 @@ import Foundation
 import CoreData
 import UIKit
 
-class Post: NSManagedObject {
+public class Post: NSManagedObject {
     struct Satic {
         static let postDateFormatter: DateFormatter = {
             let formatter = DateFormatter()
@@ -28,13 +28,13 @@ class Post: NSManagedObject {
         }()
     }
     
-    override func awakeFromFetch() {
+    override public func awakeFromFetch() {
         super.awakeFromFetch()
         
         shadowTitle = title
     }
     
-    override func willSave() {
+    override public func willSave() {
         super.willSave()
         
         guard let title = self.title, title.hasValue() else {

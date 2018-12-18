@@ -47,6 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PersistenceConsumer {
             navigation.menuController = menu
             
             let posts: PostsViewController = Storyboards.loadFromStoryboard()
+            CoreInjection.sharedInstance.inject(into: posts)
             navigation.present(root: posts, animated: false)
             
             let animation: (() -> ()) = {

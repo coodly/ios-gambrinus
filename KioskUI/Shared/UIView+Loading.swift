@@ -14,19 +14,23 @@
  * limitations under the License.
  */
 
-import Foundation
+import UIKit
 
-extension String {
-    internal func hasValue() -> Bool {
-        return !trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).isEmpty
+internal extension UIView {
+    internal class func viewNib(_ bundle: Bundle? = nil) -> UINib {
+        let name = className()
+        return UINib(nibName: name, bundle: bundle)
     }
     
-    // http://nshipster.com/cfstringtransform/
-    internal func normalize() -> String {
-        let mutableString = NSMutableString(string: self) as CFMutableString
-        CFStringTransform(mutableString, nil, kCFStringTransformToLatin, false)
-        CFStringTransform(mutableString, nil, kCFStringTransformStripCombiningMarks, false)
-        CFStringLowercase(mutableString, CFLocaleCopyCurrent())
-        return String(mutableString)
+    internal class func className() -> String {
+        return NSStringFromClass(self).components(separatedBy: ".").last!
+    }
+    
+    internal class func identifier() -> String {
+        return className()
+    }
+    
+    internal static func loadInstance<T: UIView>() -> T {
+        return viewNib(Bundle(for: T.self)).instantiate(withOwner: nil, options: nil).first as! T
     }
 }
