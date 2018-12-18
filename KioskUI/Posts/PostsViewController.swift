@@ -31,7 +31,17 @@ public class PostsViewController: FetchedCollectionViewController<Post, PostCell
         return persistence.mainContext.fetchedControllerForAllPosts()
     }
     
+    override func configure(cell: PostCell, with post: Post, at indexPath: IndexPath) {
+        cell.viewModel = PostCellViewModel(post: post)
+    }
+    
     public override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 100, height: 100)
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return CGSize(width: 240, height: 240)
+        } else {
+            let availableWidth = collectionView.frame.width - 20
+            let cellWidth = availableWidth / 2
+            return CGSize(width: cellWidth, height: cellWidth)
+        }
     }
 }

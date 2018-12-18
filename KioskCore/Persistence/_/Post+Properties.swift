@@ -31,7 +31,7 @@ extension Post {
     @NSManaged var slug: String?
     @NSManaged var starred: Bool
     @NSManaged var styleSort: String?
-    @NSManaged var title: String?
+    @NSManaged public var title: String?
     @NSManaged var topScore: NSNumber?
     @NSManaged var touchedAt: Date?
     

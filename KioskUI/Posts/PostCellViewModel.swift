@@ -14,26 +14,28 @@
  * limitations under the License.
  */
 
-import UIKit
+import Foundation
+import KioskCore
 
-internal class PostCell: UICollectionViewCell {
-    @IBOutlet private var postDate: UILabel!
-    @IBOutlet private var postTitle: UILabel!
+internal class PostCellViewModel {
+    internal struct Status {
+        var formattedPostDate = ""
+        var postTile = ""
+    }
     
-    internal var viewModel: PostCellViewModel? {
+    private var status = Status() {
         didSet {
-            viewModel?.callback = {
-                [weak self]
-                
-                status in
-                
-                self?.update(with: status)
-            }
+            callback?(status)
+        }
+    }
+    internal var callback: ((Status) -> Void)? {
+        didSet {
+            callback?(status)
         }
     }
     
-    private func update(with status: PostCellViewModel.Status) {
-        postDate.text = status.formattedPostDate
-        postTitle.text = status.postTile
+    internal init(post: Post) {
+        status.formattedPostDate = post.publishDateString() ?? ""
+        status.postTile = post.title ?? ""
     }
 }

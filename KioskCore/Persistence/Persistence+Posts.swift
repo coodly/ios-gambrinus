@@ -20,7 +20,7 @@ import CoreDataPersistence
 
 extension NSManagedObjectContext {
     public func fetchedControllerForAllPosts() -> NSFetchedResultsController<Post> {
-        let sort = NSSortDescriptor(key: "publishDate", ascending: true)
+        let sort = NSSortDescriptor(key: "publishDate", ascending: false)
         return fetchedController(sort: [sort])
     }
 }

@@ -104,6 +104,7 @@
 		A792727821C934650001F621 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792727721C934650001F621 /* Log.swift */; };
 		A792727B21C934C50001F621 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792727921C934C50001F621 /* PostCell.swift */; };
 		A792727C21C934C50001F621 /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A792727A21C934C50001F621 /* PostCell.xib */; };
+		A792727E21C939B30001F621 /* PostCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792727D21C939B20001F621 /* PostCellViewModel.swift */; };
 		A7ADF44621C8F351008B3205 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A7ADF43D21C8F351008B3205 /* Localizable.strings */; };
 		A7ADF44721C8F351008B3205 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A7ADF43F21C8F351008B3205 /* InfoPlist.strings */; };
 		A7ADF45321C8F495008B3205 /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ADF45221C8F495008B3205 /* L10n.swift */; };
@@ -422,6 +423,7 @@
 		A792727721C934650001F621 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		A792727921C934C50001F621 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		A792727A21C934C50001F621 /* PostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
+		A792727D21C939B20001F621 /* PostCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCellViewModel.swift; sourceTree = "<group>"; };
 		A7ADF43E21C8F351008B3205 /* et */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = et; path = Localizable.strings; sourceTree = "<group>"; };
 		A7ADF44021C8F351008B3205 /* et */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = et; path = InfoPlist.strings; sourceTree = "<group>"; };
 		A7ADF44321C8F351008B3205 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
@@ -900,6 +902,7 @@
 			children = (
 				A792727921C934C50001F621 /* PostCell.swift */,
 				A792727A21C934C50001F621 /* PostCell.xib */,
+				A792727D21C939B20001F621 /* PostCellViewModel.swift */,
 				A792721921C8F81F0001F621 /* Posts.storyboard */,
 				A792721721C8F8190001F621 /* PostsViewController.swift */,
 			);
@@ -2014,6 +2017,7 @@
 				A792721821C8F8190001F621 /* PostsViewController.swift in Sources */,
 				A792727521C934070001F621 /* UIView+Loading.swift in Sources */,
 				A792727B21C934C50001F621 /* PostCell.swift in Sources */,
+				A792727E21C939B30001F621 /* PostCellViewModel.swift in Sources */,
 				A70238FA21C807E400A7CFE9 /* MenuNavigationViewController.swift in Sources */,
 				A702390221C8097D00A7CFE9 /* UIView+Autolayout.swift in Sources */,
 				A7ADF45321C8F495008B3205 /* L10n.swift in Sources */,

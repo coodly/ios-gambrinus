@@ -111,7 +111,7 @@ class Post: NSManagedObject {
         }).first
     }
     
-    func publishDateString() -> String? {
+    public func publishDateString() -> String? {
         guard let date = publishDate else {
             return nil
         }
