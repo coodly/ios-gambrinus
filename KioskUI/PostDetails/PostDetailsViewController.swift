@@ -38,6 +38,9 @@ internal class PostDetailsViewController: ScrolledContentViewController, Storybo
             status in
             
             presentation.image.image = status.image
+            presentation.loadingContainer.isHidden = !status.showLoading
+            presentation.content.isHidden = !status.showContent
+            presentation.content.text = status.content
         }
         
         present(view: presentation)

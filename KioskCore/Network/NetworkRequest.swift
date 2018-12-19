@@ -18,19 +18,19 @@ import Foundation
 
 internal typealias NetworkResultClosure = (Data?, URLResponse?, Error?) -> ()
 
-internal class NetworkRequest: ConcurrentOperation {
+public class NetworkRequest: ConcurrentOperation {
     private let request: URLRequest?
     var resultHandler: NetworkResultClosure!
     
-    init(request: URLRequest) {
+    init(request: URLRequest? = nil) {
         self.request = request
     }
     
-    override func main() {
+    override public func main() {
         execute(request!)
     }
     
-    private func execute(_ request: URLRequest) {
+    internal func execute(_ request: URLRequest) {
         Log.debug("Execute request")
         
         let resultClosure: ((Data?, URLResponse?, Error?) -> Void) = {
@@ -44,12 +44,16 @@ internal class NetworkRequest: ConcurrentOperation {
                 Log.debug("\t\(name): \(value)")
             }
             
-            self.resultHandler(data, response, error)
+            self.handle(data: data, response: response, error: error)
             self.finish()
         }
         
         let task = URLSession.shared.dataTask(with: request, completionHandler: resultClosure)
         task.resume()
+    }
+    
+    internal func handle(data: Data?, response: URLResponse?, error: Error?) {
+        resultHandler(data, response, error)
     }
 }
 

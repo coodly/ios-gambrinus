@@ -17,7 +17,7 @@
 import Foundation
 
 extension String {
-    internal func hasValue() -> Bool {
+    public func hasValue() -> Bool {
         return !trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).isEmpty
     }
     

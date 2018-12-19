@@ -191,4 +191,12 @@ public class Post: NSManagedObject {
         
         topScore = Int(score) as NSNumber?
     }
+    
+    public var contentRefreshNeeded: Bool {
+        if body?.htmlBody == nil {
+            return true
+        }
+        
+        return false
+    }
 }

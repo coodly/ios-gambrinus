@@ -17,6 +17,6 @@
 import Foundation
 import CoreData
 
-class PostContent: NSManagedObject {
+public class PostContent: NSManagedObject {
     
 }

@@ -29,10 +29,30 @@
                                         <constraint firstAttribute="height" constant="200" id="K37-ag-mD8"/>
                                     </constraints>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="peF-PG-MwO">
-                                    <rect key="frame" x="0.0" y="200" width="343" height="459"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8nN-Jp-IGC">
+                                    <rect key="frame" x="0.0" y="200" width="343" height="69"/>
+                                    <subviews>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Yb7-AR-vmz">
+                                            <rect key="frame" x="153" y="16" width="37" height="37"/>
+                                            <color key="color" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </activityIndicatorView>
+                                    </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="Yb7-AR-vmz" secondAttribute="bottom" priority="999" constant="16" id="2xN-fI-YOQ"/>
+                                        <constraint firstAttribute="height" priority="999" constant="69" id="LWq-pE-abe"/>
+                                        <constraint firstItem="Yb7-AR-vmz" firstAttribute="top" secondItem="8nN-Jp-IGC" secondAttribute="top" priority="999" constant="16" id="aZg-2c-Bee"/>
+                                        <constraint firstItem="Yb7-AR-vmz" firstAttribute="centerX" secondItem="8nN-Jp-IGC" secondAttribute="centerX" id="kCG-Ou-3P0"/>
+                                        <constraint firstItem="Yb7-AR-vmz" firstAttribute="centerY" secondItem="8nN-Jp-IGC" secondAttribute="centerY" id="tnM-PY-33c"/>
+                                    </constraints>
                                 </view>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xkO-wr-ERX">
+                                    <rect key="frame" x="0.0" y="269" width="343" height="390"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                </textView>
                             </subviews>
                         </stackView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lBZ-U7-Yyx">
@@ -63,8 +83,9 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="TJR-pI-xMk"/>
             <connections>
-                <outlet property="contentContainer" destination="peF-PG-MwO" id="hk2-L8-WO5"/>
+                <outlet property="content" destination="xkO-wr-ERX" id="8Hn-gC-j2W"/>
                 <outlet property="image" destination="lBZ-U7-Yyx" id="H9Z-l6-IL0"/>
+                <outlet property="loadingContainer" destination="8nN-Jp-IGC" id="ZhT-yH-iJF"/>
                 <outlet property="presentationWidth" destination="0HE-cr-0jx" id="Pe1-53-0Do"/>
             </connections>
             <point key="canvasLocation" x="138.40000000000001" y="156.97151424287858"/>

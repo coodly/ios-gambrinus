@@ -15,10 +15,12 @@
  */
 
 import UIKit
+import WebKit
 
 internal class PostDetailsPresentationView: UIView, ScrollPresented {
     @IBOutlet var presentationWidth: NSLayoutConstraint!
     
     @IBOutlet private(set) var image: UIImageView!
-    @IBOutlet private var contentContainer: UIView!
+    @IBOutlet private(set) var content: UITextView!
+    @IBOutlet private(set) var loadingContainer: UIView!
 }

@@ -37,6 +37,6 @@ extension Post {
     
     @NSManaged var beers: Set<Beer>?
     @NSManaged var blog: Blog?
-    @NSManaged var body: PostContent?
+    @NSManaged public var body: PostContent?
     @NSManaged public var image: Image?
 }

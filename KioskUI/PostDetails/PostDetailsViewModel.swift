@@ -19,7 +19,7 @@ import KioskCore
 import UIKit
 import ImageProvide
 
-internal class PostDetailsViewModel: ImagesConsumer {
+internal class PostDetailsViewModel: ImagesConsumer, UIInjector {
     var imagesSource: ImageSource! {
         didSet {
             guard let ask = imageAsk else {
@@ -36,7 +36,11 @@ internal class PostDetailsViewModel: ImagesConsumer {
     
     internal struct Status {
         var image: UIImage? = nil
-        var content = ""
+        var content: String? = ""
+        var showLoading = false
+        var showContent: Bool {
+            return content?.hasValue() ?? false
+        }
     }
     
     private var status = Status() {
@@ -53,5 +57,23 @@ internal class PostDetailsViewModel: ImagesConsumer {
     private var imageAsk: ImageAsk?
     internal init(post: Post) {
         imageAsk = post.backdropAsk
+
+        refreshStatus(from: post)
+        
+        if post.contentRefreshNeeded {
+            refreshContent(on: post)
+        }
+    }
+    
+    private func refreshStatus(from post: Post) {
+        status.content = post.body?.htmlBody
+    }
+    
+    private func refreshContent(on post: Post) {
+        status.showLoading = true
+        Log.debug("Refresh content")
+        let request = RefreshPostRequest(post: post)
+        inject(into: request)
+        request.execute()
     }
 }
