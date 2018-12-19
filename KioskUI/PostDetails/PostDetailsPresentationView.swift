@@ -14,32 +14,11 @@
  * limitations under the License.
  */
 
-import Foundation
-import KioskCore
-import ImageProvide
+import UIKit
 
-extension Post {
-    internal var thumbnailAsk: ImageAsk? {
-        guard let image = self.image else {
-            return nil
-        }
-        
-        guard let url = image.imageURL else {
-            return nil
-        }
-        
-        return ImageAsk(url: url)
-    }
+internal class PostDetailsPresentationView: UIView, ScrollPresented {
+    @IBOutlet var presentationWidth: NSLayoutConstraint!
     
-    internal var backdropAsk: ImageAsk? {
-        guard let image = self.image else {
-            return nil
-        }
-        
-        guard let url = image.imageURL else {
-            return nil
-        }
-        
-        return ImageAsk(url: url)
-    }
+    @IBOutlet private(set) var image: UIImageView!
+    @IBOutlet private var contentContainer: UIView!
 }

@@ -17,16 +17,29 @@
 import UIKit
 import KioskCore
 
-internal class PostDetailsViewController: UIViewController, StoryboardLoaded {
+internal class PostDetailsViewController: ScrolledContentViewController, StoryboardLoaded, UIInjector {
     static var storyboardName: String {
         return "PostDetails"
     }
     
     internal var post: Post!
+    private lazy var viewModel = PostDetailsViewModel(post: self.post)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        inject(into: viewModel)
+
         navigationItem.title = post.title ?? ""
+        
+        let presentation: PostDetailsPresentationView = PostDetailsPresentationView.loadInstance()
+        
+        viewModel.callback = {
+            status in
+            
+            presentation.image.image = status.image
+        }
+        
+        present(view: presentation)
     }
 }

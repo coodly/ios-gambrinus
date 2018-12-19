@@ -24,6 +24,9 @@
 /* Begin PBXBuildFile section */
 		535728D7539D25E3A7C8A497 /* Pods_KioskUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E344D003416A4F33BA91E5 /* Pods_KioskUI.framework */; };
 		A17B3840ABCCE3610FE15CA4 /* Pods_Gambrinus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA69DCA20CC7434C02417339 /* Pods_Gambrinus.framework */; };
+		A701BA9121CA935D004258F2 /* PostDetailsPresentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A701BA9021CA935D004258F2 /* PostDetailsPresentationView.swift */; };
+		A701BA9321CA9366004258F2 /* PostDetailsPresentationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A701BA9221CA9366004258F2 /* PostDetailsPresentationView.xib */; };
+		A701BA9521CA955B004258F2 /* PostDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A701BA9421CA955B004258F2 /* PostDetailsViewModel.swift */; };
 		A70238A521C7FB1E00A7CFE9 /* KioskCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A702389E21C7FB1E00A7CFE9 /* KioskCore.framework */; };
 		A70238A621C7FB1E00A7CFE9 /* KioskCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A702389E21C7FB1E00A7CFE9 /* KioskCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A70238B721C7FB2900A7CFE9 /* KioskUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A70238B021C7FB2900A7CFE9 /* KioskUI.framework */; };
@@ -351,6 +354,9 @@
 		988AF068811A92C2E6B23EB0 /* Pods-KioskUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KioskUI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KioskUI/Pods-KioskUI.debug.xcconfig"; sourceTree = "<group>"; };
 		A31968546AB2617414844400 /* Pods_Kiosk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kiosk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5F5D8129EFABC3BC56C57BD /* Pods_KioskCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KioskCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A701BA9021CA935D004258F2 /* PostDetailsPresentationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsPresentationView.swift; sourceTree = "<group>"; };
+		A701BA9221CA9366004258F2 /* PostDetailsPresentationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostDetailsPresentationView.xib; sourceTree = "<group>"; };
+		A701BA9421CA955B004258F2 /* PostDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsViewModel.swift; sourceTree = "<group>"; };
 		A702389E21C7FB1E00A7CFE9 /* KioskCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KioskCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A70238A121C7FB1E00A7CFE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A70238B021C7FB2900A7CFE9 /* KioskUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KioskUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1100,7 +1106,10 @@
 			isa = PBXGroup;
 			children = (
 				A792729621C957460001F621 /* PostDetails.storyboard */,
+				A701BA9021CA935D004258F2 /* PostDetailsPresentationView.swift */,
+				A701BA9221CA9366004258F2 /* PostDetailsPresentationView.xib */,
 				A792729421C957390001F621 /* PostDetailsViewController.swift */,
+				A701BA9421CA955B004258F2 /* PostDetailsViewModel.swift */,
 			);
 			path = PostDetails;
 			sourceTree = "<group>";
@@ -1789,6 +1798,7 @@
 				A7ADF44721C8F351008B3205 /* InfoPlist.strings in Resources */,
 				A7ADF44621C8F351008B3205 /* Localizable.strings in Resources */,
 				A702390621C80B4A00A7CFE9 /* Menu.storyboard in Resources */,
+				A701BA9321CA9366004258F2 /* PostDetailsPresentationView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2125,7 +2135,9 @@
 				A792729A21C958070001F621 /* MaybeModalPresenter.swift in Sources */,
 				A702390421C80B2500A7CFE9 /* MenuViewController.swift in Sources */,
 				A792727821C934650001F621 /* Log.swift in Sources */,
+				A701BA9521CA955B004258F2 /* PostDetailsViewModel.swift in Sources */,
 				A792729521C9573A0001F621 /* PostDetailsViewController.swift in Sources */,
+				A701BA9121CA935D004258F2 /* PostDetailsPresentationView.swift in Sources */,
 				A792727021C9332F0001F621 /* FetchedCollectionViewController.swift in Sources */,
 				A792721521C8F79F0001F621 /* Assets.swift in Sources */,
 				A792721821C8F8190001F621 /* PostsViewController.swift in Sources */,
@@ -2430,7 +2442,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -2470,7 +2482,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
@@ -2509,7 +2521,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -2549,7 +2561,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
