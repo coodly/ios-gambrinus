@@ -19,7 +19,18 @@ import UIKit
 extension UITextView {
     internal func load(html: String) {
         let loaded = html.cleaned
-        if let data = loaded.data(using: .utf8), let attributed = try? NSMutableAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html, .characterEncoding: String.Encoding.utf8.rawValue], documentAttributes: nil) {
+        let imagesHidden =
+        
+        """
+        <html>
+        <style>
+        img {display: none;}
+        </style>
+        \(loaded)
+        </html>
+        """
+        
+        if let data = imagesHidden.data(using: .utf8), let attributed = try? NSMutableAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html, .characterEncoding: String.Encoding.utf8.rawValue], documentAttributes: nil) {
             var attributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)]
             attributes[NSAttributedString.Key.foregroundColor] = textColor
             
