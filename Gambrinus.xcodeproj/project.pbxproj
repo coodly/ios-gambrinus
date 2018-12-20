@@ -193,6 +193,8 @@
 		A7E17FF321CB952E00E70529 /* BloggerConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E17FF221CB952E00E70529 /* BloggerConsumer.swift */; };
 		A7E17FF521CB959900E70529 /* BloggerFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E17FF421CB959900E70529 /* BloggerFetch.swift */; };
 		A7E1800521CBE4CF00E70529 /* Persistence+Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E1800421CBE4CF00E70529 /* Persistence+Images.swift */; };
+		A7E1800821CBE99100E70529 /* UITextView+HTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E1800721CBE99100E70529 /* UITextView+HTML.swift */; };
+		A7E1800A21CBE9E900E70529 /* NSMutableAttributedString+Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E1800921CBE9E900E70529 /* NSMutableAttributedString+Formatting.swift */; };
 		A7EEF6871D80451600C56153 /* PersistenceConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EEF6861D80451600C56153 /* PersistenceConsumer.swift */; };
 		BA665AAA129ABC2E206BA2C5 /* mapping.json in Resources */ = {isa = PBXBuildFile; fileRef = BA665BA7D5ECAA081827FF24 /* mapping.json */; };
 		C6ECAABAE82EB9A8DB91D849 /* Pods_KioskCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5F5D8129EFABC3BC56C57BD /* Pods_KioskCore.framework */; };
@@ -550,6 +552,8 @@
 		A7E17FF221CB952E00E70529 /* BloggerConsumer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloggerConsumer.swift; sourceTree = "<group>"; };
 		A7E17FF421CB959900E70529 /* BloggerFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloggerFetch.swift; sourceTree = "<group>"; };
 		A7E1800421CBE4CF00E70529 /* Persistence+Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Persistence+Images.swift"; sourceTree = "<group>"; };
+		A7E1800721CBE99100E70529 /* UITextView+HTML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+HTML.swift"; sourceTree = "<group>"; };
+		A7E1800921CBE9E900E70529 /* NSMutableAttributedString+Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Formatting.swift"; sourceTree = "<group>"; };
 		A7EEF6861D80451600C56153 /* PersistenceConsumer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceConsumer.swift; sourceTree = "<group>"; };
 		AAFA608429FBD4A83156B36E /* Pods-KioskCore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KioskCore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KioskCore/Pods-KioskCore.debug.xcconfig"; sourceTree = "<group>"; };
 		BA665BA7D5ECAA081827FF24 /* mapping.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = mapping.json; sourceTree = "<group>"; };
@@ -770,6 +774,7 @@
 			children = (
 				A792721021C8F71C0001F621 /* Assets */,
 				A702390121C8096500A7CFE9 /* Autolayout */,
+				A7E1800621CBE97700E70529 /* Extensions */,
 				A792721D21C8FEBA0001F621 /* Fetched */,
 				A792728021C944790001F621 /* Injection */,
 				A7ADF43B21C8F2FD008B3205 /* Localization */,
@@ -1193,6 +1198,15 @@
 				A7EEF6861D80451600C56153 /* PersistenceConsumer.swift */,
 			);
 			path = Injection;
+			sourceTree = "<group>";
+		};
+		A7E1800621CBE97700E70529 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A7E1800921CBE9E900E70529 /* NSMutableAttributedString+Formatting.swift */,
+				A7E1800721CBE99100E70529 /* UITextView+HTML.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		CF35BA0BC6A9AAA2667487B5 /* Pods */ = {
@@ -2163,6 +2177,7 @@
 				A792729A21C958070001F621 /* MaybeModalPresenter.swift in Sources */,
 				A702390421C80B2500A7CFE9 /* MenuViewController.swift in Sources */,
 				A792727821C934650001F621 /* Log.swift in Sources */,
+				A7E1800A21CBE9E900E70529 /* NSMutableAttributedString+Formatting.swift in Sources */,
 				A701BA9521CA955B004258F2 /* PostDetailsViewModel.swift in Sources */,
 				A792729521C9573A0001F621 /* PostDetailsViewController.swift in Sources */,
 				A701BA9121CA935D004258F2 /* PostDetailsPresentationView.swift in Sources */,
@@ -2181,6 +2196,7 @@
 				A7ADF45321C8F495008B3205 /* L10n.swift in Sources */,
 				A792729E21C958670001F621 /* ModalPresentationViewController.swift in Sources */,
 				A70238F221C8068400A7CFE9 /* Storyboards.swift in Sources */,
+				A7E1800821CBE99100E70529 /* UITextView+HTML.swift in Sources */,
 				A792728221C944910001F621 /* UIInjection.swift in Sources */,
 				A792727321C933E30001F621 /* UICollectionView+Dequeue.swift in Sources */,
 				A70238F021C8066300A7CFE9 /* StoryboardLoaded.swift in Sources */,

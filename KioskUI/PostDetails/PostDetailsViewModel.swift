@@ -87,10 +87,6 @@ internal class PostDetailsViewModel: Dependencies, UIInjector {
         blogger.fetchPost(id) {
             result in
             
-            DispatchQueue.main.async {
-                self.status.showLoading = false
-            }
-            
             guard let post = result.post else {
                 return
             }
@@ -100,6 +96,7 @@ internal class PostDetailsViewModel: Dependencies, UIInjector {
                 
                 let updated = context.update(remote: post)
                 self.refreshStatus(from: updated)
+                self.status.showLoading = false
             }
         }
     }
