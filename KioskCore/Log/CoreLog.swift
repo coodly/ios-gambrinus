@@ -18,6 +18,7 @@ import Foundation
 import SWLogger
 import CoreDataPersistence
 import ImageProvide
+import BloggerAPI
 
 public class CoreLog {
     public static func enableLogs() {
@@ -34,6 +35,7 @@ public class CoreLog {
         
         CoreDataPersistence.Logging.set(logger: CoreLogger())
         ImageProvide.Logging.set(logger: ImageLogger())
+        BloggerAPI.Logging.set(logger: BloggerLogger())
     }
     
     public static func debug<T>(_ object: T, file: String = #file, function: String = #function, line: Int = #line) {
@@ -68,6 +70,12 @@ private class CoreLogger: CoreDataPersistence.Logger {
 }
 
 private class ImageLogger: ImageProvide.Logger {
+    func log<T>(_ object: T, file: String = #file, function: String = #function, line: Int = #line) {
+        CoreLog.debug(object, file: file, function: function, line: line)
+    }
+}
+
+private class BloggerLogger: BloggerAPI.Logger {
     func log<T>(_ object: T, file: String = #file, function: String = #function, line: Int = #line) {
         CoreLog.debug(object, file: file, function: function, line: line)
     }

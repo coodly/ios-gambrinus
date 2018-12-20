@@ -16,7 +16,7 @@
 
 import Foundation
 
-class ListPostsRequest: NetworkRequest, BlogIdConsumer, DateFormatterConsumer {
+class ListPostsRequest: NetworkRequest<[Post]>, BlogIdConsumer, DateFormatterConsumer {
     var blogId: String!
     var dateFormatter: DateFormatter!
     

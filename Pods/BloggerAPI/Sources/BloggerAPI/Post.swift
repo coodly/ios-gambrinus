@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Coodly LLC
+ * Copyright 2018 Coodly LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,19 +16,6 @@
 
 import Foundation
 
-internal class ResolveBlogByURLRequest: NetworkRequest<Blog> {
-    private let url: String
-    var completionHandler: ((String?) -> ())!
+public struct Post: Codable {
     
-    init(url: String) {
-        self.url = url
-    }
-    
-    override func execute() {
-        GET("/blogs/byurl", parameters: ["url": url as AnyObject])
-    }
-    
-    override func handle(result: Result<Blog>) {
-        completionHandler(result.success?.id)
-    }
 }

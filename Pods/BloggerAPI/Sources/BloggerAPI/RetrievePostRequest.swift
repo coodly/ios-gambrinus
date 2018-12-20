@@ -16,19 +16,9 @@
 
 import Foundation
 
-internal class ResolveBlogByURLRequest: NetworkRequest<Blog> {
-    private let url: String
-    var completionHandler: ((String?) -> ())!
-    
-    init(url: String) {
-        self.url = url
-    }
-    
-    override func execute() {
-        GET("/blogs/byurl", parameters: ["url": url as AnyObject])
-    }
-    
-    override func handle(result: Result<Blog>) {
-        completionHandler(result.success?.id)
+internal class RetrievePostRequest: NetworkRequest<Post> {
+    private let postId: String
+    internal init(postId: String) {
+        self.postId = postId
     }
 }

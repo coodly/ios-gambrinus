@@ -69,19 +69,20 @@ internal class PostDetailsViewModel: Dependencies, UIInjector {
     }
     
     private var imageAsk: ImageAsk?
-    internal init(post: Post) {
+    internal init(post: KioskCore.Post) {
         imageAsk = post.backdropAsk
 
         refreshStatus(from: post)
     }
     
-    private func refreshStatus(from post: Post) {
+    private func refreshStatus(from post: KioskCore.Post) {
         status.postId = post.postId
         status.refreshNeeded = post.contentRefreshNeeded
         status.content = post.body?.htmlBody
     }
     
     private func refreshPost(id: String) {
+        status.showLoading = true
         blogger.fetchPost(id)
     }
 }

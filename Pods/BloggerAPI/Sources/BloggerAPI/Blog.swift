@@ -16,19 +16,6 @@
 
 import Foundation
 
-internal class ResolveBlogByURLRequest: NetworkRequest<Blog> {
-    private let url: String
-    var completionHandler: ((String?) -> ())!
-    
-    init(url: String) {
-        self.url = url
-    }
-    
-    override func execute() {
-        GET("/blogs/byurl", parameters: ["url": url as AnyObject])
-    }
-    
-    override func handle(result: Result<Blog>) {
-        completionHandler(result.success?.id)
-    }
+public struct Blog: Codable {
+    public let id: String
 }

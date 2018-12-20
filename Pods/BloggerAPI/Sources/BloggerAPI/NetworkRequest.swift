@@ -18,12 +18,27 @@ import Foundation
 
 private let APIServer = "https://www.googleapis.com/blogger/v3"
 
+public enum BloggerError: Error {
+    case noData
+    case networkError(Error)
+    case invalidJSON(Error)
+}
+
+internal struct Result<T: Codable> {
+    let success: T?
+    let error: Error?
+}
+
 private enum Method: String {
     case post
     case get
 }
 
-class NetworkRequest: FetchConsumer, KeyConsumer {
+internal protocol Executed: class {
+    func execute()
+}
+
+internal class NetworkRequest<T: Codable>: FetchConsumer, KeyConsumer, Executed {
     var fetch: NetworkFetch!
     var apiKey: String!
     
@@ -67,38 +82,43 @@ class NetworkRequest: FetchConsumer, KeyConsumer {
         components.queryItems = queryItems
         
         let requestURL = components.url!
-        let request = NSMutableURLRequest(url: requestURL)
+        var request = URLRequest(url: requestURL)
         request.httpMethod = method.rawValue
         
-        fetch.fetch(request: request as URLRequest) {
-            data, response, error in
-            
-            if let error = error {
-                Logging.log("Fetch error \(error)")
-                self.handle(error: error)
-            }
-            
-            if let data = data {
-                
-                Logging.log("Response \(String(data: data, encoding: String.Encoding.utf8))")
-                do {
-                    let json = try JSONSerialization.jsonObject(with: data, options: [])
-                    self.handle(success: json as! [String: AnyObject])
-                } catch let error as NSError {
-                    self.handle(error: error)
-                }
-            } else {
-                self.handle(error: error)
-            }
+        fetch.fetch(request: request, completion: handle(data:response:error:))
+    }
+    
+    internal func handle(data: Data?, response: URLResponse?, error: Error?) {
+        if let data = data, let string = String(data: data, encoding: .utf8) {
+            Logging.log("Response")
+            Logging.log(string)
+        }
+        
+        var result: T?
+        var handleError: BloggerError?
+        defer {
+            self.handle(result: Result(success: result, error: handleError))
+        }
+        
+        if let error = error {
+            handleError = .networkError(error)
+            return
+        }
+        
+        guard let data = data else {
+            handleError = .noData
+            return
+        }
+        
+        let decoder = JSONDecoder()
+        do {
+            result = try decoder.decode(T.self, from: data)
+        } catch {
+            handleError = .invalidJSON(error)
         }
     }
     
-    func handle(success data: [String: AnyObject]) {
-        Logging.log("handleSuccessResponse")
-    }
-    
-    func handle(error: Error?) {
-        Logging.log("handleErrorResponse: \(error)")
-        resulthandler(nil, error)
+    internal func handle(result: Result<T>) {
+        Logging.log("Handle: \(result)")
     }
 }
