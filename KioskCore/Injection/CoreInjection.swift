@@ -15,6 +15,7 @@
  */
 
 import ImageProvide
+import BloggerAPI
 
 internal protocol CoreInjector {
     func inject(into object: AnyObject)
@@ -37,6 +38,7 @@ public class CoreInjection {
         return queue
     }()
     private lazy var images = ImageSource(fetch: ImagesFetch(queue: self.networkQueue, appQueue: self.appQueue))
+    private lazy var blogger = Blogger(blogURL: "http://tartugambrinus.blogspot.com", key: BloggerAPIKey, fetch: BloggerFetch(queue: self.networkQueue, appQueue: self.appQueue))
 
     public func inject(into object: AnyObject) {
         if var consumer = object as? PersistenceConsumer {
@@ -45,6 +47,10 @@ public class CoreInjection {
         
         if var consumer = object as? ImagesConsumer {
             consumer.imagesSource = images
+        }
+        
+        if var consumer = object as? BloggerConsumer {
+            consumer.blogger = blogger
         }
     }
 }

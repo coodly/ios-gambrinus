@@ -8,3 +8,4 @@ Gambrinus/Secrets.m
 scripts/bang
 .DS_Store
 Gambrinus/Secrets.swift
+KioskCore/Config/Secrets.swift

@@ -20,6 +20,7 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - BloggerAPI (0.1.0)
   - CoreDataPersistence (0.1.8)
   - Crashlytics (3.12.0):
     - Fabric (~> 1.9.0)
@@ -63,6 +64,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (= 2.6.3)
+  - "BloggerAPI (from `git@github.com:coodly/BloggerAPI.git`)"
   - "CoreDataPersistence (from `git@github.com:coodly/CoreDataPersistence.git`)"
   - Crashlytics (= 3.12.0)
   - Fabric (= 1.9.0)
@@ -83,6 +85,8 @@ SPEC REPOS:
     - SwiftGen
 
 EXTERNAL SOURCES:
+  BloggerAPI:
+    :git: "git@github.com:coodly/BloggerAPI.git"
   CoreDataPersistence:
     :git: "git@github.com:coodly/CoreDataPersistence.git"
   ImageProvide:
@@ -93,6 +97,9 @@ EXTERNAL SOURCES:
     :git: "git@github.com:coodly/swlogger.git"
 
 CHECKOUT OPTIONS:
+  BloggerAPI:
+    :commit: 5fd45f2569cef0d8d2357f49b3d111457ca13c23
+    :git: "git@github.com:coodly/BloggerAPI.git"
   CoreDataPersistence:
     :commit: 24521626b5639a69e015deb333060c844a2a7f61
     :git: "git@github.com:coodly/CoreDataPersistence.git"
@@ -108,6 +115,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  BloggerAPI: cd9a29ae3a2e277c2a0940bab3cd8e07b70758e9
   CoreDataPersistence: f6f79d2843b4c7f6e014893abad97cec4b50cf45
   Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
   Fabric: f988e33c97f08930a413e08123064d2e5f68d655
@@ -118,6 +126,6 @@ SPEC CHECKSUMS:
   SwiftGen: e5b047067aa84082826a0c4f1c4c2ddc95bcf74c
   SWLogger: 67c20e4ac8bec12c0b8a262a0917e24e8494899b
 
-PODFILE CHECKSUM: 8673d89b69e0875e4b2bbd8b129ea9c44e127af2
+PODFILE CHECKSUM: c01b2876c927eb416de999f8fa1db17d10720949
 
 COCOAPODS: 1.5.3

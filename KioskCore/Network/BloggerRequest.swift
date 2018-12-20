@@ -36,6 +36,15 @@ public class BloggerRequest: NetworkRequest {
     private func perform(_ method: HTTPMethod, to parh: String, variables: [String: String]) {
         let fullPath = parh.replace(variables: variables)
         Log.debug("Perform \(method.rawValue) ro \(fullPath)")
+        
+        let withKey = fullPath + "?key=" + BloggerAPIKey
+        var request = URLRequest(url: URL(string: withKey)!)
+        request.httpMethod = method.rawValue
+        execute(request)
+    }
+    
+    override func handle(data: Data?, response: URLResponse?, error: Error?) {
+        
     }
 }
 

@@ -52,10 +52,20 @@ end
 def images_pod
     if UsedSource == PodSource::Local
         pod 'ImageProvide', :path => '../swift-image-provide'
-        elsif UsedSource == PodSource::Remote
+    elsif UsedSource == PodSource::Remote
         pod 'ImageProvide', :git => 'git@github.com:coodly/ImageProvide.git'
-        else
+    else
         pod 'ImageProvide', :git => 'git@github.com:coodly/ImageProvide.git', tag: '0.4.0'
+    end
+end
+
+def blogger_pod
+    if UsedSource == PodSource::Local
+        pod 'BloggerAPI', :path => '../swift-blogger-api'
+    elsif UsedSource == PodSource::Remote
+        pod 'BloggerAPI', :git => 'git@github.com:coodly/BloggerAPI.git'
+    else
+        pod 'BloggerAPI', :git => 'git@github.com:coodly/BloggerAPI.git', tag: '0.1.0'
     end
 end
 
@@ -82,4 +92,5 @@ target 'KioskCore' do
     core_data_pod
     log_pod
     images_pod
+    blogger_pod
 end

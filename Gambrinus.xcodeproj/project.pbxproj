@@ -29,6 +29,7 @@
 		A701BA9521CA955B004258F2 /* PostDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A701BA9421CA955B004258F2 /* PostDetailsViewModel.swift */; };
 		A701BA9721CA9F30004258F2 /* BloggerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A701BA9621CA9F30004258F2 /* BloggerRequest.swift */; };
 		A701BA9921CA9F6E004258F2 /* RefreshPostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A701BA9821CA9F6E004258F2 /* RefreshPostRequest.swift */; };
+		A701BA9B21CAAA02004258F2 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A701BA9A21CAAA02004258F2 /* Secrets.swift */; };
 		A70238A521C7FB1E00A7CFE9 /* KioskCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A702389E21C7FB1E00A7CFE9 /* KioskCore.framework */; };
 		A70238A621C7FB1E00A7CFE9 /* KioskCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A702389E21C7FB1E00A7CFE9 /* KioskCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A70238B721C7FB2900A7CFE9 /* KioskUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A70238B021C7FB2900A7CFE9 /* KioskUI.framework */; };
@@ -189,6 +190,8 @@
 		A7D647751D78852B00FF52A4 /* ContentUpdateConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D647741D78852B00FF52A4 /* ContentUpdateConsumer.swift */; };
 		A7D647771D79495500FF52A4 /* Persistence+Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D647761D79495500FF52A4 /* Persistence+Settings.swift */; };
 		A7D647791D7959B900FF52A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D647781D7959B900FF52A4 /* AppDelegate.swift */; };
+		A7E17FF321CB952E00E70529 /* BloggerConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E17FF221CB952E00E70529 /* BloggerConsumer.swift */; };
+		A7E17FF521CB959900E70529 /* BloggerFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E17FF421CB959900E70529 /* BloggerFetch.swift */; };
 		A7EEF6871D80451600C56153 /* PersistenceConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EEF6861D80451600C56153 /* PersistenceConsumer.swift */; };
 		BA665AAA129ABC2E206BA2C5 /* mapping.json in Resources */ = {isa = PBXBuildFile; fileRef = BA665BA7D5ECAA081827FF24 /* mapping.json */; };
 		C6ECAABAE82EB9A8DB91D849 /* Pods_KioskCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5F5D8129EFABC3BC56C57BD /* Pods_KioskCore.framework */; };
@@ -361,6 +364,7 @@
 		A701BA9421CA955B004258F2 /* PostDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsViewModel.swift; sourceTree = "<group>"; };
 		A701BA9621CA9F30004258F2 /* BloggerRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloggerRequest.swift; sourceTree = "<group>"; };
 		A701BA9821CA9F6E004258F2 /* RefreshPostRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshPostRequest.swift; sourceTree = "<group>"; };
+		A701BA9A21CAAA02004258F2 /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		A702389E21C7FB1E00A7CFE9 /* KioskCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KioskCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A70238A121C7FB1E00A7CFE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A70238B021C7FB2900A7CFE9 /* KioskUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KioskUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -542,6 +546,8 @@
 		A7D647741D78852B00FF52A4 /* ContentUpdateConsumer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentUpdateConsumer.swift; sourceTree = "<group>"; };
 		A7D647761D79495500FF52A4 /* Persistence+Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Persistence+Settings.swift"; sourceTree = "<group>"; };
 		A7D647781D7959B900FF52A4 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A7E17FF221CB952E00E70529 /* BloggerConsumer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloggerConsumer.swift; sourceTree = "<group>"; };
+		A7E17FF421CB959900E70529 /* BloggerFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloggerFetch.swift; sourceTree = "<group>"; };
 		A7EEF6861D80451600C56153 /* PersistenceConsumer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceConsumer.swift; sourceTree = "<group>"; };
 		AAFA608429FBD4A83156B36E /* Pods-KioskCore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KioskCore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KioskCore/Pods-KioskCore.debug.xcconfig"; sourceTree = "<group>"; };
 		BA665BA7D5ECAA081827FF24 /* mapping.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = mapping.json; sourceTree = "<group>"; };
@@ -860,6 +866,7 @@
 				A70238FC21C8085800A7CFE9 /* CoreInjection.swift */,
 				A792728321C944F00001F621 /* ImagesConsumer.swift */,
 				A792722121C8FFD10001F621 /* PersistenceConsumer.swift */,
+				A7E17FF221CB952E00E70529 /* BloggerConsumer.swift */,
 			);
 			path = Injection;
 			sourceTree = "<group>";
@@ -1033,8 +1040,9 @@
 		A792726121C926E90001F621 /* Config */ = {
 			isa = PBXGroup;
 			children = (
-				A792726221C926F20001F621 /* Constants.swift */,
 				A792726B21C92D090001F621 /* AppConfig.swift */,
+				A792726221C926F20001F621 /* Constants.swift */,
+				A701BA9A21CAAA02004258F2 /* Secrets.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -1088,6 +1096,7 @@
 				A792728921C946000001F621 /* NetworkQueue.swift */,
 				A792728B21C9461C0001F621 /* NetworkRequest.swift */,
 				A701BA9821CA9F6E004258F2 /* RefreshPostRequest.swift */,
+				A7E17FF421CB959900E70529 /* BloggerFetch.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -1876,6 +1885,7 @@
 				"${BUILT_PRODUCTS_DIR}/Ono/Ono.framework",
 				"${BUILT_PRODUCTS_DIR}/SWLogger/SWLogger.framework",
 				"${BUILT_PRODUCTS_DIR}/ImageProvide/ImageProvide.framework",
+				"${BUILT_PRODUCTS_DIR}/BloggerAPI/BloggerAPI.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -1886,6 +1896,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Ono.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWLogger.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageProvide.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BloggerAPI.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1904,6 +1915,7 @@
 				"${BUILT_PRODUCTS_DIR}/ImageProvide/ImageProvide.framework",
 				"${BUILT_PRODUCTS_DIR}/CoreDataPersistence/CoreDataPersistence.framework",
 				"${BUILT_PRODUCTS_DIR}/SWLogger/SWLogger.framework",
+				"${BUILT_PRODUCTS_DIR}/BloggerAPI/BloggerAPI.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -1912,6 +1924,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageProvide.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CoreDataPersistence.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWLogger.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BloggerAPI.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2120,6 +2133,7 @@
 				A792723621C9010B0001F621 /* Setting+Properties.swift in Sources */,
 				A792724E21C901700001F621 /* Syncable.swift in Sources */,
 				A792724A21C901700001F621 /* PullStatus.swift in Sources */,
+				A7E17FF321CB952E00E70529 /* BloggerConsumer.swift in Sources */,
 				A792726C21C92D090001F621 /* AppConfig.swift in Sources */,
 				A792723321C9010B0001F621 /* Syncable+Properties.swift in Sources */,
 				A792724D21C901700001F621 /* Post.swift in Sources */,
@@ -2128,8 +2142,10 @@
 				A792723421C9010B0001F621 /* Post+Properties.swift in Sources */,
 				A792726021C926B30001F621 /* BlogImageAsk.swift in Sources */,
 				A792725221C901700001F621 /* Brewer.swift in Sources */,
+				A701BA9B21CAAA02004258F2 /* Secrets.swift in Sources */,
 				A792724F21C901700001F621 /* BeerStyle.swift in Sources */,
 				A792726E21C932620001F621 /* Persistence+Posts.swift in Sources */,
+				A7E17FF521CB959900E70529 /* BloggerFetch.swift in Sources */,
 				A792728A21C946000001F621 /* NetworkQueue.swift in Sources */,
 				A701BA9921CA9F6E004258F2 /* RefreshPostRequest.swift in Sources */,
 			);

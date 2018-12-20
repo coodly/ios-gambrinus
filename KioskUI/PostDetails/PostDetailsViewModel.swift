@@ -18,8 +18,11 @@ import Foundation
 import KioskCore
 import UIKit
 import ImageProvide
+import BloggerAPI
 
-internal class PostDetailsViewModel: ImagesConsumer, UIInjector {
+private typealias Dependencies = ImagesConsumer & BloggerConsumer
+
+internal class PostDetailsViewModel: Dependencies, UIInjector {
     var imagesSource: ImageSource! {
         didSet {
             guard let ask = imageAsk else {
@@ -33,6 +36,15 @@ internal class PostDetailsViewModel: ImagesConsumer, UIInjector {
             }
         }
     }
+    var blogger: Blogger! {
+        didSet {
+            guard status.refreshNeeded, let id = status.postId else {
+                return
+            }
+            
+            refreshPost(id: id)
+        }
+    }
     
     internal struct Status {
         var image: UIImage? = nil
@@ -41,6 +53,8 @@ internal class PostDetailsViewModel: ImagesConsumer, UIInjector {
         var showContent: Bool {
             return content?.hasValue() ?? false
         }
+        fileprivate var refreshNeeded = false
+        fileprivate var postId: String?
     }
     
     private var status = Status() {
@@ -59,21 +73,15 @@ internal class PostDetailsViewModel: ImagesConsumer, UIInjector {
         imageAsk = post.backdropAsk
 
         refreshStatus(from: post)
-        
-        if post.contentRefreshNeeded {
-            refreshContent(on: post)
-        }
     }
     
     private func refreshStatus(from post: Post) {
+        status.postId = post.postId
+        status.refreshNeeded = post.contentRefreshNeeded
         status.content = post.body?.htmlBody
     }
     
-    private func refreshContent(on post: Post) {
-        status.showLoading = true
-        Log.debug("Refresh content")
-        let request = RefreshPostRequest(post: post)
-        inject(into: request)
-        request.execute()
+    private func refreshPost(id: String) {
+        blogger.fetchPost(id)
     }
 }

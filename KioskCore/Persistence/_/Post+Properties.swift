@@ -25,7 +25,7 @@ extension Post {
     @NSManaged var hidden: Bool
     @NSManaged var isDirty: Bool
     @NSManaged var normalizedTitle: String?
-    @NSManaged var postId: String?
+    @NSManaged public var postId: String?
     @NSManaged var publishDate: Date?
     @NSManaged var shadowTitle: String?
     @NSManaged var slug: String?
