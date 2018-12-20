@@ -98,7 +98,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   BloggerAPI:
-    :commit: 0a495231a3b58a02ea8eeb52f262bde69784d3c4
+    :commit: 5c1aeb10cf40abda291feb7558a8cbc7145450cf
     :git: "git@github.com:coodly/BloggerAPI.git"
   CoreDataPersistence:
     :commit: 24521626b5639a69e015deb333060c844a2a7f61

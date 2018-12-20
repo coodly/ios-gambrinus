@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Coodly LLC
+ * Copyright 2018 Coodly LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,22 +16,15 @@
 
 import Foundation
 
-internal struct BlogIdResult {
-    let id: String?
-}
-
-internal class ResolveBlogByURLRequest: NetworkRequest<Blog, BlogIdResult> {
-    private let url: String
+public struct Image: Codable {
+    public let url: URL
     
-    init(url: String) {
-        self.url = url
-    }
-    
-    override func execute() {
-        GET("/blogs/byurl", parameters: ["url": url as AnyObject])
-    }
-    
-    override func handle(result: NetworkResult<Blog>) {
-        self.result = BlogIdResult(id: result.success?.id)
+    public var largeImageURL: URL {
+        var value = url.absoluteString
+        guard value.range(of: "blogspot.com") != nil else {
+            return url
+        }
+        value = value.replacingOccurrences(of: "/s200/", with: "/s1600/")
+        return URL(string: value)!
     }
 }

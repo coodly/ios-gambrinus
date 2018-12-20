@@ -16,22 +16,13 @@
 
 import Foundation
 
-internal struct BlogIdResult {
-    let id: String?
-}
-
-internal class ResolveBlogByURLRequest: NetworkRequest<Blog, BlogIdResult> {
-    private let url: String
-    
-    init(url: String) {
-        self.url = url
-    }
-    
-    override func execute() {
-        GET("/blogs/byurl", parameters: ["url": url as AnyObject])
-    }
-    
-    override func handle(result: NetworkResult<Blog>) {
-        self.result = BlogIdResult(id: result.success?.id)
+extension String {
+    internal func replace(variables: [Variable]) -> String {
+        var result = self
+        for variable in variables {
+            let value = variable.value
+            result = result.replacingOccurrences(of: value.key, with: value.value)
+        }
+        return result
     }
 }

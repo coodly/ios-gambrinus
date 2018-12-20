@@ -17,5 +17,10 @@
 import Foundation
 
 public struct Post: Codable {
-    
+    public let id: String
+    public let blog: Blog
+    public let published: Date
+    public let title: String?
+    public let content: String
+    public let images: [Image]
 }

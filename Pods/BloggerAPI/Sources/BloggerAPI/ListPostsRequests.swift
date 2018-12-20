@@ -16,7 +16,13 @@
 
 import Foundation
 
-class ListPostsRequest: NetworkRequest<[Post]>, BlogIdConsumer, DateFormatterConsumer {
+public struct PostsListResult {
+    let posts: [Post]?
+    let nextPageToken: String?
+    let error: Error?
+}
+
+internal class ListPostsRequest: NetworkRequest<[Post], PostsListResult>, BlogIdConsumer, DateFormatterConsumer {
     var blogId: String!
     var dateFormatter: DateFormatter!
     
@@ -42,5 +48,9 @@ class ListPostsRequest: NetworkRequest<[Post]>, BlogIdConsumer, DateFormatterCon
     private func string(from: Date) -> AnyObject {
         let result = dateFormatter.string(from: from)
         return result.appending("-00:00") as AnyObject
+    }
+    
+    override func handle(result: NetworkResult<[Post]>) {
+        self.result = PostsListResult(posts: result.success, nextPageToken: nil, error: result.error)
     }
 }

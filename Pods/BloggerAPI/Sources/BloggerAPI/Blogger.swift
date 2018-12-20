@@ -31,9 +31,10 @@ public class Blogger: InjectionHandler {
         execute(request: request)
     }
     
-    public func fetchPost(_ postId: String) {
+    public func fetchPost(_ postId: String, completion: @escaping ((SinglePostResult) -> Void)) {
         Logging.log("Fetch post: \(postId)")
         let request = RetrievePostRequest(postId: postId)
+        request.resultCallback = completion
         execute(request: request)
     }
     
@@ -53,10 +54,10 @@ public class Blogger: InjectionHandler {
         Logging.log("Resolve blog")
         let request = ResolveBlogByURLRequest(url: blogURL)
         inject(into: request)
-        request.completionHandler = {
-            id in
+        request.resultCallback = {
+            result in
             
-            guard let blogId = id else {
+            guard let blogId = result.id else {
                 Logging.log("Blog id not received")
                 return
             }

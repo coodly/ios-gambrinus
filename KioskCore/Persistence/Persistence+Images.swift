@@ -15,23 +15,16 @@
  */
 
 import Foundation
+import CoreData
 
-internal struct BlogIdResult {
-    let id: String?
-}
-
-internal class ResolveBlogByURLRequest: NetworkRequest<Blog, BlogIdResult> {
-    private let url: String
-    
-    init(url: String) {
-        self.url = url
-    }
-    
-    override func execute() {
-        GET("/blogs/byurl", parameters: ["url": url as AnyObject])
-    }
-    
-    override func handle(result: NetworkResult<Blog>) {
-        self.result = BlogIdResult(id: result.success?.id)
+extension NSManagedObjectContext {
+    func findOrCreteImageWithURLString(_ url: String) -> Image {
+        if let existing: Image = fetchEntity(where: "imageURLString", hasValue: url) {
+            return existing
+        }
+        
+        let created: Image = insertEntity()
+        created.imageURLString = url
+        return created
     }
 }

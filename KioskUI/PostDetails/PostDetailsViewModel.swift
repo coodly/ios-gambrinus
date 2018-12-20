@@ -20,7 +20,7 @@ import UIKit
 import ImageProvide
 import BloggerAPI
 
-private typealias Dependencies = ImagesConsumer & BloggerConsumer
+private typealias Dependencies = ImagesConsumer & BloggerConsumer & PersistenceConsumer
 
 internal class PostDetailsViewModel: Dependencies, UIInjector {
     var imagesSource: ImageSource! {
@@ -45,6 +45,7 @@ internal class PostDetailsViewModel: Dependencies, UIInjector {
             refreshPost(id: id)
         }
     }
+    var persistence: Persistence!
     
     internal struct Status {
         var image: UIImage? = nil
@@ -83,6 +84,23 @@ internal class PostDetailsViewModel: Dependencies, UIInjector {
     
     private func refreshPost(id: String) {
         status.showLoading = true
-        blogger.fetchPost(id)
+        blogger.fetchPost(id) {
+            result in
+            
+            DispatchQueue.main.async {
+                self.status.showLoading = false
+            }
+            
+            guard let post = result.post else {
+                return
+            }
+            
+            self.persistence.write() {
+                context in
+                
+                let updated = context.update(remote: post)
+                self.refreshStatus(from: updated)
+            }
+        }
     }
 }

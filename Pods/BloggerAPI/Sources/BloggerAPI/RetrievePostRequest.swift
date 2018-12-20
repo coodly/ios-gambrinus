@@ -16,9 +16,24 @@
 
 import Foundation
 
-internal class RetrievePostRequest: NetworkRequest<Post> {
+private let PostPathBase = "/blogs/:blogId:/posts/:postId:"
+
+public struct SinglePostResult {
+    public let post: Post?
+    public let error: Error?
+}
+
+internal class RetrievePostRequest: NetworkRequest<Post, SinglePostResult> {
     private let postId: String
     internal init(postId: String) {
         self.postId = postId
+    }
+    
+    override func execute() {
+        get(PostPathBase, variables: [.postId(postId)], parameters: ["fetchImages": "true" as AnyObject])
+    }
+    
+    override func handle(result: NetworkResult<Post>) {
+        self.result = SinglePostResult(post: result.success, error: result.error)
     }
 }

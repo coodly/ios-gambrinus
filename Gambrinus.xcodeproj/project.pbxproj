@@ -192,6 +192,7 @@
 		A7D647791D7959B900FF52A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D647781D7959B900FF52A4 /* AppDelegate.swift */; };
 		A7E17FF321CB952E00E70529 /* BloggerConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E17FF221CB952E00E70529 /* BloggerConsumer.swift */; };
 		A7E17FF521CB959900E70529 /* BloggerFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E17FF421CB959900E70529 /* BloggerFetch.swift */; };
+		A7E1800521CBE4CF00E70529 /* Persistence+Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E1800421CBE4CF00E70529 /* Persistence+Images.swift */; };
 		A7EEF6871D80451600C56153 /* PersistenceConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EEF6861D80451600C56153 /* PersistenceConsumer.swift */; };
 		BA665AAA129ABC2E206BA2C5 /* mapping.json in Resources */ = {isa = PBXBuildFile; fileRef = BA665BA7D5ECAA081827FF24 /* mapping.json */; };
 		C6ECAABAE82EB9A8DB91D849 /* Pods_KioskCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5F5D8129EFABC3BC56C57BD /* Pods_KioskCore.framework */; };
@@ -548,6 +549,7 @@
 		A7D647781D7959B900FF52A4 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7E17FF221CB952E00E70529 /* BloggerConsumer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloggerConsumer.swift; sourceTree = "<group>"; };
 		A7E17FF421CB959900E70529 /* BloggerFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloggerFetch.swift; sourceTree = "<group>"; };
+		A7E1800421CBE4CF00E70529 /* Persistence+Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Persistence+Images.swift"; sourceTree = "<group>"; };
 		A7EEF6861D80451600C56153 /* PersistenceConsumer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceConsumer.swift; sourceTree = "<group>"; };
 		AAFA608429FBD4A83156B36E /* Pods-KioskCore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KioskCore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KioskCore/Pods-KioskCore.debug.xcconfig"; sourceTree = "<group>"; };
 		BA665BA7D5ECAA081827FF24 /* mapping.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = mapping.json; sourceTree = "<group>"; };
@@ -990,6 +992,7 @@
 				A792724121C9016F0001F621 /* Syncable.swift */,
 				A792724321C901700001F621 /* SyncStatus.swift */,
 				A792726D21C932620001F621 /* Persistence+Posts.swift */,
+				A7E1800421CBE4CF00E70529 /* Persistence+Images.swift */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -2140,6 +2143,7 @@
 				A792725D21C9056D0001F621 /* Date+Extensions.swift in Sources */,
 				A792723521C9010B0001F621 /* Beer+Properties.swift in Sources */,
 				A792723421C9010B0001F621 /* Post+Properties.swift in Sources */,
+				A7E1800521CBE4CF00E70529 /* Persistence+Images.swift in Sources */,
 				A792726021C926B30001F621 /* BlogImageAsk.swift in Sources */,
 				A792725221C901700001F621 /* Brewer.swift in Sources */,
 				A701BA9B21CAAA02004258F2 /* Secrets.swift in Sources */,
