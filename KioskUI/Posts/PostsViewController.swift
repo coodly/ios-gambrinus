@@ -18,6 +18,10 @@ import UIKit
 import KioskCore
 import CoreData
 
+private extension Selector {
+    static let postSortChanged = #selector(PostsViewController.postSortChanged)
+}
+
 private typealias Dependencies = PersistenceConsumer
 
 public class PostsViewController: FetchedCollectionViewController<Post, PostCell>, StoryboardLoaded, Dependencies, UIInjector, MaybeModalPresenter {
@@ -31,6 +35,8 @@ public class PostsViewController: FetchedCollectionViewController<Post, PostCell
         super.viewDidLoad()
         
         navigationItem.title = L10n.Posts.Controller.title
+        
+        NotificationCenter.default.addObserver(self, selector: .postSortChanged, name: .postsSortChanged, object: nil)
     }
     
     override func createFetchedController() -> NSFetchedResultsController<Post> {
@@ -58,5 +64,11 @@ public class PostsViewController: FetchedCollectionViewController<Post, PostCell
             let cellWidth = availableWidth / 2
             return CGSize(width: cellWidth, height: cellWidth)
         }
+    }
+    
+    @objc fileprivate func postSortChanged() {
+        Log.debug("Posts sort changed")
+        let activeSortDescriptors = persistence.mainContext.activeSort()
+        updateFetchedController(sort: activeSortDescriptors, animate: true)
     }
 }

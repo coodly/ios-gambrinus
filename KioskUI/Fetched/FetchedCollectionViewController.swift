@@ -230,6 +230,27 @@ public class FetchedCollectionViewController<Model: NSManagedObject, Cell: UICol
             self.collectionView.collectionViewLayout.invalidateLayout()
         }
     }
+    
+    internal func updateFetchedController(predicate: NSPredicate? = nil, sort: [NSSortDescriptor]? = nil, animate: Bool) {
+        objects?.fetchRequest.predicate = predicate ?? objects?.fetchRequest.predicate
+        objects?.fetchRequest.sortDescriptors = sort ?? objects?.fetchRequest.sortDescriptors
+        
+        try! objects?.performFetch()
+        
+        if animate {
+            let reload = {
+                self.collectionView.reloadSections(IndexSet(0..<self.objects!.sections!.count))
+            }
+            collectionView.performBatchUpdates(reload) {
+                _ in
+                
+                self.contentChanged()
+            }
+        } else {
+            collectionView.reloadData()
+            contentChanged()
+        }
+    }
 }
 
 extension NSFetchedResultsChangeType: CustomStringConvertible {

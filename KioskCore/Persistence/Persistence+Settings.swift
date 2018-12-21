@@ -55,9 +55,17 @@ extension NSManagedObjectContext {
             return .byDateDesc
         }
         set {
+            let oldValue = sortOrder
+            
+            guard oldValue != newValue else {
+                return
+            }
+            
             let saved: Setting = setting(for: .sortOrder) ?? insertEntity()
             saved.key = NSNumber(integerLiteral: Key.sortOrder.rawValue)
             saved.value = "\(newValue.rawValue)"
+            
+            NotificationCenter.default.post(name: .postsSortChanged, object: nil)
         }
     }
     

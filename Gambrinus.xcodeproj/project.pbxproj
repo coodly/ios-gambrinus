@@ -771,7 +771,6 @@
 		A702389F21C7FB1E00A7CFE9 /* KioskCore */ = {
 			isa = PBXGroup;
 			children = (
-				A792728D21C9463A0001F621 /* Utils */,
 				A792726121C926E90001F621 /* Config */,
 				A792725621C9019F0001F621 /* Extensions */,
 				A792725921C9047F0001F621 /* Formatters */,
@@ -781,6 +780,7 @@
 				A792728621C945B50001F621 /* Network */,
 				A792721E21C8FF3D0001F621 /* Persistence */,
 				A70238BD21C7FB5800A7CFE9 /* Supporting Files */,
+				A792728D21C9463A0001F621 /* Utils */,
 			);
 			path = KioskCore;
 			sourceTree = "<group>";

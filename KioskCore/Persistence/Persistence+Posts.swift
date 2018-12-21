@@ -21,8 +21,7 @@ import BloggerAPI
 
 extension NSManagedObjectContext {
     public func fetchedControllerForAllPosts() -> NSFetchedResultsController<Post> {
-        let sort = NSSortDescriptor(key: "publishDate", ascending: false)
-        return fetchedController(sort: [sort])
+        return fetchedController(sort: activeSort())
     }
     
     public func update(remote post: BloggerAPI.Post) -> Post {
@@ -37,10 +36,27 @@ extension NSManagedObjectContext {
         content.htmlBody = post.content
         content.post = local
         
-        if let string = post.images.first?.largeImageURL.absoluteString {
+        if let string = post.images?.first?.largeImageURL.absoluteString {
             local.image = findOrCreteImageWithURLString(string)
         }
         
         return local
+    }
+    
+    public func activeSort() -> [NSSortDescriptor] {
+        switch sortOrder {
+        case .byDateDesc:
+            return [NSSortDescriptor(key: "publishDate", ascending: false)]
+        case .byDateAsc:
+            return [NSSortDescriptor(key: "publishDate", ascending: true)]
+        case .byPostName:
+            return [NSSortDescriptor(key: "normalizedTitle", ascending: true)]
+        case .byRBScore:
+            return [NSSortDescriptor(key: "topScore", ascending: false), NSSortDescriptor(key: "normalizedTitle", ascending: true)]
+        case .byStyle: fallthrough
+        case .byRBBeerName: fallthrough
+        case .byBrewer:
+            return [NSSortDescriptor(key: "publishDate", ascending: false)]
+        }
     }
 }

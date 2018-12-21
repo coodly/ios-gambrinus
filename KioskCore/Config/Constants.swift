@@ -17,3 +17,7 @@
 import UIKit
 
 internal let RunningOnPad = UIDevice.current.userInterfaceIdiom == .pad
+
+extension Notification.Name {
+    public static let postsSortChanged = Notification.Name(rawValue: "com.coodly.kiosk.posts.sort.changed")
+}
