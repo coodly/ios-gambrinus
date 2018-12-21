@@ -17,6 +17,10 @@
 import UIKit
 import KioskCore
 
+internal extension Notification.Name {
+    static let closeMenu = Notification.Name(rawValue: "com.coodly.kiosk.close.menu")
+}
+
 private extension Selector {
     static let toggleMenu = #selector(MenuNavigationViewController.toggleMenu)
 }
@@ -40,6 +44,8 @@ public class MenuNavigationViewController: UINavigationController, StoryboardLoa
         
         let tapped = UITapGestureRecognizer(target: self, action: .toggleMenu)
         menuPresentationView.dimView.addGestureRecognizer(tapped)
+        
+        NotificationCenter.default.addObserver(self, selector: .toggleMenu, name: .closeMenu, object: nil)
     }
     
     public func present(root controller: UIViewController, animated: Bool = true) {

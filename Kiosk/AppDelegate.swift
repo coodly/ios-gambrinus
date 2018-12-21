@@ -42,6 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PersistenceConsumer {
         initialization.afterLoad = {
             
             let menu: MenuViewController = Storyboards.loadFromStoryboard()
+            CoreInjection.sharedInstance.inject(into: menu)
 
             let navigation: MenuNavigationViewController = Storyboards.loadFromStoryboard()
             navigation.menuController = menu

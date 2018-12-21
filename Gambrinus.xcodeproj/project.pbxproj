@@ -129,6 +129,10 @@
 		A7ADF44621C8F351008B3205 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A7ADF43D21C8F351008B3205 /* Localizable.strings */; };
 		A7ADF44721C8F351008B3205 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A7ADF43F21C8F351008B3205 /* InfoPlist.strings */; };
 		A7ADF45321C8F495008B3205 /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ADF45221C8F495008B3205 /* L10n.swift */; };
+		A7B66A6721CCB7A600DB1840 /* Persistence+Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B66A6621CCB7A600DB1840 /* Persistence+Settings.swift */; };
+		A7B66A6A21CCBB3600DB1840 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B66A6821CCBB3600DB1840 /* MenuCell.swift */; };
+		A7B66A6B21CCBB3600DB1840 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7B66A6921CCBB3600DB1840 /* MenuCell.xib */; };
+		A7B66A6E21CCBB7500DB1840 /* UITableView+Dequeue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B66A6D21CCBB7500DB1840 /* UITableView+Dequeue.swift */; };
 		A7B8B8011D782B5E003C8469 /* FullOptionsMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B8B8001D782B5E003C8469 /* FullOptionsMenuController.swift */; };
 		A7B8B8031D782BEB003C8469 /* SortOnlyMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B8B8021D782BEB003C8469 /* SortOnlyMenuController.swift */; };
 		A7B8B8061D782E46003C8469 /* JCSCoreDataChangeAction.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B8B8051D782E46003C8469 /* JCSCoreDataChangeAction.m */; };
@@ -478,6 +482,10 @@
 		A7ADF44321C8F351008B3205 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
 		A7ADF44521C8F351008B3205 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
 		A7ADF45221C8F495008B3205 /* L10n.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L10n.swift; sourceTree = "<group>"; };
+		A7B66A6621CCB7A600DB1840 /* Persistence+Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Persistence+Settings.swift"; sourceTree = "<group>"; };
+		A7B66A6821CCBB3600DB1840 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		A7B66A6921CCBB3600DB1840 /* MenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
+		A7B66A6D21CCBB7500DB1840 /* UITableView+Dequeue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Dequeue.swift"; sourceTree = "<group>"; };
 		A7B8B8001D782B5E003C8469 /* FullOptionsMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullOptionsMenuController.swift; sourceTree = "<group>"; };
 		A7B8B8021D782BEB003C8469 /* SortOnlyMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortOnlyMenuController.swift; sourceTree = "<group>"; };
 		A7B8B8041D782E46003C8469 /* JCSCoreDataChangeAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCSCoreDataChangeAction.h; sourceTree = "<group>"; };
@@ -864,6 +872,8 @@
 			isa = PBXGroup;
 			children = (
 				A702390521C80B4A00A7CFE9 /* Menu.storyboard */,
+				A7B66A6821CCBB3600DB1840 /* MenuCell.swift */,
+				A7B66A6921CCBB3600DB1840 /* MenuCell.xib */,
 				A70238F621C807E400A7CFE9 /* MenuNavigation.storyboard */,
 				A70238F721C807E400A7CFE9 /* MenuNavigationViewController.swift */,
 				A70238F521C807E400A7CFE9 /* MenuPresentationView.swift */,
@@ -995,14 +1005,15 @@
 				A792723E21C9016F0001F621 /* Image.swift */,
 				A792722321C900A80001F621 /* Kiosk.xcdatamodeld */,
 				A792721F21C8FF4D0001F621 /* Persistence.swift */,
+				A7E1800421CBE4CF00E70529 /* Persistence+Images.swift */,
+				A792726D21C932620001F621 /* Persistence+Posts.swift */,
+				A7B66A6621CCB7A600DB1840 /* Persistence+Settings.swift */,
 				A792724021C9016F0001F621 /* Post.swift */,
 				A792724421C901700001F621 /* PostContent.swift */,
 				A792723D21C9016F0001F621 /* PullStatus.swift */,
 				A792724621C901700001F621 /* Setting.swift */,
 				A792724121C9016F0001F621 /* Syncable.swift */,
 				A792724321C901700001F621 /* SyncStatus.swift */,
-				A792726D21C932620001F621 /* Persistence+Posts.swift */,
-				A7E1800421CBE4CF00E70529 /* Persistence+Images.swift */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -1081,6 +1092,7 @@
 			children = (
 				A792727221C933E30001F621 /* UICollectionView+Dequeue.swift */,
 				A792727421C934070001F621 /* UIView+Loading.swift */,
+				A7B66A6D21CCBB7500DB1840 /* UITableView+Dequeue.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -1841,6 +1853,7 @@
 				A792721221C8F72A0001F621 /* Media.xcassets in Resources */,
 				A70238F921C807E400A7CFE9 /* MenuNavigation.storyboard in Resources */,
 				A792727C21C934C50001F621 /* PostCell.xib in Resources */,
+				A7B66A6B21CCBB3600DB1840 /* MenuCell.xib in Resources */,
 				A7ADF44721C8F351008B3205 /* InfoPlist.strings in Resources */,
 				A7ADF44621C8F351008B3205 /* Localizable.strings in Resources */,
 				A7E1800F21CBF9ED00E70529 /* ImageShowView.xib in Resources */,
@@ -2154,6 +2167,7 @@
 				A792723721C9010B0001F621 /* SyncStatus+Properties.swift in Sources */,
 				A792728F21C946420001F621 /* ConcurrentOperation.swift in Sources */,
 				A792725821C901AB0001F621 /* String+Extensions.swift in Sources */,
+				A7B66A6721CCB7A600DB1840 /* Persistence+Settings.swift in Sources */,
 				A701BA9721CA9F30004258F2 /* BloggerRequest.swift in Sources */,
 				A792722221C8FFD10001F621 /* PersistenceConsumer.swift in Sources */,
 				A792728521C944FF0001F621 /* ImagesConsumer.swift in Sources */,
@@ -2189,6 +2203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A70238F821C807E400A7CFE9 /* MenuPresentationView.swift in Sources */,
+				A7B66A6A21CCBB3600DB1840 /* MenuCell.swift in Sources */,
 				A7E1800D21CBF79800E70529 /* ImageShowView.swift in Sources */,
 				A792729A21C958070001F621 /* MaybeModalPresenter.swift in Sources */,
 				A702390421C80B2500A7CFE9 /* MenuViewController.swift in Sources */,
@@ -2205,6 +2220,7 @@
 				A792727521C934070001F621 /* UIView+Loading.swift in Sources */,
 				A792727B21C934C50001F621 /* PostCell.swift in Sources */,
 				A792729221C9484B0001F621 /* Post+ImageAsk.swift in Sources */,
+				A7B66A6E21CCBB7500DB1840 /* UITableView+Dequeue.swift in Sources */,
 				A792727E21C939B30001F621 /* PostCellViewModel.swift in Sources */,
 				A79272A521C95A170001F621 /* ScrolledContentViewController.swift in Sources */,
 				A70238FA21C807E400A7CFE9 /* MenuNavigationViewController.swift in Sources */,

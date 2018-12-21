@@ -17,10 +17,29 @@
                     <view key="view" contentMode="scaleToFill" id="ZRS-KS-CQd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cRX-XW-U11">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Xjg-NX-aqS" id="5V9-u8-K72"/>
+                                    <outlet property="delegate" destination="Xjg-NX-aqS" id="QGZ-Xa-3Ao"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="cRX-XW-U11" secondAttribute="trailing" id="EwM-VZ-V0x"/>
+                            <constraint firstItem="cRX-XW-U11" firstAttribute="top" secondItem="ZRS-KS-CQd" secondAttribute="top" id="neQ-2D-ht7"/>
+                            <constraint firstAttribute="bottom" secondItem="cRX-XW-U11" secondAttribute="bottom" id="p6Q-iY-gap"/>
+                            <constraint firstItem="cRX-XW-U11" firstAttribute="leading" secondItem="ZRS-KS-CQd" secondAttribute="leading" id="s9D-qf-J0B"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="rIk-ao-VIq"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="cRX-XW-U11" id="4up-qH-kAI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qNT-8j-tA2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

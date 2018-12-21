@@ -27,6 +27,12 @@ public class PostsViewController: FetchedCollectionViewController<Post, PostCell
     
     public var persistence: Persistence!
     
+    public override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        navigationItem.title = L10n.Posts.Controller.title
+    }
+    
     override func createFetchedController() -> NSFetchedResultsController<Post> {
         return persistence.mainContext.fetchedControllerForAllPosts()
     }
