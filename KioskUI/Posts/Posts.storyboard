@@ -56,6 +56,13 @@
                                             <outlet property="delegate" destination="iSc-VQ-Pyf" id="Tft-Nt-3pS"/>
                                         </connections>
                                     </collectionView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="305-q8-Q7f">
+                                        <rect key="frame" x="0.0" y="667" width="375" height="0.0"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" id="9Rr-S4-aKd"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -70,6 +77,7 @@
                     </view>
                     <connections>
                         <outlet property="collection" destination="x4e-sT-w64" id="5nc-vs-7B6"/>
+                        <outlet property="keyboardFill" destination="9Rr-S4-aKd" id="XU5-5N-wJ3"/>
                         <outlet property="searchContainer" destination="NMf-fV-Mph" id="ZrU-yu-NEW"/>
                         <outlet property="searchField" destination="5JW-6Q-sEZ" id="HRf-bC-Ubh"/>
                     </connections>

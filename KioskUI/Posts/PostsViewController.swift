@@ -22,6 +22,7 @@ private extension Selector {
     static let postSortChanged = #selector(PostsViewController.postSortChanged)
     static let toggleSearch = #selector(PostsViewController.toggleSearch)
     static let searchChanged = #selector(PostsViewController.searchChanged(_:))
+    static let keyboardFramwChanged = #selector(PostsViewController.keyboardFramwChanged(_:))
 }
 
 private typealias Dependencies = PersistenceConsumer
@@ -38,6 +39,7 @@ public class PostsViewController: FetchedCollectionViewController<Post, PostCell
     }
     @IBOutlet private var searchContainer: UIView!
     @IBOutlet private var searchField: UITextField!
+    @IBOutlet private var keyboardFill: NSLayoutConstraint!
     
     public var persistence: Persistence!
     
@@ -51,6 +53,8 @@ public class PostsViewController: FetchedCollectionViewController<Post, PostCell
         searchContainer.isHidden = true
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: Asset.search.image, style: .plain, target: self, action: .toggleSearch)
         searchField.addTarget(self, action: .searchChanged, for: .editingChanged)
+        
+        NotificationCenter.default.addObserver(self, selector: .keyboardFramwChanged, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
     
     override func createFetchedController() -> NSFetchedResultsController<Post> {
@@ -118,7 +122,23 @@ public class PostsViewController: FetchedCollectionViewController<Post, PostCell
             let predicate = context.postsPredicat(with: term)
             DispatchQueue.main.async {
                 self.updateFetchedController(predicate: predicate, animate: animate)
+                self.collectionView.scrollRectToVisible(CGRect(x: 0, y: 0, width: 10, height: 10), animated: false)
             }
         }
+    }
+    
+    @objc fileprivate func keyboardFramwChanged(_ notification: Notification) {
+        guard let info = notification.userInfo, let keyboardSize = (info[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+            return
+        }
+        
+        let converted = view.convert(keyboardSize, from: UIApplication.shared.keyWindow!)
+        let covering = view.frame.height - converted.origin.y
+        
+        guard covering >= 0 else {
+            return
+        }
+        
+        keyboardFill.constant = covering
     }
 }
