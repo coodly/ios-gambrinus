@@ -21,6 +21,7 @@ internal enum Asset {
   internal static let arrowDown = ImageAsset(name: "ArrowDown")
   internal static let arrowUp = ImageAsset(name: "ArrowUp")
   internal static let menu = ImageAsset(name: "Menu")
+  internal static let placholder = ImageAsset(name: "Placholder")
   internal static let poweredBy = ImageAsset(name: "PoweredBy")
   internal static let search = ImageAsset(name: "Search")
 }

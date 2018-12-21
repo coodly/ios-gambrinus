@@ -28,7 +28,7 @@ internal class PostCellViewModel: ImagesConsumer {
             imagesSource.retrieveImage(for: ask) {
                 image in
                 
-                self.status.thumbnail = image
+                self.status.thumbnail = image ?? Asset.placholder.image
             }
         }
     }
