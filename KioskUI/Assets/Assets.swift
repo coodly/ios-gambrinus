@@ -22,6 +22,7 @@ internal enum Asset {
   internal static let arrowUp = ImageAsset(name: "ArrowUp")
   internal static let menu = ImageAsset(name: "Menu")
   internal static let poweredBy = ImageAsset(name: "PoweredBy")
+  internal static let search = ImageAsset(name: "Search")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 

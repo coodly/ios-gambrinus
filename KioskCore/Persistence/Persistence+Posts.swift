@@ -59,4 +59,18 @@ extension NSManagedObjectContext {
             return [NSSortDescriptor(key: "publishDate", ascending: false)]
         }
     }
+    
+    public func postsPredicat(with search: String) -> NSPredicate {
+        let normalized = search.normalize()
+        guard normalized.hasValue() else {
+            return .truePredicate
+        }
+        
+        let title = NSPredicate(format: "normalizedTitle CONTAINS %@", normalized)
+        let beers = NSPredicate(format: "combinedBeers CONTAINS %@", normalized)
+        let styles = NSPredicate(format: "combinedStyles CONTAINS %@", normalized)
+        let brewers = NSPredicate(format: "combinedBrewers CONTAINS %@", normalized)
+        
+        return NSCompoundPredicate(orPredicateWithSubpredicates: [title, beers, styles, brewers])
+    }
 }

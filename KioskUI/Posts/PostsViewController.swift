@@ -20,6 +20,8 @@ import CoreData
 
 private extension Selector {
     static let postSortChanged = #selector(PostsViewController.postSortChanged)
+    static let toggleSearch = #selector(PostsViewController.toggleSearch)
+    static let searchChanged = #selector(PostsViewController.searchChanged(_:))
 }
 
 private typealias Dependencies = PersistenceConsumer
@@ -29,6 +31,14 @@ public class PostsViewController: FetchedCollectionViewController<Post, PostCell
         return "Posts"
     }
     
+    @IBOutlet private var collection: UICollectionView! {
+        didSet {
+            collectionView = collection
+        }
+    }
+    @IBOutlet private var searchContainer: UIView!
+    @IBOutlet private var searchField: UITextField!
+    
     public var persistence: Persistence!
     
     public override func viewDidLoad() {
@@ -37,6 +47,10 @@ public class PostsViewController: FetchedCollectionViewController<Post, PostCell
         navigationItem.title = L10n.Posts.Controller.title
         
         NotificationCenter.default.addObserver(self, selector: .postSortChanged, name: .postsSortChanged, object: nil)
+        
+        searchContainer.isHidden = true
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: Asset.search.image, style: .plain, target: self, action: .toggleSearch)
+        searchField.addTarget(self, action: .searchChanged, for: .editingChanged)
     }
     
     override func createFetchedController() -> NSFetchedResultsController<Post> {
@@ -70,5 +84,41 @@ public class PostsViewController: FetchedCollectionViewController<Post, PostCell
         Log.debug("Posts sort changed")
         let activeSortDescriptors = persistence.mainContext.activeSort()
         updateFetchedController(sort: activeSortDescriptors, animate: true)
+    }
+    
+    @objc fileprivate func toggleSearch() {
+        let showHide = {
+            self.searchContainer.isHidden = !self.searchContainer.isHidden
+        }
+        UIView.animate(withDuration: 0.3, animations: showHide) {
+            _ in
+            
+            if self.searchContainer.isHidden {
+                self.searchField.resignFirstResponder()
+                self.searchField.text = ""
+                self.updateSearch(with: "", animate: false)
+            } else {
+                self.searchField.becomeFirstResponder()
+            }
+        }
+    }
+    
+    @objc fileprivate func searchChanged(_ field: UITextField) {
+        guard let text = field.text else {
+            return
+        }
+        
+        updateSearch(with: text)
+    }
+    
+    private func updateSearch(with term: String, animate: Bool = true) {
+        persistence.perform() {
+            context in
+            
+            let predicate = context.postsPredicat(with: term)
+            DispatchQueue.main.async {
+                self.updateFetchedController(predicate: predicate, animate: animate)
+            }
+        }
     }
 }

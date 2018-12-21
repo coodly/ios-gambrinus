@@ -33,6 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PersistenceConsumer {
         let initialization = window!.rootViewController as! InitializeViewController
         CoreInjection.sharedInstance.inject(into: initialization)
         
+        Theme.apply()
+        
         if let path = Bundle.main.url(forResource: "Kiosk", withExtension: "sqlite") {
             persistence.maybeCopyDatabase(from: path)
         } else {

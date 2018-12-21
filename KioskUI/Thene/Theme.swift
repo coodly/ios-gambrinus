@@ -16,6 +16,12 @@
 
 import UIKit
 
+public class Theme {
+    public static func apply() {
+        UINavigationBar.appearance().isTranslucent = false
+    }
+}
+
 internal extension UIColor {
     static let rateBeerBlue = UIColor(red: 5.0 / 255.0, green: 52.0 / 255.0, blue: 100.0 / 255.0, alpha: 1)
 }
