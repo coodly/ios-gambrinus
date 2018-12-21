@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Wzz-Qm-WdR" customClass="ImageShowView" customModule="KioskUI" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="660"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N86-d4-yT9">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="660"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="N86-d4-yT9" secondAttribute="bottom" id="L3O-xX-C4m"/>
+                <constraint firstItem="N86-d4-yT9" firstAttribute="leading" secondItem="Wzz-Qm-WdR" secondAttribute="leading" id="OG9-to-lxB"/>
+                <constraint firstAttribute="trailing" secondItem="N86-d4-yT9" secondAttribute="trailing" id="SS8-os-xg7"/>
+                <constraint firstItem="N86-d4-yT9" firstAttribute="top" secondItem="Wzz-Qm-WdR" secondAttribute="top" id="afO-aD-glD"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="9jk-D1-hjM"/>
+            <connections>
+                <outlet property="backgroundFill" destination="N86-d4-yT9" id="u9e-Ga-sBS"/>
+            </connections>
+            <point key="canvasLocation" x="138.40000000000001" y="196.10194902548727"/>
+        </view>
+    </objects>
+</document>

@@ -17,6 +17,10 @@
 import UIKit
 import KioskCore
 
+private extension Selector {
+    static let tapped = #selector(PostDetailsViewController.tapped(_:))
+}
+
 internal class PostDetailsViewController: ScrolledContentViewController, StoryboardLoaded, UIInjector {
     static var storyboardName: String {
         return "PostDetails"
@@ -34,6 +38,10 @@ internal class PostDetailsViewController: ScrolledContentViewController, Storybo
         
         let presentation: PostDetailsPresentationView = PostDetailsPresentationView.loadInstance()
         
+        let tap = UITapGestureRecognizer(target: self, action: .tapped)
+        presentation.image.addGestureRecognizer(tap)
+        presentation.image.isUserInteractionEnabled = true
+        
         viewModel.callback = {
             status in
             
@@ -44,5 +52,29 @@ internal class PostDetailsViewController: ScrolledContentViewController, Storybo
         }
         
         present(view: presentation)
+    }
+    
+    @objc fileprivate func tapped(_ recognizer: UITapGestureRecognizer) {
+        Log.debug("Tapped image")
+        
+        guard let image = viewModel.image else {
+            Log.debug("No image")
+            return
+        }
+        
+        guard let reference = recognizer.view else {
+            Log.debug("No reference")
+            return
+        }
+        
+        guard let navigation = navigationController else {
+            Log.debug("No navigation")
+            return
+        }
+        
+        let show: ImageShowView = ImageShowView.loadInstance()
+        navigation.view.addSubview(show)
+        show.pinToSuperviewEdges()
+        show.present(image: image, from: reference)
     }
 }

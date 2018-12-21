@@ -195,6 +195,8 @@
 		A7E1800521CBE4CF00E70529 /* Persistence+Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E1800421CBE4CF00E70529 /* Persistence+Images.swift */; };
 		A7E1800821CBE99100E70529 /* UITextView+HTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E1800721CBE99100E70529 /* UITextView+HTML.swift */; };
 		A7E1800A21CBE9E900E70529 /* NSMutableAttributedString+Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E1800921CBE9E900E70529 /* NSMutableAttributedString+Formatting.swift */; };
+		A7E1800D21CBF79800E70529 /* ImageShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E1800C21CBF79800E70529 /* ImageShowView.swift */; };
+		A7E1800F21CBF9ED00E70529 /* ImageShowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7E1800E21CBF9ED00E70529 /* ImageShowView.xib */; };
 		A7EEF6871D80451600C56153 /* PersistenceConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EEF6861D80451600C56153 /* PersistenceConsumer.swift */; };
 		BA665AAA129ABC2E206BA2C5 /* mapping.json in Resources */ = {isa = PBXBuildFile; fileRef = BA665BA7D5ECAA081827FF24 /* mapping.json */; };
 		C6ECAABAE82EB9A8DB91D849 /* Pods_KioskCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5F5D8129EFABC3BC56C57BD /* Pods_KioskCore.framework */; };
@@ -554,6 +556,8 @@
 		A7E1800421CBE4CF00E70529 /* Persistence+Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Persistence+Images.swift"; sourceTree = "<group>"; };
 		A7E1800721CBE99100E70529 /* UITextView+HTML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+HTML.swift"; sourceTree = "<group>"; };
 		A7E1800921CBE9E900E70529 /* NSMutableAttributedString+Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Formatting.swift"; sourceTree = "<group>"; };
+		A7E1800C21CBF79800E70529 /* ImageShowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageShowView.swift; sourceTree = "<group>"; };
+		A7E1800E21CBF9ED00E70529 /* ImageShowView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageShowView.xib; sourceTree = "<group>"; };
 		A7EEF6861D80451600C56153 /* PersistenceConsumer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceConsumer.swift; sourceTree = "<group>"; };
 		AAFA608429FBD4A83156B36E /* Pods-KioskCore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KioskCore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KioskCore/Pods-KioskCore.debug.xcconfig"; sourceTree = "<group>"; };
 		BA665BA7D5ECAA081827FF24 /* mapping.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = mapping.json; sourceTree = "<group>"; };
@@ -776,6 +780,7 @@
 				A702390121C8096500A7CFE9 /* Autolayout */,
 				A7E1800621CBE97700E70529 /* Extensions */,
 				A792721D21C8FEBA0001F621 /* Fetched */,
+				A7E1800B21CBF77C00E70529 /* ImageShow */,
 				A792728021C944790001F621 /* Injection */,
 				A7ADF43B21C8F2FD008B3205 /* Localization */,
 				A792727621C934520001F621 /* Log */,
@@ -1207,6 +1212,15 @@
 				A7E1800721CBE99100E70529 /* UITextView+HTML.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A7E1800B21CBF77C00E70529 /* ImageShow */ = {
+			isa = PBXGroup;
+			children = (
+				A7E1800C21CBF79800E70529 /* ImageShowView.swift */,
+				A7E1800E21CBF9ED00E70529 /* ImageShowView.xib */,
+			);
+			path = ImageShow;
 			sourceTree = "<group>";
 		};
 		CF35BA0BC6A9AAA2667487B5 /* Pods */ = {
@@ -1829,6 +1843,7 @@
 				A792727C21C934C50001F621 /* PostCell.xib in Resources */,
 				A7ADF44721C8F351008B3205 /* InfoPlist.strings in Resources */,
 				A7ADF44621C8F351008B3205 /* Localizable.strings in Resources */,
+				A7E1800F21CBF9ED00E70529 /* ImageShowView.xib in Resources */,
 				A702390621C80B4A00A7CFE9 /* Menu.storyboard in Resources */,
 				A701BA9321CA9366004258F2 /* PostDetailsPresentationView.xib in Resources */,
 			);
@@ -2174,6 +2189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A70238F821C807E400A7CFE9 /* MenuPresentationView.swift in Sources */,
+				A7E1800D21CBF79800E70529 /* ImageShowView.swift in Sources */,
 				A792729A21C958070001F621 /* MaybeModalPresenter.swift in Sources */,
 				A702390421C80B2500A7CFE9 /* MenuViewController.swift in Sources */,
 				A792727821C934650001F621 /* Log.swift in Sources */,

@@ -68,6 +68,9 @@ internal class PostDetailsViewModel: Dependencies, UIInjector {
             callback?(status)
         }
     }
+    internal var image: UIImage? {
+        return status.image
+    }
     
     private var imageAsk: ImageAsk?
     internal init(post: KioskCore.Post) {
