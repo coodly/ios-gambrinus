@@ -51,7 +51,7 @@ public class Post: NSManagedObject {
         normalizedTitle = normalized
     }
     
-    func rateBeerScore() -> String {
+    public var rateBeerScore: String {
         let unaliased = unaliasedBeers()
         if unaliased.count == 0 {
            return ""

@@ -135,6 +135,9 @@
 		A7B66A6E21CCBB7500DB1840 /* UITableView+Dequeue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B66A6D21CCBB7500DB1840 /* UITableView+Dequeue.swift */; };
 		A7B66A7021CD05C700DB1840 /* MenuFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B66A6F21CD05C700DB1840 /* MenuFooterView.swift */; };
 		A7B66A7221CD05DC00DB1840 /* MenuFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7B66A7121CD05DC00DB1840 /* MenuFooterView.xib */; };
+		A7B66A7421CD1B9500DB1840 /* RateBeerScoreLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B66A7321CD1B9500DB1840 /* RateBeerScoreLabel.swift */; };
+		A7B66A7721CD1D4C00DB1840 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B66A7621CD1D4C00DB1840 /* Theme.swift */; };
+		A7B66A7A21CD1FCA00DB1840 /* triplex-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7B66A7921CD1FCA00DB1840 /* triplex-bold.ttf */; };
 		A7B8B8011D782B5E003C8469 /* FullOptionsMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B8B8001D782B5E003C8469 /* FullOptionsMenuController.swift */; };
 		A7B8B8031D782BEB003C8469 /* SortOnlyMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B8B8021D782BEB003C8469 /* SortOnlyMenuController.swift */; };
 		A7B8B8061D782E46003C8469 /* JCSCoreDataChangeAction.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B8B8051D782E46003C8469 /* JCSCoreDataChangeAction.m */; };
@@ -490,6 +493,9 @@
 		A7B66A6D21CCBB7500DB1840 /* UITableView+Dequeue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Dequeue.swift"; sourceTree = "<group>"; };
 		A7B66A6F21CD05C700DB1840 /* MenuFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuFooterView.swift; sourceTree = "<group>"; };
 		A7B66A7121CD05DC00DB1840 /* MenuFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuFooterView.xib; sourceTree = "<group>"; };
+		A7B66A7321CD1B9500DB1840 /* RateBeerScoreLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateBeerScoreLabel.swift; sourceTree = "<group>"; };
+		A7B66A7621CD1D4C00DB1840 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		A7B66A7921CD1FCA00DB1840 /* triplex-bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "triplex-bold.ttf"; sourceTree = "<group>"; };
 		A7B8B8001D782B5E003C8469 /* FullOptionsMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullOptionsMenuController.swift; sourceTree = "<group>"; };
 		A7B8B8021D782BEB003C8469 /* SortOnlyMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortOnlyMenuController.swift; sourceTree = "<group>"; };
 		A7B8B8041D782E46003C8469 /* JCSCoreDataChangeAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCSCoreDataChangeAction.h; sourceTree = "<group>"; };
@@ -805,6 +811,7 @@
 				A792727121C933D40001F621 /* Shared */,
 				A70238EE21C8064300A7CFE9 /* Storyboards */,
 				A70238BE21C7FB6B00A7CFE9 /* Supporting Files */,
+				A7B66A7521CD1D3A00DB1840 /* Thene */,
 			);
 			path = KioskUI;
 			sourceTree = "<group>";
@@ -829,6 +836,7 @@
 			isa = PBXGroup;
 			children = (
 				A792726521C92C0B0001F621 /* Data */,
+				A7B66A7821CD1FB300DB1840 /* Fonts */,
 				A70238ED21C8040C00A7CFE9 /* Supporting Files */,
 				A70238EA21C802F500A7CFE9 /* ViewControllers */,
 				A70238E721C8024E00A7CFE9 /* Views */,
@@ -988,6 +996,7 @@
 				A792727D21C939B20001F621 /* PostCellViewModel.swift */,
 				A792721921C8F81F0001F621 /* Posts.storyboard */,
 				A792721721C8F8190001F621 /* PostsViewController.swift */,
+				A7B66A7321CD1B9500DB1840 /* RateBeerScoreLabel.swift */,
 			);
 			path = Posts;
 			sourceTree = "<group>";
@@ -1206,6 +1215,22 @@
 				A7ADF44421C8F351008B3205 /* InfoPlist.strings */,
 			);
 			path = en.lproj;
+			sourceTree = "<group>";
+		};
+		A7B66A7521CD1D3A00DB1840 /* Thene */ = {
+			isa = PBXGroup;
+			children = (
+				A7B66A7621CD1D4C00DB1840 /* Theme.swift */,
+			);
+			path = Thene;
+			sourceTree = "<group>";
+		};
+		A7B66A7821CD1FB300DB1840 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				A7B66A7921CD1FCA00DB1840 /* triplex-bold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		A7D647671D7877BD00FF52A4 /* Injection */ = {
@@ -1877,6 +1902,7 @@
 				A792726721C92C330001F621 /* Kiosk.sqlite in Resources */,
 				A70238D621C800BD00A7CFE9 /* Assets.xcassets in Resources */,
 				A70238D421C800BA00A7CFE9 /* Main.storyboard in Resources */,
+				A7B66A7A21CD1FCA00DB1840 /* triplex-bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2224,6 +2250,7 @@
 				A792721521C8F79F0001F621 /* Assets.swift in Sources */,
 				A792721821C8F8190001F621 /* PostsViewController.swift in Sources */,
 				A792729C21C958450001F621 /* ModalPresenter.swift in Sources */,
+				A7B66A7721CD1D4C00DB1840 /* Theme.swift in Sources */,
 				A79272A321C959F70001F621 /* ScrollPresented.swift in Sources */,
 				A792727521C934070001F621 /* UIView+Loading.swift in Sources */,
 				A792727B21C934C50001F621 /* PostCell.swift in Sources */,
@@ -2234,6 +2261,7 @@
 				A70238FA21C807E400A7CFE9 /* MenuNavigationViewController.swift in Sources */,
 				A702390221C8097D00A7CFE9 /* UIView+Autolayout.swift in Sources */,
 				A7ADF45321C8F495008B3205 /* L10n.swift in Sources */,
+				A7B66A7421CD1B9500DB1840 /* RateBeerScoreLabel.swift in Sources */,
 				A792729E21C958670001F621 /* ModalPresentationViewController.swift in Sources */,
 				A70238F221C8068400A7CFE9 /* Storyboards.swift in Sources */,
 				A7E1800821CBE99100E70529 /* UITextView+HTML.swift in Sources */,

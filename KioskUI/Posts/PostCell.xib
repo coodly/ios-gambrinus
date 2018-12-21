@@ -42,16 +42,30 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="rb: 100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rpg-uO-1cW" customClass="RateBeerScoreLabel" customModule="KioskUI" customModuleProvider="target">
+                        <rect key="frame" x="102.5" y="0.0" width="53.5" height="53.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" id="5a5-vz-E93"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" id="KOw-Ss-BKg"/>
+                            <constraint firstAttribute="width" secondItem="Rpg-uO-1cW" secondAttribute="height" multiplier="1:1" id="iQ8-Yh-3ZZ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="Rpg-uO-1cW" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="7Qj-ZR-vk9"/>
                 <constraint firstItem="vtJ-9y-zvh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="7Xs-me-yW4"/>
                 <constraint firstItem="36m-Ef-jPR" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ExD-kP-PGW"/>
                 <constraint firstAttribute="trailing" secondItem="Cs4-Cz-pOt" secondAttribute="trailing" id="H4M-Rr-kcs"/>
                 <constraint firstItem="DEm-Em-8Dw" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="Pv6-XN-fRO"/>
                 <constraint firstAttribute="bottom" secondItem="36m-Ef-jPR" secondAttribute="bottom" id="Q0v-vx-t7a"/>
                 <constraint firstAttribute="trailing" secondItem="vtJ-9y-zvh" secondAttribute="trailing" constant="8" id="Q5R-fn-v7H"/>
+                <constraint firstAttribute="trailing" secondItem="Rpg-uO-1cW" secondAttribute="trailing" id="Vfg-Cx-zWM"/>
                 <constraint firstItem="bDj-1n-pQJ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="eTb-TU-nc5"/>
                 <constraint firstItem="36m-Ef-jPR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="fD1-9S-mXU"/>
                 <constraint firstItem="DEm-Em-8Dw" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="gIC-F8-8z3"/>
@@ -71,6 +85,7 @@
                 <outlet property="dateFill" destination="bDj-1n-pQJ" id="Cdc-XU-Jin"/>
                 <outlet property="postDate" destination="DEm-Em-8Dw" id="1ze-gf-Jla"/>
                 <outlet property="postTitle" destination="vtJ-9y-zvh" id="BMn-NX-UqN"/>
+                <outlet property="ratebeerScore" destination="Rpg-uO-1cW" id="7Yj-Lw-cL4"/>
                 <outlet property="thumbnail" destination="36m-Ef-jPR" id="UEp-AM-Kvq"/>
                 <outlet property="titleFill" destination="Cs4-Cz-pOt" id="ajd-VH-SL2"/>
             </connections>
