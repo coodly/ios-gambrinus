@@ -23,6 +23,7 @@ private extension Selector {
 internal class ImageShowView: UIView {
     @IBOutlet private var backgroundFill: UIView!
     private lazy var imageView = UIImageView(frame: self.bounds)
+    private lazy var imageClipView = UIView(frame: self.bounds)
     private var startConstraints: [NSLayoutConstraint]!
     private var endConstraints: [NSLayoutConstraint]!
     
@@ -35,32 +36,43 @@ internal class ImageShowView: UIView {
         let tap = UITapGestureRecognizer(target: self, action: .remove)
         imageView.addGestureRecognizer(tap)
         imageView.isUserInteractionEnabled = true
+        
+        imageClipView.clipsToBounds = true
     }
     
     internal func present(image: UIImage, from reference: UIView) {
         imageView.image = image
-        imageView.contentMode = .scaleAspectFill
-        imageView.clipsToBounds = true
+        imageView.contentMode = .scaleAspectFit
         
-        addSubview(imageView)
-        imageView.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(imageClipView)
+        imageClipView.translatesAutoresizingMaskIntoConstraints = false
         
         let inMe = convert(reference.frame, from: reference.superview!)
         
-        let startLeading = imageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0)
-        let startTop = imageView.topAnchor.constraint(equalTo: topAnchor, constant: inMe.minY)
-        let startTrailing = imageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0)
-        let startHeight = imageView.heightAnchor.constraint(equalToConstant: inMe.height)
+        let startLeading = imageClipView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0)
+        let startTop = imageClipView.topAnchor.constraint(equalTo: topAnchor, constant: inMe.minY)
+        let startTrailing = imageClipView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0)
+        let startHeight = imageClipView.heightAnchor.constraint(equalToConstant: inMe.height)
         
-        startConstraints = [startLeading, startTop, startTrailing, startHeight]
+        imageClipView.addSubview(imageView)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.leadingAnchor.constraint(equalTo: imageClipView.leadingAnchor).isActive = true
+        imageView.trailingAnchor.constraint(equalTo: imageClipView.trailingAnchor).isActive = true
+        imageView.centerYAnchor.constraint(equalTo: imageClipView.centerYAnchor).isActive = true
+        let sizeRatioConstraint = imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor, multiplier: image.size.width / image.size.height)
+        
+        startConstraints = [startLeading, startTop, startTrailing, startHeight, sizeRatioConstraint]
         NSLayoutConstraint.activate(startConstraints)
         layoutIfNeeded()
         
         endConstraints = [
-            imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            imageView.topAnchor.constraint(equalTo: topAnchor),
-            imageView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            imageView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            imageClipView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            imageClipView.topAnchor.constraint(equalTo: topAnchor),
+            imageClipView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            imageClipView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            
+            imageView.topAnchor.constraint(equalTo: imageClipView.topAnchor),
+            imageView.bottomAnchor.constraint(equalTo: imageClipView.bottomAnchor)
         ]
         NSLayoutConstraint.deactivate(startConstraints)
         NSLayoutConstraint.activate(endConstraints)
