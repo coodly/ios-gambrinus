@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Rhu-xm-2bS" customClass="MenuFooterView" customModule="KioskUI" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="107"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PoweredBy" translatesAutoresizingMaskIntoConstraints="NO" id="QoZ-Vo-hsf">
+                    <rect key="frame" x="0.0" y="32" width="375" height="75"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="75" id="wYb-Qz-lB9"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="ohJ-FL-Cpa" firstAttribute="bottom" secondItem="QoZ-Vo-hsf" secondAttribute="bottom" id="MAP-ql-7dD"/>
+                <constraint firstItem="QoZ-Vo-hsf" firstAttribute="leading" secondItem="ohJ-FL-Cpa" secondAttribute="leading" id="ha3-lj-dIC"/>
+                <constraint firstItem="ohJ-FL-Cpa" firstAttribute="trailing" secondItem="QoZ-Vo-hsf" secondAttribute="trailing" id="o2J-5u-9rX"/>
+                <constraint firstItem="QoZ-Vo-hsf" firstAttribute="top" secondItem="ohJ-FL-Cpa" secondAttribute="top" constant="32" id="oBN-cR-W9Q"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="ohJ-FL-Cpa"/>
+            <point key="canvasLocation" x="138.40000000000001" y="380.5097451274363"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="PoweredBy" width="163.5" height="75"/>
+    </resources>
+</document>

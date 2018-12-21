@@ -17,10 +17,17 @@
 import UIKit
 import KioskCore
 
+private enum Accessory {
+    case asc
+    case desc
+    case check
+    case none
+}
+
 private struct MenuOption {
     let name: String
-    let accessory: UIImage?
-    let isOn: Bool
+    let accessory: Accessory
+    let switchesTo: PostsSortOrder
 }
 
 public class MenuViewController: UIViewController, StoryboardLoaded, PersistenceConsumer {
@@ -29,6 +36,8 @@ public class MenuViewController: UIViewController, StoryboardLoaded, Persistence
     }
     
     public var persistence: Persistence!
+    private lazy var accessoryDesc = UIImageView(image: Asset.arrowDown.image)
+    private lazy var accessoryAsc = UIImageView(image: Asset.arrowUp.image)
     
     private var options: [[MenuOption]] = [[]] {
         didSet {
@@ -41,8 +50,7 @@ public class MenuViewController: UIViewController, StoryboardLoaded, Persistence
     public override func viewDidLoad() {
         super.viewDidLoad()
         
-        let powered = UIImageView(image: Asset.poweredBy.image)
-        powered.contentMode = .scaleAspectFit
+        let powered: MenuFooterView = MenuFooterView.loadInstance()
         tableView.tableFooterView = powered
         
         tableView.registerCell(forType: MenuCell.self)
@@ -53,22 +61,22 @@ public class MenuViewController: UIViewController, StoryboardLoaded, Persistence
         
         let activeSort = persistence.mainContext.sortOrder
         
-        var sortOptions = [MenuOption]()
-        sortOptions.append(MenuOption(name: L10n.Menu.Controller.Sort.By.date, accessory: sortIcon(up: .byDateAsc, down: .byDateDesc, checked: activeSort), isOn: false))
-        sortOptions.append(MenuOption(name: L10n.Menu.Controller.Sort.By.posts, accessory: nil, isOn: activeSort == .byPostName))
-        sortOptions.append(MenuOption(name: L10n.Menu.Controller.Sort.By.score, accessory: nil, isOn: activeSort == .byRBScore))
+        let sortByPost = activeSort == .byPostName
+        let sortByScore = activeSort == .byRBScore
         
-        self.options = [sortOptions, []]
-    }
-    
-    private func sortIcon(up: PostsSortOrder, down: PostsSortOrder, checked: PostsSortOrder) -> UIImage? {
-        if checked == up {
-            return Asset.arrowUp.image
-        } else if checked == down {
-            return Asset.arrowDown.image
+        var sortOptions = [MenuOption]()
+
+        if activeSort == .byDateAsc {
+            sortOptions.append(MenuOption(name: L10n.Menu.Controller.Sort.By.date, accessory: .asc, switchesTo: .byDateDesc))
+        } else if activeSort == .byDateDesc {
+            sortOptions.append(MenuOption(name: L10n.Menu.Controller.Sort.By.date, accessory: .desc, switchesTo: .byDateAsc))
         } else {
-            return nil
+            sortOptions.append(MenuOption(name: L10n.Menu.Controller.Sort.By.date, accessory: .none, switchesTo: .byDateDesc))
         }
+        sortOptions.append(MenuOption(name: L10n.Menu.Controller.Sort.By.posts, accessory: sortByPost ? .check : .none, switchesTo: .byPostName))
+        sortOptions.append(MenuOption(name: L10n.Menu.Controller.Sort.By.score, accessory: sortByScore ? .check : .none, switchesTo: .byRBScore))
+        
+        self.options = [sortOptions]
     }
 }
 
@@ -85,13 +93,15 @@ extension MenuViewController: UITableViewDataSource {
         let cell: MenuCell = tableView.dequeueReusableCell(for: indexPath)
         let option = options[indexPath.section][indexPath.row]
         cell.textLabel?.text = option.name
-        if option.isOn {
+        if option.accessory == .check {
             cell.accessoryType = .checkmark
             cell.accessoryView = nil
-        } else if let icon = option.accessory {
-            let view = UIImageView(image: icon)
-            cell.accessoryView = view
+        } else if option.accessory == .desc {
             cell.accessoryType = .none
+            cell.accessoryView = accessoryDesc
+        } else if option.accessory == .asc {
+            cell.accessoryType = .none
+            cell.accessoryView = accessoryAsc
         } else {
             cell.accessoryView = nil
             cell.accessoryType = .none
@@ -106,5 +116,18 @@ extension MenuViewController: UITableViewDelegate {
         
         let option = options[indexPath.section][indexPath.row]
         NotificationCenter.default.post(name: .closeMenu, object: nil)
+        persistence.write() {
+            context in
+            
+            context.sortOrder = option.switchesTo
+        }
+    }
+    
+    public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return L10n.Menu.Controller.Sort.Section.title
+        }
+        
+        return nil
     }
 }
