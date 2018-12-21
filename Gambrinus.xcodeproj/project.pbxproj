@@ -138,6 +138,7 @@
 		A7B66A7421CD1B9500DB1840 /* RateBeerScoreLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B66A7321CD1B9500DB1840 /* RateBeerScoreLabel.swift */; };
 		A7B66A7721CD1D4C00DB1840 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B66A7621CD1D4C00DB1840 /* Theme.swift */; };
 		A7B66A7A21CD1FCA00DB1840 /* triplex-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7B66A7921CD1FCA00DB1840 /* triplex-bold.ttf */; };
+		A7B66A7D21CD244E00DB1840 /* ImageThumbnailAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B66A7C21CD244E00DB1840 /* ImageThumbnailAction.swift */; };
 		A7B8B8011D782B5E003C8469 /* FullOptionsMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B8B8001D782B5E003C8469 /* FullOptionsMenuController.swift */; };
 		A7B8B8031D782BEB003C8469 /* SortOnlyMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B8B8021D782BEB003C8469 /* SortOnlyMenuController.swift */; };
 		A7B8B8061D782E46003C8469 /* JCSCoreDataChangeAction.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B8B8051D782E46003C8469 /* JCSCoreDataChangeAction.m */; };
@@ -207,6 +208,7 @@
 		A7E1800D21CBF79800E70529 /* ImageShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E1800C21CBF79800E70529 /* ImageShowView.swift */; };
 		A7E1800F21CBF9ED00E70529 /* ImageShowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7E1800E21CBF9ED00E70529 /* ImageShowView.xib */; };
 		A7EEF6871D80451600C56153 /* PersistenceConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EEF6861D80451600C56153 /* PersistenceConsumer.swift */; };
+		A7FB14F521CD2BC8008BD71A /* UIImage+Cropped.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FB14F421CD2BC8008BD71A /* UIImage+Cropped.swift */; };
 		BA665AAA129ABC2E206BA2C5 /* mapping.json in Resources */ = {isa = PBXBuildFile; fileRef = BA665BA7D5ECAA081827FF24 /* mapping.json */; };
 		C6ECAABAE82EB9A8DB91D849 /* Pods_KioskCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5F5D8129EFABC3BC56C57BD /* Pods_KioskCore.framework */; };
 		E939DFD1AE3857CE7E64F416 /* Pods_Kiosk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A31968546AB2617414844400 /* Pods_Kiosk.framework */; };
@@ -496,6 +498,7 @@
 		A7B66A7321CD1B9500DB1840 /* RateBeerScoreLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateBeerScoreLabel.swift; sourceTree = "<group>"; };
 		A7B66A7621CD1D4C00DB1840 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		A7B66A7921CD1FCA00DB1840 /* triplex-bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "triplex-bold.ttf"; sourceTree = "<group>"; };
+		A7B66A7C21CD244E00DB1840 /* ImageThumbnailAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageThumbnailAction.swift; sourceTree = "<group>"; };
 		A7B8B8001D782B5E003C8469 /* FullOptionsMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullOptionsMenuController.swift; sourceTree = "<group>"; };
 		A7B8B8021D782BEB003C8469 /* SortOnlyMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortOnlyMenuController.swift; sourceTree = "<group>"; };
 		A7B8B8041D782E46003C8469 /* JCSCoreDataChangeAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCSCoreDataChangeAction.h; sourceTree = "<group>"; };
@@ -577,6 +580,7 @@
 		A7E1800C21CBF79800E70529 /* ImageShowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageShowView.swift; sourceTree = "<group>"; };
 		A7E1800E21CBF9ED00E70529 /* ImageShowView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageShowView.xib; sourceTree = "<group>"; };
 		A7EEF6861D80451600C56153 /* PersistenceConsumer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceConsumer.swift; sourceTree = "<group>"; };
+		A7FB14F421CD2BC8008BD71A /* UIImage+Cropped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Cropped.swift"; sourceTree = "<group>"; };
 		AAFA608429FBD4A83156B36E /* Pods-KioskCore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KioskCore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KioskCore/Pods-KioskCore.debug.xcconfig"; sourceTree = "<group>"; };
 		BA665BA7D5ECAA081827FF24 /* mapping.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = mapping.json; sourceTree = "<group>"; };
 		C9500B6301C764BA1D0D47AC /* Pods-Gambrinus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gambrinus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gambrinus/Pods-Gambrinus.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1105,9 +1109,11 @@
 		A792727121C933D40001F621 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				A7B66A7C21CD244E00DB1840 /* ImageThumbnailAction.swift */,
 				A792727221C933E30001F621 /* UICollectionView+Dequeue.swift */,
-				A792727421C934070001F621 /* UIView+Loading.swift */,
+				A7FB14F421CD2BC8008BD71A /* UIImage+Cropped.swift */,
 				A7B66A6D21CCBB7500DB1840 /* UITableView+Dequeue.swift */,
+				A792727421C934070001F621 /* UIView+Loading.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -2248,6 +2254,7 @@
 				A701BA9121CA935D004258F2 /* PostDetailsPresentationView.swift in Sources */,
 				A792727021C9332F0001F621 /* FetchedCollectionViewController.swift in Sources */,
 				A792721521C8F79F0001F621 /* Assets.swift in Sources */,
+				A7FB14F521CD2BC8008BD71A /* UIImage+Cropped.swift in Sources */,
 				A792721821C8F8190001F621 /* PostsViewController.swift in Sources */,
 				A792729C21C958450001F621 /* ModalPresenter.swift in Sources */,
 				A7B66A7721CD1D4C00DB1840 /* Theme.swift in Sources */,
@@ -2255,6 +2262,7 @@
 				A792727521C934070001F621 /* UIView+Loading.swift in Sources */,
 				A792727B21C934C50001F621 /* PostCell.swift in Sources */,
 				A792729221C9484B0001F621 /* Post+ImageAsk.swift in Sources */,
+				A7B66A7D21CD244E00DB1840 /* ImageThumbnailAction.swift in Sources */,
 				A7B66A6E21CCBB7500DB1840 /* UITableView+Dequeue.swift in Sources */,
 				A792727E21C939B30001F621 /* PostCellViewModel.swift in Sources */,
 				A79272A521C95A170001F621 /* ScrolledContentViewController.swift in Sources */,

@@ -14,32 +14,32 @@
  * limitations under the License.
  */
 
-import Foundation
-import KioskCore
+import UIKit
 import ImageProvide
 
-extension Post {
-    internal var thumbnailAsk: ImageAsk? {
-        guard let image = self.image else {
-            return nil
-        }
-        
-        guard let url = image.imageURL else {
-            return nil
-        }
-        
-        return ImageAsk(url: url, after: ImageThumbnailAction(size: CGSize(width: 300, height: 300)))
+internal class ImageThumbnailAction: AfterAction {
+    var key: String {
+        return "\(Int(targetSize.width))x\(Int(targetSize.height))"
     }
     
-    internal var backdropAsk: ImageAsk? {
-        guard let image = self.image else {
-            return nil
+    private let targetSize: CGSize
+    internal init(size: CGSize) {
+        targetSize = size
+    }
+    
+    func process(_ data: Data) -> Data? {
+        guard let image = UIImage(data: data) else {
+            return data
         }
         
-        guard let url = image.imageURL else {
-            return nil
+        guard let cropped = image.cropped(at: targetSize) else {
+            return data
         }
         
-        return ImageAsk(url: url)
+        if let croppedData = cropped.jpegData(compressionQuality: 0.8) {
+            return croppedData
+        }
+        
+        return data
     }
 }
