@@ -16,6 +16,7 @@
 
 import ImageProvide
 import BloggerAPI
+import CloudKit
 
 internal protocol CoreInjector {
     func inject(into object: AnyObject)
@@ -39,6 +40,7 @@ public class CoreInjection {
     }()
     private lazy var images = ImageSource(fetch: ImagesFetch(queue: self.networkQueue, appQueue: self.appQueue))
     private lazy var blogger = Blogger(blogURL: "http://tartugambrinus.blogspot.com", key: BloggerAPIKey, fetch: BloggerFetch(queue: self.networkQueue, appQueue: self.appQueue))
+    private lazy var gambrinusContainer = CKContainer(identifier: "iCloud.com.coodly.gambrinus")
 
     public func inject(into object: AnyObject) {
         if var consumer = object as? PersistenceConsumer {
@@ -55,6 +57,10 @@ public class CoreInjection {
         
         if var consumer = object as? AppQueueConsumer {
             consumer.appQueue = appQueue
+        }
+        
+        if var consumer = object as? GambrinusContainerConsumer {
+            consumer.gambrinusContainer = gambrinusContainer
         }
     }
 }

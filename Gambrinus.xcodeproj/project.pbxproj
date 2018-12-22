@@ -68,6 +68,10 @@
 		A744576521CDFE12009B4D4E /* Array+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A744576421CDFE12009B4D4E /* Array+Operations.swift */; };
 		A744576721CE00E4009B4D4E /* Calendar+Gregorian.swift in Sources */ = {isa = PBXBuildFile; fileRef = A744576621CE00E4009B4D4E /* Calendar+Gregorian.swift */; };
 		A744576E21CE60BF009B4D4E /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D19E921DC601830024C3A7 /* CloudKit.framework */; };
+		A744577121CE63F2009B4D4E /* PullPostMappingsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A744577021CE63F2009B4D4E /* PullPostMappingsOperation.swift */; };
+		A744577321CE6484009B4D4E /* GambrinusContainerConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A744577221CE6484009B4D4E /* GambrinusContainerConsumer.swift */; };
+		A744577521CE677C009B4D4E /* Persistence+Mappings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A744577421CE677C009B4D4E /* Persistence+Mappings.swift */; };
+		A744577721CE68C5009B4D4E /* Persistence+Beers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A744577621CE68C5009B4D4E /* Persistence+Beers.swift */; };
 		A75CADB21D82E75700E2B1AE /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75CADB11D82E75700E2B1AE /* Post.swift */; };
 		A75CADB81D82F03700E2B1AE /* UpdateDirtyPostsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75CADB71D82F03700E2B1AE /* UpdateDirtyPostsOperation.swift */; };
 		A792721221C8F72A0001F621 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A792721121C8F72A0001F621 /* Media.xcassets */; };
@@ -430,6 +434,10 @@
 		A744576421CDFE12009B4D4E /* Array+Operations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Operations.swift"; sourceTree = "<group>"; };
 		A744576621CE00E4009B4D4E /* Calendar+Gregorian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar+Gregorian.swift"; sourceTree = "<group>"; };
 		A744576D21CE60BB009B4D4E /* Kiosk.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Kiosk.entitlements; sourceTree = "<group>"; };
+		A744577021CE63F2009B4D4E /* PullPostMappingsOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullPostMappingsOperation.swift; sourceTree = "<group>"; };
+		A744577221CE6484009B4D4E /* GambrinusContainerConsumer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GambrinusContainerConsumer.swift; sourceTree = "<group>"; };
+		A744577421CE677C009B4D4E /* Persistence+Mappings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Persistence+Mappings.swift"; sourceTree = "<group>"; };
+		A744577621CE68C5009B4D4E /* Persistence+Beers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Persistence+Beers.swift"; sourceTree = "<group>"; };
 		A75CADB11D82E75700E2B1AE /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		A75CADB71D82F03700E2B1AE /* UpdateDirtyPostsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateDirtyPostsOperation.swift; sourceTree = "<group>"; };
 		A792721121C8F72A0001F621 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
@@ -916,6 +924,7 @@
 				A744575F21CDFB55009B4D4E /* AppQueueConsumer.swift */,
 				A7E17FF221CB952E00E70529 /* BloggerConsumer.swift */,
 				A70238FC21C8085800A7CFE9 /* CoreInjection.swift */,
+				A744577221CE6484009B4D4E /* GambrinusContainerConsumer.swift */,
 				A792728321C944F00001F621 /* ImagesConsumer.swift */,
 				A792722121C8FFD10001F621 /* PersistenceConsumer.swift */,
 			);
@@ -1035,7 +1044,9 @@
 				A792723E21C9016F0001F621 /* Image.swift */,
 				A792722321C900A80001F621 /* Kiosk.xcdatamodeld */,
 				A792721F21C8FF4D0001F621 /* Persistence.swift */,
+				A744577621CE68C5009B4D4E /* Persistence+Beers.swift */,
 				A7E1800421CBE4CF00E70529 /* Persistence+Images.swift */,
+				A744577421CE677C009B4D4E /* Persistence+Mappings.swift */,
 				A792726D21C932620001F621 /* Persistence+Posts.swift */,
 				A7B66A6621CCB7A600DB1840 /* Persistence+Settings.swift */,
 				A792724021C9016F0001F621 /* Post.swift */,
@@ -1153,6 +1164,7 @@
 				A792728721C945C20001F621 /* ImagesFetch.swift */,
 				A792728921C946000001F621 /* NetworkQueue.swift */,
 				A792728B21C9461C0001F621 /* NetworkRequest.swift */,
+				A744577021CE63F2009B4D4E /* PullPostMappingsOperation.swift */,
 				A744575D21CDFAEC009B4D4E /* UpdateContentOperation.swift */,
 				A744576121CDFD6C009B4D4E /* UpdatePostsOperation.swift */,
 			);
@@ -2221,11 +2233,13 @@
 				A792725B21C904C00001F621 /* DateFormatter+ISO8601.swift in Sources */,
 				A792725521C901700001F621 /* Blog.swift in Sources */,
 				A792725321C901700001F621 /* Setting.swift in Sources */,
+				A744577521CE677C009B4D4E /* Persistence+Mappings.swift in Sources */,
 				A792723821C9010B0001F621 /* PostContent+Properties.swift in Sources */,
 				A792726321C926F20001F621 /* Constants.swift in Sources */,
 				A792728C21C9461C0001F621 /* NetworkRequest.swift in Sources */,
 				A792723921C9010B0001F621 /* PullStatus+Properties.swift in Sources */,
 				A744576721CE00E4009B4D4E /* Calendar+Gregorian.swift in Sources */,
+				A744577121CE63F2009B4D4E /* PullPostMappingsOperation.swift in Sources */,
 				A792723A21C9010B0001F621 /* Brewer+Properties.swift in Sources */,
 				A792722021C8FF4D0001F621 /* Persistence.swift in Sources */,
 				A792723C21C9010B0001F621 /* BeerStyle+Properties.swift in Sources */,
@@ -2233,6 +2247,7 @@
 				A792723721C9010B0001F621 /* SyncStatus+Properties.swift in Sources */,
 				A792728F21C946420001F621 /* ConcurrentOperation.swift in Sources */,
 				A744576021CDFB55009B4D4E /* AppQueueConsumer.swift in Sources */,
+				A744577721CE68C5009B4D4E /* Persistence+Beers.swift in Sources */,
 				A792725821C901AB0001F621 /* String+Extensions.swift in Sources */,
 				A7B66A6721CCB7A600DB1840 /* Persistence+Settings.swift in Sources */,
 				A792722221C8FFD10001F621 /* PersistenceConsumer.swift in Sources */,
@@ -2256,6 +2271,7 @@
 				A7E1800521CBE4CF00E70529 /* Persistence+Images.swift in Sources */,
 				A792726021C926B30001F621 /* BlogImageAsk.swift in Sources */,
 				A792725221C901700001F621 /* Brewer.swift in Sources */,
+				A744577321CE6484009B4D4E /* GambrinusContainerConsumer.swift in Sources */,
 				A701BA9B21CAAA02004258F2 /* Secrets.swift in Sources */,
 				A792724F21C901700001F621 /* BeerStyle.swift in Sources */,
 				A792726E21C932620001F621 /* Persistence+Posts.swift in Sources */,

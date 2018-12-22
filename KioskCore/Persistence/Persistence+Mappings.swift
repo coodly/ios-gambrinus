@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Coodly LLC
+ * Copyright 2016 Coodly LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,22 +15,21 @@
  */
 
 import Foundation
+import CoreData
 
-public class UpdateContentOperation: ConcurrentOperation, AppQueueConsumer, CoreInjector {
-    public var appQueue: OperationQueue!
-    
-    public override func main() {
-        var operations = [Operation]()
+extension NSManagedObjectContext {
+    internal func createMappings(from posts: [CloudPost]) {
+        let postIds = posts.compactMap({ $0.identifier })
+        let predicate = NSPredicate(format: "postId IN %@", postIds)
+        let locals: [Post] = fetch(predicate: predicate)
         
-        operations.add(operation: UpdatePostsOperation())
-        operations.add(operation: PullPostMappingsOperation())
-        let finisMe = BlockOperation() {
-            self.finish()
+        for post in posts {
+            guard let saved = locals.first(where: { $0.postId == post.identifier }) else {
+                continue
+            }
+            
+            let beers = beersWith(rbIds: post.rateBeers ?? [])
+            saved.beers = Set(beers)
         }
-        operations.add(operation: finisMe)
-        
-        operations.forEach({ inject(into: $0) })
-        
-        appQueue.addOperations(operations, waitUntilFinished: false)
     }
 }

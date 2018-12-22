@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Coodly LLC
+ * Copyright 2018 Coodly LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -77,13 +77,13 @@ extension NSManagedObjectContext {
             save(date: newValue, for: .lastVerifiedPullDate)
         }
     }
-    
-    func lastKnownMappingTime() -> Date {
-        return date(for: .lastKnownMappingTime)
-    }
-    
-    func markLastKnownMapping(_ date: Date) {
-        save(date: date, for: .lastKnownMappingTime)
+    internal var lastKnownMappingTime: Date {
+        get {
+            return date(for: .lastKnownMappingTime)
+        }
+        set {
+            save(date: newValue, for: .lastKnownMappingTime)
+        }
     }
 
     func lastKnownScoresTime() -> Date {

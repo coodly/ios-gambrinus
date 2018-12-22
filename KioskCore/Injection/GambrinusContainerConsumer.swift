@@ -15,22 +15,8 @@
  */
 
 import Foundation
+import CloudKit
 
-public class UpdateContentOperation: ConcurrentOperation, AppQueueConsumer, CoreInjector {
-    public var appQueue: OperationQueue!
-    
-    public override func main() {
-        var operations = [Operation]()
-        
-        operations.add(operation: UpdatePostsOperation())
-        operations.add(operation: PullPostMappingsOperation())
-        let finisMe = BlockOperation() {
-            self.finish()
-        }
-        operations.add(operation: finisMe)
-        
-        operations.forEach({ inject(into: $0) })
-        
-        appQueue.addOperations(operations, waitUntilFinished: false)
-    }
+protocol GambrinusContainerConsumer {
+    var gambrinusContainer: CKContainer! { get set }
 }
