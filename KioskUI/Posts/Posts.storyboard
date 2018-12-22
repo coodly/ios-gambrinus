@@ -36,8 +36,8 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="5JW-6Q-sEZ" firstAttribute="top" secondItem="NMf-fV-Mph" secondAttribute="top" constant="8" id="2Tq-Q6-cl1"/>
-                                            <constraint firstAttribute="bottom" secondItem="5JW-6Q-sEZ" secondAttribute="bottom" constant="8" id="Sg0-eC-8LP"/>
+                                            <constraint firstItem="5JW-6Q-sEZ" firstAttribute="top" secondItem="NMf-fV-Mph" secondAttribute="top" priority="999" constant="8" id="2Tq-Q6-cl1"/>
+                                            <constraint firstAttribute="bottom" secondItem="5JW-6Q-sEZ" secondAttribute="bottom" priority="999" constant="8" id="Sg0-eC-8LP"/>
                                             <constraint firstItem="5JW-6Q-sEZ" firstAttribute="centerX" secondItem="NMf-fV-Mph" secondAttribute="centerX" id="rX6-zy-5s7"/>
                                         </constraints>
                                     </view>

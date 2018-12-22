@@ -25,14 +25,8 @@ private typealias Dependencies = ImagesConsumer & BloggerConsumer & PersistenceC
 internal class PostDetailsViewModel: Dependencies, UIInjector {
     var imagesSource: ImageSource! {
         didSet {
-            guard let ask = imageAsk else {
-                return
-            }
-            
-            imagesSource.retrieveImage(for: ask) {
-                image in
-                
-                self.status.image = image
+            DispatchQueue.main.async {
+                self.performImageAsk()
             }
         }
     }
@@ -101,6 +95,18 @@ internal class PostDetailsViewModel: Dependencies, UIInjector {
                 self.refreshStatus(from: updated)
                 self.status.showLoading = false
             }
+        }
+    }
+    
+    private func performImageAsk() {
+        guard let ask = imageAsk else {
+            return
+        }
+        
+        imagesSource.retrieveImage(for: ask) {
+            image in
+            
+            self.status.image = image
         }
     }
 }
