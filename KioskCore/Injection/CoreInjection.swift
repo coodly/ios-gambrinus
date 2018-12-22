@@ -52,5 +52,9 @@ public class CoreInjection {
         if var consumer = object as? BloggerConsumer {
             consumer.blogger = blogger
         }
+        
+        if var consumer = object as? AppQueueConsumer {
+            consumer.appQueue = appQueue
+        }
     }
 }

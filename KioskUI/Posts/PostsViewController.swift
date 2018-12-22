@@ -23,9 +23,10 @@ private extension Selector {
     static let toggleSearch = #selector(PostsViewController.toggleSearch)
     static let searchChanged = #selector(PostsViewController.searchChanged(_:))
     static let keyboardFramwChanged = #selector(PostsViewController.keyboardFramwChanged(_:))
+    static let refreshContent = #selector(PostsViewController.refreshContent)
 }
 
-private typealias Dependencies = PersistenceConsumer
+private typealias Dependencies = PersistenceConsumer & AppQueueConsumer
 
 public class PostsViewController: FetchedCollectionViewController<Post, PostCell>, StoryboardLoaded, Dependencies, UIInjector, MaybeModalPresenter {
     public static var storyboardName: String {
@@ -40,8 +41,10 @@ public class PostsViewController: FetchedCollectionViewController<Post, PostCell
     @IBOutlet private var searchContainer: UIView!
     @IBOutlet private var searchField: UITextField!
     @IBOutlet private var keyboardFill: NSLayoutConstraint!
+    private lazy var refresh = UIRefreshControl(frame: .zero)
     
     public var persistence: Persistence!
+    public var appQueue: OperationQueue!
     
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +58,9 @@ public class PostsViewController: FetchedCollectionViewController<Post, PostCell
         searchField.addTarget(self, action: .searchChanged, for: .editingChanged)
         
         NotificationCenter.default.addObserver(self, selector: .keyboardFramwChanged, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+
+        collectionView.addSubview(refresh)
+        refresh.addTarget(self, action: .refreshContent, for: .valueChanged)
     }
     
     override func createFetchedController() -> NSFetchedResultsController<Post> {
@@ -140,5 +146,18 @@ public class PostsViewController: FetchedCollectionViewController<Post, PostCell
         }
         
         keyboardFill.constant = covering
+    }
+    
+    @objc fileprivate func refreshContent() {
+        let op = UpdateContentOperation()
+        inject(into: op)
+        op.completionHandler = {
+            _, _ in
+            
+            DispatchQueue.main.async {
+                self.refresh.endRefreshing()
+            }
+        }
+        appQueue.addOperation(op)
     }
 }
