@@ -41,6 +41,11 @@ internal class UpdatePostsOperation: ConcurrentOperation, Dependencies {
         }
     }
     
+    private func pullNextPage(using cursor: NextPageCursor) {
+        Log.debug("Pull next page")
+        blogger.fetchUpdates(with: cursor, completion: handle(result:))
+    }
+    
     private func handle(result: PostsListResult) {
         if let error = result.error {
             Log.error("Pull posts error: \(error)")
@@ -57,7 +62,11 @@ internal class UpdatePostsOperation: ConcurrentOperation, Dependencies {
         }
         
         persistence.performInBackground(task: save) {
-            self.finish()
+            if let cursor = result.nextPageCursor {
+                self.pullNextPage(using: cursor)
+            } else {
+                self.finish()
+            }
         }
     }
 }

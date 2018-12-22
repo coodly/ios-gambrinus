@@ -31,7 +31,14 @@ public class Blogger: InjectionHandler {
         request.resultCallback = completion
         execute(request: request)
     }
-    
+
+    public func fetchUpdates(with cursor: NextPageCursor, completion: @escaping ((PostsListResult) -> Void)) {
+        Logging.log("Fetch updates with \(cursor)")
+        let request = ListPostsRequest(cursor: cursor)
+        request.resultCallback = completion
+        execute(request: request)
+    }
+
     public func fetchPost(_ postId: String, completion: @escaping ((SinglePostResult) -> Void)) {
         Logging.log("Fetch post: \(postId)")
         let request = RetrievePostRequest(postId: postId)

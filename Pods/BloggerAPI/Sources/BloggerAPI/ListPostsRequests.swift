@@ -18,39 +18,39 @@ import Foundation
 
 public struct PostsListResult {
     public let posts: [Post]?
-    public let nextPageToken: String?
+    public let nextPageCursor: NextPageCursor?
     public let error: Error?
 }
+
+private let ListPostsPathBase = "/blogs/:blogId:/posts"
 
 internal class ListPostsRequest: NetworkRequest<PostsPage, PostsListResult>, BlogIdConsumer, DateFormatterConsumer {
     var blogId: String!
     var dateFormatter: DateFormatter!
     
-    private let since: Date
+    private let cursor: NextPageCursor
     
     init(since: Date) {
-        self.since = since
+        self.cursor = NextPageCursor(since: since)
+    }
+    
+    init(cursor: NextPageCursor) {
+        self.cursor = cursor
     }
     
     override func execute() {
-        let path = "/blogs/\(blogId!)/posts"
-        var params = [String: AnyObject]()
-        params["startDate"] = string(from: since)
-        params["endDate"] = string(from: Date())
-        params["status"] = "live" as AnyObject
-        params["fetchImages"] = "true" as AnyObject
-        params["fetchBodies"] = "false" as AnyObject
-        params["fields"] = "nextPageToken,items(id,published,title,images)" as AnyObject
-        params["maxResults"] = "100" as AnyObject
-        GET(path, parameters: params)
-    }
-    
-    private func string(from: Date) -> AnyObject {
-        let result = dateFormatter.string(from: from)
-        return result.appending("-00:00") as AnyObject
+        get(ListPostsPathBase, variables: [.blogId(blogId)], parameters: cursor.params)
     }
     
     override func handle(result: NetworkResult<PostsPage>) {
-        self.result = PostsListResult(posts: result.success?.items, nextPageToken: result.success?.nextPageToken, error: result.error)
+        let nextCursor: NextPageCursor?
+        if let token = result.success?.nextPageToken {
+            var modified = cursor
+            modified.pageToken = token
+            nextCursor = modified
+        } else {
+            nextCursor = nil
+        }
+        self.result = PostsListResult(posts: result.success?.items, nextPageCursor: nextCursor, error: result.error)
     }
 }
