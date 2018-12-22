@@ -642,7 +642,7 @@
 			<key>License</key>
 			<string>Apache 2</string>
 			<key>Title</key>
-			<string>ImageProvide</string>
+			<string>BloggerAPI</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 		</dict>
@@ -853,7 +853,7 @@
 			<key>License</key>
 			<string>Apache 2</string>
 			<key>Title</key>
-			<string>BloggerAPI</string>
+			<string>ImageProvide</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 		</dict>

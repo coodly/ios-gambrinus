@@ -27,8 +27,6 @@
 		A701BA9121CA935D004258F2 /* PostDetailsPresentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A701BA9021CA935D004258F2 /* PostDetailsPresentationView.swift */; };
 		A701BA9321CA9366004258F2 /* PostDetailsPresentationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A701BA9221CA9366004258F2 /* PostDetailsPresentationView.xib */; };
 		A701BA9521CA955B004258F2 /* PostDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A701BA9421CA955B004258F2 /* PostDetailsViewModel.swift */; };
-		A701BA9721CA9F30004258F2 /* BloggerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A701BA9621CA9F30004258F2 /* BloggerRequest.swift */; };
-		A701BA9921CA9F6E004258F2 /* RefreshPostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A701BA9821CA9F6E004258F2 /* RefreshPostRequest.swift */; };
 		A701BA9B21CAAA02004258F2 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A701BA9A21CAAA02004258F2 /* Secrets.swift */; };
 		A70238A521C7FB1E00A7CFE9 /* KioskCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A702389E21C7FB1E00A7CFE9 /* KioskCore.framework */; };
 		A70238A621C7FB1E00A7CFE9 /* KioskCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A702389E21C7FB1E00A7CFE9 /* KioskCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -378,8 +376,6 @@
 		A701BA9021CA935D004258F2 /* PostDetailsPresentationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsPresentationView.swift; sourceTree = "<group>"; };
 		A701BA9221CA9366004258F2 /* PostDetailsPresentationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostDetailsPresentationView.xib; sourceTree = "<group>"; };
 		A701BA9421CA955B004258F2 /* PostDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsViewModel.swift; sourceTree = "<group>"; };
-		A701BA9621CA9F30004258F2 /* BloggerRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloggerRequest.swift; sourceTree = "<group>"; };
-		A701BA9821CA9F6E004258F2 /* RefreshPostRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshPostRequest.swift; sourceTree = "<group>"; };
 		A701BA9A21CAAA02004258F2 /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		A702389E21C7FB1E00A7CFE9 /* KioskCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KioskCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A70238A121C7FB1E00A7CFE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1137,11 +1133,9 @@
 		A792728621C945B50001F621 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				A701BA9621CA9F30004258F2 /* BloggerRequest.swift */,
 				A792728721C945C20001F621 /* ImagesFetch.swift */,
 				A792728921C946000001F621 /* NetworkQueue.swift */,
 				A792728B21C9461C0001F621 /* NetworkRequest.swift */,
-				A701BA9821CA9F6E004258F2 /* RefreshPostRequest.swift */,
 				A7E17FF421CB959900E70529 /* BloggerFetch.swift */,
 			);
 			path = Network;
@@ -1968,8 +1962,8 @@
 				"${BUILT_PRODUCTS_DIR}/MRProgress/MRProgress.framework",
 				"${BUILT_PRODUCTS_DIR}/Ono/Ono.framework",
 				"${BUILT_PRODUCTS_DIR}/SWLogger/SWLogger.framework",
-				"${BUILT_PRODUCTS_DIR}/ImageProvide/ImageProvide.framework",
 				"${BUILT_PRODUCTS_DIR}/BloggerAPI/BloggerAPI.framework",
+				"${BUILT_PRODUCTS_DIR}/ImageProvide/ImageProvide.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -1979,8 +1973,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MRProgress.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Ono.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWLogger.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageProvide.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BloggerAPI.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageProvide.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1996,19 +1990,19 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Kiosk/Pods-Kiosk-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BloggerAPI/BloggerAPI.framework",
 				"${BUILT_PRODUCTS_DIR}/ImageProvide/ImageProvide.framework",
 				"${BUILT_PRODUCTS_DIR}/CoreDataPersistence/CoreDataPersistence.framework",
 				"${BUILT_PRODUCTS_DIR}/SWLogger/SWLogger.framework",
-				"${BUILT_PRODUCTS_DIR}/BloggerAPI/BloggerAPI.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BloggerAPI.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageProvide.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CoreDataPersistence.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWLogger.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BloggerAPI.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2207,7 +2201,6 @@
 				A792728F21C946420001F621 /* ConcurrentOperation.swift in Sources */,
 				A792725821C901AB0001F621 /* String+Extensions.swift in Sources */,
 				A7B66A6721CCB7A600DB1840 /* Persistence+Settings.swift in Sources */,
-				A701BA9721CA9F30004258F2 /* BloggerRequest.swift in Sources */,
 				A792722221C8FFD10001F621 /* PersistenceConsumer.swift in Sources */,
 				A792728521C944FF0001F621 /* ImagesConsumer.swift in Sources */,
 				A792722521C900A80001F621 /* Kiosk.xcdatamodeld in Sources */,
@@ -2233,7 +2226,6 @@
 				A792726E21C932620001F621 /* Persistence+Posts.swift in Sources */,
 				A7E17FF521CB959900E70529 /* BloggerFetch.swift in Sources */,
 				A792728A21C946000001F621 /* NetworkQueue.swift in Sources */,
-				A701BA9921CA9F6E004258F2 /* RefreshPostRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

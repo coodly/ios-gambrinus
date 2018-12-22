@@ -84,6 +84,7 @@ target 'KioskUI' do
 
     pod 'SwiftGen', '6.0.2'
     images_pod
+    blogger_pod
 end
 
 target 'KioskCore' do
