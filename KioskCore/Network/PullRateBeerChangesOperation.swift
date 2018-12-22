@@ -67,7 +67,7 @@ internal class PullRateBeerChangesOperation: CloudKitRequest<CloudRateBeer>, Bee
             context in
             
             let lastKnownDate = context.lastKnownScoresTime
-            Log.debug("Pull mappings after: \(lastKnownDate)")
+            Log.debug("Pull scores after: \(lastKnownDate)")
             let sort = NSSortDescriptor(key: "scoreUpdatedAt", ascending: true)
             let timePredicate = NSPredicate(format: "scoreUpdatedAt >= %@", lastKnownDate as NSDate)
             self.fetch(predicate: timePredicate, sort: [sort], inDatabase: .public)

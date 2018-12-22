@@ -76,6 +76,7 @@
 		A744577B21CE6E92009B4D4E /* BeersContainerConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A744577A21CE6E92009B4D4E /* BeersContainerConsumer.swift */; };
 		A744577D21CE7108009B4D4E /* Persistence+Brewers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A744577C21CE7108009B4D4E /* Persistence+Brewers.swift */; };
 		A744577F21CE71A3009B4D4E /* Persistence+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A744577E21CE71A3009B4D4E /* Persistence+Styles.swift */; };
+		A744578121CE738D009B4D4E /* UpdateDirtyPostsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A744578021CE738D009B4D4E /* UpdateDirtyPostsOperation.swift */; };
 		A75CADB21D82E75700E2B1AE /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75CADB11D82E75700E2B1AE /* Post.swift */; };
 		A75CADB81D82F03700E2B1AE /* UpdateDirtyPostsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75CADB71D82F03700E2B1AE /* UpdateDirtyPostsOperation.swift */; };
 		A792721221C8F72A0001F621 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A792721121C8F72A0001F621 /* Media.xcassets */; };
@@ -446,6 +447,7 @@
 		A744577A21CE6E92009B4D4E /* BeersContainerConsumer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeersContainerConsumer.swift; sourceTree = "<group>"; };
 		A744577C21CE7108009B4D4E /* Persistence+Brewers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Persistence+Brewers.swift"; sourceTree = "<group>"; };
 		A744577E21CE71A3009B4D4E /* Persistence+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Persistence+Styles.swift"; sourceTree = "<group>"; };
+		A744578021CE738D009B4D4E /* UpdateDirtyPostsOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDirtyPostsOperation.swift; sourceTree = "<group>"; };
 		A75CADB11D82E75700E2B1AE /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		A75CADB71D82F03700E2B1AE /* UpdateDirtyPostsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateDirtyPostsOperation.swift; sourceTree = "<group>"; };
 		A792721121C8F72A0001F621 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
@@ -1178,6 +1180,7 @@
 				A744577021CE63F2009B4D4E /* PullPostMappingsOperation.swift */,
 				A744577821CE6E1D009B4D4E /* PullRateBeerChangesOperation.swift */,
 				A744575D21CDFAEC009B4D4E /* UpdateContentOperation.swift */,
+				A744578021CE738D009B4D4E /* UpdateDirtyPostsOperation.swift */,
 				A744576121CDFD6C009B4D4E /* UpdatePostsOperation.swift */,
 			);
 			path = Network;
@@ -2264,6 +2267,7 @@
 				A792725821C901AB0001F621 /* String+Extensions.swift in Sources */,
 				A744577921CE6E1D009B4D4E /* PullRateBeerChangesOperation.swift in Sources */,
 				A7B66A6721CCB7A600DB1840 /* Persistence+Settings.swift in Sources */,
+				A744578121CE738D009B4D4E /* UpdateDirtyPostsOperation.swift in Sources */,
 				A792722221C8FFD10001F621 /* PersistenceConsumer.swift in Sources */,
 				A792728521C944FF0001F621 /* ImagesConsumer.swift in Sources */,
 				A792722521C900A80001F621 /* Kiosk.xcdatamodeld in Sources */,

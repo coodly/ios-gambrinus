@@ -24,6 +24,8 @@ public class UpdateContentOperation: ConcurrentOperation, AppQueueConsumer, Core
         
         operations.add(operation: UpdatePostsOperation())
         operations.add(operation: PullPostMappingsOperation())
+        operations.add(operation: PullRateBeerChangesOperation())
+        operations.add(operation: UpdateDirtyPostsOperation())
         let finisMe = BlockOperation() {
             self.finish()
         }
