@@ -16,12 +16,21 @@
 
 import Foundation
 
-public class UpdateContentOperation: ConcurrentOperation, AppQueueConsumer, CoreInjector {
+public class UpdateContentOperation: ConcurrentOperation, AppQueueConsumer, CoreInjector, PersistenceConsumer {
+    public var persistence: Persistence!
     public var appQueue: OperationQueue!
     
     public override func main() {
         var operations = [Operation]()
         
+        let resetSyncs = BlockOperation() {
+            self.persistence.write() {
+                context in
+                
+                context.resetFailedStatuses()
+            }
+        }
+        operations.add(operation: resetSyncs)
         operations.add(operation: UpdatePostsOperation())
         operations.add(operation: PullPostMappingsOperation())
         operations.add(operation: PullRateBeerChangesOperation())

@@ -19,8 +19,9 @@ import KioskUI
 import KioskCore
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, PersistenceConsumer {
+class AppDelegate: UIResponder, UIApplicationDelegate, PersistenceConsumer, MissingDetailsConsumer {
     var persistence: Persistence!
+    var missingMonitor: MissingDetailsMonitor!
     
     var window: UIWindow?
 
@@ -42,6 +43,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PersistenceConsumer {
         }
         
         initialization.afterLoad = {
+            self.persistence.write() {
+                context in
+                
+                context.resetFailedStatuses()
+            }
+
+            self.missingMonitor.load()
             
             let menu: MenuViewController = Storyboards.loadFromStoryboard()
             CoreInjection.sharedInstance.inject(into: menu)
