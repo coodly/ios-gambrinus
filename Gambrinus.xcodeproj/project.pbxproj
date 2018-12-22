@@ -67,6 +67,7 @@
 		A744576221CDFD6C009B4D4E /* UpdatePostsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A744576121CDFD6C009B4D4E /* UpdatePostsOperation.swift */; };
 		A744576521CDFE12009B4D4E /* Array+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A744576421CDFE12009B4D4E /* Array+Operations.swift */; };
 		A744576721CE00E4009B4D4E /* Calendar+Gregorian.swift in Sources */ = {isa = PBXBuildFile; fileRef = A744576621CE00E4009B4D4E /* Calendar+Gregorian.swift */; };
+		A744576E21CE60BF009B4D4E /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D19E921DC601830024C3A7 /* CloudKit.framework */; };
 		A75CADB21D82E75700E2B1AE /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75CADB11D82E75700E2B1AE /* Post.swift */; };
 		A75CADB81D82F03700E2B1AE /* UpdateDirtyPostsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75CADB71D82F03700E2B1AE /* UpdateDirtyPostsOperation.swift */; };
 		A792721221C8F72A0001F621 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A792721121C8F72A0001F621 /* Media.xcassets */; };
@@ -428,6 +429,7 @@
 		A744576121CDFD6C009B4D4E /* UpdatePostsOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePostsOperation.swift; sourceTree = "<group>"; };
 		A744576421CDFE12009B4D4E /* Array+Operations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Operations.swift"; sourceTree = "<group>"; };
 		A744576621CE00E4009B4D4E /* Calendar+Gregorian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar+Gregorian.swift"; sourceTree = "<group>"; };
+		A744576D21CE60BB009B4D4E /* Kiosk.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Kiosk.entitlements; sourceTree = "<group>"; };
 		A75CADB11D82E75700E2B1AE /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		A75CADB71D82F03700E2B1AE /* UpdateDirtyPostsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateDirtyPostsOperation.swift; sourceTree = "<group>"; };
 		A792721121C8F72A0001F621 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
@@ -750,6 +752,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A70238E221C800DD00A7CFE9 /* KioskUI.framework in Frameworks */,
+				A744576E21CE60BF009B4D4E /* CloudKit.framework in Frameworks */,
 				A70238DE21C800DC00A7CFE9 /* KioskCore.framework in Frameworks */,
 				E939DFD1AE3857CE7E64F416 /* Pods_Kiosk.framework in Frameworks */,
 			);
@@ -845,6 +848,7 @@
 		A70238CD21C800BA00A7CFE9 /* Kiosk */ = {
 			isa = PBXGroup;
 			children = (
+				A744576D21CE60BB009B4D4E /* Kiosk.entitlements */,
 				A792726521C92C0B0001F621 /* Data */,
 				A7B66A7821CD1FB300DB1840 /* Fonts */,
 				A70238ED21C8040C00A7CFE9 /* Supporting Files */,
@@ -1831,6 +1835,14 @@
 						CreatedOnToolsVersion = 10.1;
 						DevelopmentTeam = 5T8DRBFCBP;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					A7ADF44A21C8F42B008B3205 = {
 						CreatedOnToolsVersion = 10.1;
@@ -2733,6 +2745,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = Kiosk/Kiosk.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -2764,6 +2777,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = Kiosk/Kiosk.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
