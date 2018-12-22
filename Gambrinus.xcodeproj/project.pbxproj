@@ -143,6 +143,7 @@
 		A7AB709D21CE872400DA3EEE /* MissingDetailsConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AB709C21CE872400DA3EEE /* MissingDetailsConsumer.swift */; };
 		A7AB709F21CE87C200DA3EEE /* Persistence+SyncStatuses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AB709E21CE87C200DA3EEE /* Persistence+SyncStatuses.swift */; };
 		A7AB70A121CE8C3900DA3EEE /* PullBeersInfoOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AB70A021CE8C3900DA3EEE /* PullBeersInfoOperation.swift */; };
+		A7AB70A321CE904A00DA3EEE /* PullBrewersInfoOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AB70A221CE904A00DA3EEE /* PullBrewersInfoOperation.swift */; };
 		A7ADF44621C8F351008B3205 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A7ADF43D21C8F351008B3205 /* Localizable.strings */; };
 		A7ADF44721C8F351008B3205 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A7ADF43F21C8F351008B3205 /* InfoPlist.strings */; };
 		A7ADF45321C8F495008B3205 /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ADF45221C8F495008B3205 /* L10n.swift */; };
@@ -518,6 +519,7 @@
 		A7AB709C21CE872400DA3EEE /* MissingDetailsConsumer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissingDetailsConsumer.swift; sourceTree = "<group>"; };
 		A7AB709E21CE87C200DA3EEE /* Persistence+SyncStatuses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Persistence+SyncStatuses.swift"; sourceTree = "<group>"; };
 		A7AB70A021CE8C3900DA3EEE /* PullBeersInfoOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullBeersInfoOperation.swift; sourceTree = "<group>"; };
+		A7AB70A221CE904A00DA3EEE /* PullBrewersInfoOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullBrewersInfoOperation.swift; sourceTree = "<group>"; };
 		A7ADF43E21C8F351008B3205 /* et */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = et; path = Localizable.strings; sourceTree = "<group>"; };
 		A7ADF44021C8F351008B3205 /* et */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = et; path = InfoPlist.strings; sourceTree = "<group>"; };
 		A7ADF44321C8F351008B3205 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
@@ -1194,6 +1196,7 @@
 				A744575D21CDFAEC009B4D4E /* UpdateContentOperation.swift */,
 				A744578021CE738D009B4D4E /* UpdateDirtyPostsOperation.swift */,
 				A744576121CDFD6C009B4D4E /* UpdatePostsOperation.swift */,
+				A7AB70A221CE904A00DA3EEE /* PullBrewersInfoOperation.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -2253,6 +2256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A70238FD21C8085800A7CFE9 /* CoreInjection.swift in Sources */,
+				A7AB70A321CE904A00DA3EEE /* PullBrewersInfoOperation.swift in Sources */,
 				A792724C21C901700001F621 /* Beer.swift in Sources */,
 				A792725021C901700001F621 /* SyncStatus.swift in Sources */,
 				A792723221C9010B0001F621 /* Image+Properties.swift in Sources */,

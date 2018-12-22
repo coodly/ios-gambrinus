@@ -52,7 +52,7 @@ public class MissingDetailsMonitor: NSObject, PersistenceConsumer, CoreInjector 
                 operation = PullBeersInfoOperation()
             } else if context.isMissingDetails(for: Brewer.self) {
                 Log.debug("Missing details on Brewer")
-                operation = nil
+                operation = PullBrewersInfoOperation()
             } else if context.isMissingDetails(for: BeerStyle.self) {
                 Log.debug("Missing details on BeerStyle")
                 operation = nil
@@ -65,8 +65,11 @@ public class MissingDetailsMonitor: NSObject, PersistenceConsumer, CoreInjector 
                 return
             }
             
-            self.inject(into: run)
-            self.pullQueue.addOperation(run)
+            var operations = [run]
+            operations.add(operation: UpdateDirtyPostsOperation())
+            operations.forEach({ self.inject(into: $0) })
+            
+            self.pullQueue.addOperations(operations, waitUntilFinished: false)
         }
     }
 }
