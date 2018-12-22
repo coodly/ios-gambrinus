@@ -59,6 +59,12 @@ PODS:
   - MRProgress/Stopable (0.8.3):
     - MRProgress/Helper
   - Ono (1.2.2)
+  - Puff/Core (0.5.0):
+    - Puff/Logger
+    - Puff/Serialization
+  - Puff/Logger (0.5.0)
+  - Puff/Serialization (0.5.0):
+    - Puff/Logger
   - SwiftGen (6.0.2)
   - SWLogger (0.3.5)
 
@@ -72,6 +78,7 @@ DEPENDENCIES:
   - "LaughingAdventure (from `git@github.com:coodly/laughing-adventure.git`)"
   - MRProgress (= 0.8.3)
   - Ono (= 1.2.2)
+  - "Puff/Core (from `git@github.com:coodly/Puff.git`)"
   - SwiftGen (= 6.0.2)
   - "SWLogger (from `git@github.com:coodly/swlogger.git`)"
 
@@ -93,6 +100,8 @@ EXTERNAL SOURCES:
     :git: "git@github.com:coodly/ImageProvide.git"
   LaughingAdventure:
     :git: "git@github.com:coodly/laughing-adventure.git"
+  Puff:
+    :git: "git@github.com:coodly/Puff.git"
   SWLogger:
     :git: "git@github.com:coodly/swlogger.git"
 
@@ -109,6 +118,9 @@ CHECKOUT OPTIONS:
   LaughingAdventure:
     :commit: 333d66f271f74eac458f506eb6e00bd7261db980
     :git: "git@github.com:coodly/laughing-adventure.git"
+  Puff:
+    :commit: aaa7d43a1c9ba0c7faf695f5c6267266b1be98ae
+    :git: "git@github.com:coodly/Puff.git"
   SWLogger:
     :commit: 6f98c0136e10c1d8612197584171dc359110b4e5
     :git: "git@github.com:coodly/swlogger.git"
@@ -123,9 +135,10 @@ SPEC CHECKSUMS:
   LaughingAdventure: ff87594a587bd39c9c4b0b9207005322082a9622
   MRProgress: 16de7cc9f347e8846797a770db102a323fe7ef09
   Ono: 80b1c686777d3f6d5d5ce6fcac8a74afef4ca197
+  Puff: a5308e5e2bec741684f59ead60431b07963fb7d8
   SwiftGen: e5b047067aa84082826a0c4f1c4c2ddc95bcf74c
   SWLogger: 67c20e4ac8bec12c0b8a262a0917e24e8494899b
 
-PODFILE CHECKSUM: 01245e4090515656f30a8e55bdebda2f96b92eef
+PODFILE CHECKSUM: 0120217a4be7e11f4b2b30dd2cde7f4b4e39e4ba
 
 COCOAPODS: 1.5.3

@@ -69,6 +69,17 @@ def blogger_pod
     end
 end
 
+def puff_pod
+    if UsedSource == PodSource::Local
+        pod 'Puff/Core', :path => '../swift-puff'
+    elsif UsedSource == PodSource::Remote
+        pod 'Puff/Core', :git => 'git@github.com:coodly/Puff.git'
+    else
+        pod 'Puff/Core', :git => 'git@github.com:coodly/Puff.git', tag: '0.5.0'
+    end
+end
+
+
 target 'Gambrinus' do
     pods
     
@@ -94,4 +105,5 @@ target 'KioskCore' do
     log_pod
     images_pod
     blogger_pod
+    puff_pod
 end
