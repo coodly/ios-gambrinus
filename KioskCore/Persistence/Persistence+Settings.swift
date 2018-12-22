@@ -85,13 +85,13 @@ extension NSManagedObjectContext {
             save(date: newValue, for: .lastKnownMappingTime)
         }
     }
-
-    func lastKnownScoresTime() -> Date {
-        return date(for: .lastKnownScoresTime)
-    }
-    
-    func markLastKnownScores(_ date: Date) {
-        save(date: date, for: .lastKnownScoresTime)
+    internal var lastKnownScoresTime: Date {
+        get {
+            return date(for: .lastKnownScoresTime)
+        }
+        set {
+            save(date: newValue, for: .lastKnownScoresTime)
+        }
     }
     
     private func save(date: Date, for key: Key) {

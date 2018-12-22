@@ -38,4 +38,31 @@ extension NSManagedObjectContext {
         
         return existing + created
     }
+    
+    internal func updateBeers(with rateBeers: [CloudRateBeer]) {
+        let ids = rateBeers.compactMap({ $0.rbId })
+        let predicate = NSPredicate(format: "rbIdentifier IN %@", ids)
+        let existing: [Beer] = fetch(predicate: predicate)
+        
+        for rateBeer in rateBeers {
+            let saved: Beer = existing.first(where: { $0.rbIdentifier == rateBeer.rbId }) ?? insertEntity()
+            
+            saved.rbIdentifier = rateBeer.rbId
+            saved.alcohol = rateBeer.alcohol
+            saved.name = rateBeer.name
+            saved.aliased = rateBeer.aliasFor != nil
+            saved.rbScore = rateBeer.score
+            
+            saved.brewer = brewer(for: rateBeer.brewer)
+            saved.style = style(for: rateBeer.style)
+            
+            saved.markForSync(needed: false)
+            
+            let posts = saved.posts!
+            for p in posts {
+                p.isDirty = true
+            }
+
+        }
+    }
 }

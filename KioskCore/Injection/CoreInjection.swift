@@ -41,6 +41,7 @@ public class CoreInjection {
     private lazy var images = ImageSource(fetch: ImagesFetch(queue: self.networkQueue, appQueue: self.appQueue))
     private lazy var blogger = Blogger(blogURL: "http://tartugambrinus.blogspot.com", key: BloggerAPIKey, fetch: BloggerFetch(queue: self.networkQueue, appQueue: self.appQueue))
     private lazy var gambrinusContainer = CKContainer(identifier: "iCloud.com.coodly.gambrinus")
+    private lazy var beersContainer = CKContainer(identifier: "iCloud.com.coodly.beers")
 
     public func inject(into object: AnyObject) {
         if var consumer = object as? PersistenceConsumer {
@@ -61,6 +62,10 @@ public class CoreInjection {
         
         if var consumer = object as? GambrinusContainerConsumer {
             consumer.gambrinusContainer = gambrinusContainer
+        }
+        
+        if var consumer = object as? BeersContainerConsumer {
+            consumer.beersContainer = beersContainer
         }
     }
 }
