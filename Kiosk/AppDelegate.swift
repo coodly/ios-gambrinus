@@ -64,5 +64,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PersistenceConsumer {
         
         return true
     }
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        application.isIdleTimerDisabled = true
+    }
 }
 
