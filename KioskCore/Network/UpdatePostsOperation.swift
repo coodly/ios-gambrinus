@@ -24,18 +24,20 @@ internal class UpdatePostsOperation: ConcurrentOperation, Dependencies {
     var persistence: Persistence!
     var blogger: Blogger!
     
+    private let executedAt = Date()
+    
     override func main() {
         persistence.performInBackground() {
             context in
             
             let checkUpdatesSince = context.lastKnownPullDate
-            guard let checkMinusWeek = checkUpdatesSince.oneWeekBefore, let nowNinusWeek = Date().oneWeekBefore else {
+            guard let checkMinusWeek = checkUpdatesSince.oneWeekBefore, let nowMinusWeek = Date().oneWeekBefore else {
                 Log.debug("Something odd with dates")
                 self.finish()
                 return
             }
             
-            let used = min(checkMinusWeek, nowNinusWeek)
+            let used = min(checkMinusWeek, nowMinusWeek)
             Log.debug("Pull updates after \(used)")
             self.blogger.fetchUpdates(after: used, completion: self.handle(result:))
         }
@@ -59,6 +61,10 @@ internal class UpdatePostsOperation: ConcurrentOperation, Dependencies {
             context in
             
             context.update(posts: posts)
+            
+            if result.nextPageCursor == nil {
+                context.lastKnownPullDate = self.executedAt
+            }
         }
         
         persistence.performInBackground(task: save) {
