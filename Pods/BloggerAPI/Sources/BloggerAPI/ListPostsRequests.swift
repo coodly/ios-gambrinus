@@ -17,12 +17,12 @@
 import Foundation
 
 public struct PostsListResult {
-    let posts: [Post]?
-    let nextPageToken: String?
-    let error: Error?
+    public let posts: [Post]?
+    public let nextPageToken: String?
+    public let error: Error?
 }
 
-internal class ListPostsRequest: NetworkRequest<[Post], PostsListResult>, BlogIdConsumer, DateFormatterConsumer {
+internal class ListPostsRequest: NetworkRequest<PostsPage, PostsListResult>, BlogIdConsumer, DateFormatterConsumer {
     var blogId: String!
     var dateFormatter: DateFormatter!
     
@@ -50,7 +50,7 @@ internal class ListPostsRequest: NetworkRequest<[Post], PostsListResult>, BlogId
         return result.appending("-00:00") as AnyObject
     }
     
-    override func handle(result: NetworkResult<[Post]>) {
-        self.result = PostsListResult(posts: result.success, nextPageToken: nil, error: result.error)
+    override func handle(result: NetworkResult<PostsPage>) {
+        self.result = PostsListResult(posts: result.success?.items, nextPageToken: result.success?.nextPageToken, error: result.error)
     }
 }

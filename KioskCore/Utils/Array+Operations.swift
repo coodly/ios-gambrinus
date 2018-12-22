@@ -16,11 +16,12 @@
 
 import Foundation
 
-public struct Post: Codable {
-    public let id: String
-    public let blog: Blog?
-    public let published: Date
-    public let title: String?
-    public let content: String?
-    public let images: [Image]?
+public extension Array where Element: Operation {
+    mutating func add(operation: Element) {
+        if let previous = last {
+            operation.addDependency(previous)
+        }
+        
+        append(operation)
+    }
 }

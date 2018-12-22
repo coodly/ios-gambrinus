@@ -23,4 +23,10 @@ extension Date {
     internal static func dateFromISO8601String(_ string: String) -> Date? {
         return DateFormatter.iso8601Formatter.date(from: string)
     }
+    internal var oneWeekBefore: Date? {
+        var components = DateComponents()
+        components.day = -7
+        
+        return Calendar.gregorian.date(byAdding: components, to: self)
+    }
 }

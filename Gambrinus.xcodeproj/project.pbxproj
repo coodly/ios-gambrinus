@@ -64,6 +64,9 @@
 		A734E2CC1D7817FC0057D136 /* UIImage+CDYImageScale.m in Sources */ = {isa = PBXBuildFile; fileRef = A734E2CB1D7817FC0057D136 /* UIImage+CDYImageScale.m */; };
 		A744575E21CDFAEC009B4D4E /* UpdateContentOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A744575D21CDFAEC009B4D4E /* UpdateContentOperation.swift */; };
 		A744576021CDFB55009B4D4E /* AppQueueConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A744575F21CDFB55009B4D4E /* AppQueueConsumer.swift */; };
+		A744576221CDFD6C009B4D4E /* UpdatePostsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A744576121CDFD6C009B4D4E /* UpdatePostsOperation.swift */; };
+		A744576521CDFE12009B4D4E /* Array+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A744576421CDFE12009B4D4E /* Array+Operations.swift */; };
+		A744576721CE00E4009B4D4E /* Calendar+Gregorian.swift in Sources */ = {isa = PBXBuildFile; fileRef = A744576621CE00E4009B4D4E /* Calendar+Gregorian.swift */; };
 		A75CADB21D82E75700E2B1AE /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75CADB11D82E75700E2B1AE /* Post.swift */; };
 		A75CADB81D82F03700E2B1AE /* UpdateDirtyPostsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75CADB71D82F03700E2B1AE /* UpdateDirtyPostsOperation.swift */; };
 		A792721221C8F72A0001F621 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A792721121C8F72A0001F621 /* Media.xcassets */; };
@@ -422,6 +425,9 @@
 		A734E2CB1D7817FC0057D136 /* UIImage+CDYImageScale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CDYImageScale.m"; sourceTree = "<group>"; };
 		A744575D21CDFAEC009B4D4E /* UpdateContentOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateContentOperation.swift; sourceTree = "<group>"; };
 		A744575F21CDFB55009B4D4E /* AppQueueConsumer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppQueueConsumer.swift; sourceTree = "<group>"; };
+		A744576121CDFD6C009B4D4E /* UpdatePostsOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePostsOperation.swift; sourceTree = "<group>"; };
+		A744576421CDFE12009B4D4E /* Array+Operations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Operations.swift"; sourceTree = "<group>"; };
+		A744576621CE00E4009B4D4E /* Calendar+Gregorian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar+Gregorian.swift"; sourceTree = "<group>"; };
 		A75CADB11D82E75700E2B1AE /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		A75CADB71D82F03700E2B1AE /* UpdateDirtyPostsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateDirtyPostsOperation.swift; sourceTree = "<group>"; };
 		A792721121C8F72A0001F621 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
@@ -1061,6 +1067,7 @@
 			children = (
 				A792725721C901AB0001F621 /* String+Extensions.swift */,
 				A792725C21C9056D0001F621 /* Date+Extensions.swift */,
+				A744576621CE00E4009B4D4E /* Calendar+Gregorian.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1143,6 +1150,7 @@
 				A792728921C946000001F621 /* NetworkQueue.swift */,
 				A792728B21C9461C0001F621 /* NetworkRequest.swift */,
 				A744575D21CDFAEC009B4D4E /* UpdateContentOperation.swift */,
+				A744576121CDFD6C009B4D4E /* UpdatePostsOperation.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -1150,6 +1158,7 @@
 		A792728D21C9463A0001F621 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				A744576421CDFE12009B4D4E /* Array+Operations.swift */,
 				A792728E21C946420001F621 /* ConcurrentOperation.swift */,
 			);
 			path = Utils;
@@ -2200,9 +2209,11 @@
 				A792726321C926F20001F621 /* Constants.swift in Sources */,
 				A792728C21C9461C0001F621 /* NetworkRequest.swift in Sources */,
 				A792723921C9010B0001F621 /* PullStatus+Properties.swift in Sources */,
+				A744576721CE00E4009B4D4E /* Calendar+Gregorian.swift in Sources */,
 				A792723A21C9010B0001F621 /* Brewer+Properties.swift in Sources */,
 				A792722021C8FF4D0001F621 /* Persistence.swift in Sources */,
 				A792723C21C9010B0001F621 /* BeerStyle+Properties.swift in Sources */,
+				A744576221CDFD6C009B4D4E /* UpdatePostsOperation.swift in Sources */,
 				A792723721C9010B0001F621 /* SyncStatus+Properties.swift in Sources */,
 				A792728F21C946420001F621 /* ConcurrentOperation.swift in Sources */,
 				A744576021CDFB55009B4D4E /* AppQueueConsumer.swift in Sources */,
@@ -2234,6 +2245,7 @@
 				A792726E21C932620001F621 /* Persistence+Posts.swift in Sources */,
 				A7E17FF521CB959900E70529 /* BloggerFetch.swift in Sources */,
 				A792728A21C946000001F621 /* NetworkQueue.swift in Sources */,
+				A744576521CDFE12009B4D4E /* Array+Operations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

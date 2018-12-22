@@ -43,6 +43,23 @@ extension NSManagedObjectContext {
         return local
     }
     
+    public func update(posts: [BloggerAPI.Post]) {
+        let ids = posts.map({ $0.id })
+        let predicate = NSPredicate(format: "postId IN %@", ids)
+        let existing: [Post] = fetch(predicate: predicate)
+        
+        for post in posts {
+            let saved = existing.first(where: { $0.postId == post.id }) ?? insertEntity()
+            
+            saved.postId = post.id
+            saved.title = post.title
+            saved.publishDate = post.published
+            if let string = post.images?.first?.largeImageURL.absoluteString {
+                saved.image = findOrCreteImageWithURLString(string)
+            }
+        }
+    }
+    
     public func activeSort() -> [NSSortDescriptor] {
         switch sortOrder {
         case .byDateDesc:

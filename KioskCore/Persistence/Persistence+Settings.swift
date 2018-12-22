@@ -69,12 +69,13 @@ extension NSManagedObjectContext {
         }
     }
     
-    func lastKnownPullDate() -> Date {
-        return date(for: .lastVerifiedPullDate)
-    }
-    
-    func setPostsRefreshTime(_ date: Date) {
-        save(date: date, for: .lastVerifiedPullDate)
+    internal var lastKnownPullDate: Date {
+        get {
+            return date(for: .lastVerifiedPullDate)
+        }
+        set {
+            save(date: newValue, for: .lastVerifiedPullDate)
+        }
     }
     
     func lastKnownMappingTime() -> Date {

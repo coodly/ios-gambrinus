@@ -16,10 +16,20 @@
 
 import Foundation
 
-public class UpdateContentOperation: ConcurrentOperation {
+public class UpdateContentOperation: ConcurrentOperation, AppQueueConsumer, CoreInjector {
+    public var appQueue: OperationQueue!
+    
     public override func main() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(5)) {
+        var operations = [Operation]()
+        
+        operations.add(operation: UpdatePostsOperation())
+        let finisMe = BlockOperation() {
             self.finish()
         }
+        operations.add(operation: finisMe)
+        
+        operations.forEach({ inject(into: $0) })
+        
+        appQueue.addOperations(operations, waitUntilFinished: false)
     }
 }

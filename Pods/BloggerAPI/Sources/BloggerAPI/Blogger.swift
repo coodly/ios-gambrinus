@@ -25,9 +25,10 @@ public class Blogger: InjectionHandler {
         Injector.sharedInstance.fetch = fetch
     }
     
-    public func fetchUpdates(after date: Date) {
+    public func fetchUpdates(after date: Date, completion: @escaping ((PostsListResult) -> Void)) {
         Logging.log("Fetch updates after \(date)")
         let request = ListPostsRequest(since: date)
+        request.resultCallback = completion
         execute(request: request)
     }
     
