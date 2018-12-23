@@ -41,7 +41,7 @@
                                             <constraint firstItem="5JW-6Q-sEZ" firstAttribute="centerX" secondItem="NMf-fV-Mph" secondAttribute="centerX" id="rX6-zy-5s7"/>
                                         </constraints>
                                     </view>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="x4e-sT-w64">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="x4e-sT-w64">
                                         <rect key="frame" x="0.0" y="46" width="375" height="621"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cnk-LG-MaK">

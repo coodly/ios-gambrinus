@@ -55,7 +55,7 @@ public class MissingDetailsMonitor: NSObject, PersistenceConsumer, CoreInjector 
                 operation = PullBrewersInfoOperation()
             } else if context.isMissingDetails(for: BeerStyle.self) {
                 Log.debug("Missing details on BeerStyle")
-                operation = nil
+                operation = PullStylesInfoOperation()
             } else {
                 operation = nil
             }

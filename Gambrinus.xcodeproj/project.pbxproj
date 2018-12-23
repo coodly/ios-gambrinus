@@ -225,6 +225,8 @@
 		A7E1800A21CBE9E900E70529 /* NSMutableAttributedString+Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E1800921CBE9E900E70529 /* NSMutableAttributedString+Formatting.swift */; };
 		A7E1800D21CBF79800E70529 /* ImageShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E1800C21CBF79800E70529 /* ImageShowView.swift */; };
 		A7E1800F21CBF9ED00E70529 /* ImageShowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7E1800E21CBF9ED00E70529 /* ImageShowView.xib */; };
+		A7EAF26F21CF462300842715 /* PullStylesInfoOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EAF26E21CF462300842715 /* PullStylesInfoOperation.swift */; };
+		A7EAF27121CF474A00842715 /* Persistence+BeerStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EAF27021CF474A00842715 /* Persistence+BeerStyles.swift */; };
 		A7EEF6871D80451600C56153 /* PersistenceConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EEF6861D80451600C56153 /* PersistenceConsumer.swift */; };
 		A7FB14F521CD2BC8008BD71A /* UIImage+Cropped.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FB14F421CD2BC8008BD71A /* UIImage+Cropped.swift */; };
 		BA665AAA129ABC2E206BA2C5 /* mapping.json in Resources */ = {isa = PBXBuildFile; fileRef = BA665BA7D5ECAA081827FF24 /* mapping.json */; };
@@ -615,6 +617,8 @@
 		A7E1800921CBE9E900E70529 /* NSMutableAttributedString+Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Formatting.swift"; sourceTree = "<group>"; };
 		A7E1800C21CBF79800E70529 /* ImageShowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageShowView.swift; sourceTree = "<group>"; };
 		A7E1800E21CBF9ED00E70529 /* ImageShowView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageShowView.xib; sourceTree = "<group>"; };
+		A7EAF26E21CF462300842715 /* PullStylesInfoOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullStylesInfoOperation.swift; sourceTree = "<group>"; };
+		A7EAF27021CF474A00842715 /* Persistence+BeerStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Persistence+BeerStyles.swift"; sourceTree = "<group>"; };
 		A7EEF6861D80451600C56153 /* PersistenceConsumer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceConsumer.swift; sourceTree = "<group>"; };
 		A7FB14F421CD2BC8008BD71A /* UIImage+Cropped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Cropped.swift"; sourceTree = "<group>"; };
 		AAFA608429FBD4A83156B36E /* Pods-KioskCore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KioskCore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KioskCore/Pods-KioskCore.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1067,6 +1071,7 @@
 				A792722321C900A80001F621 /* Kiosk.xcdatamodeld */,
 				A792721F21C8FF4D0001F621 /* Persistence.swift */,
 				A744577621CE68C5009B4D4E /* Persistence+Beers.swift */,
+				A7EAF27021CF474A00842715 /* Persistence+BeerStyles.swift */,
 				A744577C21CE7108009B4D4E /* Persistence+Brewers.swift */,
 				A7E1800421CBE4CF00E70529 /* Persistence+Images.swift */,
 				A744577421CE677C009B4D4E /* Persistence+Mappings.swift */,
@@ -1197,6 +1202,7 @@
 				A744578021CE738D009B4D4E /* UpdateDirtyPostsOperation.swift */,
 				A744576121CDFD6C009B4D4E /* UpdatePostsOperation.swift */,
 				A7AB70A221CE904A00DA3EEE /* PullBrewersInfoOperation.swift */,
+				A7EAF26E21CF462300842715 /* PullStylesInfoOperation.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -2268,6 +2274,7 @@
 				A792723821C9010B0001F621 /* PostContent+Properties.swift in Sources */,
 				A7AB709F21CE87C200DA3EEE /* Persistence+SyncStatuses.swift in Sources */,
 				A744577F21CE71A3009B4D4E /* Persistence+Styles.swift in Sources */,
+				A7EAF27121CF474A00842715 /* Persistence+BeerStyles.swift in Sources */,
 				A792726321C926F20001F621 /* Constants.swift in Sources */,
 				A792728C21C9461C0001F621 /* NetworkRequest.swift in Sources */,
 				A792723921C9010B0001F621 /* PullStatus+Properties.swift in Sources */,
@@ -2277,6 +2284,7 @@
 				A792722021C8FF4D0001F621 /* Persistence.swift in Sources */,
 				A792723C21C9010B0001F621 /* BeerStyle+Properties.swift in Sources */,
 				A744576221CDFD6C009B4D4E /* UpdatePostsOperation.swift in Sources */,
+				A7EAF26F21CF462300842715 /* PullStylesInfoOperation.swift in Sources */,
 				A792723721C9010B0001F621 /* SyncStatus+Properties.swift in Sources */,
 				A792728F21C946420001F621 /* ConcurrentOperation.swift in Sources */,
 				A744576021CDFB55009B4D4E /* AppQueueConsumer.swift in Sources */,
