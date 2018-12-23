@@ -165,9 +165,27 @@ public class FetchedCollectionViewController<Model: NSManagedObject, Cell: UICol
             
             assert(sectionActions.filter({ $0.changeType != .insert && $0.changeType != .delete}).count == 0)
             
-            let cellActions = self.changeActions.filter({ $0.sectionIndex == nil })
-            Log.debug("\(cellActions.count) cell actions")
+            let allActions = self.changeActions.filter({ $0.sectionIndex == nil })
+            Log.debug("\(allActions.count) action actions")
             
+            let visible = self.collectionView.indexPathsForVisibleItems
+            let cellActions = allActions.filter() {
+                action in
+                
+                guard action.changeType == .update else {
+                    return true
+                }
+                
+                let indexes = [action.indexPath, action.newIndexPath].compactMap({ $0 })
+                for index in indexes {
+                    if visible.contains(index) {
+                        return true
+                    }
+                }
+                
+                return false
+            }
+            Log.debug("\(cellActions.count) executed actions")
             for action in cellActions {
                 switch(action.changeType) {
                 case .update where action.indexPath == action.newIndexPath: // iOS11
