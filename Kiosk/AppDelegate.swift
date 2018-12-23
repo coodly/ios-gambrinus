@@ -17,6 +17,8 @@
 import UIKit
 import KioskUI
 import KioskCore
+import Fabric
+import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, PersistenceConsumer, MissingDetailsConsumer {
@@ -27,6 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PersistenceConsumer, Miss
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        Fabric.with([Crashlytics.self])
+        
         CoreLog.enableLogs()
         
         CoreInjection.sharedInstance.inject(into: self)
