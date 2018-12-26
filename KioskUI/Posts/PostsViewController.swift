@@ -27,8 +27,9 @@ private extension Selector {
 }
 
 private typealias Dependencies = PersistenceConsumer & AppQueueConsumer
+private typealias ConformsTo = MaybeModalPresenter & UITextFieldDelegate
 
-public class PostsViewController: FetchedCollectionViewController<Post, PostCell>, StoryboardLoaded, Dependencies, UIInjector, MaybeModalPresenter {
+public class PostsViewController: FetchedCollectionViewController<Post, PostCell>, StoryboardLoaded, Dependencies, UIInjector, ConformsTo {
     public static var storyboardName: String {
         return "Posts"
     }
@@ -56,6 +57,7 @@ public class PostsViewController: FetchedCollectionViewController<Post, PostCell
         searchContainer.isHidden = true
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: Asset.search.image, style: .plain, target: self, action: .toggleSearch)
         searchField.addTarget(self, action: .searchChanged, for: .editingChanged)
+        searchField.delegate = self
         
         NotificationCenter.default.addObserver(self, selector: .keyboardFramwChanged, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
 
@@ -161,5 +163,10 @@ public class PostsViewController: FetchedCollectionViewController<Post, PostCell
             }
         }
         appQueue.addOperation(op)
+    }
+
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
     }
 }
