@@ -61,6 +61,8 @@ public class PostsViewController: FetchedCollectionViewController<Post, PostCell
 
         collectionView.addSubview(refresh)
         refresh.addTarget(self, action: .refreshContent, for: .valueChanged)
+        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: nil, style: .plain, target: nil, action: nil)
     }
     
     override func createFetchedController() -> NSFetchedResultsController<Post> {
