@@ -63,8 +63,12 @@ public class PostsViewController: FetchedCollectionViewController<Post, PostCell
 
         collectionView.addSubview(refresh)
         refresh.addTarget(self, action: .refreshContent, for: .valueChanged)
+        refresh.tintColor = .myOrange
         
         navigationItem.backBarButtonItem = UIBarButtonItem(title: nil, style: .plain, target: nil, action: nil)
+        
+        searchContainer.backgroundColor = UIColor.controllerBackground
+        collectionView.backgroundColor = UIColor.controllerBackground
     }
     
     override func createFetchedController() -> NSFetchedResultsController<Post> {
