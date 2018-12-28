@@ -19,7 +19,7 @@ import UIKit
 internal typealias ScrollPresentedView = UIView & ScrollPresented
 
 internal class ScrolledContentViewController: UIViewController {
-    private lazy var scrollView: UIScrollView = {
+    private(set) lazy var scrollView: UIScrollView = {
         let scroll = UIScrollView(frame: self.view.bounds)
         scroll.delegate = self
         return scroll

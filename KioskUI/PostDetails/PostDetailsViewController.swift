@@ -19,6 +19,7 @@ import KioskCore
 
 private extension Selector {
     static let tapped = #selector(PostDetailsViewController.tapped(_:))
+    static let refreshContent = #selector(PostDetailsViewController.refreshContent)
 }
 
 internal class PostDetailsViewController: ScrolledContentViewController, StoryboardLoaded, UIInjector {
@@ -28,6 +29,7 @@ internal class PostDetailsViewController: ScrolledContentViewController, Storybo
     
     internal var post: Post!
     private lazy var viewModel = PostDetailsViewModel(post: self.post)
+    private lazy var refresh = UIRefreshControl(frame: .zero)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +55,10 @@ internal class PostDetailsViewController: ScrolledContentViewController, Storybo
         }
         
         present(view: presentation)
+        
+        scrollView.addSubview(refresh)
+        refresh.addTarget(self, action: .refreshContent, for: .valueChanged)
+        refresh.tintColor = .myOrange
     }
     
     @objc fileprivate func tapped(_ recognizer: UITapGestureRecognizer) {
@@ -77,5 +83,11 @@ internal class PostDetailsViewController: ScrolledContentViewController, Storybo
         navigation.view.addSubview(show)
         show.pinToSuperviewEdges()
         show.present(image: image, from: reference)
+    }
+    
+    @objc fileprivate func refreshContent() {
+        viewModel.refreshWithoutLoader() {
+            self.refresh.endRefreshing()
+        }
     }
 }
