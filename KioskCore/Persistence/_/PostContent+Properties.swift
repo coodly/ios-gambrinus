@@ -18,7 +18,6 @@ import Foundation
 import CoreData
 
 extension PostContent {
-    @NSManaged var content: String?
     @NSManaged public var htmlBody: String?
     
     @NSManaged var post: Post?
