@@ -19,6 +19,7 @@ import CoreData
 
 extension PostContent {
     @NSManaged public var htmlBody: String?
+    @NSManaged var updatedAt: Date?
     
     @NSManaged var post: Post?
 }

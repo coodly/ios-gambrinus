@@ -18,5 +18,5 @@ import Foundation
 import CoreData
 
 public class PostContent: NSManagedObject {
-    
+
 }

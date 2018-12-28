@@ -197,6 +197,11 @@ public class Post: NSManagedObject {
             return true
         }
         
-        return false
+        guard let contentRefresh = body?.updatedAt, let weekAfterPostMade = publishDate?.oneWeekAfter else {
+            return true
+        }
+        
+        // allow one week to fix mistakes
+        return contentRefresh < weekAfterPostMade
     }
 }

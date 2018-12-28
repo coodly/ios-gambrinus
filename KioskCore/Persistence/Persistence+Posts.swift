@@ -34,6 +34,7 @@ extension NSManagedObjectContext {
         
         let content: PostContent = local.body ?? insertEntity()
         content.htmlBody = post.content
+        content.updatedAt = Date()
         content.post = local
         
         if let string = post.images?.first?.largeImageURL.absoluteString {

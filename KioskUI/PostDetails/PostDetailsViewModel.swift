@@ -81,8 +81,8 @@ internal class PostDetailsViewModel: Dependencies, UIInjector {
         status.score = post.rateBeerScore
     }
     
-    private func refreshPost(id: String, showLoading: Bool = true, completion: (() -> Void)? = nil) {
-        status.showLoading = showLoading
+    private func refreshPost(id: String, completion: (() -> Void)? = nil) {
+        status.showLoading = status.content == nil
         blogger.fetchPost(id) {
             result in
             
@@ -107,7 +107,7 @@ internal class PostDetailsViewModel: Dependencies, UIInjector {
             return
         }
         
-        refreshPost(id: id, showLoading: false, completion: completion)
+        refreshPost(id: id, completion: completion)
     }
     
     private func performImageAsk() {

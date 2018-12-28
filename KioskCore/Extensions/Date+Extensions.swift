@@ -29,4 +29,11 @@ extension Date {
         
         return Calendar.gregorian.date(byAdding: components, to: self)
     }
+
+    internal var oneWeekAfter: Date? {
+        var components = DateComponents()
+        components.day = 7
+        
+        return Calendar.gregorian.date(byAdding: components, to: self)
+    }
 }
