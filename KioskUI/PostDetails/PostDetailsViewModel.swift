@@ -44,6 +44,7 @@ internal class PostDetailsViewModel: Dependencies, UIInjector {
     internal struct Status {
         var image: UIImage? = nil
         var content: String? = ""
+        var score = ""
         var showLoading = false
         var showContent: Bool {
             return content?.hasValue() ?? false
@@ -77,6 +78,7 @@ internal class PostDetailsViewModel: Dependencies, UIInjector {
         status.postId = post.postId
         status.refreshNeeded = post.contentRefreshNeeded
         status.content = post.body?.htmlBody
+        status.score = post.rateBeerScore
     }
     
     private func refreshPost(id: String) {

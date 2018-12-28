@@ -58,6 +58,17 @@
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lBZ-U7-Yyx">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                         </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Osi-Uy-LTn" customClass="RateBeerScoreLabel" customModule="KioskUI" customModuleProvider="target">
+                            <rect key="frame" x="317" y="16" width="42" height="42"/>
+                            <constraints>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" id="9uf-JF-4xD"/>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" id="GcB-FN-ekr"/>
+                                <constraint firstAttribute="width" secondItem="Osi-Uy-LTn" secondAttribute="height" multiplier="1:1" id="kaE-47-hls"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -70,6 +81,8 @@
                         <constraint firstItem="lBZ-U7-Yyx" firstAttribute="bottom" secondItem="FMJ-ff-cBP" secondAttribute="bottom" id="MVi-yM-rB2"/>
                         <constraint firstItem="BZA-Cx-Xhs" firstAttribute="top" secondItem="yKb-7C-cZX" secondAttribute="top" id="WvG-rN-s68"/>
                         <constraint firstItem="BZA-Cx-Xhs" firstAttribute="leading" secondItem="yKb-7C-cZX" secondAttribute="leading" constant="16" id="fi4-2b-qxe"/>
+                        <constraint firstAttribute="trailing" secondItem="Osi-Uy-LTn" secondAttribute="trailing" constant="16" id="lOe-xs-zaA"/>
+                        <constraint firstItem="Osi-Uy-LTn" firstAttribute="top" secondItem="yKb-7C-cZX" secondAttribute="top" constant="16" id="o8z-4S-ksA"/>
                     </constraints>
                 </view>
             </subviews>
@@ -87,6 +100,7 @@
                 <outlet property="image" destination="lBZ-U7-Yyx" id="H9Z-l6-IL0"/>
                 <outlet property="loadingContainer" destination="8nN-Jp-IGC" id="ZhT-yH-iJF"/>
                 <outlet property="presentationWidth" destination="0HE-cr-0jx" id="Pe1-53-0Do"/>
+                <outlet property="score" destination="Osi-Uy-LTn" id="zYs-lH-Pfs"/>
             </connections>
             <point key="canvasLocation" x="138.40000000000001" y="156.97151424287858"/>
         </view>

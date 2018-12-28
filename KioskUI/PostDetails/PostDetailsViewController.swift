@@ -49,6 +49,7 @@ internal class PostDetailsViewController: ScrolledContentViewController, Storybo
             presentation.loadingContainer.isHidden = !status.showLoading
             presentation.content.isHidden = !status.showContent
             presentation.content.load(html: status.content ?? "")
+            presentation.score.value = status.score
         }
         
         present(view: presentation)
