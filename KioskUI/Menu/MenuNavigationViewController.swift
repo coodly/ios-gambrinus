@@ -96,4 +96,12 @@ public class MenuNavigationViewController: UINavigationController, StoryboardLoa
         
         toggleMenu()
     }
+    
+    public override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return .all
+        } else {
+            return [.portrait]
+        }
+    }
 }
