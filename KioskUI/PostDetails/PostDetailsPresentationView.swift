@@ -31,5 +31,7 @@ internal class PostDetailsPresentationView: UIView, ScrollPresented {
         
         spinner.color = .myOrange
         image.backgroundColor = .controllerBackground
+        
+        content.linkTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.underlineColor: UIColor.clear]
     }
 }
