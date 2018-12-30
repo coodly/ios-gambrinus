@@ -43,9 +43,9 @@ public class FetchedCollectionViewController<Model: NSManagedObject, Cell: UICol
     internal var collectionLayout: UICollectionViewLayout {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.minimumLineSpacing = 5
-        layout.minimumInteritemSpacing = 5
-        layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0
+        layout.sectionInset = .zero
         return layout
     }
     internal var allElements: [Model] {

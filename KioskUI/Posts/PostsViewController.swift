@@ -89,13 +89,9 @@ public class PostsViewController: FetchedCollectionViewController<Post, PostCell
     }
     
     public override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            return CGSize(width: 240, height: 240)
-        } else {
-            let availableWidth = collectionView.frame.width - 20
-            let cellWidth = availableWidth / 2
-            return CGSize(width: cellWidth, height: cellWidth)
-        }
+        let columns = floor(view.frame.width / posterBaseWidth)
+        let width = floor(view.frame.width / columns)
+        return CGSize(width: width, height: width)
     }
     
     @objc fileprivate func postSortChanged() {
@@ -173,4 +169,29 @@ public class PostsViewController: FetchedCollectionViewController<Post, PostCell
         textField.resignFirstResponder()
         return false
     }
+    
+    private var PostCellWidthReference: NSString {
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            return "WWWWWWWWW"
+        } else {
+            return "WWWWWWWWWWWWW"
+        }
+    }
+    private var cachedPosterWidth: CategoryDimension?
+    var posterBaseWidth: CGFloat {
+        let category = UIApplication.shared.preferredContentSizeCategory
+        
+        if cachedPosterWidth?.category != category {
+            let reference: NSString = PostCellWidthReference
+            let size = reference.size(withAttributes: [NSAttributedString.Key.font : UIFont.preferredFont(forTextStyle: .headline)])
+            cachedPosterWidth = CategoryDimension(category: category, dimension: ceil(size.width))
+        }
+        
+        return cachedPosterWidth!.dimension
+    }
+}
+
+internal struct CategoryDimension {
+    let category: UIContentSizeCategory
+    let dimension: CGFloat
 }
