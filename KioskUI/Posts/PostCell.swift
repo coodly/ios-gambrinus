@@ -27,6 +27,7 @@ internal class PostCell: UICollectionViewCell {
     @IBOutlet private var titleFill: UIView!
     @IBOutlet private var thumbnail: UIImageView!
     @IBOutlet private var ratebeerScore: RateBeerScoreLabel!
+    @IBOutlet private var container: UIView!
     
     internal var viewModel: PostCellViewModel? {
         didSet {
@@ -50,9 +51,12 @@ internal class PostCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+
+        contentView.backgroundColor = .controllerBackground
         dateFill.backgroundColor = UIColor.white.withAlphaComponent(0.8)
         titleFill.backgroundColor = UIColor.white.withAlphaComponent(0.8)
+        
+        container.layer.cornerRadius = 3
         
         NotificationCenter.default.addObserver(self, selector: .adjustFont, name: UIContentSizeCategory.didChangeNotification, object: nil)
         adjustFont()
