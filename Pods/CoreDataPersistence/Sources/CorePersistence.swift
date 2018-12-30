@@ -302,28 +302,43 @@ private class LegacyDataStack: CoreStack {
     private lazy var sharedWorkerContext: NSManagedObjectContext = self.createBackgroundContext()
 
     fileprivate override func loadPersistentStores(completion: @escaping (() -> ())) {
-        DispatchQueue.main.async {
-            // touch/create context on main thread
-            let _ = self.managedObjectContext
+        let asyncLoad = type != NSInMemoryStoreType
 
-            // Load store on background thread
-            DispatchQueue.global(qos: .background).async {
-                let url = self.databaseFilePath
-                
-                Logging.log("Using DB file at \(String(describing: url))")
-                
-                let options = [NSMigratePersistentStoresAutomaticallyOption as NSObject: true as AnyObject, NSInferMappingModelAutomaticallyOption as NSObject: true as AnyObject]
-                let config = StackConfig(storeType: self.type, storeURL: url, options: options)
-                
-                if !self.addPersistentStore(self.persistentStoreCoordinator, config: config, abortOnFailure: !self.wipeOnConflict) && self.wipeOnConflict {
-                    Logging.log("Will delete DB")
-                    try! FileManager.default.removeItem(at: url!)
-                    _ = self.addPersistentStore(self.persistentStoreCoordinator, config: config, abortOnFailure: true)
+        func call(async: Bool, on queue: DispatchQueue, closure: @escaping (() -> Void)) -> (() -> Void) {
+            return {
+                if async {
+                    queue.async(execute: closure)
+                } else {
+                    closure()
                 }
-                
-                DispatchQueue.main.async(execute: completion)
             }
         }
+        
+        let callCompletionn: (() -> Void) = call(async: asyncLoad, on: DispatchQueue.main, closure: completion)
+        
+        let loadStore = call(async: asyncLoad, on: DispatchQueue.global(qos: .background)) {
+            let url = self.databaseFilePath
+            
+            Logging.log("Using DB file at \(String(describing: url))")
+            
+            let options = [NSMigratePersistentStoresAutomaticallyOption as NSObject: true as AnyObject, NSInferMappingModelAutomaticallyOption as NSObject: true as AnyObject]
+            let config = StackConfig(storeType: self.type, storeURL: url, options: options)
+            
+            if !self.addPersistentStore(self.persistentStoreCoordinator, config: config, abortOnFailure: !self.wipeOnConflict) && self.wipeOnConflict {
+                Logging.log("Will delete DB")
+                try! FileManager.default.removeItem(at: url!)
+                _ = self.addPersistentStore(self.persistentStoreCoordinator, config: config, abortOnFailure: true)
+            }
+            
+            callCompletionn()
+        }
+        let createMainContextAndLoad = call(async: asyncLoad, on: DispatchQueue.main) {
+            // touch/create context on main thread
+            let _ = self.managedObjectContext
+            loadStore()
+        }
+        
+        createMainContextAndLoad()
     }
     
     private func addPersistentStore(_ coordinator: NSPersistentStoreCoordinator, config: StackConfig, abortOnFailure: Bool) -> Bool {

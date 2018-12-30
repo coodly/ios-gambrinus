@@ -110,7 +110,7 @@ CHECKOUT OPTIONS:
     :commit: 62b011823c0afc7b94a9aff96b1c66d06c957700
     :git: "git@github.com:coodly/BloggerAPI.git"
   CoreDataPersistence:
-    :commit: 24521626b5639a69e015deb333060c844a2a7f61
+    :commit: 8793b0f1348c6a9f878b248f0ad07137f56d5ede
     :git: "git@github.com:coodly/CoreDataPersistence.git"
   ImageProvide:
     :commit: 13bfd7e42ad53f5bd0f516caea6559f8ca86d0e1
