@@ -35,8 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PersistenceConsumer, Miss
         
         CoreInjection.sharedInstance.inject(into: self)
         
-        let initialization = window!.rootViewController as! InitializeViewController
-        CoreInjection.sharedInstance.inject(into: initialization)
+        let presentaion = window!.rootViewController as! AppPresentationViewController
         
         Theme.apply()
         
@@ -46,14 +45,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PersistenceConsumer, Miss
             CoreLog.debug("No seed DB included")
         }
         
-        initialization.afterLoad = {
-            self.persistence.write() {
+        func presentMain() {
+            persistence.write() {
                 context in
                 
                 context.resetFailedStatuses()
             }
 
-            self.missingMonitor.load()
+            missingMonitor.load()
             
             let menu: MenuViewController = Storyboards.loadFromStoryboard()
             CoreInjection.sharedInstance.inject(into: menu)
@@ -65,13 +64,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PersistenceConsumer, Miss
             CoreInjection.sharedInstance.inject(into: posts)
             navigation.present(root: posts, animated: false)
             
-            let animation: (() -> ()) = {
-                self.window?.rootViewController = navigation
-            }
-            UIView.transition(with: self.window!, duration: 0.3, options: [], animations: animation) {
-                _ in
-                
-            }
+            presentaion.replace(with: navigation)
+        }
+        
+        presentaion.afterLoad = {
+            initialization in
+            
+            CoreInjection.sharedInstance.inject(into: initialization)
+            initialization.afterLoad = presentMain
         }
         
         return true

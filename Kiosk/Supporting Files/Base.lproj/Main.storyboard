@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="puw-Gk-bwl">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -57,6 +57,39 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="873" y="790"/>
+        </scene>
+        <!--App Presentation View Controller-->
+        <scene sceneID="cmU-fq-Srf">
+            <objects>
+                <viewController id="puw-Gk-bwl" customClass="AppPresentationViewController" customModule="Kiosk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="h3b-nt-2Po">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S7g-Bo-3ua">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="embed" id="9VF-Fu-Mid"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="S7g-Bo-3ua" firstAttribute="leading" secondItem="h3b-nt-2Po" secondAttribute="leading" id="GGc-Eb-2YU"/>
+                            <constraint firstItem="S7g-Bo-3ua" firstAttribute="top" secondItem="h3b-nt-2Po" secondAttribute="top" id="PMt-Gs-Vwb"/>
+                            <constraint firstAttribute="trailing" secondItem="S7g-Bo-3ua" secondAttribute="trailing" id="bCF-TH-m4U"/>
+                            <constraint firstAttribute="bottom" secondItem="S7g-Bo-3ua" secondAttribute="bottom" id="gwu-QE-ZXE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="PhH-2t-4AX"/>
+                    </view>
+                    <connections>
+                        <outlet property="container" destination="S7g-Bo-3ua" id="sLp-aI-kIn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yIk-44-udN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="790.25487256371821"/>
         </scene>
     </scenes>
     <resources>
