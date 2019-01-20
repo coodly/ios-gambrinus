@@ -42,4 +42,12 @@ internal class AppPresentationViewController: UIViewController {
             self.initializationController.removeFromParent()
         }
     }
+    
+    public override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return .all
+        } else {
+            return [.portrait]
+        }
+    }
 }

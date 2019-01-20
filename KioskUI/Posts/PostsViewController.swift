@@ -89,7 +89,11 @@ public class PostsViewController: FetchedCollectionViewController<Post, PostCell
     }
     
     public override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let columns = floor(view.frame.width / posterBaseWidth)
+        var columns = floor(view.frame.width / posterBaseWidth)
+        if UIDevice.current.userInterfaceIdiom == .phone, traitCollection.horizontalSizeClass == .compact {
+            columns = min(columns, 2)
+        }
+        columns = max(1, columns)
         let width = floor(view.frame.width / columns)
         return CGSize(width: width, height: width)
     }
