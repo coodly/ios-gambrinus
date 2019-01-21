@@ -69,6 +69,8 @@ public class PostsViewController: FetchedCollectionViewController<Post, PostCell
         
         searchContainer.backgroundColor = UIColor.controllerBackground
         collectionView.backgroundColor = UIColor.controllerBackground
+        
+        NotificationCenter.default.addObserver(self, selector: .refreshContent, name: .postsModification, object: nil)
     }
     
     override func createFetchedController() -> NSFetchedResultsController<Post> {
@@ -157,6 +159,7 @@ public class PostsViewController: FetchedCollectionViewController<Post, PostCell
     }
     
     @objc fileprivate func refreshContent() {
+        Log.debug("Refresh content")
         let op = UpdateContentOperation()
         inject(into: op)
         op.completionHandler = {

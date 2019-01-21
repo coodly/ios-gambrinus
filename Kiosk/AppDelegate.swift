@@ -19,6 +19,7 @@ import KioskUI
 import KioskCore
 import Fabric
 import Crashlytics
+import CloudKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, PersistenceConsumer, MissingDetailsConsumer {
@@ -72,6 +73,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PersistenceConsumer, Miss
             
             CoreInjection.sharedInstance.inject(into: initialization)
             initialization.afterLoad = presentMain
+            
+            if #available(iOS 10.0, *) {
+                let subscription = CloudSubscription()
+                subscription.subscribe()
+            }
         }
         
         return true
@@ -79,6 +85,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PersistenceConsumer, Miss
     
     func applicationDidBecomeActive(_ application: UIApplication) {
         application.isIdleTimerDisabled = true
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
+        let cloudNotification = CKNotification(fromRemoteNotificationDictionary: userInfo)
+        CoreLog.debug("didReceiveRemoteNotification: \(cloudNotification)")
+        
+        guard application.applicationState == .active else {
+            return
+        }
+        
+        NotificationCenter.default.post(name: .postsModification, object: nil)
     }
 }
 

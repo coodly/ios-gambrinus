@@ -219,6 +219,7 @@
 		A7D647751D78852B00FF52A4 /* ContentUpdateConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D647741D78852B00FF52A4 /* ContentUpdateConsumer.swift */; };
 		A7D647771D79495500FF52A4 /* Persistence+Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D647761D79495500FF52A4 /* Persistence+Settings.swift */; };
 		A7D647791D7959B900FF52A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D647781D7959B900FF52A4 /* AppDelegate.swift */; };
+		A7D7F85021F629B3001D21B9 /* CloudSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D7F84F21F629B3001D21B9 /* CloudSubscription.swift */; };
 		A7E17FF321CB952E00E70529 /* BloggerConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E17FF221CB952E00E70529 /* BloggerConsumer.swift */; };
 		A7E17FF521CB959900E70529 /* BloggerFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E17FF421CB959900E70529 /* BloggerFetch.swift */; };
 		A7E1800521CBE4CF00E70529 /* Persistence+Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E1800421CBE4CF00E70529 /* Persistence+Images.swift */; };
@@ -612,6 +613,7 @@
 		A7D647741D78852B00FF52A4 /* ContentUpdateConsumer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentUpdateConsumer.swift; sourceTree = "<group>"; };
 		A7D647761D79495500FF52A4 /* Persistence+Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Persistence+Settings.swift"; sourceTree = "<group>"; };
 		A7D647781D7959B900FF52A4 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A7D7F84F21F629B3001D21B9 /* CloudSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudSubscription.swift; sourceTree = "<group>"; };
 		A7E17FF221CB952E00E70529 /* BloggerConsumer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloggerConsumer.swift; sourceTree = "<group>"; };
 		A7E17FF421CB959900E70529 /* BloggerFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloggerFetch.swift; sourceTree = "<group>"; };
 		A7E1800421CBE4CF00E70529 /* Persistence+Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Persistence+Images.swift"; sourceTree = "<group>"; };
@@ -1194,18 +1196,19 @@
 			isa = PBXGroup;
 			children = (
 				A7E17FF421CB959900E70529 /* BloggerFetch.swift */,
+				A7D7F84F21F629B3001D21B9 /* CloudSubscription.swift */,
 				A792728721C945C20001F621 /* ImagesFetch.swift */,
 				A744578221CE8690009B4D4E /* MissingDetailsMonitor.swift */,
 				A792728921C946000001F621 /* NetworkQueue.swift */,
 				A792728B21C9461C0001F621 /* NetworkRequest.swift */,
 				A7AB70A021CE8C3900DA3EEE /* PullBeersInfoOperation.swift */,
+				A7AB70A221CE904A00DA3EEE /* PullBrewersInfoOperation.swift */,
 				A744577021CE63F2009B4D4E /* PullPostMappingsOperation.swift */,
 				A744577821CE6E1D009B4D4E /* PullRateBeerChangesOperation.swift */,
+				A7EAF26E21CF462300842715 /* PullStylesInfoOperation.swift */,
 				A744575D21CDFAEC009B4D4E /* UpdateContentOperation.swift */,
 				A744578021CE738D009B4D4E /* UpdateDirtyPostsOperation.swift */,
 				A744576121CDFD6C009B4D4E /* UpdatePostsOperation.swift */,
-				A7AB70A221CE904A00DA3EEE /* PullBrewersInfoOperation.swift */,
-				A7EAF26E21CF462300842715 /* PullStylesInfoOperation.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -2307,6 +2310,7 @@
 				A792723C21C9010B0001F621 /* BeerStyle+Properties.swift in Sources */,
 				A744576221CDFD6C009B4D4E /* UpdatePostsOperation.swift in Sources */,
 				A7EAF26F21CF462300842715 /* PullStylesInfoOperation.swift in Sources */,
+				A7D7F85021F629B3001D21B9 /* CloudSubscription.swift in Sources */,
 				A792723721C9010B0001F621 /* SyncStatus+Properties.swift in Sources */,
 				A792728F21C946420001F621 /* ConcurrentOperation.swift in Sources */,
 				A744576021CDFB55009B4D4E /* AppQueueConsumer.swift in Sources */,
