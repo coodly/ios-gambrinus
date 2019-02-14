@@ -53,6 +53,8 @@
 		A702390621C80B4A00A7CFE9 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A702390521C80B4A00A7CFE9 /* Menu.storyboard */; };
 		A7063F331D7EBCFC00B45C6C /* CloudRateBeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7063F321D7EBCFC00B45C6C /* CloudRateBeer.swift */; };
 		A7063F351D7EBD5D00B45C6C /* PullRateBeerChangesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7063F341D7EBD5D00B45C6C /* PullRateBeerChangesOperation.swift */; };
+		A70CAF6E2215D02D002A99AA /* Untappd.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70CAF6D2215D02D002A99AA /* Untappd.swift */; };
+		A70CAF702215D063002A99AA /* Untappd+Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70CAF6F2215D063002A99AA /* Untappd+Properties.swift */; };
 		A734E29D1D7717B50057D136 /* CDYImageAsk.m in Sources */ = {isa = PBXBuildFile; fileRef = A734E2981D7717B50057D136 /* CDYImageAsk.m */; };
 		A734E29E1D7717B50057D136 /* CDYImagesRetrieve.m in Sources */ = {isa = PBXBuildFile; fileRef = A734E29A1D7717B50057D136 /* CDYImagesRetrieve.m */; };
 		A734E29F1D7717B50057D136 /* CDYImagesRetrieveConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = A734E29C1D7717B50057D136 /* CDYImagesRetrieveConstants.m */; };
@@ -423,6 +425,8 @@
 		A702390521C80B4A00A7CFE9 /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 		A7063F321D7EBCFC00B45C6C /* CloudRateBeer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudRateBeer.swift; sourceTree = "<group>"; };
 		A7063F341D7EBD5D00B45C6C /* PullRateBeerChangesOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullRateBeerChangesOperation.swift; sourceTree = "<group>"; };
+		A70CAF6D2215D02D002A99AA /* Untappd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Untappd.swift; sourceTree = "<group>"; };
+		A70CAF6F2215D063002A99AA /* Untappd+Properties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Untappd+Properties.swift"; sourceTree = "<group>"; };
 		A734E2971D7717B50057D136 /* CDYImageAsk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDYImageAsk.h; sourceTree = "<group>"; };
 		A734E2981D7717B50057D136 /* CDYImageAsk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDYImageAsk.m; sourceTree = "<group>"; };
 		A734E2991D7717B50057D136 /* CDYImagesRetrieve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDYImagesRetrieve.h; sourceTree = "<group>"; };
@@ -1090,6 +1094,7 @@
 				A792724621C901700001F621 /* Setting.swift */,
 				A792724121C9016F0001F621 /* Syncable.swift */,
 				A792724321C901700001F621 /* SyncStatus.swift */,
+				A70CAF6D2215D02D002A99AA /* Untappd.swift */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -1108,6 +1113,7 @@
 				A792722B21C9010B0001F621 /* Setting+Properties.swift */,
 				A792722821C9010B0001F621 /* Syncable+Properties.swift */,
 				A792722C21C9010B0001F621 /* SyncStatus+Properties.swift */,
+				A70CAF6F2215D063002A99AA /* Untappd+Properties.swift */,
 			);
 			path = _;
 			sourceTree = "<group>";
@@ -2291,6 +2297,7 @@
 				A792724C21C901700001F621 /* Beer.swift in Sources */,
 				A792725021C901700001F621 /* SyncStatus.swift in Sources */,
 				A792723221C9010B0001F621 /* Image+Properties.swift in Sources */,
+				A70CAF6E2215D02D002A99AA /* Untappd.swift in Sources */,
 				A792723B21C9010B0001F621 /* Blog+Properties.swift in Sources */,
 				A792725B21C904C00001F621 /* DateFormatter+ISO8601.swift in Sources */,
 				A792725521C901700001F621 /* Blog.swift in Sources */,
@@ -2324,6 +2331,7 @@
 				A792728521C944FF0001F621 /* ImagesConsumer.swift in Sources */,
 				A792722521C900A80001F621 /* Kiosk.xcdatamodeld in Sources */,
 				A792725121C901700001F621 /* PostContent.swift in Sources */,
+				A70CAF702215D063002A99AA /* Untappd+Properties.swift in Sources */,
 				A744578321CE8690009B4D4E /* MissingDetailsMonitor.swift in Sources */,
 				A744577D21CE7108009B4D4E /* Persistence+Brewers.swift in Sources */,
 				A792728821C945C20001F621 /* ImagesFetch.swift in Sources */,

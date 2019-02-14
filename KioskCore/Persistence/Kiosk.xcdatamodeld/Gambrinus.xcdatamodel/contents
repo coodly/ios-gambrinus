@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18C54" minimumToolsVersion="Xcode 4.3" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18D109" minimumToolsVersion="Xcode 4.3" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
     <entity name="Beer" representedClassName=".Beer" parentEntity="Syncable" syncable="YES">
         <attribute name="alcohol" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="aliased" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
@@ -83,6 +83,10 @@
         <attribute name="syncNeeded" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
         <relationship name="syncable" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Syncable" inverseName="syncStatus" inverseEntity="Syncable" syncable="YES"/>
     </entity>
+    <entity name="Untappd" representedClassName=".Untappd" syncable="YES">
+        <attribute name="bid" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="score" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
         <element name="Beer" positionX="-27" positionY="72" width="128" height="210"/>
         <element name="BeerStyle" positionX="-9" positionY="90" width="128" height="120"/>
@@ -95,5 +99,6 @@
         <element name="Setting" positionX="-63" positionY="27" width="128" height="75"/>
         <element name="Syncable" positionX="-27" positionY="144" width="128" height="60"/>
         <element name="SyncStatus" positionX="-36" positionY="135" width="128" height="90"/>
+        <element name="Untappd" positionX="-36" positionY="135" width="128" height="75"/>
     </elements>
 </model>
