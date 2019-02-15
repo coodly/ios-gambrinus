@@ -34,6 +34,7 @@ extension Post {
     @NSManaged public var title: String?
     @NSManaged var topScore: NSNumber?
     @NSManaged var touchedAt: Date?
+    @NSManaged var topUntappd: String?
     
     @NSManaged var beers: Set<Beer>?
     @NSManaged var blog: Blog?

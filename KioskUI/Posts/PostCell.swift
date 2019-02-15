@@ -28,6 +28,7 @@ internal class PostCell: UICollectionViewCell {
     @IBOutlet private var thumbnail: UIImageView!
     @IBOutlet private var ratebeerScore: RateBeerScoreLabel!
     @IBOutlet private var container: UIView!
+    @IBOutlet private var untappdScore: UntappdScoreView!
     
     internal var viewModel: PostCellViewModel? {
         didSet {
@@ -47,6 +48,7 @@ internal class PostCell: UICollectionViewCell {
         postTitle.text = status.postTile
         thumbnail.image = status.thumbnail
         ratebeerScore.value = status.rbScore
+        untappdScore.value = status.untappdScore
     }
     
     override func awakeFromNib() {

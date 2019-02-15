@@ -38,6 +38,7 @@ internal class PostCellViewModel: ImagesConsumer {
         var postTile = ""
         var thumbnail: UIImage? = nil
         var rbScore = ""
+        var untappdScore = ""
     }
     
     private var status = Status() {
@@ -57,6 +58,7 @@ internal class PostCellViewModel: ImagesConsumer {
         status.formattedPostDate = post.publishDateString() ?? ""
         status.postTile = post.title ?? ""
         status.rbScore = post.rateBeerScore
+        status.untappdScore = post.untappdScore
         
         thumbnailAsk = post.thumbnailAsk
     }

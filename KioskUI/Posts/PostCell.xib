@@ -56,6 +56,30 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j4K-z6-ZBj" customClass="UntappdScoreView" customModule="KioskUI" customModuleProvider="target">
+                                <rect key="frame" x="95.5" y="53.5" width="54.5" height="54.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3.25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rsD-9B-FOV">
+                                        <rect key="frame" x="12" y="12" width="30.5" height="30.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="rsD-9B-FOV" secondAttribute="height" multiplier="1:1" id="ZBJ-b3-45a"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="rsD-9B-FOV" secondAttribute="bottom" constant="12" id="MPe-sa-Zea"/>
+                                    <constraint firstItem="rsD-9B-FOV" firstAttribute="leading" secondItem="j4K-z6-ZBj" secondAttribute="leading" constant="12" id="T37-ig-nRe"/>
+                                    <constraint firstAttribute="trailing" secondItem="rsD-9B-FOV" secondAttribute="trailing" constant="12" id="h8z-ve-1Rd"/>
+                                    <constraint firstItem="rsD-9B-FOV" firstAttribute="top" secondItem="j4K-z6-ZBj" secondAttribute="top" constant="12" id="ieh-Up-9H6"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="label" destination="rsD-9B-FOV" id="q4D-tC-kpZ"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -71,6 +95,7 @@
                             <constraint firstItem="36m-Ef-jPR" firstAttribute="top" secondItem="ztI-Y4-Hcj" secondAttribute="top" id="IsQ-yd-LXf"/>
                             <constraint firstItem="bDj-1n-pQJ" firstAttribute="top" secondItem="ztI-Y4-Hcj" secondAttribute="top" id="MDm-5d-cDS"/>
                             <constraint firstAttribute="trailing" secondItem="bDj-1n-pQJ" secondAttribute="trailing" id="NMY-A7-yp8"/>
+                            <constraint firstItem="j4K-z6-ZBj" firstAttribute="top" secondItem="Rpg-uO-1cW" secondAttribute="bottom" id="P27-RZ-z8D"/>
                             <constraint firstItem="DEm-Em-8Dw" firstAttribute="bottom" secondItem="bDj-1n-pQJ" secondAttribute="bottom" constant="-4" id="TmT-H6-4Za"/>
                             <constraint firstAttribute="bottom" secondItem="Cs4-Cz-pOt" secondAttribute="bottom" id="Vkg-wf-yaf"/>
                             <constraint firstAttribute="bottom" secondItem="36m-Ef-jPR" secondAttribute="bottom" id="Z3c-Zq-zTK"/>
@@ -78,6 +103,7 @@
                             <constraint firstItem="bDj-1n-pQJ" firstAttribute="leading" secondItem="ztI-Y4-Hcj" secondAttribute="leading" id="cWV-nq-Gy2"/>
                             <constraint firstAttribute="trailing" secondItem="Rpg-uO-1cW" secondAttribute="trailing" id="h6V-gt-rVx"/>
                             <constraint firstItem="vtJ-9y-zvh" firstAttribute="leading" secondItem="ztI-Y4-Hcj" secondAttribute="leading" constant="8" id="oh3-LH-ADP"/>
+                            <constraint firstItem="j4K-z6-ZBj" firstAttribute="trailing" secondItem="Rpg-uO-1cW" secondAttribute="trailing" id="pt1-Zm-ZmM"/>
                             <constraint firstItem="Rpg-uO-1cW" firstAttribute="top" secondItem="ztI-Y4-Hcj" secondAttribute="top" id="y1D-JA-tX5"/>
                         </constraints>
                     </view>
@@ -99,6 +125,7 @@
                 <outlet property="ratebeerScore" destination="Rpg-uO-1cW" id="7Yj-Lw-cL4"/>
                 <outlet property="thumbnail" destination="36m-Ef-jPR" id="UEp-AM-Kvq"/>
                 <outlet property="titleFill" destination="Cs4-Cz-pOt" id="ajd-VH-SL2"/>
+                <outlet property="untappdScore" destination="j4K-z6-ZBj" id="lzU-dg-hnI"/>
             </connections>
             <point key="canvasLocation" x="222.40000000000001" y="200.14992503748127"/>
         </collectionViewCell>

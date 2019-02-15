@@ -67,6 +67,10 @@ public class Post: NSManagedObject {
         
         return ""
     }
+    
+    public var untappdScore: String {
+        return untappd?.compactMap({ $0.score }).max() ?? ""
+    }
 
     private func unaliasedBeers() -> [Beer] {
         guard let beers = self.beers else {
@@ -181,15 +185,13 @@ public class Post: NSManagedObject {
     }
     
     private func updateTopScore() {
-        guard let top = topScoredBeer() else {
-            return
+        if let top = topScoredBeer(), let scoreString = top.rbScore, let score = Int(scoreString) {
+            topScore = NSNumber(value: score)
         }
         
-        guard let score = top.rbScore else {
-            return
+        if let top = untappd?.compactMap({ $0.score }).max() {
+            topUntappd = top
         }
-        
-        topScore = Int(score) as NSNumber?
     }
     
     public var contentRefreshNeeded: Bool {
