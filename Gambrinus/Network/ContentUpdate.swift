@@ -41,7 +41,7 @@ class ContentUpdate: NSObject, InjectionHandler, PersistenceConsumer {
         let pullScores = PullRateBeerChangesOperation()
         inject(into: pullScores)
         operations.add(operation: pullScores)
-        
+
         let updateDirty = UpdateDirtyPostsOperation()
         inject(into: updateDirty)
         operations.add(operation: updateDirty)

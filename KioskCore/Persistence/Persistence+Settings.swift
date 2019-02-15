@@ -22,6 +22,7 @@ enum Key: Int {
     case sortOrder
     case lastKnownMappingTime
     case lastKnownScoresTime
+    case lastKnownUntsappdScoresTime
 }
 
 public enum PostsSortOrder: Int {
@@ -93,7 +94,15 @@ extension NSManagedObjectContext {
             save(date: newValue, for: .lastKnownScoresTime)
         }
     }
-    
+    internal var lastKnownUntsappdScoresTime: Date {
+        get {
+            return date(for: .lastKnownUntsappdScoresTime)
+        }
+        set {
+            save(date: newValue, for: .lastKnownUntsappdScoresTime)
+        }
+    }
+
     private func save(date: Date, for key: Key) {
         let saved = setting(for: key) ?? insertEntity()
         saved.key = NSNumber(integerLiteral: key.rawValue)

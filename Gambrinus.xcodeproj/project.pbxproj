@@ -66,6 +66,7 @@
 		A734E2C81D7816080057D136 /* NSString+JCSValidations.m in Sources */ = {isa = PBXBuildFile; fileRef = A734E2C71D7816080057D136 /* NSString+JCSValidations.m */; };
 		A734E2CC1D7817FC0057D136 /* UIImage+CDYImageScale.m in Sources */ = {isa = PBXBuildFile; fileRef = A734E2CB1D7817FC0057D136 /* UIImage+CDYImageScale.m */; };
 		A73DBA4F22167FCB001EBDBF /* PullUntappdInfoOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73DBA4E22167FCB001EBDBF /* PullUntappdInfoOperation.swift */; };
+		A73DBA5122168D7A001EBDBF /* PullUntappdChangesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73DBA5022168D7A001EBDBF /* PullUntappdChangesOperation.swift */; };
 		A744575E21CDFAEC009B4D4E /* UpdateContentOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A744575D21CDFAEC009B4D4E /* UpdateContentOperation.swift */; };
 		A744576021CDFB55009B4D4E /* AppQueueConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A744575F21CDFB55009B4D4E /* AppQueueConsumer.swift */; };
 		A744576221CDFD6C009B4D4E /* UpdatePostsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A744576121CDFD6C009B4D4E /* UpdatePostsOperation.swift */; };
@@ -450,6 +451,7 @@
 		A734E2CA1D7817FC0057D136 /* UIImage+CDYImageScale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CDYImageScale.h"; sourceTree = "<group>"; };
 		A734E2CB1D7817FC0057D136 /* UIImage+CDYImageScale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CDYImageScale.m"; sourceTree = "<group>"; };
 		A73DBA4E22167FCB001EBDBF /* PullUntappdInfoOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullUntappdInfoOperation.swift; sourceTree = "<group>"; };
+		A73DBA5022168D7A001EBDBF /* PullUntappdChangesOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullUntappdChangesOperation.swift; sourceTree = "<group>"; };
 		A744575D21CDFAEC009B4D4E /* UpdateContentOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateContentOperation.swift; sourceTree = "<group>"; };
 		A744575F21CDFB55009B4D4E /* AppQueueConsumer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppQueueConsumer.swift; sourceTree = "<group>"; };
 		A744576121CDFD6C009B4D4E /* UpdatePostsOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePostsOperation.swift; sourceTree = "<group>"; };
@@ -1217,6 +1219,7 @@
 				A744577021CE63F2009B4D4E /* PullPostMappingsOperation.swift */,
 				A744577821CE6E1D009B4D4E /* PullRateBeerChangesOperation.swift */,
 				A7EAF26E21CF462300842715 /* PullStylesInfoOperation.swift */,
+				A73DBA5022168D7A001EBDBF /* PullUntappdChangesOperation.swift */,
 				A73DBA4E22167FCB001EBDBF /* PullUntappdInfoOperation.swift */,
 				A744575D21CDFAEC009B4D4E /* UpdateContentOperation.swift */,
 				A744578021CE738D009B4D4E /* UpdateDirtyPostsOperation.swift */,
@@ -2355,6 +2358,7 @@
 				A792724D21C901700001F621 /* Post.swift in Sources */,
 				A744577B21CE6E92009B4D4E /* BeersContainerConsumer.swift in Sources */,
 				A792725D21C9056D0001F621 /* Date+Extensions.swift in Sources */,
+				A73DBA5122168D7A001EBDBF /* PullUntappdChangesOperation.swift in Sources */,
 				A7AB709D21CE872400DA3EEE /* MissingDetailsConsumer.swift in Sources */,
 				A792723521C9010B0001F621 /* Beer+Properties.swift in Sources */,
 				A792723421C9010B0001F621 /* Post+Properties.swift in Sources */,
