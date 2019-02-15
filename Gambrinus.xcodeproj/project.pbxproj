@@ -55,6 +55,7 @@
 		A7063F351D7EBD5D00B45C6C /* PullRateBeerChangesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7063F341D7EBD5D00B45C6C /* PullRateBeerChangesOperation.swift */; };
 		A70CAF6E2215D02D002A99AA /* Untappd.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70CAF6D2215D02D002A99AA /* Untappd.swift */; };
 		A70CAF702215D063002A99AA /* Untappd+Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70CAF6F2215D063002A99AA /* Untappd+Properties.swift */; };
+		A70CAF722215D210002A99AA /* Persistence+Untappd.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70CAF712215D210002A99AA /* Persistence+Untappd.swift */; };
 		A734E29D1D7717B50057D136 /* CDYImageAsk.m in Sources */ = {isa = PBXBuildFile; fileRef = A734E2981D7717B50057D136 /* CDYImageAsk.m */; };
 		A734E29E1D7717B50057D136 /* CDYImagesRetrieve.m in Sources */ = {isa = PBXBuildFile; fileRef = A734E29A1D7717B50057D136 /* CDYImagesRetrieve.m */; };
 		A734E29F1D7717B50057D136 /* CDYImagesRetrieveConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = A734E29C1D7717B50057D136 /* CDYImagesRetrieveConstants.m */; };
@@ -427,6 +428,7 @@
 		A7063F341D7EBD5D00B45C6C /* PullRateBeerChangesOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullRateBeerChangesOperation.swift; sourceTree = "<group>"; };
 		A70CAF6D2215D02D002A99AA /* Untappd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Untappd.swift; sourceTree = "<group>"; };
 		A70CAF6F2215D063002A99AA /* Untappd+Properties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Untappd+Properties.swift"; sourceTree = "<group>"; };
+		A70CAF712215D210002A99AA /* Persistence+Untappd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Persistence+Untappd.swift"; sourceTree = "<group>"; };
 		A734E2971D7717B50057D136 /* CDYImageAsk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDYImageAsk.h; sourceTree = "<group>"; };
 		A734E2981D7717B50057D136 /* CDYImageAsk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDYImageAsk.m; sourceTree = "<group>"; };
 		A734E2991D7717B50057D136 /* CDYImagesRetrieve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDYImagesRetrieve.h; sourceTree = "<group>"; };
@@ -1088,6 +1090,7 @@
 				A7B66A6621CCB7A600DB1840 /* Persistence+Settings.swift */,
 				A744577E21CE71A3009B4D4E /* Persistence+Styles.swift */,
 				A7AB709E21CE87C200DA3EEE /* Persistence+SyncStatuses.swift */,
+				A70CAF712215D210002A99AA /* Persistence+Untappd.swift */,
 				A792724021C9016F0001F621 /* Post.swift */,
 				A792724421C901700001F621 /* PostContent.swift */,
 				A792723D21C9016F0001F621 /* PullStatus.swift */,
@@ -2333,6 +2336,7 @@
 				A792725121C901700001F621 /* PostContent.swift in Sources */,
 				A70CAF702215D063002A99AA /* Untappd+Properties.swift in Sources */,
 				A744578321CE8690009B4D4E /* MissingDetailsMonitor.swift in Sources */,
+				A70CAF722215D210002A99AA /* Persistence+Untappd.swift in Sources */,
 				A744577D21CE7108009B4D4E /* Persistence+Brewers.swift in Sources */,
 				A792728821C945C20001F621 /* ImagesFetch.swift in Sources */,
 				A792726A21C92C940001F621 /* CoreLog.swift in Sources */,

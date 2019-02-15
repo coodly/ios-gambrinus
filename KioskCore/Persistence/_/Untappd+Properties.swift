@@ -20,4 +20,6 @@ import CoreData
 extension Untappd {
     @NSManaged var bid: NSNumber
     @NSManaged var score: String?
+    
+    @NSManaged var posts: Set<Post>?
 }

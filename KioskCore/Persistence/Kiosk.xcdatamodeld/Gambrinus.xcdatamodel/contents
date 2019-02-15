@@ -60,6 +60,7 @@
         <relationship name="blog" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Blog" inverseName="posts" inverseEntity="Blog" syncable="YES"/>
         <relationship name="body" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="PostContent" inverseName="post" inverseEntity="PostContent" syncable="YES"/>
         <relationship name="image" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Image" inverseName="posts" inverseEntity="Image" syncable="YES"/>
+        <relationship name="untappd" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Untappd" inverseName="posts" inverseEntity="Untappd" syncable="YES"/>
     </entity>
     <entity name="PostContent" representedClassName=".PostContent" syncable="YES">
         <attribute name="htmlBody" optional="YES" attributeType="String" syncable="YES"/>
@@ -83,9 +84,10 @@
         <attribute name="syncNeeded" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
         <relationship name="syncable" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Syncable" inverseName="syncStatus" inverseEntity="Syncable" syncable="YES"/>
     </entity>
-    <entity name="Untappd" representedClassName=".Untappd" syncable="YES">
-        <attribute name="bid" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+    <entity name="Untappd" representedClassName=".Untappd" parentEntity="Syncable" syncable="YES">
+        <attribute name="bid" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" indexed="YES" syncable="YES"/>
         <attribute name="score" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="posts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Post" inverseName="untappd" inverseEntity="Post" syncable="YES"/>
     </entity>
     <elements>
         <element name="Beer" positionX="-27" positionY="72" width="128" height="210"/>
@@ -93,12 +95,12 @@
         <element name="Blog" positionX="-63" positionY="27" width="128" height="120"/>
         <element name="Brewer" positionX="-18" positionY="81" width="128" height="120"/>
         <element name="Image" positionX="-54" positionY="54" width="128" height="90"/>
-        <element name="Post" positionX="-63" positionY="-18" width="128" height="345"/>
+        <element name="Post" positionX="-63" positionY="-18" width="128" height="360"/>
         <element name="PostContent" positionX="-36" positionY="135" width="128" height="90"/>
         <element name="PullStatus" positionX="-45" positionY="54" width="128" height="90"/>
         <element name="Setting" positionX="-63" positionY="27" width="128" height="75"/>
         <element name="Syncable" positionX="-27" positionY="144" width="128" height="60"/>
         <element name="SyncStatus" positionX="-36" positionY="135" width="128" height="90"/>
-        <element name="Untappd" positionX="-36" positionY="135" width="128" height="75"/>
+        <element name="Untappd" positionX="-36" positionY="135" width="128" height="90"/>
     </elements>
 </model>

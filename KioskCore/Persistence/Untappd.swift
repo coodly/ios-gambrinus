@@ -17,6 +17,6 @@
 import Foundation
 import CoreData
 
-internal class Untappd: NSManagedObject {
+internal class Untappd: Syncable {
     
 }

@@ -30,6 +30,9 @@ extension NSManagedObjectContext {
             
             let beers = beersWith(rbIds: post.rateBeers ?? [])
             saved.beers = Set(beers)
+            
+            let untappd = self.untappd(with: post.untappd ?? [])
+            saved.untappd = Set(untappd)
         }
     }
 }

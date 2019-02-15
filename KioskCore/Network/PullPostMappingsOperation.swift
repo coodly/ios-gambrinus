@@ -29,11 +29,13 @@ internal struct CloudPost: RemoteRecord {
     
     var identifier: String?
     var rateBeers: [String]?
+    var untappd: [NSNumber]?
     var modificationDate: Date?
     
     mutating func loadFields(from record: CKRecord) -> Bool {
         identifier = record["identifier"] as? String
         rateBeers = record["rateBeers"] as? [String]
+        untappd = record["untappd"] as? [NSNumber]
         modificationDate = record.modificationDate
         
         return true

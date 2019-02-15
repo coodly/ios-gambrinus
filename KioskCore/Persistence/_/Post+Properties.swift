@@ -39,4 +39,5 @@ extension Post {
     @NSManaged var blog: Blog?
     @NSManaged public var body: PostContent?
     @NSManaged public var image: Image?
+    @NSManaged var untappd: Set<Untappd>?
 }
