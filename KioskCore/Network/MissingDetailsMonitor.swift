@@ -50,6 +50,9 @@ public class MissingDetailsMonitor: NSObject, PersistenceConsumer, CoreInjector 
             if context.isMissingDetails(for: Beer.self) {
                 Log.debug("Missing details on Beer")
                 operation = PullBeersInfoOperation()
+            } else if context.isMissingDetails(for: Untappd.self) {
+                Log.debug("Missing details on Untappd")
+                operation = PullUntappdInfoOperation()
             } else if context.isMissingDetails(for: Brewer.self) {
                 Log.debug("Missing details on Brewer")
                 operation = PullBrewersInfoOperation()

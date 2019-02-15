@@ -39,4 +39,20 @@ extension NSManagedObjectContext {
         return existing + created
     }
 
+    internal func updateUntappd(with rateBeers: [CloudUntappd]) {
+        let ids = rateBeers.compactMap({ $0.bid })
+        let predicate = NSPredicate(format: "bid IN %@", ids)
+        let existing: [Untappd] = fetch(predicate: predicate)
+        
+        for rateBeer in rateBeers {
+            let saved: Untappd = existing.first(where: { $0.bid == rateBeer.bid }) ?? insertEntity()
+            
+            saved.bid = rateBeer.bid ?? NSNumber(value: -10)
+            saved.score = rateBeer.score
+            
+            saved.markForSync(needed: false)
+            
+            saved.posts?.forEach({ $0.isDirty = true })
+        }
+    }
 }
