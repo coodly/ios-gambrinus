@@ -51,6 +51,7 @@ internal class PostDetailsViewModel: Dependencies, UIInjector {
         }
         fileprivate var refreshNeeded = false
         fileprivate var postId: String?
+        var untappdScore = ""
     }
     
     private var status = Status() {
@@ -79,6 +80,7 @@ internal class PostDetailsViewModel: Dependencies, UIInjector {
         status.refreshNeeded = post.contentRefreshNeeded
         status.content = post.body?.htmlBody
         status.score = post.rateBeerScore
+        status.untappdScore = post.untappdScore
     }
     
     private func refreshPost(id: String, completion: (() -> Void)? = nil) {

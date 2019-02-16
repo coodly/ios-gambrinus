@@ -54,6 +54,7 @@ internal class PostDetailsViewController: ScrolledContentViewController, Storybo
                 presentation.content.load(html: status.content ?? "")
             }
             presentation.score.value = status.score
+            presentation.untappdScoere.value = status.untappdScore
         }
         
         present(view: presentation)

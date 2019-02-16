@@ -24,6 +24,7 @@ internal class PostDetailsPresentationView: UIView, ScrollPresented {
     @IBOutlet private(set) var content: UITextView!
     @IBOutlet private(set) var loadingContainer: UIView!
     @IBOutlet private(set) var score: RateBeerScoreLabel!
+    @IBOutlet private(set) var untappdScoere: UntappdScoreView!
     @IBOutlet private var spinner: UIActivityIndicatorView!
     
     override func awakeFromNib() {

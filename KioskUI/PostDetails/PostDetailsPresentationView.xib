@@ -69,6 +69,30 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OGo-7x-ulu" customClass="UntappdScoreView" customModule="KioskUI" customModuleProvider="target">
+                            <rect key="frame" x="291.5" y="58" width="67.5" height="67.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DA4-aI-o77">
+                                    <rect key="frame" x="12" y="12" width="43.5" height="43.5"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="DA4-aI-o77" secondAttribute="height" multiplier="1:1" id="tgs-OH-dFF"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="DA4-aI-o77" secondAttribute="trailing" constant="12" id="5Ln-mv-yNB"/>
+                                <constraint firstItem="DA4-aI-o77" firstAttribute="leading" secondItem="OGo-7x-ulu" secondAttribute="leading" constant="12" id="Gan-BH-jRe"/>
+                                <constraint firstAttribute="bottom" secondItem="DA4-aI-o77" secondAttribute="bottom" constant="12" id="iaT-LO-fHC"/>
+                                <constraint firstItem="DA4-aI-o77" firstAttribute="top" secondItem="OGo-7x-ulu" secondAttribute="top" constant="12" id="j8N-cT-zl8"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="label" destination="DA4-aI-o77" id="g0w-eb-uAT"/>
+                            </connections>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -77,12 +101,14 @@
                         <constraint firstItem="lBZ-U7-Yyx" firstAttribute="top" secondItem="yKb-7C-cZX" secondAttribute="top" id="4ky-mT-S58"/>
                         <constraint firstItem="lBZ-U7-Yyx" firstAttribute="leading" secondItem="yKb-7C-cZX" secondAttribute="leading" id="9TF-D5-ZJ6"/>
                         <constraint firstAttribute="bottom" secondItem="BZA-Cx-Xhs" secondAttribute="bottom" id="BDm-eW-zrA"/>
+                        <constraint firstItem="OGo-7x-ulu" firstAttribute="trailing" secondItem="Osi-Uy-LTn" secondAttribute="trailing" id="H15-Eo-AMM"/>
                         <constraint firstAttribute="trailing" secondItem="lBZ-U7-Yyx" secondAttribute="trailing" id="HQZ-rb-ovH"/>
                         <constraint firstItem="lBZ-U7-Yyx" firstAttribute="bottom" secondItem="FMJ-ff-cBP" secondAttribute="bottom" id="MVi-yM-rB2"/>
                         <constraint firstItem="BZA-Cx-Xhs" firstAttribute="top" secondItem="yKb-7C-cZX" secondAttribute="top" id="WvG-rN-s68"/>
                         <constraint firstItem="BZA-Cx-Xhs" firstAttribute="leading" secondItem="yKb-7C-cZX" secondAttribute="leading" constant="16" id="fi4-2b-qxe"/>
                         <constraint firstAttribute="trailing" secondItem="Osi-Uy-LTn" secondAttribute="trailing" constant="16" id="lOe-xs-zaA"/>
                         <constraint firstItem="Osi-Uy-LTn" firstAttribute="top" secondItem="yKb-7C-cZX" secondAttribute="top" constant="16" id="o8z-4S-ksA"/>
+                        <constraint firstItem="OGo-7x-ulu" firstAttribute="top" secondItem="Osi-Uy-LTn" secondAttribute="bottom" id="wU1-u8-bSs"/>
                     </constraints>
                 </view>
             </subviews>
@@ -102,6 +128,7 @@
                 <outlet property="presentationWidth" destination="0HE-cr-0jx" id="Pe1-53-0Do"/>
                 <outlet property="score" destination="Osi-Uy-LTn" id="zYs-lH-Pfs"/>
                 <outlet property="spinner" destination="Yb7-AR-vmz" id="sWp-6c-U67"/>
+                <outlet property="untappdScoere" destination="OGo-7x-ulu" id="lx5-ce-lzV"/>
             </connections>
             <point key="canvasLocation" x="138.40000000000001" y="156.97151424287858"/>
         </view>
