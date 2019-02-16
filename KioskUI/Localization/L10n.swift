@@ -89,6 +89,8 @@ internal enum L10n {
           internal static let score = L10n.tr("Localizable", "menu.controller.sort.by.score")
           /// style
           internal static let style = L10n.tr("Localizable", "menu.controller.sort.by.style")
+          /// Untappd
+          internal static let untappd = L10n.tr("Localizable", "menu.controller.sort.by.untappd")
         }
         internal enum Section {
           /// Sort by

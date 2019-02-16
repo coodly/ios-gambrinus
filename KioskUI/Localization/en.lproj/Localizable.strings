@@ -18,6 +18,7 @@
 "menu.controller.sort.by.posts" = "post title";
 "menu.controller.sort.by.score" = "RB score";
 "menu.controller.sort.by.style" = "style";
+"menu.controller.sort.by.untappd" = "Untappd";
 "menu.controller.sort.section.title" = "Sort by";
 
 "post.extended.details.back.button.title" = "Back";

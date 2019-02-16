@@ -71,6 +71,8 @@ extension NSManagedObjectContext {
             return [NSSortDescriptor(key: "normalizedTitle", ascending: true)]
         case .byRBScore:
             return [NSSortDescriptor(key: "topScore", ascending: false), NSSortDescriptor(key: "normalizedTitle", ascending: true)]
+        case .byUntappd:
+            return [NSSortDescriptor(key: "topUntappd", ascending: false), NSSortDescriptor(key: "normalizedTitle", ascending: true)]
         case .byStyle: fallthrough
         case .byRBBeerName: fallthrough
         case .byBrewer:

@@ -65,6 +65,7 @@ public class MenuViewController: UIViewController, StoryboardLoaded, Persistence
         
         let sortByPost = activeSort == .byPostName
         let sortByScore = activeSort == .byRBScore
+        let sortByUntappd = activeSort == .byUntappd
         
         var sortOptions = [MenuOption]()
 
@@ -77,6 +78,7 @@ public class MenuViewController: UIViewController, StoryboardLoaded, Persistence
         }
         sortOptions.append(MenuOption(name: L10n.Menu.Controller.Sort.By.posts, accessory: sortByPost ? .check : .none, switchesTo: .byPostName))
         sortOptions.append(MenuOption(name: L10n.Menu.Controller.Sort.By.score, accessory: sortByScore ? .check : .none, switchesTo: .byRBScore))
+        sortOptions.append(MenuOption(name: L10n.Menu.Controller.Sort.By.untappd, accessory: sortByUntappd ? .check : .none, switchesTo: .byUntappd))
         
         self.options = [sortOptions]
     }

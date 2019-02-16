@@ -33,6 +33,7 @@ public enum PostsSortOrder: Int {
     case byRBScore
     case byStyle
     case byBrewer
+    case byUntappd
     
     func reversed() -> PostsSortOrder? {
         switch self {
