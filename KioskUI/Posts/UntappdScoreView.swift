@@ -26,19 +26,14 @@ internal class UntappdScoreView: UIView {
     
     internal var value: String = "" {
         didSet {
-            guard value.hasValue() else {
+            guard value.hasValue(), let score = Double(value), score > 0.001 else {
                 isHidden = true
                 return
             }
             
             isHidden = false
             label.text = value
-            
-            guard let fill = Double(value) else {
-                return
-            }
-            
-            filled = CGFloat(fill / 5.0)
+            filled = CGFloat(score / 5.0)
         }
     }
     private var filled: CGFloat = 1.0 {
