@@ -72,7 +72,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OGo-7x-ulu" customClass="UntappdScoreView" customModule="KioskUI" customModuleProvider="target">
                             <rect key="frame" x="291.5" y="58" width="67.5" height="67.5"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DA4-aI-o77">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DA4-aI-o77">
                                     <rect key="frame" x="12" y="12" width="43.5" height="43.5"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="DA4-aI-o77" secondAttribute="height" multiplier="1:1" id="tgs-OH-dFF"/>

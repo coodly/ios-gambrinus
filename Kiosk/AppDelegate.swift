@@ -74,7 +74,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PersistenceConsumer, Miss
             CoreInjection.sharedInstance.inject(into: initialization)
             initialization.afterLoad = presentMain
             
-            if #available(iOS 10.0, *) {
+            if false, #available(iOS 10.0, *) {
                 let subscription = CloudSubscription()
                 subscription.subscribe()
             }

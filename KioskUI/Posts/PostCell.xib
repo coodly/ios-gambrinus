@@ -59,7 +59,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j4K-z6-ZBj" customClass="UntappdScoreView" customModule="KioskUI" customModuleProvider="target">
                                 <rect key="frame" x="89.5" y="53.5" width="60.5" height="60.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3.25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rsD-9B-FOV">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3.25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rsD-9B-FOV">
                                         <rect key="frame" x="12" y="12" width="36.5" height="36.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="rsD-9B-FOV" secondAttribute="height" multiplier="1:1" id="ZBJ-b3-45a"/>
