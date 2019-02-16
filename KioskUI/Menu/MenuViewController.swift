@@ -54,8 +54,6 @@ public class MenuViewController: UIViewController, StoryboardLoaded, Persistence
         tableView.tableFooterView = powered
         
         tableView.registerCell(forType: MenuCell.self)
-        
-        tableView.contentInset = UIEdgeInsets(top: 16, left: 0, bottom: 0, right: 0)
     }
     
     public override func viewWillAppear(_ animated: Bool) {

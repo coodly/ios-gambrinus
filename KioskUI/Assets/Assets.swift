@@ -23,6 +23,7 @@ internal enum Asset {
   internal static let menu = ImageAsset(name: "Menu")
   internal static let placholder = ImageAsset(name: "Placholder")
   internal static let poweredBy = ImageAsset(name: "PoweredBy")
+  internal static let poweredByUntappd = ImageAsset(name: "PoweredByUntappd")
   internal static let search = ImageAsset(name: "Search")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
