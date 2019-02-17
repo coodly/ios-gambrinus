@@ -84,6 +84,7 @@
 		A744577F21CE71A3009B4D4E /* Persistence+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A744577E21CE71A3009B4D4E /* Persistence+Styles.swift */; };
 		A744578121CE738D009B4D4E /* UpdateDirtyPostsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A744578021CE738D009B4D4E /* UpdateDirtyPostsOperation.swift */; };
 		A744578321CE8690009B4D4E /* MissingDetailsMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A744578221CE8690009B4D4E /* MissingDetailsMonitor.swift */; };
+		A75B6D702219B031008FD3F9 /* RateBeerRenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75B6D6F2219B031008FD3F9 /* RateBeerRenderView.swift */; };
 		A75CADB21D82E75700E2B1AE /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75CADB11D82E75700E2B1AE /* Post.swift */; };
 		A75CADB81D82F03700E2B1AE /* UpdateDirtyPostsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75CADB71D82F03700E2B1AE /* UpdateDirtyPostsOperation.swift */; };
 		A78CABE321F435420072B508 /* AppPresentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78CABE221F435420072B508 /* AppPresentationViewController.swift */; };
@@ -470,6 +471,7 @@
 		A744577E21CE71A3009B4D4E /* Persistence+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Persistence+Styles.swift"; sourceTree = "<group>"; };
 		A744578021CE738D009B4D4E /* UpdateDirtyPostsOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDirtyPostsOperation.swift; sourceTree = "<group>"; };
 		A744578221CE8690009B4D4E /* MissingDetailsMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissingDetailsMonitor.swift; sourceTree = "<group>"; };
+		A75B6D6F2219B031008FD3F9 /* RateBeerRenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateBeerRenderView.swift; sourceTree = "<group>"; };
 		A75CADB11D82E75700E2B1AE /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		A75CADB71D82F03700E2B1AE /* UpdateDirtyPostsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateDirtyPostsOperation.swift; sourceTree = "<group>"; };
 		A78CABE221F435420072B508 /* AppPresentationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPresentationViewController.swift; sourceTree = "<group>"; };
@@ -950,11 +952,12 @@
 				A7B66A6821CCBB3600DB1840 /* MenuCell.swift */,
 				A7B66A6921CCBB3600DB1840 /* MenuCell.xib */,
 				A7B66A6F21CD05C700DB1840 /* MenuFooterView.swift */,
+				A7B66A7121CD05DC00DB1840 /* MenuFooterView.xib */,
 				A70238F621C807E400A7CFE9 /* MenuNavigation.storyboard */,
 				A70238F721C807E400A7CFE9 /* MenuNavigationViewController.swift */,
 				A70238F521C807E400A7CFE9 /* MenuPresentationView.swift */,
 				A702390321C80B2500A7CFE9 /* MenuViewController.swift */,
-				A7B66A7121CD05DC00DB1840 /* MenuFooterView.xib */,
+				A75B6D6F2219B031008FD3F9 /* RateBeerRenderView.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -2389,6 +2392,7 @@
 				A792729A21C958070001F621 /* MaybeModalPresenter.swift in Sources */,
 				A702390421C80B2500A7CFE9 /* MenuViewController.swift in Sources */,
 				A792727821C934650001F621 /* Log.swift in Sources */,
+				A75B6D702219B031008FD3F9 /* RateBeerRenderView.swift in Sources */,
 				A7E1800A21CBE9E900E70529 /* NSMutableAttributedString+Formatting.swift in Sources */,
 				A701BA9521CA955B004258F2 /* PostDetailsViewModel.swift in Sources */,
 				A792729521C9573A0001F621 /* PostDetailsViewController.swift in Sources */,
