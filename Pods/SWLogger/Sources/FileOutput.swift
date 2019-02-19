@@ -34,11 +34,13 @@ public class FileOutput: LogOutput {
         return logsFolder
     }()
     private lazy var appNamePrefix: String = {
-        let appName = Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String ?? ""
-        if appName.count > 0 {
-            return "\(appName)-"
+        let displayName = Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String
+        let bundleName = Bundle.main.object(forInfoDictionaryKey: "CFBundleName") as? String
+        guard let appName = displayName ?? bundleName, !appName.isEmpty else {
+            return ""
         }
-        return ""
+        
+        return "\(appName)-"
     }()
 
     public init(saveInDirectory: FileManager.SearchPathDirectory = .documentDirectory) {

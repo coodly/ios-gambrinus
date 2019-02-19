@@ -11,7 +11,7 @@ module PodSource
     Tagged = 3
 end
 
-UsedSource = PodSource::Remote
+UsedSource = PodSource::Tagged
 
 def pods
     pod 'Fabric', '1.9.0'
@@ -24,8 +24,6 @@ def pods
     
     if UsedSource == PodSource::Local
         pod 'LaughingAdventure', :path => '../swift-laughing-adventure'
-    else
-        pod 'LaughingAdventure', :git => 'git@github.com:coodly/laughing-adventure.git'
     end
 end
 
@@ -35,7 +33,7 @@ def core_data_pod
         elsif UsedSource == PodSource::Remote
         pod 'CoreDataPersistence', :git => 'git@github.com:coodly/CoreDataPersistence.git'
         else
-        pod 'CoreDataPersistence', :git => 'git@github.com:coodly/CoreDataPersistence.git', :tag => '0.1.6'
+        pod 'CoreDataPersistence', :git => 'git@github.com:coodly/CoreDataPersistence.git', :tag => '0.1.9'
     end
 end
 
@@ -45,7 +43,7 @@ def log_pod
     elsif UsedSource == PodSource::Remote
         pod 'SWLogger', :git => 'git@github.com:coodly/swlogger.git'
     else
-        pod 'SWLogger', :git => 'git@github.com:coodly/swlogger.git', tag: '0.3.4'
+        pod 'SWLogger', :git => 'git@github.com:coodly/swlogger.git', tag: '0.3.6'
     end
 end
 
@@ -55,7 +53,7 @@ def images_pod
     elsif UsedSource == PodSource::Remote
         pod 'ImageProvide', :git => 'git@github.com:coodly/ImageProvide.git'
     else
-        pod 'ImageProvide', :git => 'git@github.com:coodly/ImageProvide.git', tag: '0.4.0'
+        pod 'ImageProvide', :git => 'git@github.com:coodly/ImageProvide.git', tag: '0.4.1'
     end
 end
 
@@ -75,7 +73,7 @@ def puff_pod
     elsif UsedSource == PodSource::Remote
         pod 'Puff/Core', :git => 'git@github.com:coodly/Puff.git'
     else
-        pod 'Puff/Core', :git => 'git@github.com:coodly/Puff.git', tag: '0.5.0'
+        pod 'Puff/Core', :git => 'git@github.com:coodly/Puff.git', tag: '0.5.1'
     end
 end
 

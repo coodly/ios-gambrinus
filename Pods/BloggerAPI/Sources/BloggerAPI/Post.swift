@@ -23,4 +23,5 @@ public struct Post: Codable {
     public let title: String?
     public let content: String?
     public let images: [Image]?
+    public let url: URL?
 }

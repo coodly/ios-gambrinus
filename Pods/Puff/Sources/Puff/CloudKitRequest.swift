@@ -31,6 +31,7 @@ public enum UsedDatabase {
 public struct CloudResult<T: RemoteRecord> {
     public let records: [T]
     public let deleted: [CKRecord.ID]
+    public let hasMore: Bool
     public let error: Error?
 }
 
@@ -71,7 +72,7 @@ open class CloudKitRequest<T: RemoteRecord>: ConcurrentOperation {
         }
     }
     
-    fileprivate func handleResult(withCursor cursor: CKQueryOperation.Cursor?, desiredKeys: [String]?, limit: Int? = nil, error: Error?, inDatabase db: UsedDatabase, retryClosure: @escaping () -> ()) {
+    fileprivate func handleResult(with cursor: CKQueryOperation.Cursor?, desiredKeys: [String]?, limit: Int? = nil, error: Error?, inDatabase db: UsedDatabase, retryClosure: @escaping () -> ()) {
         let finalizer: () -> ()
         var hadFailure = false
         if let cursor = cursor {
@@ -98,7 +99,7 @@ open class CloudKitRequest<T: RemoteRecord>: ConcurrentOperation {
                 hadFailure = true
                 Logging.log("Request error \(error)")
             }
-            self.handle(result: CloudResult(records: self.records, deleted: self.deleted, error: error), completion: finalizer)
+            self.handle(result: CloudResult(records: self.records, deleted: self.deleted, hasMore: cursor != nil, error: error), completion: finalizer)
         }
     }
     
@@ -123,7 +124,7 @@ public extension CloudKitRequest {
                 self.deleted.append(contentsOf: deleted)
             }
 
-            self.handleResult(withCursor: nil, desiredKeys: nil, error: error, inDatabase: db) {
+            self.handleResult(with: nil, desiredKeys: nil, error: error, inDatabase: db) {
                 self.delete(record: record, inDatabase: db)
             }
         }
@@ -152,7 +153,7 @@ public extension CloudKitRequest {
                 self.deleted.append(contentsOf: deleted)
             }
             
-            self.handleResult(withCursor: nil, desiredKeys: nil, error: error, inDatabase: db) {
+            self.handleResult(with: nil, desiredKeys: nil, error: error, inDatabase: db) {
                 self.save(records: records, delete: delete, inDatabase: db)
             }
         }
@@ -224,7 +225,7 @@ public extension CloudKitRequest {
             
             let usedCursor = pullAll ? cursor : nil
             
-            self.handleResult(withCursor: usedCursor, desiredKeys: desiredKeys, limit: limit, error: error, inDatabase: db, retryClosure: retryClosure)
+            self.handleResult(with: usedCursor, desiredKeys: desiredKeys, limit: limit, error: error, inDatabase: db, retryClosure: retryClosure)
         }
         
         database(for: db).add(fetchOperation)
