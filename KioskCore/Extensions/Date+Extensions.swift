@@ -36,4 +36,11 @@ extension Date {
         
         return Calendar.gregorian.date(byAdding: components, to: self)
     }
+    
+    public static func tomorrow(at hour: Int) -> Date {
+        let tomorrow = Calendar.gregorian.date(byAdding: .day, value: 1, to: Date()) ?? Date()
+        var components = Calendar.gregorian.dateComponents([.year, .month, .day, .era], from: tomorrow)
+        components.hour = hour
+        return Calendar.gregorian.date(from: components) ?? Date().addingTimeInterval(60 * 60)
+    }
 }

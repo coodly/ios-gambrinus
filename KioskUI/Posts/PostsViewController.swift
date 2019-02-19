@@ -24,6 +24,7 @@ private extension Selector {
     static let searchChanged = #selector(PostsViewController.searchChanged(_:))
     static let keyboardFramwChanged = #selector(PostsViewController.keyboardFramwChanged(_:))
     static let refreshContent = #selector(PostsViewController.refreshContent)
+    static let scheduleNextPostsCheck = #selector(PostsViewController.scheduleNextPostsCheck)
 }
 
 private typealias Dependencies = PersistenceConsumer & AppQueueConsumer
@@ -43,6 +44,11 @@ public class PostsViewController: FetchedCollectionViewController<Post, PostCell
     @IBOutlet private var searchField: UITextField!
     @IBOutlet private var keyboardFill: NSLayoutConstraint!
     private lazy var refresh = UIRefreshControl(frame: .zero)
+    private var checkTimer: Timer? {
+        didSet {
+            oldValue?.invalidate()
+        }
+    }
     
     public var persistence: Persistence!
     public var appQueue: OperationQueue!
@@ -71,6 +77,7 @@ public class PostsViewController: FetchedCollectionViewController<Post, PostCell
         collectionView.backgroundColor = UIColor.controllerBackground
         
         NotificationCenter.default.addObserver(self, selector: .refreshContent, name: .postsModification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: .scheduleNextPostsCheck, name: UIAccessibility.guidedAccessStatusDidChangeNotification, object: nil)
     }
     
     override func createFetchedController() -> NSFetchedResultsController<Post> {
@@ -195,6 +202,21 @@ public class PostsViewController: FetchedCollectionViewController<Post, PostCell
         }
         
         return cachedPosterWidth!.dimension
+    }
+    
+    @objc fileprivate func scheduleNextPostsCheck() {
+        Log.debug("scheduleNextCheck")
+        guard UIAccessibility.isGuidedAccessEnabled else {
+            checkTimer = nil
+            return
+        }
+        
+        refreshContent()
+        let nextCheckAt = Date.tomorrow(at: 12)
+        Log.debug("Next check at \(nextCheckAt)")
+        let timer = Timer(fireAt: nextCheckAt, interval: 0, target: self, selector: .scheduleNextPostsCheck, userInfo: nil, repeats: false)
+        RunLoop.current.add(timer, forMode: .default)
+        checkTimer = timer
     }
 }
 
