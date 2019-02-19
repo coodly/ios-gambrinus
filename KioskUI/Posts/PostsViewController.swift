@@ -78,6 +78,8 @@ public class PostsViewController: FetchedCollectionViewController<Post, PostCell
         
         NotificationCenter.default.addObserver(self, selector: .refreshContent, name: .postsModification, object: nil)
         NotificationCenter.default.addObserver(self, selector: .scheduleNextPostsCheck, name: UIAccessibility.guidedAccessStatusDidChangeNotification, object: nil)
+        
+        scheduleNextPostsCheck()
     }
     
     override func createFetchedController() -> NSFetchedResultsController<Post> {
@@ -207,12 +209,13 @@ public class PostsViewController: FetchedCollectionViewController<Post, PostCell
     @objc fileprivate func scheduleNextPostsCheck() {
         Log.debug("scheduleNextCheck")
         guard UIAccessibility.isGuidedAccessEnabled else {
+            Log.debug("Guided access not enabled. No automatic checks")
             checkTimer = nil
             return
         }
         
         refreshContent()
-        let nextCheckAt = Date.tomorrow(at: 12)
+        let nextCheckAt = Date.tomorrow(at: 14)
         Log.debug("Next check at \(nextCheckAt)")
         let timer = Timer(fireAt: nextCheckAt, interval: 0, target: self, selector: .scheduleNextPostsCheck, userInfo: nil, repeats: false)
         RunLoop.current.add(timer, forMode: .default)
