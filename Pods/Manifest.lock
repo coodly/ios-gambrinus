@@ -37,16 +37,16 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   BloggerAPI:
-    :commit: a51ba5b683d5b1f0dc2f8cb54fb5e2e7e0c261a6
+    :commit: b5abc4c4c396d6f16b948b719723058b07104489
     :git: "git@github.com:coodly/BloggerAPI.git"
   CoreDataPersistence:
-    :commit: 05450dc7abcb51aabb32b486d613f528f88846a0
+    :commit: 6f53e719d6e9f1c435b6544b7572def019ffab2e
     :git: "git@github.com:coodly/CoreDataPersistence.git"
   ImageProvide:
     :commit: fc70fd224e2f3d0f7e0dd033c5d0cbaf7a55dbc3
     :git: "git@github.com:coodly/ImageProvide.git"
   Puff:
-    :commit: 64fa55b68b6de6b2cc074505986ad67861c94941
+    :commit: c56c07db829e2c9d001bcb743bb0e376ddca94e4
     :git: "git@github.com:coodly/Puff.git"
   SWLogger:
     :commit: 18ed3df041436a5984bf81eb2b16f692a0c166bf

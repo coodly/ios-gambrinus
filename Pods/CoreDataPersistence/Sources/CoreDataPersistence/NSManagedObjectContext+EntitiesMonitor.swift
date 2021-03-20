@@ -15,11 +15,10 @@
 */
 
 
+#if canImport(Combine)
 import Foundation
 import CoreData
-#if canImport(Combine)
 import Combine
-#endif
 
 extension NSManagedObjectContext {
     @available(iOS 13.0, tvOS 13.0, *)
@@ -93,4 +92,4 @@ private class EntitiesChangeSubscription<Entity: NSManagedObject, S: Subscriber>
         _ = subscriber?.receive(controller?.fetchedObjects ?? [])
     }
 }
-
+#endif

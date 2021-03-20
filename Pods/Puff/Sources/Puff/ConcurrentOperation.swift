@@ -37,7 +37,8 @@ open class ConcurrentOperation: Operation {
             callError(error)
         }
     }
-    
+        
+    #if canImport(Combine)
     @available(iOS 13.0, macOS 10.15, *)
     public func completionPublisher<T: ConcurrentOperation>() -> AnyPublisher<Result<T, Error>, Never> {
         Future<Result<T, Error>, Never>() {
@@ -47,6 +48,7 @@ open class ConcurrentOperation: Operation {
             
         }.eraseToAnyPublisher()
     }
+    #endif
     
     public func onCompletion<T: ConcurrentOperation>(callback: @escaping ((Result<T, Error>) -> Void)) {
         let onSuccess: (() -> Void) = {

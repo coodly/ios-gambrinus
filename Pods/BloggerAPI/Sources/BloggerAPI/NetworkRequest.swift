@@ -34,7 +34,7 @@ private enum Method: String {
     case get
 }
 
-internal protocol Executed: class {
+internal protocol Executed: AnyObject {
     func execute()
 }
 
