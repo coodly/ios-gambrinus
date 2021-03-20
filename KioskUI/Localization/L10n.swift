@@ -1,157 +1,166 @@
 // swiftlint:disable all
-// Generated using SwiftGen, by O.Halligon — https://github.com/SwiftGen/SwiftGen
+// Generated using SwiftGen — https://github.com/SwiftGen/SwiftGen
 
 import Foundation
 
-// swiftlint:disable superfluous_disable_command
-// swiftlint:disable file_length
+// swiftlint:disable superfluous_disable_command file_length implicit_return
 
 // MARK: - Strings
 
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
-// swiftlint:disable nesting type_body_length type_name
-internal enum L10n {
+// swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
+public enum L10n {
 
-  internal enum Coodly {
-    internal enum Feedback {
-      internal enum Controller {
+  public enum Coodly {
+    public enum Feedback {
+      public enum Controller {
         /// Conversations
-        internal static let title = L10n.tr("Localizable", "coodly.feedback.controller.title")
+        public static let title = L10n.tr("Localizable", "coodly.feedback.controller.title")
       }
-      internal enum Header {
+      public enum Header {
         /// Please read this before posting
-        internal static let message = L10n.tr("Localizable", "coodly.feedback.header.message")
+        public static let message = L10n.tr("Localizable", "coodly.feedback.header.message")
       }
-      internal enum Message {
-        internal enum Compose {
-          internal enum Controller {
+      public enum Message {
+        public enum Compose {
+          public enum Controller {
             /// Write message
-            internal static let title = L10n.tr("Localizable", "coodly.feedback.message.compose.controller.title")
-            internal enum Send {
+            public static let title = L10n.tr("Localizable", "coodly.feedback.message.compose.controller.title")
+            public enum Send {
               /// Send
-              internal static let button = L10n.tr("Localizable", "coodly.feedback.message.compose.controller.send.button")
+              public static let button = L10n.tr("Localizable", "coodly.feedback.message.compose.controller.send.button")
             }
           }
         }
       }
-      internal enum Response {
+      public enum Response {
         /// Hello\n\nI'm Jaanus Siim, independent developer based in Estonia.\n\nEvery suggestion and feedback is welcome. I promise to read them all. But I may not be able to respond to all messages.\n\nThanks for undertanding.
-        internal static let notice = L10n.tr("Localizable", "coodly.feedback.response.notice")
+        public static let notice = L10n.tr("Localizable", "coodly.feedback.response.notice")
       }
-      internal enum Sign {
-        internal enum In {
+      public enum Sign {
+        public enum In {
           /// Please sign in to iCloud to send a message.
-          internal static let message = L10n.tr("Localizable", "coodly.feedback.sign.in.message")
+          public static let message = L10n.tr("Localizable", "coodly.feedback.sign.in.message")
         }
       }
     }
   }
 
-  internal enum Kiosk {
-    internal enum Posts {
-      internal enum Controller {
+  public enum Kiosk {
+    public enum Posts {
+      public enum Controller {
         /// Gambrinus
-        internal static let title = L10n.tr("Localizable", "kiosk.posts.controller.title")
+        public static let title = L10n.tr("Localizable", "kiosk.posts.controller.title")
       }
     }
   }
 
-  internal enum Marked {
-    internal enum Controller {
+  public enum Marked {
+    public enum Controller {
       /// Notables
-      internal static let title = L10n.tr("Localizable", "marked.controller.title")
+      public static let title = L10n.tr("Localizable", "marked.controller.title")
     }
   }
 
-  internal enum Menu {
-    internal enum Controller {
-      internal enum Option {
+  public enum Menu {
+    public enum Controller {
+      public enum Option {
         /// Favorites
-        internal static let favorites = L10n.tr("Localizable", "menu.controller.option.favorites")
+        public static let favorites = L10n.tr("Localizable", "menu.controller.option.favorites")
         /// Message to developer
-        internal static let feedback = L10n.tr("Localizable", "menu.controller.option.feedback")
-        internal enum All {
+        public static let feedback = L10n.tr("Localizable", "menu.controller.option.feedback")
+        public enum All {
           /// All Posts
-          internal static let posts = L10n.tr("Localizable", "menu.controller.option.all.posts")
+          public static let posts = L10n.tr("Localizable", "menu.controller.option.all.posts")
         }
       }
-      internal enum Sort {
-        internal enum By {
+      public enum Sort {
+        public enum By {
           /// RB beer name
-          internal static let beer = L10n.tr("Localizable", "menu.controller.sort.by.beer")
+          public static let beer = L10n.tr("Localizable", "menu.controller.sort.by.beer")
           /// brewer
-          internal static let brewer = L10n.tr("Localizable", "menu.controller.sort.by.brewer")
+          public static let brewer = L10n.tr("Localizable", "menu.controller.sort.by.brewer")
           /// date
-          internal static let date = L10n.tr("Localizable", "menu.controller.sort.by.date")
+          public static let date = L10n.tr("Localizable", "menu.controller.sort.by.date")
           /// post title
-          internal static let posts = L10n.tr("Localizable", "menu.controller.sort.by.posts")
+          public static let posts = L10n.tr("Localizable", "menu.controller.sort.by.posts")
           /// RB score
-          internal static let score = L10n.tr("Localizable", "menu.controller.sort.by.score")
+          public static let score = L10n.tr("Localizable", "menu.controller.sort.by.score")
           /// style
-          internal static let style = L10n.tr("Localizable", "menu.controller.sort.by.style")
+          public static let style = L10n.tr("Localizable", "menu.controller.sort.by.style")
           /// Untappd
-          internal static let untappd = L10n.tr("Localizable", "menu.controller.sort.by.untappd")
+          public static let untappd = L10n.tr("Localizable", "menu.controller.sort.by.untappd")
         }
-        internal enum Section {
+        public enum Section {
           /// Sort by
-          internal static let title = L10n.tr("Localizable", "menu.controller.sort.section.title")
+          public static let title = L10n.tr("Localizable", "menu.controller.sort.section.title")
         }
       }
     }
   }
 
-  internal enum Post {
-    internal enum Extended {
-      internal enum Details {
-        internal enum Back {
-          internal enum Button {
+  public enum Post {
+    public enum Extended {
+      public enum Details {
+        public enum Back {
+          public enum Button {
             /// Back
-            internal static let title = L10n.tr("Localizable", "post.extended.details.back.button.title")
+            public static let title = L10n.tr("Localizable", "post.extended.details.back.button.title")
           }
         }
-        internal enum Brewer {
+        public enum Brewer {
           /// Brewer
-          internal static let label = L10n.tr("Localizable", "post.extended.details.brewer.label")
+          public static let label = L10n.tr("Localizable", "post.extended.details.brewer.label")
         }
-        internal enum Posted {
-          internal enum On {
+        public enum Posted {
+          public enum On {
             /// Posted on
-            internal static let label = L10n.tr("Localizable", "post.extended.details.posted.on.label")
+            public static let label = L10n.tr("Localizable", "post.extended.details.posted.on.label")
           }
         }
-        internal enum Style {
+        public enum Style {
           /// Style
-          internal static let label = L10n.tr("Localizable", "post.extended.details.style.label")
+          public static let label = L10n.tr("Localizable", "post.extended.details.style.label")
         }
       }
     }
   }
 
-  internal enum Posts {
-    internal enum Controller {
+  public enum Posts {
+    public enum Controller {
       /// All Posts
-      internal static let title = L10n.tr("Localizable", "posts.controller.title")
-      internal enum Edit {
+      public static let title = L10n.tr("Localizable", "posts.controller.title")
+      public enum Edit {
         /// Edit
-        internal static let button = L10n.tr("Localizable", "posts.controller.edit.button")
-        internal enum Done {
+        public static let button = L10n.tr("Localizable", "posts.controller.edit.button")
+        public enum Done {
           /// Done
-          internal static let button = L10n.tr("Localizable", "posts.controller.edit.done.button")
+          public static let button = L10n.tr("Localizable", "posts.controller.edit.done.button")
         }
       }
     }
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
-// swiftlint:enable nesting type_body_length type_name
+// swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces
 
 // MARK: - Implementation Details
 
 extension L10n {
   private static func tr(_ table: String, _ key: String, _ args: CVarArg...) -> String {
-    let format = NSLocalizedString(key, tableName: table, bundle: Bundle(for: BundleToken.self), comment: "")
+    let format = BundleToken.bundle.localizedString(forKey: key, value: nil, table: table)
     return String(format: format, locale: Locale.current, arguments: args)
   }
 }
 
-private final class BundleToken {}
+// swiftlint:disable convenience_type
+private final class BundleToken {
+  static let bundle: Bundle = {
+    #if SWIFT_PACKAGE
+    return Bundle.module
+    #else
+    return Bundle(for: BundleToken.self)
+    #endif
+  }()
+}
+// swiftlint:enable convenience_type

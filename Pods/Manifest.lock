@@ -8,7 +8,6 @@ PODS:
   - Puff/Logger (0.6.3)
   - Puff/Serialization (0.6.3):
     - Puff/Logger
-  - SwiftGen (6.0.2)
   - SWLogger (0.4.3)
 
 DEPENDENCIES:
@@ -16,12 +15,7 @@ DEPENDENCIES:
   - "CoreDataPersistence (from `git@github.com:coodly/CoreDataPersistence.git`, tag `0.2.4`)"
   - "ImageProvide (from `git@github.com:coodly/ImageProvide.git`, tag `0.5.0`)"
   - "Puff/Core (from `git@github.com:coodly/Puff.git`, tag `0.6.3`)"
-  - SwiftGen (= 6.0.2)
   - "SWLogger (from `git@github.com:coodly/swlogger.git`, tag `0.5.0`)"
-
-SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
-    - SwiftGen
 
 EXTERNAL SOURCES:
   BloggerAPI:
@@ -62,9 +56,8 @@ SPEC CHECKSUMS:
   CoreDataPersistence: 150e10ee57c5c23e8e39ef1e6c8774c859ef77aa
   ImageProvide: a4b5df19bc6eead48ddf6154019d90a25ea92c62
   Puff: a03e0afe8accc45f187e845bf6dd6600bf3ae6b9
-  SwiftGen: e5b047067aa84082826a0c4f1c4c2ddc95bcf74c
   SWLogger: f1f871a2dcd4183d0aa49b9db9a9ca924e0ab7b3
 
-PODFILE CHECKSUM: 993a6148fd9e7926de17a587645b782b506dfe1c
+PODFILE CHECKSUM: 7e682c8522ef964ffa2f07e86177d33b107fed55
 
 COCOAPODS: 1.10.0

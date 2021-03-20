@@ -1,0 +1,14 @@
+strings:
+  inputs: KioskUI/Localization/en.lproj
+  filter: Localizable.strings
+  outputs:
+    - templateName: structured-swift5
+      output: KioskUI/Localization/L10n.swift
+      params:
+        publicAccess: true
+xcassets:
+  inputs:
+    - KioskUI/Assets/Media.xcassets
+  outputs:
+    - templateName: swift5
+      output: KioskUI/Assets/Assets.swift

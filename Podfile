@@ -71,7 +71,6 @@ end
 target 'KioskUI' do
     platform :ios, '9.3'
 
-    pod 'SwiftGen', '6.0.2'
     images_pod
     blogger_pod
 end

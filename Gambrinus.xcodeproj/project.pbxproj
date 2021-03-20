@@ -938,7 +938,6 @@
 			buildPhases = (
 				9924FE908D7DB3A6CFB572AE /* [CP] Check Pods Manifest.lock */,
 				A70238AB21C7FB2900A7CFE9 /* Headers */,
-				A792721321C8F7700001F621 /* Generate assets */,
 				A70238AC21C7FB2900A7CFE9 /* Sources */,
 				A70238AD21C7FB2900A7CFE9 /* Frameworks */,
 				A70238AE21C7FB2900A7CFE9 /* Resources */,
@@ -1154,24 +1153,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A792721321C8F7700001F621 /* Generate assets */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Generate assets";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "$PODS_ROOT/SwiftGen/bin/swiftgen xcassets -t swift4 KioskUI/Assets/Media.xcassets/ -o KioskUI/Assets/Assets.swift\n";
-		};
 		A7ADF45021C8F448008B3205 /* Check localization */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1206,7 +1187,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "${SRCROOT}/Pods/SwiftGen/bin/swiftgen strings -t structured-swift4 KioskUI/Localization/en.lproj/Localizable.strings -o KioskUI/Localization/L10n.swift\n";
+			shellScript = "arch -x86_64 swiftgen\n";
 		};
 		E8D6025485D73A4646E757C5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
