@@ -20,7 +20,7 @@ private extension Selector {
     static let adjustFont = #selector(PostCell.adjustFont)
 }
 
-internal class PostCell: UICollectionViewCell {
+public class PostCell: UICollectionViewCell {
     @IBOutlet private var postDate: UILabel!
     @IBOutlet private var dateFill: UIView!
     @IBOutlet private var postTitle: UILabel!
@@ -51,7 +51,7 @@ internal class PostCell: UICollectionViewCell {
         untappdScore.value = status.untappdScore
     }
     
-    override func awakeFromNib() {
+    public override func awakeFromNib() {
         super.awakeFromNib()
 
         contentView.backgroundColor = .controllerBackground
