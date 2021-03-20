@@ -16,7 +16,7 @@
 
 import UIKit
 
-internal extension UICollectionView {
+extension UICollectionView {
     internal func dequeueReusableCell<T: UICollectionViewCell>(for indexPath: IndexPath) -> T {
         return dequeueReusableCell(withReuseIdentifier: T.identifier(), for: indexPath) as! T
     }

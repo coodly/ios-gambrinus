@@ -16,7 +16,7 @@
 
 import UIKit
 
-internal extension UIView {
+extension UIView {
     internal class func viewNib(_ bundle: Bundle? = nil) -> UINib {
         let name = className()
         return UINib(nibName: name, bundle: bundle)

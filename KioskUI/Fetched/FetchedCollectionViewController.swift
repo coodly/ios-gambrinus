@@ -200,6 +200,8 @@ public class FetchedCollectionViewController<Model: NSManagedObject, Cell: UICol
                     self.collectionView.deleteItems(at: [action.indexPath!])
                 case .move:
                     self.collectionView.moveItem(at: action.indexPath!, to: action.newIndexPath!)
+                @unknown default:
+                    fatalError()
                 }
             }
         }
@@ -282,6 +284,8 @@ extension NSFetchedResultsChangeType: CustomStringConvertible {
             return "move"
         case .update:
             return "update"
+        @unknown default:
+            return "unknown-\(self)"
         }
     }
 }

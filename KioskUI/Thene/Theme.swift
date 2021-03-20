@@ -31,7 +31,7 @@ internal extension UIColor {
     static let controllerBackground = UIColor(white: 0.914, alpha: 1)
 }
 
-internal extension UIFont {
+extension UIFont {
     internal static func ratebeerFont() ->  UIFont {
         let system = UIFont.preferredFont(forTextStyle: .headline)
         return UIFont(name: "Triplex-Bold", size: system.pointSize * 1.5)!

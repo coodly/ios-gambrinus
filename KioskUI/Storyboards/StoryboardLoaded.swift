@@ -18,6 +18,6 @@ import Foundation
 
 import Foundation
 
-public protocol StoryboardLoaded: class {
+public protocol StoryboardLoaded: AnyObject {
     static var storyboardName: String { get }
 }
