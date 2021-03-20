@@ -20,11 +20,16 @@ public struct Image: Codable {
     public let url: URL
     
     public var largeImageURL: URL {
-        var value = url.absoluteString
-        guard value.range(of: "blogspot.com") != nil else {
+        guard url.absoluteString.range(of: "blogspot.com") != nil else {
             return url
         }
-        value = value.replacingOccurrences(of: "/s200/", with: "/s1600/")
-        return URL(string: value)!
+
+        let imageName = url.lastPathComponent
+        let withoutName = url.deletingLastPathComponent()
+        let withoutSizeMarker = withoutName.deletingLastPathComponent()
+        let withSizeMarker = withoutSizeMarker.appendingPathComponent("s1600", isDirectory: true)
+        let withName = withSizeMarker.appendingPathComponent(imageName)
+        
+        return withName
     }
 }

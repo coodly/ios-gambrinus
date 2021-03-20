@@ -22,5 +22,5 @@ public struct AppConfig {
     static let development = AppConfig(logs: true)
     static let live = AppConfig(logs: false)
     
-    public static let current: AppConfig = .live
+    public static let current: AppConfig = .development
 }
