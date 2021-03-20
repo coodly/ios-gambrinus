@@ -84,7 +84,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PersistenceConsumer, Miss
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
-        let cloudNotification = CKNotification(fromRemoteNotificationDictionary: userInfo)
+        let cloudNotification = CKNotification(fromRemoteNotificationDictionary: userInfo)!
         CoreLog.debug("didReceiveRemoteNotification: \(cloudNotification)")
         
         guard application.applicationState == .active else {

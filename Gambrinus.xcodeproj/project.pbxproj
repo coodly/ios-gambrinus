@@ -160,9 +160,6 @@
 		A7FB14F521CD2BC8008BD71A /* UIImage+Cropped.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FB14F421CD2BC8008BD71A /* UIImage+Cropped.swift */; };
 		C6ECAABAE82EB9A8DB91D849 /* Pods_KioskCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5F5D8129EFABC3BC56C57BD /* Pods_KioskCore.framework */; };
 		E939DFD1AE3857CE7E64F416 /* Pods_Kiosk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A31968546AB2617414844400 /* Pods_Kiosk.framework */; };
-		EA0668DD192A45C4009C83F1 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA0668DC192A45C4009C83F1 /* XCTest.framework */; };
-		EA0668DE192A45C4009C83F1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA0668C3192A45C4009C83F1 /* Foundation.framework */; };
-		EA0668DF192A45C5009C83F1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA0668C7192A45C4009C83F1 /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -388,14 +385,12 @@
 		A7EAF27021CF474A00842715 /* Persistence+BeerStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Persistence+BeerStyles.swift"; sourceTree = "<group>"; };
 		A7FB14F421CD2BC8008BD71A /* UIImage+Cropped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Cropped.swift"; sourceTree = "<group>"; };
 		AAFA608429FBD4A83156B36E /* Pods-KioskCore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KioskCore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KioskCore/Pods-KioskCore.debug.xcconfig"; sourceTree = "<group>"; };
-		BA665BA7D5ECAA081827FF24 /* mapping.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = mapping.json; sourceTree = "<group>"; };
 		C9500B6301C764BA1D0D47AC /* Pods-Gambrinus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gambrinus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gambrinus/Pods-Gambrinus.debug.xcconfig"; sourceTree = "<group>"; };
 		D7A983E829D84242BA817184 /* Pods-Kiosk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kiosk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kiosk/Pods-Kiosk.debug.xcconfig"; sourceTree = "<group>"; };
 		DA69DCA20CC7434C02417339 /* Pods_Gambrinus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gambrinus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA0668C3192A45C4009C83F1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EA0668C5192A45C4009C83F1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		EA0668C7192A45C4009C83F1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		EA0668DB192A45C4009C83F1 /* GambrinusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GambrinusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA0668DC192A45C4009C83F1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		EA2713AB1B1A4B40002D655E /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		EA2713AC1B1A4B40002D655E /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
@@ -428,16 +423,6 @@
 				A744576E21CE60BF009B4D4E /* CloudKit.framework in Frameworks */,
 				A70238DE21C800DC00A7CFE9 /* KioskCore.framework in Frameworks */,
 				E939DFD1AE3857CE7E64F416 /* Pods_Kiosk.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EA0668D8192A45C4009C83F1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EA0668DD192A45C4009C83F1 /* XCTest.framework in Frameworks */,
-				EA0668DF192A45C5009C83F1 /* UIKit.framework in Frameworks */,
-				EA0668DE192A45C4009C83F1 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -976,7 +961,6 @@
 				A70238CD21C800BA00A7CFE9 /* Kiosk */,
 				EA0668C2192A45C4009C83F1 /* Frameworks */,
 				EA0668C1192A45C4009C83F1 /* Products */,
-				BA665BA7D5ECAA081827FF24 /* mapping.json */,
 				CF35BA0BC6A9AAA2667487B5 /* Pods */,
 			);
 			sourceTree = "<group>";
@@ -985,7 +969,6 @@
 		EA0668C1192A45C4009C83F1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EA0668DB192A45C4009C83F1 /* GambrinusTests.xctest */,
 				A702389E21C7FB1E00A7CFE9 /* KioskCore.framework */,
 				A70238B021C7FB2900A7CFE9 /* KioskUI.framework */,
 				A70238CC21C800BA00A7CFE9 /* Kiosk.app */,
@@ -1104,23 +1087,6 @@
 			productReference = A70238CC21C800BA00A7CFE9 /* Kiosk.app */;
 			productType = "com.apple.product-type.application";
 		};
-		EA0668DA192A45C4009C83F1 /* GambrinusTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = EA0668EF192A45C5009C83F1 /* Build configuration list for PBXNativeTarget "GambrinusTests" */;
-			buildPhases = (
-				EA0668D7192A45C4009C83F1 /* Sources */,
-				EA0668D8192A45C4009C83F1 /* Frameworks */,
-				EA0668D9192A45C4009C83F1 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = GambrinusTests;
-			productName = GambrinusTests;
-			productReference = EA0668DB192A45C4009C83F1 /* GambrinusTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1128,24 +1094,25 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1250;
 				ORGANIZATIONNAME = "Coodly LLC";
 				TargetAttributes = {
 					A702389D21C7FB1E00A7CFE9 = {
 						CreatedOnToolsVersion = 10.1;
 						DevelopmentTeam = 5T8DRBFCBP;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1250;
 						ProvisioningStyle = Automatic;
 					};
 					A70238AF21C7FB2900A7CFE9 = {
 						CreatedOnToolsVersion = 10.1;
 						DevelopmentTeam = 5T8DRBFCBP;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1250;
 						ProvisioningStyle = Automatic;
 					};
 					A70238CB21C800BA00A7CFE9 = {
 						CreatedOnToolsVersion = 10.1;
 						DevelopmentTeam = 5T8DRBFCBP;
+						LastSwiftMigration = 1250;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
@@ -1160,9 +1127,6 @@
 						CreatedOnToolsVersion = 10.1;
 						DevelopmentTeam = 5T8DRBFCBP;
 						ProvisioningStyle = Automatic;
-					};
-					EA0668DA192A45C4009C83F1 = {
-						TestTargetID = EA0668BF192A45C4009C83F1;
 					};
 				};
 			};
@@ -1185,7 +1149,6 @@
 				A702389D21C7FB1E00A7CFE9 /* KioskCore */,
 				A70238AF21C7FB2900A7CFE9 /* KioskUI */,
 				A7ADF44A21C8F42B008B3205 /* Check localization */,
-				EA0668DA192A45C4009C83F1 /* GambrinusTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1227,13 +1190,6 @@
 				A70238D621C800BD00A7CFE9 /* Assets.xcassets in Resources */,
 				A70238D421C800BA00A7CFE9 /* Main.storyboard in Resources */,
 				A7B66A7A21CD1FCA00DB1840 /* triplex-bold.ttf in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EA0668D9192A45C4009C83F1 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1521,13 +1477,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EA0668D7192A45C4009C83F1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1625,7 +1574,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1664,7 +1613,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.coodly.kiosk.core;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1704,7 +1653,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1743,7 +1692,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.coodly.kiosk.ui;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1777,7 +1726,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1808,7 +1757,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.coodly.kiosk.gambrinus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1854,6 +1803,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1908,6 +1858,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1930,50 +1881,6 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		EA0668F0192A45C5009C83F1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Gambrinus.app/Gambrinus";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Gambrinus/Gambrinus-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "GambrinusTests/GambrinusTests-Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.coodly.gambrinus.kiosk.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		EA0668F1192A45C5009C83F1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Gambrinus.app/Gambrinus";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Gambrinus/Gambrinus-Prefix.pch";
-				INFOPLIST_FILE = "GambrinusTests/GambrinusTests-Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.coodly.gambrinus.kiosk.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
@@ -2021,15 +1928,6 @@
 			buildConfigurations = (
 				EA0668EA192A45C5009C83F1 /* Debug */,
 				EA0668EB192A45C5009C83F1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		EA0668EF192A45C5009C83F1 /* Build configuration list for PBXNativeTarget "GambrinusTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				EA0668F0192A45C5009C83F1 /* Debug */,
-				EA0668F1192A45C5009C83F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
