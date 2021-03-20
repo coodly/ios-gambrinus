@@ -236,25 +236,6 @@
 		A70CAF6D2215D02D002A99AA /* Untappd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Untappd.swift; sourceTree = "<group>"; };
 		A70CAF6F2215D063002A99AA /* Untappd+Properties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Untappd+Properties.swift"; sourceTree = "<group>"; };
 		A70CAF712215D210002A99AA /* Persistence+Untappd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Persistence+Untappd.swift"; sourceTree = "<group>"; };
-		A734E2971D7717B50057D136 /* CDYImageAsk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDYImageAsk.h; sourceTree = "<group>"; };
-		A734E2981D7717B50057D136 /* CDYImageAsk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDYImageAsk.m; sourceTree = "<group>"; };
-		A734E2991D7717B50057D136 /* CDYImagesRetrieve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDYImagesRetrieve.h; sourceTree = "<group>"; };
-		A734E29A1D7717B50057D136 /* CDYImagesRetrieve.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDYImagesRetrieve.m; sourceTree = "<group>"; };
-		A734E29B1D7717B50057D136 /* CDYImagesRetrieveConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDYImagesRetrieveConstants.h; sourceTree = "<group>"; };
-		A734E29C1D7717B50057D136 /* CDYImagesRetrieveConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDYImagesRetrieveConstants.m; sourceTree = "<group>"; };
-		A734E2A11D7717EE0057D136 /* JCSFetchedCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCSFetchedCollectionViewController.h; sourceTree = "<group>"; };
-		A734E2A21D7717EE0057D136 /* JCSFetchedCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCSFetchedCollectionViewController.m; sourceTree = "<group>"; };
-		A734E2A51D77182F0057D136 /* CDYObjectModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDYObjectModel.h; sourceTree = "<group>"; };
-		A734E2A61D77182F0057D136 /* CDYObjectModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDYObjectModel.m; sourceTree = "<group>"; };
-		A734E2A81D7718B50057D136 /* JCSInputCellsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCSInputCellsViewController.h; sourceTree = "<group>"; };
-		A734E2A91D7718B50057D136 /* JCSInputCellsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCSInputCellsViewController.m; sourceTree = "<group>"; };
-		A734E2C21D7815350057D136 /* JCSFoundationConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCSFoundationConstants.h; sourceTree = "<group>"; };
-		A734E2C31D7815CF0057D136 /* UIView+JCSLoadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JCSLoadView.h"; sourceTree = "<group>"; };
-		A734E2C41D7815CF0057D136 /* UIView+JCSLoadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JCSLoadView.m"; sourceTree = "<group>"; };
-		A734E2C61D7816080057D136 /* NSString+JCSValidations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+JCSValidations.h"; sourceTree = "<group>"; };
-		A734E2C71D7816080057D136 /* NSString+JCSValidations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+JCSValidations.m"; sourceTree = "<group>"; };
-		A734E2CA1D7817FC0057D136 /* UIImage+CDYImageScale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CDYImageScale.h"; sourceTree = "<group>"; };
-		A734E2CB1D7817FC0057D136 /* UIImage+CDYImageScale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CDYImageScale.m"; sourceTree = "<group>"; };
 		A73DBA4E22167FCB001EBDBF /* PullUntappdInfoOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullUntappdInfoOperation.swift; sourceTree = "<group>"; };
 		A73DBA5022168D7A001EBDBF /* PullUntappdChangesOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullUntappdChangesOperation.swift; sourceTree = "<group>"; };
 		A73DBA522216F59D001EBDBF /* UntappdScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UntappdScoreView.swift; sourceTree = "<group>"; };
@@ -355,23 +336,6 @@
 		A7B66A7621CD1D4C00DB1840 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		A7B66A7921CD1FCA00DB1840 /* triplex-bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "triplex-bold.ttf"; sourceTree = "<group>"; };
 		A7B66A7C21CD244E00DB1840 /* ImageThumbnailAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageThumbnailAction.swift; sourceTree = "<group>"; };
-		A7B8B8041D782E46003C8469 /* JCSCoreDataChangeAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCSCoreDataChangeAction.h; sourceTree = "<group>"; };
-		A7B8B8051D782E46003C8469 /* JCSCoreDataChangeAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCSCoreDataChangeAction.m; sourceTree = "<group>"; };
-		A7B8B8071D782E82003C8469 /* NSDate+ISO8601.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ISO8601.h"; sourceTree = "<group>"; };
-		A7B8B8081D782E82003C8469 /* NSDate+ISO8601.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ISO8601.m"; sourceTree = "<group>"; };
-		A7B8B80A1D782EF8003C8469 /* JCSTextEntryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCSTextEntryCell.h; sourceTree = "<group>"; };
-		A7B8B80B1D782EF8003C8469 /* JCSTextEntryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCSTextEntryCell.m; sourceTree = "<group>"; };
-		A7B8B80D1D782F19003C8469 /* UIApplication+Keyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+Keyboard.h"; sourceTree = "<group>"; };
-		A7B8B80E1D782F19003C8469 /* UIApplication+Keyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+Keyboard.m"; sourceTree = "<group>"; };
-		A7B8B8101D782F32003C8469 /* JCSInlinePickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCSInlinePickerCell.h; sourceTree = "<group>"; };
-		A7B8B8111D782F32003C8469 /* JCSInlinePickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCSInlinePickerCell.m; sourceTree = "<group>"; };
-		A7B8B8131D782F54003C8469 /* JCSNumericInputAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCSNumericInputAccessoryView.h; sourceTree = "<group>"; };
-		A7B8B8141D782F54003C8469 /* JCSNumericInputAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCSNumericInputAccessoryView.m; sourceTree = "<group>"; };
-		A7B8B8161D782F6F003C8469 /* JCSInputValidation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCSInputValidation.h; sourceTree = "<group>"; };
-		A7B8B8171D782F88003C8469 /* JCSDecimalInputValidation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCSDecimalInputValidation.h; sourceTree = "<group>"; };
-		A7B8B8181D782F88003C8469 /* JCSDecimalInputValidation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCSDecimalInputValidation.m; sourceTree = "<group>"; };
-		A7B8B81A1D782F9E003C8469 /* JCSQuickNumericInputAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCSQuickNumericInputAccessoryView.h; sourceTree = "<group>"; };
-		A7B8B81B1D782F9E003C8469 /* JCSQuickNumericInputAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCSQuickNumericInputAccessoryView.m; sourceTree = "<group>"; };
 		A7D19E921DC601830024C3A7 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		A7D7F84F21F629B3001D21B9 /* CloudSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudSubscription.swift; sourceTree = "<group>"; };
 		A7E17FF221CB952E00E70529 /* BloggerConsumer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloggerConsumer.swift; sourceTree = "<group>"; };
@@ -575,70 +539,6 @@
 				A70238FF21C808F600A7CFE9 /* UIView+Autolayout.swift */,
 			);
 			path = Autolayout;
-			sourceTree = "<group>";
-		};
-		A734E2961D7717B50057D136 /* CDYImagesRetrieve */ = {
-			isa = PBXGroup;
-			children = (
-				A734E2971D7717B50057D136 /* CDYImageAsk.h */,
-				A734E2981D7717B50057D136 /* CDYImageAsk.m */,
-				A734E2991D7717B50057D136 /* CDYImagesRetrieve.h */,
-				A734E29A1D7717B50057D136 /* CDYImagesRetrieve.m */,
-				A734E29B1D7717B50057D136 /* CDYImagesRetrieveConstants.h */,
-				A734E29C1D7717B50057D136 /* CDYImagesRetrieveConstants.m */,
-			);
-			path = CDYImagesRetrieve;
-			sourceTree = "<group>";
-		};
-		A734E2A01D7717EE0057D136 /* JCSFoundation */ = {
-			isa = PBXGroup;
-			children = (
-				A7B8B8041D782E46003C8469 /* JCSCoreDataChangeAction.h */,
-				A7B8B8051D782E46003C8469 /* JCSCoreDataChangeAction.m */,
-				A7B8B8171D782F88003C8469 /* JCSDecimalInputValidation.h */,
-				A7B8B8181D782F88003C8469 /* JCSDecimalInputValidation.m */,
-				A734E2A11D7717EE0057D136 /* JCSFetchedCollectionViewController.h */,
-				A734E2A21D7717EE0057D136 /* JCSFetchedCollectionViewController.m */,
-				A734E2C21D7815350057D136 /* JCSFoundationConstants.h */,
-				A7B8B8101D782F32003C8469 /* JCSInlinePickerCell.h */,
-				A7B8B8111D782F32003C8469 /* JCSInlinePickerCell.m */,
-				A734E2A81D7718B50057D136 /* JCSInputCellsViewController.h */,
-				A734E2A91D7718B50057D136 /* JCSInputCellsViewController.m */,
-				A7B8B8161D782F6F003C8469 /* JCSInputValidation.h */,
-				A7B8B8131D782F54003C8469 /* JCSNumericInputAccessoryView.h */,
-				A7B8B8141D782F54003C8469 /* JCSNumericInputAccessoryView.m */,
-				A7B8B81A1D782F9E003C8469 /* JCSQuickNumericInputAccessoryView.h */,
-				A7B8B81B1D782F9E003C8469 /* JCSQuickNumericInputAccessoryView.m */,
-				A7B8B80A1D782EF8003C8469 /* JCSTextEntryCell.h */,
-				A7B8B80B1D782EF8003C8469 /* JCSTextEntryCell.m */,
-				A7B8B8071D782E82003C8469 /* NSDate+ISO8601.h */,
-				A7B8B8081D782E82003C8469 /* NSDate+ISO8601.m */,
-				A734E2C61D7816080057D136 /* NSString+JCSValidations.h */,
-				A734E2C71D7816080057D136 /* NSString+JCSValidations.m */,
-				A7B8B80D1D782F19003C8469 /* UIApplication+Keyboard.h */,
-				A7B8B80E1D782F19003C8469 /* UIApplication+Keyboard.m */,
-				A734E2C31D7815CF0057D136 /* UIView+JCSLoadView.h */,
-				A734E2C41D7815CF0057D136 /* UIView+JCSLoadView.m */,
-			);
-			path = JCSFoundation;
-			sourceTree = "<group>";
-		};
-		A734E2A41D77182F0057D136 /* CDYObjectModel */ = {
-			isa = PBXGroup;
-			children = (
-				A734E2A51D77182F0057D136 /* CDYObjectModel.h */,
-				A734E2A61D77182F0057D136 /* CDYObjectModel.m */,
-			);
-			path = CDYObjectModel;
-			sourceTree = "<group>";
-		};
-		A734E2C91D7817FC0057D136 /* CDYImageScale */ = {
-			isa = PBXGroup;
-			children = (
-				A734E2CA1D7817FC0057D136 /* UIImage+CDYImageScale.h */,
-				A734E2CB1D7817FC0057D136 /* UIImage+CDYImageScale.m */,
-			);
-			path = CDYImageScale;
 			sourceTree = "<group>";
 		};
 		A792721021C8F71C0001F621 /* Assets */ = {
@@ -955,7 +855,6 @@
 		EA0668B7192A45C4009C83F1 = {
 			isa = PBXGroup;
 			children = (
-				EA0986CA1B1E40C6006FEC11 /* Thirdparty */,
 				A702389F21C7FB1E00A7CFE9 /* KioskCore */,
 				A70238B121C7FB2900A7CFE9 /* KioskUI */,
 				A70238CD21C800BA00A7CFE9 /* Kiosk */,
@@ -992,17 +891,6 @@
 				A31968546AB2617414844400 /* Pods_Kiosk.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		EA0986CA1B1E40C6006FEC11 /* Thirdparty */ = {
-			isa = PBXGroup;
-			children = (
-				A734E2C91D7817FC0057D136 /* CDYImageScale */,
-				A734E2961D7717B50057D136 /* CDYImagesRetrieve */,
-				A734E2A41D77182F0057D136 /* CDYObjectModel */,
-				A734E2A01D7717EE0057D136 /* JCSFoundation */,
-			);
-			path = Thirdparty;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
