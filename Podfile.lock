@@ -1,23 +1,23 @@
 PODS:
-  - BloggerAPI (0.1.0)
-  - CoreDataPersistence (0.2.3)
+  - BloggerAPI (0.1.1)
+  - CoreDataPersistence (0.2.4)
   - ImageProvide (0.5.0)
-  - Puff/Core (0.6.2):
+  - Puff/Core (0.6.3):
     - Puff/Logger
     - Puff/Serialization
-  - Puff/Logger (0.6.2)
-  - Puff/Serialization (0.6.2):
+  - Puff/Logger (0.6.3)
+  - Puff/Serialization (0.6.3):
     - Puff/Logger
   - SwiftGen (6.0.2)
   - SWLogger (0.4.3)
 
 DEPENDENCIES:
-  - "BloggerAPI (from `git@github.com:coodly/BloggerAPI.git`)"
-  - "CoreDataPersistence (from `git@github.com:coodly/CoreDataPersistence.git`)"
-  - "ImageProvide (from `git@github.com:coodly/ImageProvide.git`)"
-  - "Puff/Core (from `git@github.com:coodly/Puff.git`)"
+  - "BloggerAPI (from `git@github.com:coodly/BloggerAPI.git`, tag `0.1.1`)"
+  - "CoreDataPersistence (from `git@github.com:coodly/CoreDataPersistence.git`, tag `0.2.4`)"
+  - "ImageProvide (from `git@github.com:coodly/ImageProvide.git`, tag `0.5.0`)"
+  - "Puff/Core (from `git@github.com:coodly/Puff.git`, tag `0.6.3`)"
   - SwiftGen (= 6.0.2)
-  - "SWLogger (from `git@github.com:coodly/swlogger.git`)"
+  - "SWLogger (from `git@github.com:coodly/swlogger.git`, tag `0.5.0`)"
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -26,40 +26,45 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   BloggerAPI:
     :git: "git@github.com:coodly/BloggerAPI.git"
+    :tag: 0.1.1
   CoreDataPersistence:
     :git: "git@github.com:coodly/CoreDataPersistence.git"
+    :tag: 0.2.4
   ImageProvide:
     :git: "git@github.com:coodly/ImageProvide.git"
+    :tag: 0.5.0
   Puff:
     :git: "git@github.com:coodly/Puff.git"
+    :tag: 0.6.3
   SWLogger:
     :git: "git@github.com:coodly/swlogger.git"
+    :tag: 0.5.0
 
 CHECKOUT OPTIONS:
   BloggerAPI:
-    :commit: b5abc4c4c396d6f16b948b719723058b07104489
     :git: "git@github.com:coodly/BloggerAPI.git"
+    :tag: 0.1.1
   CoreDataPersistence:
-    :commit: 6f53e719d6e9f1c435b6544b7572def019ffab2e
     :git: "git@github.com:coodly/CoreDataPersistence.git"
+    :tag: 0.2.4
   ImageProvide:
-    :commit: fc70fd224e2f3d0f7e0dd033c5d0cbaf7a55dbc3
     :git: "git@github.com:coodly/ImageProvide.git"
+    :tag: 0.5.0
   Puff:
-    :commit: c56c07db829e2c9d001bcb743bb0e376ddca94e4
     :git: "git@github.com:coodly/Puff.git"
+    :tag: 0.6.3
   SWLogger:
-    :commit: 18ed3df041436a5984bf81eb2b16f692a0c166bf
     :git: "git@github.com:coodly/swlogger.git"
+    :tag: 0.5.0
 
 SPEC CHECKSUMS:
-  BloggerAPI: cd9a29ae3a2e277c2a0940bab3cd8e07b70758e9
-  CoreDataPersistence: 5bc225d5ff3c41a40ae1285acff99b9f02dd6585
+  BloggerAPI: e375ba837d55d714d3bbf248958621db54ad04ca
+  CoreDataPersistence: 150e10ee57c5c23e8e39ef1e6c8774c859ef77aa
   ImageProvide: a4b5df19bc6eead48ddf6154019d90a25ea92c62
-  Puff: 2088df950eaafdf79b2821c88044cc4004aaf623
+  Puff: a03e0afe8accc45f187e845bf6dd6600bf3ae6b9
   SwiftGen: e5b047067aa84082826a0c4f1c4c2ddc95bcf74c
   SWLogger: f1f871a2dcd4183d0aa49b9db9a9ca924e0ab7b3
 
-PODFILE CHECKSUM: f065955adbaa8beeb59bce1e52bd289f6e9f8a8c
+PODFILE CHECKSUM: 993a6148fd9e7926de17a587645b782b506dfe1c
 
 COCOAPODS: 1.10.0

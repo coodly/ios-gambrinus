@@ -1,6 +1,6 @@
 {
   "name": "CoreDataPersistence",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "license": "Apache 2",
   "summary": "Core data wrapperoO in Swift",
   "homepage": "https://github.com/coodly/CoreDataPersistence",
@@ -9,7 +9,7 @@
   },
   "source": {
     "git": "git@github.com:coodly/CoreDataPersistence.git",
-    "tag": "0.2.3"
+    "tag": "0.2.4"
   },
   "platforms": {
     "ios": "9.0",

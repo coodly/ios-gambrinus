@@ -11,7 +11,7 @@ module PodSource
     Tagged = 3
 end
 
-UsedSource = PodSource::Remote
+UsedSource = PodSource::Tagged
 
 def core_data_pod
     if UsedSource == PodSource::Local
@@ -19,7 +19,7 @@ def core_data_pod
         elsif UsedSource == PodSource::Remote
         pod 'CoreDataPersistence', :git => 'git@github.com:coodly/CoreDataPersistence.git'
         else
-        pod 'CoreDataPersistence', :git => 'git@github.com:coodly/CoreDataPersistence.git', :tag => '0.1.9'
+        pod 'CoreDataPersistence', :git => 'git@github.com:coodly/CoreDataPersistence.git', :tag => '0.2.4'
     end
 end
 
@@ -29,7 +29,7 @@ def log_pod
     elsif UsedSource == PodSource::Remote
         pod 'SWLogger', :git => 'git@github.com:coodly/swlogger.git'
     else
-        pod 'SWLogger', :git => 'git@github.com:coodly/swlogger.git', tag: '0.3.6'
+        pod 'SWLogger', :git => 'git@github.com:coodly/swlogger.git', tag: '0.5.0'
     end
 end
 
@@ -39,7 +39,7 @@ def images_pod
     elsif UsedSource == PodSource::Remote
         pod 'ImageProvide', :git => 'git@github.com:coodly/ImageProvide.git'
     else
-        pod 'ImageProvide', :git => 'git@github.com:coodly/ImageProvide.git', tag: '0.4.1'
+        pod 'ImageProvide', :git => 'git@github.com:coodly/ImageProvide.git', tag: '0.5.0'
     end
 end
 
@@ -49,7 +49,7 @@ def blogger_pod
     elsif UsedSource == PodSource::Remote
         pod 'BloggerAPI', :git => 'git@github.com:coodly/BloggerAPI.git'
     else
-        pod 'BloggerAPI', :git => 'git@github.com:coodly/BloggerAPI.git', tag: '0.1.0'
+        pod 'BloggerAPI', :git => 'git@github.com:coodly/BloggerAPI.git', tag: '0.1.1'
     end
 end
 
@@ -59,7 +59,7 @@ def puff_pod
     elsif UsedSource == PodSource::Remote
         pod 'Puff/Core', :git => 'git@github.com:coodly/Puff.git'
     else
-        pod 'Puff/Core', :git => 'git@github.com:coodly/Puff.git', tag: '0.5.1'
+        pod 'Puff/Core', :git => 'git@github.com:coodly/Puff.git', tag: '0.6.3'
     end
 end
 

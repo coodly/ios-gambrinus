@@ -1,6 +1,6 @@
 {
   "name": "BloggerAPI",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "Apache 2",
   "summary": "Blogger API client in Swift",
   "homepage": "https://github.com/coodly/BloggerAPI",
@@ -9,7 +9,7 @@
   },
   "source": {
     "git": "git@github.com:coodly/BloggerAPI.git",
-    "tag": "0.1.0"
+    "tag": "0.1.1"
   },
   "platforms": {
     "ios": "9.0"

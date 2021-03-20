@@ -14,7 +14,7 @@
 * limitations under the License.
 */
 
-#if os(iOS) || os(tvOS)
+#if os(iOS)
 import Foundation
 import CoreGraphics
 import UIKit
