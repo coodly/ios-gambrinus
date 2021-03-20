@@ -26,20 +26,8 @@ internal class ImageThumbnailAction: AfterAction {
     internal init(size: CGSize) {
         targetSize = size
     }
-    
-    func process(_ data: Data) -> Data? {
-        guard let image = UIImage(data: data) else {
-            return data
-        }
-        
-        guard let cropped = image.cropped(at: targetSize) else {
-            return data
-        }
-        
-        if let croppedData = cropped.jpegData(compressionQuality: 0.8) {
-            return croppedData
-        }
-        
-        return data
+
+    func process(_ image: PlatformImage) -> PlatformImage? {
+        return image.cropped(at: targetSize) ?? image
     }
 }

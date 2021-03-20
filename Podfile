@@ -11,21 +11,7 @@ module PodSource
     Tagged = 3
 end
 
-UsedSource = PodSource::Tagged
-
-def pods
-    pod 'Fabric', '1.9.0'
-    pod 'Crashlytics', '3.12.0'
-    pod 'AFNetworking', '2.6.3'
-    pod 'MRProgress', '0.8.3'
-    pod 'Ono', '1.2.2'
-
-    log_pod
-    
-    if UsedSource == PodSource::Local
-        pod 'LaughingAdventure', :path => '../swift-laughing-adventure'
-    end
-end
+UsedSource = PodSource::Remote
 
 def core_data_pod
     if UsedSource == PodSource::Local
@@ -77,11 +63,6 @@ def puff_pod
     end
 end
 
-
-target 'Gambrinus' do
-    pods
-    
-end
 
 target 'Kiosk' do
     platform :ios, '9.3'

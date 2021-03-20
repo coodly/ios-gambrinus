@@ -1,6 +1,6 @@
 {
   "name": "Puff",
-  "version": "0.5.1",
+  "version": "0.6.2",
   "license": "Apache 2",
   "summary": "CloudKit wrapper",
   "homepage": "https://github.com/coodly/Puff",
@@ -9,10 +9,10 @@
   },
   "source": {
     "git": "git@github.com:coodly/Puff.git",
-    "tag": "0.5.1"
+    "tag": "0.6.2"
   },
   "platforms": {
-    "ios": "9.3",
+    "ios": "9.0",
     "tvos": "9.3",
     "osx": "10.11"
   },

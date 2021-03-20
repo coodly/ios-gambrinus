@@ -1,138 +1,74 @@
 PODS:
-  - AFNetworking (2.6.3):
-    - AFNetworking/NSURLConnection (= 2.6.3)
-    - AFNetworking/NSURLSession (= 2.6.3)
-    - AFNetworking/Reachability (= 2.6.3)
-    - AFNetworking/Security (= 2.6.3)
-    - AFNetworking/Serialization (= 2.6.3)
-    - AFNetworking/UIKit (= 2.6.3)
-  - AFNetworking/NSURLConnection (2.6.3):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.6.3):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.6.3)
-  - AFNetworking/Security (2.6.3)
-  - AFNetworking/Serialization (2.6.3)
-  - AFNetworking/UIKit (2.6.3):
-    - AFNetworking/NSURLConnection
-    - AFNetworking/NSURLSession
   - BloggerAPI (0.1.0)
-  - CoreDataPersistence (0.1.9)
+  - CoreDataPersistence (0.2.3)
   - Crashlytics (3.12.0):
     - Fabric (~> 1.9.0)
   - Fabric (1.9.0)
-  - ImageProvide (0.4.1)
-  - MRProgress (0.8.3):
-    - MRProgress/ActivityIndicator (= 0.8.3)
-    - MRProgress/Blur (= 0.8.3)
-    - MRProgress/Circular (= 0.8.3)
-    - MRProgress/Icons (= 0.8.3)
-    - MRProgress/NavigationBarProgress (= 0.8.3)
-    - MRProgress/Overlay (= 0.8.3)
-  - MRProgress/ActivityIndicator (0.8.3):
-    - MRProgress/Stopable
-  - MRProgress/Blur (0.8.3):
-    - MRProgress/Helper
-  - MRProgress/Circular (0.8.3):
-    - MRProgress/Helper
-    - MRProgress/ProgressBaseClass
-    - MRProgress/Stopable
-  - MRProgress/Helper (0.8.3)
-  - MRProgress/Icons (0.8.3)
-  - MRProgress/NavigationBarProgress (0.8.3):
-    - MRProgress/ProgressBaseClass
-  - MRProgress/Overlay (0.8.3):
-    - MRProgress/ActivityIndicator
-    - MRProgress/Blur
-    - MRProgress/Circular
-    - MRProgress/Helper
-    - MRProgress/Icons
-  - MRProgress/ProgressBaseClass (0.8.3)
-  - MRProgress/Stopable (0.8.3):
-    - MRProgress/Helper
-  - Ono (1.2.2)
-  - Puff/Core (0.5.1):
+  - ImageProvide (0.5.0)
+  - Puff/Core (0.6.2):
     - Puff/Logger
     - Puff/Serialization
-  - Puff/Logger (0.5.1)
-  - Puff/Serialization (0.5.1):
+  - Puff/Logger (0.6.2)
+  - Puff/Serialization (0.6.2):
     - Puff/Logger
   - SwiftGen (6.0.2)
-  - SWLogger (0.3.6)
+  - SWLogger (0.4.3)
 
 DEPENDENCIES:
-  - AFNetworking (= 2.6.3)
-  - "BloggerAPI (from `git@github.com:coodly/BloggerAPI.git`, tag `0.1.0`)"
-  - "CoreDataPersistence (from `git@github.com:coodly/CoreDataPersistence.git`, tag `0.1.9`)"
+  - "BloggerAPI (from `git@github.com:coodly/BloggerAPI.git`)"
+  - "CoreDataPersistence (from `git@github.com:coodly/CoreDataPersistence.git`)"
   - Crashlytics (= 3.12.0)
   - Fabric (= 1.9.0)
-  - "ImageProvide (from `git@github.com:coodly/ImageProvide.git`, tag `0.4.1`)"
-  - MRProgress (= 0.8.3)
-  - Ono (= 1.2.2)
-  - "Puff/Core (from `git@github.com:coodly/Puff.git`, tag `0.5.1`)"
+  - "ImageProvide (from `git@github.com:coodly/ImageProvide.git`)"
+  - "Puff/Core (from `git@github.com:coodly/Puff.git`)"
   - SwiftGen (= 6.0.2)
-  - "SWLogger (from `git@github.com:coodly/swlogger.git`, tag `0.3.6`)"
+  - "SWLogger (from `git@github.com:coodly/swlogger.git`)"
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - AFNetworking
+  https://github.com/CocoaPods/Specs.git:
     - Crashlytics
     - Fabric
-    - MRProgress
-    - Ono
     - SwiftGen
 
 EXTERNAL SOURCES:
   BloggerAPI:
     :git: "git@github.com:coodly/BloggerAPI.git"
-    :tag: 0.1.0
   CoreDataPersistence:
     :git: "git@github.com:coodly/CoreDataPersistence.git"
-    :tag: 0.1.9
   ImageProvide:
     :git: "git@github.com:coodly/ImageProvide.git"
-    :tag: 0.4.1
   Puff:
     :git: "git@github.com:coodly/Puff.git"
-    :tag: 0.5.1
   SWLogger:
     :git: "git@github.com:coodly/swlogger.git"
-    :tag: 0.3.6
 
 CHECKOUT OPTIONS:
   BloggerAPI:
+    :commit: a5c7af66fa41ee8ea01afaf7b4f9ca9952508cd5
     :git: "git@github.com:coodly/BloggerAPI.git"
-    :tag: 0.1.0
   CoreDataPersistence:
+    :commit: 05450dc7abcb51aabb32b486d613f528f88846a0
     :git: "git@github.com:coodly/CoreDataPersistence.git"
-    :tag: 0.1.9
   ImageProvide:
+    :commit: fc70fd224e2f3d0f7e0dd033c5d0cbaf7a55dbc3
     :git: "git@github.com:coodly/ImageProvide.git"
-    :tag: 0.4.1
   Puff:
+    :commit: 64fa55b68b6de6b2cc074505986ad67861c94941
     :git: "git@github.com:coodly/Puff.git"
-    :tag: 0.5.1
   SWLogger:
+    :commit: 18ed3df041436a5984bf81eb2b16f692a0c166bf
     :git: "git@github.com:coodly/swlogger.git"
-    :tag: 0.3.6
 
 SPEC CHECKSUMS:
-  AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   BloggerAPI: cd9a29ae3a2e277c2a0940bab3cd8e07b70758e9
-  CoreDataPersistence: a80f47beff93d19f9b29dec26a0d6e6d703324f4
-  Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
-  Fabric: f988e33c97f08930a413e08123064d2e5f68d655
-  ImageProvide: c4631e94a4c5ada152f6c6a41f4c7a15990bacaf
-  MRProgress: 16de7cc9f347e8846797a770db102a323fe7ef09
-  Ono: 80b1c686777d3f6d5d5ce6fcac8a74afef4ca197
-  Puff: d4aa48369793b65153e36fd20933f18eb4d5c5b1
+  CoreDataPersistence: 5bc225d5ff3c41a40ae1285acff99b9f02dd6585
+  Crashlytics: a33af323773f73904037dc2e684cd2f0d29f4fe2
+  Fabric: 09ef2d9b99b104702bede1acaf469fb8f20a9146
+  ImageProvide: a4b5df19bc6eead48ddf6154019d90a25ea92c62
+  Puff: 2088df950eaafdf79b2821c88044cc4004aaf623
   SwiftGen: e5b047067aa84082826a0c4f1c4c2ddc95bcf74c
-  SWLogger: 45bd57f6ae15e575b4926b4d2702faa64c258f1c
+  SWLogger: f1f871a2dcd4183d0aa49b9db9a9ca924e0ab7b3
 
-PODFILE CHECKSUM: 7fe62239eec0b006e81c85b563ebe64d66817fa7
+PODFILE CHECKSUM: f391192b85cf169694244ba56ccee45e62f57be3
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.10.0

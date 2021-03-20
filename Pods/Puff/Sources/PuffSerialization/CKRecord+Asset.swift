@@ -21,16 +21,22 @@ import PuffLogger
 #endif
 
 public extension CKRecord {
-    public func data(from field: String) -> Data? {
-        guard let asset = self[field] as? CKAsset else {
+    func data(from field: String) -> Data? {
+        guard let asset = self[field] as? CKAsset, let fileURL = makeOptional(asset.fileURL) else {
             return nil
         }
         
         do {
-            return try Data(contentsOf: asset.fileURL)
+            return try Data(contentsOf: fileURL)
         } catch {
-            Logging.log("Assed data from \(asset.fileURL) not loaded. Error: \(error)")
+            Logging.log("Assed data from \(fileURL) not loaded. Error: \(error)")
             return nil
         }
     }
 }
+
+//TODO jaanus: check this after Xcode 11 goes to live //asset.fileURL!
+private func makeOptional<T>(_ value: T?) -> T? {
+    return value
+}
+ 

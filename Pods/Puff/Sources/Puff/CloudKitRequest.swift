@@ -40,6 +40,7 @@ open class CloudKitRequest<T: RemoteRecord>: ConcurrentOperation {
     fileprivate var deleted = [CKRecord.ID]()
     
     public var container = CKContainer.default()
+    public var zone = CKRecordZone.default()
     
     public private(set) var cursor: CKQueryOperation.Cursor?
     
@@ -74,7 +75,6 @@ open class CloudKitRequest<T: RemoteRecord>: ConcurrentOperation {
     
     fileprivate func handleResult(with cursor: CKQueryOperation.Cursor?, desiredKeys: [String]?, limit: Int? = nil, error: Error?, inDatabase db: UsedDatabase, retryClosure: @escaping () -> ()) {
         let finalizer: () -> ()
-        var hadFailure = false
         if let cursor = cursor {
             finalizer = {
                 self.records.removeAll()
@@ -83,7 +83,7 @@ open class CloudKitRequest<T: RemoteRecord>: ConcurrentOperation {
             }
         } else {
             finalizer = {
-                self.finish(hadFailure)
+                self.finish(error)
             }
         }
         
@@ -96,7 +96,6 @@ open class CloudKitRequest<T: RemoteRecord>: ConcurrentOperation {
             }
         } else {
             if let error = error {
-                hadFailure = true
                 Logging.log("Request error \(error)")
             }
             self.handle(result: CloudResult(records: self.records, deleted: self.deleted, hasMore: cursor != nil, error: error), completion: finalizer)
@@ -110,9 +109,9 @@ open class CloudKitRequest<T: RemoteRecord>: ConcurrentOperation {
 }
 
 public extension CloudKitRequest {
-    public final func delete(record: T, inDatabase db: UsedDatabase = .private) {
+    final func delete(record: T, inDatabase db: UsedDatabase = .private) {
         Logging.log("Delete \(record)")
-        let deleted = CKRecord.ID(recordName: record.recordName!)
+        let deleted = CKRecord.ID(recordName: record.recordName!, zoneID: zone.zoneID)
         
         let operation = CKModifyRecordsOperation(recordsToSave: nil, recordIDsToDelete: [deleted])
         operation.modifyRecordsCompletionBlock = {
@@ -133,9 +132,9 @@ public extension CloudKitRequest {
     }
 }
 
-public extension CloudKitRequest {
+extension CloudKitRequest {
     public final func save(records: [T], delete: [CKRecord.ID] = [], inDatabase db: UsedDatabase = .private) {
-        let toSave = serialization.serialize(records: records)
+        let toSave = serialization.serialize(records: records, in: zone)
         
         let operation = CKModifyRecordsOperation(recordsToSave: toSave, recordIDsToDelete: delete)
         operation.modifyRecordsCompletionBlock = {
@@ -145,7 +144,7 @@ public extension CloudKitRequest {
             Logging.log("Deleted: \(String(describing: deleted?.count))")
             
             if let saved = saved {
-                let local = self.serialization.deserialize(records: saved)
+                let local = self.serialization.deserialize(records: saved, from: self.zone)
                 self.records.append(contentsOf: local)
             }
             
@@ -167,13 +166,13 @@ public extension CloudKitRequest {
 }
 
 public extension CloudKitRequest {
-    public final func fetch(recordType: CKRecord.RecordType = T.recordType, predicate: NSPredicate = NSPredicate(format: "TRUEPREDICATE"), desiredKeys: [String]? = nil, sort: [NSSortDescriptor] = [], limit: Int? = nil, pullAll: Bool = true, inDatabase db: UsedDatabase = .private) {
+    final func fetch(recordType: CKRecord.RecordType = T.recordType, predicate: NSPredicate = NSPredicate(format: "TRUEPREDICATE"), desiredKeys: [String]? = nil, sort: [NSSortDescriptor] = [], limit: Int? = nil, pullAll: Bool = true, inDatabase db: UsedDatabase = .private) {
         let query = CKQuery(recordType: recordType, predicate: predicate)
         query.sortDescriptors = sort
         perform(query, desiredKeys: desiredKeys, limit: limit, pullAll: pullAll, inDatabase: db)
     }
     
-    public final func fetchFirst(predicate: NSPredicate = NSPredicate(format: "TRUEPREDICATE"), desiredKeys: [String]? = nil, sort: [NSSortDescriptor] = [], inDatabase db: UsedDatabase = .private) {
+    final func fetchFirst(predicate: NSPredicate = NSPredicate(format: "TRUEPREDICATE"), desiredKeys: [String]? = nil, sort: [NSSortDescriptor] = [], inDatabase db: UsedDatabase = .private) {
         fetch(predicate: predicate, desiredKeys: desiredKeys, sort: sort, limit: 1, pullAll: false, inDatabase: db)
     }
     
@@ -187,7 +186,7 @@ public extension CloudKitRequest {
         }
     }
 
-    public func nextBatch(using cursor: CKQueryOperation.Cursor, desiredKeys: [String]? = nil, limit: Int?, pullAll: Bool = true, inDatabase db: UsedDatabase) {
+    func nextBatch(using cursor: CKQueryOperation.Cursor, desiredKeys: [String]? = nil, limit: Int?, pullAll: Bool = true, inDatabase db: UsedDatabase) {
         Logging.log("Continue with cursor")
         let operation = CKQueryOperation(cursor: cursor)
         execute(operation, desiredKeys: desiredKeys, limit: limit, pullAll: pullAll, inDatabase: db) {
@@ -201,11 +200,12 @@ public extension CloudKitRequest {
             fetchOperation.resultsLimit = limit
         }
         fetchOperation.desiredKeys = desiredKeys
+        fetchOperation.zoneID = zone.zoneID
         
         fetchOperation.recordFetchedBlock = {
             record in
             
-            if let local = self.serialization.deserialize(records: [record]).first {
+            if let local = self.serialization.deserialize(records: [record], from: self.zone).first {
                 self.records.append(local)
             }
         }

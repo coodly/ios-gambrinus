@@ -21,11 +21,11 @@ public class StandardSerialization<R: RemoteRecord>: RecordSerialization<R> {
         
     }
     
-    public override func serialize(records: [R]) -> [CKRecord] {
-        return records.map({ $0.recordRepresentation() })
+    public override func serialize(records: [R], in zone: CKRecordZone = .default()) -> [CKRecord] {
+        return records.map({ $0.recordRepresentation(in: zone) })
     }
     
-    public override func deserialize(records: [CKRecord]) -> [R] {
+    public override func deserialize(records: [CKRecord], from zone: CKRecordZone = .default()) -> [R] {
         return records.compactMap() {
             remote in
             

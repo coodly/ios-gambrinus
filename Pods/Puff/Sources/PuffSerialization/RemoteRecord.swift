@@ -43,7 +43,13 @@ public extension RemoteRecord {
     }
     
     func referenceRepresentation(action: CKRecord.Reference.Action = .deleteSelf) -> CKRecord.Reference {
-        return CKRecord.Reference(recordID: CKRecord.ID(recordName: recordName!), action: action)
+        let zone: CKRecordZone
+        if let custom = self as? CustomZoned {
+            zone = CKRecordZone(zoneName: custom.zoneName)
+        } else {
+            zone = .default()
+        }
+        return CKRecord.Reference(recordID: CKRecord.ID(recordName: recordName!, zoneID: zone.zoneID), action: action)
     }
     
     private func archive(record: CKRecord) -> NSMutableData {
@@ -65,14 +71,14 @@ public extension RemoteRecord {
         return CKRecord(coder: coder)
     }
     
-    internal func recordRepresentation() -> CKRecord {
+    internal func recordRepresentation(in zone: CKRecordZone = .default()) -> CKRecord {
         let modified: CKRecord
         if let existing = unarchiveRecord() {
             modified = existing
         } else if let name = recordName {
-            modified = CKRecord(recordType: Self.recordType, recordID: CKRecord.ID(recordName: name))
+            modified = CKRecord(recordType: Self.recordType, recordID: CKRecord.ID(recordName: name, zoneID: zone.zoneID))
         } else {
-            modified = CKRecord(recordType: Self.recordType)
+            modified = CKRecord(recordType: Self.recordType, recordID: CKRecord.ID(recordName: UUID().uuidString, zoneID: zone.zoneID))
         }
         
         let mirror = Mirror(reflecting: self)

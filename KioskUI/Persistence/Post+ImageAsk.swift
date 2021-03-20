@@ -28,7 +28,8 @@ extension Post {
             return nil
         }
         
-        return ImageAsk(url: url, after: ImageThumbnailAction(size: CGSize(width: 300, height: 300)))
+        return ImageAsk(url: url)
+            .scaled(to: CGSize(width: 300, height: 300), mode: .aspectFill)
     }
     
     internal var backdropAsk: ImageAsk? {

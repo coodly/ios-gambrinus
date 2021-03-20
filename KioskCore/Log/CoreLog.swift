@@ -27,7 +27,7 @@ public class CoreLog {
             return
         }
         
-        SWLogger.Log.logLevel = .debug
+        SWLogger.Log.level = .debug
         
         SWLogger.Log.add(output: ConsoleOutput())
         #if os(iOS)
@@ -57,6 +57,8 @@ internal class Log {
     internal static func error<T>(_ object: T, file: String = #file, function: String = #function, line: Int = #line) {
         CoreLog.error(object, file: file, function: function, line: line)
     }
+    
+    internal static let image = SWLogger.Logging(name: "Image")
 }
 
 internal class Logging {
@@ -74,6 +76,18 @@ private class CoreLogger: CoreDataPersistence.Logger {
 private class ImageLogger: ImageProvide.Logger {
     func log<T>(_ object: T, file: String = #file, function: String = #function, line: Int = #line) {
         CoreLog.debug(object, file: file, function: function, line: line)
+    }
+    
+    func debug<T>(_ object: T, file: String, function: String, line: Int) {
+        Log.image.debug(object, file: file, function: function, line: line)
+    }
+    
+    func error<T>(_ object: T, file: String, function: String, line: Int) {
+        Log.image.error(object, file: file, function: function, line: line)
+    }
+    
+    func verbose<T>(_ object: T, file: String, function: String, line: Int) {
+        Log.image.verbose(object, file: file, function: function, line: line)
     }
 }
 
