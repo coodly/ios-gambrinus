@@ -1092,7 +1092,6 @@
 				A70238CA21C800BA00A7CFE9 /* Resources */,
 				A70238E621C800DD00A7CFE9 /* Embed Frameworks */,
 				3BC1DE0A31FF2B1B2DF483F8 /* [CP] Embed Pods Frameworks */,
-				A7EAF27321CF538500842715 /* Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -1364,24 +1363,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "${SRCROOT}/Pods/SwiftGen/bin/swiftgen strings -t structured-swift4 KioskUI/Localization/en.lproj/Localizable.strings -o KioskUI/Localization/L10n.swift\n";
-		};
-		A7EAF27321CF538500842715 /* Crashlytics */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = Crashlytics;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" 1498b1e841189deded0a8957a47057c88a75503b 84939d122fb533ac07e3e9b3d0fb8601e68f89a868e9f5889891d1a6684b0d72\n";
 		};
 		E8D6025485D73A4646E757C5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
