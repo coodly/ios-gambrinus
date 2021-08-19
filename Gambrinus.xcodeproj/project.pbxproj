@@ -358,6 +358,7 @@
 		EA0668DC192A45C4009C83F1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		EA2713AB1B1A4B40002D655E /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		EA2713AC1B1A4B40002D655E /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		EADC258126CE1CAD009B13A7 /* Packages */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Packages; sourceTree = "<group>"; };
 		F0F7D7718EA64E4ADCF7D2B5 /* Pods-KioskCore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KioskCore.release.xcconfig"; path = "Pods/Target Support Files/Pods-KioskCore/Pods-KioskCore.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -855,6 +856,7 @@
 		EA0668B7192A45C4009C83F1 = {
 			isa = PBXGroup;
 			children = (
+				EADC258126CE1CAD009B13A7 /* Packages */,
 				A702389F21C7FB1E00A7CFE9 /* KioskCore */,
 				A70238B121C7FB2900A7CFE9 /* KioskUI */,
 				A70238CD21C800BA00A7CFE9 /* Kiosk */,
