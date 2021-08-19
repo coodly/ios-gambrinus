@@ -1,6 +1,0 @@
-framework module ImageProvide {
-  umbrella header "ImageProvide-umbrella.h"
-
-  export *
-  module * { export * }
-}

@@ -31,18 +31,11 @@
 		A78CABE321F435420072B508 /* AppPresentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78CABE221F435420072B508 /* AppPresentationViewController.swift */; };
 		A792726721C92C330001F621 /* Kiosk.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = A792726621C92C330001F621 /* Kiosk.sqlite */; };
 		A7B66A7A21CD1FCA00DB1840 /* triplex-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7B66A7921CD1FCA00DB1840 /* triplex-bold.ttf */; };
-		EADC258326CE1FF2009B13A7 /* KioskCore in Frameworks */ = {isa = PBXBuildFile; productRef = EADC258226CE1FF2009B13A7 /* KioskCore */; };
-		EADC258526CE1FF2009B13A7 /* KioskUI in Frameworks */ = {isa = PBXBuildFile; productRef = EADC258426CE1FF2009B13A7 /* KioskUI */; };
+		EADC258326CE1FF2009B13A7 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = EADC258226CE1FF2009B13A7 /* SwiftPackageProductDependency */; };
+		EADC258526CE1FF2009B13A7 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = EADC258426CE1FF2009B13A7 /* SwiftPackageProductDependency */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1E80FB9A4CDEB7F93A5A46FB /* Pods-Gambrinus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gambrinus.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gambrinus/Pods-Gambrinus.release.xcconfig"; sourceTree = "<group>"; };
-		5934FADB2943E3B4B7985047 /* Pods-KioskUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KioskUI.release.xcconfig"; path = "Pods/Target Support Files/Pods-KioskUI/Pods-KioskUI.release.xcconfig"; sourceTree = "<group>"; };
-		79E344D003416A4F33BA91E5 /* Pods_KioskUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KioskUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7ED3794D3F7C7479387ECA29 /* Pods-Kiosk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kiosk.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kiosk/Pods-Kiosk.release.xcconfig"; sourceTree = "<group>"; };
-		988AF068811A92C2E6B23EB0 /* Pods-KioskUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KioskUI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KioskUI/Pods-KioskUI.debug.xcconfig"; sourceTree = "<group>"; };
-		A31968546AB2617414844400 /* Pods_Kiosk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kiosk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A5F5D8129EFABC3BC56C57BD /* Pods_KioskCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KioskCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A70238CC21C800BA00A7CFE9 /* Kiosk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kiosk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A70238CE21C800BA00A7CFE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A70238D321C800BA00A7CFE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -55,10 +48,6 @@
 		A792726621C92C330001F621 /* Kiosk.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Kiosk.sqlite; sourceTree = "<group>"; };
 		A7B66A7921CD1FCA00DB1840 /* triplex-bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "triplex-bold.ttf"; sourceTree = "<group>"; };
 		A7D19E921DC601830024C3A7 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
-		AAFA608429FBD4A83156B36E /* Pods-KioskCore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KioskCore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KioskCore/Pods-KioskCore.debug.xcconfig"; sourceTree = "<group>"; };
-		C9500B6301C764BA1D0D47AC /* Pods-Gambrinus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gambrinus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gambrinus/Pods-Gambrinus.debug.xcconfig"; sourceTree = "<group>"; };
-		D7A983E829D84242BA817184 /* Pods-Kiosk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kiosk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kiosk/Pods-Kiosk.debug.xcconfig"; sourceTree = "<group>"; };
-		DA69DCA20CC7434C02417339 /* Pods_Gambrinus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gambrinus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA0668C3192A45C4009C83F1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EA0668C5192A45C4009C83F1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		EA0668C7192A45C4009C83F1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -67,7 +56,6 @@
 		EA2713AC1B1A4B40002D655E /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		EADC258126CE1CAD009B13A7 /* Packages */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Packages; sourceTree = "<group>"; };
 		EADC258626CE2584009B13A7 /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
-		F0F7D7718EA64E4ADCF7D2B5 /* Pods-KioskCore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KioskCore.release.xcconfig"; path = "Pods/Target Support Files/Pods-KioskCore/Pods-KioskCore.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,9 +63,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EADC258526CE1FF2009B13A7 /* KioskUI in Frameworks */,
+				EADC258526CE1FF2009B13A7 /* BuildFile in Frameworks */,
 				A744576E21CE60BF009B4D4E /* CloudKit.framework in Frameworks */,
-				EADC258326CE1FF2009B13A7 /* KioskCore in Frameworks */,
+				EADC258326CE1FF2009B13A7 /* BuildFile in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,21 +129,6 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		CF35BA0BC6A9AAA2667487B5 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				C9500B6301C764BA1D0D47AC /* Pods-Gambrinus.debug.xcconfig */,
-				1E80FB9A4CDEB7F93A5A46FB /* Pods-Gambrinus.release.xcconfig */,
-				988AF068811A92C2E6B23EB0 /* Pods-KioskUI.debug.xcconfig */,
-				5934FADB2943E3B4B7985047 /* Pods-KioskUI.release.xcconfig */,
-				AAFA608429FBD4A83156B36E /* Pods-KioskCore.debug.xcconfig */,
-				F0F7D7718EA64E4ADCF7D2B5 /* Pods-KioskCore.release.xcconfig */,
-				D7A983E829D84242BA817184 /* Pods-Kiosk.debug.xcconfig */,
-				7ED3794D3F7C7479387ECA29 /* Pods-Kiosk.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		EA0668B7192A45C4009C83F1 = {
 			isa = PBXGroup;
 			children = (
@@ -164,7 +137,6 @@
 				A70238CD21C800BA00A7CFE9 /* Kiosk */,
 				EA0668C2192A45C4009C83F1 /* Frameworks */,
 				EA0668C1192A45C4009C83F1 /* Products */,
-				CF35BA0BC6A9AAA2667487B5 /* Pods */,
 			);
 			sourceTree = "<group>";
 			wrapsLines = 0;
@@ -187,10 +159,6 @@
 				EA0668C5192A45C4009C83F1 /* CoreGraphics.framework */,
 				EA0668C7192A45C4009C83F1 /* UIKit.framework */,
 				EA0668DC192A45C4009C83F1 /* XCTest.framework */,
-				DA69DCA20CC7434C02417339 /* Pods_Gambrinus.framework */,
-				79E344D003416A4F33BA91E5 /* Pods_KioskUI.framework */,
-				A5F5D8129EFABC3BC56C57BD /* Pods_KioskCore.framework */,
-				A31968546AB2617414844400 /* Pods_Kiosk.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -202,11 +170,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A70238DD21C800BD00A7CFE9 /* Build configuration list for PBXNativeTarget "Kiosk" */;
 			buildPhases = (
-				549F9C8C73F9C5C5C0CCD37A /* [CP] Check Pods Manifest.lock */,
 				A70238C821C800BA00A7CFE9 /* Sources */,
 				A70238C921C800BA00A7CFE9 /* Frameworks */,
 				A70238CA21C800BA00A7CFE9 /* Resources */,
-				3BC1DE0A31FF2B1B2DF483F8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -214,8 +180,8 @@
 			);
 			name = Kiosk;
 			packageProductDependencies = (
-				EADC258226CE1FF2009B13A7 /* KioskCore */,
-				EADC258426CE1FF2009B13A7 /* KioskUI */,
+				EADC258226CE1FF2009B13A7 /* SwiftPackageProductDependency */,
+				EADC258426CE1FF2009B13A7 /* SwiftPackageProductDependency */,
 			);
 			productName = Kiosk;
 			productReference = A70238CC21C800BA00A7CFE9 /* Kiosk.app */;
@@ -289,54 +255,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3BC1DE0A31FF2B1B2DF483F8 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Kiosk/Pods-Kiosk-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/BloggerAPI/BloggerAPI.framework",
-				"${BUILT_PRODUCTS_DIR}/ImageProvide/ImageProvide.framework",
-				"${BUILT_PRODUCTS_DIR}/CoreDataPersistence/CoreDataPersistence.framework",
-				"${BUILT_PRODUCTS_DIR}/Puff/Puff.framework",
-				"${BUILT_PRODUCTS_DIR}/SWLogger/SWLogger.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BloggerAPI.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageProvide.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CoreDataPersistence.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Puff.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWLogger.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Kiosk/Pods-Kiosk-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		549F9C8C73F9C5C5C0CCD37A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Kiosk-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		A7ADF45021C8F448008B3205 /* Check localization */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -402,7 +320,6 @@
 /* Begin XCBuildConfiguration section */
 		A70238DB21C800BD00A7CFE9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D7A983E829D84242BA817184 /* Pods-Kiosk.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -438,7 +355,6 @@
 		};
 		A70238DC21C800BD00A7CFE9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7ED3794D3F7C7479387ECA29 /* Pods-Kiosk.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -627,11 +543,11 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		EADC258226CE1FF2009B13A7 /* KioskCore */ = {
+		EADC258226CE1FF2009B13A7 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = KioskCore;
 		};
-		EADC258426CE1FF2009B13A7 /* KioskUI */ = {
+		EADC258426CE1FF2009B13A7 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = KioskUI;
 		};
