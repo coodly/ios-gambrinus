@@ -14,9 +14,11 @@
  * limitations under the License.
  */
 
+import Assets
 import Foundation
-import KioskCore
 import ImageProvide
+import KioskCore
+import UIKit
 
 internal class PostCellViewModel: ImagesConsumer {
     var imagesSource: ImageSource! {

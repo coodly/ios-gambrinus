@@ -14,8 +14,10 @@
  * limitations under the License.
  */
 
-import UIKit
+import Assets
 import KioskCore
+import Localization
+import UIKit
 
 private enum Accessory {
     case asc

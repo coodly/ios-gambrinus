@@ -14,9 +14,11 @@
  * limitations under the License.
  */
 
-import UIKit
-import KioskCore
+import Assets
 import CoreData
+import KioskCore
+import Localization
+import UIKit
 
 private extension Selector {
     static let postSortChanged = #selector(PostsViewController.postSortChanged)

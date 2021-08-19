@@ -14,8 +14,9 @@
  * limitations under the License.
  */
 
-import UIKit
+import Assets
 import KioskCore
+import UIKit
 
 internal extension Notification.Name {
     static let closeMenu = Notification.Name(rawValue: "com.coodly.kiosk.close.menu")

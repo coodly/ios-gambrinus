@@ -15,8 +15,9 @@
  */
 
 import Foundation
-import KioskCore
 import ImageProvide
+import KioskCore
+import UIKit
 
 extension Post {
     internal var thumbnailAsk: ImageAsk? {

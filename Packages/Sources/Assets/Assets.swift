@@ -11,36 +11,36 @@
 
 // Deprecated typealiases
 @available(*, deprecated, renamed: "ImageAsset.Image", message: "This typealias will be removed in SwiftGen 7.0")
-internal typealias AssetImageTypeAlias = ImageAsset.Image
+public typealias AssetImageTypeAlias = ImageAsset.Image
 
 // swiftlint:disable superfluous_disable_command file_length implicit_return
 
 // MARK: - Asset Catalogs
 
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
-internal enum Asset {
-  internal static let arrowDown = ImageAsset(name: "ArrowDown")
-  internal static let arrowUp = ImageAsset(name: "ArrowUp")
-  internal static let menu = ImageAsset(name: "Menu")
-  internal static let placholder = ImageAsset(name: "Placholder")
-  internal static let poweredBy = ImageAsset(name: "PoweredBy")
-  internal static let poweredByUntappd = ImageAsset(name: "PoweredByUntappd")
-  internal static let search = ImageAsset(name: "Search")
+public enum Asset {
+  public static let arrowDown = ImageAsset(name: "ArrowDown")
+  public static let arrowUp = ImageAsset(name: "ArrowUp")
+  public static let menu = ImageAsset(name: "Menu")
+  public static let placholder = ImageAsset(name: "Placholder")
+  public static let poweredBy = ImageAsset(name: "PoweredBy")
+  public static let poweredByUntappd = ImageAsset(name: "PoweredByUntappd")
+  public static let search = ImageAsset(name: "Search")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 
 // MARK: - Implementation Details
 
-internal struct ImageAsset {
-  internal fileprivate(set) var name: String
+public struct ImageAsset {
+  public fileprivate(set) var name: String
 
   #if os(macOS)
-  internal typealias Image = NSImage
+  public typealias Image = NSImage
   #elseif os(iOS) || os(tvOS) || os(watchOS)
-  internal typealias Image = UIImage
+  public typealias Image = UIImage
   #endif
 
-  internal var image: Image {
+  public var image: Image {
     let bundle = BundleToken.bundle
     #if os(iOS) || os(tvOS)
     let image = Image(named: name, in: bundle, compatibleWith: nil)
@@ -57,7 +57,7 @@ internal struct ImageAsset {
   }
 }
 
-internal extension ImageAsset.Image {
+public extension ImageAsset.Image {
   @available(macOS, deprecated,
     message: "This initializer is unsafe on macOS, please use the ImageAsset.image property")
   convenience init?(asset: ImageAsset) {
