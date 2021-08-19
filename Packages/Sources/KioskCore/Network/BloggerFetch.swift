@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-import ImageProvide
+import BloggerAPI
+import Foundation
 
-internal class ImagesFetch: RemoteFetch {
+internal class BloggerFetch: BloggerAPI.NetworkFetch {
     private let queue: NetworkQueue
     private let appQueue: OperationQueue
     init(queue: NetworkQueue, appQueue: OperationQueue) {
@@ -24,9 +25,8 @@ internal class ImagesFetch: RemoteFetch {
         self.appQueue = appQueue
     }
     
-    func fetchImage(for ask: ImageAsk, completion: @escaping (Data?, URLResponse?, Error?) -> Void) {
-        var request = URLRequest(url: ask.url)
-        request.httpMethod = "GET"
+    func fetch(request: URLRequest, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
         queue.append(request, priority: .low, completion: completion)
-    }    
+    }
 }
+

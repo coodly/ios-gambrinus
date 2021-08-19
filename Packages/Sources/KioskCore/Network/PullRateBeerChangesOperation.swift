@@ -14,10 +14,11 @@
  * limitations under the License.
  */
 
-import Foundation
-import Puff
 import CloudKit
 import CoreDataPersistence
+import Foundation
+import Puff
+import PuffSerialization
 
 internal struct CloudRateBeer: RemoteRecord {
     var parent: CKRecord.ID?

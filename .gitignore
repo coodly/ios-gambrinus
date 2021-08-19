@@ -9,3 +9,4 @@ scripts/bang
 .DS_Store
 Gambrinus/Secrets.swift
 KioskCore/Config/Secrets.swift
+Packages/Sources/KioskCore/Config/Secrets.swift

@@ -19,7 +19,7 @@ import SWLogger
 import CoreDataPersistence
 import ImageProvide
 import BloggerAPI
-import Puff
+import PuffLogger
 
 public class CoreLog {
     public static func enableLogs() {
@@ -37,7 +37,7 @@ public class CoreLog {
         CoreDataPersistence.Logging.set(logger: CoreLogger())
         ImageProvide.Logging.set(logger: ImageLogger())
         BloggerAPI.Logging.set(logger: BloggerLogger())
-        Puff.Logging.set(logger: PuffLogger())
+        PuffLogger.Logging.set(logger: PuffedLogger())
     }
     
     public static func debug<T>(_ object: T, file: String = #file, function: String = #function, line: Int = #line) {
@@ -97,7 +97,7 @@ private class BloggerLogger: BloggerAPI.Logger {
     }
 }
 
-private class PuffLogger: Puff.Logger {
+private class PuffedLogger: PuffLogger.Logger {
     func log<T>(_ object: T, file: String = #file, function: String = #function, line: Int = #line) {
         CoreLog.debug(object, file: file, function: function, line: line)
     }

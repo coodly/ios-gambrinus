@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Coodly LLC
+ * Copyright 2018 Coodly LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,95 +14,82 @@
  * limitations under the License.
  */
 
-import Foundation
-import Puff
 import CloudKit
 import CoreDataPersistence
+import Foundation
+import Puff
+import PuffSerialization
 
-internal struct CloudUntappd: RemoteRecord {
+internal struct CloudBrewer: RemoteRecord {
     var parent: CKRecord.ID?
     var recordData: Data?
     var recordName: String?
     static var recordType: String {
-        return "Untappd"
+        return "RateBeerBrewer"
     }
     
-    var bid: NSNumber?
-    var brewery: String?
     var name: String?
-    var score: String?
-    var scoreCheckedAt: Date?
-    var scoreUpdatedAt: Date?
-    var style: String?
-    
+    var rbId: String?
     
     mutating func loadFields(from record: CKRecord) -> Bool {
         guard let name = record["name"] as? String else {
             return false
         }
         
-        bid = record["bid"] as? NSNumber
-        brewery = record["brewery"] as? String
         self.name = name
-        score = record["score"] as? String
-        scoreCheckedAt = record["scoreCheckedAt"] as? Date
-        scoreUpdatedAt = record["scoreUpdatedAt"] as? Date
-        style = record["style"] as? String
+        rbId = record["rbId"] as? String
         
         return true
     }
 }
 
-internal class PullUntappdInfoOperation: CloudKitRequest<CloudUntappd>, BeersContainerConsumer, PersistenceConsumer {
+internal class PullBrewersInfoOperation: CloudKitRequest<CloudBrewer>, BeersContainerConsumer, PersistenceConsumer {
     var persistence: Persistence!
     var beersContainer: CKContainer! {
         didSet {
             container = beersContainer
         }
     }
-    private var checked: [NSNumber]?
+    private var checked: [String]?
     
     override func performRequest() {
-        Log.debug("Pull Untappd info")
+        Log.debug("Pull Brewers info")
         persistence.performInBackground() {
             context in
             
-            let beers = context.itemsNeedingSync(for: Untappd.self)
-            guard beers.count > 0 else {
-                Log.debug("No Untappd needing details")
-                self.finish()
-                return
-            }
-            
-            let ids = beers.compactMap({ $0.bid })
+            let brewers = context.itemsNeedingSync(for: Brewer.self)
+            let ids = brewers.compactMap({ $0.identifier })
             guard ids.count > 0 else {
+                Log.debug("No brewers needing details")
                 self.finish()
                 return
             }
             
+            Log.debug("Pull data on \(ids.count) brewers")
+
             self.checked = ids
-            let predicate = NSPredicate(format: "bid IN %@", ids)
+            let predicate = NSPredicate(format: "rbId IN %@", ids)
             self.fetch(predicate: predicate, inDatabase: .public)
         }
     }
     
-    override func handle(result: CloudResult<CloudUntappd>, completion: @escaping () -> ()) {
+    override func handle(result: CloudResult<CloudBrewer>, completion: @escaping () -> ()) {
         let save: ContextClosure = {
             context in
             
-            var missing = Set(self.checked ?? [])
-            context.updateUntappd(with: result.records)
+            context.update(brewers: result.records)
             
-            let received = Set(result.records.compactMap({ $0.bid }))
+            var missing = Set(self.checked ?? [])
+            let received = Set(result.records.compactMap({ $0.rbId }))
             missing.subtract(received)
             
             guard missing.count > 0 else {
                 return
             }
             
-            Log.debug("Did not get data on \(missing.count) untappd: \(missing)")
-            let predicate = NSPredicate(format: "bid IN %@", missing)
-            let marked: [Untappd] = context.fetch(predicate: predicate)
+            Log.debug("Mark failure on \(missing.count) brewers: \(missing)")
+            let predicate = NSPredicate(format: "identifier = %@", missing)
+            let marked: [Brewer] = context.fetch(predicate: predicate)
             marked.forEach({ $0.syncStatus?.syncFailed = true })
         }
         

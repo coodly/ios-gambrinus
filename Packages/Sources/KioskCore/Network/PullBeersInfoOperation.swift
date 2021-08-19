@@ -14,35 +14,13 @@
  * limitations under the License.
  */
 
-import Foundation
 import CloudKit
-import Puff
 import CoreDataPersistence
+import Foundation
+import Puff
+import PuffSerialization
 
-internal struct CloudStyle: RemoteRecord {
-    var parent: CKRecord.ID?
-    var recordData: Data?
-    var recordName: String?
-    static var recordType: String {
-        return "RateBeerStyle"
-    }
-    
-    var name: String?
-    var rbId: String?
-    
-    mutating func loadFields(from record: CKRecord) -> Bool {
-        guard let name = record["name"] as? String else {
-            return false
-        }
-        
-        self.name = name
-        rbId = record["rbId"] as? String
-        
-        return true
-    }
-}
-
-internal class PullStylesInfoOperation: CloudKitRequest<CloudStyle>, BeersContainerConsumer, PersistenceConsumer {
+class PullBeersInfoOperation: CloudKitRequest<CloudRateBeer>, BeersContainerConsumer, PersistenceConsumer {
     var persistence: Persistence!
     var beersContainer: CKContainer! {
         didSet {
@@ -52,43 +30,45 @@ internal class PullStylesInfoOperation: CloudKitRequest<CloudStyle>, BeersContai
     private var checked: [String]?
     
     override func performRequest() {
-        Log.debug("Pull beer styles info")
         persistence.performInBackground() {
             context in
             
-            let styles = context.itemsNeedingSync(for: BeerStyle.self)
-            let ids = styles.compactMap({ $0.identifier })
-            guard ids.count > 0 else {
-                Log.debug("No styles to pull")
+            let beers = context.itemsNeedingSync(for: Beer.self)
+            guard beers.count > 0 else {
+                Log.debug("No Beers needing details")
                 self.finish()
                 return
             }
             
-            Log.debug("Pull details on \(ids.count) styles")
-            self.checked = ids
+            let ids = beers.compactMap({ $0.rbIdentifier })
+            guard ids.count > 0 else {
+                self.finish()
+                return
+            }
             
+            self.checked = ids
             let predicate = NSPredicate(format: "rbId IN %@", ids)
             self.fetch(predicate: predicate, inDatabase: .public)
         }
     }
     
-    override func handle(result: CloudResult<CloudStyle>, completion: @escaping () -> ()) {
+    override func handle(result: CloudResult<CloudRateBeer>, completion: @escaping () -> ()) {
         let save: ContextClosure = {
             context in
             
-            context.update(styles: result.records)
-            
             var missing = Set(self.checked ?? [])
-            let received = result.records.compactMap({ $0.rbId })
+            context.updateBeers(with: result.records)
+            
+            let received = Set(result.records.compactMap({ $0.rbId }))
             missing.subtract(received)
             
             guard missing.count > 0 else {
                 return
             }
             
-            Log.debug("Mark failure on \(missing.count) styles")
-            let predicate = NSPredicate(format: "identifier IN %@", missing)
-            let marked: [BeerStyle] = context.fetch(predicate: predicate)
+            Log.debug("Did not get data on \(missing.count) beers: \(missing)")
+            let predicate = NSPredicate(format: "rbIdentifier IN %@", missing)
+            let marked: [Beer] = context.fetch(predicate: predicate)
             marked.forEach({ $0.syncStatus?.syncFailed = true })
         }
         
