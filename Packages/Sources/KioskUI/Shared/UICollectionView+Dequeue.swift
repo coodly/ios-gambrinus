@@ -22,7 +22,7 @@ extension UICollectionView {
     }
     
     internal func registerCell<T: UICollectionViewCell>(forType type: T.Type) {
-        register(T.viewNib(Bundle(for: T.self)), forCellWithReuseIdentifier: T.identifier())
+        register(T.viewNib(Bundle.module), forCellWithReuseIdentifier: T.identifier())
     }
     
     internal func registerHeader<T: UICollectionReusableView>(forType type: T.Type) {

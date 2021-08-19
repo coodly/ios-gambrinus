@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="p6I-ja-SBu">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="p6I-ja-SBu">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,19 +11,19 @@
         <!--Menu Navigation View Controller-->
         <scene sceneID="5gZ-ZH-v22">
             <objects>
-                <viewController id="p6I-ja-SBu" customClass="MenuNavigationViewController" customModule="KioskUI" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="p6I-ja-SBu" customClass="MenuNavigationViewController" customModule="KioskUI" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mnu-sT-96e">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="il6-bw-ujN"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <connections>
                         <outlet property="menuPresentationView" destination="43l-nd-hao" id="SLr-ze-MVe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mGc-38-QVW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <view contentMode="scaleToFill" id="43l-nd-hao" customClass="MenuPresentationView" customModule="KioskUI" customModuleProvider="target">
+                <view contentMode="scaleToFill" id="43l-nd-hao" customClass="MenuPresentationView" customModule="KioskUI">
                     <rect key="frame" x="0.0" y="0.0" width="365" height="548"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
@@ -41,6 +39,7 @@
                             </constraints>
                         </view>
                     </subviews>
+                    <viewLayoutGuide key="safeArea" id="uvD-z8-Gwb"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="QtY-TK-cnb" firstAttribute="top" secondItem="43l-nd-hao" secondAttribute="top" id="0mW-sI-CYF"/>
@@ -51,7 +50,6 @@
                         <constraint firstAttribute="trailing" secondItem="QtY-TK-cnb" secondAttribute="trailing" id="aca-KI-LvJ"/>
                         <constraint firstAttribute="bottom" secondItem="1a9-1Q-ME9" secondAttribute="bottom" id="wlj-pi-oYQ"/>
                     </constraints>
-                    <viewLayoutGuide key="safeArea" id="uvD-z8-Gwb"/>
                     <connections>
                         <outlet property="dimView" destination="QtY-TK-cnb" id="EZ6-8S-I0i"/>
                         <outlet property="menuContainer" destination="1a9-1Q-ME9" id="JWJ-9G-cjg"/>

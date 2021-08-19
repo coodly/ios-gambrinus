@@ -19,7 +19,7 @@ import CoreDataPersistence
 
 public class Persistence: CorePersistence {
     internal init() {
-        super.init(modelName: "Kiosk", bundle: Bundle(identifier: "com.coodly.kiosk.core")!, wipeOnConflict: true)
+        super.init(modelName: "Kiosk", bundle: Bundle.module, wipeOnConflict: true)
     }
     
     public func maybeCopyDatabase(from source: URL) {

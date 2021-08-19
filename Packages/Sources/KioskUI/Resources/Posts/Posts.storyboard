@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iSc-VQ-Pyf">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iSc-VQ-Pyf">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,7 +11,7 @@
         <!--Posts View Controller-->
         <scene sceneID="Dsa-db-grb">
             <objects>
-                <viewController id="iSc-VQ-Pyf" customClass="PostsViewController" customModule="KioskUI" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="iSc-VQ-Pyf" customClass="PostsViewController" customModule="KioskUI" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U3M-fW-9Da">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,14 +20,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NMf-fV-Mph">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="46"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5JW-6Q-sEZ">
-                                                <rect key="frame" x="37.5" y="8" width="300" height="30"/>
+                                                <rect key="frame" x="37.5" y="8" width="300" height="34"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="300" id="jep-As-HPD"/>
                                                 </constraints>
-                                                <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                             </textField>
@@ -42,7 +39,7 @@
                                         </constraints>
                                     </view>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="x4e-sT-w64">
-                                        <rect key="frame" x="0.0" y="46" width="375" height="621"/>
+                                        <rect key="frame" x="0.0" y="50" width="375" height="617"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cnk-LG-MaK">
                                             <size key="itemSize" width="50" height="50"/>
@@ -66,6 +63,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="k0R-BG-Vcq"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="D4e-oQ-m6E" firstAttribute="leading" secondItem="k0R-BG-Vcq" secondAttribute="leading" id="Cvx-Vd-Msb"/>
@@ -73,7 +71,6 @@
                             <constraint firstAttribute="bottom" secondItem="D4e-oQ-m6E" secondAttribute="bottom" id="RNq-5I-f7o"/>
                             <constraint firstItem="k0R-BG-Vcq" firstAttribute="trailing" secondItem="D4e-oQ-m6E" secondAttribute="trailing" id="X5Z-DT-1vp"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="k0R-BG-Vcq"/>
                     </view>
                     <connections>
                         <outlet property="collection" destination="x4e-sT-w64" id="5nc-vs-7B6"/>
@@ -84,6 +81,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZXs-xy-XwH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="116" y="133"/>
         </scene>
     </scenes>
 </document>

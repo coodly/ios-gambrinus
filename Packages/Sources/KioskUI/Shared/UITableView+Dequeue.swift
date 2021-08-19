@@ -28,7 +28,7 @@ internal extension UITableView {
     }
     
     func registerCell<T: UITableViewCell>(forType type: T.Type) {
-        register(T.viewNib(Bundle(for: T.self)), forCellReuseIdentifier: T.identifier())
+        register(T.viewNib(Bundle.module), forCellReuseIdentifier: T.identifier())
     }
     
     func dequeueReusableCell<T: UITableViewCell>(for indexPath: IndexPath) -> T {

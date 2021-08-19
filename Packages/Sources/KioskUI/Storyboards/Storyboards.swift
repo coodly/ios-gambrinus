@@ -18,6 +18,6 @@ import UIKit
 
 public class Storyboards {
     public static func loadFromStoryboard<C: StoryboardLoaded>() -> C {
-        return UIStoryboard(name: C.storyboardName, bundle: Bundle(identifier: "com.coodly.kiosk.ui")).instantiateInitialViewController() as! C
+        return UIStoryboard(name: C.storyboardName, bundle: Bundle.module).instantiateInitialViewController() as! C
     }
 }

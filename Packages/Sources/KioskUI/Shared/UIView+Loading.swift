@@ -31,6 +31,6 @@ extension UIView {
     }
     
     internal static func loadInstance<T: UIView>() -> T {
-        return viewNib(Bundle(for: T.self)).instantiate(withOwner: nil, options: nil).first as! T
+        return viewNib(Bundle.module).instantiate(withOwner: nil, options: nil).first as! T
     }
 }

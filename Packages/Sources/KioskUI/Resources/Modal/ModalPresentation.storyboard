@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="I6m-qp-XhE">
-    <device id="ipad9_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="I6m-qp-XhE">
+    <device id="ipad9_7" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,7 +11,7 @@
         <!--Modal Presentation View Controller-->
         <scene sceneID="wgg-Wi-TiY">
             <objects>
-                <viewController id="I6m-qp-XhE" customClass="ModalPresentationViewController" customModule="KioskUI" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="I6m-qp-XhE" customClass="ModalPresentationViewController" customModule="KioskUI" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tWy-jg-kEi">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -31,6 +29,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="0hi-UQ-9Iy"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="d6A-ud-D2a" firstAttribute="centerX" secondItem="tWy-jg-kEi" secondAttribute="centerX" id="Cql-OD-q8W"/>
@@ -40,7 +39,6 @@
                             <constraint firstAttribute="bottom" secondItem="hFd-V4-vie" secondAttribute="bottom" id="r2M-SK-TLm"/>
                             <constraint firstItem="d6A-ud-D2a" firstAttribute="centerY" secondItem="tWy-jg-kEi" secondAttribute="centerY" id="yTw-sX-87z"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="0hi-UQ-9Iy"/>
                     </view>
                     <connections>
                         <outlet property="container" destination="d6A-ud-D2a" id="mLW-On-xaM"/>
@@ -50,6 +48,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W9S-Qb-Fkh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="56" y="96"/>
         </scene>
     </scenes>
 </document>
