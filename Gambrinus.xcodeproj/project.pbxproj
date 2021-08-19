@@ -31,8 +31,8 @@
 		A78CABE321F435420072B508 /* AppPresentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78CABE221F435420072B508 /* AppPresentationViewController.swift */; };
 		A792726721C92C330001F621 /* Kiosk.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = A792726621C92C330001F621 /* Kiosk.sqlite */; };
 		A7B66A7A21CD1FCA00DB1840 /* triplex-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7B66A7921CD1FCA00DB1840 /* triplex-bold.ttf */; };
-		EADC258326CE1FF2009B13A7 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = EADC258226CE1FF2009B13A7 /* SwiftPackageProductDependency */; };
-		EADC258526CE1FF2009B13A7 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = EADC258426CE1FF2009B13A7 /* SwiftPackageProductDependency */; };
+		EADC258326CE1FF2009B13A7 /* KioskCore in Frameworks */ = {isa = PBXBuildFile; productRef = EADC258226CE1FF2009B13A7 /* KioskCore */; };
+		EADC258526CE1FF2009B13A7 /* KioskUI in Frameworks */ = {isa = PBXBuildFile; productRef = EADC258426CE1FF2009B13A7 /* KioskUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,9 +63,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EADC258526CE1FF2009B13A7 /* BuildFile in Frameworks */,
+				EADC258526CE1FF2009B13A7 /* KioskUI in Frameworks */,
 				A744576E21CE60BF009B4D4E /* CloudKit.framework in Frameworks */,
-				EADC258326CE1FF2009B13A7 /* BuildFile in Frameworks */,
+				EADC258326CE1FF2009B13A7 /* KioskCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,8 +180,8 @@
 			);
 			name = Kiosk;
 			packageProductDependencies = (
-				EADC258226CE1FF2009B13A7 /* SwiftPackageProductDependency */,
-				EADC258426CE1FF2009B13A7 /* SwiftPackageProductDependency */,
+				EADC258226CE1FF2009B13A7 /* KioskCore */,
+				EADC258426CE1FF2009B13A7 /* KioskUI */,
 			);
 			productName = Kiosk;
 			productReference = A70238CC21C800BA00A7CFE9 /* Kiosk.app */;
@@ -331,7 +331,7 @@
 				CODE_SIGN_ENTITLEMENTS = Kiosk/Kiosk.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 107;
+				CURRENT_PROJECT_VERSION = 108;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 5T8DRBFCBP;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -367,7 +367,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 107;
+				CURRENT_PROJECT_VERSION = 108;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 5T8DRBFCBP;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -543,11 +543,11 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		EADC258226CE1FF2009B13A7 /* SwiftPackageProductDependency */ = {
+		EADC258226CE1FF2009B13A7 /* KioskCore */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = KioskCore;
 		};
-		EADC258426CE1FF2009B13A7 /* SwiftPackageProductDependency */ = {
+		EADC258426CE1FF2009B13A7 /* KioskUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = KioskUI;
 		};
