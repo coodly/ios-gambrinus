@@ -14,8 +14,17 @@
  * limitations under the License.
  */
 
+import Assets
 import UIKit
 
 internal class MenuFooterView: UIView {
+    @IBOutlet private var coodly: UIImageView!
+    @IBOutlet private var untappd: UIImageView!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        coodly.image = Asset.poweredBy.image
+        untappd.image = Asset.poweredByUntappd.image
+    }
 }
