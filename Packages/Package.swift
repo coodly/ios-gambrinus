@@ -22,7 +22,7 @@ let package = Package(
             targets: ["Packages"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/coodly/BloggerAPI.git", .exact("0.1.1")),
+        .package(url: "https://github.com/coodly/BloggerAPI.git", .exact("0.1.2")),
         .package(url: "https://github.com/coodly/CoreDataPersistence.git", .exact("0.2.4")),
         .package(url: "https://github.com/coodly/ImageProvide.git", .exact("0.5.0")),
         .package(url: "https://github.com/coodly/Puff.git", .exact("0.6.3")),
