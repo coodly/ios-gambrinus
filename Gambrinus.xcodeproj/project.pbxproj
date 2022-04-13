@@ -29,7 +29,6 @@
 		A70238EC21C8030300A7CFE9 /* InitializeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70238EB21C8030300A7CFE9 /* InitializeViewController.swift */; };
 		A744576E21CE60BF009B4D4E /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D19E921DC601830024C3A7 /* CloudKit.framework */; };
 		A78CABE321F435420072B508 /* AppPresentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78CABE221F435420072B508 /* AppPresentationViewController.swift */; };
-		A792726721C92C330001F621 /* Kiosk.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = A792726621C92C330001F621 /* Kiosk.sqlite */; };
 		A7B66A7A21CD1FCA00DB1840 /* triplex-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7B66A7921CD1FCA00DB1840 /* triplex-bold.ttf */; };
 		EADC258326CE1FF2009B13A7 /* KioskCore in Frameworks */ = {isa = PBXBuildFile; productRef = EADC258226CE1FF2009B13A7 /* KioskCore */; };
 		EADC258526CE1FF2009B13A7 /* KioskUI in Frameworks */ = {isa = PBXBuildFile; productRef = EADC258426CE1FF2009B13A7 /* KioskUI */; };
@@ -245,7 +244,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A70238E921C8025B00A7CFE9 /* LaunchView.xib in Resources */,
-				A792726721C92C330001F621 /* Kiosk.sqlite in Resources */,
 				A70238D621C800BD00A7CFE9 /* Assets.xcassets in Resources */,
 				A70238D421C800BA00A7CFE9 /* Main.storyboard in Resources */,
 				A7B66A7A21CD1FCA00DB1840 /* triplex-bold.ttf in Resources */,
@@ -336,7 +334,7 @@
 				DEVELOPMENT_TEAM = 5T8DRBFCBP;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "$(SRCROOT)/Kiosk/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -372,7 +370,7 @@
 				DEVELOPMENT_TEAM = 5T8DRBFCBP;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "$(SRCROOT)/Kiosk/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -453,7 +451,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -501,7 +499,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
